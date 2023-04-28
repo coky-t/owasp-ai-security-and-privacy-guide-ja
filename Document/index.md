@@ -97,27 +97,27 @@ AI に関連するリスクには多くの種類があります。その多く�
 <br />
 <br />
 
-# How to deal with AI privacy
-Privacy principles and requirements come from different legislations (e.g. GDPR, LGPD, PIPEDA, etc.) and privacy standards (e.g. ISO 31700, ISO 29100, ISO 27701, FIPS, NIST Privacy Framework, etc.). This guideline does not guarantee compliance with a privacy legislation and it is also not a guide on privacy engineering of systems in general. For that purpose, please consider work from [ENISA](https://www.enisa.europa.eu/publications/data-protection-engineering), [NIST](https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf), [mplsplunk](https://github.com/mplspunk/awesome-privacy-engineering), [OWASP](https://owasp.org/www-project-top-10-privacy-risks/) and [OpenCRE](https://www.opencre.org/cre/362-550). The general principle for engineers is to regard personal data as 'radioactive gold'. It's valuable, but it's also something to minimize, carefully store, carefully handle, limit its usage, limit sharing, keep track of where it is, etc.
+# AI プライバシーの取り組み方
+プライバシーの原則と要件はさまざまな法律 (GDPR, LGPD, PIPEDA など) やプライバシー標準 (ISO 31700, ISO 29100, ISO 27701, FIPS, NIST Privacy Framework など) に由来します。本ガイドラインは個人情報保護法への準拠を保証するものではなく、一般的なシステムのプライバシーエンジニアリングに関するガイドでもありません。そのためには [ENISA](https://www.enisa.europa.eu/publications/data-protection-engineering), [NIST](https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf), [mplsplunk](https://github.com/mplspunk/awesome-privacy-engineering), [OWASP](https://owasp.org/www-project-top-10-privacy-risks/), [OpenCRE](https://www.opencre.org/cre/362-550) による作業を検討してください。エンジニアの一般的な原則は個人データを「放射能を持つ金 (radioactive gold)」とみなすことです。それは貴重ですが、最小限に抑え、慎重に保管し、慎重に取り扱い、使用を制限し、共有を制限し、所在を追跡し続けるようなものでもあります。
 
-In this section, we will discuss how privacy principles apply to AI systems:
+このセクションではプライバシーの原則が AI システムにどのように適用されるかについて説明します。
 
-## 1. Use Limitation and Purpose Specification
- 
-Essentially, you should not simply use data collected for one purpose (e.g. safety or security) as a training dataset to train your model for other purposes (e.g. profiling, personalized marketing, etc.) For example, if you collect phone numbers and other identifiers as part of your MFA flow (to improve security ), that doesn't mean you can also use it for user targeting and other unrelated purposes. Similarly, you may need to collect sensitive data under KYC requirements, but such data should not be used for ML models used for business analytics without proper controls.
+## 1. 使用制限と目的指定 (Use Limitation and Purpose Specification)
 
-Some privacy laws require a lawful basis (or bases if more than one purpose) for processing personal data (See GDPR's Art 6 and 9). 
+基本的に、ある目的 (セーフティやセキュリティなど) のために収集されたデータを他の目的 (プロファイリング、個人向けマーケティングなど) のためのモデルを訓練するための訓練データセットとして絶対に使用してはいけません。たとえば、MFA フローの一環として (セキュリティ向上のために) 電話番号やその他の識別子を収集した際、それをユーザーターゲティングやその他の無関係な目的にも使用できるわけではありません。同様に、KYC 要件の下で機密データを収集する必要があるかもしれませんが、そのようなデータは適切な管理なしでビジネス分析に使用される ML モデルに使用すべきではありません。
 
-In practical terms, you should reduce access to sensitive data and create anonymized copies for incompatible purposes (e.g. analytics). You should also document a purpose/lawful basis before collecting the data and communicate that purpose to the user in an appropriate way. 
+個人情報保護法の中には個人データの処理に法的根拠 (複数の目的の場合は複数の根拠) を求めるものがあります (GDPR の第 6 条および第 9 条を参照) 。
 
-New techniques that enable use limitation include:
+実際には、機密データへのアクセスを減らし、互換性のない目的 (分析など) のために匿名化されたコピーを作成する必要があります。また、データを収集する前に目的と法的根拠を文書化し、その目的を適切な方法でユーザーに伝える必要があります。
 
-* data enclaves: store pooled personal data in restricted secure environments 
-* federated learning:  decentralize ML by removing the need to pool data into a single location. Instead, the model is trained in multiple iterations at different sites.
+使用制限を可能にする新しい技法には以下のものがあります。
+
+* データエンクレーブ (data enclaves): プールされた個人データを制限された安全な環境に保管します。
+* 連合学習 (federated learning): データを一つの場所にプールする必要をなくすことで ML を分散化します。代わりに、モデルを異なるサイトで複数回繰り返して訓練します。
 
 
 
-## 2. Fairness
+## 2. 公平性 (Fairness)
 
 Fairness means handling personal data in a way individuals expect and not using it in ways that lead to unjustified adverse effects. The algorithm should not behave in a discriminating way. (See also [this article](https://iapp.org/news/a/what-is-the-role-of-privacy-professionals-in-preventing-discrimination-and-ensuring-equal-treatment/)). 
  
@@ -126,7 +126,7 @@ GDPR's Article 5 refers to "fair processing" and EDPS' [guideline](https://edpb.
 In the [literature](http://fairware.cs.umass.edu/papers/Verma.pdf), there are different fairness metrics that you can use. These range from group fairness, false positive error rate,  unawareness and counterfactual fairness. There is no industry standard yet on which metric to use, but you should assess fairness especially if your algorithm is making significant decisions about the individuals (e.g. banning access to the platform, financial implications, denial of services/opportunities, etc.) . There are also efforts to test algorithms using different metrics. For example,  NIST's [FRVT project](https://pages.nist.gov/frvt/html/frvt11.html) tests different face recognition algorithms on fairness using different metrics.
 
 
-## 3. Data Minimization and Storage Limitation
+## 3. データ最小化と保管制限 (Data Minimization and Storage Limitation)
 
 This principle requires that you should minimize the amount, granularity and the storage duration of personal information in your training dataset. To make it more concrete:
 
@@ -148,7 +148,7 @@ Further reading:
 * [FPF case-law analysis on automated decision making](https://fpf.org/blog/fpf-report-automated-decision-making-under-the-gdpr-a-comprehensive-case-law-analysis/)
 
 
-## 4. Transparency
+## 4. 透明性 (Transparency)
 Privacy standards such as FIPP or ISO29100 refer to maintaining privacy notices, providing a copy of user's data upon request, giving notice when major changes in personal data procesing occur, etc. 
 
 GDPR also refers to such practices, but also has a specific clause related to algorithmic-decision making. 
@@ -161,7 +161,7 @@ Transparency is not only needed for the end-user. Your models and datasets shoul
 * traceability: which model has made that decision about an individual and when?
 * explainability: several methods exist to make black-box models more explainable. These include LIME, SHAP, counterfactual explanations, Deep Taylor Decomposition, etc. See also [this overview of machine learning interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability) and [this article on the pros and cons of explainable AI](https://www.softwareimprovementgroup.com/resources/unraveling-the-incomprehensible-the-pros-and-cons-of-explainable-ai/).
 
-## 5. Privacy Rights
+## 5. プライバシー権 (Privacy Rights)
 Also known as "individual participation" under privacy standards, this principle allows individuals to submit requests to your organization related to their personal data. Most referred rights are: 
 
 1. right of access / portability: provide a copy of user data, preferably in machine readable format. If data is properly anonymized, it may be exempted from this right. 
@@ -169,12 +169,12 @@ Also known as "individual participation" under privacy standards, this principle
 3. right of correction: allow users to correct factually incorrect data. Also see accuracy below
 4. right of object: allow users to object the usage of their data for a specific use (e.g. model training)
 
-## 6. Accuracy
+## 6. 正確性 (Accuracy)
 You should ensure that your data is correct as the output of an algorithmic decision with incorrect data may lead to severe consequences for the individual. For example, if the user's phone number is incorrectly added to the system and if such number is associated with fraud, the user might be banned from a service/system in an unjust manner. You should have processes/tools in place to fix such accuracy issues as soon as possible when a proper request is made by the individual . 
 
 To satisfy the accuracy principle, you should also have tools and processes in place to ensure that the data is obtained from reliable sources, its validity and correctness claims are validated and data quality and accuracy are periodically assessed.
 
-## 7. Consent
+## 7. 同意 (Consent)
 Consent may be used or required in specific circumstances. In such cases, consent must satisfy the following:
 
   1. obtained before collecting, using, updating or sharing the data
@@ -189,11 +189,11 @@ Consent may be used or required in specific circumstances. In such cases, consen
 Please note that consent will not be possible in specific circumstances (e.g. you cannot collect consent from a fraudster and an employer cannot collect consent from an employee as there is a power imbalance). If you must collect consent, then ensure that it is properly obtained, recorded and proper actions are taken if it is withdrawn. 
 
 
-## Scope boundaries of AI privacy
+## AI プライバシーのスコープ境界
 As said, many of the discussion topics on AI are about human rights, social justice, safety and only a part of it has to do with privacy. So as a data protection officer or engineer it's important not to drag everything into your responsibilities. At the same time, organizations do need to assign those non-privacy AI responsibilities somewhere.
 
 
-## Before you start: Privacy restrictions on what you can do with AI
+## 始める前に: AI でできることに関するプライバシー制限
 The GDPR does not restrict the applications of AI explicitly but does provide safeguards that may limit what you can do, in particular regarding Lawfulness and limitations on purposes of collection, processing, and storage - as mentioned above. For more information on lawful grounds, see [article 6](https://gdpr.eu/article-6-how-to-process-personal-data-legally/)
 
 In contrast, the [EU AI act](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN) does pose explicit application limitations, such as mass surveillance, predictive policing, and restrictions on high-risk purposes such as selecting people for jobs. In addition, there are regulations for specific domains that restrict the use of data, putting limits to some AI approaches (e.g. the medical domain). 
@@ -202,12 +202,12 @@ In an upcoming update, more will be discussed on the [US AI bill of rights](http
 
 The [US Federal Trade Committe](https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check) provides some good (global) guidance in communicating carefully about your AI, including not to overpromise.
 
-# Project status
+# プロジェクトの状況
 This page is the current outcome of the project. The goal is to collect and present the state of the art on these topics through community collaboration. First in the form of this page, and later in other document forms. Please provide your input through pull requests / submitting issues (see [repo](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/)) or emailing the project lead, and let's make this guide better and better. 
 
 The work in this guide will serve as input to the upcoming [ISO/IEC 27090 (AI security)](https://www.iso.org/standard/56581.html) and [27091 (AI privacy)](https://standardsdevelopment.bsigroup.com/projects/9022-07819#/section) standards, which will be done through membership of the ISO/IEC JTC 1/SC42 AHG4 group.
 
-# Further reading
+# 参考情報
 
 * [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
 * [PLOT4ai threat library ](https://plot4.ai/library)
