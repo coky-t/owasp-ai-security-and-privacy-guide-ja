@@ -46,7 +46,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
     <p align="center"><a href="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/poison4.png?raw=true" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/poison4.png?raw=true"/> </a></p>
     <br />
 
-  * **入力操作攻撃 (Input manipulation attack)**: 欺瞞的な入力データでモデルを欺きます。この攻撃は三つの方法で実行できます。1) モデル入力で実験する (ブラックボックス)、2) モデルパラメータの解析に基づいて悪意を持って設計された入力を取り込む (ホワイトボックス)、3) データポイズニングで行われた入力を基にする (上記参照)。ポイズニングの軽減、モデルパラメータへのアクセス制限、出力から信頼度情報の除外、画像への物理的パッチなどの操作タイプの制限、監視、検出とともに堅牢な性能のモデルは最善の緩和策となります。さらに、操作された入力に対してモデルを堅牢にするために、訓練プロセスに敵対的な例を含めることができます。これは「無作為抽出による平滑化」(_randomized smoothing_) と呼ばれる技法によって実現できます。別名: 回避攻撃 (evasion attacks)、敵対的サンプル (_adversarial examples_)。ホワイトボックスについては [交通標識に関するこの論文](https://openaccess.thecvf.com/content_cvpr_2018/papers/Eykholt_Robust_Physical-World_Attacks_CVPR_2018_paper.pdf) と [パンダ画像に関するこの成果物](https://arxiv.org/pdf/1412.6572.pdf) を参照してください。
+  * **入力操作攻撃 (Input manipulation attack)**: 欺瞞的な入力データでモデルを欺きます。この攻撃は三つの方法で実行できます。1) モデル入力で実験する (ブラックボックス)、2) モデルパラメータの解析に基づいて悪意を持って設計された入力を取り込む (ホワイトボックス)、3) データポイズニングで行われた入力を基にする (上記参照)。ポイズニングの軽減、モデルパラメータへのアクセス制限、出力から信頼度情報の除外、画像への物理的パッチなどの操作タイプの制限、監視、検出とともに堅牢な性能のモデルは最善の緩和策となります。さらに、操作された入力に対してモデルを堅牢にするために、訓練プロセスに敵対的な例を含めることができます。これは「無作為抽出による平滑化 (_randomized smoothing_)」 と呼ばれる技法によって実現できます。別名: 回避攻撃 (evasion attacks)、敵対的サンプル (_adversarial examples_)。ホワイトボックスについては [交通標識に関するこの論文](https://openaccess.thecvf.com/content_cvpr_2018/papers/Eykholt_Robust_Physical-World_Attacks_CVPR_2018_paper.pdf) と [パンダ画像に関するこの成果物](https://arxiv.org/pdf/1412.6572.pdf) を参照してください。
 
 
     ブラックボックスの入力操作の例: 時速 35 マイルの標識に少し赤いペイントを施し、それを一時停止標識と思わせるようにモデルを騙します。もう一つの例は電子メールの単語でスパム分類器を騙す実験です。特にモデルの出力に信頼度情報が含まれている場合には、操作を成功させるための実験を自動化できます。このような操作はモデルの内部を知ることなく、モデルの動作だけを頼りに構築するため、「ブラックボックス」と呼ばれます。
@@ -119,11 +119,11 @@ AI に関連するリスクには多くの種類があります。その多く�
 
 ## 2. 公平性 (Fairness)
 
-Fairness means handling personal data in a way individuals expect and not using it in ways that lead to unjustified adverse effects. The algorithm should not behave in a discriminating way. (See also [this article](https://iapp.org/news/a/what-is-the-role-of-privacy-professionals-in-preventing-discrimination-and-ensuring-equal-treatment/)). 
- 
-GDPR's Article 5 refers to "fair processing" and EDPS' [guideline](https://edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_201904_dataprotection_by_design_and_by_default_v2.0_en.pdf) defines fairness as the prevention of "unjustifiably detrimental, unlawfully discriminatory, unexpected or misleading" processing of personal data. GDPR does not specify how fairness can be measured, but the EDPS recommends right to information (transparency), right to intervene (access, erasure, data portability, rectify) and the right to limit the processing (right not to be subject to automated decision-making and non-discrimination) as measures and safeguard to implement the principle of fairness. 
+公平性とは個人データを個人が期待する方法で取り扱い、不当な悪影響をもたらすような使い方をしないことを意味します。そのアルゴリズムは差別的な振る舞いをすべきではありません。([この記事](https://iapp.org/news/a/what-is-the-role-of-privacy-professionals-in-preventing-discrimination-and-ensuring-equal-treatment/) も参照してください) 。
 
-In the [literature](http://fairware.cs.umass.edu/papers/Verma.pdf), there are different fairness metrics that you can use. These range from group fairness, false positive error rate,  unawareness and counterfactual fairness. There is no industry standard yet on which metric to use, but you should assess fairness especially if your algorithm is making significant decisions about the individuals (e.g. banning access to the platform, financial implications, denial of services/opportunities, etc.) . There are also efforts to test algorithms using different metrics. For example,  NIST's [FRVT project](https://pages.nist.gov/frvt/html/frvt11.html) tests different face recognition algorithms on fairness using different metrics.
+GDPR の第 5 条は「公正な処理 (fair processing)」に言及しており、EDPS の [ガイドライン](https://edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_201904_dataprotection_by_design_and_by_default_v2.0_en.pdf) では公平性を個人データの「不当に不利益な処理、違法な差別的処理、予想外の処理、誤解を招く処理」を防止することと定義しています。GDPR では公平性に対応する方法を規定していませんが、EDPS では公平性の原則を実装するための対応とセーフガードとして、情報に対する権利 (透明性)、介入する権利 (アクセス、消去、データポータビリティ、修正)、処理を制限する権利 (自動化された意思決定の対象とならない権利や無差別性) を推奨しています。
+
+[文献](http://fairware.cs.umass.edu/papers/Verma.pdf) にはあなたが使用できるさまざまな公平性指標があります。これらはグループ公平性、誤検出エラー率、無自覚性、反事実公平性など多岐にわたります。どの指標を使用すべきかについての業界標準はまだありませんが、アルゴリズムが個人に関して重大な決定を下す場合 (プラットフォームへのアクセス禁止、金銭的影響、サービスや機会の拒否など) は特に公平性を評価すべきです。さまざまな指標を用いてアルゴリズムをテストする取り組みもあります。たとえば、NIST の [FRVT プロジェクト](https://pages.nist.gov/frvt/html/frvt11.html) ではさまざまな指標を用いてさまざまな顔認識アルゴリズムの公平性をテストしています。
 
 
 ## 3. データ最小化と保管制限 (Data Minimization and Storage Limitation)
