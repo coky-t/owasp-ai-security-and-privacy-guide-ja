@@ -128,24 +128,24 @@ GDPR の第 5 条は「公正な処理 (fair processing)」に言及しており
 
 ## 3. データ最小化と保管制限 (Data Minimization and Storage Limitation)
 
-This principle requires that you should minimize the amount, granularity and the storage duration of personal information in your training dataset. To make it more concrete:
+この原則では訓練データセット内の個人情報の量、粒度、保存期間を最小限にすることを求めています。より具体的には以下のようになります。
 
-* Do not collect or copy unnecessary attributes to your dataset if this is irrelevant for your purpose
-* Anonymize the data where possible. Please note that this is not as trivial as "removing PII". See [WP 29 Guideline](https://ec.europa.eu/justice/article-29/documentation/opinion-recommendation/files/2014/wp216_en.pdf)
-* If full anonymization is not possible, reduce the granularity of the data in your dataset if you aim to produce aggregate insights (e.g. reduce lat/long to 2 decimal points if city level precision is enough for your purpose or remove the last octets of an ip address, round timestamps to the hour)
-* Use less data where possible (e.g. if 10k records are sufficient for an experiment, do not use 1 million)
-* Delete data as soon as possible when it is no longer useful (e.g. data from 7 years ago may not be relevant for your model)
-* Remove links in your dataset (e.g. obfuscate user id's, device identifiers and other linkable attributes)
-* Minimize the number of stakeholders who accesses the data on a "need to know" basis
+* 目的とは関係なければ、不必要な属性をデータセットに収集したりコピーしてはいけません
+* 可能な限りデータを匿名化します。これは「PII の削除」ほど簡単ではないことに注意してください。 [WP 29 ガイドライン](https://ec.europa.eu/justice/article-29/documentation/opinion-recommendation/files/2014/wp216_en.pdf) を参照してください
+* 完全な匿名化が可能ではなければ、集約した洞察を生成することを目的としている場合にはデータセット内のデータの粒度を小さくします (たとえば、都市レベルの精度で目的に十分であれば緯度経度を小数点以下 2 桁に減らす、IP アドレスの最後のオクテットを削除する、タイムスタンプを一時間で丸めるなど)
+* 可能な限り使用するデータを少なくする (たとえば、一万レコードで実験に十分であれば、百万レコードを使用してはいけません)
+* 不要になったデータはできるだけ早く削除します (たとえば、7 年前のデータはモデルと関係ないかもしれません)
+* データセット内のリンクを削除します (たとえば、ユーザー ID、デバイス識別子、その他のリンク可能な属性を難読化します)
+* データにアクセスする利害関係者の数を「知る必要がある」という原則のもとに最小限に抑えます
 
-There are also privacy-preserving techniques being developed that supports data minimization:
+データの最小化をサポートするプライバシー保護技術もあります。
 
-* distributed data analysis: exchange anonymous aggregated data
-* secure multi-party computation: store data distributed-encrypted
-    
-Further reading:
-* [ICO guidance on AI and data protection](https://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/)
-* [FPF case-law analysis on automated decision making](https://fpf.org/blog/fpf-report-automated-decision-making-under-the-gdpr-a-comprehensive-case-law-analysis/)
+* 分散データ解析: 匿名の集計データを交換します
+* セキュアマルチパーティコンピューティング: データを分散暗号化して保存します
+
+参考情報:
+* [AI とデータ保護に関する ICO ガイダンス](https://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/)
+* [自動意思決定に関する FPF 判例分析](https://fpf.org/blog/fpf-report-automated-decision-making-under-the-gdpr-a-comprehensive-case-law-analysis/)
 
 
 ## 4. 透明性 (Transparency)
