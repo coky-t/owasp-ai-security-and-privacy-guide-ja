@@ -149,17 +149,17 @@ GDPR の第 5 条は「公正な処理 (fair processing)」に言及しており
 
 
 ## 4. 透明性 (Transparency)
-Privacy standards such as FIPP or ISO29100 refer to maintaining privacy notices, providing a copy of user's data upon request, giving notice when major changes in personal data procesing occur, etc. 
+FIPP や ISO29100 などのプライバシー標準ではプライバシー通知を維持すること、要求に応じてユーザーのデータのコピーを提供すること、個人データの処理に大きな変更があった場合に通知することなどに言及しています。
 
-GDPR also refers to such practices, but also has a specific clause related to algorithmic-decision making. 
-GDPR's [Article 22](https://ec.europa.eu/newsroom/article29/items/612053) allows individuals specific rights under specific conditions. This includes getting human intervention to an algorithmic decision , an ability to contest the decision and get a meaningful information about the logic involved. For examples of "meaningful information", see EDPS's [guideline](https://ec.europa.eu/newsroom/article29/items/612053).  The US [Equal Credit Opportunity Act](https://www.consumerfinance.gov/about-us/newsroom/cfpb-acts-to-protect-the-public-from-black-box-credit-models-using-complex-algorithms/) requires detailed explanations on individual decisions by algorithms that deny credit. 
+GDPR もこのような慣行に言及していますが、アルゴリズムによる意思決定に関連する特有の条項もあります。
+GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は特定の条件下で個人に特定の権利を認めています。これにはアルゴリズムによる決定に対する人間の介入、決定に異議を唱える能力、関連するロジックに関する意味のある情報を取得することが含まれます。「意味のある情報」の例については EDPS の [ガイドライン](https://ec.europa.eu/newsroom/article29/items/612053) を参照してください。米国の [信用機会均等法 (Equal Credit Opportunity Act)](https://www.consumerfinance.gov/about-us/newsroom/cfpb-acts-to-protect-the-public-from-black-box-credit-models-using-complex-algorithms/) では信用を否定するアルゴリズムの個々の決定について詳細な説明を要求しています。
 
-Transparency is not only needed for the end-user. Your models and datasets should be understandable by internal stakeholders as well: model developers, internal audit, privacy engineers, domain experts and more. This typically requires the following:
+透明性はエンドユーザーだけに必要なものではありません。モデルとデータセットはモデル開発者、内部監査、プライバシーエンジニア、ドメイン専門家など、社内の利害関係者にも理解できるものであるべきです。これには一般的に以下のものが必要です。
 
-* proper model documentation: model type, intent, proposed features, feature importance, potential harm and bias
-* dataset transparency:source, lawful basis, type of data, whether it was cleaned, age. Data cards is a popular approach in the industry to achieve some of these goals. See Google Research's [paper](https://arxiv.org/abs/2204.01075) and Meta's [research](https://ai.facebook.com/research/publications/system-level-transparency-of-machine-learning).    
-* traceability: which model has made that decision about an individual and when?
-* explainability: several methods exist to make black-box models more explainable. These include LIME, SHAP, counterfactual explanations, Deep Taylor Decomposition, etc. See also [this overview of machine learning interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability) and [this article on the pros and cons of explainable AI](https://www.softwareimprovementgroup.com/resources/unraveling-the-incomprehensible-the-pros-and-cons-of-explainable-ai/).
+* 適切なモデルの文書化: モデルの種類、意図、提案された機能、機能の重要性、潜在的な危害とバイアス
+* データセットの透明性: ソース、法的根拠、データの種類、クリーニングの有無、年齢。データカードはこれらの目標のいくつかを達成するための業界で一般的なアプローチです。Google Research の [論文](https://arxiv.org/abs/2204.01075) と Meta の [研究](https://ai.facebook.com/research/publications/system-level-transparency-of-machine-learning) を参照してください。
+* トレーサビリティ: ある個人についてどのモデルがいつその決定を下したか？
+* 説明可能性: ブラックボックスモデルをより説明しやすくする方法がいくつかあります。これらには LIME、SHAP、反事実的説明 (counterfactual explanations)、ディープテイラー分解 (Deep Taylor Decomposition) などがあります。[機械学習の解釈可能性に関するこの概要](https://github.com/jphall663/awesome-machine-learning-interpretability) と [説明可能な AI の長所と短所に関するこの記事](https://www.softwareimprovementgroup.com/resources/unraveling-the-incomprehensible-the-pros-and-cons-of-explainable-ai/) も参照してください。
 
 ## 5. プライバシー権 (Privacy Rights)
 Also known as "individual participation" under privacy standards, this principle allows individuals to submit requests to your organization related to their personal data. Most referred rights are: 
