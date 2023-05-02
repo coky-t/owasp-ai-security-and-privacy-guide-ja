@@ -162,12 +162,12 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 * 説明可能性: ブラックボックスモデルをより説明しやすくする方法がいくつかあります。これらには LIME、SHAP、反事実的説明 (counterfactual explanations)、ディープテイラー分解 (Deep Taylor Decomposition) などがあります。[機械学習の解釈可能性に関するこの概要](https://github.com/jphall663/awesome-machine-learning-interpretability) と [説明可能な AI の長所と短所に関するこの記事](https://www.softwareimprovementgroup.com/resources/unraveling-the-incomprehensible-the-pros-and-cons-of-explainable-ai/) も参照してください。
 
 ## 5. プライバシー権 (Privacy Rights)
-Also known as "individual participation" under privacy standards, this principle allows individuals to submit requests to your organization related to their personal data. Most referred rights are: 
+プライバシー標準では「個人参加 (individual participation)」とも呼ばれるこの原則により、個人が自分の個人データに関連する要求を組織に提示できます。最も参照される権利は以下のとおりです。
 
-1. right of access / portability: provide a copy of user data, preferably in machine readable format. If data is properly anonymized, it may be exempted from this right. 
-2. right of erasure: erase user data unless an exception applies. It is also a good practice to re-train your model without the deleted user's data.
-3. right of correction: allow users to correct factually incorrect data. Also see accuracy below
-4. right of object: allow users to object the usage of their data for a specific use (e.g. model training)
+1. アクセス権とポータビリティ権: ユーザーデータのコピーを、できれば機械読み取り可能な形式で提供します。データが適切に匿名化されている場合、この権利から免除されることがあります。
+2. 消去権: 例外が適用されない限り、ユーザーデータを消去します。また、削除されたユーザーのデータなしでモデルを再訓練することも良い方法です。
+3. 訂正権: ユーザーが事実と異なるデータを訂正できます。以下の正確性も参照してください。
+4. 異議申立権: ユーザーが特定の用途 (例: モデルトレーニング) においてデータを使用することに異議を唱えることができます。
 
 ## 6. 正確性 (Accuracy)
 You should ensure that your data is correct as the output of an algorithmic decision with incorrect data may lead to severe consequences for the individual. For example, if the user's phone number is incorrectly added to the system and if such number is associated with fraud, the user might be banned from a service/system in an unjust manner. You should have processes/tools in place to fix such accuracy issues as soon as possible when a proper request is made by the individual . 
