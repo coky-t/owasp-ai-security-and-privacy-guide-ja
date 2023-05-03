@@ -175,18 +175,18 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 正確性の原則を満たすには、信頼できるソースからデータを取得し、その有効性と正確性の主張を検証し、データ品質と正確性を定期的に評価することを確保するためのツールやプロセスも用意する必要があります。
 
 ## 7. 同意 (Consent)
-Consent may be used or required in specific circumstances. In such cases, consent must satisfy the following:
+特定の状況において同意が使用または要求されることがあります。そのような場合、同意は以下を満たす必要があります。
 
-  1. obtained before collecting, using, updating or sharing the data
-  2. consent should be recorded and be auditable
-  3. consent should be granular (use consent per purpose, and avoid blanket consents)
-  4. consent should not be bundled with T&S
-  5. consent records should be protected from tampering
-  6. consent method and text should adhere to specific requirements of the jurisdiction in which consent is required (e.g. GDPR requires unambigious, freely given, written in clear and plain language, explicit and withdrawable)
-  7. Consent withdrawal should be as easy as giving consent
-  8. If consent is withdrawn, then all associated data with the consent should be deleted and the model should be re-trained.
-  
-Please note that consent will not be possible in specific circumstances (e.g. you cannot collect consent from a fraudster and an employer cannot collect consent from an employee as there is a power imbalance). If you must collect consent, then ensure that it is properly obtained, recorded and proper actions are taken if it is withdrawn. 
+  1. データを収集、使用、更新、共有するまえに同意を得ます
+  2. 同意は記録され監査可能である必要があります
+  3. 同意はきめ細かくする必要があります (目的ごとに同意を使用し、包括的な同意を避けます)
+  4. 同意は T&S とバンドルしてはいけません
+  5. 同意記録は改竄から保護する必要があります
+  6. 同意の方法とテキストは同意が必要な法域の特定の要件に準拠する必要があります (たとえば、GDPR では曖昧さがなく、自由に与えられ、明確で平易な言葉で書かれ、明示的で撤回可能であることを要求します)
+  7. 同意の撤回は同意を与えるのと同じくらい簡単である必要があります
+  8. 同意が撤回された際には、同意に関連するすべてのデータを削除し、モデルを再訓練する必要があります
+
+特定の状況では同意は得ることができないことに注意してください (たとえば、詐欺師から同意を得ることはできず、雇用主は力の不均衡があるため従業員から同意を得ることはできません) 。同意を集める必要がある場合には、適切に習得され、記録され、撤回された場合に適切な措置が取られるように確保します。
 
 
 ## AI プライバシーのスコープ境界
