@@ -190,22 +190,22 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 
 
 ## AI プライバシーのスコープ境界
-As said, many of the discussion topics on AI are about human rights, social justice, safety and only a part of it has to do with privacy. So as a data protection officer or engineer it's important not to drag everything into your responsibilities. At the same time, organizations do need to assign those non-privacy AI responsibilities somewhere.
+前述のように、AI に関する議題の多くは人権、社会正義、安全に関するものであり、プライバシーに関するのはその一部にすぎません。したがって、データ保護責任者やエンジニアとして、すべてを自分の責任に引きずり込まないことが重要です。同時に、組織はプライバシーに関係のない AI の責任をどこかに割り当てる必要があります。
 
 
 ## 始める前に: AI でできることに関するプライバシー制限
-The GDPR does not restrict the applications of AI explicitly but does provide safeguards that may limit what you can do, in particular regarding Lawfulness and limitations on purposes of collection, processing, and storage - as mentioned above. For more information on lawful grounds, see [article 6](https://gdpr.eu/article-6-how-to-process-personal-data-legally/)
+GDPR は AI の適用を明示的に制限するものではありませんが、前述のように、特に合法性と、収集、処理、保存の目的の制限に関して、できることを制限する可能性があるセーフガードを提供します。法的根拠の詳細については、[第 6 条](https://gdpr.eu/article-6-how-to-process-personal-data-legally/) を参照してください。
 
-In contrast, the [EU AI act](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN) does pose explicit application limitations, such as mass surveillance, predictive policing, and restrictions on high-risk purposes such as selecting people for jobs. In addition, there are regulations for specific domains that restrict the use of data, putting limits to some AI approaches (e.g. the medical domain). 
+対照的に、[EU の AI 法](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN) では大規模な監視、予測的な取り締まり、仕事における人員の選択などのリスクの高い目的に対する制限など、明示的な適用制限を課しています。さらに、特定ドメイン (医療ドメインなど) に対してデータの使用を制限する規制があり、一部の AI アプローチには制限を課しています。
 
-In an upcoming update, more will be discussed on the [US AI bill of rights](https://www.whitehouse.gov/ostp/ai-bill-of-rights/).
+今後の更新では、[米国の AI 権利章典 (AI bill of rights)](https://www.whitehouse.gov/ostp/ai-bill-of-rights/) についてさらに詳しく解説する予定です。
 
-The [US Federal Trade Committe](https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check) provides some good (global) guidance in communicating carefully about your AI, including not to overpromise.
+[米国連邦取引委員会](https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check) は AI について慎重にコミュニケーションする上で、過剰な約束をしないことなど、優れた (グローバルな) ガイダンスを提供しています。
 
 # プロジェクトの状況
-This page is the current outcome of the project. The goal is to collect and present the state of the art on these topics through community collaboration. First in the form of this page, and later in other document forms. Please provide your input through pull requests / submitting issues (see [repo](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/)) or emailing the project lead, and let's make this guide better and better. 
+このページはプロジェクトの現在の成果です。目的はコミュニティの協力によってこれらのトピックに関する最新情報を収集して提示することです。最初はこのページの形式で、後に他のドキュメント形式で。プルリクエストや issues の提出 ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) またはプロジェクトリーダーへの電子メールを通じて意見を提供してください。このガイドをより良いものにしていきましょう。
 
-The work in this guide will serve as input to the upcoming [ISO/IEC 27090 (AI security)](https://www.iso.org/standard/56581.html) and [27091 (AI privacy)](https://standardsdevelopment.bsigroup.com/projects/9022-07819#/section) standards, which will be done through membership of the ISO/IEC JTC 1/SC42 AHG4 group.
+このガイドの作業は今後の [ISO/IEC 27090 (AI セキュリティ)](https://www.iso.org/standard/56581.html) および [27091 (AI プライバシー)](https://standardsdevelopment.bsigroup.com/projects/9022-07819#/section) 標準へのインプットとなります。これは ISO/IEC JTC 1/SC42 AHG4 グループのメンバーを通じて行われます。
 
 # 参考情報
 
