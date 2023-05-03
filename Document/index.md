@@ -170,9 +170,9 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 4. 異議申立権: ユーザーが特定の用途 (例: モデルトレーニング) においてデータを使用することに異議を唱えることができます。
 
 ## 6. 正確性 (Accuracy)
-You should ensure that your data is correct as the output of an algorithmic decision with incorrect data may lead to severe consequences for the individual. For example, if the user's phone number is incorrectly added to the system and if such number is associated with fraud, the user might be banned from a service/system in an unjust manner. You should have processes/tools in place to fix such accuracy issues as soon as possible when a proper request is made by the individual . 
+誤ったデータでのアルゴリズムによる決定の出力は個人に深刻な結果をもたらす可能性があるため、データが正しいことを確保する必要があります。たとえば、ユーザーの電話番号がシステムに誤って追加され、その番号が詐欺に関連付けられている場合、ユーザーは不当な事由でサービスやシステムから追放される可能性があります。このような正確性の問題は本人から適切な要求がなされた際にできるだけ早く修正するためのプロセスやツールを用意しておく必要があります。
 
-To satisfy the accuracy principle, you should also have tools and processes in place to ensure that the data is obtained from reliable sources, its validity and correctness claims are validated and data quality and accuracy are periodically assessed.
+正確性の原則を満たすには、信頼できるソースからデータを取得し、その有効性と正確性の主張を検証し、データ品質と正確性を定期的に評価することを確保するためのツールやプロセスも用意する必要があります。
 
 ## 7. 同意 (Consent)
 Consent may be used or required in specific circumstances. In such cases, consent must satisfy the following:
