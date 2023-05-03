@@ -196,11 +196,30 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 ## 始める前に: AI でできることに関するプライバシー制限
 GDPR は AI の適用を明示的に制限するものではありませんが、前述のように、特に合法性と、収集、処理、保存の目的の制限に関して、できることを制限する可能性があるセーフガードを提供します。法的根拠の詳細については、[第 6 条](https://gdpr.eu/article-6-how-to-process-personal-data-legally/) を参照してください。
 
-対照的に、[EU の AI 法](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN) では大規模な監視、予測的な取り締まり、仕事における人員の選択などのリスクの高い目的に対する制限など、明示的な適用制限を課しています。さらに、特定ドメイン (医療ドメインなど) に対してデータの使用を制限する規制があり、一部の AI アプローチには制限を課しています。
 
 今後の更新では、[米国の AI 権利章典 (AI bill of rights)](https://www.whitehouse.gov/ostp/ai-bill-of-rights/) についてさらに詳しく解説する予定です。
 
 [米国連邦取引委員会](https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check) は AI について慎重にコミュニケーションする上で、過剰な約束をしないことなど、優れた (グローバルな) ガイダンスを提供しています。
+
+[EU の AI 法](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN) では大規模な監視、予測的な取り締まり、仕事における人員の選択などのリスクの高い目的に対する制限など、明示的な適用制限を課しています。さらに、特定ドメイン (医療ドメインなど) に対してデータの使用を制限する規制があり、一部の AI アプローチには制限を課しています。
+
+**AI 法の要約:**
+* すべての AI イニシアチブでリスク分析を実施することが賢明です
+* ここで定義されている AI とは、より広範な統計的アプローチや最適化アルゴリズムを含む広義のものです
+* AI 法の中核は人権であり、人への有害性の観点からリスクを分析します
+* リスクレベルに基づくと、AI アプリケーションの 10% には特別なガバナンスが必要となる見込みです
+* 特別なガバナンスには公的透明性や文書公開、監査可能性、バイアス対策、監視などがあります
+* 公共スペースでの大規模な顔認識や予測的取り締まりなど、一部のイニシアチブは禁止されます
+* 生成 AI の場合、透明性として著作権で保護されたソースが使用されたことについてオープンにする必要があります
+* たとえば、OpenAI がこの規則に違反した場合、Microsoft は 100 億ドルの罰金を科す可能性があります
+
+リンク:
+* [AI 法原案](https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2021/0206/COM_COM(2021)0206_EN.pdf)
+* [改正](https://www.europarl.europa.eu/doceo/document/CJ40-PR-731563_EN.pdf)
+* [詳細](https://www.europarl.europa.eu/legislative-train/theme-a-europe-fit-for-the-digital-age/file-regulation-on-artificial-intelligence)
+
+次の段階に進むための法律案のバージョンは、2023 年 6 月に予定されています。これにより現状がより明確になります。
+
 
 # プロジェクトの状況
 このページはプロジェクトの現在の成果です。目的はコミュニティの協力によってこれらのトピックに関する最新情報を収集して提示することです。最初はこのページの形式で、後に他のドキュメント形式で。プルリクエストや issues の提出 ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) またはプロジェクトリーダーへの電子メールを通じて意見を提供してください。このガイドをより良いものにしていきましょう。
