@@ -28,6 +28,8 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 <p align="center"><a href="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true"/> </a></p>
 <br />
 
+AI セキュリティに関するさらなる読み物はこのガイドの最後にあります。一つだけハイライトするとすれば、それは [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) になるでしょう。
+
 
 ## 特定の AI セキュリティリスク
 
@@ -230,6 +232,8 @@ GDPR は AI の適用を明示的に制限するものではありませんが�
 
 # 参考情報
 
+* [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)
+* [Google's Secure AI Framework](https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/)
 * [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
 * [PLOT4ai threat library ](https://plot4.ai/library)
 * [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
