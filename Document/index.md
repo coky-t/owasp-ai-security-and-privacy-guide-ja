@@ -28,7 +28,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 <p align="center"><a href="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true"/> </a></p>
 <br />
 
-AI セキュリティに関するさらなる読み物はこのガイドの最後にあります。一つだけハイライトするとすれば、それは [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) になるでしょう。
+AI セキュリティに関するさらなる読み物はこのガイドの最後にあります。一つだけハイライトするとすれば、それは [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) になるでしょう。そして [大規模言語モデル Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) も素晴らしい。
 
 
 ## 特定の AI セキュリティリスク
@@ -240,3 +240,4 @@ GDPR は AI の適用を明示的に制限するものではありませんが�
 * [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
 * [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
 * [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
+* [The Large Language Model top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
