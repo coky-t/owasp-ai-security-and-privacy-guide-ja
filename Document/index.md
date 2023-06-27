@@ -23,7 +23,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 2. AI 開発者、データサイエンティスト、AI 関連のアプリケーションやインフラストラクチャをセキュリティプログラム (リスク分析、トレーニング、要件、静的解析、コードレビュー、ペンテスティングなど) に組み込みます。
 3. バージョン管理、文書化、単体テスト、統合テスト、性能テスト、コード品質などの優れたソフトウェアエンジニアリングプラクティスを AI アクティビティに適用することでセキュリティの枠を超えます。ガイドラインには [ISO/IEC 5338](https://www.iso.org/standard/81118.html) を参照してください。こうすることで、AI システムは保守が容易になり、移転可能になり、信頼性が高くなり、将来性が保証されます。ベストプラクティスはチーム内でデータサイエンティストとソフトウェアエンジニアリングのプロファイルを混ぜることです。ソフトウェアエンジニアは一般的にデータサイエンスについてもっと学ぶ必要があり、データサイエンティストは一般的に保守やテストが容易になる将来性のあるコードの作成についてもっと学ぶ必要があるからです。
 
-4. 関係者全員が「特定の」AI セキュリティリスクを認識していることを確認します。これらは主要な軽減策とともに下図で可視化しています。次のセクションで説明します。
+4. 関係者全員が「特定の」AI セキュリティリスクを認識していることを確認します。これらは主要な軽減策 (オレンジ) とともに下図で可視化しています。次のセクションで説明します。
 
 <p align="center"><a href="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true"/> </a></p>
 <br />
