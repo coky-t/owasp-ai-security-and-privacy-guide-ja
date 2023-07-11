@@ -10,7 +10,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 ---
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecprivlogosml.jpeg?raw=true" width="600" height ="127"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/humansonly.png?raw=true" align="right"/>
 
-人工知能は増加傾向にあり、AI のセキュリティとプライバシーに関する懸念も高まっています。このガイドでは安全でプライバシーを保護する AI システムの設計、作成、テスト、調達に関する明確で実用的な洞察を提供したいと考えています。
+人工知能は増加傾向にあり、AI のセキュリティとプライバシーに関する懸念も高まっています。このガイドは安全でプライバシーを保護する AI システムの設計、作成、テスト、調達に関する明確で実用的な洞察を提供する実用的な文書です。
 
 2023 年 2 月 15 日にダブリンで開催された OWASP Global AppSec イベントでこのガイドが発表されました。 [Rob van der Veer の講演](https://sched.co/1F9DT) の [この有用な記録](https://www.youtube.com/watch?v=ABmWHnFrMqI) や [スライド](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) も参照してください。また、このガイドの AppSec Podcast エピソード ([音声](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide)、[動画](https://www.youtube.com/watch?v=SLdn3AwlCAk&)) もご覧ください。
 
@@ -224,13 +224,11 @@ GDPR は AI の適用を明示的に制限するものではありませんが�
 * [改正](https://www.europarl.europa.eu/doceo/document/CJ40-PR-731563_EN.pdf)
 * [詳細](https://www.europarl.europa.eu/legislative-train/theme-a-europe-fit-for-the-digital-age/file-regulation-on-artificial-intelligence)
 
-次の段階に進むための法律案のバージョンは、2023 年 6 月に予定されています。これにより現状がより明確になります。
-
 
 # プロジェクトの状況
 このページはプロジェクトの現在の成果です。目的はコミュニティの協力によってこれらのトピックに関する最新情報を収集して提示することです。最初はこのページの形式で、後に他のドキュメント形式で。プルリクエストや issues の提出 ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) またはプロジェクトリーダーへの電子メールを通じて意見を提供してください。このガイドをより良いものにしていきましょう。
 
-このガイドの作業は今後の [ISO/IEC 27090 (AI セキュリティ)](https://www.iso.org/standard/56581.html) および [27091 (AI プライバシー)](https://standardsdevelopment.bsigroup.com/projects/9022-07819#/section) 標準へのインプットとなります。これは ISO/IEC JTC 1/SC42 AHG4 グループのメンバーを通じて行われます。
+このガイドの作業は今後の [ISO/IEC 27090 (AI セキュリティ)](https://www.iso.org/standard/56581.html) および [27091 (AI プライバシー)](https://www.iso.org/standard/56582.html) 標準へのインプットとなります。これは ISO/IEC JTC1/SC27/WG4, WG5, および SC42 AHG4 グループのメンバーを通じて行われます。
 
 # 参考情報
 
