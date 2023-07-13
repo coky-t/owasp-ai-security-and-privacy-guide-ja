@@ -12,7 +12,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 
 人工知能は増加傾向にあり、AI のセキュリティとプライバシーに関する懸念も高まっています。このガイドは安全でプライバシーを保護する AI システムの設計、作成、テスト、調達に関する明確で実用的な洞察を提供する実用的な文書です。
 
-2023 年 2 月 15 日にダブリンで開催された OWASP Global AppSec イベントでこのガイドが発表されました。 [Rob van der Veer の講演](https://sched.co/1F9DT) の [この有用な記録](https://www.youtube.com/watch?v=ABmWHnFrMqI) や [スライド](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) も参照してください。また、このガイドの AppSec Podcast エピソード ([音声](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide)、[動画](https://www.youtube.com/watch?v=SLdn3AwlCAk&)) もご覧ください。
+2023 年 2 月 15 日にダブリンで開催された OWASP Global AppSec イベントでこのガイドが発表されました。 [Rob van der Veer の講演](https://sched.co/1F9DT) の [この有用な記録](https://www.youtube.com/watch?v=ABmWHnFrMqI) や [スライド](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) も参照してください。また、このガイドの AppSec Podcast エピソード ([音声](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide)、[動画](https://www.youtube.com/watch?v=SLdn3AwlCAk&)) もご覧ください。ショートストーリーをお望みであれば、 [13分 AI セキュリティクイックトーク](https://www.brighttalk.com/webcast/19697/586526) をご覧ください。
 
 <p align="left"><a href="https://www.youtube.com/watch?v=ABmWHnFrMqI" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/talkvideo.png?raw=true" border="1"/> </a></p>
 
