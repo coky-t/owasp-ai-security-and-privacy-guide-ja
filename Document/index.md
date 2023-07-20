@@ -26,6 +26,17 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 4. 関係者全員が「特定の」AI セキュリティリスクを認識していることを確認します。これらは主要な軽減策 (オレンジ) とともに下図で可視化しています。次のセクションで説明します。
 
 <p align="center"><a href="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true"/> </a></p>
+
+要約すると、AI セキュリティは以下のもので構成されます。
+* アプリケーションとインフラストラクチャに対する **通常のアプリケーションセキュリティ** 。これには一部のモデル攻撃から保護するために **モデルパラメータの隠蔽** を含める必要があります。
+* データエンジニアリングとモデルエンジニアリングのための **新しい開発パイプラインを** 標準の (データ漏洩、知的財産権漏洩、データ完全性攻撃、サプライチェーン攻撃に対する) セキュリティコントロールで **保護すること** 。さらに、 **データ品質保証** はエンジニアリングフェーズにおける重要なセキュリティ対策です。
+* 重要なもの: **データサイエンスモデル攻撃の防止** (これは敵対的 ML 攻撃を防ぐためのデータサイエンスの領域です)
+* AI モデルの **動作をコントロールすること**:
+  * AI モデルの権限を最小限に抑えること
+  * AI モデルの動作の監視 (ガードレール、人間による監視など)
+  * 不正使用を検出/対応するための監視とインシデント検出
+  * モデルの一括アクセスを制限すること
+
 <br />
 
 AI セキュリティに関するさらなる読み物はこのガイドの最後にあります。一つだけハイライトするとすれば、それは [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) になるでしょう。そして [大規模言語モデル Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) も素晴らしい。
