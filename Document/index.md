@@ -113,7 +113,19 @@ AI に関連するリスクには多くの種類があります。その多く�
 
 スコープ境界を超えたトピックのもう一つの例は「安全性」です。AI システムの役割を考えると、これは重要なテーマです。もちろんセキュリティに関連します。データの完全性について語る場合は特にそうです。しかし、安全性にはセキュリティの観点からは直接関係のない側面があります。AI モデルの正確性に関しては特にそうです。
 
-このガイドのセキュリティ部分は当初 [ブログ](https://www.softwareimprovementgroup.com/resources/how-artificial-intelligence-attacked-my-family-and-other-ai-security-lessons/) として公開されました。
+## AI セキュリティの参考情報
+
+* [ENISA's multilayer AI security framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)
+* [Google's Secure AI Framework](https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/)
+* [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
+* [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
+* [PLOT4ai threat library ](https://plot4.ai/library)
+* [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
+* [The Large Language Model top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+* [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
+* [Blog on how AI attacked my family](https://www.softwareimprovementgroup.com/resources/how-artificial-intelligence-attacked-my-family-and-other-ai-security-lessons/)
+* プライバシーの側面については、本文書で後述の「AI プライバシーの参考情報」を参照してください
+
 <br />
 <br />
 <br />
@@ -239,19 +251,14 @@ GDPR は AI の適用を明示的に制限するものではありませんが�
 * [改正](https://www.europarl.europa.eu/doceo/document/CJ40-PR-731563_EN.pdf)
 * [詳細](https://www.europarl.europa.eu/legislative-train/theme-a-europe-fit-for-the-digital-age/file-regulation-on-artificial-intelligence)
 
+## AI プライバシーの参考情報
+
+* [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
+* [PLOT4ai threat library ](https://plot4.ai/library)
+* [Algorithm audit non-profit organisation](https://algorithmaudit.eu/)
+* 純粋なセキュリティの側面については、本文書で前述の「AI セキュリティの参考情報」を参照してください
 
 # プロジェクトの状況
 このページはプロジェクトの現在の成果です。目的はコミュニティの協力によってこれらのトピックに関する最新情報を収集して提示することです。最初はこのページの形式で、後に他のドキュメント形式で。プルリクエストや issues の提出 ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) またはプロジェクトリーダーへの電子メールを通じて意見を提供してください。このガイドをより良いものにしていきましょう。
 
-このガイドの作業は今後の [ISO/IEC 27090 (AI セキュリティ)](https://www.iso.org/standard/56581.html) および [27091 (AI プライバシー)](https://www.iso.org/standard/56582.html) 標準へのインプットとなります。これは ISO/IEC JTC1/SC27/WG4, WG5, および SC42 AHG4 グループのメンバーを通じて行われます。
-
-# 参考情報
-
-* [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)
-* [Google's Secure AI Framework](https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/)
-* [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
-* [PLOT4ai threat library ](https://plot4.ai/library)
-* [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
-* [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
-* [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
-* [The Large Language Model top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+このガイドの作業は今後の [ISO/IEC 27090 (AI セキュリティ)](https://www.iso.org/standard/56581.html) および [27091 (AI プライバシー)](https://www.iso.org/standard/56582.html) 標準へのインプットとなります。これは ISO/IEC JTC1/SC27/WG4, WG5, CEN/CENELEC JTC 21/WG1-TG, および SC42 AHG4 グループのメンバーを通じて行われます。
