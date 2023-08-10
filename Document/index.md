@@ -21,7 +21,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 # AI セキュリティの取り組み方
 1. まず組織として AI に責任を持つことを確認します。AI イニシアチブのインベントリを作成して保管し、リスクを分析して管理する担当者を任命します。高リスクのシステムについては、コミュニケーションと文書化、監査可能性、バイアス対策、監視といった形で透明性を確保します。
 
-2. すでに一般的なセキュリティプログラムを整備する必要があることがわかります。一般的な標準の例として、管理システムには [ISO27001](ISO27001) やソフトウェア開発には [SAMM](https://owaspsamm.org/) があります。
+2. すでに一般的なセキュリティプログラムを整備する必要があることがわかります。一般的な標準の例として、管理システムには [ISO27001](https://www.iso.org/standard/27001) やソフトウェア開発には [SAMM](https://owaspsamm.org/) があります。
 
 3. AI 開発者、データサイエンティスト、AI 関連のアプリケーションやインフラストラクチャをセキュリティプログラム (リスク分析、トレーニング、要件、静的解析、コードレビュー、ペンテスティングなど) に組み込みます。
 
@@ -124,6 +124,11 @@ AI に関連するリスクには多くの種類があります。その多く�
 * [The Large Language Model top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 * [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
 * [Blog on how AI attacked my family](https://www.softwareimprovementgroup.com/resources/how-artificial-intelligence-attacked-my-family-and-other-ai-security-lessons/)
+* [ETSI GR SAI 002 V 1.1.1 Securing Artificial Intelligence (SAI) – Data Supply Chain Security](https://www.etsi.org/deliver/etsi_gr/SAI/001_099/002/01.01.01_60/gr_SAI002v010101p.pdf)
+* [ETSI GR SAI 006 V 1.1.1.  Securing ArtificiaI Intelligence (SAI) – The role of hardware in security of AI]( https://cdn.standards.iteh.ai/samples/60132/b0afcc3e17f54ee4b7e724e5670b26dc/ETSI-GR-SAI-006-V1-1-1-2022-03-.pdf)
+* [ISO/IEC 20547-4 Big data security](https://www.iso.org/standard/71278.html)
+* [IEEE 2813 Big Data Business Security Risk Assessment](https://standards.ieee.org/ieee/2813/7535/)
+
 * プライバシーの側面については、本文書で後述の「AI プライバシーの参考情報」を参照してください
 
 <br />
@@ -202,7 +207,7 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 3. 訂正権: ユーザーが事実と異なるデータを訂正できます。以下の正確性も参照してください。
 4. 異議申立権: ユーザーが特定の用途 (例: モデルトレーニング) においてデータを使用することに異議を唱えることができます。
 
-## 6. 正確性 (Accuracy)
+## 6. データ正確性 (Data accuracy)
 誤ったデータでのアルゴリズムによる決定の出力は個人に深刻な結果をもたらす可能性があるため、データが正しいことを確保する必要があります。たとえば、ユーザーの電話番号がシステムに誤って追加され、その番号が詐欺に関連付けられている場合、ユーザーは不当な事由でサービスやシステムから追放される可能性があります。このような正確性の問題は本人から適切な要求がなされた際にできるだけ早く修正するためのプロセスやツールを用意しておく必要があります。
 
 正確性の原則を満たすには、信頼できるソースからデータを取得し、その有効性と正確性の主張を検証し、データ品質と正確性を定期的に評価することを確保するためのツールやプロセスも用意する必要があります。
