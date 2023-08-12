@@ -31,19 +31,15 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 
 <p align="center"><a href="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true" target="_blank" rel="noopener noreferrer"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatscountermeasures.png?raw=true"/> </a></p>
 
-要約すると、AI セキュリティは以下のもので構成されます。
-* アプリケーションとインフラストラクチャに対する **通常のアプリケーションセキュリティ** 。これには一部のモデル攻撃から保護するために **モデルパラメータの隠蔽** を含める必要があります。
-* データエンジニアリングとモデルエンジニアリングのための **新しい開発パイプラインを** 標準の (データ漏洩、知的財産権漏洩、データ完全性攻撃、サプライチェーン攻撃に対する) セキュリティコントロールで **保護すること** 。さらに、 **データ品質保証** はエンジニアリングフェーズにおける重要なセキュリティ対策です。
-* 重要なもの: **データサイエンスモデル攻撃の防止** (これは敵対的 ML 攻撃を防ぐためのデータサイエンスの領域です)
-* AI モデルの **動作をコントロールすること**:
-  * AI モデルの権限を最小限に抑えること
-  * AI モデルの動作の監視 (ガードレール、人間による監視など)
-  * 不正使用を検出/対応するための監視とインシデント検出
-  * モデルの一括アクセスを制限すること
+要約すると、AI セキュリティに対処するには以下のことが必要です。
+* AI の特性を理解することで **通常のアプリケーションセキュリティを向上** します。たとえば、モデルパラメータを保護する必要があり、モデルへのアクセスを監視し調整する必要があります。
+* **通常のアプリケーションセキュリティを** 新しい開発アクティビティ (データエンジニアリングおよびモデルエンジニアリング) に **拡張** し、データ漏洩、データ/モデルポイズニング、知的財産漏洩、サプライチェーン攻撃から保護します。
+* 権限を最小限に抑え、監視 (たとえば、ガードレール、人間による監視など) を追加して、AI の **影響を制限** します。
+* モデル攻撃 (たとえば、データ品質保証、ランダム特徴無効化、大規模トレーニングセット、一般的な摂動攻撃の検出など) を理解して **データサイエンスにおける対策** を行います。
 
 <br />
 
-AI セキュリティに関するさらなる読み物はこのガイドの最後にあります。一つだけハイライトするとすれば、それは [ENISA's multilayer framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) になるでしょう。そして [大規模言語モデル Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) も素晴らしい。
+AI セキュリティに関するさらなる読み物はこのセキュリティセクションの最後にあります。一つだけハイライトするとすれば、それは [ENISA's ML threats and countermeasures](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms) になるでしょう。そして [大規模言語モデル Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) も素晴らしい。
 
 
 ## 特定の AI セキュリティリスク
@@ -115,17 +111,20 @@ AI に関連するリスクには多くの種類があります。その多く�
 
 ## AI セキュリティの参考情報
 
+* [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
 * [ENISA's multilayer AI security framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)
+* [ENISA ML threats and countermeasures](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms)
+* [Microsoft threat overview](https://docs.microsoft.com/en-us/security/failure-modes-in-machine-learning)
+* [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
 * [Google's Secure AI Framework](https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/)
 * [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
-* [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
+* [NIST threat taxonomy](https://csrc.nist.gov/publications/detail/white-paper/2023/03/08/adversarial-machine-learning-taxonomy-and-terminology/draft)
 * [PLOT4ai threat library ](https://plot4.ai/library)
 * [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
-* [The Large Language Model top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-* [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
+* [The OWASP Large Language Model top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 * [Blog on how AI attacked my family](https://www.softwareimprovementgroup.com/resources/how-artificial-intelligence-attacked-my-family-and-other-ai-security-lessons/)
+* [ETSI SAI Problem statement Section 6](https://www.etsi.org/committee/1640-sai#), [Microsoft](https://docs.microsoft.com/en-us/security/failure-modes-in-machine-learning)
 * [ETSI GR SAI 002 V 1.1.1 Securing Artificial Intelligence (SAI) – Data Supply Chain Security](https://www.etsi.org/deliver/etsi_gr/SAI/001_099/002/01.01.01_60/gr_SAI002v010101p.pdf)
-* [ETSI GR SAI 006 V 1.1.1.  Securing ArtificiaI Intelligence (SAI) – The role of hardware in security of AI]( https://cdn.standards.iteh.ai/samples/60132/b0afcc3e17f54ee4b7e724e5670b26dc/ETSI-GR-SAI-006-V1-1-1-2022-03-.pdf)
 * [ISO/IEC 20547-4 Big data security](https://www.iso.org/standard/71278.html)
 * [IEEE 2813 Big Data Business Security Risk Assessment](https://standards.ieee.org/ieee/2813/7535/)
 
