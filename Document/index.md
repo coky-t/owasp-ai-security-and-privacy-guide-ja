@@ -10,9 +10,9 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 ---
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecprivlogosml.jpeg?raw=true" width="600" height ="127"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/humansonly.png?raw=true" align="right"/>
 
-注: このページは OWASP AI セキュリティおよびプライバシーガイドです。これは二つの部分で構成しています。
-1. AI セキュリティの脅威とコントロールを含む [OWASP AI exchange](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/owaspaiexchange.md) の安定版
-2. AI プライバシーに関するセクション
+このページは OWASP AI セキュリティおよびプライバシーガイドです。これには二つの部分があります。
+1. [AI セキュリティの取り組み方](index.md#how-to-deal-with-ai-security): AI セキュリティの脅威とコントロールに関する [OWASP AI exchange](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/owaspaiexchange.md) の旧バージョン
+2. [AI プライバシーの取り組み方](index.md#how-to-deal-with-ai-privacy)
 
 人工知能 (AI) は増加傾向にあり、AI のセキュリティとプライバシーに関する懸念も高まっています。このガイドは安全でプライバシーを保護する AI システムの設計、作成、テスト、調達に関する明確で実用的な洞察を提供する実用的な文書です。
 
@@ -22,7 +22,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 
 プルリクエストや issues ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) を通じて、またはプロジェクトリーダーへの電子メールでご意見をお願いします。このガイドをどんどん良くしていきましょう。 Uber のリードプライバシーアーキテクトである Engin Bozdag 氏の多大な貢献に感謝します。
 
-# AI セキュリティの取り組み方
+# AI セキュリティの取り組み方 <a href="#how-to-deal-with-ai-security"></a>
 1. まず組織として AI に責任を持つことを確認します。AI イニシアチブのインベントリを作成して保管し、リスクを分析して管理する担当者を任命します。高リスクのシステムについては、コミュニケーションと文書化、監査可能性、バイアス対策、監視といった形で透明性を確保します。
 
 2. すでに一般的なセキュリティプログラムを整備する必要があることがわかります。一般的な標準の例として、管理システムには [ISO27001](https://www.iso.org/standard/27001) やソフトウェア開発には [SAMM](https://owaspsamm.org/) があります。
@@ -138,7 +138,7 @@ AI に関連するリスクには多くの種類があります。その多く�
 <br />
 <br />
 
-# AI プライバシーの取り組み方
+# AI プライバシーの取り組み方 <a href="#how-to-deal-with-ai-privacy"></a>
 プライバシーの原則と要件はさまざまな法律 (GDPR, LGPD, PIPEDA など) やプライバシー標準 (ISO 31700, ISO 29100, ISO 27701, FIPS, NIST Privacy Framework など) に由来します。本ガイドラインは個人情報保護法への準拠を保証するものではなく、一般的なシステムのプライバシーエンジニアリングに関するガイドでもありません。そのためには [ENISA](https://www.enisa.europa.eu/publications/data-protection-engineering), [NIST](https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf), [mplsplunk](https://github.com/mplspunk/awesome-privacy-engineering), [OWASP](https://owasp.org/www-project-top-10-privacy-risks/), [OpenCRE](https://www.opencre.org/cre/362-550) による作業を検討してください。エンジニアの一般的な原則は個人データを「放射能を持つ金 (radioactive gold)」とみなすことです。それは貴重ですが、最小限に抑え、慎重に保管し、慎重に取り扱い、使用を制限し、共有を制限し、所在を追跡し続けるようなものでもあります。
 
 このセクションではプライバシーの原則が AI システムにどのように適用されるかについて説明します。
