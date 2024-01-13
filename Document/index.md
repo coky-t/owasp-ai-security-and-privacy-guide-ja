@@ -23,7 +23,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 プルリクエストや issues ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) を通じて、またはプロジェクトリーダーへの電子メールでご意見をお願いします。このガイドをどんどん良くしていきましょう。 Uber のリードプライバシーアーキテクトである Engin Bozdag 氏の多大な貢献に感謝します。
 
 # AI セキュリティの取り組み方 <a name="how-to-address-ai-security"></a>
-このコンテンツは現在 [OWASP AI exchange](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/owaspaiexchange.md) にあります。
+このコンテンツは現在 [OWASP AI exchange](owaspaiexchange.md) にあります。
 <br />
 <br />
 <br />
