@@ -9,7 +9,7 @@ OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開�
 
 私たちの **使命** は、コンセンサスのための信頼できる情報源となり、連携を促進し、イニシアチブ感のコラボレーションを推進することです。標準を整えるのではなく、標準を推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[AI Exchange LinkedIn ページ](https://www.linkedin.com/company/owasp-ai-exchange/) を参照してください。
 
-ここの [owaspai.org](https://owaspai.org) で保守されており、現在、GitHub リポジトリと Word ドキュメントの両方をコントリビューションのために使用しています。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きた文書** です。たとえば、12 月中旬に向けた EU AI 法のセキュリティ標準化へのインプットとして機能します (あなたの協力が緊急に必要です！)。このドキュメントは [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部として OWASP によって保守されています。このガイドへの貢献がクレジットされたコンテンツを定期的に公開します。
+ここの [owaspai.org](https://owaspai.org) で保守されており、現在、GitHub リポジトリと Word ドキュメントの両方をコントリビューションのために使用しています。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きたドキュメント** です。たとえば、12 月中旬に向けた EU AI 法のセキュリティ標準化へのインプットとして機能します (あなたの協力が緊急に必要です！)。このドキュメントは [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部として OWASP によって保守されています。このガイドへの貢献がクレジットされたコンテンツを定期的に公開します。
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="cc:attributionName">AI セキュリティコミュニティ</span> による <a property="dct:title" rel="cc:attributionURL" href="https://owaspai.org">OWASP AI Exchange</a> は <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1"></a> でマークされています。つまり、帰属を示すことなく、どの部分も自由に使用できます。可能であれば、読者がより多くの情報を見つけれれるように、OWASP AI Exchange のクレジットやリンクを記載していただけると幸いです。</p>
 
@@ -29,8 +29,8 @@ OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開�
 - [参考情報](#references)
 - [目次の展開](#expanded-table-of-contents)
 
-The navigator diagram below shows all threats, controls and how they relate, including risks and the types of controls.  
-Click on the image to get a pdf with clickable links.
+以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
+画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 [![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
 ---
@@ -39,63 +39,63 @@ Click on the image to get a pdf with clickable links.
 
 ---
 
-**If you're an AI security expert, please contribute now as standard makers are using this document as input as we speak:**
+**あなたが AI セキュリティ専門家であれば、標準作成者がこのドキュメントをインプットとして使用して話を進めているため、今すぐ貢献してください:**
 
-- Provide comments or suggestions to the mot recent and typically outdated [Word version of this document](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/owaspaiexchangeWORD.docx) and send it to rob.vanderveer@owasp.org
-- Start a [GitHub dicussion](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions) or join **#project-ai** at the [OWASP Slack workspace](https://owasp.org/slack/invite)
-- Post remarks as [GitHub issues](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues)
-- Fork the respository and suggest changes to this document using Pull requests (only do this if you are familiar with it)
-- Discuss with the project leader how to become part of the writing group, so you can edit the document directly
-- Email the project leader your input: rob.vanderveer@owasp.org
+- このドキュメントの最新版および一般的に古くなった [Word バージョン](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/owaspaiexchangeWORD.docx) にコメントや提案を提供し、rob.vanderveer@owasp.org に送信してください。
+- [GitHub ディスカッション](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions) を開始するか、[OWASP Slack ワークスペース](https://owasp.org/slack/invite) で **#project-ai** に参加してください。
+- [GitHub issues](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) として所見を投稿してください。
+- リポジトリをフォークして、プルリクエストを使用してこのドキュメントへの変更を提案してください (これは慣れている場合にのみ実行してください)。
+- 執筆グループの一員となることをプロジェクトリーダーと話し合い、直接このドキュメントを編集してください。
+- プロジェクトリーダー rob.vanderveer@owasp.org に意見を電子メールで送信してください。
 
-**TODOs - the most urgent on top:**
+**TODO - 一番上が最も緊急です:**
 
-- Elaborate on POISONROBUSTMODEL
-- Change navigator: 1) "deal with conidentiality issues" -> "minimize data to help confidentiality", 2) remove ADDTRAINNOISE
-- Elaborate on "Choose a model type resilient against a transfer learning attack"
-- Under DATAQUALITCONTROL: Elaborate on that method to detect statistical deviation by training models on random selections of the training dataset and then feeding each training sample to those models and compare results.
-- Do gap analysis with CSA sheet of attacks and references: https://docs.google.com/spreadsheets/d/1uUqAQkDTBrwWp9AxiBHUOB9mRrEF27mxrsOC1ZUsoYY/edit#gid=0
-- Add 'Leak sensitive input data' to threat diagram and check further for any gaps with this document
--USe 'Securing AIML systems in the age of information warfare' by Susanna Cox as sanity check and add it to references.
-- Check if OBFUSCATETRAININGDATA has strategies (anonymization, tokenization) that are covered in ISO/IEC standards and add references to those standards
-- Under DATAQUALITCONTROL: elaborate on RONI and tRONI training sample selection
-- Elaborate on the various methods and the general approach of TRAINDATADISTORTION to prevent data poisoning
-- Create a way to link to Controls and to Threats with permanent links (we probably need to generate html from the md)
-- Create a layout that is less list-like and more of a read
-- Add attribute inference attacks and consider making that part of 'data reconstruction', together with model inversion, although it is a different approach
-- Work with the LLM top 10 team to make sure that the LLM top 10 entries link back to the AI Exchange
-- Under TRAINADVERSARIAL: Elaborate - See Annex C of ENISA Secure machine learning algorithms 2021.
-- Add references to reputable resources for the controls, especially where there are no or hardly any references. Either use a 'References' section or the 'Links to standards'.
-- Under DETECTADVERSARIALINPUT: elaborate on detector subnetworks in Annex C of ENISA 2021 and on the references in that section
-- Under EVASIONROBUSTMODEL: See Annex C in ENISA 2021 document to cover Stability terms, adversarial regulaiser, input gradient regularisation, defenisvie distillation and Random feature nullification.
-- Under INPUTDISTORTION: See ENISA Annex C to add data randomisation, input transformation and input denoising.
-- Under INPUTDISTORTION: add Gradient masking - Annex C ENISA 2021
-- Cover integrity checks in development pipeline (build, deploy, supply chain) - under supplychainmanage and/or secdevprogram
-- In general: add more info on how to practically implement the controls. Integration. Monitorin. Best practides. Real world exampels. potential challenges
-
-
-Todos requiring access to ISO/IEC documents:
-- Do gap analysis and elaborate on ISO/IEC 27563 on AI use case security & privacy (search for it in this document)
-- Do gap analysis and elaborate on ISO/IEC 23894 on Risk analysis (search for it in this document)
-- Do gap analysis and elaborate on ISO/IEC 27115 on Cybersecurity evaluation of complex systems (search for it in this document)
-- Do gap analysis and elaborate on ISO/IEC TR 24029 on Assessment of the robustness of neural networks (search for it in this document)
+- POISONROBUSTMODEL について詳しく説明します。
+- ナビゲータを変更します: 1) "deal with conidentiality issues" -> "minimize data to help confidentiality", 2) ADDTRAINNOISE を削除
+- 「転移学習攻撃に対して耐性のあるモデルタイプを選択する」について詳しく説明します。
+- DATAQUALITCONTROL について: トレーニングデータセットの無作為選択でモデルをトレーニングし、各トレーニングサンプルをそれらのモデルに与えて結果を比較することにより、統計的偏差を検出する方法について詳しく説明します。
+- CSA シートの攻撃とリファレンスをギャップ分析します: https://docs.google.com/spreadsheets/d/1uUqAQkDTBrwWp9AxiBHUOB9mRrEF27mxrsOC1ZUsoYY/edit#gid=0
+- 「機密入力データの漏洩」を脅威図に追加し、このドキュメントとギャップがないかさらにチェックします。
+- Susanna Cox 著「Securing AIML systems in the age of information warfare」を健全性チェックとして使用し、参考情報に追加します。
+- OBFUSCATETRAININGDATA に ISO/IEC 標準でカバーされる戦略 (匿名化、トークン化) があるかどうかを確認し、それらの標準への参照を追加します。
+- DATAQUALITCONTROL について: RONI および tRONI トレーニングサンプルの選択について詳しく説明します。
+- データポイズニングを防ぐための TRAINDATADISTORTION のさまざまな方法と一般的なアプローチについて詳しく説明します。
+- コントロールと脅威へのリンクする方法を永続的リンクで作成します (おそらく md から html を生成する必要があります)。
+- リスト的ではなく、より読みやすいレイアウトを作成します。
+- 属性推論攻撃を追加し、別のアプローチですが、モデル反転とともに「データ再構築」の一部とすることを検討します。
+- LLM Top 10 チームと協力して、LLM Top 10 エントリが AI Exchange にリンクされているようにします。
+- TRAINADVERSARIAL について: 詳しく説明します - ENISA セキュア機械学習アルゴリズム 2021 の Annex C を参照します。
+- 特に、参考情報がないまたはほとんどない、コントロールに関する信頼できるリソースへの参考情報を追加します。「参考情報」セクションまたは「標準へのリンク」のどちらかを使用します。
+- DETECTADVERSARIALINPUT について: ENISA 2021 の Annex C の検出器サブネットワークとそのセクションの参考情報について詳しく説明します。
+- EVASIONROBUSTMODEL について: ENISA 2021 ドキュメントの Annex C を参照して、安定性条件、敵対性正則化器、入力勾配正則化、防御的蒸留、ランダム特徴無効化をカバーします。
+- INPUTDISTORTION について: ENISA Annex C を参照して、データ無作為化、入力変換、入力ノイズ除去を追加します。
+- INPUTDISTORTION について: グラデーションマスキングを追加します - Annex C ENISA 2021
+- 開発パイプライン (ビルド、デプロイ、サプライチェーン) での完全性チェックをカバーします - supplychainmanage や secdevprogram の下で。
+- 全般: コントロールを実際に実装する方法について、より多くの情報 (統合、監視、ベストプラクティス、実例、潜在的な課題) を追加します。
 
 
-Anything is welcome: more controls, improved descriptions, examples, references, etc. We will make sure you get credit for your input.
+ISO/IEC ドキュメントへのアクセスを必要とする Todo:
+- ギャップ分析を行い、AI ユースケースとプライバシーに関する ISO/IEC 27563 について詳しく説明します (このドキュメントで検索してください)
+- ギャップ分析を行い、リスク分析に関する ISO/IEC 23894 について詳しく説明します (このドキュメントで検索してください)
+- ギャップ分析を行い、複雑なシステムのサイバーセキュリティ評価に関する ISO/IEC 27115 について詳しく説明します (このドキュメントで検索してください)
+- ギャップ分析を行い、ニューラルネットワークの堅牢性の評価に関する ISO/IEC TR 24029 について詳しく説明します (このドキュメントで検索してください)
 
-**Contributions:**
 
-- Yiannis Kanellopoulos and team (Code4thought, Greece) - evasion robustness
-- Annegrit Seyerlein-Klug (TH Brandenburg, Germany) - mapping with misc. standards
-- Wei Wei (IBM, Germany) - mapping with ISO/IEC 42001
-- Roger Sanz (Universidad Isabel, Spain)
-- Angie Qarry (QDeepTech, Austria) - several elaborations and references on datascience defence mechanisms
-- Behnaz Karimi (Accenture, Germany)- misc. contributions including model obfuscation and explanation
-- Sean Oesch (Oak Ridge National Laboratory, US) - BLUF, Adversarial Training, OOD detection, NISTIR 8269, Guide Usability/Structure
-- Anthony Glynn (CapitalOne, US) - many textual improvements & link to LLM top 10
-- Zoe Braiterman (Mutual Knowledge Systems, US) - Many markdown improvements
-- Niklas Bunzel (Fraunhofer institute, Germany) - datascience discussion and references around evasion attacks
-- Marko Lihter (Endava Adriatic, Croatia) - various textual improvements
+コントロールの追加、説明の改善、事例、参考情報など、なんでも歓迎します。意見はクレジットされるでしょう。
+
+**貢献:**
+
+- Yiannis Kanellopoulos とチーム (Code4thought, ギリシャ) - 回避の堅牢性
+- Annegrit Seyerlein-Klug (ブランデンブルク応用科学大学, ドイツ) - 雑多な標準とのマッピング
+- Wei Wei (IBM, ドイツ) - ISO/IEC 42001 とのマッピング
+- Roger Sanz (イザベル大学, スペイン)
+- Angie Qarry (QDeepTech, オーストリア) - データサイエンス防御メカニズムに関するいくつかの詳細と参考情報
+- Behnaz Karimi (アクセンチュア, ドイツ)- モデルの難読化と説明を含む雑多な貢献
+- Sean Oesch (オークリッジ国立研究所, アメリカ) - BLUF、敵対的トレーニング、OOD 検出、NISTIR 8269、ガイドの使いやすさ/構造
+- Anthony Glynn (CapitalOne, アメリカ) - 多くのテキストの改善と LLM Top 10 へのリンク
+- Zoe Braiterman (Mutual Knowledge Systems, アメリカ) - 多くのマークダウンの改善
+- Niklas Bunzel (フラウンホーファー研究所, ドイツ) - 回避攻撃に関するデータサイエンスの考察と参考情報
+- Marko Lihter (Endava Adriatic, クロアチア) - さまざまなテキストの改善
 
 # はじめに <a name="introduction"></a>
 
@@ -111,7 +111,7 @@ While AI offers powerful perfomance boosts, it also increases the attack surface
 
 ![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaimodelv1.png)
 
-## 本文書について
+## このドキュメントについて
 
 This document discusses threats to AI cyber security and controls for those threats (i.e. countermeasures, requirements, mitigations).
 Security here means preventing unauthorized access, use, disclosure, disruption, modification, or destruction. Modification includes manipulating the behaviour of an AI model in unwanted ways.
