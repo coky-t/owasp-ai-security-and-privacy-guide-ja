@@ -1,7 +1,7 @@
 <a href="https://owaspai.org"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml.jpg?raw=true"></a>
 
 [今すぐ貢献しよう！](#how-to-contribute)&nbsp;&nbsp;&nbsp;[Exchange に登録する](https://forms.gle/XwEEK52y4iZQChuJ6)&nbsp;&nbsp;&nbsp;[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
-[HTML バージョン](https://owasp.org/www-project-ai-security-and-privacy-guide/owaspaiexchange.html)&nbsp;&nbsp;&nbsp;[Github バージョン](https://owaspai.org)&nbsp;&nbsp;&nbsp;[旧 Word バージョン](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/owaspaiexchangeWORD.docx)
+[HTML バージョン](https://owasp.org/www-project-ai-security-and-privacy-guide/owaspaiexchange.html)&nbsp;&nbsp;&nbsp;[Github バージョン](https://owaspai.org)
 
 **趣旨**
 
@@ -41,12 +41,11 @@ OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開�
 
 **あなたが AI セキュリティ専門家であれば、標準作成者がこのドキュメントをインプットとして使用して話を進めているため、今すぐ貢献してください:**
 
-- このドキュメントの最新版および一般的に古くなった [Word バージョン](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/owaspaiexchangeWORD.docx) にコメントや提案を提供し、rob.vanderveer@owasp.org に送信してください。
+- コメントや提案を提供し、rob.vanderveer@owasp.org に送信してください。
 - [GitHub ディスカッション](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions) を開始するか、[OWASP Slack ワークスペース](https://owasp.org/slack/invite) で **#project-ai** に参加してください。
 - [GitHub issues](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) として所見を投稿してください。
 - リポジトリをフォークして、プルリクエストを使用してこのドキュメントへの変更を提案してください (これは慣れている場合にのみ実行してください)。
 - 執筆グループの一員となることをプロジェクトリーダーと話し合い、直接このドキュメントを編集してください。
-- プロジェクトリーダー rob.vanderveer@owasp.org に意見を電子メールで送信してください。
 
 **TODO - 一番上が最も緊急です:**
 
