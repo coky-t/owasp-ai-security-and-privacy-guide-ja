@@ -100,13 +100,13 @@ ISO/IEC ドキュメントへのアクセスを必要とする Todo:
 
 ## 概略: AI セキュリティに対処する方法
 
-While AI offers powerful perfomance boosts, it also increases the attack surface available to bad actors. It is therefore imperative to approach AI applications with a clear understanding of potential threats and which of those threats to prioritize for each use case. Standards and governance help guide this process for individual entities leveraging AI capabilities.
+AI は強力なパフォーマンス向上をもたらしますが、悪意のある者が利用できる攻撃対象領域も拡大します。そのため、潜在的な脅威と、ユースケースごとにどの脅威を優先するかを明確に理解して、AI アプリケーションに取り組むことが不可欠です。標準とガバナンスは AI 機能を活用する個々の事業体にとってこのプロセスの指針となります。
 
-- Implement **AI governance**
-- **Extend security and development practices** to include data science activities especially to protect and streamline the engineering environment.
-- **Improve regular application and system security** through understanding of AI particularities e.g. model parameters need protection and access to the model needs to be monitored and rate-limited.
-- **Limit the impact** of AI by minimizing privileges and adding oversight, e.g. guardrails, human oversight.
-- **Countermeasures in data science** through understanding of model attacks, e.g. data quality assurance, larger training sets, detecting common perturbation attacks, input filtering.
+- **AI ガバナンス** を導入します。
+- **セキュリティと開発プラクティスを拡張** して、データサイエンス活動を含め、特にエンジニアリング環境を保護し合理化します。
+- AI の特殊性を理解することで、**通常のアプリケーションとシステムのセキュリティを向上** します。たとえば、モデルパラメータは保護が必要であり、モデルへのアクセスは監視してレート制限する必要があります。
+- 権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
+- モデル攻撃を理解することによって **データサイエンスにおける対策** を行います。たとえば、データ品質保証、大規模なトレーニングセット、一般的な摂動攻撃の検出、入力フィルタリングなど。
 
 ![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaimodelv1.png)
 
