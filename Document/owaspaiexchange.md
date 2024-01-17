@@ -3,6 +3,8 @@
 [今すぐ貢献しよう！](#how-to-contribute)&nbsp;&nbsp;&nbsp;[Exchange に登録する](https://forms.gle/XwEEK52y4iZQChuJ6)&nbsp;&nbsp;&nbsp;[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 [HTML バージョン](https://owasp.org/www-project-ai-security-and-privacy-guide/owaspaiexchange.html)&nbsp;&nbsp;&nbsp;[Github バージョン](https://owaspai.org)
 
+「すべての専門家による、すべての専門家のための、すべての AI に向けたすべてのセキュリティリスク」
+
 **趣旨**
 
 OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開発を促進するためのオープンソースコラボレーションドキュメントです。AI の脅威、脆弱性、コントロールの包括的な概要を提供し、さまざまな標準化イニシアチブ間の連携を促進します。これには EU AI 法、ISO/IEC 27090 (AI セキュリティ)、[OWASP ML top 10](https://mltop10.info/)、[OWASP LLM top 10](https://llmtop10.com/)、セキュリティチャットボット [OpenCRE-Chat](https://opencre.org/chatbot) を通じて AI Exchange コンテンツを提供するために使用する [OpenCRE](https://opencre.org) を含みます。
@@ -33,6 +35,10 @@ OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開�
 画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 [![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
+以下の AI セキュリティマトリクスは、すべての脅威とリスクを、攻撃対象領域とライフサイクルの順に示しています。
+[![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)
+
+
 ---
 
 # 貢献方法 <a name="how-to-contribute"></a>
@@ -58,6 +64,10 @@ OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開�
 - Susanna Cox 著「Securing AIML systems in the age of information warfare」を健全性チェックとして使用し、参考情報に追加します。
 - OBFUSCATETRAININGDATA に ISO/IEC 標準でカバーされる戦略 (匿名化、トークン化) があるかどうかを確認し、それらの標準への参照を追加します。
 - DATAQUALITCONTROL について: RONI および tRONI トレーニングサンプルの選択について詳しく説明します。
+- 生成 AI のプライバシーに関する以下のリソース (一部はデータサイエンス) を処理します。
+  - https://www.protecto.ai/blog/customer-case-study-preserving-privacy-in-a-generative-ai-application-rag-for-contract-review
+  - https://blog.premai.io/privacy-concerns-in-rag-apps/
+  - https://www.netapp.com/blog/private-rag-unlocking-generative-ai-for-enterprise/
 - データポイズニングを防ぐための TRAINDATADISTORTION のさまざまな方法と一般的なアプローチについて詳しく説明します。
 - コントロールと脅威へのリンクする方法を永続的リンクで作成します (おそらく md から html を生成する必要があります)。
 - リスト的ではなく、より読みやすいレイアウトを作成します。
@@ -771,7 +781,7 @@ security concerns have arisen about their effectiveness.
 
   Links to standards:
 
-  - ISO/IEC TR 24029 (Assessment of the robustness of neural networks)
+  - ISO/IEC TR 24029 (Assessment of the robustness of neural networks) Gap: this standard discusses general robustness and does not discuss robustness against adversarial inputs explicitly.
 
   References:
 
@@ -1392,6 +1402,7 @@ Overviews of model attacks:
 - [OWASP ML top 10](https://mltop10.info/)
 - [OWASP LLM top 10](https://llmtop10.com/)
 - [BIML](https://berryvilleiml.com/taxonomy/)
+- [AVID AI Vulnerability database](https://avidml.org/)
 
 Misc.:
 
