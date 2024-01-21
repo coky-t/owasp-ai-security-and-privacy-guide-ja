@@ -137,23 +137,23 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 
 ## 脅威とコントロールをどのように整理するか
 
-The threats are organized by attack surface (how and where does the attack take place?), and not by impact. This means that for example model theft is mentioned in three different parts of the overview:
+脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル窃取は概要の三つの異なる部分で言及されています。
 
-1. model theft by stealing model parameters from a live system, e.g. breaking into the network and reading the parameters from a file,
-2. model theft by stealing the modeling process or parameters from the engineering environment, e.g. stored in the version management system of a data scientist, and
-3. model theft by reverse engineering from using the AI system. These are three very different attacks, with similar impacts. This way of organizing is helpful because the goal is to link the threats to controls, and these controls vary per attack surface.
+1. 稼働中のシステムからモデルパラメータを盗むことによるモデル窃取。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
+2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル窃取。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
+3. AI システムを使用したリバースエンジニアリングによるモデル窃取。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
 
-**機械学習以外の AI についてはどうですか？**  
-A helpful way to look at AI is to see it as consisting of machine learning (the current dominant type of AI) models and _heuristic models_. A model can be a machine learning model which has learned how to compute based on data, or it can be a heuristic model engineered based on human knowledge, e.g. a rule-based system. Heuristic models still need data for testing, and sometimes to perform analysis for further building and validating the human knowledge.  
-This document focuses on machine learning. Nevertheless, here is a quick summary of the machine learning threats from this document that also apply to heuristic systems:
+**機械学習以外の AI についてはどうですか？**
+AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の AI タイプ) モデルと _ヒューリスティックモデル_ から構成されていると考えることです。モデルはデータに基づいて計算方法を学習した機械学習モデルであることも、ルールベースのシステムなどの人間の知識に基づいて設計されたヒューリスティックモデルであることもあります。ヒューリスティックモデルは依然としてテストのためにデータを必要とし、さらに人間の知識を構築して検証するために分析を行うこともあります。
+このドキュメントは機械学習に焦点を当てています。とはいえ、ここではヒューリスティックシステムにも適用される、このドキュメントの機械学習の脅威を簡単に要約します。
 
-- Model evasion is also possible for heuristic models - trying to find a loophole in the rules
-- Model theft through use - it is possible to train a machine learning model based on input/output combinations from a heuristic model
-- Overreliance in use - heuristic systems can also be relied on too much. The applied knowledge can be false
-- Data poisoning and model poisoning is possible by manipulating data that is used to improve knowledge and by manipulating the rules development-time or runtime
-- Leaks of data used for analysis or testing can still be an issue
-- Knowledgebase, source code and configuration can be regarded as sensitive data when it is intellectual property, so it needs protection
-- Leak sensitive input data, for example when a heuristic system needs to diagnose a patient
+- モデル回避はヒューリスティックモデルでも可能です - ルールの抜け穴を見つけようと試みます
+- 使用によるモデル窃取 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます
+- 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります
+- データポイズニングとモデルポイズニングは知識を向上させるために使用されるデータを操作したり、開発時や実行時にルールを操作する可能性があります
+- 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります
+- 知識、ソースコード、設定が知的財産である場合、機密データとみなされる可能性があり、保護が必要です
+- たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します
 
 # 関連する脅威とコントロールを選択する方法 - リスク分析 <a name="how-to-select-relevant-threats-and-controls---risk-analysis"></a>
 There are many threats and controls described in this document. Your situation determines which threats are relevant to you, and what controls are your responsibility. This selection process can be performed through risk analysis of the use case and architecture at hand:
