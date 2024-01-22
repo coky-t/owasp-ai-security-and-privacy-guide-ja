@@ -137,18 +137,18 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 
 ## 脅威とコントロールをどのように整理するか
 
-脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル窃取は概要の三つの異なる部分で言及されています。
+脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル盗用は概要の三つの異なる部分で言及されています。
 
-1. 稼働中のシステムからモデルパラメータを盗むことによるモデル窃取。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
-2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル窃取。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
-3. AI システムを使用したリバースエンジニアリングによるモデル窃取。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
+1. 稼働中のシステムからモデルパラメータを盗むことによるモデル盗用。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
+2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル盗用。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
+3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
 
 **機械学習以外の AI についてはどうですか？**
 AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の AI タイプ) モデルと _ヒューリスティックモデル_ から構成されていると考えることです。モデルはデータに基づいて計算方法を学習した機械学習モデルであることも、ルールベースのシステムなどの人間の知識に基づいて設計されたヒューリスティックモデルであることもあります。ヒューリスティックモデルは依然としてテストのためにデータを必要とし、さらに人間の知識を構築して検証するために分析を行うこともあります。
 このドキュメントは機械学習に焦点を当てています。とはいえ、ここではヒューリスティックシステムにも適用される、このドキュメントの機械学習の脅威を簡単に要約します。
 
 - モデル回避はヒューリスティックモデルでも可能です - ルールの抜け穴を見つけようと試みます
-- 使用によるモデル窃取 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます
+- 使用によるモデル盗用 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます
 - 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります
 - データポイズニングとモデルポイズニングは知識を向上させるために使用されるデータを操作したり、開発時や実行時にルールを操作する可能性があります
 - 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります
@@ -156,29 +156,29 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 - たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します
 
 # 関連する脅威とコントロールを選択する方法 - リスク分析 <a name="how-to-select-relevant-threats-and-controls---risk-analysis"></a>
-There are many threats and controls described in this document. Your situation determines which threats are relevant to you, and what controls are your responsibility. This selection process can be performed through risk analysis of the use case and architecture at hand:
+このドキュメントには多くの脅威とコントロールについて説明します。どの脅威があなたに関係し、どのコントロールがあなたの責任となるかは、あなたの状況によって決まります。この選択プロセスは目前のユースケースとアーキテクチャのリスク分析を通じて実行できます。
 
-1. **脅威の特定**: First select the threats that apply to your case by going through the list of threats and use the _Impact_ description to see if it is applicable. For example the impact of identifying individuals in your training data would not apply to your case if your training data has no individuals. The [Navigator](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) shows impact in purple.
+1. **脅威の特定**: まず脅威のリストからあなたのケースに該当する脅威を選択し、_影響 (Impact)_ の説明を使用して適用可能かどうかを確認します。たとえば訓練データ内の個人を特定することによる影響は、訓練データが個人を所持していない場合、あなたのケースには適用されません。[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) では影響を紫色で示しています。
 
-    If you use RAG (Retrieval Augmented Generation), then treat the retrieval repository (including embeddings) just like training data. Meaning:
-      - Include the threats regarding data poisoning 
-      - Include the threats regarding train/test data leak if the data is sensitive 
+    RAG (Retrieval Augmented Generation, 検索拡張生成) を使用する場合、検索リポジトリ (埋め込みを含む) を訓練データと同じように扱います。つまり、
+      - データポイズニングに関する脅威を含めます
+      - データが機密性の高い場合、訓練データやテストデータの漏洩に関する脅威を含めます
 
-    Else, if you don’t train or finetune the model:
-      - ignore the development-time threats, with the exception of supply chain management: make sure the model you obtain is not manipulated, and genuine.
-      - ignore the confidentiality of train data threats
-      - ignore the confidentiality of model IP threats
-      - ignore the data poisoning threat
-      - ignore development-time controls (e.g. filtering sensitive training data)
+    そうではなく、モデルを訓練やファインチューニングしない場合、
+      - サプライチェーン管理を除き、開発時の脅威を無視します。入手したモデルが操作されたものではなく本物であることを確認します。
+      - 訓練データの機密性の脅威を無視します
+      - モデル知的財産の機密性の脅威を無視します
+      - データポイズニングの脅威を無視します
+      - 開発時コントロール (機密性の高い訓練データをフィルタリングするなど) を無視します
 
-    These are the responsbilities of the model maker, but be aware you may be effected by the unwanted results. The maker may take the blame for any issue, which would take care of confidentiality issues, but you would suffer effectively from any manipulated model behaviour.
+    これらはモデル製作者の責任ですが、望ましくない結果の影響を受ける可能性があることに注意してください。製作者は機密保持の問題に対処して、問題の責任を負うかもしれませんが、操作されたモデルの動作によって事実上被害を受けることになります。
 
-    If your train data is not sensitive: ignore the confidentiality of train data threats
+    訓練データが機密ではない場合、訓練データの機密性の脅威を無視します。
 
-    If your model is a GenAI model, ignore the following threats: evasion, model inversion. Also ignore prompt injection and insecure output handling if your GenAI model is NOT an LLM
-    If your model is not a GenAI model, ignore (direct) prompt injection, and insecure output handling
+    モデルが生成 AI モデルである場合、回避、モデル反転の脅威を無視します。また、生成 AI モデルが LLM ではない場合、プロンプトインジェクションと安全でない出力処理も無視します。
+    モデルが生成 AI モデルではない場合、(直接) プロンプトインジェクションと安全でない出力処理を無視します。
 
-    If your input data is not sensitive, ignore ‘leaking input data’. If you use RAG, consider data you retrieve also as input data.
+    入力データが機密ではない場合、「入力データの漏洩」を無視します。RAG を使用する場合、取得するデータも入力データとみなします。
 
 2. **責任の采配**: For each selected threat, determine who is responsible to address it. By default, the organization that builds and deploys the AI system is responsible, but building and deploying may be done by different organizations, and some parts of the building and deployment may be deferred to other organizations, e.g. hosting the model, or providing a cloud environment for the application to run. Some aspects are shared responsibilities.
 
