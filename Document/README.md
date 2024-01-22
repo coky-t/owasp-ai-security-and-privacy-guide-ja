@@ -22,14 +22,12 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 
 ### コンテンツ開発に参加する
 
-- 💡あなたの [コンセプト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/ideas) を提案してください。
+- 📥 提案を [プロジェクトリーダーproject leader](https://owaspai.org/connect/#owasp-ai-project-leader) に送信してください。
+- 👋 [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai` に参加してください。
+- 🗣️ [プロジェクトリーダー](https://owaspai.org/contact/#owasp-ai-project-leader) と執筆グループの一員になる方法について話し合ってください。
+- 💡あなたの [コンセプト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/ideas) を提案するか、[問題](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) を投稿してください。
 - 📄 リポジトリをフォークして、具体的な修正 (文法/誤植など) やコアチームによってすでに承認されたコンテンツの [プルリクエスト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/pulls) を提出してください。
 - 🙌 あなたの [貢献](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/show-and-tell) を紹介してください。
-- 🗣️ [プロジェクトリーダー](https://owaspai.org/contact/#owasp-ai-project-leader) と執筆グループの一員になる方法について話し合ってください。
-
-### プロジェクトを強化する
-
 - 🐞 [問題](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) を特定するか、[プルリクエスト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/pulls) で修正してください。
 - 💬 [GitHub ディスカッション](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/general) で洞察を提供してください。
 - 🙏 [質問](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/q-a) を提出してください。
-- 👋 [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai` に参加してください。
