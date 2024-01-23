@@ -180,17 +180,17 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 
     入力データが機密ではない場合、「入力データの漏洩」を無視します。RAG を使用する場合、取得するデータも入力データとみなします。
 
-2. **責任の采配**: For each selected threat, determine who is responsible to address it. By default, the organization that builds and deploys the AI system is responsible, but building and deploying may be done by different organizations, and some parts of the building and deployment may be deferred to other organizations, e.g. hosting the model, or providing a cloud environment for the application to run. Some aspects are shared responsibilities.
+2. **責任の采配**: 選択した各脅威に対して、対処する責任者を決定します。デフォルトでは、AI システムの構築と配備を行う組織が責任を負いますが、構築と配備は別の組織が行うかもしれませんし、たとえば、モデルをホストしたり、アプリケーションを実行するためのクラウド環境を提供するなど、構築と配備の一部を別の組織に委ねるかもしれません。いくつかの側面では責任を共有します。
 
-    If components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider, using for example a responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure.
+    AI システムのコンポーネントがホストされている場合、関連する脅威に対するすべてのコントロールに関する責任をホスティングプロバイダと共有します。これは責任マトリクスなどを使用して、プロバイダと調整する必要があります。コンポーネントにはモデル、モデル拡張、アプリケーション、インフラストラクチャがあります。
 
-3. **外部の責任を検証する:** For the threats that are the responsibility of other organisations: attain assurance whether these organisations take care of it. This would involve the controls that are linked to these threats.
-4. **コントロールの選択**: Then, for the threats that are relevant to you and for which you are responsible: consider the various controls listed with that threat (or the parent section of that threat) and the general controls (they always apply). When considering a control, look at its purpose and determine if you think it is important enough to implement it and to what extent. This depends on the cost of implementation compared to how the purpose mitigates the threat, and the level of risk of the threat.
-5. **リファレンスの使用**: When implementing a control, consider the references and the links to standards. You may have implemented some of these standards, or the content of the standards may help you to implement the control.
-6. **リスクの受け入れ**: In the end you need to be able to accept the risks that remain regarding each threat, given the controls that you implemented.
-7. **これらのコントロールのさらなる管理** (see SECPROGRAM), which includes continuous monitoring, documentation, reporting, and incident response.
+3. **外部の責任を検証する:** 他の組織の責任である脅威について、これらの組織が対処しているかどうかを確認します。これにはこれらの脅威に関連するコントロールを含みます。
+4. **コントロールの選択**: 次に、自分に関連して自分が責任を負う脅威について、その脅威 (またはその脅威の親セクション) に記載されているさまざまなコントロールと一般的なコントロール (こちらは常に適用されます) を検討します。コントロールを検討する際、その目的を考慮し、それを実装するのに十分重要であると考えるか、およびどの程度まで実施するかを判断します。これはその目的が脅威を緩和する方法と比較した実装コスト、および脅威のリスクレベルによって異なります。
+5. **リファレンスの使用**: コントロールを実装する際、標準へのリファレンスとリンクを考慮します。あなたはこれらの標準の一部を実装しているかもしれませんし、標準の内容がコントロールの実装に役立つかもしれません。
+6. **リスクの受け入れ**: 最終的には、実装したコントロールを前提として、それぞれの脅威に関して残存するリスクを受容できる必要があります。
+7. **これらのコントロールのさらなる管理** (SECPROGRAM 参照) には、継続的な監視、文書化、レポーティング、インシデント対応などがあります。
 
-For more information on risk analysis, see the SECPROGRAM control.
+リスク分析の詳細については、SECPROGRAM コントロールを参照してください。
 
 # プライバシーはどうですか？ <a name="how-about-privacy"></a>
 
