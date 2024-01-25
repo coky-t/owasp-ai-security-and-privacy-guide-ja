@@ -1,5 +1,25 @@
 <a href="https://owaspai.org"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml.jpg?raw=true"></a>
 
+OWASP AI Exchange のコンテンツはより高度なナビゲーションを備えた新しいウェブサイト [owaspai.org](https://owaspai.org) に移動しました。
+そのリンクがまだ github のこのページに到達するのであれば、あなたのブラウザがロケーションをキャッシュしています。その場合、[このリンク](https://owasp-ai-exchange.web.app/) を使用して新しいウェブサイトとコンテンツにたどりつけます。もしかすると、古いバージョンのナビゲータでここについたのかもしれません。そうなら、新しいウェブサイトで新しいものを入手できます。
+
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+
+
+旧コンテンツ:
+
+
 [今すぐ貢献しよう！](#how-to-contribute)&nbsp;&nbsp;&nbsp;[Exchange に登録する](https://forms.gle/XwEEK52y4iZQChuJ6)&nbsp;&nbsp;&nbsp;[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 [HTML バージョン](https://owasp.org/www-project-ai-security-and-privacy-guide/owaspaiexchange.html)&nbsp;&nbsp;&nbsp;[Github バージョン](https://owaspai.org)
 
