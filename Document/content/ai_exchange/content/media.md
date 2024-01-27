@@ -3,7 +3,7 @@ title: Media
 excludeSearch: true
 ---
 
-## Talks
+## トーク
 
 | Date | Event | Title | Video |
 | - | - | - | - |

@@ -15,7 +15,7 @@
     {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf" title="Navigator" icon="document-download">}}
 {{< /cards >}}
 
-## Our Content
+## コンテンツ
 
 {{< cards >}}
     {{< card link="/docs/ai_security_overview/" title="AI Security Overview">}}
@@ -25,7 +25,7 @@
     {{< card link="/docs/4_runtime_application_security_threats/" title="4. Runtime application security threats">}}
 {{< /cards >}}
 
-## Purpose
+## 趣旨
 
 The OWASP AI Exchange has open sourced the global discussion on the security of AI. It is an open collaborative project to advance the development of AI security standards and regulations, by providing a comprehensive overview of AI threats, vulnerabilities and controls. This content is feeding into standards for the EU AI Act, ISO/IEC 27090 (AI security), the [OWASP ML top 10](https://mltop10.info/), the [OWASP LLM top 10](https://llmtop10.com/), and [OpenCRE](https://opencre.org) - which we want to use to provide the AI Exchange content through the security chatbot [OpenCRE-Chat](https://opencre.org/chatbot).
 
@@ -33,7 +33,7 @@ Our **mission** is to be the authoritative source for consensus, foster alignmen
 
 The AI Exchange is displayed here at [owaspai.org](https://owaspai.org) and edited using a [GitHub repository](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (see the links _Edit ont Github_). It is is an **open-source set of living documents** for the worldwide exchange of AI security expertise, and part of the [OWASP AI security & privacy guide](https://owasp.org/www-project-ai-security-and-privacy-guide/) project. 
 
-## Other OWASP AI Initiatives
+## その他の OWASP AI イニシアチブ
 
 {{< cards >}}
     {{< card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI security & privacy guide" icon="lock-closed" >}}

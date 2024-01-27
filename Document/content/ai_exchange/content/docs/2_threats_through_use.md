@@ -1,8 +1,8 @@
 ---
-title: 2. Threats through use
+title: 2. 使用による脅威
 weight: 3
 ---
-## 2.0. Threats through use - introduction
+## 2.0. 使用による脅威 - イントロダクション
 
 Threats through use take place through normal interaction with an AI model: providing input and receiving output. Many of these threats require experimentation with the model, which is referred to in itself as an _Oracle attack_.
 
@@ -55,7 +55,7 @@ Links to standards:
 
 ---
 
-## 2.1. Evasion - Model behaviour manipulation through use
+## 2.1. 回避 - 使用によるモデル動作の操作
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
@@ -233,7 +233,7 @@ security and privacy (SP). IEEE, 2016.
   - Carlini, Nicholas, and David Wagner. "Defensive distillation is not
 robust to adversarial examples." arXiv preprint arXiv:1607.04311 (2016).
 
-### 2.1.1. Closed-box evasion
+### 2.1.1. クローズドボックス回避
 
 Input is manipulated in a way not based on observations of the model implementation (code, training set, parameters, architecture). The model is a 'closed box'. This often requires experimenting with how the model responds to input.
 
@@ -275,7 +275,7 @@ Workshops (DSN-W). IEEE, 2023.
 - See General controls
 - See controls for threats through use
 
-### 2.1.2. Open-box evasion
+### 2.1.2. オープンボックス回避
 
 When attackers have access to a models' implementation (code, training set, parameters, architecture), they can be enabled to craft input manipulations (often referred to as _adversarial examples_).
 
@@ -294,19 +294,19 @@ adversarial attacks." arXiv preprint arXiv:1706.06083 (2017).
 - [Traffic signs](https://openaccess.thecvf.com/content_cvpr_2018/papers/Eykholt_Robust_Physical-World_Attacks_CVPR_2018_paper.pdf)
 - [Panda images](https://arxiv.org/pdf/1412.6572.pdf)
 
-### 2.1.3. Evasion after data poisoning
+### 2.1.3. データポイズニング後の回避
 
 After training data has been poisoned (see corresponding section), specific input can lead to unwanted decisions, sometimes referred to as _backdoors_.
 
 ---
 
-## 2.2. Sensitive data disclosure through use
+## 2.2. 使用による機密データの開示
 
 Impact: Confidentiality breach of sensitive training data.
 
 The model discloses sensitive training data or is abused to do so.
 
-### 2.2.1. Sensitive data output from model
+### 2.2.1. モデルから出力される機密データ
 
 The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images. Once training data is in a GenAI model, original variations in access rights do not apply anymore. ([OWASP for LLM 06](https://llmtop10.com/llm06/))
 
@@ -329,7 +329,7 @@ Links to standards:
 
   - Not covered yet in ISO/IEC standards
 
-### 2.2.2. Model inversion and Membership inference
+### 2.2.2. モデル反転とメンバーシップ推論
 
 Model inversion (or _data reconstruction_) occurs when an attacker reconstructs a part of the training set by intensive experimentation during which the input is optimized to maximize indications of confidence level in the output of the model.
 
@@ -368,7 +368,7 @@ Links to standards:
 
 ---
 
-## 2.3. Model theft through use
+## 2.3. 使用によるモデル盗用
 
 Impact: Confidentiality breach of model intellectual property.
 
@@ -389,7 +389,7 @@ References
 
 ---
 
-## 2.4. Failure or malfunction of AI-specific elements through use
+## 2.4. 使用による AI 特有の要素の故障や誤動作
 
 Impact: The AI systems is unavailable, leading to issues with processes, organizations or individuals that depend on the AI system (e.g. business continuity issues, safety issues in process control, unavailability of services)
 
@@ -419,7 +419,7 @@ Links to standards:
   - 27002 has no control for this, except for Monitoring (covered in Controls for threats through use)
   - Not covered yet in ISO/IEC standards
 
-### 2.4.1. Denial of model service due to inconsistent data or a sponge example
+### 2.4.1. 一貫性のないデータやスポンジサンプルによるモデルサービス拒否
 
 A denial of service could be caused by input data with an inappropriate format, and causing malfunctioning of the model or its input logic.
 A _sponge attack_ provides input that is designed to increase the computation time of the model, potentially causing a denial of service.

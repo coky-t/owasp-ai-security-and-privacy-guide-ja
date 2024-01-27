@@ -15,7 +15,7 @@ excludeSearch: true
 
 The OWASP projects are an open source effort, and we enthusiastically welcome all forms of contributions and feedback.
 
-## Participate in Content Development
+## コンテンツ開発に参加する
 
 - 📥 Send your suggestion to the [project leader](/connect/#owasp-ai-project-leader).
 - 👋 Join `#project-ai` in our [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) workspace.
@@ -27,7 +27,7 @@ The OWASP projects are an open source effort, and we enthusiastically welcome al
 - 💬 Provide your insights in [GitHub Discussions](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/general).
 - 🙏 Pose your [questions](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/q-a).
 
-## What to Avoid
+## 避けるべきこと
 
 We value every contribution to our project, but it's important to be aware of certain guidelines:
 
@@ -117,7 +117,7 @@ If you're unsure about anything, feel free to [reach out to us](/connect) with y
 - Under INPUTDISTORTION: add Gradient masking - Annex C ENISA 2021
 - Cover integrity checks in development pipeline (build, deploy, supply chain) - under supplychainmanage and/or secdevprogram
 
-## TODOs requiring access to ISO/IEC documents
+## ISO/IEC ドキュメントへのアクセスを必要とする TODO
 
 - Do gap analysis and elaborate on ISO/IEC 27563 on AI use case security & privacy (search for it in this document)
 - Do gap analysis and elaborate on ISO/IEC 23894 on Risk analysis (search for it in this document)

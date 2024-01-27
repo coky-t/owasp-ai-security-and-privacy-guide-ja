@@ -1,8 +1,8 @@
 ---
-title: 1. General controls
+title: 1. 一般的なコントロール
 weight: 2
 ---
-## 1.1 General governance controls
+## 1.1 一般的なガバナンスコントロール
 
 #### #AIPROGRAM
 
@@ -130,7 +130,7 @@ Links to standards:
 
 ---
 
-## 1.2 General controls for sensitive data limitation
+## 1.2 機密データ制限の一般的なコントロール
 
 #### #DATAMINIMIZE
 (development-time and runtime). Data minimize: remove or anonymize data fields or records that are unnecessary for the application to prevent potential leaks. Data minimization can also involve statistically analyzing a training dataset to identify and eliminate superfluous records or fields that are not essential for achieving sufficient performance (Data Science).
@@ -235,7 +235,7 @@ Links to standards:
 
 ---
 
-## 1.3. Controls to limit the effects of unwanted behaviour
+## 1.3. 望ましくない動作の影響を制限するためのコントロール
 
 The cause of unwanted model behaviour can be the result of various factors, including model use, development time, and run-time. Preventative controls for these are discussed in their corresponding sections. However, the controls to mitigate the impact of such behavior are general for each of these threats and are covered in this section.
 

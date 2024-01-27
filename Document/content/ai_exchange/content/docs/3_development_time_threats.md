@@ -1,8 +1,8 @@
 ---
-title: 3. Development-time threats
+title: 3. 開発時の脅威
 weight: 4
 ---
-## 3.0 Development-time threats - Introduction
+## 3.0 開発時の脅威 - イントロダクション
 **Background:**
 
 Data science (data engineering and model engineering - for machine learning often referred to as _training phase_) uses a development environment typically outside of the regular application development scope, introducing a new attack surface. Data engineering (collecting, storing, and preparing data) is typically a large and important part of machine learning engineering. Together with model engineering, it requires appropriate security to protect against data leaks, data poisoning, leaks of intellectual property, and supply chain attacks (see further below). In addition, data quality assurance can help reduce risks of intended and unintended data issues.
@@ -104,7 +104,7 @@ Links to standards:
 
 ---
 
-## 3.1. Broad model poisoning: model behaviour manipulation by altering data, engineering, or model
+## 3.1. 広範なモデルポイズニング: データ、エンジニアリング、モデルを改変することによるモデル動作の操作
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
@@ -132,7 +132,7 @@ Links to standards:
   - Not covered yet in ISO/IEC standards
 
 
-### 3.1.1. Data poisoning by changing data development-time or supply chain
+### 3.1.1. データ開発時やサプライチェーンの変更によるデータポイズニング
 
 The attacker manipulates (training) data to affect the algorithm's behavior. Also called _causative attacks_.
 
@@ -188,7 +188,7 @@ Link to standards:
 Links to standards:
 - Not covered yet in ISO/IEC standards
 
-### 3.1.2. Development-time model poisoning
+### 3.1.2. 開発時のモデルポイズニング
 
 This threat refers to manipulating behaviour of the model by manipulating the engineering elements that lead to the model (including the parameters during development time), e.g. through supplying, changing components, code, or configuration. In some cases, the model is trained externally and supplied as-is, which also introduces a model poisoning threat.
 Data manipulation is referred to as data poisoning and is covered in separate threats.
@@ -198,7 +198,7 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 - See General controls
 - See controls for development-time protection
 
-### 3.1.3 Transfer learning attack
+### 3.1.3 転移学習攻撃
 
 An attacker supplies a manipulated pre-trained model which is then unknowingly further trained/fine tuned with still having the unwanted behaviour.
 
@@ -212,9 +212,9 @@ An attacker supplies a manipulated pre-trained model which is then unknowingly f
 
 ---
 
-## 3.2. Sensitive data leak development-time
+## 3.2. 開発時の機密データ漏洩
 
-### 3.2.1. Development-time data leak
+### 3.2.1. 開発時のデータ漏洩
 
 Impact: Confidentiality breach of sensitive train/test data.
 
@@ -228,7 +228,7 @@ GenAI models are often hosted in the cloud, sometimes managed by an external par
 - See General controls
 - See controls for development-time protection
 
-### 3.2.2. Model theft through development-time model parameter leak
+### 3.2.2. 開発時のモデルパラメータ漏洩によるモデル盗用
 
 Impact: Confidentiality breach of model intellectual property.
 
@@ -237,7 +237,7 @@ Impact: Confidentiality breach of model intellectual property.
 - See General controls
 - See controls for development-time protection
 
-### 3.2.3. Source code/configuration leak
+### 3.2.3. ソースコード/設定の漏洩
 
 Impact: Confidentiality breach of model intellectual property.
 

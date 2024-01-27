@@ -1,9 +1,9 @@
 ---
-title: 4. Runtime application security threats
+title: 4. 実行時のアプリケーションのセキュリティ脅威
 weight: 5
 ---
 
-## 4.1. Non AI-specific application security threats
+## 4.1. AI 特有ではないアプリケーションセキュリティの脅威
 
 Impact: General application security threats can impact confidentiality, integrity and availability of all assets.
 
@@ -26,7 +26,7 @@ Note: some controls in this document are application security controls that are 
 
 ---
 
-## 4.2. Runtime model poisoning (manipulating the model itself or its input/output logic)
+## 4.2. 実行時のモデルポイズニング (モデル自体または入出力ロジックの操作)
 
 Impact: see Broad model poisoning.
 
@@ -44,7 +44,7 @@ This threat involves manipulating the behavior of the model by altering the para
 
 ---
 
-## 4.3. Runtime model theft
+## 4.3. 実行時のモデル盗用
 
 Impact: Confidentiality breach of model intellectual property.
 
@@ -63,7 +63,7 @@ A Trusted Execution Environment can help to protect against attacks, including s
 
 ---
 
-## 4.4. Insecure output handling
+## 4.4. 安全でない出力処理
 
 Impact: Textual model output may contain 'traditional' injection attacks such as XSS-Cross site scripting, which can create a vulnerability when processed (e.g. shown on a website, execute a command).
 
@@ -76,7 +76,7 @@ This is like the standard output encoding issue, but the particularity is that t
 
 ---
 
-## 4.5. Direct prompt injection
+## 4.5. 直接的プロンプトインジェクション
 
 Impact: Getting unwanted answers or actions by manipulating through prompts how a large language model(GenAI) has been instructed.
 
@@ -93,7 +93,7 @@ See [MITRE ATLAS - LLM Prompt Injection](https://atlas.mitre.org/techniques/AML.
 
 ---
 
-## 4.6. Indirect prompt injection
+## 4.6. 間接的プロンプトインジェクション
 
 Impact: Getting unwanted answers or actions from hidden instructions in a prompt.
 
@@ -122,7 +122,7 @@ References:
 
 ---
 
-## 4.7. Leak sensitive input data
+## 4.7. 機密入力データの漏洩
 
 Impact: Confidentiality breach of sensitive input data.
 

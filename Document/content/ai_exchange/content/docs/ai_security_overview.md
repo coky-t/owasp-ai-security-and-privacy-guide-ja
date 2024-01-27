@@ -1,13 +1,13 @@
 ---
-title: AI Security Overview
+title: AI セキュリティ概要
 weight: 1
 ---
 See [home](https://owaspai.org/) for more information about this initiative, how to contribute or connect.  
 This page contains an overview of AI security and the next pages provide the main content: details on security threats to AI and controls against them. You can navigate through  pages at the bottom of every page, or in the left sidebar. The right sidebar shows the different sections on a page. On small screens you can navigate through the menu.
 
-## Summary and visualisations
+## 要約とビジュアライゼーション
 
-### Short summary: How to address AI Security?
+### 概略: AI セキュリティをどのように対処するか？
 
 While AI offers powerful perfomance boosts, it also increases the attack surface available to bad actors. It is therefore imperative to approach AI applications with a clear understanding of potential threats and which of those threats to prioritize for each use case. Standards and governance help guide this process for individual entities leveraging AI capabilities.
 
@@ -19,18 +19,18 @@ While AI offers powerful perfomance boosts, it also increases the attack surface
 
 ![AI Specific Security Threats](/images/owaspaimodelv1.png)
 
-### Navigator diagram
+### ナビゲータ図
 The navigator diagram below shows all threats, controls and how they relate, including risks and the types of controls.  
 {{< callout type="info" >}}
   Click on the image to get a PDF with clickable links.
 {{< /callout >}}
 [![](/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
-### AI Security Matrix
+### AI セキュリティマトリクス
 The AI security matrix below shows all threats and risks, ordered by attack surface and lifecycle.
 [![](/images/OwaspAIsecuritymatix.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)
 
-### Summary with controls
+### コントロールの要約
 
 The AI security controls (in capitals - and discussed further on in the document) can be grouped along meta controls:
 
@@ -57,7 +57,7 @@ The AI security controls (in capitals - and discussed further on in the document
    >(OVERSIGHT, LEASTMODELPRIVILEGE, AITRAINSPARENCY, EXPLAINABILITY, CONTINUOUSVALIDATION)
 
 
-## About this Document
+## このドキュメントについて
 
 This document discusses threats to AI cyber security and controls for those threats (i.e. countermeasures, requirements, mitigations).
 Security here means preventing unauthorized access, use, disclosure, disruption, modification, or destruction. Modification includes manipulating the behaviour of an AI model in unwanted ways.
@@ -67,12 +67,12 @@ The AI Exchange initiative was taken by OWASP, triggered by [Rob van der Veer](h
 This material is all draft and work in progress for others to review and amend.
 It serves as input to ongoing key initiatives such as the EU AI act, ISO/IEC 27090 on AI security, ISO/IEC 27091 on AI privacy, the [OWASP ML top 10](https://mltop10.info/), [OWASP LLM top 10](https://llmtop10.com/), and many more initiatives can benefit from consistent terminology and insights across the globe.
 
-### Sources
+### 情報源
 
 - AI security experts who contributed to this as Open Source.
 - The insights of these experts were inspired by research work as mentioned in the references at the bottom of this document(ENISA, NIST, Microsoft, BIML, MITRE, etc.)
 
-### How we organized threats and controls
+### 脅威とコントロールをどのように整理するか
 
 The threats are organized by attack surface (how and where does the attack take place?), and not by impact. This means that for example model theft is mentioned in three different parts of the overview:
 
@@ -80,7 +80,7 @@ The threats are organized by attack surface (how and where does the attack take 
 2. model theft by stealing the modeling process or parameters from the engineering environment, e.g. stored in the version management system of a data scientist, and
 3. model theft by reverse engineering from using the AI system. These are three very different attacks, with similar impacts. This way of organizing is helpful because the goal is to link the threats to controls, and these controls vary per attack surface.
 
-## How to select relevant threats and controls? risk analysis
+## 関連する脅威とコントロールをどのように選択するか？　リスク分析
 There are many threats and controls described in this document. Your situation determines which threats are relevant to you, and what controls are your responsibility. This selection process can be performed through risk analysis of the use case and architecture at hand:
 
 1. **Threat identification**: First select the threats that apply to your case by going through the list of threats and use the _Impact_ description to see if it is applicable. For example the impact of identifying individuals in your training data would not apply to your case if your training data has no individuals. The [Navigator](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) shows impact in purple.
@@ -119,8 +119,8 @@ There are many threats and controls described in this document. Your situation d
 
 For more information on risk analysis, see the SECPROGRAM control.
 
-## How about ...
-### How about AI outside of machine learning?
+## ... についてはどうですか？
+### 機械学習以外の AI についてはどうですか？
 A helpful way to look at AI is to see it as consisting of machine learning (the current dominant type of AI) models and _heuristic models_. A model can be a machine learning model which has learned how to compute based on data, or it can be a heuristic model engineered based on human knowledge, e.g. a rule-based system. Heuristic models still need data for testing, and sometimes to perform analysis for further building and validating the human knowledge.  
 This document focuses on machine learning. Nevertheless, here is a quick summary of the machine learning threats from this document that also apply to heuristic systems:
 
@@ -132,14 +132,14 @@ This document focuses on machine learning. Nevertheless, here is a quick summary
 - Knowledgebase, source code and configuration can be regarded as sensitive data when it is intellectual property, so it needs protection
 - Leak sensitive input data, for example when a heuristic system needs to diagnose a patient
 
-### How about privacy?
+### プライバシーについてはどうですか？
 
 AI Privacy can be divided into two parts:
 
 1. The AI security threats and controls in this document that are about confidentiality and integrity of (personal) data (e.g. model inversion, leaking training data), plus the integrity of the model behaviour
 2. Threats and controls with respect to rights of the individual, as covered by privacy regulations such as the GDPR, including use limitation, consent, fairness, transparency, data accuracy, right of correction/objection/reasure/access. For an overview, see the [Privacy part of the OWASP AI guide](/docs/privacy/#how-to-deal-with-ai-privacy)
 
-### How about Generative AI (e.g. LLM)?
+### 生成 AI (LLM など) についてはどうですか？
 
 Yes, GenAI is leading the current AI revolution and it's the fastest moving subfield of AI security. Nevertheless it is important to realize that other types of algorithms will remain to be applied to many important use cases such as credit scoring, fraud detection, medical diagnosis, product recommendation, image recognition, predictive maintenance, process control, etc. Relevant content has been marked with 'GenAI' in this document.
 
@@ -162,18 +162,18 @@ GenAI security particularities are:
 |11|GenAI output may contain elements that perform an injection attack such as cross-site-scripting.| ([OWASP for LLM 02](https://llmtop10.com/llm02/))|
 |12|Denial of service can be an issue for any AI model, but GenAI models are extra sensitive because of the relatively high resource usage. | ([OWASP for LLM 04](https://llmtop10.com/llm04/)) |
 
-GenAI References:
+生成 AI 参考情報:
 
 - [OWASP LLM top 10](https://llmtop10.com/)
 - [Impacts and risks of GenAI](https://arxiv.org/pdf/2306.13033.pdf)
 
-### How about the NCSC/CISA guidelines?
+### NCSC/CISA ガイドラインについてはどうですか？
 
 Mapping of the UK/US [Guidelines for secure AI
 system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) to the controls here at the AI Exchange:  
 (Search for them in this document or use the [Navigator](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf))
 
-1. Secure design
+1. 安全な設計
 
 - Raise staff awareness of threats and risks:  
   #SECEDUCATE
@@ -184,7 +184,7 @@ system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-syst
 - Consider security benefits and trade-offs when selecting your AI model  
   All development-time datascience controls (currently 13), #EXPLAINABILITY
 
-2. Secure Development
+2. 安全な開発
 
 - Secure your supply chain:  
   #SUPPLYCHAINMANAGE
@@ -195,7 +195,7 @@ system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-syst
 - Manage your technical debt:  
   Part of #DEVPROGRAM
 
-3. Secure deployment
+3. 安全な展開
 
 - Secure your infrastructure:  
   Part of #SECPROGRAM and see ‘Identify, track and protect your assets’
@@ -208,7 +208,7 @@ system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-syst
 - Make it easy for users to do the right things:  
   Part of #SECPROGRAM
 
-4. Secure operation and maintenance
+4. 安全な運用と保守
 
 - Monitor your system’s behaviour:  
   #CONTINUOUSVALIDATION, #UNWANTEDBIASTESTING
@@ -219,7 +219,7 @@ system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-syst
 - Collect and share lessons learned:  
   Part of #SECPROGAM and #SECDEVPROGRAM
 
-## References
+## 参考情報
 
 References on the OWASP AI guide (a project of which this document is part):
 

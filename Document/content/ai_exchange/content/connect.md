@@ -3,7 +3,7 @@ title: 'Connect with us'
 excludeSearch: true
 ---
 
-## Platforms
+## プラットフォーム
 
 {{< cards >}}
     {{< card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="Register" icon="login" >}}
@@ -22,7 +22,7 @@ Engage with the OWASP AI team through various platforms.
 
 If contributing interests you, check out our [Contribution Guidelines](/contribute) or get in touch with our project leaders. The Exchange is built on expertise from contributors around the world and across all disciplines.
 
-## OWASP AI Project Leader
+## OWASP AI プロジェクトリーダー
 
 {{< image-left src="/images/rob_van_der_veer.jpeg" alt="Image description" width="auto" height="150px" >}}
 
