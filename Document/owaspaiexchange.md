@@ -214,10 +214,10 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 
 # プライバシーはどうですか？ <a name="how-about-privacy"></a>
 
-AI Privacy can be divided into two parts:
+AI プライバシーは二つのパートに分けることができます。
 
-1. The AI security threats and controls in this document that are about confidentiality and integrity of (personal) data (e.g. model inversion, leaking training data), plus the integrity of the model behaviour
-2. Threats and controls with respect to rights of the individual, as covered by privacy regulations such as the GDPR, including use limitation, consent, fairness, transparency, data accuracy, right of correction/objection/reasure/access. For an overview, see the [Privacy part of the OWASP AI guide](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/index.md#how-to-address-ai-privacy)
+1. このドキュメントの AI セキュリティの脅威とコントロールは (個人) データの機密性と完全性 (モデル反転、トレーニングデータの漏洩など)、およびモデルの動作の完全性に関するものです。
+2. GDPR などのプライバシー規制でカバーされる個人の権利に関する脅威とコントロール。これには使用制限、同意、公平性、透明性、データの正確性、訂正/異議申し立て/再確認/アクセスの権利が含まれます。概要については、[OWASP AI ガイドのプライバシーパート](index.md#how-to-address-ai-privacy) を参照してください。
 
 # 生成 AI (LLM など) はどうですか？ <a name="how-about-generative-ai-eg-llm"></a>
 
