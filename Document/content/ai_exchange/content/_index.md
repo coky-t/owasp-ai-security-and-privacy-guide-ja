@@ -3,40 +3,40 @@
 
 {{< image-centered src="/images/aixlogosml.jpg" alt="OWASP AI Exchange Logo" >}}
 
->Comprehensive guidance and alignment on how to protect AI against security threats - by professionals, for professionals.
+> AI をセキュリティの脅威から保護する方法に関する、専門家による、専門家のための、包括的なガイダンスとアラインメント。
 
 {{< spacer height="40" >}}
 
 {{< cards >}}
-    {{< card link="/connect" title="Connect with us!" icon="chat" >}}
-    {{< card link="/contribute" title="Contribute" icon="star" >}}
-    {{< card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="Register" icon="login" >}}
-    {{< card link="/media" title="Media" icon="speakerphone" >}}
-    {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf" title="Navigator" icon="document-download">}}
+    {{< card link="/connect" title="私たちとつながろう！" icon="chat" >}}
+    {{< card link="/contribute" title="貢献" icon="star" >}}
+    {{< card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}}
+    {{< card link="/media" title="メディア" icon="speakerphone" >}}
+    {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf" title="ナビゲータ" icon="document-download">}}
 {{< /cards >}}
 
 ## コンテンツ
 
 {{< cards >}}
-    {{< card link="/docs/ai_security_overview/" title="AI Security Overview">}}
-    {{< card link="/docs/1_general_controls/" title="1. General controls">}}
-    {{< card link="/docs/2_threats_through_use/" title="2. Threats through use">}}
-    {{< card link="/docs/3_development_time_threats/" title="3. Development-time threats">}}
-    {{< card link="/docs/4_runtime_application_security_threats/" title="4. Runtime application security threats">}}
+    {{< card link="/docs/ai_security_overview/" title="AI セキュリティ概要">}}
+    {{< card link="/docs/1_general_controls/" title="1. 一般的なコントロール">}}
+    {{< card link="/docs/2_threats_through_use/" title="2. 使用による脅威">}}
+    {{< card link="/docs/3_development_time_threats/" title="3. 開発時の脅威">}}
+    {{< card link="/docs/4_runtime_application_security_threats/" title="4. 実行時のアプリケーションのセキュリティ脅威">}}
 {{< /cards >}}
 
 ## 趣旨
 
-The OWASP AI Exchange has open sourced the global discussion on the security of AI. It is an open collaborative project to advance the development of AI security standards and regulations, by providing a comprehensive overview of AI threats, vulnerabilities and controls. This content is feeding into standards for the EU AI Act, ISO/IEC 27090 (AI security), the [OWASP ML top 10](https://mltop10.info/), the [OWASP LLM top 10](https://llmtop10.com/), and [OpenCRE](https://opencre.org) - which we want to use to provide the AI Exchange content through the security chatbot [OpenCRE-Chat](https://opencre.org/chatbot).
+OWASP AI Exchange は AI のセキュリティに関するグローバルな議論をオープンソース化しました。これは AI の脅威、脆弱性、コントロールの包括的な概要を提供することで、AI のセキュリティ標準と規制の開発を促進するためのオープンな共同プロジェクトです。このコンテンツは EU AI 法、ISO/IEC 27090 (AI セキュリティ)、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/)、[OpenCRE](https://opencre.org) の標準に影響しており、セキュリティチャットボット [OpenCRE-Chat](https://opencre.org/chatbot) を通じて AI Exchange コンテンツを提供するために使用したいと考えています。
 
-Our **mission** is to be the authoritative source for consensus, foster alignment, and drive collaboration among initiatives - NOT to set a standard, but to drive standards. By doing so, we provide a safe, open, and independent place to find and share insights for everyone. See [AI Exchange LinkedIn page](https://www.linkedin.com/company/owasp-ai-exchange/).
+私たちの **使命** は、コンセンサスのための信頼できる情報源となり、連携を促進し、イニシアチブ感のコラボレーションを推進することです。標準を整えるのではなく、標準を推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[AI Exchange LinkedIn ページ](https://www.linkedin.com/company/owasp-ai-exchange/) を参照してください。
 
-The AI Exchange is displayed here at [owaspai.org](https://owaspai.org) and edited using a [GitHub repository](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (see the links _Edit ont Github_). It is is an **open-source set of living documents** for the worldwide exchange of AI security expertise, and part of the [OWASP AI security & privacy guide](https://owasp.org/www-project-ai-security-and-privacy-guide/) project. 
+AI Exchange はここ [owaspai.org](https://owaspai.org) で展示され、[GitHub リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (_Edit ont Github_ のリンクを参照してください)。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きたドキュメント** であり、[OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部です。
 
 ## その他の OWASP AI イニシアチブ
 
 {{< cards >}}
-    {{< card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI security & privacy guide" icon="lock-closed" >}}
+    {{< card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI セキュリティおよびプライバシーガイド" icon="lock-closed" >}}
     {{< card link="https://llmtop10.com/" title="LLM Top 10" icon="brain" >}}
     {{< card link="https://mltop10.info/" title="ML Top 10" icon="machinelearning" >}}
 {{< /cards >}}
