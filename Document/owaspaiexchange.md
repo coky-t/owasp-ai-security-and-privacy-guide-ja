@@ -250,31 +250,31 @@ AI プライバシーは二つのパートに分けることができます。
 
 # まとめ <a name="summary"></a>
 
-The AI security controls (in capitals - and discussed further on in the document) can be grouped along meta controls:
+AI セキュリティコントロール (大文字で記載、ドキュメント内で詳しく説明します) はメタコントロールに沿ってグループ化できます。
 
 1. **AI ガバナンス** の適用 (AIPROGRAM)
-2. **情報セキュリティ管理** の適用 (SECPROGRAM), with AI attention points:
-   - New assets: training/test data , input data, output data, model parameters, technical information about the model, and also code and configuration. This depends on if they represent important intellectual property, or if the data is sensitive, or if the data can help attackers to design an attack (DISCRETE).
-   - New threats: ISO/IEC 27563 (on AI use cases security & privacy) describes security of some AI use cases to assist in risk analysis, and ISO/IEC 23894 elaborates on risk management. The AI Exchange and the upcoming ISO 27090 (AI security) are more comprehensive sources for threats and controls.
-   - AI regulation needs to be taken into account (CHECKCOMPLIANCE)
-   - Awareness training needs to include AI threats and controls (SECEDUCATE)
-   - The information security controls in this document fall under the security management activity (e.g. model privileges, monitoring, access control, data protection, supply chain)
+2. **情報セキュリティ管理** の適用 (SECPROGRAM), AI で注目するポイント:
+   - 新たな資産: トレーニング/テストデータ、入力データ、出力データ、モデルパラメータ、モデルに関する技術情報、それからコードと設定も。これはそれらが重要な知的財産であるか、データが機密であるか、データが攻撃者による攻撃の設計に役立つかどうかによって異なります (DISCRETE) 。
+   - 新たな脅威: ISO/IEC 27563 (AI ユースケースのセキュリティとプライバシー) ではリスク分析を支援するためにいくつかの AI ユースケースのセキュリティについて説明し、ISO/IEC 23894 ではリスク管理について詳しく説明しています。AI Exchange と近々やってくる ISO 27090 (AI セキュリティ) は脅威とコントロールのためのより包括的な情報源です。
+   - AI 規制を考慮する必要があります (CHECKCOMPLIANCE)
+   - 意識向上トレーニングに AI の脅威とコントロールを含める必要があります (SECEDUCATE)
+   - このドキュメントの情報セキュリティコントロールはセキュリティ管理活動 (モデル権限、監視、アクセス制御、データ保護、サプライチェーンなど) に該当します。
 3. **専門的なソフトウェアエンジニアリングプラクティス** を AI ライフサイクルに適用 (DEVPROGAM)
-4. **安全なソフトウェア開発** を AI エンジニアリングに適用 (SECDEVPROGRAM), and when developing securely, use standards that cover technical application security controls and operational security, (e.g. 15408, ASVS, OpenCRE). AI attention points:
-   - Make sure to protect the runtime model and its IO (RUNTIMEMODELINTEGRITY, RUNTIMEMODELIOINTEGRITY, RUNTIMEMODELCONFIDENTIALITY, MODELINPUTCONFIDENTIALITY, MODELOBFUSCATION)
-   - Control model use (MONITORUSE, MODELACCESSCONTROL, RATELIMIT)
-   - ENCODEMODELOUTPUT if it is text based
-   - LIMITRESOURCES to protect against denial of service
+4. **安全なソフトウェア開発** を AI エンジニアリングに適用 (SECDEVPROGRAM), 安全に開発を行う際には、技術的なアプリケーションセキュリティコントロールと運用上のセキュリティをカバーする標準 (15408, ASVS, OpenCRE など) を使用します。AI で注目するポイント:
+   - ランタイムモデルとその IO を保護していることを確認します (RUNTIMEMODELINTEGRITY, RUNTIMEMODELIOINTEGRITY, RUNTIMEMODELCONFIDENTIALITY, MODELINPUTCONFIDENTIALITY, MODELOBFUSCATION)
+   - モデルの使用を制御します (MONITORUSE, MODELACCESSCONTROL, RATELIMIT)
+   - テキストベースの場合 (ENCODEMODELOUTPUT)
+   - サービス拒否に対する保護 (LIMITRESOURCES)
 5. **開発時の保護**:
-   - DEVDATAPROTECT (Protection of train/testdata, parameters, code and config)
-   - DEVSECURITY (further information security including screening of engineers)
+   - DEVDATAPROTECT (トレーニング/テストデータ、パラメータコード、設定の保護)
+   - DEVSECURITY (技術者のスクリーニングを含むさらなる情報セキュリティ)
    - SEGREGATEDATA
    - CONFCOMPUTE
    - FEDERATIVELEARNING
    - SUPPLYCHAINMANAGE
-6. Completely **新しいアプリケーションセキュリティコントロール** are MODELOBFUSCATION and protection against indirect prompt injection of GenAI: PROMPTINPUTVALIDATION plus INPUTSEGREGATION
-7. **データの量と保存時間を制限**, if it is sensitive (DATAMINIMIZE, ALLOWEDDATA, SHORTRETAIN, OBFUSCATETRAININGDATA)
-8. **影響を制限** of unwanted model behaviour (OVERSIGHT, LEASTMODELPRIVILEGE, AITRAINSPARENCY, EXPLAINABILITY)
+6. 完全な **新しいアプリケーションセキュリティコントロール** は MODELOBFUSCATION と、生成 AI に対する間接的プロンプトインジェクションの保護 (PROMPTINPUTVALIDATION および INPUTSEGREGATION) です。
+7. 機密である場合 **データの量と保存時間を制限** (DATAMINIMIZE, ALLOWEDDATA, SHORTRETAIN, OBFUSCATETRAININGDATA)
+8. 望ましくないモデル動作の **影響を制限** (OVERSIGHT, LEASTMODELPRIVILEGE, AITRAINSPARENCY, EXPLAINABILITY)
 9. モデル使用時の **データサイエンス実行時** コントロール:
    - CONTINUOUSVALIDATION
    - UNWANTEDBIASTESTING
@@ -283,7 +283,7 @@ The AI security controls (in capitals - and discussed further on in the document
    - DOSINPUTVALIDATION
    - INPUTDISTORTION
    - FILTERSENSITIVEMODELOUTPUT
-   - OBSCURECONFIDENCE (to prevent reconstructing train data)
+   - OBSCURECONFIDENCE (トレーニングデータの再構築を防ぐため)
 10. **データサイエンス開発時** コントロール:
     - CONTINUOUSVALIDATION
     - UNWANTEDBIASTESTING
@@ -291,12 +291,12 @@ The AI security controls (in capitals - and discussed further on in the document
     - POISIONROBUSTMODEL
     - TRAINADVERSARIAL
     - TRAINDATADISTORTION
-    - ADVERSARIALROBUSTDISTILLATION (if you apply distillation)
+    - ADVERSARIALROBUSTDISTILLATION (蒸留を適用する場合)
     - FILTERSENSITIVETRAINDATA
     - MODELENSEMBLE
     - MORETRAINDATA
-    - SMALLMODEL (to prevent reconstructing train data)
-    - DATAQUALITYCONTROL (covered in 5259 but not aimed at data manipulation)
+    - SMALLMODEL (トレーニングデータの再構築を防ぐため)
+    - DATAQUALITYCONTROL (5259 でカバーされていますがデータ操作を目的としたものではありません)
 
 ---
 
