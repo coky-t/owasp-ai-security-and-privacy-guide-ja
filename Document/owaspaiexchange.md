@@ -302,51 +302,51 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
 
 # ガイドラインとコントロールのマッピング] <a name="mapping-guidelines-to-controls"></a>
 
-Mapping of the UK/US [Guidelines for secure AI
-system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) to the controls here at the AI Exchange:  
-(Search for them in this document or use the [Navigator](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf))
+英国/米国 の [安全な AI システム開発のガイドライン](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) と AI Exchange のコントロールとのマッピング: 
+(このドキュメントで検索するか、[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) を使用してください)
+
 
 1. 安全な設計
-- Raise staff awareness of threats and risks:  
+- 脅威とリスクに対するスタッフの意識を高めます:
   #SECEDUCATE
-- Model the threats to your system:  
-  See Risk analysis under #SECPROGRAM
-- Design your system for security as well as functionality and performance:  
-  #AIPROGRAM, #SECPROGRAM, #DEVPROGRAM, #SECDEVPROGRAM, #CHECKCOMPLIANCE, #LEASTMODELPRIVILEGE, #DISCRETE, #OBSCURECONFIDENCE, #OVERSIGHT, #RATELIMIT,  #DOSINPUTVALIDATION, #LIMITRESOURCES, #MODELACCESSCONTROL, #AITRANSPRENCY
-- Consider security benefits and trade-offs when selecting your AI model  
-  All development-time datascience controls (currently 13), #EXPLAINABILITY
+- システムに対する脅威をモデル化します:
+  #SECPROGRAM のリスク分析を参照してください
+- 機能性とパフォーマンスだけでなくセキュリティも考慮してシステムを設計します:
+  #AIPROGRAM, #SECPROGRAM, #DEVPROGRAM, #SECDEVPROGRAM, #CHECKCOMPLIANCE, #LEASTMODELPRIVILEGE, #DISCRETE, #OBSCURECONFIDENCE, #OVERSIGHT, #RATELIMIT, #DOSINPUTVALIDATION, #LIMITRESOURCES, #MODELACCESSCONTROL, #AITRANSPRENCY
+- AI モデルを選択する際に、セキュリティの利点とトレードオフを考慮します
+  すべての開発時のデータサイエンスコントロール (現在 13), #EXPLAINABILITY
 
 2. 安全な開発
-- Secure your supply chain:  
+- サプライチェーンを保護します:
   #SUPPLYCHAINMANAGE
-- Identify, track and protect your assets:  
-  #DEVDATAPROTECT, #DEVSECURITY, #SEGREGATEDATA, #CONFCOMPUTE, #MODELINPUTCONFIDENTIALITY, #RUNTIMEMODELCONFIDENTIALITY, #DATAMINIMIZE, #ALLOWEDDATA, #SHORTRETAIN, #OBFUSCATETRAININGDATA and part of #SECPROGRAM
-- Document your data, models and prompts:  
-  Part of #DEVPROGRAM
-- Manage your technical debt:  
-  Part of #DEVPROGRAM
+- 資産を特定、追跡、保護します:
+  #DEVDATAPROTECT, #DEVSECURITY, #SEGREGATEDATA, #CONFCOMPUTE, #MODELINPUTCONFIDENTIALITY, #RUNTIMEMODELCONFIDENTIALITY, #DATAMINIMIZE, #ALLOWEDDATA, #SHORTRETAIN, #OBFUSCATETRAININGDATA および #SECPROGRAM の一部
+- データ、モデル、プロンプトを文書化します:
+  #DEVPROGRAM の一部
+- 技術的負債を管理します:
+  #DEVPROGRAM の一部
 
 3. 安全な展開
-- Secure your infrastructure:  
-  Part of #SECPROGRAM and see ‘Identify, track and protect your assets’
-- Protect your model continuously:  
+- インフラストラクチャを保護します:
+  #SECPROGRAM の一部と「資産を特定、追跡、保護します」を参照してください
+- モデルを継続的に保護します:
   #INPUTDISTORTION, #FILTERSENSITIVEMODELOUTPUT, #RUNTIMEMODELIOINTEGRITY, #MODELINPUTCONFIDENTIALITY, #PROMPTINPUTVALIDATION, #INPUTSEGREGATION
-- Develop incident management procedures:  
-  Part of #SECPROGRAM
-- Release AI responsibly:  
-  Part of #DEVPROGRAM
-- Make it easy for users to do the right things:  
-  Part of #SECPROGRAM
+- インシデント管理手順を策定します:
+  #SECPROGRAM の一部
+- 責任をもって AI をリリースします:
+  #DEVPROGRAM の一部
+- ユーザーが正しいことを簡単にできるようにします:
+  #SECPROGRAM の一部
 
 4. 安全な運用と保守
-- Monitor your system’s behaviour:  
+- システムの動作を監視します:
   #CONTINUOUSVALIDATION, #UNWANTEDBIASTESTING
-- Monitor your system’s inputs:  
+- システムの入力を監視します:
   #MONITORUSE, #DETECTODDINPUT, #DETECTADVERSARIALINPUT
-- Follow a secure by design approach to updates:  
-  Part of #SECDEVPROGRAM
-- Collect and share lessons learned:  
-  Part of #SECPROGAM and #SECDEVPROGRAM
+- セキュアバイデザインのアプローチに従ってアップデートを行います:
+  #SECDEVPROGRAM の一部
+- 教訓を収集して共有します:
+  #SECPROGAM および #SECDEVPROGRAM の一部
 
 
 ---
