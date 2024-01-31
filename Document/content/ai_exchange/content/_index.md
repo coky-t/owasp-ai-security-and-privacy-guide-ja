@@ -29,7 +29,7 @@
 
 OWASP AI Exchange は AI のセキュリティに関するグローバルな議論をオープンソース化しました。これは AI の脅威、脆弱性、コントロールの包括的な概要を提供することで、AI のセキュリティ標準と規制の開発を促進するためのオープンな共同プロジェクトです。このコンテンツは EU AI 法、ISO/IEC 27090 (AI セキュリティ)、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/)、[OpenCRE](https://opencre.org) の標準に影響しており、セキュリティチャットボット [OpenCRE-Chat](https://opencre.org/chatbot) を通じて AI Exchange コンテンツを提供するために使用したいと考えています。
 
-私たちの **使命** は、コンセンサスのための信頼できる情報源となり、連携を促進し、イニシアチブ感のコラボレーションを推進することです。標準を整えるのではなく、標準を推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[AI Exchange LinkedIn ページ](https://www.linkedin.com/company/owasp-ai-exchange/) を参照してください。
+私たちの **使命** は、コンセンサスのための信頼できる情報源となり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。標準を整えるのではなく、標準を推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[AI Exchange LinkedIn ページ](https://www.linkedin.com/company/owasp-ai-exchange/) を参照してください。
 
 AI Exchange はここ [owaspai.org](https://owaspai.org) で展示され、[GitHub リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (_Edit ont Github_ のリンクを参照してください)。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きたドキュメント** であり、[OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部です。
 
