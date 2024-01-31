@@ -29,7 +29,7 @@ OWASP AI Exchange のコンテンツはより高度なナビゲーションを�
 
 OWASP AI Exchange はグローバル AI セキュリティ標準と規制の開発を促進するためのオープンソースコラボレーションドキュメントです。AI の脅威、脆弱性、コントロールの包括的な概要を提供し、さまざまな標準化イニシアチブ間の連携を促進します。これには EU AI 法、ISO/IEC 27090 (AI セキュリティ)、[OWASP ML top 10](https://mltop10.info/)、[OWASP LLM top 10](https://llmtop10.com/)、セキュリティチャットボット [OpenCRE-Chat](https://opencre.org/chatbot) を通じて AI Exchange コンテンツを提供するために使用する [OpenCRE](https://opencre.org) を含みます。
 
-私たちの **使命** は、コンセンサスのための信頼できる情報源となり、連携を促進し、イニシアチブ感のコラボレーションを推進することです。標準を整えるのではなく、標準を推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[AI Exchange LinkedIn ページ](https://www.linkedin.com/company/owasp-ai-exchange/) を参照してください。
+私たちの **使命** は、コンセンサスのための信頼できる情報源となり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。標準を整えるのではなく、標準を推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[AI Exchange LinkedIn ページ](https://www.linkedin.com/company/owasp-ai-exchange/) を参照してください。
 
 ここの [owaspai.org](https://owaspai.org) で保守されており、現在、GitHub リポジトリと Word ドキュメントの両方をコントリビューションのために使用しています。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きたドキュメント** です。たとえば、12 月中旬に向けた EU AI 法のセキュリティ標準化へのインプットとして機能します (あなたの協力が緊急に必要です！)。このドキュメントは [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部として OWASP によって保守されています。このガイドへの貢献がクレジットされたコンテンツを定期的に公開します。
 
@@ -353,29 +353,29 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
 
 # 1. 一般的なコントロール - あらゆる脅威に対応 <a name="1-general-controls---for-all-threats"></a>
 
-Note: For all controls in this document: a _vulnerability_ occurs when a control is missing.
+注: このドキュメントのすべてのコントロールについて: コントロールが欠落している場合、_脆弱性_ が発生します。
 
 ---
 
 ## 1.1 一般的なガバナンスコントロール
 
-- **#AIPROGRAM** (management). Having an AI program. Take responsibility for AI as an organization, by keeping an inventory of AI initiatives, perform risk analysis on them, and manage those risks.
+- **#AIPROGRAM** (管理)。AI プログラムを持つこと。組織として AI に責任を持ち、AI への取り組みの一覧表を作成し、リスク分析を行い、それらのリスクを管理します。
 
-  This includes assigning responsibilities, e.g. model accountability, data accountability, and risk governance. For the high risk systems: attain responsible AI and transparency in the form of communication and documentation, auditability, bias countermeasures, oversight and cyber security.
+  これには、モデルの説明責任、データの説明責任、リスクガバナンスなどの責任の割り当てを含みます。高リスクシステムの場合: コミュニケーションと文書化、監査可能性、バイアス対策、監視、サイバーセキュリティといった形で責任ある AI と透明性を実現します。
 
-  Technically one could argue that this control is out of scope for cyber security, but it initiates action to get in control of AI security.
+  技術的には、このコントロールはサイバーセキュリティの範囲外であると主張することもできますが、AI セキュリティのコントロールを得るためのアクションを開始するものです。
 
-  Purpose: 1) reduces probability of AI initiatives being overlooked for proper governance (including security) - as covered by controls in this document, and 2) increases incentive for proper governance as the AI program takes responsibility for it. Without proper governance, the controls in this document can only happen by accident.
+  目的: 1) AI への取り組みが適切なガバナンス (セキュリティを含む) に考慮されない可能性を低減します - このドキュメントのコントロールでカバーします、2) AI プログラムが責任を負うことで、適切なガバナンスに対するインセンティブを高めます。適切なガバナンスがなければ、このドキュメントのコントロールは偶然にしか起こり得ません。
 
-  See Risk management under SECPROGRAM for security-specific risk analysis.
+  セキュリティ固有のリスク分析については SECPROGRAM のリスク管理を参照してください。
 
-  Note that an AI program is not just about risk TO AI, such as security risks - it is also about risks BY AI, such as threats to fairness, safety, etc.
+  AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
 
-  Links to standards:
+  標準へのリンク:
 
-  - ISO/IEC 42001 AI management system (under development). Gap: covers this control fully.
- 
-    42001 is about extending your risk management system - it focuses on governance. 5338 is about extending your software lifecycle practices - it focuses on engineering and everything around it. The 42001 can be seen as a management system for the governance of responsible AI in an organization, similar to how 27001 is a management system for information security. The 42001 doesn’t go deep into the lifecycle processes. It for example does not discuss versioning of AI models, project planning issues, and how and when exactly sensitive data is used.
+  - ISO/IEC 42001 AI マネジメントシステム (開発中)。ギャップ: このコントロールを完全にカバーします。
+
+    42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。5338 はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。27001 が情報セキュリティのマネジメントシステムであるのと同様に、42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。42001 はライフサイクルプロセスには深く踏み込みません。たとえば、AI モデルのバージョン管理、プロジェクト計画の問題、機密データがいつどのように使用されるかについては触れていません。
 
 
 - **#SECPROGRAM** (management). Having a security program. Include the whole AI lifecycle and AI particularities in the organization's security program (also referred to as _information security management system_).
