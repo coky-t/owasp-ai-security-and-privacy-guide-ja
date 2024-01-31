@@ -1,11 +1,11 @@
 ---
-title: Media
+title: メディア
 excludeSearch: true
 ---
 
 ## トーク
 
-| Date | Event | Title | Video |
+| 日付 | イベント | タイトル | 映像 |
 | - | - | - | - |
 | 5 Jan 2024 | Resilient Cyber | Navigating the AI Security Landscape w/ Rob van der Veer | [LinkedIn](https://www.linkedin.com/posts/robvanderveer_in-this-episode-i-sit-down-with-ai-and-software-activity-7147942906060800001-b8RO/) |
 | 6 Sep 2023 | The MLSecOps Podcast | A Holistic Approach to Understanding the AI Lifecycle and Securing ML Systems: Protecting AI Through People, Processes & Technology | [Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology) |
