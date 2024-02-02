@@ -2,135 +2,135 @@
 title: AI セキュリティ概要
 weight: 1
 ---
-See [home](https://owaspai.org/) for more information about this initiative, how to contribute or connect.  
-This page contains an overview of AI security and the next pages provide the main content: details on security threats to AI and controls against them. You can navigate through  pages at the bottom of every page, or in the left sidebar. The right sidebar shows the different sections on a page. On small screens you can navigate through the menu.
+このイニシアチブについての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
+このページには AI セキュリティの概要があり、次のページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。
 
 ## 要約とビジュアライゼーション
 
 ### 概略: AI セキュリティをどのように対処するか？
 
-While AI offers powerful perfomance boosts, it also increases the attack surface available to bad actors. It is therefore imperative to approach AI applications with a clear understanding of potential threats and which of those threats to prioritize for each use case. Standards and governance help guide this process for individual entities leveraging AI capabilities.
+AI は強力なパフォーマンス向上をもたらしますが、悪意のある者が利用できる攻撃対象領域も拡大します。そのため、潜在的な脅威と、ユースケースごとにどの脅威を優先するかを明確に理解して、AI アプリケーションに取り組むことが不可欠です。標準とガバナンスは AI 機能を活用する個々の事業体にとってこのプロセスの指針となります。
 
-- Implement **AI governance**
-- **Extend security and development practices** to include data science activities especially to protect and streamline the engineering environment.
-- **Improve regular application and system security** through understanding of AI particularities e.g. model parameters need protection and access to the model needs to be monitored and rate-limited.
-- **Limit the impact** of AI by minimizing privileges and adding oversight, e.g. guardrails, human oversight.
-- **Countermeasures in data science** through understanding of model attacks, e.g. data quality assurance, larger training sets, detecting common perturbation attacks, input filtering.
+- **AI ガバナンス** を導入します。
+- **セキュリティと開発プラクティスを拡張** して、データサイエンス活動を含め、特にエンジニアリング環境を保護し合理化します。
+- AI の特殊性を理解することで、**通常のアプリケーションとシステムのセキュリティを向上** します。たとえば、モデルパラメータは保護が必要であり、モデルへのアクセスは監視してレート制限する必要があります。
+- 権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
+- モデル攻撃を理解することによって **データサイエンスにおける対策** を行います。たとえば、データ品質保証、大規模なトレーニングセット、一般的な摂動攻撃の検出、入力フィルタリングなど。
 
 ![AI Specific Security Threats](/images/owaspaimodelv1.png)
 
 ### ナビゲータ図
-The navigator diagram below shows all threats, controls and how they relate, including risks and the types of controls.  
+以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
 {{< callout type="info" >}}
-  Click on the image to get a PDF with clickable links.
+  画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 {{< /callout >}}
 [![](/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
 ### AI セキュリティマトリクス
-The AI security matrix below shows all threats and risks, ordered by attack surface and lifecycle.
+以下の AI セキュリティマトリクスは、すべての脅威とリスクを、攻撃対象領域とライフサイクルの順に示しています。
 [![](/images/OwaspAIsecuritymatix.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)
 
 ### コントロールの要約
 
-How to address AI security, including all controls (in capitals - and discussed further on in the document):
+すべてのコントロールを含む AI セキュリティに対処する方法 (大文字で記載 - ドキュメント内で詳しく説明します):
 
-1. Implement governance processes for AI risk, and if not already there: governance of information security and software lifecycle:  
+1. AI リスクに対するガバナンスプロセスを導入し、まだない場合は、情報セキュリティとソフトウェアライフサイクルのガバナンスを導入します。
    >(AIPROGRAM, SECPROGRAM, DEVPROGRAM, SECDEVPROGRAM, CHECKCOMPLIANCE, SECEDUCATE)
-2. Apply technical IT security controls risk-based:
-    - 2a Apply **standard** conventional IT security controls (e.g. 15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53) to the complete AI system and don't forget the new AI-specific parts :
-      - Development-time: model & data storage, model & data supply chain, data science documentation:  
+2. リスクベースの技術的な IT セキュリティコントロールを適用します。
+    - 2a **標準** 的な従来の IT セキュリティコントロール (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の部分を忘れないようにします。
+      - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化:
         >(DEVDATAPROTECT, DEVSECURITY, SEGREGATEDATA, SUPPLYCHAINMANAGE, DISCRETE)
-      - Runtime: model storage, model use and model input/output:  
+      - 実行時: モデルの保存、モデルの使用、モデルの入出力:
         >(RUNTIMEMODELINTEGRITY, RUNTIMEMODELIOINTEGRITY, RUNTIMEMODELCONFIDENTIALITY, MODELINPUTCONFIDENTIALITY, ENCODEMODELOUTPUT, LIMITRESOURCES)
-    - 2b **Adapt** conventional IT security controls to make them more suitable for AI:  
+    - 2b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします:
       >(MONITORUSE, MODELACCESSCONTROL, RATELIMIT)
-    - 2c Adopt **new** IT security controls:  
+    - 2c **新規** の IT セキュリティコントロールを採用します:
       >(CONFCOMPUTE, MODELOBFUSCATION, PROMPTINPUTVALIDATION, INPUTSEGREGATION)
-3. Apply datascience security controls risk-based:
-    - 3a Development-time controls when developing the model:  
+3. リスクベースのデータサイエンスのセキュリティコントロールを適用します。
+    - 3a モデル開発時の開発時コントロール:
       >(FEDERATIVELEARNING, CONTINUOUSVALIDATION, UNWANTEDBIASTESTING, EVASIONROBUSTMODEL, POISONROBUSTMODEL, TRAINADVERSARIAL, TRAINDATADISTORTION, ADVERSARIALROBUSTDISTILLATION, FILERSENSITIVETRAINDATA, MODELENSEMBLE, MORETRAINDATA, SMALLMODEL, DATAQUALITYCONTROL)
-    - 3b Runtime controls when running the model:  
+    - 3b モデル実行時の実行時コントロール:
       >(CONTINUOUSVALIDATION, UNWANTEDBIASTESTING, DETECTODDINPUT, DETECTADVERSARIALINPUT, DOSINPUTVALIDATION, INPUTDISTORTION, FILTERSENSITIVEMODELOUTPUT, OBSCURECONFIDENCE)
-4. Limit the amount of data and the time it is stored:  
+4. データ量と保存時間を制限します:
    >(DATAMINIMIZE, ALLOWEDDATA, SHORTRETAIN, OBFUSCATETRAININGDATA)
-5. Limit the effect of unwanted model behaviour:  
+5. 望ましくないモデル動作の影響を制限します:  
    >(OVERSIGHT, LEASTMODELPRIVILEGE, AITRAINSPARENCY, EXPLAINABILITY, CONTINUOUSVALIDATION)
 
 
 ## このドキュメントについて
 
-This document discusses threats to AI cyber security and controls for those threats (i.e. countermeasures, requirements, mitigations).
-Security here means preventing unauthorized access, use, disclosure, disruption, modification, or destruction. Modification includes manipulating the behaviour of an AI model in unwanted ways.
+このドキュメントでは AI サイバーセキュリティに対する脅威と、それらの脅威に対するコントロール (つまり、対策、要件、緩和策) について説明します。
+ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
 
-The AI Exchange initiative was taken by OWASP, triggered by [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) - bridge builder for security standards, senior director at [Software Improvement Group](https://www.softwareimprovementgroup.com), with 31 years of experience in AI & security, lead author of ISO/IEC 5338 on AI lifecycle, founding father of OpenCRE, and currently working on security requirements concerning the EU AI act in CEN/CENELEC.
+AI Exchange イニシアチブは OWASP により採択されており、[Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって起こされました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) のシニアディレクター、AI とセキュリティで 31 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で EU AI 法に関するセキュリティ要件に取り組んでいます。
 
-This material is all draft and work in progress for others to review and amend.
-It serves as input to ongoing key initiatives such as the EU AI act, ISO/IEC 27090 on AI security, ISO/IEC 27091 on AI privacy, the [OWASP ML top 10](https://mltop10.info/), [OWASP LLM top 10](https://llmtop10.com/), and many more initiatives can benefit from consistent terminology and insights across the globe.
+この資料はすべて草案であり、他の人がレビューして修正できるよう仕掛品です。
+これは EU AI 法、AI セキュリティに関する ISO/IEC 27090、AI プライバシーに関する ISO/IEC 27091、[OWASP ML top 10](https://mltop10.info/)、[OWASP LLM top 10](https://llmtop10.com/) などの進行中の主要なイニシアチブへのインプットとして機能し、さらに多くのイニシアチブが世界中で一貫した用語と洞察から恩恵を受けることができます。
 
 ### 情報源
 
-- AI security experts who contributed to this as Open Source.
-- The insights of these experts were inspired by research work as mentioned in the references at the bottom of this document(ENISA, NIST, Microsoft, BIML, MITRE, etc.)
+- オープンソースとしてこれに貢献した AI セキュリティの専門家たち。
+- これらの専門家の洞察はこのドキュメントの末尾に参考情報として記載されている研究成果 (ENISA, NIST, Microsoft, BIML, MITRE など) からインスピレーションを得たものです。
 
 ### 脅威とコントロールをどのように整理するか
 
-The threats are organized by attack surface (how and where does the attack take place?), and not by impact. This means that for example model theft is mentioned in three different parts of the overview:
+脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル盗用は概要の三つの異なる部分で言及されています。
 
-1. model theft by stealing model parameters from a live system, e.g. breaking into the network and reading the parameters from a file,
-2. model theft by stealing the modeling process or parameters from the engineering environment, e.g. stored in the version management system of a data scientist, and
-3. model theft by reverse engineering from using the AI system. These are three very different attacks, with similar impacts. This way of organizing is helpful because the goal is to link the threats to controls, and these controls vary per attack surface.
+1. 稼働中のシステムからモデルパラメータを盗むことによるモデル盗用。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
+2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル盗用。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
+3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
 
 ## 関連する脅威とコントロールをどのように選択するか？　リスク分析
-There are many threats and controls described in this document. Your situation determines which threats are relevant to you, and what controls are your responsibility. This selection process can be performed through risk analysis of the use case and architecture at hand:
+このドキュメントには多くの脅威とコントロールについて説明します。どの脅威があなたに関係し、どのコントロールがあなたの責任となるかは、あなたの状況によって決まります。この選択プロセスは目前のユースケースとアーキテクチャのリスク分析を通じて実行できます。
 
-1. **Threat identification**: First select the threats that apply to your case by going through the list of threats and use the _Impact_ description to see if it is applicable. For example the impact of identifying individuals in your training data would not apply to your case if your training data has no individuals. The [Navigator](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) shows impact in purple.
+1. **脅威の特定**: まず脅威のリストからあなたのケースに該当する脅威を選択し、_影響 (Impact)_ の説明を使用して適用可能かどうかを確認します。たとえば訓練データ内の個人を特定することによる影響は、訓練データが個人を所持していない場合、あなたのケースには適用されません。[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) では影響を紫色で示しています。
 
-    If you use RAG (Retrieval Augmented Generation), then treat the retrieval repository (including embeddings) just like training data. Meaning:
-      - Include the threats regarding data poisoning 
-      - Include the threats regarding train/test data leak if the data is sensitive 
+    RAG (Retrieval Augmented Generation, 検索拡張生成) を使用する場合、検索リポジトリ (埋め込みを含む) を訓練データと同じように扱います。つまり、
+      - データポイズニングに関する脅威を含めます
+      - データが機密性の高い場合、訓練データやテストデータの漏洩に関する脅威を含めます
 
-    Else, if you don’t train or finetune the model:
-      - Ignore the development-time threats, with the exception of supply chain management: make sure the model you obtain is not manipulated, and genuine
-      - Ignore the confidentiality of train data threats
-      - Ignore the confidentiality of model IP threats
-      - Ignore the data poisoning threat
-      - Ignore development-time controls (e.g. filtering sensitive training data)
+    そうではなく、モデルを訓練やファインチューニングしない場合、
+      - サプライチェーン管理を除き、開発時の脅威を無視します。入手したモデルが操作されたものではなく本物であることを確認します。
+      - 訓練データの機密性の脅威を無視します
+      - モデル知的財産の機密性の脅威を無視します
+      - データポイズニングの脅威を無視します
+      - 開発時コントロール (機密性の高い訓練データをフィルタリングするなど) を無視します
 
-    These are the responsbilities of the model maker, but be aware you may be effected by the unwanted results. The maker may take the blame for any issue, which would take care of confidentiality issues, but you would suffer effectively from any manipulated model behaviour.
+    これらはモデル製作者の責任ですが、望ましくない結果の影響を受ける可能性があることに注意してください。製作者は機密保持の問題に対処して、問題の責任を負うかもしれませんが、操作されたモデルの動作によって事実上被害を受けることになります。
 
-    If your train data is not sensitive: ignore the confidentiality of train data threats
+    訓練データが機密ではない場合、訓練データの機密性の脅威を無視します。
 
-    If your model is a GenAI model, ignore the following threats: evasion, model inversion. Also ignore prompt injection and insecure output handling if your GenAI model is NOT an LLM
-    If your model is not a GenAI model, ignore (direct) prompt injection, and insecure output handling
+    モデルが生成 AI モデルである場合、回避、モデル反転の脅威を無視します。また、生成 AI モデルが LLM ではない場合、プロンプトインジェクションと安全でない出力処理も無視します。
+    モデルが生成 AI モデルではない場合、(直接) プロンプトインジェクションと安全でない出力処理を無視します。
 
-    If your input data is not sensitive, ignore ‘leaking input data’. If you use RAG, consider data you retrieve also as input data.
+    入力データが機密ではない場合、「入力データの漏洩」を無視します。RAG を使用する場合、取得するデータも入力データとみなします。
 
-2. **Arranging responsibility**: For each selected threat, determine who is responsible to address it. By default, the organization that builds and deploys the AI system is responsible, but building and deploying may be done by different organizations, and some parts of the building and deployment may be deferred to other organizations, e.g. hosting the model, or providing a cloud environment for the application to run. Some aspects are shared responsibilities.
+2. **責任の采配**: 選択した各脅威に対して、対処する責任者を決定します。デフォルトでは、AI システムの構築と配備を行う組織が責任を負いますが、構築と配備は別の組織が行うかもしれませんし、たとえば、モデルをホストしたり、アプリケーションを実行するためのクラウド環境を提供するなど、構築と配備の一部を別の組織に委ねるかもしれません。いくつかの側面では責任を共有します。
 
-    If components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider, using for example a responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure.
+    AI システムのコンポーネントがホストされている場合、関連する脅威に対するすべてのコントロールに関する責任をホスティングプロバイダと共有します。これは責任マトリクスなどを使用して、プロバイダと調整する必要があります。コンポーネントにはモデル、モデル拡張、アプリケーション、インフラストラクチャがあります。
 
-   If an external party is not open about how certain risks are mitigated, consider requesting this information and when this remains unclear you are faced with either 1) accept the risk, 2) or provide your own mitigations, or 3)avoid the risk, by not engaging with the third party.
+   特定のリスクがどのように軽減されるかについて外部パーティがオープンにしていない場合は、この情報を要求することを検討してください。これが不明瞭なままの場合は、1) リスクを受け入れるか、2) 独自の軽減策を提供するか、3) サードパーティと関わらないことでリスクを回避するかのいずれかに直面することになります。
 
-4. **Verify external responsibilities:** For the threats that are the responsibility of other organisations: attain assurance whether these organisations take care of it. This would involve the controls that are linked to these threats.
-5. **Control selection**: Then, for the threats that are relevant to you and for which you are responsible: consider the various controls listed with that threat (or the parent section of that threat) and the general controls (they always apply). When considering a control, look at its purpose and determine if you think it is important enough to implement it and to what extent. This depends on the cost of implementation compared to how the purpose mitigates the threat, and the level of risk of the threat. These elements also play a role of course in the order you select controls: highest risks first, then starting with the lower cost controls (low hanging fruit).
-6. **Use references**: When implementing a control, consider the references and the links to standards. You may have implemented some of these standards, or the content of the standards may help you to implement the control.
-7. **Risk acceptance**: In the end you need to be able to accept the risks that remain regarding each threat, given the controls that you implemented.
-8. **Further management of these controls** (see SECPROGRAM), which includes continuous monitoring, documentation, reporting, and incident response.
+4. **外部の責任を検証する:** 他の組織の責任である脅威について、これらの組織が対処しているかどうかを確認します。これにはこれらの脅威に関連するコントロールを含みます。
+5. **コントロールの選択**: 次に、自分に関連して自分が責任を負う脅威について、その脅威 (またはその脅威の親セクション) に記載されているさまざまなコントロールと一般的なコントロール (こちらは常に適用されます) を検討します。コントロールを検討する際、その目的を考慮し、それを実装するのに十分重要であると考えるか、およびどの程度まで実施するかを判断します。これはその目的が脅威を緩和する方法と比較した実装コスト、および脅威のリスクレベルによって異なります。もちろん、これらの要素はコントロールを選択する順番にも関わります。最初に最もリスクの高いもの、それから比較的コストの低いコントロール (簡単にできるもの) に着手します。
+6. **リファレンスの使用**: コントロールを実装する際、標準へのリファレンスとリンクを考慮します。あなたはこれらの標準の一部を実装しているかもしれませんし、標準の内容がコントロールの実装に役立つかもしれません。
+7. **リスクの受け入れ**: 最終的には、実装したコントロールを前提として、それぞれの脅威に関して残存するリスクを受容できる必要があります。
+8. **これらのコントロールのさらなる管理** (SECPROGRAM 参照) には、継続的な監視、文書化、レポーティング、インシデント対応などがあります。
 
-For more information on risk analysis, see the SECPROGRAM control.
+リスク分析の詳細については、SECPROGRAM コントロールを参照してください。
 
 ## ... についてはどうですか？
 ### 機械学習以外の AI についてはどうですか？
-A helpful way to look at AI is to see it as consisting of machine learning (the current dominant type of AI) models and _heuristic models_. A model can be a machine learning model which has learned how to compute based on data, or it can be a heuristic model engineered based on human knowledge, e.g. a rule-based system. Heuristic models still need data for testing, and sometimes to perform analysis for further building and validating the human knowledge.  
-This document focuses on machine learning. Nevertheless, here is a quick summary of the machine learning threats from this document that also apply to heuristic systems:
+AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の AI タイプ) モデルと _ヒューリスティックモデル_ から構成されていると考えることです。モデルはデータに基づいて計算方法を学習した機械学習モデルであることも、ルールベースのシステムなどの人間の知識に基づいて設計されたヒューリスティックモデルであることもあります。ヒューリスティックモデルは依然としてテストのためにデータを必要とし、さらに人間の知識を構築して検証するために分析を行うこともあります。
+このドキュメントは機械学習に焦点を当てています。とはいえ、ここではヒューリスティックシステムにも適用される、このドキュメントの機械学習の脅威を簡単に要約します。
 
-- Model evasion is also possible for heuristic models, -trying to find a loophole in the rules
-- Model theft through use - it is possible to train a machine learning model based on input/output combinations from a heuristic model
-- Overreliance in use - heuristic systems can also be relied on too much. The applied knowledge can be false
-- Data poisoning and model poisoning is possible by manipulating data that is used to improve knowledge and by manipulating the rules development-time or runtime
-- Leaks of data used for analysis or testing can still be an issue
-- Knowledgebase, source code and configuration can be regarded as sensitive data when it is intellectual property, so it needs protection
-- Leak sensitive input data, for example when a heuristic system needs to diagnose a patient
+- モデル回避はヒューリスティックモデルでも可能です - ルールの抜け穴を見つけようと試みます
+- 使用によるモデル盗用 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます
+- 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります
+- データポイズニングとモデルポイズニングは知識を向上させるために使用されるデータを操作したり、開発時や実行時にルールを操作する可能性があります
+- 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります
+- 知識、ソースコード、設定が知的財産である場合、機密データとみなされる可能性があり、保護が必要です
+- たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します
 
 ### 責任ある AI や信頼できる AI についてはどうですか？
 Responsible or trustworthy AI include security, but not the other way around: there are many more aspects of responsible/trustworthy AI than just security, and to make matters confusing, each of these aspects has a link with security. Let's try to clarify:
@@ -149,33 +149,33 @@ Responsible or trustworthy AI include security, but not the other way around: th
 
 ### プライバシーについてはどうですか？
 
-AI Privacy can be divided into two parts:
+AI プライバシーは二つのパートに分けることができます。
 
-1. The AI security threats and controls in this document that are about confidentiality and integrity of (personal) data (e.g. model inversion, leaking training data), plus the integrity of the model behaviour
-2. Threats and controls with respect to rights of the individual, as covered by privacy regulations such as the GDPR, including use limitation, consent, fairness, transparency, data accuracy, right of correction/objection/reasure/access. For an overview, see the [Privacy part of the OWASP AI guide](/docs/privacy/#how-to-deal-with-ai-privacy)
+1. このドキュメントの AI セキュリティの脅威とコントロールは (個人) データの機密性と完全性 (モデル反転、トレーニングデータの漏洩など)、およびモデルの動作の完全性に関するものです。
+2. GDPR などのプライバシー規制でカバーされる個人の権利に関する脅威とコントロール。これには使用制限、同意、公平性、透明性、データの正確性、訂正/異議申し立て/再確認/アクセスの権利が含まれます。概要については、[OWASP AI ガイドのプライバシーパート](/docs/privacy/#how-to-deal-with-ai-privacy) を参照してください。
 
 ### 生成 AI (LLM など) についてはどうですか？
 
-Yes, GenAI is leading the current AI revolution and it's the fastest moving subfield of AI security. Nevertheless it is important to realize that other types of algorithms will remain to be applied to many important use cases such as credit scoring, fraud detection, medical diagnosis, product recommendation, image recognition, predictive maintenance, process control, etc. Relevant content has been marked with 'GenAI' in this document.
+はい、生成 AI は現在の AI 変革をリードしており、AI セキュリティの中で最も急速に変化しているサブフィールドです。とはいえ、クレジットスコアリング、不正検出、医療診断、製品推奨、画像認識、予知保全、プロセス制御など、多くの重要なユースケースには他のタイプのアルゴリズムが引き続き適用されることを認識することが重要です。このドキュメントでは関連するコンテンツには「生成 AI」のマークを付けています。
 
-Important note: from a security framework perspective, GenAI is not that different from other forms of AI. GenAI threats and controls largely overlap and are very similar to AI in general. Nevertheless, some risks are (much) higher. Some are lower. Only a few risks are GenAI-specific.
+重要な注意: セキュリティフレームワークの観点からは、生成 AI は他の形式の AI とそれほど違いはありません。生成 AI の脅威とコントロールは一般的な AI と大部分が重複しており、非常によく似ています。とはいえ、一部のリスクは (はるかに) 高くなります。低いものもあります。生成 AI 固有のリスクはごくわずかです。
 
-GenAI security particularities are:
+生成 AI セキュリティの特徴は以下の通りです。
 
-|Nr.| GenAI security particularities |OWASP for LLM TOP 10|
+|No.| 生成 AI セキュリティの特徴 | OWASP for LLM TOP 10 |
 |-| ----------|-------------------|
-|1| Evasion attacks in general are about fooling a model using crafted input to make an unwanted decision, whereas for GenAI it is about fooling a model using a crafted prompt to circumvent behavioral policies (e.g. preventing offensive output). |  ([OWASP for LLM 01](https://llmtop10.com/llm01/))  |
-|2| Unwanted output of sensitive training data is an AI-broad issue, but more likely to be a high risk with GenAI systems that typically output rich content, and have been trained on a large varietey of data sets such.  |  ([OWASP for LLM 06](https://llmtop10.com/llm06/))  |
-|3|A GenAI model will not respect any variations in access privileges of training data. All data will be accessible to the model users.|([OWASP for LLM 06: Sensitive Information Disclosure](https://llmtop10.com/llm06/)) |
-|4|Training data poisoning is an AI-broad problem, and with GenAI the risk is generally higher since training data can be supplied from different sources that may be challenging to control, such as the internet. Attackers could for example hijack domains and place manipulated information. | ([OWASP for LLM 03: Training Data Poisoning](https://llmtop10.com/llm03/))|
-|5|Overreliance is an AI-broad risk factor, and in addition Large Language Models (GenAI) can make matters worse by coming across very confident and knowledgeable. |([OWASP for LLM 09: Overreliance](https://llmtop10.com/llm09/)) and ([OWASP for LLM 08: Excessive agency](https://llmtop10.com/llm08/))|
-|6| Leaking input data: GenAI models mostly live in the cloud - often managed by an external party, which may increase the risk of leaking training data and leaking prompts. This issue is not limited to GenAI, but GenAI has 2 particular risks here: 1) model use involves user interaction through prompts, adding user data and corresponding privacy/sensitivity issues, and 2) GenAI model input (prompts) can contain rich context information with sensitive data (e.g. company secrets). The latter issue occurs with *in context learning* or *Retrieval Augmented Generation(RAG)* (adding background information to a prompt): for example data from all reports ever written at a consultancy firm. First of all, this information will travel with the prompt to the cloud, and second: the system will likely not respect the original access rights to the information. See the threat [Leak sensitive input data](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/owaspaiexchange.md#47-leak-sensitive-input-data).| |
-|7|Pre-trained models may have been manipulated. The concept of pretraining is not limited to GenAI, but the approach is quite common in GenAI, which increases the risk of transfer learning attacks.| ([OWASP for LLM 05 - Supply chain vulnerabilities](https://llmtop10.com/llm05/))|
-|8|The typical application of plug-ins in Large Language Models (GenAI) creates specific risks regarding the protection and privileges of these plugins - as they allow large language models (GenAI) to act outside of their normal conversation with the user.|([OWASP for LLM 07](https://llmtop10.com/llm07/))|
-|9| Prompt injection  is a GenAI specific threat, listed under Application security threats|([OWASP for LLM 01](https://llmtop10.com/llm01/))|
-|10|Model inversion and membership inference are low to zero risks for GenAI |([OWASP for LLM 06](https://llmtop10.com/llm06/))|
-|11|GenAI output may contain elements that perform an injection attack such as cross-site-scripting.| ([OWASP for LLM 02](https://llmtop10.com/llm02/))|
-|12|Denial of service can be an issue for any AI model, but GenAI models are extra sensitive because of the relatively high resource usage. | ([OWASP for LLM 04](https://llmtop10.com/llm04/)) |
+|1| 一般的な回避攻撃は細工された入力を使用してモデルを騙して望ましくない判断をさせることですが、生成 AI の場合は、細工されたプロンプトを使用してモデルを騙し、動作ポリシー (攻撃的な出力の防止など) を回避することです。 | ([OWASP for LLM 01](https://llmtop10.com/llm01/)) |
+|2| 機密性の高いトレーニングデータの望ましくない出力は AI 全般の問題ですが、一般的に豊富なコンテンツを出力し、多種多様なデータセットでトレーニングされている生成 AI システムではリスクがより高くなる可能性があります。 | ([OWASP for LLM 06](https://llmtop10.com/llm06/)) |
+|3| 生成 AI モデルはトレーニングデータのアクセス権限のばらつきを考慮しません。モデルユーザーはすべてのデータにアクセスできます。 | ([OWASP for LLM 06: Sensitive Information Disclosure](https://llmtop10.com/llm06/)) |
+|4| トレーニングデータポイズニングは AI 全般の問題ですが、生成 AI ではトレーニングデータがインターネットなどの制御が困難なさまざまな情報源から供給される可能性があるため、リスクは一般的に高くなります。たとえば、攻撃者はドメインを乗っ取り、操作された情報を配置する可能性があります。 | ([OWASP for LLM 03: Training Data Poisoning](https://llmtop10.com/llm03/)) |
+|5| 過度の依存は AI 全般のリスク要因であり、さらに大規模言語モデル (生成 AI) は非常に機密性が高く知識を持っていると思われることで事態を悪化させる可能性があります。 | ([OWASP for LLM 09: Overreliance](https://llmtop10.com/llm09/)) および ([OWASP for LLM 08: Excessive agency](https://llmtop10.com/llm08/)) |
+|6| 入力データの漏洩: 生成 AI モデルはほとんどがクラウドに存在し、多くの場合は外部パーティによって管理されているため、トレーニングデータの漏洩やプロンプトの漏洩のリスクが高まる可能性があります。この問題は生成 AI に限定されるものではありませんが、生成 AI には特に 2 つのリスクがあります。1) モデルの使用にはプロンプトを介したユーザーとのやり取り、ユーザーデータの追加、対応するプライバシーやセンシティビティの問題が含まれます。2) 生成 AI モデルの入力 (プロンプト) には機密データ (企業秘密など) を持つ豊富なコンテキスト情報を含む可能性があります。後者の問題はたとえば、コンサルタント会社でこれまでに書かれたすべてのレポートのデータなど、*コンテキスト内学習 (In Context Learning)* や *検索拡張生成 (Retrieval Augmented Generation, RAG)* で発生します。まず第一に、この情報はプロンプトとともにクラウドに移動し、第二に、システムは情報に対する本来のアクセス権を考慮しない可能性があります。[機密入力データの漏洩](owaspaiexchange.md#47-leak-sensitive-input-data) の脅威を参照してください。 | |
+|7| 事前トレーニング済みモデルは操作されている可能性があります。事前トレーニングの概念は生成 AI に限ったことではありませんが、このアプローチは生成 AI ではごく一般的であり、転移学習攻撃のリスクを高めます。 | ([OWASP for LLM 05 - Supply chain vulnerabilities](https://llmtop10.com/llm05/)) |
+|8| 大規模言語モデル (生成 AI) でのプラグインの一般的なアプリケーションでは、大規模言語モデル (生成 AI) がユーザーとの通常の会話以外で動作することを許可するため、これらのプラグインの保護と権限に関する特定のリスクが生じます。 | ([OWASP for LLM 07](https://llmtop10.com/llm07/)) |
+|9| プロンプトインジェクションは生成 AI 特有の脅威であり、アプリケーションセキュリティ脅威に記載されています。 | ([OWASP for LLM 01](https://llmtop10.com/llm01/)) |
+|10| モデル反転とメンバーシップ推論は生成 AI にとって低リスクまたはゼロリスクです。 | ([OWASP for LLM 06](https://llmtop10.com/llm06/)) |
+|11| 生成 AI の出力にはクロスサイトスクリプティングなどのインジェクション攻撃を実行する要素を含むかもしれません。 | ([OWASP for LLM 02](https://llmtop10.com/llm02/)) |
+|12| サービス拒否はどの AI モデルでも問題になる可能性がありますが、生成 AI モデルはリソースの使用量が比較的多いため、特に影響を受けやすくなります。 | ([OWASP for LLM 04](https://llmtop10.com/llm04/)) |
 
 生成 AI 参考情報:
 
@@ -184,55 +184,55 @@ GenAI security particularities are:
 
 ### NCSC/CISA ガイドラインについてはどうですか？
 
-Mapping of the UK/US [Guidelines for secure AI
-system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) to the controls here at the AI Exchange:  
-(Search for them in this document or use the [Navigator](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf))
+英国/米国 の [安全な AI システム開発のガイドライン](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) と AI Exchange のコントロールとのマッピング: 
+(このドキュメントで検索するか、[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) を使用してください)
+
 
 1. 安全な設計
 
-- Raise staff awareness of threats and risks:  
+- 脅威とリスクに対するスタッフの意識を高めます:
   #SECEDUCATE
-- Model the threats to your system:  
-  See Risk analysis under #SECPROGRAM
-- Design your system for security as well as functionality and performance:  
-  #AIPROGRAM, #SECPROGRAM, #DEVPROGRAM, #SECDEVPROGRAM, #CHECKCOMPLIANCE, #LEASTMODELPRIVILEGE, #DISCRETE, #OBSCURECONFIDENCE, #OVERSIGHT, #RATELIMIT,  #DOSINPUTVALIDATION, #LIMITRESOURCES, #MODELACCESSCONTROL, #AITRANSPRENCY
-- Consider security benefits and trade-offs when selecting your AI model  
-  All development-time datascience controls (currently 13), #EXPLAINABILITY
+- システムに対する脅威をモデル化します:
+  #SECPROGRAM のリスク分析を参照してください
+- 機能性とパフォーマンスだけでなくセキュリティも考慮してシステムを設計します:
+  #AIPROGRAM, #SECPROGRAM, #DEVPROGRAM, #SECDEVPROGRAM, #CHECKCOMPLIANCE, #LEASTMODELPRIVILEGE, #DISCRETE, #OBSCURECONFIDENCE, #OVERSIGHT, #RATELIMIT, #DOSINPUTVALIDATION, #LIMITRESOURCES, #MODELACCESSCONTROL, #AITRANSPRENCY
+- AI モデルを選択する際に、セキュリティの利点とトレードオフを考慮します
+  すべての開発時のデータサイエンスコントロール (現在 13), #EXPLAINABILITY
 
 2. 安全な開発
 
-- Secure your supply chain:  
+- サプライチェーンを保護します:
   #SUPPLYCHAINMANAGE
-- Identify, track and protect your assets:  
-  #DEVDATAPROTECT, #DEVSECURITY, #SEGREGATEDATA, #CONFCOMPUTE, #MODELINPUTCONFIDENTIALITY, #RUNTIMEMODELCONFIDENTIALITY, #DATAMINIMIZE, #ALLOWEDDATA, #SHORTRETAIN, #OBFUSCATETRAININGDATA and part of #SECPROGRAM
-- Document your data, models and prompts:  
-  Part of #DEVPROGRAM
-- Manage your technical debt:  
-  Part of #DEVPROGRAM
+- 資産を特定、追跡、保護します:
+  #DEVDATAPROTECT, #DEVSECURITY, #SEGREGATEDATA, #CONFCOMPUTE, #MODELINPUTCONFIDENTIALITY, #RUNTIMEMODELCONFIDENTIALITY, #DATAMINIMIZE, #ALLOWEDDATA, #SHORTRETAIN, #OBFUSCATETRAININGDATA および #SECPROGRAM の一部
+- データ、モデル、プロンプトを文書化します:
+  #DEVPROGRAM の一部
+- 技術的負債を管理します:
+  #DEVPROGRAM の一部
 
 3. 安全な展開
 
-- Secure your infrastructure:  
-  Part of #SECPROGRAM and see ‘Identify, track and protect your assets’
-- Protect your model continuously:  
+- インフラストラクチャを保護します:
+  #SECPROGRAM の一部と「資産を特定、追跡、保護します」を参照してください
+- モデルを継続的に保護します:
   #INPUTDISTORTION, #FILTERSENSITIVEMODELOUTPUT, #RUNTIMEMODELIOINTEGRITY, #MODELINPUTCONFIDENTIALITY, #PROMPTINPUTVALIDATION, #INPUTSEGREGATION
-- Develop incident management procedures:  
-  Part of #SECPROGRAM
-- Release AI responsibly:  
-  Part of #DEVPROGRAM
-- Make it easy for users to do the right things:  
-  Part of #SECPROGRAM
+- インシデント管理手順を策定します:
+  #SECPROGRAM の一部
+- 責任をもって AI をリリースします:
+  #DEVPROGRAM の一部
+- ユーザーが正しいことを簡単にできるようにします:
+  #SECPROGRAM の一部
 
 4. 安全な運用と保守
 
-- Monitor your system’s behaviour:  
+- システムの動作を監視します:
   #CONTINUOUSVALIDATION, #UNWANTEDBIASTESTING
-- Monitor your system’s inputs:  
+- システムの入力を監視します:
   #MONITORUSE, #DETECTODDINPUT, #DETECTADVERSARIALINPUT
-- Follow a secure by design approach to updates:  
-  Part of #SECDEVPROGRAM
-- Collect and share lessons learned:  
-  Part of #SECPROGAM and #SECDEVPROGRAM
+- セキュアバイデザインのアプローチに従ってアップデートを行います:
+  #SECDEVPROGRAM の一部
+- 教訓を収集して共有します:
+  #SECPROGAM および #SECDEVPROGRAM の一部
 
 ## 参考情報
 
