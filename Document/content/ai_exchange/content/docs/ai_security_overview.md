@@ -236,13 +236,13 @@ AI プライバシーは二つのパートに分けることができます。
 
 ## 参考情報
 
-References on the OWASP AI guide (a project of which this document is part):
+OWASP AI ガイド (このドキュメントはその一部のプロジェクトです) に関する参考情報:
 
-- [Recording](https://www.youtube.com/watch?v=ABmWHnFrMqI) or [slides](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) from [Rob van der Veer's talk](https://sched.co/1F9DT) at the OWASP Global appsec event in Dublin on February 15 2023, during which the OWASP AI guide was launched.
-- Appsec Podcast episode on the OWASP AI guide ([audio](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide),[video](https://www.youtube.com/watch?v=SLdn3AwlCAk&))
-- The [September 2023 MLSecops Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology), and If you want the short story, check out [the 13 minute AI security quick-talk](https://www.brighttalk.com/webcast/19697/586526).
+- 2023 年 2 月 15 日にダブリンで開催された OWASP Global AppSec イベントで OWASP AI ガイドが発表されました。[Rob van der Veer の講演](https://sched.co/1F9DT) の [動画](https://www.youtube.com/watch?v=ABmWHnFrMqI) と [スライド](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) です。
+- OWASP AI ガイドに関する AppSec Podcast エピソードです ([音声](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide), [動画](https://www.youtube.com/watch?v=SLdn3AwlCAk&))。
+- [September 2023 MLSecOps Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology)、短編をお望みであれば、[13分 AI セキュリティクイックトーク](https://www.brighttalk.com/webcast/19697/586526) をご覧ください。
 
-Overviews of model attacks:
+モデル攻撃の概要:
 
 - [ENISA ML threats and countermeasures 2021](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms)
 - [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
@@ -254,7 +254,7 @@ Overviews of model attacks:
 - [BIML](https://berryvilleiml.com/taxonomy/)
 - [AVID AI Vulnerability database](https://avidml.org/)
 
-Misc.:
+その他:
 
 - [ENISA AI security standard discussion](https://www.enisa.europa.eu/publications/cybersecurity-of-ai-and-standardisation)
 - [ENISA's multilayer AI security framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)
@@ -268,4 +268,4 @@ Misc.:
 - [ETSI GR SAI 002 V 1.1.1 Securing Artificial Intelligence (SAI) – Data Supply Chain Security](https://www.etsi.org/deliver/etsi_gr/SAI/001_099/002/01.01.01_60/gr_SAI002v010101p.pdf)
 - [ISO/IEC 20547-4 Big data security](https://www.iso.org/standard/71278.html)
 - [IEEE 2813 Big Data Business Security Risk Assessment](https://standards.ieee.org/ieee/2813/7535/)
-- [OECD AI Incidents Monitor (AIM)](https://oecd.ai/en/incidents) AIM documents AI incidents to help policymakers, AI practitioners, and all stakeholders to gain valuable insights into the incidents and hazards that concretise AI risks
+- [OECD AI Incidents Monitor (AIM)](https://oecd.ai/en/incidents) AIM は AI インシデントを文書化し、方針作成者、AI 実務者、すべての利害関係者が AI リスクを具体化するインシデントやハザードについて貴重な洞察を得るのに役立ちます
