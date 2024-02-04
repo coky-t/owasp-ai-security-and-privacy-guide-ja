@@ -3,23 +3,23 @@ title: 'OWASP AI Exchange に貢献する'
 excludeSearch: true
 ---
 
-{{< cards >}}
-  {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide" title="GitHub Repo" icon="github" >}}
-{{< /cards >}}
+<!-- {{< cards >}} -->
+- [GitHub Repo](https://github.com/OWASP/www-project-ai-security-and-privacy-guide)  <!-- {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide" title="GitHub Repo" icon="github" >}} -->
+<!-- {{< /cards >}} -->
 
-&nbsp;{{< github-stars user="OWASP" repo="www-project-ai-security-and-privacy-guide" repo_url="https://github.com/OWASP/www-project-ai-security-and-privacy-guide" >}}
+<!-- &nbsp;{{< github-stars user="OWASP" repo="www-project-ai-security-and-privacy-guide" repo_url="https://github.com/OWASP/www-project-ai-security-and-privacy-guide" >}} -->
 
-{{< tabs items="Guidelines,Team of Experts,Contributors,Organizations,TODOs" >}}
+<!-- {{< tabs items="Guidelines,Team of Experts,Contributors,Organizations,TODOs" >}} -->
 
-{{< tab >}}
+# ガイドライン <!-- {{< tab >}} -->
 
 OWASP プロジェクトはオープンソースの取り組みであり、私たちはあらゆる形態の貢献とフィードバックを熱烈に歓迎します。
 
 ## コンテンツ開発に参加する
 
-- 📥 提案を [プロジェクトリーダー](/connect/#owasp-ai-project-leader) に送信してください。
+- 📥 提案を [プロジェクトリーダー](connect.md#owasp-ai-project-leader) に送信してください。
 - 👋 [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai` に参加してください。
-- 🗣️ [プロジェクトリーダー](/connect/#owasp-ai-project-leader) と執筆グループの一員になる方法について話し合ってください。
+- 🗣️ [プロジェクトリーダー](connect.md#owasp-ai-project-leader) と執筆グループの一員になる方法について話し合ってください。
 - 💡あなたの [コンセプト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/ideas) を提案するか、[問題](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) を投稿してください。
 - 📄 リポジトリをフォークして、具体的な修正 (文法/誤植など) やコアチームによってすでに承認されたコンテンツの [プルリクエスト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/pulls) を提出してください。
 - 🙌 あなたの [貢献](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/show-and-tell) を紹介してください。
@@ -34,10 +34,10 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 - **広告を避けます**: OWASP AI プロジェクトは商用ツール、企業、個人を宣伝する媒体であってはなりません。技術やテストの実装について議論するときは、フリーでオープンソースのツールに焦点を当てるべきです。商用ツールは一般的に含まれませんが、特定の関連する事例で言及されることもあります。
 - **不必要な自己宣言を控えます**: あなたが関連しているツールや記事を参照しているのであれば、プルリクエストでこの関係を明らかにしてください。この透明性はコンテンツがガイドの全体的な目的と合致していることを確認するのに役立ちます。
 
-不明な点がありましたら、遠慮なく [私たちに連絡して](/connect) 質問してください。
-{{< /tab >}}
+不明な点がありましたら、遠慮なく [私たちに連絡して](connect.md) 質問してください。
+<!-- {{< /tab >}} -->
 
-{{< tab >}}
+# 専門家チーム <!-- {{< tab >}} -->
 
 <!-- TODO: Transform to table -->
 - Adelin Travers - Trail of Bits
@@ -54,8 +54,8 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 - Srajan Gupta - Dave
 - Steve Francolla - Workforce Tech LLC
 
-{{< /tab >}}
-{{< tab >}}
+<!-- {{< /tab >}} -->
+# 貢献者 <!-- {{< tab >}} -->
 
 <!-- TODO: Transform to table -->
 - Rob van der Veer (SIG, オランダ) - SIG での AI セキュリティ研究の成果: 脅威モデル、リスク、ナビゲータ、マトリクス、リスクアプローチ、ISO とのギャップ分析
@@ -73,14 +73,14 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 - Milad Masoodi (SIG, オランダ) - ドキュメントを再構成してセクションにコントろーつを配置し、目次に表示
 
 
-{{< /tab >}}
-{{< tab >}}
+<!-- {{< /tab >}} -->
+# 組織 <!-- {{< tab >}} -->
 
 <!-- Add a grid of copmany logos-->
 
-{{< /tab >}}
+<!-- {{< /tab >}} -->
 
-{{< tab >}}
+# TODO <!-- {{< tab >}} -->
 
 > タスクは緊急度順にソートされ、一番上の項目が最も緊急です。
 
@@ -125,5 +125,5 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 - ニューラルネットワークの堅牢性の評価に関する ISO/IEC TR 24029 についてギャップ分析を行い、詳しく説明します (このドキュメントで検索してください)
 
 コントロールの追加、説明の改善、事例、参考情報など、なんでも歓迎します。意見はクレジットされるでしょう。
-{{< /tab >}}
-{{< /tabs >}}
+<!-- {{< /tab >}} -->
+<!-- {{< /tabs >}} -->
