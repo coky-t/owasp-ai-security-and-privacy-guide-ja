@@ -427,21 +427,21 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
     - [NIST SP 800-53 の一般的なセキュリティ/プライバシーコントロール](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
     - [NIST サイバーセキュリティフレームワーク](https://www.nist.gov/cyberframework)
 
-- **#SECDEVPROGRAM** (management). Make data science development activities part of the secure software development program.
+- **#SECDEVPROGRAM** (マネジメント)。データサイエンス開発活動を安全なソフトウェア開発プログラムの一部にします。
 
-  See elsewhere in this document for SUPPLYCHAINMANAGE which discusses AI-specific supply-chain risks.
+  AI 固有のサプライチェーンのリスクについて説明している SUPPLYCHAINMANAGE についてはこのドキュメントの別項を参照してください。
 
-  Purpose: Reduces security risks by proper attention to mitigating those risks during software development.
+  目的: ソフトウェア開発時にリスクを軽減するために適切な注意を払うことでセキュリティリスクを低減します。
 
-  Particularity: Data science development activities need to be taken into scope of secure development lifecycle.
+  特殊性: データサイエンス開発活動は安全な開発ライフサイクルの範疇に入れる必要があります。
 
-  An important practice in secure software development is Threat modeling, which in the case of AI needs to take the threats in this document into account.
+  安全なソフトウェア開発の重要な実践は脅威モデリングであり、AI の場合はこのドキュメントにある脅威を考慮する必要があります。
 
-  Links to standards:
+  標準へのリンク:
 
-  - 27002 control 8.25 Secure development lifecycle. Gap: covers this control fully, with said particularity, but lack of detail - the 8.25 Control description in 27002(2022) is one page, whereas secure software development is a large and complex topic - see below for further references
-  - ISO/IEC 27115 (Cybersecurity evaluation of complex systems) 
-  - See [OpenCRE on secure software development processes](https://www.opencre.org/cre/616-305) with notable links to NIST SSDF and OWASP SAMM. Gap: covers this control fully, with said particularity
+  - 27002 コントロール 8.25 安全な開発ライフサイクル。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴いますが、詳細は欠如しています - 27002(2022) の 8.25 コントロール の説明は一ページですが、安全なソフトウェア開発は大規模かつ複雑なトピックです - 詳細については以下を参照してください。
+  - ISO/IEC 27115 (複合システムのサイバーセキュリティ評価)
+  - [OpenCRE の安全なソフトウェア開発プロセス](https://www.opencre.org/cre/616-305) を参照してください。NIST SSDF や OWASP SAMM への注目すべきリンクがあります。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います。
 
 - **#DEVPROGRAM** (management). Having a development program for AI. Apply general (not just security-oriented) software engineering best practices to AI development.
 
