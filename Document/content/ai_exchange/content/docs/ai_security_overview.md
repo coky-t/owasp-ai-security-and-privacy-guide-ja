@@ -133,19 +133,19 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 - たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します
 
 ### 責任ある AI や信頼できる AI についてはどうですか？
-Responsible or trustworthy AI include security, but not the other way around: there are many more aspects of responsible/trustworthy AI than just security, and to make matters confusing, each of these aspects has a link with security. Let's try to clarify:
-- **Accuracy** is about the AI model being sufficiently correct to perform its 'business function'. Being incorrect can lead to physical safety problems (e.g. car trunk opens during driving) or other wrong decisions that are harmful (e.g. wrongfully declined loan). The link with security is that some attacks cause unwanted model behaviour which is by definition an accuracy problem. Nevertheless, the security scope is restricted to mitigating the risks of those attacks - NOT solve the entire problem of creating an accurate model (selecting representative data for the trainset etc.).
-- **Safety** (also _reliability_) is about the level of accuracy when there is a risk of harm (typically implying physical harm but not restricted to that) , plus the things that are in place to mitigate those risks (apart from accuracy), which included security to safeguard accuracy, plus a number of safety measures that are important for the business function of the model. These need to be taken care of not just for security reasons because the model can make unsafe decisions for other reasons (e.g. bad training data), so they are a shared concern between safety and security:
-  -  oversight to restrict unsafe behaviuour, and connected to that: assigning least privileges to the model,
-  -  continuous validation to safeguard accuracy,
-  -  transparency to warn users and depending systems of accuracy risks,
-  -  explainability to help users validate accuracy
-- **Transparency**: see above, plus in many cases users have the right to know details about a model being used and how it has been created. Therefore it is a shared concern between security, privacy and safety.
-- **Explainability**: see above, and apart from validating accuracy this can also support users to get transprancy and also understand what needs to change to get a different outcome. Therefore it is a shared concern between security, privacy, safety and business function. A special case is when explainability is required by law separate from privacy, which adds 'compliance' to the list of aspects that share this concern.
-- **Robustness** is about the ability of maintaining accuracy under expected or unexpected variations in input. The security scope is about when those variations are malicious which often requires different countermeasures than those required for robustness against benign variations. Just like with accuracy, security is not involved per se in creating a robust model for benign variations. The excption to this is when benign robustness supports malicious robustness, in which case this is a shared concern between safety and security. This depends on a case by case basis.
-- **Fairness** as in 'free of unwanted bias' where the model 'mistreats' certain groups. This is undesired for legal and ethical reasons and primarily therefore a business concern. The relation with security is that having detection of unwanted bias can help to identify unwanted model behaviour caused by an attack. For example, a data poisoning attack has inserted malicious data samples in the training set, which at first goes unnoticed, but then is discovered by an unexplained detection of bias in the model.
-- **Empathy**. The relation of that with security is that the feasible level of security should always be taken into account when validating a certain application of AI. If a sufficient level of security cannot be provided to individuals or organizations, then empathy means invalidating the idea, or takin other precautions.
-- **Accountability**. The relation of accountability with security is that security measures should be demonstrable, including the process that have led to those measures. In addition, traceability as a security property is important, just like in any IT system, in order to detect, reconstruct and respond to security incidents and provide accountability.
+責任ある AI や信頼できる AI にはセキュリティが含まれますが、その逆ではありません。責任ある AI や信頼できる AI にはセキュリティ以外にも多くの側面があり、物事をややこしくしているのですが、これらの各側面はセキュリティと関連しています。わかりやすく説明してみましょう。
+- **正確性 (Accuracy)** はその「ビジネス機能」を実行するのに十分に正しいかどうかを指します。不正確であると、物理的な安全性の問題 (運転中に車のトランクが開いてしまうなど) やその他の有害な間違った判断 (ローンの不当な拒否など) につながる可能性があります。セキュリティとの関連は、ある種の攻撃が望ましくないモデル動作を引き起こすことであり、これは定義上、正確性の問題です。とはいえ、セキュリティの範囲ではそのような攻撃のリスクを軽減することに限定されており、正確なモデルの作成 (トレーニングセットの代表データの選択など) の問題全体を解決するものではありません。
+- **安全性 (Safety)** (_信頼性 (Reliability)_ ともよばれます) は危害 (一般的に物理的な危害を意味しますが、それに限定されません) のリスクがある場合の正確性のレベルのことであり、さらに (正確性とは別に) それらのリスクを軽減するために設けられたものです。これには正確性を保護するためのセキュリティに加えて、モデルのビジネス機能にとって重要な多くの安全性の対策を含みます。これらはセキュリティ上の理由だけでなく、他の理由 (不適切なトレーニングデータなど) でモデルが安全でない決定を下す可能性があるため、安全性とセキュリティの間で共通する懸念事項であることに注意する必要があります。
+  -  安全でない動作を制限するための監視、およびそれに関連して、モデルへの最小権限の割り当て
+  -  正確性を保護するための継続的な検証
+  -  ユーザーおよび依存するシステムに正確性のリスクを警告するための透明性
+  -  ユーザーが正確性を検証するのに役立つ説明可能性
+- **透明性 (Transparency)**: 上記を参照してください。さらに、多くの場合、ユーザーは使用されているモデルについての詳細とそれがどのように作成されたかを知る権利を持っています。そのため、セキュリティ、プライバシー、安全性の間で共通する懸念事項になります。
+- **説明可能性 (Explainability)**: 上記を参照してください。正確性を検証することとは別に、ユーザーが透明性を取得でき、異なる結果を得るには何を変更する必要があるかを理解することもできます。そのため、セキュリティ、プライバシー、安全性、ビジネス機能の間で共通する懸念事項になります。特別なケースには、プライバシーとは別に説明可能性を法律で要求されている場合であり、この懸念を共有する側面のリストに「コンプライアンス」を追加します。
+- **堅牢性 (Robustness)** は、入力に予期したバリエーションや予期しないバリエーションがあっても正確性を維持する能力です。セキュリティの範囲ではそのようなバリエーションが悪意のある場合に関するものであり、良性のバリエーションに対する堅牢性のために必要な対策とは異なる対策が必要になることがよくあります。正確性の場合と同様に、セキュリティ自体は良性のバリエーションに対する堅牢なモデルの作成には関与しません。この例外は良性の堅牢性が悪性の堅牢性をサポートする場合であり、この場合には安全性とセキュリティの間で共通する懸念事項になります。これはケースバイケースで異なります。
+- **公平性 (Fairness)** はモデルが特定のグループを「不当に扱う」ような「望ましくないバイアスがない」ことです。これは法的および倫理的な理由から望ましくなく、そのため主にビジネス上の懸念事項になります。セキュリティとの関係は、望ましくないバイアスを検出することで、攻撃によって引き起こされる望ましくないモデル動作を特定するのに役立つことです。たとえば、データポイズニング攻撃はトレーニングセットに悪意のあるデータサンプルを挿入します。最初は気付かれませんが、モデル内の原因不明のバイアルが検出されることによって発見されます。
+- **共感性 (Empathy)**。セキュリティとの関係は、AI の特定のアプリケーションを検証する際に、常に実現可能なセキュリティレベルを考慮すべきであるということです。十分なレベルのセキュリティを個人や組織に提供できないのであれば、共感性とはそのアイデアを無効にするか、他の予防措置を講じることを意味します。
+- **説明責任 (Accountability)**。説明責任とセキュリティの関係は、セキュリティ対策はその対策に至ったプロセスを含めて実証可能であるべきということです。さらに、セキュリティインシデントを検出し、再構築し、対応して、説明責任を果たすためには、他の IT システムと同様に、セキュリティ特性としてのトレーサビリティが重要です。
 
 ### プライバシーについてはどうですか？
 
