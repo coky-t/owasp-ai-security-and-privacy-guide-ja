@@ -6,6 +6,7 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 
 - Project Site - <https://owasp.org/www-project-ai-security-and-privacy-guide/>
 - Project Repository - <https://github.com/OWASP/www-project-ai-security-and-privacy-guide>
+- Document Site - <https://owaspai.org/>
 
 # OWASP AI セキュリティおよびプライバシーガイド 日本語版
 
