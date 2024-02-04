@@ -1,29 +1,29 @@
 ---
 ---
 
-{{< image-centered src="/images/aixlogosml.jpg" alt="OWASP AI Exchange Logo" >}}
+<img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml.jpg?raw=true"> <!-- {{< image-centered src="/images/aixlogosml.jpg" alt="OWASP AI Exchange Logo" >}} -->
 
 > AI をセキュリティの脅威から保護する方法に関する、専門家による、専門家のための、包括的なガイダンスとアラインメント。
 
-{{< spacer height="40" >}}
+<!-- {{< spacer height="40" >}} -->
 
-{{< cards >}}
-    {{< card link="/connect" title="私たちとつながろう！" icon="chat" >}}
-    {{< card link="/contribute" title="貢献" icon="star" >}}
-    {{< card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}}
-    {{< card link="/media" title="メディア" icon="speakerphone" >}}
-    {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf" title="ナビゲータ" icon="document-download">}}
-{{< /cards >}}
+<!-- {{< cards >}} -->
+- [私たちとつながろう！](connect.md)    <!-- {{< card link="/connect" title="私たちとつながろう！" icon="chat" >}} -->
+- [貢献](contribute.md)    <!-- {{< card link="/contribute" title="貢献" icon="star" >}} -->
+- [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
+- [メディア](media.md)    <!-- {{< card link="/media" title="メディア" icon="speakerphone" >}} -->
+- [ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)    <!-- {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf" title="ナビゲータ" icon="document-download">}} -->
+<!-- {{< /cards >}} -->
 
 ## コンテンツ
 
-{{< cards >}}
-    {{< card link="/docs/ai_security_overview/" title="AI セキュリティ概要">}}
-    {{< card link="/docs/1_general_controls/" title="1. 一般的なコントロール">}}
-    {{< card link="/docs/2_threats_through_use/" title="2. 使用による脅威">}}
-    {{< card link="/docs/3_development_time_threats/" title="3. 開発時の脅威">}}
-    {{< card link="/docs/4_runtime_application_security_threats/" title="4. 実行時のアプリケーションのセキュリティ脅威">}}
-{{< /cards >}}
+<!-- {{< cards >}} -->
+- [AI セキュリティ概要](docs/ai_security_overview.md)    <!-- {{< card link="/docs/ai_security_overview/" title="AI セキュリティ概要">}} -->
+- [1. 一般的なコントロール](docs/1_general_controls.md)    <!-- {{< card link="/docs/1_general_controls/" title="1. 一般的なコントロール">}} -->
+- [2. 使用による脅威](docs/2_threats_through_use.md)    <!-- {{< card link="/docs/2_threats_through_use/" title="2. 使用による脅威">}} -->
+- [3. 開発時の脅威](docs/3_development_time_threats.md)    <!-- {{< card link="/docs/3_development_time_threats/" title="3. 開発時の脅威">}} -->
+- [4. 実行時のアプリケーションのセキュリティ脅威](docs/4_runtime_application_security_threats.md)    <!-- {{< card link="/docs/4_runtime_application_security_threats/" title="4. 実行時のアプリケーションのセキュリティ脅威">}} -->
+<!-- {{< /cards >}} -->
 
 ## 趣旨
 
@@ -35,8 +35,8 @@ AI Exchange はここ [owaspai.org](https://owaspai.org) で展示され、[GitH
 
 ## その他の OWASP AI イニシアチブ
 
-{{< cards >}}
-    {{< card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI セキュリティおよびプライバシーガイド" icon="lock-closed" >}}
-    {{< card link="https://llmtop10.com/" title="LLM Top 10" icon="brain" >}}
-    {{< card link="https://mltop10.info/" title="ML Top 10" icon="machinelearning" >}}
-{{< /cards >}}
+<!-- {{< cards >}} -->
+- [AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/)    <!-- {{< card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI セキュリティおよびプライバシーガイド" icon="lock-closed" >}} -->
+- [LLM Top 10](https://llmtop10.com/)    <!-- {{< card link="https://llmtop10.com/" title="LLM Top 10" icon="brain" >}} -->
+- [ML Top 10](https://mltop10.info/)    <!-- {{< card link="https://mltop10.info/" title="ML Top 10" icon="machinelearning" >}} -->
+<!-- {{< /cards >}} -->
