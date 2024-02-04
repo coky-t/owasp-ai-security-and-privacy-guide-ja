@@ -22,7 +22,7 @@ excludeSearch: true
 
 貢献することに興味がある方は、[Contribution Guidelines](contribute.md) を確認するか、プロジェクトリーダーに連絡してください。Exchange は世界中のあらゆる分野にわたる貢献者からの専門知識に基づいて構築されています。
 
-## OWASP AI プロジェクトリーダー
+## OWASP AI プロジェクトリーダー <a name="owasp-ai-project-leader"></a>
 
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/rob_van_der_veer.jpeg?raw=true"> <!-- {{< image-left src="/images/rob_van_der_veer.jpeg" alt="Image description" width="auto" height="150px" >}} -->
 
