@@ -6,22 +6,22 @@ weight: 2
 
 #### #AIPROGRAM
 
-(management). Having an AI program. Take responsibility for AI as an organization, by keeping an inventory of AI initiatives, perform risk analysis on them, and manage those risks.
+(マネジメント)。AI プログラムを持つこと。組織として AI に責任を持ち、AI への取り組みの一覧表を作成し、リスク分析を行い、それらのリスクを管理します。
 
-This includes assigning responsibilities, e.g. model accountability, data accountability, and risk governance. For the high risk systems: attain responsible AI and transparency in the form of communication and documentation, auditability, bias countermeasures, oversight and cyber security.
+これには、モデルの説明責任、データの説明責任、リスクガバナンスなどの責任の割り当てを含みます。高リスクシステムの場合: コミュニケーションと文書化、監査可能性、バイアス対策、監視、サイバーセキュリティといった形で責任ある AI と透明性を実現します。
 
-Technically one could argue that this control is out of scope for cyber security, but it initiates action to get in control of AI security.
+技術的には、このコントロールはサイバーセキュリティの範囲外であると主張することもできますが、AI セキュリティのコントロールを得るためのアクションを開始するものです。
 
-Purpose: 1) reduces probability of AI initiatives being overlooked for proper governance (including security) - as covered by controls in this document, and 2) increases incentive for proper governance as the AI program takes responsibility for it. Without proper governance, the controls in this document can only happen by accident.
+目的: 1) AI への取り組みが適切なガバナンス (セキュリティを含む) に考慮されない可能性を低減します - このドキュメントのコントロールでカバーします、2) AI プログラムが責任を負うことで、適切なガバナンスに対するインセンティブを高めます。適切なガバナンスがなければ、このドキュメントのコントロールは偶然にしか起こり得ません。
 
-See Risk management under SECPROGRAM for security-specific risk analysis.
+セキュリティ固有のリスク分析については SECPROGRAM のリスク管理を参照してください。
 
-Note that an AI program is not just about risk TO AI, such as security risks - it is also about risks BY AI, such as threats to fairness, safety, etc.
+AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
 
-Links to standards:
- - ISO/IEC 42001 AI management system (under development). Gap: covers this control fully.
+標準へのリンク:
+ - ISO/IEC 42001 AI マネジメントシステム (開発中)。ギャップ: このコントロールを完全にカバーします。
  
-42001 is about extending your risk management system - it focuses on governance. 5338 (see #DEVPROGRAM below) is about extending your software lifecycle practices - it focuses on engineering and everything around it. The 42001 can be seen as a management system for the governance of responsible AI in an organization, similar to how 27001 is a management system for information security. The 42001 doesn’t go into the lifecycle processes. It for example does not discuss how to train models, how to do data lineage, continuous validation, versioning of AI models, project planning challenges, and how and when exactly sensitive data is used in engineering.
+42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。5338 (下記 #DEVPROGRAM 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。27001 が情報セキュリティのマネジメントシステムであるのと同様に、42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
 
 #### #SECPROGRAM 
