@@ -24,55 +24,55 @@ AI プログラムは、セキュリティリスクなどの AI にとっての�
 42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。5338 (下記 #DEVPROGRAM 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。27001 が情報セキュリティのマネジメントシステムであるのと同様に、42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
 
-#### #SECPROGRAM 
-(management). Having a security program. Include the whole AI lifecycle and AI particularities in the organization's security program (also referred to as _information security management system_).
+#### #SECPROGRAM
+(マネジメント)。セキュリティプログラムを持つこと。AI ライフサイクル全体と AI の特殊性を組織のセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) に含めます。
 
-Make sure to include AI-specific threats and assets (e.g. assets the development environment includign AI Ops / ML Ops).
+AI 固有の脅威と資産 (AI Ops / ML Ops を含む開発環境の資産など) を必ず含めてください。
 
-Purpose: reduces probability of AI initiatives being overlooked for information security management, vastly decreasing security risk as the security program takes responsibility for the AI-specific threats and corresponding controls in this document. For more details on using this document in risk analysis, see the Introduction section.
+目的: 情報セキュリティマネジメントにおいて AI の取り組みが見過ごされる可能性を低減し、セキュリティプログラムがこのドキュメントにある AI 固有の脅威と対応するコントロールに責任を持つことで、セキュリティリスクを大幅に軽減します。リスク分析でのこのドキュメントの使用の詳細については、「はじめに」セクションを参照してください。
 
-Particularity: the AI lifecycle and its specific assets and security threats need to be part of the organization's information security governance.
+特殊性: AI のライフサイクルとその特定の資産とセキュリティ脅威は組織の情報セキュリティガバナンスの一部である必要があります。
 
-Because AI has specific assets (e.g. training data), **AI-speific honeypots** are a partiularly interesting control. These are fake parts of the data/model/datascience infrastucture that are exposed on purpose, in order to detect or capture attackers, before they succeed to access the real assets. Examples:
+AI には特定の資産 (トレーニングデータなど) があるため、**AI 固有のハニーポット** は特に興味深いコントロールです。これは攻撃者が実際の資産にアクセスする前に、攻撃者を検出または捕捉するために、意図的に公開しているデータ/モデル/データサイエンスインフラストラクチャの偽物です。たとえば、以下があります。
 
-- Hardened data services, but with an unpatched vulnerability (e.g. Elasticsearch)
-- Exposed data lakes, not revealing details of the actual assets
-- Data access APIs vulnerable to brute-force attacks
-- "Mirror" data servers that resemble development facilities, but are exposed in production with SSH access and labeled with names like "lab"
-- Documentation 'accidentally' exposed, directing to a honeypot
-- Data science Python library exposed on the server
-- External access granted to a specific library
-- Models imported as-is from GitHub
+- データサービスは堅牢化されていますが、パッチ未適用の脆弱性があります (Elasticsearch など)
+- データレイクが公開されていますが、実際の資産の詳細は明らかになりません
+- データアクセス API がブルートフォース攻撃に対して脆弱です
+- 開発設備に似せた「ミラー」データサーバーですが、本番環境では SSH アクセスで公開され、"lab" などの名前でラベル付けされています
+- ドキュメントが「うっかり」公開されていますが、ハニーポットに誘導するものです
+- データサイエンス Python ライブラリがサーバー上に公開されています
+- 特定のライブラリへの外部アクセスが許可されています
+- GitHub からモデルをそのままインポートしています
 
-Links to standards:
+標準へのリンク:
 
-  - The entire 27000-27005 range is applicable to AI systems in the general sense as they are IT systems. Gap: covers this control fully, with the high-level particularity that there are three AI-specific attack surfaces that need to be taken into account in information security management: 1)AI development-time attacks, 2)attacks through model use and 3)AI Application security attacks. See the controls under the corresponding sections to see more particularities.
-    These standards cover:
+  - 27000-27005 の全範囲は IT システムであるため、一般的な意味で AI システムに適用できます。ギャップ: このコントロールを完全にカバーしており、情報セキュリティマネジメントで考慮する必要がある三つの AI 固有の攻撃対象領域があるという高レベルの特殊性があります: 1) AI 開発時の攻撃、2) モデルの使用による攻撃、3) AI アプリケーションセキュリティ攻撃。特殊性の詳細については対応するセクションのコントロールを参照してください。
+    これらの標準には以下があります。
 
-    - ISO/IEC 27000 – Information security management systems – Overview and vocabulary
-    - ISO/IEC 27001 – Information security management systems – Requirements
-    - ISO/IEC 27002 – Code of practice for information security management (See below)
-    - ISO/IEC 27003 – Information security management systems: Implementation Guidelines)
-    - ISO/IEC 27004 – Information security management measurements)
-    - ISO/IEC 27005 – Information security risk management
+    - ISO/IEC 27000 – 情報セキュリティマネジメントシステム - 概要と用語
+    - ISO/IEC 27001 – 情報セキュリティマネジメントシステム - 要件
+    - ISO/IEC 27002 – 情報セキュリティマネジメントの実践のための規範 (下記参照)
+    - ISO/IEC 27003 – 情報セキュリティマネジメントシステム: 実装ガイドライン
+    - ISO/IEC 27004 – 情報セキュリティマネジメント測定
+    - ISO/IEC 27005 – 情報セキュリティリスクマネジメント
 
-  - The '27002 controls' mentioned throughout this document are listed in the Annex of 27001, and further detailed with practices in 27002. At the high abstraction level, the most relevant 27002 controls are:
-    - 27002 control 5.1 Policies for information security
-    - 27002 control 5.10 Acceptable use of information and other associated assets
-    - 27002 control 5.8 Information security in project management
-  - [OpenCRE on security program management](https://www.opencre.org/cre/261-010)
-  - Risk analysis standards:
-    - This document contains AI security threats and controls to facilitate risk analysis
-    - See also [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
-    - ISO/IEC 27005 - as mentioned above. Gap: covers this control fully, with said particularity (as 27005 doesn't mention AI-specific threats)
-    - ISO/IEC 27563 (AI use cases security & privacy) Discusses the impact of security and privacy in AI use cases and may serve as useful input to AI security risk analysis. 
-    - ISO/IEC 23894 (AI Risk management). Gap: covers this control fully - yet it refers to ISO/IEC 24028 (AI trustworthiness) for AI security threats, which is incomplete compared to for example the AI exchange (this document). The scope is broader than security which is not an issue. 
-    - ISO/IEC 5338 (AI lifecycle) covers the AI risk management process. Gap: same as 23894 above.
-    - [ETSI Method and pro forma for Threat, Vulnerability, Risk Analysis](https://www.etsi.org/deliver/etsi_ts/102100_102199/10216501/05.02.03_60/ts_10216501v050203p.pdf)
-    - [NIST AI Risk Management Framework](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
-    - [OpenCRE on security risk analysis](https://www.opencre.org/cre/307-242)
-    - [NIST SP 800-53 on general security/privacy controls](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
-    - [NIST cyber security framework](https://www.nist.gov/cyberframework)
+  - このドキュメント全体で言及されている「27002 コントロール」は 27001 の Annex にリストされており、27002 の実践で詳しく説明されています。抽象度の高いレベルでは、最も関連のある 27002 コントロールは以下の通りです。
+    - 27002 コントロール 5.1 情報セキュリティのための方針群
+    - 27002 コントロール 5.10 情報およびその他の関連資産の許容される使用
+    - 27002 コントロール 5.8 プロジェクトマネジメントにおける情報セキュリティ
+  - [OpenCRE のセキュリティプログラムマネジメント](https://www.opencre.org/cre/261-010)
+  - リスク分析標準:
+    - このドキュメントはリスク分析を容易にする AI セキュリティの脅威とコントロールを含みます。
+    - [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/) も参照してください。
+    - ISO/IEC 27005 - 上述の通りです。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います (27005 は AI 固有の脅威について言及していないため)。
+    - ISO/IEC 27563 (AI ユースケースのセキュリティとプライバシー) AI ユースケースにおけるセキュリティとプライバシーの影響について説明しており、AI セキュリティリスク分析への有用なインプットとして役立つかもしれません。
+    - ISO/IEC 23894 (AI リスクマネジメント)。ギャップ: このコントロールを完全にカバーします - AI セキュリティ脅威については ISO/IEC 24028 (AI の信頼性) を参照しており、たとえば AI Exchange (このドキュメント) と比較すると不完全です。範囲はセキュリティより広いのですが、問題ではありません。
+    - ISO/IEC 5338 (AI ライフサイクル) は AI リスクマネジメントプロセスをカバーします。ギャップ: 上記 23894 と同様です。
+    - [ETSI の脅威、脆弱性、リスク分析のための手法とプロフォーマ](https://www.etsi.org/deliver/etsi_ts/102100_102199/10216501/05.02.03_60/ts_10216501v050203p.pdf)
+    - [NIST AI リスクマネジメントフレームワーク](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
+    - [OpenCRE のセキュリティリスク分析](https://www.opencre.org/cre/307-242)
+    - [NIST SP 800-53 の一般的なセキュリティ/プライバシーコントロール](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
+    - [NIST サイバーセキュリティフレームワーク](https://www.nist.gov/cyberframework)
 
 #### #SECDEVPROGRAM
 (management). Make data science development activities part of the secure software development program.
