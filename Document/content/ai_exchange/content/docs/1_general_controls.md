@@ -19,9 +19,9 @@ weight: 2
 AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
 
 標準へのリンク:
- - ISO/IEC 42001 AI マネジメントシステム (開発中)。ギャップ: このコントロールを完全にカバーします。
+ - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
  
-42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。5338 (下記 #DEVPROGRAM 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。27001 が情報セキュリティのマネジメントシステムであるのと同様に、42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
+42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。5338 (下記 [#DEVPROGRAM](#devprogram) 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。27001 が情報セキュリティのマネジメントシステムであるのと同様に、42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
 
 #### #SECPROGRAM
@@ -106,7 +106,7 @@ Apart from conventional software best practices, there are important AI-specific
 
 Links to standards:
 
-  - [ISO/IEC 5338 - AI lifecycle](https://www.iso.org/standard/81118.html) Gap: covers this control fully - the 5338 covers the complete software development lifecycle for AI, by extending the existing 12207 standard on software lifecycle: defining several new processes and discussing AI-specific particularities for existing processes.
+  - [ISO/IEC 5338 - AI lifecycle](https://www.iso.org/standard/81118.html) Gap: covers this control fully - the 5338 covers the complete software development lifecycle for AI, by extending the existing 12207 standard on software lifecycle: defining several new processes and discussing AI-specific particularities for existing processes. See also [this blog](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/).
   - 27002 control 5.37 Documented operating procedures. Gap: covers this control minimally - this covers only a very small part of the control
   - [OpenCRE on documentation of function](https://www.opencre.org/cre/162-655) Gap: covers this control minimally
  
