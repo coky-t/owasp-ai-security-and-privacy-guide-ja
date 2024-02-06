@@ -6,12 +6,12 @@ excludeSearch: true
 ## プラットフォーム
 
 <!-- {{< cards >}} -->
-- [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
-- [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#)    <!-- {{< card link="https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#" title="Slack" icon="slack-big" >}} -->
-- [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/)    <!-- {{< card link="https://www.linkedin.com/company/owasp-ai-exchange/" title="LinkedIn" icon="linkedin" >}} -->
-- [E-mail](mailto:rob.vanderveer@owasp.org)    <!-- {{< card link="mailto:rob.vanderveer@owasp.org" title="E-mail" icon="mail">}} -->
-- [Twitter](https://twitter.com/owasp)    <!-- {{< card link="https://twitter.com/owasp" title="Twitter" icon="x-twitter" >}} -->
-- [GitHub](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions)    <!-- {{< card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions" title="GitHub" icon="github" >}} -->
+- [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
+- [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#)    <!-- {{< small-card link="https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#" title="Slack" icon="slack-big" >}} -->
+- [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/)    <!-- {{< small-card link="https://www.linkedin.com/company/owasp-ai-exchange/" title="LinkedIn" icon="linkedin" >}} -->
+- [E-mail](mailto:rob.vanderveer@owasp.org)    <!-- {{< small-card link="mailto:rob.vanderveer@owasp.org" title="E-mail" icon="mail">}} -->
+- [Twitter](https://twitter.com/owasp)    <!-- {{< small-card link="https://twitter.com/owasp" title="Twitter" icon="x-twitter" >}} -->
+- [GitHub](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions)    <!-- {{< small-card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions" title="GitHub" icon="github" >}} -->
 <!-- {{< /cards >}} -->
 
 さまざまなプラットフォームを通じて OWASP AI チームに参加します。
