@@ -8,6 +8,7 @@
 <!-- {{< spacer height="40" >}} -->
 
 <!-- {{< cards >}} -->
+- [憲章](charter.md)    <!-- {{< small-card link="/charter" title="憲章" icon="document-text" >}} -->
 - [私たちとつながろう！](connect.md)    <!-- {{< small-card link="/connect" title="私たちとつながろう！" icon="chat" >}} -->
 - [貢献](contribute.md)    <!-- {{< small-card link="/contribute" title="貢献" icon="star" >}} -->
 - [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
