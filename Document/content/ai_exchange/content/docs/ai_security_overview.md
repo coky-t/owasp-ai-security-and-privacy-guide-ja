@@ -17,7 +17,10 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 - 権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
 - モデル攻撃を理解することによって **データサイエンスにおける対策** を行います。たとえば、データ品質保証、大規模なトレーニングセット、一般的な摂動攻撃の検出、入力フィルタリングなど。
 
-![AI Specific Security Threats](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/owaspaimodelv1.png)
+### 脅威モデル
+![AI Security Threats](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreat.png)
+
+![AI Security Threats and controls](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatcontrols.png)
 
 ### ナビゲータ図
 以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
