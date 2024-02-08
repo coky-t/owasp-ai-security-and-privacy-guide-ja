@@ -2,52 +2,52 @@
 title: 'AI Exchange 憲章'
 ---
 ## 目的
->Comprehensive guidance and alignment on how to protect AI against security threats - by professionals, for professionals.
+> AI をセキュリティの脅威から保護する方法に関する、専門家による、専門家のための、包括的なガイダンスとアラインメント。
 
-The goal of the OWASP AI Exchange is to protect society from AI security issues by independently harnessing the collective wisdom of global experts across various disciplines. This initiative focuses on advancing AI security understanding, supporting the development of global AI security guidelines, standards and regulations, and simplifying the AI security domain for professionals and organizations. Its goal is to provide a comprehensive overview of AI threats, risks, mitigations, and controls, aligning with global standardization initiatives such as the EU AI Act, ISO/IEC 27090 (AI Security), the OWASP ML Top 10, the OWASP LLM Top 10, and OpenCRE. This alignment, achieved through open source, is crucial to prevent confusion and ignorance, leading to harm from AI security incidents.
+OWASP AI Exchange の目標は、さまざまな分野にわたるグローバルな専門家の集合知を自主的に活用することで、AI のセキュリティ問題から社会を守ることです。この取り組みは、AI セキュリティの理解を促進し、グローバルな AI セキュリティガイドライン、標準、規制の策定を支援し、専門家と組織のために AI セキュリティドメインを簡素化することに重点を置いています。その目標は、EU AI 法、ISO/IEC 27090 (AI セキュリティ)、OWASP ML Top 10、OWASP LLM Top 10、OpenCRE などのグローバルな標準化イニシアチブと連携しながら、AI の脅威、リスク、緩和策、コントロールの包括的な概要を提供することです。オープンソースを通じて実現されるこの連携は、AI セキュリティインシデントによる被害につながる混乱や無知を防ぐために極めて重要です。
 
 ## 対象読者
-This charter primarily addresses the needs of cybersecurity experts, privacy/regulatory/ legal professionals, AI leaders, developers, and data scientists. It offers accessible guidance and resources to these groups, enabling them to build and maintain secure AI systems effectively.
+この憲章は主にサイバーセキュリティ専門家、プライバシー/規制/法律の専門家、AI リーダー、開発者、データサイエンティストのニーズに対応しています。これらのグループに利用しやすいガイダンスとリソースを提供し、安全な AI システムを効果的に構築し維持できるようにします。
 
 ## 使命 / 目標
-Our mission is to establish the OWASP AI Exchange as the place to go for professionals who want to understand AI security, and to be the authoritative source for consensus, alignment, and collaboration among various AI initiatives. We aim to foster a unified approach to addressing AI security challenges.
+私たちの使命は、AI セキュリティを理解したい専門家が訪れる場所として OWASP AI Exchange を確立して、さまざまな AI イニシアチブ間の合意、調整、協調のための信頼できる情報源となることです。私たちは AI セキュリティの課題に対処するための統一的なアプローチを促進することを目指しています。
 
 ## 範囲と責任
-- Develop a comprehensive framework for AI threats, risks, mitigations, and controls.
-- Create a map integrating AI regulatory and privacy regulations.
-- Establish a common taxonomy and glossary for AI security.
-- Provide guidance on testing tools with outcome assessments.
-- Formulate a shared responsibility model for third-party AI model usage.
-- Offer supply chain guidance and an incident response plan.
+- AI の脅威、リスク、緩和策、コントロールに関する包括的なフレームワークを開発します。
+- AI 規制とプライバシー規制を統合したマップを作成します。
+- AI セキュリティに関する共通の分類法と用語集を制定します。
+- 結果評価を伴うテストツールに関するガイダンスを提供します。
+- サードパーティ AI モデルの使用に関する責任共有モデルを策定します。
+- サプライチェーンのガイダンスとインシデント対応計画を提供します。
 
-## OWASP の他の取り組みや他の組織のイニシアチブとの関係
-These are the other OWASP AI initiatives and the relation with the AI Exchange;
-- The OWASP AI security and privacy guide is the official OWASP project under which the AI Exchange was established. The deliverable of this project consists of the AI Exchange content plus guidance on AI privacy.
-- The OWASP LLM top 10 provides a list of the most important LLM security issues, plus deliverables that focus on LLM security, such as the LLM AI Security & Governance Checklist.
-- The OWASP ML top 10 provides a list of the most important machine learning security issues.
-- OpenCRE.org has been established under the OWASP Integration standards project and holds a catalog of common requirements across various security standards inside and outside of OWASP. The plan is to let OpenCRE contain new AI security controls as well.
+## OWASP の他の取り組みや他の組織の取り組みとの関係
+これらは OWASP の他の AI イニシアチブと AI Exchange との関係です。
+- OWASP AI セキュリティおよびプライバシーガイドは AI Exchange が設立された OWASP の公式プロジェクトです。このプロジェクトの成果物は AI Exchange コンテンツに加えて、AI プライバシーのガイダンスで構成しています。
+- OWASP LLM Top 10 は最も重要な LLM セキュリティ問題のリストに加えて、LLM AI セキュリティおよびガバナンスチェックリストなどの LLM セキュリティに焦点を当てた成果物を提供します。
+- OWASP ML Top 10 は最も重要な機械学習セキュリティ問題のリストを提供します。
+- OpenCRE.org は OWASP 統合標準プロジェクトの下で設立され、OWASP 内外のさまざまなセキュリティ標準にわたる共通要件のカタログを保持しています。計画では OpenCRE に新しい AI セキュリティコントロールも含ませることになっています。
 
 ## ロードマップ
-- Purpose and mission defined for OWASP AI Exchange Project Working Group
-- Working group charter to 1.0
-- Project Plan
-- Working group established
+- OWASP AI Exchange プロジェクトワーキンググループの目的と使命の定義
+- 1.0 へのワーキンググループ憲章
+- プロジェクト計画
+- ワーキンググループの設立
 
 ## 実施
-- Create a roadmap, share documents, and establish a meeting cadence.
-- Record meetings and take notes for transparency and accessibility.
-- Communicate developments through newsletters.
+- ロードマップを作成し、ドキュメントを共有し、定例会議を設定します。
+- 透明性とアクセシビリティのために会議を記録し、ノートを取ります。
+- ニュースレターを通じて開発状況を伝えます。
 
 ## コンテンツの次のマイルストーン
-- Bring content to 1.0 draft.
-- Address all outstanding tasks in the ‘Contribute’ section.
-- Make sure all topics are sufficiently covered regarding depth and width, including references to relevant work.
-- Ensure clarity of all content.
-- Align content as good as possible, with other initiatives like Mitre Atlas, NIST, the LLM Top 10, ENISA’s work, and the AIAPP International Privacy Group.
-- Review 1.0 draft.
-- Conduct internal reviews.
-- Get public comment from other communities / peer review.
-- Release the final version 1.0, alongside a communication strategy and feedback process.
+- コンテンツを 1.0 ドラフトにします。
+- 「貢献」セクションのすべての未処理のタスクに対処します。
+- 関連する研究への参照を含め、すべてのトピックが深さと広さに関して十分にカバーされていることを確認します。
+- すべてのコンテンツが明確であることを確認します。
+- Mitre Atlas、NIST、LLM Top 10、ENISA の取り組み、AIAPP International Privacy Group などの他のイニシアチブと可能な限りコンテンツを適切に整合します。
+- 1.0 ドラフトをレビューします。
+- 内部レビューを実施します。
+- 他のコミュニティやピアレビューからパブリックコメントを取得します。
+- コミュニケーション戦略とフィードバックプロセスとともに、最終バージョン 1.0 をリリースします。
 
 ## 著作権
-The AI security community is marked with CC0 1.0 meaning you can use any part freely, without attribution. If possible, it would be nice if the OWASP AI Exchange is credited and/or linked to, for readers to find more information.
+AI セキュリティコミュニティは CC0 1.0 でマークされており、帰属表示なしで任意の部分を自由に使用できることを意味します。可能であれば、読者がより多くの情報を見つけられるように、OWASP AI Exchange のクレジットやリンクをいれていただければ幸いです。
