@@ -2,12 +2,9 @@
 title: AI セキュリティ概要
 weight: 1
 ---
-このイニシアチブについての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
+## 要旨 - AI セキュリティをどのように対処するか？
+> このイニシアチブについての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
 このページには AI セキュリティの概要があり、次のページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。
-
-## 要約とビジュアライゼーション
-
-### 概略: AI セキュリティをどのように対処するか？
 
 AI は強力なパフォーマンス向上をもたらしますが、悪意のある者が利用できる攻撃対象領域も拡大します。そのため、潜在的な脅威と、ユースケースごとにどの脅威を優先するかを明確に理解して、AI アプリケーションに取り組むことが不可欠です。標準とガバナンスは AI 機能を活用する個々の事業体にとってこのプロセスの指針となります。
 
@@ -17,9 +14,20 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 - 権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
 - モデル攻撃を理解することによって **データサイエンスにおける対策** を行います。たとえば、データ品質保証、大規模なトレーニングセット、一般的な摂動攻撃の検出、入力フィルタリングなど。
 
+## 脅威の概要
+
 ### 脅威モデル
+私たちは三つのタイプの脅威を区別します: 開発時 (データを取得および準備し、モデルをトレーニング/取得するとき)、モデルの使用 (入力の提供と出力の読み取り) を通じて、実行時 (本番環境) にシステムへの攻撃によって。
+この図ではこれら三つのグループの脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
 ![AI Security Threats](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreat.png)
 
+### AI セキュリティマトリクス
+以下の AI セキュリティマトリクスは、すべての脅威とリスクを、タイプと影響の順に示しています。
+[![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)
+
+## コントロールの概要
+
+### 脅威モデルとコントロール
 ![AI Security Threats and controls](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatcontrols.png)
 
 ### ナビゲータ図
@@ -29,11 +37,7 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 <!-- {{< /callout >}} -->
 [![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
-### AI セキュリティマトリクス
-以下の AI セキュリティマトリクスは、すべての脅威とリスクを、攻撃対象領域とライフサイクルの順に示しています。
-[![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)
-
-### コントロールの要約
+### サマリーに追加されたコントロール
 
 すべてのコントロールを含む AI セキュリティに対処する方法 (大文字で記載 - ドキュメント内で詳しく説明します):
 
