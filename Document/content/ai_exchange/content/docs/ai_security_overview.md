@@ -19,7 +19,7 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します: 開発時 (データを取得および準備し、モデルをトレーニング/取得するとき)、モデルの使用 (入力の提供と出力の読み取り) を通じて、実行時 (本番環境) にシステムへの攻撃によって。
 この図ではこれら三つのグループの脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
-![AI Security Threats](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreat.png)
+![AI Security Threats](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threats.png)
 
 ### AI セキュリティマトリクス
 以下の AI セキュリティマトリクスは、すべての脅威とリスクを、タイプと影響の順に示しています。
@@ -27,8 +27,32 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 
 ## コントロールの概要
 
-### 脅威モデルとコントロール
-![AI Security Threats and controls](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecthreatcontrols.png)
+### 脅威モデルとコントロール - general
+The below diagram puts the controls in the AI Exchange into groups and places these groups in the right lifecycle with the corresponding threats.
+![AI Security Threats and controls](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threatscontrols.png)
+The groups of controls are:
+- **Datascience development controls**:many things data scientists can do such as adding noise to training data, federative learning, data quality control, etc.
+- **Conventional security of the development environment** plus new attention to the **supply chain of data and models** obtained from third parties
+- **Governance** of AI projects and risks, information security and software lifecycle
+- **Minimizing data** in development (e.g. anonymizing training data) and in runtime (e.g. not storing user details with prompts)
+- Applying controls on the input of the model (**monitoring, rate limiting and access control**): conventional controls but with AI attention points, for example: which use patterns are suspect?
+- **Datascience input controls** require data scientists to develop mechanisms to detect and filter malicious use
+- **Filter sensitive output** can help reduce data leaking through model output
+- **Behaviour limiting controls** are very important in AI, as the model can behave in unwanted ways wheb it hasn't been trained perfectly, or it has been manipulated. Examples: oversight, guard rails, model privilige control, and continuous validation.
+- **Conventional rumtime security**: last but not least: an AI system is an IT system with an application and an infrastructure, so it requires 'regular' security controls, taking into account the AI-specific assets and threats eg. sensitive model I/O, senstive model paramaters, plugin security, and output that may contain injection attacks.
+
+All threats and controls are discussed in the further content of the AI Exchange.
+
+### Threat model with controls - GenAI trained/finetuned
+Below diagram restricts the threats and controls to Generative AI only, for situations in which **training or finetuning** is done by the organization (note: this is not very common given the high cost and required expertise).
+
+![AI Security Threats and controls - GenAI trained or finetuned](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
+
+### Threat model with controls - GenAI as-is
+Below diagram restricts the threats and controls to Generative AI only, for situations in which the model is used **as-is** by the organization. Several threats still exist but they are the responsibility of the model provider. Nevertheless, the organization using the model should take the risks into account and gain assurance about them from the provider.
+
+![AI Security Threats and controls - GenAI as-is](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
+
 
 ### ナビゲータ図
 以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
