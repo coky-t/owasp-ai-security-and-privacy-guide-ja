@@ -28,28 +28,28 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ## コントロールの概要
 
 ### 脅威モデルとコントロール - 全般
-The below diagram puts the controls in the AI Exchange into groups and places these groups in the right lifecycle with the corresponding threats.
+下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 ![AI Security Threats and controls](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
-The groups of controls are:
-- **Datascience development controls**:many things data scientists can do such as adding noise to training data, federative learning, data quality control, etc.
-- **Conventional security of the development environment** plus new attention to the **supply chain of data and models** obtained from third parties
-- **Governance** of AI projects and risks, information security and software lifecycle
-- **Minimizing data** in development (e.g. anonymizing training data) and in runtime (e.g. not storing user details with prompts)
-- Applying controls on the input of the model (**monitoring, rate limiting and access control**): conventional controls but with AI attention points, for example: which use patterns are suspect?
-- **Datascience input controls** require data scientists to develop mechanisms to detect and filter malicious use
-- **Filter sensitive output** can help reduce data leaking through model output
-- **Behaviour limiting controls** are very important in AI, as the model can behave in unwanted ways wheb it hasn't been trained perfectly, or it has been manipulated. Examples: oversight, guard rails, model privilige control, and continuous validation.
-- **Conventional rumtime security**: last but not least: an AI system is an IT system with an application and an infrastructure, so it requires 'regular' security controls, taking into account the AI-specific assets and threats eg. sensitive model I/O, senstive model paramaters, plugin security, and output that may contain injection attacks.
+コントロールのグループは以下のとおりです。
+- **データサイエンス開発コントロール (Datascience development controls)**: トレーニングデータへのノイズ追加、連合学習、データ品質コントロールなど、データサイエンティストが実行できる多くのこと。
+- **開発環境の従来のセキュリティ (Conventional security of the development environment)** に加えて、サードパーティから取得した **データとモデルのサプライチェーン (supply chain of data and models)** への新たな注意
+- AI プロジェクトとリスク、情報セキュリティ、ソフトウェアライフサイクルの **ガバナンス (Governance)**
+- 開発時 (トレーニングデータの匿名化など) および実行時 (プロンプトとともにユーザーの詳細を保存しないなど) に **データを最小限に抑える (Minimizing data)**
+- モデルの入力に対するコントロールの適用 (**監視、レート制限、アクセスコントロール (monitoring, rate limiting and access control)**): 従来のコントロールですが、AI の注意点があります。たとえば、どの使用パターンが疑わしいか？
+- **データサイエンス入力コントロール (Datascience input controls)** では、データサイエンティストが悪意のある使用を検出してフィルタするメカニズムを開発する必要があります
+- **センシティブな出力のフィルタ (Filter sensitive output)** はモデル出力を介したデータ漏洩を軽減するのに役立ちます
+- **動作制限コントロール (Behaviour limiting controls)** は AI において非常に重要です。モデルが完全にトレーニングされていない場合や操作されている場合、モデルは望ましくない方法で動作する可能性があるためです。例: 監視、ガードレール、モデル特権コントロール、継続的検証。
+- **従来の実行時セキュリティ (Conventional rumtime security)**: 最後になりますが、AI システムはアプリケーションとインフラストラクチャを備えた IT システムであるため、機密モデル I/O、機密モデルパラメータ、プラグインセキュリティ、インジェクション攻撃を含む攻撃のある出力など、AI 固有の資産と脅威を考慮した「普通の」セキュリティコントロールが必要です。
 
-All threats and controls are discussed in the further content of the AI Exchange.
+すべての脅威とコントロールについては AI Exchange の詳細なコンテンツで説明します。
 
-### Threat model with controls - GenAI trained/finetuned
-Below diagram restricts the threats and controls to Generative AI only, for situations in which **training or finetuning** is done by the organization (note: this is not very common given the high cost and required expertise).
+### 脅威モデルとコントロール - 生成 AI をトレーニング/ファインチューニング
+下図は、**トレーニングやファインチューニング** が組織によって行われる状況においての、生成 AI への脅威とコントロールにのみ制限しています (注: これはコストが高く、専門知識が必要であることを考慮すると、あまり一般的ではありません)。
 
 ![AI Security Threats and controls - GenAI trained or finetuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
 
-### Threat model with controls - GenAI as-is
-Below diagram restricts the threats and controls to Generative AI only, for situations in which the model is used **as-is** by the organization. Several threats still exist but they are the responsibility of the model provider. Nevertheless, the organization using the model should take the risks into account and gain assurance about them from the provider.
+### 脅威モデルとコントロール - 生成 AI を現状のまま
+下図は、モデルが組織によって **現状のまま** 使用される状況においての、生成 AI への脅威とコントロールにのみ制限しています。いくつかの脅威が依然として存在しますが、それはモデルプロバイダの責任です。とはいえ、モデルを使用する組織はリスクを考慮し、プロバイダからその保証を得る必要があります。
 
 ![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
 
