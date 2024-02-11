@@ -19,17 +19,17 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します: 開発時 (データを取得および準備し、モデルをトレーニング/取得するとき)、モデルの使用 (入力の提供と出力の読み取り) を通じて、実行時 (本番環境) にシステムへの攻撃によって。
 この図ではこれら三つのグループの脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
-![AI Security Threats](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threats.png)
+![AI Security Threats](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
 ### AI セキュリティマトリクス
 以下の AI セキュリティマトリクスは、すべての脅威とリスクを、タイプと影響の順に示しています。
-[![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/OwaspAIsecuritymatix.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
 
 ## コントロールの概要
 
-### 脅威モデルとコントロール - general
+### 脅威モデルとコントロール - 全般
 The below diagram puts the controls in the AI Exchange into groups and places these groups in the right lifecycle with the corresponding threats.
-![AI Security Threats and controls](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threatscontrols.png)
+![AI Security Threats and controls](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
 The groups of controls are:
 - **Datascience development controls**:many things data scientists can do such as adding noise to training data, federative learning, data quality control, etc.
 - **Conventional security of the development environment** plus new attention to the **supply chain of data and models** obtained from third parties
@@ -46,12 +46,12 @@ All threats and controls are discussed in the further content of the AI Exchange
 ### Threat model with controls - GenAI trained/finetuned
 Below diagram restricts the threats and controls to Generative AI only, for situations in which **training or finetuning** is done by the organization (note: this is not very common given the high cost and required expertise).
 
-![AI Security Threats and controls - GenAI trained or finetuned](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
+![AI Security Threats and controls - GenAI trained or finetuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
 
 ### Threat model with controls - GenAI as-is
 Below diagram restricts the threats and controls to Generative AI only, for situations in which the model is used **as-is** by the organization. Several threats still exist but they are the responsibility of the model provider. Nevertheless, the organization using the model should take the risks into account and gain assurance about them from the provider.
 
-![AI Security Threats and controls - GenAI as-is](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
+![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
 
 
 ### ナビゲータ図
@@ -59,7 +59,7 @@ Below diagram restricts the threats and controls to Generative AI only, for situ
 <!-- {{< callout type="info" >}} -->
   画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 <!-- {{< /callout >}} -->
-[![](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
 ### サマリーに追加されたコントロール
 
