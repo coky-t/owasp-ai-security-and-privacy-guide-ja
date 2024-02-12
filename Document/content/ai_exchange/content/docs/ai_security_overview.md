@@ -30,27 +30,27 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 ![AI Security Threats and controls](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
-The groups of controls form a summary of how to address AI security (controls are in capitals):
-1. **AI Governance**: implement governance processes for AI risk, and include AI into your processes for information security and software lifecycle:  
+コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
+1. **AI ガバナンス**: AI リスクに対するガバナンスプロセスを導入し、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を組み込みます。
    >(AIPROGRAM, SECPROGRAM, DEVPROGRAM, SECDEVPROGRAM, CHECKCOMPLIANCE, SECEDUCATE)
-2. Apply conventional **technical IT security controls** risk-based, since an AI system is an IT system:
-    - 2a Apply **standard** conventional IT security controls (e.g. 15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53) to the complete AI system and don't forget the new AI-specific assets :
-      - Development-time: model & data storage, model & data supply chain, data science documentation:  
+2. AI システムは IT システムであるため、従来の **技術的な IT セキュリティコントロール** を適用します。
+    - 2a **標準** 的な従来の IT セキュリティコントロール (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
+      - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
         >(DEVDATAPROTECT, DEVSECURITY, SEGREGATEDATA, SUPPLYCHAINMANAGE, DISCRETE)
-      - Runtime: model storage, model use, plug-ins, and model input/output:  
+      - 実行時: モデルの保存、モデルの使用、プラグイン、モデルの入出力
         >(RUNTIMEMODELINTEGRITY, RUNTIMEMODELIOINTEGRITY, RUNTIMEMODELCONFIDENTIALITY, MODELINPUTCONFIDENTIALITY, ENCODEMODELOUTPUT, LIMITRESOURCES)
-    - 2b **Adapt** conventional IT security controls to make them more suitable for AI (e.g. which usage patterns to monitor for):  
+    - 2b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
       >(MONITORUSE, MODELACCESSCONTROL, RATELIMIT)
-    - 2c Adopt **new** IT security controls:  
+    - 2c **新規** の IT セキュリティコントロールを採用します。
       >(CONFCOMPUTE, MODELOBFUSCATION, PROMPTINPUTVALIDATION, INPUTSEGREGATION)
-3. Data scientistists apply **datascience security controls** risk-based :
-    - 3a Development-time controls when developing the model:  
+3. データサイエンティストはリスクベースの **データサイエンスセキュリティコントロール** を適用します。
+    - 3a モデル開発時の開発時コントロール
       >(FEDERATIVELEARNING, CONTINUOUSVALIDATION, UNWANTEDBIASTESTING, EVASIONROBUSTMODEL, POISONROBUSTMODEL, TRAINADVERSARIAL, TRAINDATADISTORTION, ADVERSARIALROBUSTDISTILLATION, FILERSENSITIVETRAINDATA, MODELENSEMBLE, MORETRAINDATA, SMALLMODEL, DATAQUALITYCONTROL)
-    - 3b Runtime controls to filter and detect attacks:  
+    - 3b 攻撃をフィルタして検出するための実行時コントロール
       >(DETECTODDINPUT, DETECTADVERSARIALINPUT, DOSINPUTVALIDATION, INPUTDISTORTION, FILTERSENSITIVEMODELOUTPUT, OBSCURECONFIDENCE)
-4. **Minimize data:** Limit the amount of data in rest and in transit, and the time it is stored, development-time and runtime:  
+4. **データを最小限に抑える:** 保存時および転送時のデータ量、保存時間を開発時、実行時に制限します。
    >(DATAMINIMIZE, ALLOWEDDATA, SHORTRETAIN, OBFUSCATETRAININGDATA)
-5. **Control behaviour impact** as the model can behave in unwanted ways - by mistake or by manipulation:  
+5. モデルが間違いや操作によって望ましくない方法で動作する可能性があるため、**動作への影響を制御** します。
    >(OVERSIGHT, LEASTMODELPRIVILEGE, AITRAINSPARENCY, EXPLAINABILITY, CONTINUOUSVALIDATION, UNWANTEDBIASTESTING)
 
 
@@ -62,7 +62,7 @@ The groups of controls form a summary of how to address AI security (controls ar
 ![AI Security Threats and controls - GenAI trained or finetuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
 
 ### 脅威モデルとコントロール - 生成 AI を現状のまま
-Below diagram restricts the threats and controls to Generative AI only where the model is used **as-is** by the organization. The provider (e.g. OpenAI) has done the training/finetuning. Therefore, some threats are the responsibility of the model provider (sensitive/copyrighted data, manipulation at the provider). Nevertheless, the organization that uses the model should take these risks into account and gain assurance about them from the provider.
+下図は、モデルが組織によって **現状のまま** 使用される生成 AI への脅威とコントロールにのみ制限しています。プロバイダ (OpenAI など) がトレーニングやファインチューニングを行っています。そのため、いくつかの脅威はモデルプロバイダの責任です (機密データや著作権があるデータ、プロバイダでの操作)。とはいえ、モデルを使用する組織はこれらのリスクを考慮し、プロバイダからその保証を得る必要があります。
 
 ![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
 
