@@ -41,7 +41,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 <table border='1'>
     <tr><th>名前</th><th>会社</th><th>国</th><th>貢献</th></tr>
     <tr><td>Adelin Travers</td><td>Trail of Bits</td><td></td><td></td></tr>
-    <tr><td>Alon Tron</td><td></td><td></td><td></td></tr>
+    <tr><td>Alon Tron</td><td>Stealth</td><td>イスラエル</td><td>サプライチェーンマネジメントの改善</td></tr>
     <tr><td>Angie Qarry</td><td>QDeepTech</td><td>オーストリア</td><td>データサイエンス防御メカニズムに関するいくつかの詳細と参考情報</td></tr>
     <tr><td>Annegrit Seyerlein-Klug</td><td>ブランデンブルク応用科学大学</td><td>ドイツ</td><td>雑多な標準とのマッピング</td></tr>
     <tr><td>Anthony Glynn</td><td>CapitalOne</td><td>アメリカ</td><td>多くのテキストの改善と LLM Top 10 へのリンク</td></tr>
