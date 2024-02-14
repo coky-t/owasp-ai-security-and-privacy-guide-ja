@@ -56,8 +56,8 @@ GDPR の第 5 条は「公正な処理 (fair processing)」に言及しており
 
 [文献](http://fairware.cs.umass.edu/papers/Verma.pdf) にはあなたが使用できるさまざまな公平性指標があります。これらはグループ公平性、誤検出エラー率、無自覚性、反事実公平性など多岐にわたります。どの指標を使用すべきかについての業界標準はまだありませんが、アルゴリズムが個人に関して重大な決定を下す場合 (プラットフォームへのアクセス禁止、金銭的影響、サービスや機会の拒否など) は特に公平性を評価すべきです。さまざまな指標を用いてアルゴリズムをテストする取り組みもあります。たとえば、NIST の [FRVT プロジェクト](https://pages.nist.gov/frvt/html/frvt11.html) ではさまざまな指標を用いてさまざまな顔認識アルゴリズムの公平性をテストしています。
 
-The elephant in the room for fairness across groups (protected attributes) is that in situations a model is more accurate if it DOES discriminate protected attributes. Certain groups have in practice a lower success rate in areas because of all kinds of societal aspects rooted in culture and history. We want to get rid of that. Some of these aspects can be regarded as institutional discrimination. Others have more practical background, like for example that for language reasons we see that new immigrants statistically tend to be hindered in getting higher education.
-Therefore, if we want to be completely fair across groups, we need to accept that in many cases this will be balancing accuracy with discrimination. In the case that sufficient accuracy cannot be attained while staying within discrimination boundaries, there is no other option than to abandon the algorithm idea. For fraud detection cases, this could for example mean that transactions need to be selected randomly instead of by using an algorithm.
+グループ (保護された属性) 間の公平性を無視することは、モデルが保護された属性を差別するかどうかというのがより正確な状況です。文化や歴史に根差したさまざまな社会的側面があるため、特定のグループの成功率が実際に低い地域があります。私たちはそれをなくしたいと思っています。これらの側面のいくつかは制度的差別とみなすことができます。たとえば言語的な理由から、新しい移民は統計的に高等教育を受けるのに支障をきたす傾向があることが分かっているなど、より現実的な背景をもつものもあります。
+したがって、グループ間で完全に公平でありたいのであれば、多くの場合、精度と差別のバランスをとることを受け入れる必要があります。差別の境界内にとどまりながら十分な精度が得られない場合には、アルゴリズムのアイデアを放棄する以外に選択肢はありません。不正検出の場合、これはたとえばアルゴリズムを使用する代わりにトランザクションをランダムに選択する必要があることを意味するかもしれません。
 
 ## 3. データ最小化と保管制限 (Data Minimization and Storage Limitation)
 
