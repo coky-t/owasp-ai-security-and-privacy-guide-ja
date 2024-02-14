@@ -56,6 +56,8 @@ GDPR の第 5 条は「公正な処理 (fair processing)」に言及しており
 
 [文献](http://fairware.cs.umass.edu/papers/Verma.pdf) にはあなたが使用できるさまざまな公平性指標があります。これらはグループ公平性、誤検出エラー率、無自覚性、反事実公平性など多岐にわたります。どの指標を使用すべきかについての業界標準はまだありませんが、アルゴリズムが個人に関して重大な決定を下す場合 (プラットフォームへのアクセス禁止、金銭的影響、サービスや機会の拒否など) は特に公平性を評価すべきです。さまざまな指標を用いてアルゴリズムをテストする取り組みもあります。たとえば、NIST の [FRVT プロジェクト](https://pages.nist.gov/frvt/html/frvt11.html) ではさまざまな指標を用いてさまざまな顔認識アルゴリズムの公平性をテストしています。
 
+The elephant in the room for fairness across groups (protected attributes) is that in situations a model is more accurate if it DOES discriminate protected attributes. Certain groups have in practice a lower success rate in areas because of all kinds of societal aspects rooted in culture and history. We want to get rid of that. Some of these aspects can be regarded as institutional discrimination. Others have more practical background, like for example that for language reasons we see that new immigrants statistically tend to be hindered in getting higher education.
+Therefore, if we want to be completely fair across groups, we need to accept that in many cases this will be balancing accuracy with discrimination. In the case that sufficient accuracy cannot be attained while staying within discrimination boundaries, there is no other option than to abandon the algorithm idea. For fraud detection cases, this could for example mean that transactions need to be selected randomly instead of by using an algorithm.
 
 ## 3. データ最小化と保管制限 (Data Minimization and Storage Limitation)
 
