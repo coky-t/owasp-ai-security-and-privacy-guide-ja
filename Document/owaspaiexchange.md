@@ -444,27 +444,27 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
   - ISO/IEC 27115 (複合システムのサイバーセキュリティ評価)
   - [OpenCRE の安全なソフトウェア開発プロセス](https://www.opencre.org/cre/616-305) を参照してください。NIST SSDF や OWASP SAMM への注目すべきリンクがあります。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います。
 
-- **#DEVPROGRAM** (management). Having a development program for AI. Apply general (not just security-oriented) software engineering best practices to AI development.
+- **#DEVPROGRAM** (マネジメント)。AI の開発プログラムを持つこと。一般的な (セキュリティ指向だけではない) ソフトウェアエンジニアリングのベストプラクティスを AI 開発に適用します。
 
-  Data scientists are focused on creating working models, not on creating future-proof software per se. Often, organizations already have software practices and processes in place. It is important to extend these to AI development, instead of treating AI as something that requires a separate approach. Do not isolate AI engineering. This includes automated testing, code quality, documentation, and versioning. ISO/IEC 5338 explains how to make these practices work for AI.
+  データサイエンティストは実用的なモデルを作成することに重点を置いているのであって、いわゆる将来性のあるソフトウェアを作成することではありません。多くの場合、組織はすでにソフトウェアのプラクティスとプロセスを導入しています。AI を別のアプローチが必要なものとして扱うのではなく、これらを AI 開発に拡張することが重要です。AI エンジニアリングを分離しないでください。これには自動テスト、コード品質、文書化、バージョン管理を含みます。ISO/IEC 5338 ではこれらのプラクティスを AI に適用する方法について説明しています。
 
-  Purpose: This way, AI systems will become easier to maintain, transferable, secure, more reliable, and future-proof.
+  目的: こうすることで、AI システムは保守が容易になり、移転可能で、安全で、信頼性が高まり、将来性があるものになります。
 
-  A best practice is to mix data scientist profiles with software engineering profiles in teams, as software engineers typically need to learn more about data science, and data scientists generally need to learn more about creating future-proof, maintainable, and easily testable code.
+  ベストプラクティスはチーム内でデータサイエンティストのプロファイルとソフトウェアエンジニアリングのプロファイルを混在させることです。通常、ソフトウェアエンジニアはデータサイエンスについてさらに学ぶ必要があり、データサイエンティストは一般的に将来性があり、保守可能で、テストしやすいコードの作成についてさらに学ぶ必要があるためです。
 
-  Another best practice is to continuously measure quality aspects of data science code (maintainability, test code coverage), and provide coaching to data scientists in how to manage those quality levels.
+  もう一つのベストプラクティスはデータサイエンスコードの品質面 (保守性、テストコードカバレッジ) を継続的に測定し、それらの品質レベルを管理する方法についてデータサイエンティストにコーチングを提供することです。
 
-  Apart from conventional software best practices, there are important AI-specific engineering practices, including for example data provenance & lineage, model traceability and AI-specific testing such as continuous validation, testing for model staleness and concept drift. ISO/IEC 5338 discussess these AI engineering practices.
+  従来のソフトウェアのベストプラクティスとは別に、  重要な AI 固有のエンジニアリングプラクティスがあります。  これにはたとえば、データの来歴と系統、モデルのトレーサビリティ、継続的バリデーションやモデルの陳腐化とコンセプトドリフトのテストなどの AI 固有のテストなどを含みます。  ISO/IEC 5338 ではこれらの AI エンジニアリングプラクティスについて説明しています。
 
-  Links to standards:
+  標準へのリンク:
 
-  - [ISO/IEC 5338 - AI lifecycle](https://www.iso.org/standard/81118.html) Gap: covers this control fully - the 5338 covers the complete software development lifecycle for AI, by extending the existing 12207 standard on software lifecycle: defining several new processes and discussing AI-specific particularities for existing processes.
-  - 27002 control 5.37 Documented operating procedures. Gap: covers this control minimally - this covers only a very small part of the control
-  - [OpenCRE on documentation of function](https://www.opencre.org/cre/162-655) Gap: covers this control minimally
+  - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - 5338 はソフトウェアライフサイクルに関する既存の 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。
+  - 27002 コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
+  - [OpenCRE の機能の文書化](https://www.opencre.org/cre/162-655) ギャップ: このコントロールを最小限にカバーします
  
-  References:
+  参考情報:
 
-  - [Research on code quality gaps in AI systems](https://www.softwareimprovementgroup.com/averting-a-major-ai-crisis-we-need-to-fix-the-big-quality-gap-in-ai-systems/)
+  - [AI システムにおけるコード品質のギャップに関する研究](https://www.softwareimprovementgroup.com/averting-a-major-ai-crisis-we-need-to-fix-the-big-quality-gap-in-ai-systems/)
 
 - **#CHECKCOMPLIANCE** (management). Check compliance with laws and regulations, to validate compliance which may include security aspects. See the [OWASP AI Guide](https://owasp.org/www-project-ai-security-and-privacy-guide/) for privacy aspects of AI.  
   Links to standards:
