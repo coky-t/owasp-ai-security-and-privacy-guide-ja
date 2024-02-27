@@ -466,17 +466,17 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
 
   - [AI システムにおけるコード品質のギャップに関する研究](https://www.softwareimprovementgroup.com/averting-a-major-ai-crisis-we-need-to-fix-the-big-quality-gap-in-ai-systems/)
 
-- **#CHECKCOMPLIANCE** (management). Check compliance with laws and regulations, to validate compliance which may include security aspects. See the [OWASP AI Guide](https://owasp.org/www-project-ai-security-and-privacy-guide/) for privacy aspects of AI.  
-  Links to standards:
+- **#CHECKCOMPLIANCE** (マネジメント)。法律や規制の遵守をチェックし、セキュリティの側面を含む可能性があるコンプライアンスを検証します。AI のプライバシーの側面については [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) を参照してください。
+  標準へのリンク:
 
-  - [OpenCRE on Compliance](https://www.opencre.org/cre/510-324)
-  - 27002 Control 5.36 Compliance with policies, rules and standards. Gap: covers this control fully, with the particularity that AI regulation needs to be taken into account.
+  - [OpenCRE のコンプライアンス](https://www.opencre.org/cre/510-324)
+  - 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
 
-- **#SECEDUCATE** (management). Security education for data scientists and development teams on AI threat awareness, including attacks on models. It is essential for all engineers, including data scientists, to attain a security mindset.
+- **#SECEDUCATE** (マネジメント)。データサイエンティストと開発チームに対して、モデルへの攻撃を含む AI 脅威の意識に関するセキュリティ教育を実施します。データサイエンティストを含むすべてのエンジニアがセキュリティの考え方を身につけることが不可欠です。
 
-  Links to standards:
+  標準へのリンク:
 
-  - 27002 Control 6.3 Awareness training. Gap: covers this control fully, but lacks detail and needs to take into account the particularity: training material needs to cover AI security threats and controls
+  - 27002 コントロール 6.3 意識向上トレーニング。ギャップ: このコントロールを完全にカバーしますが、詳細が不足しており、特殊性を考慮する必要があります。トレーニング資料は AI セキュリティの脅威とコントロールをカバーする必要があります。
 
 ---
 
