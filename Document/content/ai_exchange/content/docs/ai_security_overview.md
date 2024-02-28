@@ -122,9 +122,11 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 
     モデルが生成 AI モデルである場合、回避、モデル反転の脅威を無視します。また、生成 AI モデルが LLM ではない場合、プロンプトインジェクションと安全でない出力処理も無視します。
 
-    モデルが生成 AI モデルではない場合、(直接) プロンプトインジェクションと安全でない出力処理を無視します。また、**回避攻撃** にまつわるリスクについて考えてみます。モデルが間違った判断を下すように入力を操作することは、攻撃者にとって興味深く、かつ可能でしょうか？回避が興味深く、かつ可能である例としては、スパムメールに特定の単語を追加して、それがスパムメールと認識されないようにすることです。回避が面白くない例としては、患者が皮膚の写真に基づいて皮膚病の診断を受ける場合があります。患者は間違った判断には興味がありませんし、また、通常、患者はなにも制御できません。まあ、皮膚に絵を描くことはできるかもしれませんが。これが患者にとって興味深いかもしれない状況があり、たとえば、(偽装された) 皮膚病が特定のレストランの食事によって引き起こされた場合に補償の対象になります。これは、理論上の脅威が実際の脅威であるかどうかはすべてコンテキストに依存することを示しています。
+    モデルが生成 AI モデルではない場合、(直接) プロンプトインジェクションと安全でない出力処理を無視します。
 
     入力データが機密ではない場合、「入力データの漏洩」を無視します。RAG を使用する場合、取得するデータも入力データとみなします。
+
+   If threats are remaining that effect the behaviour of the model (e.g. evasion, data poisoning), then consider what the motivation of an attacker could be. What could an attacker gain by for example sabotaging your model? Just a claim to fame? Could it be a disgruntled employee? Maybe a competitor? What could an attacker gain by a less conspicious model behaviour attack, like an evasion attack or data poisoning with a trigger? Is there a scenario where an attacker benefits from fooling the model? An example where evasion IS interesting and possible: adding certain words in a spam email so that it is not recoginzed as such. An example where evasion is not interesting is when a patient gets a skin desease diagnosis based on a picture of the skin. The patient has no interest in a wrong decision, and also the patient typically has no control - well maybe by painting the skin. There are situations in which this CAN be of interest for the patient, for example to be eligible for compensation in case the (faked) skin desease was caused by certain restaurant food. This demonstrates that it all depends on the context whether a theoretical threat is a real threat or not. Depending on the probability and impact of the threats, and on the relevant policies, some threats may be accepted as risk. When not accepted, the level of risk is input to the strength of the controls. For example: if data poisoning can lead to substantial benefit for a group of attackers, then the training data needs to be get a high level of protection.
 
 3. **責任の采配**: 選択した各脅威に対して、対処する責任者を決定します。デフォルトでは、AI システムの構築と配備を行う組織が責任を負いますが、構築と配備は別の組織が行うかもしれませんし、たとえば、モデルをホストしたり、アプリケーションを実行するためのクラウド環境を提供するなど、構築と配備の一部を別の組織に委ねるかもしれません。いくつかの側面では責任を共有します。
 
