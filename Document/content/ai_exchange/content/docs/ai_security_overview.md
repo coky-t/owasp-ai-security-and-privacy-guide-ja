@@ -266,17 +266,24 @@ OWASP AI ガイド (このドキュメントはその一部のプロジェクト
 - OWASP AI ガイドに関する AppSec Podcast エピソードです ([音声](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide), [動画](https://www.youtube.com/watch?v=SLdn3AwlCAk&))。
 - [September 2023 MLSecOps Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology)、短編をお望みであれば、[13分 AI セキュリティクイックトーク](https://www.brighttalk.com/webcast/19697/586526) をご覧ください。
 
-モデル攻撃の概要:
+AI セキュリティ脅威の概要:
 
 - [ENISA ML threats and countermeasures 2021](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms)
 - [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
 - [ETSI SAI Problem statement Section 6](https://www.etsi.org/committee/1640-sai#)
 - [Microsoft AI failure modes](https://docs.microsoft.com/en-us/security/failure-modes-in-machine-learning)
 - [NIST](https://csrc.nist.gov/pubs/ai/100/2/e2023/final)
+- [NIST threat taxonomy](https://csrc.nist.gov/publications/detail/white-paper/2023/03/08/adversarial-machine-learning-taxonomy-and-terminology/draft)
+- [NISTIR 8269 - A Taxonomy and Terminology of Adversarial Machine Learning](https://csrc.nist.rip/external/nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8269-draft.pdf)
 - [OWASP ML top 10](https://mltop10.info/)
 - [OWASP LLM top 10](https://llmtop10.com/)
 - [BIML](https://berryvilleiml.com/taxonomy/)
+- [PLOT4ai threat library](https://plot4.ai/library)
+
+AI セキュリティ/プライバシーインシデントの概要:
+
 - [AVID AI Vulnerability database](https://avidml.org/)
+- [OECD AI Incidents Monitor (AIM)](https://oecd.ai/en/incidents) 
 
 その他:
 
@@ -286,10 +293,6 @@ OWASP AI ガイド (このドキュメントはその一部のプロジェクト
 - [Microsoft/MITRE tooling for ML teams](https://www.mitre.org/news-insights/news-release/microsoft-and-mitre-create-tool-help-security-teams-prepare-attacks?sf175190906=1)
 - [Google's Secure AI Framework](https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/)
 - [NIST AI Risk Management Framework 1.0](https://doi.org/10.6028/NIST.AI.100-1)
-- [NIST threat taxonomy](https://csrc.nist.gov/publications/detail/white-paper/2023/03/08/adversarial-machine-learning-taxonomy-and-terminology/draft)
-- [NISTIR 8269 - A Taxonomy and Terminology of Adversarial Machine Learning](https://csrc.nist.rip/external/nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8269-draft.pdf)
-- [PLOT4ai threat library](https://plot4.ai/library)
 - [ETSI GR SAI 002 V 1.1.1 Securing Artificial Intelligence (SAI) – Data Supply Chain Security](https://www.etsi.org/deliver/etsi_gr/SAI/001_099/002/01.01.01_60/gr_SAI002v010101p.pdf)
 - [ISO/IEC 20547-4 Big data security](https://www.iso.org/standard/71278.html)
 - [IEEE 2813 Big Data Business Security Risk Assessment](https://standards.ieee.org/ieee/2813/7535/)
-- [OECD AI Incidents Monitor (AIM)](https://oecd.ai/en/incidents) AIM は AI インシデントを文書化し、方針作成者、AI 実務者、すべての利害関係者が AI リスクを具体化するインシデントやハザードについて貴重な洞察を得るのに役立ちます
