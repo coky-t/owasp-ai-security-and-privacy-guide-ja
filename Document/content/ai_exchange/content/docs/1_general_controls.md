@@ -107,8 +107,26 @@ AI 固有のサプライチェーンのリスクについて説明している S
 以下の ISO/IEC 5338 の解釈図は、関連するトピックの概要を把握するのに適しています。
 ![5338](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/5338.png)
 
+Every devlopment program should perform a privacy and security analysis to assess potential impacts to users. AI programs have additional concerns around privacy and security that need to be considered. While each system implementation will be different based on its contextual purpose, the same process can be applied. 
+
+ISO/IEC TR 27563:2023, which bases its list of AI use cases on the 132 use cases belonging to 22 application domains in ISO/IEC TR 24030:2021, identifies 11 use cases with a maximum concern rating for security and 49 use cases with a maximun concern rating for privacy. While individual AI projects may have differening uses cases, it is critical to perform a use case privacy and secrutiy analysis. 
+
+These analyses can be performed early in the development process and will guide security and privacy controls for the system. These controls are based on security protection goals such as Confidentiality, Integrity and Availability, and privacygoals such as Unlinkability, Transparency and Intervenability. ISO/IEC TR 27562:2023 provides a detailed list of points of attention for these goals and coverage. Particular emphasis should be paid to points of attention on privacy principals, and AI trustworthiness vulnerabilities. 
+
+The general process for performing an AI Use Case Privacy and Security Analysis is:
+ - Describe the Ecosystem
+ - Provide an assessment of the system of interest
+ - Identify the security and privacy concerns
+ - Identify the security and privacy risks
+ - Identify the security and privacy controls
+ - Identify the security and privacy assurance concerns
+ - Identify the security and privacy plan requirements
+
+ISO/IEC TR 27562:2023 provides details on these processes and templates for captuing the information. 
+
 標準へのリンク:
 
+  - [ISO/IEC TR 27562:2023 - Security and privacy in artificial intelligence use cases — Best practices](https://www.iso.org/standard/80396.html) covers this control fully. 
   - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - 5338 はソフトウェアライフサイクルに関する既存の 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。[このブログ](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/) も参照してください。
   - 27002 コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
   - [OpenCRE の機能の文書化](https://www.opencre.org/cre/162-655) ギャップ: このコントロールを最小限にカバーします
