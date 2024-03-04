@@ -18,6 +18,7 @@ ISO/IEC 42001 B.7.2 briefly mentions development-time data security risks.
 **Controls for development-time protection:**
 
 - See General controls
+- The below control(s), each marked with a # and a short name in capitals
 
 #### **#DEVDATAPROTECT**
 (development-time infosec). Development data protect: protect (train/test) data, source code, configuration & parameters
@@ -146,8 +147,9 @@ References
 
 **Controls for broad model poisoning:**
 
-- See General controls
+- See General controls, especially controls to limit the effects of unwanted behaviour
 - See controls for development-time protection
+- The below control(s), each marked with a # and a short name in capitals
   
 #### #MODELENSEMBLE
 (development-time datascience). Model ensemble: include the model as part of an ensemble, where each model is trained in a separately protected environment. If one model's output deviates from the others, it can be ignored, as this indicates possible manipulation.
@@ -166,8 +168,11 @@ Example 3: false information in documents on the internet causes a Large Languag
 
 **Controls for data poisoning:**
 
-- See General controls
+- See General controls, especially controls to limit the effects of unwanted behaviour
 - See controls for development-time protection
+- See controls for broad model poisoning
+- The below control(s), each marked with a # and a short name in capitals
+
 #### #MORETRAINDATA
 (development-time datascience): More train data: increasing the amount of non-malicious data makes training more robust against poisoned examples - provided that these poisoned examples are small in number. One way to do this is through data augmentation - the creation of artificial training set samples that are small variations of existing samples.
 
@@ -224,19 +229,24 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 
 **Controls:**
 
-- See General controls
+- See General controls, especially controls to limit the effects of unwanted behaviour
 - See controls for development-time protection
+- See controls for broad model poisoning
 
 ### 3.1.3 転移学習攻撃
+Category: development-time  
+Description: An attacker supplies a manipulated pre-trained model which is then unknowingly further trained/fine tuned with still having the unwanted behaviour.  
+Permalink: https://owaspai.org/goto/t1
 
-An attacker supplies a manipulated pre-trained model which is then unknowingly further trained/fine tuned with still having the unwanted behaviour.
+AI models are sometimes obtained elsewhere (e.g. open source) and then further trained or fine-tuned. These models may have been manipulated(poisoned) at the source, or in transit. See [OWASP for LLM 05: Supply Chain Vulnerabilities.](https://llmtop10.com/llm05/).
 
-  Example: GenAI models are sometimes obtained elsewhere (e.g. open source) and then fine-tuned. These models may have been manipulated at the source, or in transit. See [OWASP for LLM 05: Supply Chain Vulnerabilities.](https://llmtop10.com/llm05/).
+The type of manipulation can be through data poisoning, or by specifically changing the model parameters. Therefore, the same controls apply that help against those attacks. Since changing the model parameters requires protection of the parameters at the moment they are manipulated, this is not in the hands of the one who obtained the model. What remains are the controls against data poisoning, the controls against model poisoning in general (e.g. model ensembles), plus of course good supply chain management, and some specific controls that help agains transfer learning attacks.
 
 **Controls specific for transfer learning:**
 
-- See General controls
-- See #SUPPLYCHAINMANAGE
+- See General controls, especially controls to limit the effects of unwanted behaviour
+- See controls for development-time protection, especially #SUPPLYCHAINMANAGE to manage the source of the obtained model
+- See controls for broad model poisoning
 - Choose a model type resilient against a transfer learning attack
 
 ---
