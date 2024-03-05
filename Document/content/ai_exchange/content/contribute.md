@@ -52,7 +52,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Marko Lihter</td><td>SplxAI</td><td>クロアチア</td><td>組織向けのステップバイステップガイド、ウェブサイト作成、さまざまなテキストの改善</td></tr>
     <tr><td>Niklas Bunzel</td><td>フラウンホーファー研究所</td><td>ドイツ</td><td>回避攻撃に関するデータサイエンスの考察と参考情報</td></tr>
     <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクトリーダー</b></td></tr>
-    <tr><td>Rocky Heckman</td><td>Cyber dynamo</td><td>Australia</td><td>セキュリティとプライバシーのリスク分析と ISO/IEC 27562</td></tr>
+    <tr><td>Rocky Heckman</td><td>Cyber Dynamo</td><td>Australia</td><td>セキュリティとプライバシーのリスク分析と ISO/IEC 27562</td></tr>
     <tr><td>Roger Sanz</td><td>イザベル大学</td><td>スペイン</td><td></td></tr>
     <tr><td><b>Sandy Dunn</b></td><td>ボイシ州立大学, AI Cyber Advisors</td><td>アメリカ</td><td>リーダーシップチームからのコミュニティ管理</td></tr>
     <tr><td>Sean Oesch</td><td>オークリッジ国立研究所</td><td>アメリカ</td><td>BLUF、敵対的トレーニング、OOD 検出、NISTIR 8269、ガイドの使いやすさ/構造</td></tr>
