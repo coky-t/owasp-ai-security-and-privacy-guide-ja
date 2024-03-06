@@ -12,17 +12,17 @@ Note: some controls in this document are application security controls that are 
 
 **Controls:**
 
-- See The Governance controls in the general section, in particular SECDEVPROGRAM to attain application security, and SECPROGRAM to attain information security in the organization.
+- See The Governance controls in the general section, in particular [SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) to attain application security, and [SECPROGRAM](1_general_controls.md#SECPROGRAM) to attain information security in the organization.
 - Technical application security controls  
   Links to standards:
   - See [OpenCRE on technical application security controls](https://www.opencre.org/cre/636-660)
-  - The 27002 controls only partly cover technical application security controls, and on a high abstraction level
-  - More detailed and comprehensive control overviews can be found in for example Common criteria protection profiles (ISO/IEC 15408 with evaluation described in 18045),
+  - The ISO 27002 controls only partly cover technical application security controls, and on a high abstraction level
+  - More detailed and comprehensive control overviews can be found in for example Common criteria protection profiles (ISO/IEC 15408 with evaluation described in ISO 18045),
   - or in [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
 - Operational security  
   Links to standards:
   - See [OpenCRE on operational security processes](https://www.opencre.org/cre/862-452)
-  - The 27002 controls only partly cover operational security controls, and on a high abstraction level
+  - The ISO 27002 controls only partly cover operational security controls, and on a high abstraction level
 
 ---
 
@@ -57,7 +57,7 @@ Stealing model parameters from a live system by breaking into it (e.g. by gainin
 - The below control(s), each marked with a # and a short name in capitals
   
 #### #RUNTIMEMODELCONFIDENTIALITY
-(runtime appsec). Run-time model confidentiality: see SECDEVPROGRAM to attain application security, with the focus on protecting the storage of model parameters (e.g. access control, encryption).  
+(runtime appsec). Run-time model confidentiality: see [SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) to attain application security, with the focus on protecting the storage of model parameters (e.g. access control, encryption).  
 A Trusted Execution Environment can help to protect against attacks, including side-channel hardware attacks like [DeepSniffer](https://sites.cs.ucsb.edu/~sherwood/pubs/ASPLOS-20-deepsniff.pdf).
 
 #### #MODELOBFUSCATION
@@ -93,7 +93,7 @@ See [MITRE ATLAS - LLM Prompt Injection](https://atlas.mitre.org/techniques/AML.
 **Controls:**
 
 - See General controls
-- Controls against direct prompt injection mostly are embedded in the implementation of the large languag model itself
+- Controls against direct prompt injection mostly are embedded in the implementation of the large language model itself
 
 ---
 
@@ -103,7 +103,7 @@ Impact: Getting unwanted answers or actions from hidden instructions in a prompt
 
 Prompt injection ([OWASP for LLM 01](https://llmtop10.com/llm01/)) manipulates a large language model (GenAI) through the injection of instructions as part of a text from a compromised source that is inserted into a prompt by an application, causing unintended actions or answers by the LLM (GenAI).
 
-Example: let's say a chat application takes questions about car models. It turns a question into a prompt to a Large Language Model (LLM, a GenAI) by adding the text from the website about that car. If that website has been compromised with instruction invisibile to the eye, those instructions are inserted into the prompt and may result in the user getting false or offensive information.
+Example: let's say a chat application takes questions about car models. It turns a question into a prompt to a Large Language Model (LLM, a GenAI) by adding the text from the website about that car. If that website has been compromised with instructions invisible to the eye, those instructions are inserted into the prompt and may result in the user getting false or offensive information.
 
 See [MITRE ATLAS - LLM Prompt Injection](https://atlas.mitre.org/techniques/AML.T0051).
 
@@ -140,4 +140,4 @@ GenAI models mostly live in the cloud - often managed by an external party, whic
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #MODELINPUTCONFIDENTIALITY
-(runtime appsec). Model input confidentiality: see SECDEVPROGRAM to attain application security, with the focus on protecting the transport and storage of model input (e.g. access control, encryption, minimize retention)
+(runtime appsec). Model input confidentiality: see [SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) to attain application security, with the focus on protecting the transport and storage of model input (e.g. access control, encryption, minimize retention)
