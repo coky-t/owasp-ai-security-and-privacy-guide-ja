@@ -15,15 +15,15 @@ Threats through use take place through normal interaction with an AI model: prov
 
 (runtime appsec). Monitor the use of the model (input, date, time, user) by registering it in logs and make it part of incident detection, including:
 
-  - inproper functioning of the model (see CONTINUOUSVALIDATION and UNWANTEDBIASTESTING)
-  - suspicious patterns of model use (e.g. high frequency - see RATELIMIT and DETECTADVERSARIALINPUT)
-  - suspicious inputs (see DETECTODDINPUT and DETECTADVERSARIALINPUT)
+  - inproper functioning of the model (see [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION) and [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
+  - suspicious patterns of model use (e.g. high frequency - see [RATELIMIT](2_threats_through_use.md#RATELIMIT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT))
+  - suspicious inputs (see [DETECTODDINPUT](2_threats_through_use.md#DETECTODDINPUT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT))
 
 By adding details to logs on the version of the model used and the output, troubleshooting becomes easier.
   
 Links to standards:
 
-  - 27002 Control 8.16 Monitoring activities. Gap: covers this control fully, with the particularity: monitoring needs to look for specific patterns of AI attacks (e.g. model attacks through use). The 27002 control has no details on that.
+  - ISO 27002 Control 8.16 Monitoring activities. Gap: covers this control fully, with the particularity: monitoring needs to look for specific patterns of AI attacks (e.g. model attacks through use). The 27002 control has no details on that.
   - ISO/IEC 42001 B.6.2.6 discusses AI system operation and monitoring. Gap: covers this control fully, but on a high abstraction level.
   - See [OpenCRE](https://www.opencre.org/cre/058-083). Idem
 
@@ -38,7 +38,7 @@ Remaining risk: this control does not prevent attacks that use low frequency of 
 
 Links to standards:
 
-  - 27002 has no control for this
+  - ISO 27002 has no control for this
   - See [OpenCRE](https://www.opencre.org/cre/630-573)
 
 #### #MODELACCESSCONTROL
@@ -50,7 +50,7 @@ Remaining risk: attackers may succeed in authenticating as an authorized user, o
 
 Links to standards:
 
-  - Technical access control: 27002 Controls 5.15, 5.16, 5.18, 5.3, 8.3. Gap: covers this control fully
+  - Technical access control: ISO 27002 Controls 5.15, 5.16, 5.18, 5.3, 8.3. Gap: covers this control fully
   - [OpenCRE on technical access control](https://www.opencre.org/cre/724-770)
   - [OpenCRE on centralized access control](https://www.opencre.org/cre/117-371)
 
@@ -78,8 +78,8 @@ Another categorization is to distinguish between physical input manipulation (e.
 
   
 #### #DETECTODDINPUT 
-(runtime datascience). 
-Detect odd input: implement tools to detect whether input is odd: significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like. 
+(runtime data science).
+Detect odd input: implement tools to detect whether input is odd: significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like.
 
 Purpose: Odd input can result in unwanted model behaviour because the model by definition has not seen this data before and will likely produce false results, whether the input is malicious or not. When detected, the input can be logged for analysis and optionally discarded. It is important to note that not all odd input will be malicious and not all malicious input will be odd. There are examples of adversarial input specifically crafted to bypass detection of odd input. Nevertheless, detecting odd input is critical to maintaining model integrity, addressing potential concept drift, and preventing adversarial attacks that may take advantage of model behaviors on out of distribution data.
 
@@ -87,9 +87,9 @@ Purpose: Odd input can result in unwanted model behaviour because the model by d
 Out-of-Distribution Detection (OOD), Novelty Detection (ND), Outlier Detection (OD), Anomaly Detection (AD), and Open Set Recognition (OSR) are all related and sometimes overlapping tasks that deal with unexpected or unseen data. However, each of these tasks has its own specific focus and methodology. In practical applications, the techniques used to solve the problems may be similar or the same. Which task or problem should be addressed and which solution is most appropriate also depends on the definition of in-distribution and out-of-distribution. We use an example of a machine learning system designed for a self-driving car to illustrate all these concepts.
 
 **Out-of-Distribution Detection (OOD)** - the broad category of detecting odd input:  
-Identifying data points that differ significantly from the distribution of the training data. OOD is a broader concept that can include aspects of novelty, anomaly, and outlier detection, depending on the context. 
+Identifying data points that differ significantly from the distribution of the training data. OOD is a broader concept that can include aspects of novelty, anomaly, and outlier detection, depending on the context.
 
-Example: The system is trained on vehicles, pedestrians, and common animals like dogs and cats. One day, however, it encounters a horse on the street. The system needs to recognize that the horse is an out-of-distribution object. 
+Example: The system is trained on vehicles, pedestrians, and common animals like dogs and cats. One day, however, it encounters a horse on the street. The system needs to recognize that the horse is an out-of-distribution object.
 
 Methods for detecting out-of-distribution (OOD) inputs incorporate approaches from outlier detection, anomaly detection, novelty detection, and open set recognition, using techniques like similarity measures between training and test data, model introspection for activated neurons, and OOD sample generation and retraining. Approaches such as thresholding the output confidence vector help classify inputs as in or out-of-distribution, assuming higher confidence for in-distribution examples. Techniques like supervised contrastive learning, where a deep neural network learns to group similar classes together while separating different ones, and various clustering methods, also enhance the ability to distinguish between in-distribution and OOD inputs. For more details, one can refer to the survey by [Yang et al.](https://arxiv.org/pdf/2110.11334.pdf) and other resources on the learnability of OOD: [here](https://arxiv.org/abs/2210.14707).
 
@@ -132,7 +132,7 @@ References:
 
 
 #### #DETECTADVERSARIALINPUT
-(runtime datascience). Detect adversarial input: Implement tools to detect specific evasions in input (e.g. patches in images).
+(runtime data science). Detect adversarial input: Implement tools to detect specific evasions in input (e.g. patches in images).
 
 The main concepts of adversarial attack detectors include:
   - Activation Analysis: Examining the activations of different layers in a neural network can reveal unusual patterns or anomalies when processing an adversarial input. These anomalies can be used as a signal to detect potential attacks.
@@ -149,7 +149,7 @@ Links to standards:
 
 References:
 
-  - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like INPUTDISTORTION, but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
+  - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
 
   - [MagNet](https://arxiv.org/abs/1705.09064) and [here](https://www.mdpi.com/2079-9292/11/8/1283)
 
@@ -197,7 +197,7 @@ Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
 Recognition. 2022.
 
 #### #EVASIONROBUSTMODEL
-(development-time datascience). Choose an evasion-robust model design, configuration and/or training approach to maximize resilience against evasion (Datascience).
+(development-time data science). Choose an evasion-robust model design, configuration and/or training approach to maximize resilience against evasion (Data science).
 
 A robust model in the light of evasion is a model that does not display significant changes in output for minor changes in input.
 
@@ -205,7 +205,7 @@ Example approach: Measure model robustness by trying minor input deviations to d
 
 If we interpret the model with its inputs as a "system" and the sensitivity to evasion attacks as the "system fault" then this sensitivity may also be interpreted as (local) lack of graceful degradation. Such issues can be addressed by, for example, increasing training samples for that part of the input domain and tuning/optimising the model for variance.
 
-Another example approach: _Randomisation_ by injecting noise during training. The primary objective of this technique is to enhance the network's resilience to evasion attacks, especially those triggered by subtle, carefully crafted perturbations to input data that may result in misclassification or inaccurate predictions. See also TRAINDATADISTORTION against data poisoning and OBFUSCATETRAININGDATA to minimize sensitive data through randomisation.
+Another example approach: _Randomisation_ by injecting noise during training. The primary objective of this technique is to enhance the network's resilience to evasion attacks, especially those triggered by subtle, carefully crafted perturbations to input data that may result in misclassification or inaccurate predictions. See also [TRAINDATADISTORTION](3_development_time_threats.md#TRAINDATADISTORTION) against data poisoning and [OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA) to minimize sensitive data through randomisation.
 
 Yet another approach is _gradient masking_: a technique employed to defend machine learning models against adversarial attacks. This involves altering the gradients of a model during training to increase the difficulty of generating adversarial examples for  attackers. Methods like adversarial training and ensemble approaches are utilized for gradient masking, but it comes with limitations, including computational expenses and potential in effectiveness against all types of attacks.
 
@@ -241,7 +241,7 @@ adversarial examples." International conference on machine learning.
 PMLR, 2018.
 
 #### #TRAINADVERSARIAL
-(development-time datascience). Train adversarial: Add adversarial examples to the training set to make the model more resilient (Datascience). While adversarial training does make a model more robust against specific attacks, it is important to note that it also adds significant training overhead, does not scale well with model complexity / input dimension, can lead to overfitting, and may not generalize well to new attack methods. For a general summary of adversarial training, see [Bai et al.](https://arxiv.org/pdf/2102.01356.pdf)
+(development-time data science). Train adversarial: Add adversarial examples to the training set to make the model more resilient (Data science). While adversarial training does make a model more robust against specific attacks, it is important to note that it also adds significant training overhead, does not scale well with model complexity / input dimension, can lead to overfitting, and may not generalize well to new attack methods. For a general summary of adversarial training, see [Bai et al.](https://arxiv.org/pdf/2102.01356.pdf)
 
   Links to standards:
 
@@ -257,16 +257,16 @@ PMLR, 2018.
   - Vaishnavi, Pratik, Kevin Eykholt, and Amir Rahmati. "Transferring adversarial robustness through robust representation matching." 31st USENIX Security Symposium (USENIX Security 22). 2022.
 
 #### #INPUTDISTORTION
-(runtime datascience). Input distortion: Lightly modify the input with the intention to distort the adversarial attack causing it to fail, while maintaining sufficient model correctness. Modification can be done by e.g. adding noise (randomization), smoothing or JPEG compression.
+(runtime data science). Input distortion: Lightly modify the input with the intention to distort the adversarial attack causing it to fail, while maintaining sufficient model correctness. Modification can be done by e.g. adding noise (randomization), smoothing or JPEG compression.
 
 Maintaining model correctness can be improved by performing multiple random modifications (e.g. randomized smoothing) to the input and then comparing the model output (e.g. best of three).  
 
 The security of these defenses often relies on gradient masking (sometimes called gradient obfuscation) when the functions are non-differentiable (shattered gradients). These defenses can be attacked by approximating the gradients, e.g., using BPDA. Systems that use defenses based on randomness to mask the gradients (stochastic gradients) can be attacked by combining the attack with EOT.
 A set of defense techniques called Random Transfomations (RT) defends neural networks by implementing enough randmoness that computing adversarial examples using EOT is computationally inefficient. This randomness is typically achieved by using a random subset of input transformations with random parameters. Since multiple transformations are applied to each input sample, the benign accuracy drops significantly, thus the network must be trained with the RT in place.
 
-Note that black-box or closed-box attacks do not rely on the gradients and are therefore not affected by shattered gradients, as they do not use the gradients to calculate the attack. Black box attacks use only the input and the output of the model or whole AI system to calculate the adversarial input. For a more detailed discussion of these attacks see Closed-box evasion. 
+Note that black-box or closed-box attacks do not rely on the gradients and are therefore not affected by shattered gradients, as they do not use the gradients to calculate the attack. Black box attacks use only the input and the output of the model or whole AI system to calculate the adversarial input. For a more detailed discussion of these attacks see Closed-box evasion.
   
-See DETECTADVERSARIALINPUT for an approach where the distorted input is used for detecting an adversarial attack.
+See [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT) for an approach where the distorted input is used for detecting an adversarial attack.
 
 Links to standards:
 
@@ -286,7 +286,7 @@ References:
 
   
 #### #ADVERSARIALROBUSTDISTILLATION
-(development-time datascience). Adversarial-robust distillation: defensive distillation involves training a student model to replicate the softened outputs of the *teacher* model, increasing the resilience of the *student* model to adversarial examples by smoothing the decision boundaries and making the model less sensitive to small perturbations in the input. Care must be taken when considering defensive distillation techniques, as security concerns have arisen about their effectiveness.
+(development-time data science). Adversarial-robust distillation: defensive distillation involves training a student model to replicate the softened outputs of the *teacher* model, increasing the resilience of the *student* model to adversarial examples by smoothing the decision boundaries and making the model less sensitive to small perturbations in the input. Care must be taken when considering defensive distillation techniques, as security concerns have arisen about their effectiveness.
 
 Links to standards:
 
@@ -415,13 +415,6 @@ The disclosure is caused by an unintentional fault of including this data, and e
 - See controls for threats through use
 - The below control(s), each marked with a # and a short name in capitals
 
-### #FILTERSENSITIVETRAINDATA
-(development-time appsec). Actively prevent sensitive data when constructing the training dataset using manual verification and/or automated detection and/or careful selection of train data sources
-
-Links to standards:
-
-  - Not covered yet in ISO/IEC standards
-
 #### #FILTERSENSITIVEMODELOUTPUT 
 (runtime appsec). Filter sensitive model output: actively censor sensitive data by detecting it when possible (e.g. phone number)
 
@@ -454,14 +447,14 @@ Controls for Model inversion and membership inference:
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #OBSCURECONFIDENCE 
-(runtime datascience). Obscure confidence: exclude indications of confidence in the output, or round confidence so it cannot be used for optimization.
+(runtime data science). Obscure confidence: exclude indications of confidence in the output, or round confidence so it cannot be used for optimization.
 
 Links to standards:
 
   - Not covered yet in ISO/IEC standards
 
 #### #SMALLMODEL 
-(development-time datascience). Small model: overfitting can be prevented by keeping the model small so it is not able to store detail at the level of individual training set samples.
+(development-time data science). Small model: overfitting can be prevented by keeping the model small so it is not able to store detail at the level of individual training set samples.
 
 Links to standards:
 
@@ -508,7 +501,7 @@ This threat refers to application failure (i.e. denial of service) typically cau
 
 Links to standards:
 
-  - 27002 has no control for this
+  - ISO 27002 has no control for this
   - Not covered yet in ISO/IEC standards
   - [OpenCRE on input validation](https://www.opencre.org/cre/010-308)
 
@@ -518,7 +511,7 @@ Links to standards:
 
   Links to standards:
 
-  - 27002 has no control for this, except for Monitoring (covered in Controls for threats through use)
+  - ISO 27002 has no control for this, except for Monitoring (covered in Controls for threats through use)
   - Not covered yet in ISO/IEC standards
 
 ### 2.4.1. 一貫性のないデータやスポンジサンプルによるモデルサービス拒否
