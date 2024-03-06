@@ -17,7 +17,7 @@ weight: 2
 
 AI イニシアチブでリスク分析を行う際には、少なくとも以下の点を考慮してください。
 -AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
--AI アプリケーションの種類によっては禁止されている可能性があるため、法律や規制を含めます (EU AI 法におけるソーシャルスコアリングなど)。#CHECKCOMPLIANCE を参照してください。
+-AI アプリケーションの種類によっては禁止されている可能性があるため、法律や規制を含めます (EU AI 法におけるソーシャルスコアリングなど)。#[CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE) を参照してください。
 -AI がどのように動作するかについて、要求される透明性を提供できますか？
 -プライバシー権 (個人データへのアクセス、消去、訂正、更新の権利、異議申し立ての権利) を達成できますか？
 -保護される人々のグループに関する望ましくない偏見を十分に緩和できますか？
@@ -25,12 +25,12 @@ AI イニシアチブでリスク分析を行う際には、少なくとも以�
 -適切な専門知識 (データサイエンティストなど) は利用可能ですか？
 -特に別の目的で集められた個人データである場合、その目的のためにデータを使用することは許可されていますか？
 -望ましくない動作は緩和策 (望ましくない動作を制限するコントロールを参照) によって十分に抑制できますか？
--プライバシーを含むセキュリティ固有のリスク分析については SECPROGRAM のリスクマネジメントを参照してください。
+-プライバシーを含むセキュリティ固有のリスク分析については [SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスクマネジメントを参照してください。
 
 標準へのリンク:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
- 
-42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。5338 (下記 #DEVPROGRAM 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。27001 が情報セキュリティのマネジメントシステムであるのと同様に、42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
+
+ISO 42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。ISO 5338 (下記 #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。ISO 27001 が情報セキュリティのマネジメントシステムであるのと同様に、ISO 42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。ISO 42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
 #### #SECPROGRAM
 (マネジメント)。セキュリティプログラムを持つこと。AI ライフサイクル全体と AI の特殊性を組織のセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) に含めます。
@@ -64,7 +64,7 @@ AI ユースケースのプライバシーとセキュリティの分析を実�
 
 標準へのリンク:
 
-  - 27000-27005 の全範囲は IT システムであるため、一般的な意味で AI システムに適用できます。ギャップ: このコントロールを完全にカバーしており、情報セキュリティマネジメントで考慮する必要がある三つの AI 固有の攻撃対象領域があるという高レベルの特殊性があります: 1) AI 開発時の攻撃、2) モデルの使用による攻撃、3) AI アプリケーションセキュリティ攻撃。特殊性の詳細については対応するセクションのコントロールを参照してください。
+  - ISO 27000-27005 の全範囲は IT システムであるため、一般的な意味で AI システムに適用できます。ギャップ: このコントロールを完全にカバーしており、情報セキュリティマネジメントで考慮する必要がある三つの AI 固有の攻撃対象領域があるという高レベルの特殊性があります: 1) AI 開発時の攻撃、2) モデルの使用による攻撃、3) AI アプリケーションセキュリティ攻撃。特殊性の詳細については対応するセクションのコントロールを参照してください。
     これらの標準には以下があります。
 
     - ISO/IEC 27000 – 情報セキュリティマネジメントシステム - 概要と用語
@@ -74,18 +74,18 @@ AI ユースケースのプライバシーとセキュリティの分析を実�
     - ISO/IEC 27004 – 情報セキュリティマネジメント測定
     - ISO/IEC 27005 – 情報セキュリティリスクマネジメント
 
-  - このドキュメント全体で言及されている「27002 コントロール」は 27001 の Annex にリストされており、27002 の実践で詳しく説明されています。抽象度の高いレベルでは、最も関連のある 27002 コントロールは以下の通りです。
-    - 27002 コントロール 5.1 情報セキュリティのための方針群
-    - 27002 コントロール 5.10 情報およびその他の関連資産の許容される使用
-    - 27002 コントロール 5.8 プロジェクトマネジメントにおける情報セキュリティ
+  - このドキュメント全体で言及されている「ISO 27002 コントロール」は ISO 27001 の Annex にリストされており、ISO 27002 の実践で詳しく説明されています。抽象度の高いレベルでは、最も関連のある ISO 27002 コントロールは以下の通りです。
+    - ISO 27002 コントロール 5.1 情報セキュリティのための方針群
+    - ISO 27002 コントロール 5.10 情報およびその他の関連資産の許容される使用
+    - ISO 27002 コントロール 5.8 プロジェクトマネジメントにおける情報セキュリティ
   - [OpenCRE のセキュリティプログラムマネジメント](https://www.opencre.org/cre/261-010)
   - リスク分析標準:
     - このドキュメントはリスク分析を容易にする AI セキュリティの脅威とコントロールを含みます。
     - [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/) も参照してください。
     - ISO/IEC 27005 - 上述の通りです。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います (27005 は AI 固有の脅威について言及していないため)。
     - ISO/IEC 27563:2023 (AI ユースケースのセキュリティとプライバシー) AI ユースケースにおけるセキュリティとプライバシーの影響について説明しており、AI セキュリティリスク分析への有用なインプットとして役立つかもしれません。この取り組みでは ISO/IEC TR 24030:2021 の 22 のアプリケーションドメインに属する 132 のユースケースの AI ユースケースのリストを基にしており、セキュリティに関する最大の懸念評価を持つ 11 のユースケースと、プライバシーに関する最大の懸念評価を持つ 49 のユースケースを特定しています
-    - ISO/IEC 23894 (AI リスクマネジメント)。ギャップ: このコントロールを完全にカバーします - AI セキュリティ脅威については ISO/IEC 24028 (AI の信頼性) を参照しており、たとえば AI Exchange (このドキュメント) と比較すると不完全です。範囲はセキュリティより広いのですが、問題ではありません。
-    - ISO/IEC 5338 (AI ライフサイクル) は AI リスクマネジメントプロセスをカバーします。ギャップ: 上記 23894 と同様です。
+    - ISO/IEC 23894 (AI リスクマネジメント)。ギャップ: このコントロールを完全にカバーします - AI セキュリティ脅威については ISO/IEC 24028 (AI の信頼性) を参照しています。かし、ISO/IEC 24028 は脅威の列挙よりもリスクマネジメントに重点を置いているため、AI Exchange (このドキュメント) や MITRE ATLAS ほど包括的ではありません。
+    - ISO/IEC 5338 (AI ライフサイクル) は AI リスクマネジメントプロセスをカバーします。ギャップ: 上記 ISO 23894 と同様です。
     - [ETSI の脅威、脆弱性、リスク分析のための手法とプロフォーマ](https://www.etsi.org/deliver/etsi_ts/102100_102199/10216501/05.02.03_60/ts_10216501v050203p.pdf)
     - [NIST AI リスクマネジメントフレームワーク](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)
     - [OpenCRE のセキュリティリスク分析](https://www.opencre.org/cre/307-242)
@@ -96,7 +96,7 @@ AI ユースケースのプライバシーとセキュリティの分析を実�
 #### #SECDEVPROGRAM
 (マネジメント)。データサイエンス開発活動を安全なソフトウェア開発プログラムの一部にします。
 
-AI 固有のサプライチェーンのリスクについて説明している SUPPLYCHAINMANAGE についてはこのドキュメントの別項を参照してください。
+AI 固有のサプライチェーンのリスクについて説明している [SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE) についてはこのドキュメントの別項を参照してください。
 
 目的: ソフトウェア開発時にリスクを軽減するために適切な注意を払うことでセキュリティリスクを低減します。
 
@@ -106,7 +106,7 @@ AI 固有のサプライチェーンのリスクについて説明している S
 
 標準へのリンク:
 
-  - 27002 コントロール 8.25 安全な開発ライフサイクル。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴いますが、詳細は欠如しています - 27002(2022) の 8.25 コントロール の説明は一ページですが、安全なソフトウェア開発は大規模かつ複雑なトピックです - 詳細については以下を参照してください。
+  - ISO 27002 コントロール 8.25 安全な開発ライフサイクル。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴いますが、詳細は欠如しています - ISO 27002:2022 の 8.25 コントロール の説明は一ページですが、安全なソフトウェア開発は大規模かつ複雑なトピックです - 詳細については以下を参照してください。
   - ISO/IEC 27115 (複合システムのサイバーセキュリティ評価)
   - [OpenCRE の安全なソフトウェア開発プロセス](https://www.opencre.org/cre/616-305) を参照してください。NIST SSDF や OWASP SAMM への注目すべきリンクがあります。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います。
 
@@ -128,9 +128,9 @@ AI 固有のサプライチェーンのリスクについて説明している S
 
 標準へのリンク:
 
-
-  - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - 5338 はソフトウェアライフサイクルに関する既存の 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。[このブログ](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/) も参照してください。
-  - 27002 コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
+[ISO/IEC TR 27563:2023](https://www.iso.org/standard/80396.html) はこのコントロールを完全にカバーします。
+  - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - ISO 5338 はソフトウェアライフサイクルに関する既存の ISO 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。[このブログ](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/) も参照してください。
+  - [ISO/IEC 27002](https://www.iso.org/standard/75652.html) コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
   - [OpenCRE の機能の文書化](https://www.opencre.org/cre/162-655) ギャップ: このコントロールを最小限にカバーします
 
   参考情報:
@@ -142,27 +142,28 @@ AI 固有のサプライチェーンのリスクについて説明している S
 標準へのリンク:
 
   - [OpenCRE のコンプライアンス](https://www.opencre.org/cre/510-324)
-  - 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
+  - ISO 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
 
 #### #SECEDUCATE
 (マネジメント)。データサイエンティストと開発チームに対して、モデルへの攻撃を含む AI 脅威の意識に関するセキュリティ教育を実施します。データサイエンティストを含むすべてのエンジニアがセキュリティの考え方を身につけることが不可欠です。
 
 標準へのリンク:
 
-  - 27002 コントロール 6.3 意識向上トレーニング。ギャップ: このコントロールを完全にカバーしますが、詳細が不足しており、特殊性を考慮する必要があります。トレーニング資料は AI セキュリティの脅威とコントロールをカバーする必要があります。
+  - ISO 27002 コントロール 6.3 意識向上トレーニング。ギャップ: このコントロールを完全にカバーしますが、詳細が不足しており、特殊性を考慮する必要があります。トレーニング資料は AI セキュリティの脅威とコントロールをカバーする必要があります。
 
 ---
 
 ## 1.2 機密データ制限の一般的なコントロール
 
 #### #DATAMINIMIZE
-(development-time and runtime). Data minimize: remove or anonymize data fields or records that are unnecessary for the application to prevent potential leaks. Data minimization can also involve statistically analyzing a training dataset to identify and eliminate superfluous records or fields that are not essential for achieving sufficient performance (Data Science).
+Description: Data minimize: remove or anonymize data fields or records that are unnecessary for the application to prevent potential leaks. Data minimization can also involve statistically analyzing a training dataset to identify and eliminate superfluous records or fields that are not essential for achieving sufficient performance (Data Science).  
+Category: development-time and runtime
 
 Purpose: reduce the impact in case of an attack by reducing the amount of data that can leak.
 
   Links to standards:
 
-  - Not covered yet in ISO/IEC standards. 
+  - Not covered yet in ISO/IEC standards.
 
 #### #ALLOWEDDATA 
 (development-time and runtime). Ensure allowed data, meaning the data used (e.g., training set) is permitted for the intended purpose. This is particularly important if consent was not given and the data contains personal information collected for a different purpose.
@@ -177,10 +178,10 @@ Limiting the retention period of data can be seen as a special form of data mini
   
 Links to standards:
 
-  - Not covered yet in ISO/IEC standards. 
+  - Not covered yet in ISO/IEC standards.
 
 #### #OBFUSCATETRAININGDATA
-(development-time datascience). Obfuscate training data: attain a degree of obfuscation of sensitive data where possible. When this is done for personal data, it is referred to as _differential privacy_ which is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
+(development-time data science). Obfuscate training data: attain a degree of obfuscation of sensitive data where possible. When this is done for personal data, it is referred to as _differential privacy_ which is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
 
 Examples of approaches are:
 
@@ -194,7 +195,7 @@ References:
 
 - Randomisation
     
-Adding sufficient noise to training data can make it effectively uncrecognizable, which of course needs to be weighed against the inaccuracy that this typically creates. See also TRAINDATADISTORTION against data poisoning and EVASIONROBUSTMODEL for randomisation against evasion attacks.
+Adding sufficient noise to training data can make it effectively uncrecognizable, which of course needs to be weighed against the inaccuracy that this typically creates. See also [TRAINDATADISTORTION](3_development_time_threats.md#TRAINDATADISTORTION) against data poisoning and [EVASIONROBUSTMODEL](2_threats_through_use.md#EVASIONROBUSTMODEL) for randomisation against evasion attacks.
     
 - Objective function perturbation
     
@@ -206,7 +207,7 @@ References:
 
 - Masking
 
-Masking involves the alteration or replacement of sensitive features within datasets with alternative representations that retain the essential information required for training while obscuring sensitive details. Various methods can be employed for masking, including tokenization, perturbation, generalization, and feature engineering. Tokenization replaces sensitive text data with unique identifiers, while perturbation adds random noise to numerical data to obscure individual values. Generalization involves grouping individuals into broader categories, and feature engineering creates derived features that convey relevant information without revealing sensitive details. Once the sensitive features are masked or transformed, machine learning models can be trained on the modified dataset, ensuring that they learn useful patterns without exposing sensitive information about individuals. However, achieving a balance between preserving privacy and maintaining model utility is crucial, as more aggressive masking techniques may lead to reduced model performance. 
+Masking involves the alteration or replacement of sensitive features within datasets with alternative representations that retain the essential information required for training while obscuring sensitive details. Various methods can be employed for masking, including tokenization, perturbation, generalization, and feature engineering. Tokenization replaces sensitive text data with unique identifiers, while perturbation adds random noise to numerical data to obscure individual values. Generalization involves grouping individuals into broader categories, and feature engineering creates derived features that convey relevant information without revealing sensitive details. Once the sensitive features are masked or transformed, machine learning models can be trained on the modified dataset, ensuring that they learn useful patterns without exposing sensitive information about individuals. However, achieving a balance between preserving privacy and maintaining model utility is crucial, as more aggressive masking techniques may lead to reduced model performance.
 
 References:
 
@@ -229,7 +230,7 @@ Within the realm of personal data protection, tokenization aligns with the princ
     
 Tokenization aligns with this concept by replacing personal details with tokens, increasing the difficulty of linking specific records back to individuals.
 Tokenization proves particularly advantageous in development-time data science when handling sensitive datasets. It enhances security by enabling data scientists to work with valuable information without compromising individual privacy. The implementation of tokenization techniques supports the broader objective of obfuscating training data, striking a balance between leveraging valuable data insights and safeguarding the privacy of individuals.
- 
+
 - Anonymization
     
 Anonymization is the process of concealing or transforming sensitive information in a dataset to protect individuals' privacy and identity. This involves replacing or modifying identifiable elements with generic labels or pseudonyms, aiming to obfuscate data and prevent specific individual identification while maintaining data utility for effective model training. In the broader context of advanced pseudonymization methods, anonymization is crucial for preserving privacy and confidentiality in data analysis and processing.
@@ -241,17 +242,16 @@ In the healthcare sector with personally identifiable information (PII), there a
 These use cases demonstrate the practical relevance and applicability of pseudonymization techniques in real-world scenarios, offering valuable insights for stakeholders involved in data pseudonymization and data protection.
 
   
-
   Links to standards:
 
-  - Not covered yet in ISO/IEC standards. 
+  - Not covered yet in ISO/IEC standards.
 
 #### #DISCRETE
 (management, development-time and runtime). Minimize access to technical details that could help attackers.
 
 Purpose: reduce the information available to attackers, which can assist them in selecting and tailoring their attacks, thereby lowering the probability of a successful attack.
 
-Note: this control needs to be weighed against the AITRANSPARENCY control that requires to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
+Note: this control needs to be weighed against the [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY) control that requires to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
 
 For example:
 
@@ -263,7 +263,7 @@ Particularity: Technical data science details need to be incorporated in asset m
 
 Links to standards:
 
-  - 27002 Control 5.9: Inventory of information and other associated assets. Gap: covers this control fully, with the obvious particularity that technical data science details can be sensitive. As soon as the inventory identifies this, depending processes such as security requirements, risk analysis and awareness traing will take care of the threat. In other words: it starts with identifying this information as an asset.
+  - ISO 27002 Control 5.9: Inventory of information and other associated assets. Gap: covers this control fully, with the obvious particularity that technical data science details can be sensitive. As soon as the inventory identifies this, depending processes such as security requirements, risk analysis and awareness training will take care of the threat. In other words: it starts with identifying this information as an asset.
   - See [OpenCRE on data classification and handling](https://www.opencre.org/cre/074-873). Gap: idem
   - [MITRE ATlAS Acquire Public ML Artifacts](https://atlas.mitre.org/techniques/AML.T0002)
 
@@ -294,10 +294,10 @@ Example: LLMs (GenAI), just like most AI models, induce their results based on t
 #### #OVERSIGHT
 (runtime). Oversight of model behaviour by humans or business logic in the form of rules (guardrails).
   
-Purpose: Detect unwanted model behavior and correct or halt the execution of a model's decision. 
+Purpose: Detect unwanted model behavior and correct or halt the execution of a model's decision.
 
 **Limitations of guardrails:**
-The properties of wanted or unwanted model behavior often cannot be entirely specified, limiting the effectiveness of guardrails. 
+The properties of wanted or unwanted model behavior often cannot be entirely specified, limiting the effectiveness of guardrails.
 
 **Limitations of human oversight:**
 The alternative to guardrails is to apply human oversight. This is of course more costly and slower, but allows for more intelligent validation given the involved common sense and human domain knowledge - provided that the person performing the oversight actually has that knowledge.
@@ -314,36 +314,36 @@ Examples:
 Links to standards:
 
   - ISO/IEC 42001 B.9.3 defines controls for human oversight and decisions regarding autonomy. Gap: covers this control partly (human oversight only, not business logic)
-  - Not covered further in ISO/IEC standards. 
+  - Not covered further in ISO/IEC standards.
 
 #### #LEASTMODELPRIVILEGE
 (runtime infosec). Least model privilege: Minimize privileges; avoid connecting a model to an email facility to prevent it from sending incorrect information to others.
 
 Links to standards:
 
-  - 27002 control 8.2 Privileged access rights. Gap: covers this control fully, with the particularity that privileges assigned to autonomous model decisions need to be assigned with the risk of unwanted model behaviour in mind.
+  - ISO 27002 control 8.2 Privileged access rights. Gap: covers this control fully, with the particularity that privileges assigned to autonomous model decisions need to be assigned with the risk of unwanted model behaviour in mind.
   - [OpenCRE on least privilege](https://www.opencre.org/cre/368-633) Gap: idem
 
 #### #AITRANSPARENCY
 (runtime, management). AI transparency: By being transparent with users about the rough workings of the model, its training process, and the general expected accuracy and reliability of the AI system's output, people can adjust their reliance ([OWASP for LLM 09](https://llmtop10.com/llm09/)) on it accordingly. The simplest form of this is to inform users that an AI model is being involved.
 
-See the DISCRETE control for the balance between being transparent and being discrete about the model. Transparency here is about providing abstract information regarding the model and is therefore something else than _explainability_.
+See the [DISCRETE](1_general_controls.md#DISCRETE) control for the balance between being transparent and being discrete about the model. Transparency here is about providing abstract information regarding the model and is therefore something else than _explainability_.
 
 Links to standards:
 
   - ISO/IEC 42001 B.7.2 describes data management to support transparency. Gap: covers this control minimally, as it only covers the data mnanagement part.
-  - Not covered further in ISO/IEC standards. 
+  - Not covered further in ISO/IEC standards.
 
 #### #CONTINUOUSVALIDATION
 
-(datascience). Continuous validation: by frequently testing the behaviour of the model against an appropriate test set, sudden changes caused by a permanent attack (e.g. data poisoning, model poisoning) can be detected.
+(data science). Continuous validation: by frequently testing the behaviour of the model against an appropriate test set, sudden changes caused by a permanent attack (e.g. data poisoning, model poisoning) can be detected.
 
 Links to standards:
 
 - ISO 5338 (AI lifecycle) Continuous validation. Gap: covers this control fully
 
 #### #EXPLAINABILITY 
-(runtime datascience). Explaining how individual model decisions are made, a field referred to as Explainable AI (XAI), can aid in gaining user trust in the model. In some cases, this can also prevent overreliance, for example, when the user observes the simplicity of the 'reasoning' or even errors in that process. See [this Stanford article on explainability and overreliance](https://hai.stanford.edu/news/ai-overreliance-problem-are-explanations-solution). Explanations of how a model works can also aid security assessors to evaluate AI security risks of a model.
+(runtime data science). Explaining how individual model decisions are made, a field referred to as Explainable AI (XAI), can aid in gaining user trust in the model. In some cases, this can also prevent overreliance, for example, when the user observes the simplicity of the 'reasoning' or even errors in that process. See [this Stanford article on explainability and overreliance](https://hai.stanford.edu/news/ai-overreliance-problem-are-explanations-solution). Explanations of how a model works can also aid security assessors to evaluate AI security risks of a model.
 
 #### #UNWANTEDBIASTESTING 
-(datascience). Unwanted bias testing: by doing test runs of the model to measure unwanted bias, unwanted behaviour caused by an attack can be detected. The details of bias detection fall outside the scope of this document as it is not a security concern - other than that an attack on model behaviour can cause bias.
+(data science). Unwanted bias testing: by doing test runs of the model to measure unwanted bias, unwanted behaviour caused by an attack can be detected. The details of bias detection fall outside the scope of this document as it is not a security concern - other than that an attack on model behaviour can cause bias.
