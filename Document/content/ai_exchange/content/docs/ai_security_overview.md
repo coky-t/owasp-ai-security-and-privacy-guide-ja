@@ -32,26 +32,26 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ![AI Security Threats and controls](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
 1. **AI ガバナンス**: AI リスクに対するガバナンスプロセスを導入し、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を組み込みます。
-   >(AIPROGRAM, SECPROGRAM, DEVPROGRAM, SECDEVPROGRAM, CHECKCOMPLIANCE, SECEDUCATE)
+   >([AIPROGRAM](1_general_controls.md#AIPROGRAM), [SECPROGRAM](1_general_controls.md#SECPROGRAM), [DEVPROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SECEDUCATE](1_general_controls.md#SECEDUCATE))
 2. AI システムは IT システムであるため、従来の **技術的な IT セキュリティコントロール** を適用します。
     - 2a **標準** 的な従来の IT セキュリティコントロール (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
-        >(DEVDATAPROTECT, DEVSECURITY, SEGREGATEDATA, SUPPLYCHAINMANAGE, DISCRETE)
+        >([DEVDATAPROTECT](3_development_time_threats.md#DEVDATAPROTECT), [DEVSECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), [SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE), [DISCRETE](1_general_controls.md#DISCRETE))
       - 実行時: モデルの保存、モデルの使用、プラグイン、モデルの入出力
-        >(RUNTIMEMODELINTEGRITY, RUNTIMEMODELIOINTEGRITY, RUNTIMEMODELCONFIDENTIALITY, MODELINPUTCONFIDENTIALITY, ENCODEMODELOUTPUT, LIMITRESOURCES)
+        >([RUNTIMEMODELINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIMEMODELIOINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIMEMODELCONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODEMODELOUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMITRESOURCES](2_threats_through_use.md#LIMITRESOURCES))
     - 2b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
-      >(MONITORUSE, MODELACCESSCONTROL, RATELIMIT)
+      >([MONITORUSE](2_threats_through_use.md#MONITORUSE), [MODELACCESSCONTROL](2_threats_through_use.md#MODELACCESSCONTROL), RATELIMIT)
     - 2c **新規** の IT セキュリティコントロールを採用します。
-      >(CONFCOMPUTE, MODELOBFUSCATION, PROMPTINPUTVALIDATION, INPUTSEGREGATION)
+      >([CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODELOBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [PROMPTINPUTVALIDATION](4_runtime_application_security_threats.md#PROMPTINPUTVALIDATION), [INPUTSEGREGATION](4_runtime_application_security_threats.md#INPUTSEGREGATION))
 3. データサイエンティストはリスクベースの **データサイエンスセキュリティコントロール** を適用します。
     - 3a モデル開発時の開発時コントロール
-      >(FEDERATIVELEARNING, CONTINUOUSVALIDATION, UNWANTEDBIASTESTING, EVASIONROBUSTMODEL, POISONROBUSTMODEL, TRAINADVERSARIAL, TRAINDATADISTORTION, ADVERSARIALROBUSTDISTILLATION, FILERSENSITIVETRAINDATA, MODELENSEMBLE, MORETRAINDATA, SMALLMODEL, DATAQUALITYCONTROL)
+      >([FEDERATEDLEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASIONROBUSTMODEL](2_threats_through_use.md#EVASIONROBUSTMODEL), [POISONROBUSTMODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAINADVERSARIAL](2_threats_through_use.md#TRAINADVERSARIAL), [TRAINDATADISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIALROBUSTDISTILLATION](2_threats_through_use.md#ADVERSARIALROBUSTDISTILLATION), [MODELENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORETRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALLMODEL](2_threats_through_use.md#SMALLMODEL), [DATAQUALITYCONTROL](3_development_time_threats.md#DATAQUALITYCONTROL))
     - 3b 攻撃をフィルタして検出するための実行時コントロール
-      >(DETECTODDINPUT, DETECTADVERSARIALINPUT, DOSINPUTVALIDATION, INPUTDISTORTION, FILTERSENSITIVEMODELOUTPUT, OBSCURECONFIDENCE)
+      >([DETECTODDINPUT](2_threats_through_use.md#DETECTODDINPUT), [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT), [DOSINPUTVALIDATION](2_threats_through_use.md#DOSINPUTVALIDATION), [INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), [FILTERSENSITIVEMODELOUTPUT](2_threats_through_use.md#FILTERSENSITIVEMODELOUTPUT), [OBSCURECONFIDENCE](2_threats_through_use.md#OBSCURECONFIDENCE))
 4. **データを最小限に抑える:** 保存時および転送時のデータ量、保存時間を開発時、実行時に制限します。
-   >(DATAMINIMIZE, ALLOWEDDATA, SHORTRETAIN, OBFUSCATETRAININGDATA)
+   >([DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWEDDATA](1_general_controls.md#ALLOWEDDATA), [SHORTRETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA))
 5. モデルが間違いや操作によって望ましくない方法で動作する可能性があるため、**動作への影響を制御** します。
-   >(OVERSIGHT, LEASTMODELPRIVILEGE, AITRAINSPARENCY, EXPLAINABILITY, CONTINUOUSVALIDATION, UNWANTEDBIASTESTING)
+   >([OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEASTMODELPRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
 
 
 すべての脅威とコントロールについては AI Exchange の詳細なコンテンツで説明します。
@@ -59,7 +59,7 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ### 脅威モデルとコントロール - 生成 AI をトレーニング/ファインチューニング
 下図は、**トレーニングやファインチューニング** が組織によって行われる状況においての、生成 AI への脅威とコントロールにのみ制限しています (注: これはコストが高く、専門知識が必要であることを考慮すると、あまり一般的ではありません)。
 
-![AI Security Threats and controls - GenAI trained or finetuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
+![AI Security Threats and controls - GenAI trained or fine tuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
 
 ### 脅威モデルとコントロール - 生成 AI を現状のまま <a name="threat-model-with-controls---genai-as-is"></a>
 下図は、モデルが組織によって **現状のまま** 使用される生成 AI への脅威とコントロールにのみ制限しています。プロバイダ (OpenAI など) がトレーニングやファインチューニングを行っています。そのため、いくつかの脅威はモデルプロバイダの責任です (機密データや著作権があるデータ、プロバイダでの操作)。とはいえ、モデルを使用する組織はこれらのリスクを考慮し、プロバイダからその保証を得る必要があります。
@@ -138,9 +138,9 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 5. **コントロールの選択**: 次に、自分に関連して自分が責任を負う脅威について、その脅威 (またはその脅威の親セクション) に記載されているさまざまなコントロールと一般的なコントロール (こちらは常に適用されます) を検討します。コントロールを検討する際、その目的を考慮し、それを実装するのに十分重要であると考えるか、およびどの程度まで実施するかを判断します。これはその目的が脅威を緩和する方法と比較した実装コスト、および脅威のリスクレベルによって異なります。もちろん、これらの要素はコントロールを選択する順番にも関わります。最初に最もリスクの高いもの、それから比較的コストの低いコントロール (簡単にできるもの) に着手します。
 6. **リファレンスの使用**: コントロールを実装する際、標準へのリファレンスとリンクを考慮します。あなたはこれらの標準の一部を実装しているかもしれませんし、標準の内容がコントロールの実装に役立つかもしれません。
 7. **リスクの受け入れ**: 最終的には、実装したコントロールを前提として、それぞれの脅威に関して残存するリスクを受容できる必要があります。
-8. **これらのコントロールのさらなる管理** (SECPROGRAM 参照) には、継続的な監視、文書化、レポーティング、インシデント対応などがあります。
+8. **これらのコントロールのさらなる管理** ([SECPROGRAM](1_general_controls.md#SECPROGRAM) 参照) には、継続的な監視、文書化、レポーティング、インシデント対応などがあります。
 
-リスク分析の詳細については、SECPROGRAM コントロールを参照してください。
+リスク分析の詳細については、[SECPROGRAM](1_general_controls.md#SECPROGRAM) コントロールを参照してください。
 
 ## ... についてはどうですか？
 ### 機械学習以外の AI についてはどうですか？
@@ -215,48 +215,48 @@ AI プライバシーは二つのパートに分けることができます。
 1. 安全な設計
 
 - 脅威とリスクに対するスタッフの意識を高めます:
-  #SECEDUCATE
+  #[SECEDUCATE](1_general_controls.md#SECEDUCATE)
 - システムに対する脅威をモデル化します:
-  #SECPROGRAM のリスク分析を参照してください
+  #[SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスク分析を参照してください
 - 機能性とパフォーマンスだけでなくセキュリティも考慮してシステムを設計します:
-  #AIPROGRAM, #SECPROGRAM, #DEVPROGRAM, #SECDEVPROGRAM, #CHECKCOMPLIANCE, #LEASTMODELPRIVILEGE, #DISCRETE, #OBSCURECONFIDENCE, #OVERSIGHT, #RATELIMIT, #DOSINPUTVALIDATION, #LIMITRESOURCES, #MODELACCESSCONTROL, #AITRANSPRENCY
+  #[AIPROGRAM](1_general_controls.md#AIPROGRAM), #[SECPROGRAM](1_general_controls.md#SECPROGRAM), #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM), #[SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM), #[CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), #[LEASTMODELPRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), #[DISCRETE](1_general_controls.md#DISCRETE), #[OBSCURECONFIDENCE](2_threats_through_use.md#OBSCURECONFIDENCE), #[OVERSIGHT](1_general_controls.md#OVERSIGHT), #RATELIMIT, #[DOSINPUTVALIDATION](2_threats_through_use.md#DOSINPUTVALIDATION), #[LIMITRESOURCES](2_threats_through_use.md#LIMITRESOURCES), #[MODELACCESSCONTROL](2_threats_through_use.md#MODELACCESSCONTROL), #[AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY)
 - AI モデルを選択する際に、セキュリティの利点とトレードオフを考慮します
-  すべての開発時のデータサイエンスコントロール (現在 13), #EXPLAINABILITY
+  すべての開発時のデータサイエンスコントロール (現在 13), #[EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY)
 
 2. 安全な開発
 
 - サプライチェーンを保護します:
-  #SUPPLYCHAINMANAGE
+  #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
 - 資産を特定、追跡、保護します:
-  #DEVDATAPROTECT, #DEVSECURITY, #SEGREGATEDATA, #CONFCOMPUTE, #MODELINPUTCONFIDENTIALITY, #RUNTIMEMODELCONFIDENTIALITY, #DATAMINIMIZE, #ALLOWEDDATA, #SHORTRETAIN, #OBFUSCATETRAININGDATA および #SECPROGRAM の一部
+  #[DEVDATAPROTECT](3_development_time_threats.md#DEVDATAPROTECT), #[DEVSECURITY](3_development_time_threats.md#DEVSECURITY), #[SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), #[CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), #[MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[RUNTIMEMODELCONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), #[DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE), #[ALLOWEDDATA](1_general_controls.md#ALLOWEDDATA), #[SHORTRETAIN](1_general_controls.md#SHORTRETAIN), #[OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA) および #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部
 - データ、モデル、プロンプトを文書化します:
-  #DEVPROGRAM の一部
+  #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 - 技術的負債を管理します:
-  #DEVPROGRAM の一部
+  #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 
 3. 安全な展開
 
 - インフラストラクチャを保護します:
-  #SECPROGRAM の一部と「資産を特定、追跡、保護します」を参照してください
+  #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部と「資産を特定、追跡、保護します」を参照してください
 - モデルを継続的に保護します:
-  #INPUTDISTORTION, #FILTERSENSITIVEMODELOUTPUT, #RUNTIMEMODELIOINTEGRITY, #MODELINPUTCONFIDENTIALITY, #PROMPTINPUTVALIDATION, #INPUTSEGREGATION
+  #[INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), #[FILTERSENSITIVEMODELOUTPUT](2_threats_through_use.md#FILTERSENSITIVEMODELOUTPUT), #[RUNTIMEMODELIOINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), #[MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[PROMPTINPUTVALIDATION](4_runtime_application_security_threats.md#PROMPTINPUTVALIDATION), #[INPUTSEGREGATION](4_runtime_application_security_threats.md#INPUTSEGREGATION)
 - インシデント管理手順を策定します:
-  #SECPROGRAM の一部
+  #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部
 - 責任をもって AI をリリースします:
-  #DEVPROGRAM の一部
+  #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 - ユーザーが正しいことを簡単にできるようにします:
-  #SECPROGRAM の一部
+  #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部
 
 4. 安全な運用と保守
 
 - システムの動作を監視します:
-  #CONTINUOUSVALIDATION, #UNWANTEDBIASTESTING
+  #[CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), #[UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING)
 - システムの入力を監視します:
-  #MONITORUSE, #DETECTODDINPUT, #DETECTADVERSARIALINPUT
+  #[MONITORUSE](2_threats_through_use.md#MONITORUSE), #[DETECTODDINPUT](2_threats_through_use.md#DETECTODDINPUT), #[DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT)
 - セキュアバイデザインのアプローチに従ってアップデートを行います:
-  #SECDEVPROGRAM の一部
+  #[SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) の一部
 - 教訓を収集して共有します:
-  #SECPROGAM および #SECDEVPROGRAM の一部
+  #[SECPROGRAM](1_general_controls.md#SECPROGRAM) および #[SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) の一部
 
 ## 参考情報
 
@@ -283,7 +283,7 @@ AI セキュリティ脅威の概要:
 AI セキュリティ/プライバシーインシデントの概要:
 
 - [AVID AI Vulnerability database](https://avidml.org/)
-- [OECD AI Incidents Monitor (AIM)](https://oecd.ai/en/incidents) 
+- [OECD AI Incidents Monitor (AIM)](https://oecd.ai/en/incidents)
 
 その他:
 
