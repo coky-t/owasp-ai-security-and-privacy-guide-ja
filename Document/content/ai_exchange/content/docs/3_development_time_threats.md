@@ -78,8 +78,8 @@ Links to standards:
 
 #### #FEDERATEDLEARNING
 Description: Federated (or better: federated) learning can be applied when a training set is distributed over different organizations, preventing that the data needs to be collected in a central place - increasing the risk of leaking.  
-Category: development-time data science.  
-Permalink: https://owaspai.org/goto/t31/
+> Category: development-time data science  
+> Permalink: https://owaspai.org/goto/federatedlearning/
 
 Federated Learning is a decentralized Machine Learning architecture wherein a number of clients (e.g. sensor or mobile devices) participate in collaborative, decentralized, asynchronous training, which is orchestrated and aggregated by a controlling central server. Advantages of Federated Learning include reduced central compute, and the potential for preservation of privacy, since training data may remain local to the client.
 
@@ -129,7 +129,8 @@ Links to standards:
 
 ---
 
-## 3.1. 広範なモデルポイズニング: データ、エンジニアリング、モデルを改変することによるモデル動作の操作
+## 3.1. 開発時の広範なモデルポイズニング
+説明: 開発時のデータ、エンジニアリング、モデルパラメータを改変することによるモデル動作の操作
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
