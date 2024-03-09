@@ -2,7 +2,7 @@
 title: 3. 開発時の脅威
 weight: 4
 ---
-## 3.0 開発時の脅威 - イントロダクション
+## 3.0 <a name="developmenttimeintro">開発時の脅威 - イントロダクション</a>
 **Background:**
 
 Data science (data engineering and model engineering - for machine learning often referred to as _training phase_) uses a development environment typically outside of the regular application development scope, introducing a new attack surface. Data engineering (collecting, storing, and preparing data) is typically a large and important part of machine learning engineering. Together with model engineering, it requires appropriate security to protect against data leaks, data poisoning, leaks of intellectual property, and supply chain attacks (see further below). In addition, data quality assurance can help reduce risks of intended and unintended data issues.
@@ -56,7 +56,11 @@ Protection strategies:
   - [OpenCRE on Detect and respond](https://www.opencre.org/cre/887-750)
 
 #### #DEVSECURITY
-(management). Development security: the security management system needs to take into account the AI particularity: the AI development infrastructure holds sensitive information - regarding people, process and technology perspective. E.g. screening of development personnel, protection of source code/configuration, virus scanning on engineering machines.
+Description: Development security: sufficient security of the AI development infrastructure, also taking into account the sensitive information that is typical to AI: training data, test data, model parameters and technical documentation. This can be achieved by adding these assets to the existing security management system. Security involves for example screening of development personnel, protection of source code/configuration, virus scanning on engineering machines.
+> Category: management  
+> Permalink owaspai.org/goto/devsecurity/
+
+Apart from the AI-specific assets there is also the AI-specific supply chain of data and models, plus the fact that obtained software components are running in the development environment instead of in test, acceptance or production. This creates new risks of these components being a threat to development security. See [SUPPLYCHAINMANAGE](/goto/supplychainmanage/).
 
 Links to standards:
 
@@ -70,7 +74,7 @@ Links to standards:
 - ISO 27002 control 8.31 Separation of development, test and production environments. Gap: covers this control partly - the particularity is that the development environment typically has the sensitive data instead of the production environment - which is typically the other way around in non-AI systems. Therefore it helps to restrict access to that data within the development environment. Even more: within the development environment further segregation can take place to limit access to only those who need the data for their work, as some developers will not be processing data.
 
 #### #CONFCOMPUTE
-(development-time infosec). 'Confidential compute': If available and possible, use features of the data science environment to hide training data and model parameters from model engineers
+(development-time infosec). 'Confidential compute': If available and possible, use features of the data science environment to hide training data and model parameters from model engineers - even while it is in use.
 
 Links to standards:
 
@@ -149,7 +153,7 @@ References
 **Controls for broad model poisoning:**
 
 - See General controls, especially controls to limit the effects of unwanted behaviour
-- See controls for development-time protection
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - The below control(s), each marked with a # and a short name in capitals
   
 #### #MODELENSEMBLE
@@ -170,7 +174,7 @@ Example 3: false information in documents on the internet causes a Large Languag
 **Controls for data poisoning:**
 
 - See General controls, especially controls to limit the effects of unwanted behaviour
-- See controls for development-time protection
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - See controls for broad model poisoning
 - The below control(s), each marked with a # and a short name in capitals
 
@@ -231,7 +235,7 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 **Controls:**
 
 - See General controls, especially controls to limit the effects of unwanted behaviour
-- See controls for development-time protection
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - See controls for broad model poisoning
 
 ### 3.1.3 転移学習攻撃
@@ -246,7 +250,7 @@ The type of manipulation can be through data poisoning, or by specifically chang
 **Controls specific for transfer learning:**
 
 - See General controls, especially controls to limit the effects of unwanted behaviour
-- See controls for development-time protection, especially #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE) to manage the source of the obtained model
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro), especially #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE) to manage the source of the obtained model
 - See controls for broad model poisoning
 - Choose a model type resilient against a transfer learning attack
 
@@ -266,7 +270,7 @@ GenAI models are often hosted in the cloud, sometimes managed by an external par
 **Controls:**
 
 - See General controls
-- See controls for development-time protection
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 
 ### 3.2.2. 開発時のモデルパラメータ漏洩によるモデル盗用
 
@@ -275,7 +279,7 @@ Impact: Confidentiality breach of model intellectual property.
 **Controls:**
 
 - See General controls
-- See controls for development-time protection
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 
 ### 3.2.3. ソースコード/設定の漏洩
 
@@ -284,4 +288,4 @@ Impact: Confidentiality breach of model intellectual property.
 **Controls:**
 
 - See General controls
-- See controls for development-time protection
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
