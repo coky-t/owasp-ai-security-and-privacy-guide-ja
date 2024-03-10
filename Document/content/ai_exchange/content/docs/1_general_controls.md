@@ -164,14 +164,14 @@ AI 固有のサプライチェーンのリスクについて説明している [
 ## 1.2 機密データ制限の一般的なコントロール
 
 #### #DATAMINIMIZE
-Description: Data minimize: remove or anonymize data fields or records that are unnecessary for the application to prevent potential leaks. Data minimization can also involve statistically analyzing a training dataset to identify and eliminate superfluous records or fields that are not essential for achieving sufficient performance (Data Science).  
-Category: development-time and runtime
+説明: データの最小化: アプリケーションにとって不必要なデータフィールドやレコードを削除あるいは匿名化して潜在的な漏洩を防ぎます。データの最小化にはトレーニングデータセットを定型的に分析して、十分なパフォーマンスを達成するために必須ではない余分なレコードやフィールドを特定して取り除くことも含まれます (データサイエンス)。
+カテゴリ: 開発時および実行時
 
-Purpose: reduce the impact in case of an attack by reducing the amount of data that can leak.
+目的: 漏洩する可能性があるデータの量を減らすことで、攻撃時の影響を軽減します。
 
-  Links to standards:
+  標準へのリンク:
 
-  - Not covered yet in ISO/IEC standards.
+  - ISO/IEC 標準ではまだカバーされていません。
 
 #### #ALLOWEDDATA 
 (development-time and runtime). Ensure allowed data, meaning the data used (e.g., training set) is permitted for the intended purpose. This is particularly important if consent was not given and the data contains personal information collected for a different purpose.
