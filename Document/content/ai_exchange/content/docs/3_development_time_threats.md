@@ -17,7 +17,7 @@ ISO/IEC 42001 B.7.2 briefly mentions development-time data security risks.
 
 **Controls for development-time protection:**
 
-- See General controls
+- See [General controls](1_general_controls.md)
 - The below control(s), each marked with a # and a short name in capitals
 
 #### **#DEVDATAPROTECT**
@@ -152,7 +152,7 @@ References
 
 **Controls for broad model poisoning:**
 
-- See General controls, especially controls to limit the effects of unwanted behaviour
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - The below control(s), each marked with a # and a short name in capitals
   
@@ -173,7 +173,7 @@ Example 3: false information in documents on the internet causes a Large Languag
 
 **Controls for data poisoning:**
 
-- See General controls, especially controls to limit the effects of unwanted behaviour
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - See controls for broad model poisoning
 - The below control(s), each marked with a # and a short name in capitals
@@ -234,7 +234,7 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 
 **Controls:**
 
-- See General controls, especially controls to limit the effects of unwanted behaviour
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - See controls for broad model poisoning
 
@@ -249,7 +249,7 @@ The type of manipulation can be through data poisoning, or by specifically chang
 
 **Controls specific for transfer learning:**
 
-- See General controls, especially controls to limit the effects of unwanted behaviour
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro), especially #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE) to manage the source of the obtained model
 - See controls for broad model poisoning
 - Choose a model type resilient against a transfer learning attack
@@ -269,7 +269,7 @@ GenAI models are often hosted in the cloud, sometimes managed by an external par
 
 **Controls:**
 
-- See General controls
+- - See [General controls](1_general_controls.md), especially [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 
 ### 3.2.2. 開発時のモデルパラメータ漏洩によるモデル盗用
@@ -278,7 +278,7 @@ Impact: Confidentiality breach of model intellectual property.
 
 **Controls:**
 
-- See General controls
+- - See [General controls](1_general_controls.md), especially [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 
 ### 3.2.3. ソースコード/設定の漏洩
@@ -287,5 +287,5 @@ Impact: Confidentiality breach of model intellectual property.
 
 **Controls:**
 
-- See General controls
+- - See [General controls](1_general_controls.md), especially [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
