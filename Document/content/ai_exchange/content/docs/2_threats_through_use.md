@@ -2,13 +2,13 @@
 title: 2. 使用による脅威
 weight: 3
 ---
-## 2.0. <a name="threatsuse">使用による脅威</a> - イントロダクション
+## 2.0. 使用による脅威 - イントロダクション
 
 Threats through use take place through normal interaction with an AI model: providing input and receiving output. Many of these threats require experimentation with the model, which is referred to in itself as an _Oracle attack_.
 
 **Controls for threats through use:**
 
-- See General controls
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour) and [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #MONITORUSE 
@@ -72,8 +72,8 @@ Another categorization is to distinguish between physical input manipulation (e.
 
 **Controls for evasion:**
 
-  - See General controls
-  - See [controls for threats through use](2_threats_through_use.md#threatsuse)
+  - See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
+  - See [controls for threats through use](2_threats_through_use.md)
   - The below control(s), each marked with a # and a short name in capitals
 
   
@@ -373,8 +373,8 @@ computer vision. Cham: Springer International Publishing, 2020.
 
 **Controls:**
 
-- See General controls
-- See [controls for threats through use](2_threats_through_use.md#threatsuse)
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
+- See [controls for threats through use](2_threats_through_use.md)
 
 ### 2.1.2. オープンボックス回避
 
@@ -385,8 +385,8 @@ When attackers have access to a models' implementation (code, training set, para
 
 **Controls:**
 
-- See General controls
-- See [controls for threats through use](2_threats_through_use.md#threatsuse)
+- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
+- See [controls for threats through use](2_threats_through_use.md)
 
 References:
 
@@ -415,8 +415,8 @@ The disclosure is caused by an unintentional fault of including this data, and e
 
 **Controls specific for sensitive data output from model:**
 
-- See General controls, in particular data minimization
-- See [controls for threats through use](2_threats_through_use.md#threatsuse)
+- See [General controls](1_general_controls.md), especially [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
+- See [controls for threats through use](2_threats_through_use.md)
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #FILTERSENSITIVEMODELOUTPUT 
@@ -446,8 +446,8 @@ The more details a model is able to learn, the more it can store information on 
 
 Controls for Model inversion and membership inference:
 
-- See General controls, in particular data minimization
-- See [controls for threats through use](2_threats_through_use.md#threatsuse)
+- See [General controls](1_general_controls.md), especially [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
+- See [controls for threats through use](2_threats_through_use.md)
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #OBSCURECONFIDENCE 
@@ -477,8 +477,8 @@ This attack is known as model stealing attack or model extraction attack or mode
 
 **Controls:**
 
-- See General controls
-- See [controls for threats through use](2_threats_through_use.md#threatsuse)
+- See [General controls](1_general_controls.md), especially management controls
+- See [controls for threats through use](2_threats_through_use.md)
 
 References
 
@@ -496,8 +496,8 @@ For example: A _sponge attack_ or _energy latency attack_ provides input that is
 
 **Controls:**
 
-- See General controls
-- See [controls for threats through use](2_threats_through_use.md#threatsuse), including for example [RATELIMIT](2_threats_through_use.md#RATELIMIT)
+- See [General controls](1_general_controls.md), especially management controls
+- See [controls for threats through use](2_threats_through_use.md), including for example [RATELIMIT](2_threats_through_use.md#RATELIMIT)
 - The below control(s), each marked with a # and a short name in capitals
 
   
