@@ -30,6 +30,16 @@ AI イニシアチブでリスク分析を行う際には、少なくとも以�
 -望ましくない動作は緩和策 (望ましくない動作を制限するコントロールを参照) によって十分に抑制できますか？
 -プライバシーを含むセキュリティ固有のリスク分析については [SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスクマネジメントを参照してください。
 
+In general risk management it may help to keep in mind the following particularities of AI:
+1. Inductive instead of deductive, meaning that being wrong is part of the game for machine learning models, which can lead to harm
+2. Connected to 1: models can go stale
+3. Organizes its behaviour based on data, so data becomes a source of opportunity (e.g. complex real-world problem solving, adaptability) and of risk (e.g. unwanted bias, incompleteness, error, manipulation)
+4. Unfamiliar to organizations and to people, with the risk of implementation mistakes, underreliance, overreliance, and incorrect attribution of human tendencies
+5. Incomprehensible, resulting in trust issues
+6. New technical assets that form security threats (data/model supply chain, train data, model parameters, AI documentation)
+7. Can listen and speak: communicate through natural language instead of user interfaces
+8. Can hear and see: have sound and vision recognition abilities
+
 標準へのリンク:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
 
@@ -37,15 +47,13 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
 
 #### #SECPROGRAM
 
-説明: セキュリティプログラムを持つこと。AI ライフサイクル全体と AI の特殊性を組織のセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) に含めます。
+説明: Make sure the organization has a security program (also referred to as _information security management system_) and that it includes the whole AI lifecycle and AI particularities.
 > カテゴリ: マネジメント
 > Permalink: https://owaspai.org/goto/secprogram/
 
-AI 固有の脅威と資産 (AI Ops / ML Ops を含む開発環境の資産など) を必ず含めてください。
-
 目的: 情報セキュリティマネジメントによって AI の取り組みが見過ごされる可能性を低減し、セキュリティプログラムがこのドキュメントにある AI 固有の脅威と対応するコントロールに責任を持つことで、セキュリティリスクを大幅に軽減します。リスク分析でのこのドキュメントの使用の詳細については、「はじめに」セクションを参照してください。
 
-特殊性: AI のライフサイクルとその特定の資産とセキュリティ脅威は組織の情報セキュリティガバナンスの一部である必要があります。
+Make sure to include AI-specific threats and assets. The threats are covered in this resource and the assets are: training data, test data, model paramters, and AI documentation.
 
 AI には特定の資産 (トレーニングデータなど) があるため、**AI 固有のハニーポット** は特に興味深いコントロールです。これは攻撃者が実際の資産にアクセスする前に、攻撃者を検出または捕捉するために、意図的に公開しているデータ/モデル/データサイエンスインフラストラクチャの偽物です。たとえば、以下があります。
 
