@@ -30,15 +30,15 @@ AI イニシアチブでリスク分析を行う際には、少なくとも以�
 -望ましくない動作は緩和策 (望ましくない動作を制限するコントロールを参照) によって十分に抑制できますか？
 -プライバシーを含むセキュリティ固有のリスク分析については [SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスクマネジメントを参照してください。
 
-In general risk management it may help to keep in mind the following particularities of AI:
-1. Inductive instead of deductive, meaning that being wrong is part of the game for machine learning models, which can lead to harm
-2. Connected to 1: models can go stale
-3. Organizes its behaviour based on data, so data becomes a source of opportunity (e.g. complex real-world problem solving, adaptability) and of risk (e.g. unwanted bias, incompleteness, error, manipulation)
-4. Unfamiliar to organizations and to people, with the risk of implementation mistakes, underreliance, overreliance, and incorrect attribution of human tendencies
-5. Incomprehensible, resulting in trust issues
-6. New technical assets that form security threats (data/model supply chain, train data, model parameters, AI documentation)
-7. Can listen and speak: communicate through natural language instead of user interfaces
-8. Can hear and see: have sound and vision recognition abilities
+一般的なリスクマネジメントでは、以下のような AI の特殊性を念頭に置くと役立つかもしれません。
+1. 演繹的ではなく帰納的、つまり、機械学習モデルにとって間違っていることはゲームの一部であり、損害につながる可能性があります。
+2. 1 に関連: モデルは陳腐化する可能性があります。
+3. データに基づいて動作を組織化するため、データは機会 (複雑な現実世界の問題解決、適応性など) とリスク (望ましくないバイアス、不完全性、エラー、操作など) の源となります。
+4. 組織や人々にとって馴染みのないものであり、実装ミス、過小な信頼、過大な信頼、人間の傾向の誤った帰属などのリスクがあります。
+5. 理解できないものであり、信頼性に問題が生じます。
+6. セキュリティ脅威を形作る新しい技術的資産 (データ/モデルサプライチェーン、トレーニングデータ、モデルパラメータ、AI ドキュメント) です。
+7. 聴くことも話すこともできます: ユーザーインタフェースではなく自然言語を通じてやり取りします。
+8. 聞くことも見ることもできます: 音声認識能力と視覚認識能力を持ちます。
 
 標準へのリンク:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
@@ -47,13 +47,13 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
 
 #### #SECPROGRAM
 
-説明: Make sure the organization has a security program (also referred to as _information security management system_) and that it includes the whole AI lifecycle and AI particularities.
+説明: 組織にセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) があり、AI ライフサイクル全体と AI の特殊性を含むことを確認します。
 > カテゴリ: マネジメント
 > Permalink: https://owaspai.org/goto/secprogram/
 
 目的: 情報セキュリティマネジメントによって AI の取り組みが見過ごされる可能性を低減し、セキュリティプログラムがこのドキュメントにある AI 固有の脅威と対応するコントロールに責任を持つことで、セキュリティリスクを大幅に軽減します。リスク分析でのこのドキュメントの使用の詳細については、「はじめに」セクションを参照してください。
 
-Make sure to include AI-specific threats and assets. The threats are covered in this resource and the assets are: training data, test data, model paramters, and AI documentation.
+AI 固有の脅威と資産を必ず含めてください。脅威はこのリソースでカバーされており、資産はトレーニングデータ、テストデータ、モデルパラメータ、AI ドキュメントです。
 
 AI には特定の資産 (トレーニングデータなど) があるため、**AI 固有のハニーポット** は特に興味深いコントロールです。これは攻撃者が実際の資産にアクセスする前に、攻撃者を検出または捕捉するために、意図的に公開しているデータ/モデル/データサイエンスインフラストラクチャの偽物です。たとえば、以下があります。
 
@@ -285,7 +285,7 @@ Links to standards:
 
 ---
 
-## 1.3. 望ましくない動作の影響を制限するためのコントロール
+## <a name="13-controls-to-limit-the-effects-of-unwanted-behaviour">1.3. 望ましくない動作の影響を制限するためのコントロール</a>
 
 The cause of unwanted model behaviour can be the result of various factors, including model use, development time, and run-time. Preventative controls for these are discussed in their corresponding sections. However, the controls to mitigate the impact of such behavior are general for each of these threats and are covered in this section.
 
