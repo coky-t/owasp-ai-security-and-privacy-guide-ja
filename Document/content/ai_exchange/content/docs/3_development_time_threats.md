@@ -126,7 +126,7 @@ See [MITRE ATLAS - ML Supply chain compromise](https://atlas.mitre.org/technique
 
 Links to standards:
 
-- ISO 27002 Controls 5.19, 5.20, 5.21, 5.22, 5.23, 8.30. Gap: covers this control fully, with said particularity, and lacking controls on data provenance.
+- ISO  Controls 5.19, 5.20, 5.21, 5.22, 5.23, 8.30. Gap: covers this control fully, with said particularity, and lacking controls on data provenance.
 - ISO/IEC AWI 5181 (Data provenance). Gap: covers the data provenance aspect to complete the coverage together with the ISO 27002 controls - provided that the provenance concerns all sensitive data and is not limited to personal data.
 - ISO/IEC 42001 (AI management) briefly mentions data provenance and refers to ISO 5181 in section B.7.5
 - [OpenCRE](https://www.opencre.org/cre/613-285)
@@ -134,7 +134,7 @@ Links to standards:
 ---
 
 ## 3.1. 開発時の広範なモデルポイズニング
-説明: 開発時のデータ、エンジニアリング、モデルパラメータを改変することによるモデル動作の操作
+説明: 開発時のトレーニングデータ、エンジニアリング、モデルパラメータを改変することによるモデル動作の操作
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
@@ -229,18 +229,20 @@ Link to standards:
 - Not covered yet in ISO/IEC standards
 
 #### #POISONROBUSTMODEL
-(development-time data science). Poison robust model: select a model type and approach to reduce sensitivity to poisoned training data.  
+Description: Poison robust model: select a model type and creation approach to reduce sensitivity to poisoned training data.
+> Category: development-time data science  
+> Permalink: owaspai.org/goto/poisonrobustmodel/
 
-Example: Reducing sensitivity to backdoor poisoning attacks with **fine-pruning** (See [paper on fine-pruning](https://arxiv.org/pdf/1805.12185.pdf)). Fine-pruning consists of two complementary approaches: Pruning and fine-tuning:  
-**Pruning** in essence reduces the size of the model so it does not have the capacity to trigger on backdoor-examples while remaining sufficient accuracy for the intended use case. The approach removes neurons in a neural network that have been identified as non-essential for sufficient accuracy.  
-**Fine tuning** retrains a model on a clean dataset(without poisoning) with the intention to remove memorisation of any backdoor triggers.
+The general principle of reducing sensitivity to poisoned training data is to make sure that the model does not memorize the specific malicious input pattern (or _backdoor trigger_). The following two examples represent different strategies, which can also complement each other in an approach called **fine pruning** (See [paper on fine-pruning](https://arxiv.org/pdf/1805.12185.pdf)):
+1. Reduce memorization by removing elements of memory using **pruning**. Pruning in essence reduces the size of the model so it does not have the capacity to trigger on backdoor-examples while retaining sufficient accuracy for the intended use case. The approach removes neurons in a neural network that have been identified as non-essential for sufficient accuracy.
+2. Overwrite memorized malicious patterns using **fine tuning** by retraining a model on a clean dataset(without poisoning).
 
 Links to standards:
 - Not covered yet in ISO/IEC standards
 
 ### 3.1.2. 開発時のモデルポイズニング
 
-This threat refers to manipulating behaviour of the model by manipulating the engineering elements that lead to the model (including the parameters during development time), e.g. through supplying, changing components, code, or configuration. In some cases, the model is trained externally and supplied as-is, which also introduces a model poisoning threat.
+This threat refers to manipulating behaviour of the model by not poisoning the training data, but insead alter the engineering elements that lead to the model or represent the model (i.e. model parameters) during development time, e.g. by attacking the engineering environment to manipulate storage. When the model is trained by a supplier in a manipulative way and supplied as-is, then it is a [Transfer learning attack](goto/transferlearningattack/).
 Data manipulation is referred to as data poisoning and is covered in separate threats.
 
 **Controls:**
@@ -250,7 +252,7 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 - See controls for broad model poisoning
 
 ### 3.1.3 転移学習攻撃
-Description: An attacker supplies a manipulated pre-trained model which is then obtained and unknowingly further trained/fine tuned with still having the unwanted behaviour.
+Description: An attacker supplies a manipulated pre-trained model which is then obtained and unknowingly further used and/or trained/fine tuned, with still having the unwanted behaviour.
 >Category: development-time threat  
 >Permalink: https://owaspai.org/goto/transferlearningattack/
 
