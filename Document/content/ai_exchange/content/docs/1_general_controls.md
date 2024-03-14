@@ -19,16 +19,16 @@ weight: 2
 技術的には、このコントロールはサイバーセキュリティの範囲外であると主張することもできますが、AI セキュリティのコントロールを得るためのアクションを開始するものです。
 
 AI イニシアチブでリスク分析を行う際には、少なくとも以下の点を考慮してください。
--AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
--AI アプリケーションの種類によっては禁止されている可能性があるため、法律や規制を含めます (EU AI 法におけるソーシャルスコアリングなど)。#[CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE) を参照してください。
--AI がどのように動作するかについて、要求される透明性を提供できますか？
--プライバシー権 (個人データへのアクセス、消去、訂正、更新の権利、異議申し立ての権利) を達成できますか？
--保護される人々のグループに関する望ましくない偏見を十分に緩和できますか？
--その問題を解決するには本当に AI が必要ですか？
--適切な専門知識 (データサイエンティストなど) は利用可能ですか？
--特に別の目的で集められた個人データである場合、その目的のためにデータを使用することは許可されていますか？
--望ましくない動作は緩和策 (望ましくない動作を制限するコントロールを参照) によって十分に抑制できますか？
--プライバシーを含むセキュリティ固有のリスク分析については [SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスクマネジメントを参照してください。
+- AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
+- AI アプリケーションの種類によっては禁止されている可能性があるため、法律や規制を含めます (EU AI 法におけるソーシャルスコアリングなど)。#[CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE) を参照してください。
+- AI がどのように動作するかについて、要求される透明性を提供できますか？
+- プライバシー権 (個人データへのアクセス、消去、訂正、更新の権利、異議申し立ての権利) を達成できますか？
+- 保護される人々のグループに関する望ましくない偏見を十分に緩和できますか？
+- その問題を解決するには本当に AI が必要ですか？
+- 適切な専門知識 (データサイエンティストなど) は利用可能ですか？
+- 特に別の目的で集められた個人データである場合、その目的のためにデータを使用することは許可されていますか？
+- 望ましくない動作は緩和策 (望ましくない動作を制限するコントロールを参照) によって十分に抑制できますか？
+- プライバシーを含むセキュリティ固有のリスク分析については [SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスクマネジメントを参照してください。
 
 一般的なリスクマネジメントでは、以下のような AI の特殊性を念頭に置くと役立つかもしれません。
 1. 演繹的ではなく帰納的、つまり、機械学習モデルにとって間違っていることはゲームの一部であり、損害につながる可能性があります。
@@ -144,7 +144,6 @@ AI 固有のサプライチェーンのリスクについて説明している [
 
 標準へのリンク:
 
-[ISO/IEC TR 27563:2023](https://www.iso.org/standard/80396.html) はこのコントロールを完全にカバーします。
   - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - ISO 5338 はソフトウェアライフサイクルに関する既存の ISO 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。[このブログ](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/) も参照してください。
   - [ISO/IEC 27002](https://www.iso.org/standard/75652.html) コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
   - [OpenCRE の機能の文書化](https://www.opencre.org/cre/162-655) ギャップ: このコントロールを最小限にカバーします
@@ -170,25 +169,35 @@ AI 固有のサプライチェーンのリスクについて説明している [
 ---
 
 ## 1.2 機密データ制限の一般的なコントロール
+The impact of security threats on confidentiality and integrity can be reduced by limiting the data attack surface, meaning that the amount and the variety of data is reduced as much as possible, as well as the duration in which it is kept. This section describes several controls to apply this limitation.
 
 #### #DATAMINIMIZE
-説明: データの最小化: アプリケーションにとって不必要なデータフィールドやレコードを削除あるいは匿名化して潜在的な漏洩を防ぎます。データの最小化にはトレーニングデータセットを定型的に分析して、十分なパフォーマンスを達成するために必須ではない余分なレコードやフィールドを特定して取り除くことも含まれます (データサイエンス)。
-カテゴリ: 開発時および実行時
+説明: データの最小化: 潜在的なデータ漏洩や操作を防ぐために、アプリケーションにとって不必要なデータフィールドや (トレーニングセットなどからの) レコードを削除あるいは匿名化します。
+> カテゴリ: 開発時および実行時のデータサイエンス
 
-目的: 漏洩する可能性があるデータの量を減らすことで、攻撃時の影響を軽減します。
+目的: データ漏洩や操作の影響を最小化します。
+
+A method to determine which fields or records can be removed is to statistically analyze which data elements do not play a role in model performance. 
 
   標準へのリンク:
 
   - ISO/IEC 標準ではまだカバーされていません。
 
 #### #ALLOWEDDATA 
-(development-time and runtime). Ensure allowed data, meaning the data used (e.g., training set) is permitted for the intended purpose. This is particularly important if consent was not given and the data contains personal information collected for a different purpose.
+Description: Ensure allowed data, meaning: removing data (e.g. from a training set) that is prohibited for the intended purpose. This is particularly important if consent was not given and the data contains personal information collected for a different purpose. 
+> Category: development-time and runtime management
+
+Purpose: Apart from compliance, the purpose is to minimize the impact of data leakage or manipulation
+
 Links to standards:
 
   - ISO/IEC 23894 (AI risk management) covers this in A.8 Privacy. Gap: covers this control fully, with a brief section on the idea
 
 #### #SHORTRETAIN
-(development-time and runtime). Short retain: Remove or anonymize data once it is no longer needed, or when legally required (e.g., due to privacy laws), to minimize the risk of data leakage.
+Description: Short retain: Remove or anonymize data once it is no longer needed, or when legally required (e.g., due to privacy laws).
+> Gategory: development-time and runtime
+
+Purpose: minimize the impact of data leakage or manipulation
 
 Limiting the retention period of data can be seen as a special form of data minimization. Privacy regulations typically require personal data to be removed when it is no longer needed for the purpose for which it was collected. Sometimes exceptions need to be made because of other rules (e.g. to keep a record of proof). Apart from these regulations, it is a general best practice to remove any sensitive data when it is no longer of use, to reduce the impact of a data leak.
   
@@ -197,7 +206,12 @@ Links to standards:
   - Not covered yet in ISO/IEC standards.
 
 #### #OBFUSCATETRAININGDATA
-(development-time data science). Obfuscate training data: attain a degree of obfuscation of sensitive data where possible. When this is done for personal data, it is referred to as _differential privacy_ which is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
+Description: Obfuscate training data: attain a degree of obfuscation of sensitive data where possible
+> Category: development-time data science
+
+Purpose: minimize the impact of data leakage or manipulation
+
+When this is done for personal data, it is referred to as _differential privacy_ which is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
 
 Examples of approaches are:
 
@@ -263,23 +277,25 @@ Links to standards:
 - Not covered yet in ISO/IEC standards.
 
 #### #DISCRETE
-(management, development-time and runtime). Minimize access to technical details that could help attackers.
+Minimize access to technical details that could help attackers.
+> Category: management, development-time and runtime
 
 Purpose: reduce the information available to attackers, which can assist them in selecting and tailoring their attacks, thereby lowering the probability of a successful attack.
+
+Miminizing and protecting technical details can be achieved by incorporating such details as an asset into information security management. This will ensure proper asset management, data classification, awareness education, policy, and inclusion in risk analysis.
 
 Note: this control needs to be weighed against the [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY) control that requires to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
 
 For example:
 
-  - Be careful with publishing technical articles on your solution
+  - Consider this risk when publishing technical articles on the AI system
   - When choosing a model type or model implementation, take into account that there is an advantage of having technology with which attackers are less familiar
   - Minimize model output regarding technical details
 
-Particularity: Technical data science details need to be incorporated in asset management, data classification and hence in risk analysis.
 
 Links to standards:
 
-  - ISO 27002 Control 5.9: Inventory of information and other associated assets. Gap: covers this control fully, with the obvious particularity that technical data science details can be sensitive. As soon as the inventory identifies this, depending processes such as security requirements, risk analysis and awareness training will take care of the threat. In other words: it starts with identifying this information as an asset.
+  - ISO 27002 Control 5.9: Inventory of information and other associated assets. Gap: covers this control fully, with the particularity that technical data science details can be sensitive. .
   - See [OpenCRE on data classification and handling](https://www.opencre.org/cre/074-873). Gap: idem
   - [MITRE ATlAS Acquire Public ML Artifacts](https://atlas.mitre.org/techniques/AML.T0002)
 
@@ -287,16 +303,16 @@ Links to standards:
 
 ## <a name="13-controls-to-limit-the-effects-of-unwanted-behaviour">1.3. 望ましくない動作の影響を制限するためのコントロール</a>
 
-The cause of unwanted model behaviour can be the result of various factors, including model use, development time, and run-time. Preventative controls for these are discussed in their corresponding sections. However, the controls to mitigate the impact of such behavior are general for each of these threats and are covered in this section.
+Unwanted model behaviour is the intended result of many AI security attacks. There are many ways to prevent and to detect these attacks. This section is about how the effects of unwanted model behaviour can be controlled, in order to reduce the impact of an attack.
 
-Main potential causes of unwanted model behaviour:
+Besides attacks, AI systems can display unwanted behaviour for other reasons, making the control of this behaviour a shared responsibility. Main potential causes of unwanted model behaviour:
 
 - Insufficient or incorrect training data
 - Model staleness/ Model drift (i.e. the model becoming outdated)
 - Mistakes during model and data engineering
 - Security threats: attacks as laid out in this document, e.g. model poisoning, evasion attacks
 
-Successfully mitigating unwanted model behaviour knows the following threats:
+Successfully mitigating unwanted model behaviour has its own threats:
 
 - Overreliance: the model is being trusted too much by users
 - Excessive agency: the model is being trusted too much by engineers and gets excessive functionality, permissions, or autonomy
@@ -308,7 +324,8 @@ Example: LLMs (GenAI), just like most AI models, induce their results based on t
 **Controls to limit the effects of unwanted model behaviour:**
 
 #### #OVERSIGHT
-(runtime). Oversight of model behaviour by humans or business logic in the form of rules (guardrails).
+Description: Oversight of model behaviour by humans or business logic in the form of rules (guardrails).
+> Category: runtime 
   
 Purpose: Detect unwanted model behavior and correct or halt the execution of a model's decision.
 
@@ -316,8 +333,8 @@ Purpose: Detect unwanted model behavior and correct or halt the execution of a m
 The properties of wanted or unwanted model behavior often cannot be entirely specified, limiting the effectiveness of guardrails.
 
 **Limitations of human oversight:**
-The alternative to guardrails is to apply human oversight. This is of course more costly and slower, but allows for more intelligent validation given the involved common sense and human domain knowledge - provided that the person performing the oversight actually has that knowledge.
-For human operators or drivers of automated systems like self-driving cars, staying actively involved or having a role in the control loop helps maintain situational awareness. This involvement can prevent complacency and ensure that the human operator is ready to take over control if the automated system fails or encounters a scenario it cannot handle. However, maintaining situational awareness can be challenging with high levels of automation due to the "out-of-the-loop" phenomenon, where the human operator may become disengaged from the task at hand, leading to slower response times or decreased effectiveness in managing unexpected situations.
+The alternative to guardrails is to apply human oversight. This is of course more costly and slower, but allows for more intelligent validation given the involved common sense and human domain knowledge - provided that the person performing the oversight actually has the required knowledge.
+For human operators or drivers of automated systems like self-driving cars, staying actively involved or having a role in the control loop helps maintain situational awareness. This involvement can prevent complacency and ensures that the human operator is ready to take over control if the automated system fails or encounters a scenario it cannot handle. However, maintaining situational awareness can be challenging with high levels of automation due to the "out-of-the-loop" phenomenon, where the human operator may become disengaged from the task at hand, leading to slower response times or decreased effectiveness in managing unexpected situations.
 In other words: If you as a user are not involved actively in performing a task, then you lose understanding of whether it is correct or what the impact can be. If you then only need to confirm something by saying 'go ahead' or 'cancel', a badly informed 'go ahead' is easy to pick.
 
 Designing automated systems that require some level of human engagement or regularly update the human operator on the system's status can help maintain situational awareness and ensure safer operations.
@@ -327,13 +344,16 @@ Examples:
   - Logic preventing the trunk of a car from opening while the car is moving, even if the driver seems to request it
   - Requesting user confirmation before sending a large number of emails as instructed by a model
   - A special form of guardrails is censoring unwanted output of GenAI models (e.g. violent, unethical)
+  - 
 Links to standards:
 
   - ISO/IEC 42001 B.9.3 defines controls for human oversight and decisions regarding autonomy. Gap: covers this control partly (human oversight only, not business logic)
   - Not covered further in ISO/IEC standards.
 
 #### #LEASTMODELPRIVILEGE
-(runtime infosec). Least model privilege: Minimize privileges; avoid connecting a model to an email facility to prevent it from sending incorrect information to others.
+(runtime infosec). Least model privilege: Minimize privileges of a model to autonomously take actions.
+
+For example: avoid connecting a model to an email facility to prevent it from sending incorrect or sensitive information to others.
 
 Links to standards:
 
@@ -341,9 +361,9 @@ Links to standards:
   - [OpenCRE on least privilege](https://www.opencre.org/cre/368-633) Gap: idem
 
 #### #AITRANSPARENCY
-(runtime, management). AI transparency: By being transparent with users about the rough workings of the model, its training process, and the general expected accuracy and reliability of the AI system's output, people can adjust their reliance ([OWASP for LLM 09](https://llmtop10.com/llm09/)) on it accordingly. The simplest form of this is to inform users that an AI model is being involved.
+(runtime, management). AI transparency: By being transparent with users about the rough workings of the model, its training process, and the general expected accuracy and reliability of the AI system's output, people can adjust their reliance ([OWASP for LLM 09](https://llmtop10.com/llm09/)) on it accordingly. The simplest form of this is to inform users that an AI model is being involved. Transparency here is about providing abstract information regarding the model and is therefore something else than _explainability_.
 
-See the [DISCRETE](1_general_controls.md#DISCRETE) control for the balance between being transparent and being discrete about the model. Transparency here is about providing abstract information regarding the model and is therefore something else than _explainability_.
+See the [DISCRETE](#discrete) control for the balance between being transparent and being discrete about the model. 
 
 Links to standards:
 
@@ -352,7 +372,9 @@ Links to standards:
 
 #### #CONTINUOUSVALIDATION
 
-(data science). Continuous validation: by frequently testing the behaviour of the model against an appropriate test set, sudden changes caused by a permanent attack (e.g. data poisoning, model poisoning) can be detected.
+(data science). Continuous validation: by frequently testing the behaviour of the model against an appropriate test set, it is possible to detect sudden changes caused by a permanent attack (e.g. data poisoning, model poisoning).
+
+Continuous validation is a process that is often in place to detect other issues than attacks: system failures, or the model performance going down because of changes in the real world since it was trained.
 
 Links to standards:
 
