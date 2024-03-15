@@ -169,7 +169,7 @@ AI 固有のサプライチェーンのリスクについて説明している [
 ---
 
 ## 1.2 機密データ制限の一般的なコントロール
-The impact of security threats on confidentiality and integrity can be reduced by limiting the data attack surface, meaning that the amount and the variety of data is reduced as much as possible, as well as the duration in which it is kept. This section describes several controls to apply this limitation.
+機密性と完全性に対するセキュリティ脅威の影響は、データの攻撃対象領域を制限することで軽減できます。つまり、データの量と種類および保存期間を可能な限り減らします。このセクションではこの制限を適用するためのいくつかのコントロールについて説明します。
 
 #### #DATAMINIMIZE
 説明: データの最小化: 潜在的なデータ漏洩や操作を防ぐために、アプリケーションにとって不必要なデータフィールドや (トレーニングセットなどからの) レコードを削除あるいは匿名化します。
@@ -177,7 +177,7 @@ The impact of security threats on confidentiality and integrity can be reduced b
 
 目的: データ漏洩や操作の影響を最小化します。
 
-A method to determine which fields or records can be removed is to statistically analyze which data elements do not play a role in model performance. 
+どのフィールドやレコードを削除できるかを決定する方法は、どのデータ要素がモデルのパフォーマンスに影響を及ぼさないかを統計的に分析することです。
 
   標準へのリンク:
 
