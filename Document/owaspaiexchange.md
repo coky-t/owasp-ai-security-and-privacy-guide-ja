@@ -490,10 +490,10 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
 
   - ISO/IEC 標準ではまだカバーされていません。
 
-- **#<a name="ALLOWEDDATA">ALLOWEDDATA</a>** (development-time and runtime). Ensure allowed data, meaning the data used (e.g., training set) is permitted for the intended purpose. This is particularly important if consent was not given and the data contains personal information collected for a different purpose.
-  Links to standards:
+- **#<a name="ALLOWEDDATA">ALLOWEDDATA</a>** (開発時および実行時)。許可されたデータ、つまり使用されるデータ (トレーニングセットなど) が意図した目的に対して許可されたものであることを確認します。これは同意が得られておらず、データに別の目的で収集された個人情報を含む場合に特に重要です。
+  標準へのリンク:
 
-  - ISO/IEC 23894 (AI risk management) covers this in A.8 Privacy. Gap: covers this control fully, with a brief section on the idea
+  - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
 
 - **#<a name="SHORTRETAIN">SHORTRETAIN</a>** (development-time and runtime). Short retain: Remove or anonymize data once it is no longer needed, or when legally required (e.g., due to privacy laws), to minimize the risk of data leakage.
 
