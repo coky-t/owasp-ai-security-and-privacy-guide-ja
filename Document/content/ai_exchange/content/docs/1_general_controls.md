@@ -183,15 +183,15 @@ AI 固有のサプライチェーンのリスクについて説明している [
 
   - ISO/IEC 標準ではまだカバーされていません。
 
-#### #ALLOWEDDATA 
-Description: Ensure allowed data, meaning: removing data (e.g. from a training set) that is prohibited for the intended purpose. This is particularly important if consent was not given and the data contains personal information collected for a different purpose. 
-> Category: development-time and runtime management
+#### #ALLOWEDDATA
+説明: 許可されたデータを確認します。つまり、意図した目的では禁止されているデータを (トレーニングデータなどから) 削除することを意味します。これは同意が得られておらず、データに別の目的で収集された個人情報を含む場合に特に重要です。
+> カテゴリ: 開発時および実行時のマネジメント
 
-Purpose: Apart from compliance, the purpose is to minimize the impact of data leakage or manipulation
+目的: コンプライアンスとは別に、データの漏洩や操作の影響を最小限に抑えることが目的です。
 
-Links to standards:
+標準へのリンク:
 
-  - ISO/IEC 23894 (AI risk management) covers this in A.8 Privacy. Gap: covers this control fully, with a brief section on the idea
+  - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
 
 #### #SHORTRETAIN
 Description: Short retain: Remove or anonymize data once it is no longer needed, or when legally required (e.g., due to privacy laws).
