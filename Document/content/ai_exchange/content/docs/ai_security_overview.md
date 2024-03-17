@@ -183,14 +183,14 @@ AI プライバシーは二つのパートに分けることができます。
 
 重要な注意: セキュリティ脅威の観点からは、生成 AI は他の形式の AI (_予測 AI_) とそれほど違いはありません。生成 AI の脅威とコントロールは一般的な AI と大部分が重複しており、非常によく似ています。とはいえ、一部のリスクは (はるかに) 高くなります。低いものもあります。生成 AI 固有のリスクはごくわずかです。生成 AI と予測 AI ではコントロールカテゴリが大きく異なるものがあり、主にデータサイエンスコントロール (トレーニングセットへのノイズ追加など) です。多くの場合、生成 AI ソリューションはモデルをそのまま使用し、組織によるトレーニングを一切行わず、セキュリティ責任の一部を組織からサプライヤに移します。
 
-What is mainly new to the threat landscape because of LLMs?  
-- First of all, LLMs pose new threats to security because they may be used to create code with vulnerabilities, or they may be used by attackers to create malware, but let’s focus on threats TO systems that use an LLM.
-- Regarding input:
-  - Prompt injection is a completely new threat: attackers manipulating the behaviour of the model with crafted and sometimes hidden instructions.
-  - Also new is organizations sending huge amounts of data in prompts, with company secrets and personal data.
-- Regarding output: New is the fact that output can contain injection attacks, or can contain sensitive or copyrighted data.
-- Overreliance and excessive agency are issues. We let LLMs control things and may have too much trust in how correct they are, and also underestimate the risk of them being manipulated. The result is that attacks can have much impact.
-- Regarding training: Since the training sets are so large and based on public data, it is easier to perform data poisoning. Poisoned foundation models are also a big supply chain issues.
+LLM による主な新しい脅威は何ですか？
+- まず第一に、LLM は脆弱性のあるコードを作成するために使用されたり、攻撃者がマルウェアを作成するために使用される可能性があるため、セキュリティに新たな脅威をもたらしますが、LLM を使用するシステムに対する脅威に焦点を当てましょう。
+- 入力について:
+  - プロンプトインジェクションは全く新しい脅威です。攻撃者は細工した命令や、時には隠された命令で、モデルの動作を操作します。
+  - また、企業秘密や個人データを含む、大量のデータをプロンプトで送信する組織も新たにあります。
+- 出力について: 出力にはインジェクション攻撃を含んだり、機密データや著作権で保護されたデータを含む可能性があるという事実が新たにあります。
+- 過度の依存と過剰な代理権が問題です。私たちは LLM に物事を制御され、LLM がどれほど正しいかを過信し、また、LLM が操作されるリスクを過小評価していることがあります。その結果、攻撃は大きな影響を与えることになります。
+- トレーニングについて: トレーニングセットは非常に大きく、公開データに基づいているため、データポイズニングを実行することは容易です。また、汚染された基礎モデルはサプライチェーンの大きな問題でもあります。
 
 生成 AI セキュリティの特徴は以下の通りです。
 
