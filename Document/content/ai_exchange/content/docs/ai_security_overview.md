@@ -22,8 +22,8 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ![AI Security Threats](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
-以下の AI セキュリティマトリクスは、すべての脅威とリスクを、タイプと影響の順に示しています。
-![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
+以下の AI セキュリティマトリクス (クリックで拡大) は、すべての脅威とリスクを、タイプと影響の順に示しています。
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
 
 ## コントロールの概要
 
@@ -100,7 +100,7 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル盗用。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
 3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
 
-## 関連する脅威とコントロールをどのように選択するか？　リスク分析
+## <a name="how-to-select-relevant-threats-and-controls-risk-analysis">関連する脅威とコントロールをどのように選択するか？　リスク分析</a>
 このドキュメントには多くの脅威とコントロールについて説明します。どの脅威があなたに関係し、どのコントロールがあなたの責任となるかは、あなたの状況によって決まります。この選択プロセスは目前のユースケースとアーキテクチャのリスク分析 (またはリスク評価) を通じて実行できます。
 
 1. **リストの特定と推定**: まず、自分の状況に関連する脅威を選択し、影響度と確率を推定します。
