@@ -495,13 +495,13 @@ AI セキュリティコントロール (大文字で記載、ドキュメント
 
   - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
 
-- **#<a name="SHORTRETAIN">SHORTRETAIN</a>** (development-time and runtime). Short retain: Remove or anonymize data once it is no longer needed, or when legally required (e.g., due to privacy laws), to minimize the risk of data leakage.
+- **#<a name="SHORTRETAIN">SHORTRETAIN</a>** (開発時および実行時)。短期保持: 必要がなくなったり、法的に (プライバシー法などにより) 要求された場合、データを削除または匿名化して、データ漏洩のリスクを最小限に抑えます。
 
-  Limiting the retention period of data can be seen as a special form of data minimization. Privacy regulations typically require personal data to be removed when it is no longer needed for the purpose for which it was collected. Sometimes exceptions need to be made because of other rules (e.g. to keep a record of proof). Apart from these regulations, it is a general best practice to remove any sensitive data when it is no longer of use, to reduce the impact of a data leak.
-  
-  Links to standards:
+  データの保存期間を制限することは、データ最小化の特殊な形態とみなすことができます。プライバシー規制では一般的に、個人データが収集された目的に対して必要なくなった場合に、その個人データを削除することが求められます。場合によっては、他の規則 (証跡の記録を残すためなど) のために例外を設ける必要があります。これらの規制とは別に、データ漏洩の影響を軽減するために、機密データを使用しなくなった時点で削除することが一般的なベストプラクティスですｌ
 
-  - Not covered yet in ISO/IEC standards. 
+  標準へのリンク:
+
+  - ISO/IEC 標準ではまだカバーされていません。
 
 - **#<a name="OBFUSCATETRAININGDATA">OBFUSCATETRAININGDATA</a>** (development-time data science). Obfuscate training data: attain a degree of obfuscation of sensitive data where possible. When this is done for personal data, it is referred to as _differential privacy_.
 
