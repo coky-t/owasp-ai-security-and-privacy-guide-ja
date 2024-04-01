@@ -5,6 +5,8 @@ weight: 1
 ## 要旨 - AI セキュリティをどのように対処するか？
 > このイニシアチブについての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
 このページには AI セキュリティの概要があり、次のページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/summary/
 
 AI は強力なパフォーマンス向上をもたらしますが、悪意のある者が利用できる攻撃対象領域も拡大します。そのため、潜在的な脅威と、ユースケースごとにどの脅威を優先するかを明確に理解して、AI アプリケーションに取り組むことが不可欠です。標準とガバナンスは AI 機能を活用する個々の事業体にとってこのプロセスの指針となります。
 
@@ -15,6 +17,8 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 - モデル攻撃を理解することによって **データサイエンスにおける対策** を行います。たとえば、データ品質保証、大規模なトレーニングセット、一般的な摂動攻撃の検出、入力フィルタリングなど。
 
 ## 脅威の概要
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/threatsoverview/
 
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します: 開発時 (データを取得および準備し、モデルをトレーニング/取得するとき)、モデルの使用 (入力の提供と出力の読み取り) を通じて、実行時 (本番環境) にシステムへの攻撃によって。
@@ -22,10 +26,15 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 ![AI Security Threats](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/aisecuritymatrix/
+
 以下の AI セキュリティマトリクス (クリックで拡大) は、すべての脅威とリスクを、タイプと影響の順に示しています。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
 
 ## コントロールの概要
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/controlsoverview/
 
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
@@ -70,6 +79,9 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 
 
 ### ナビゲータ図
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/navigator/
+
 以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
 <!-- {{< callout type="info" >}} -->
   画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
@@ -78,6 +90,8 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 
 
 ## このドキュメントについて
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/about/
 
 このドキュメントでは AI サイバーセキュリティに対する脅威と、それらの脅威に対するコントロール (つまり、対策、要件、緩和策) について説明します。
 ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
@@ -101,6 +115,9 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
 
 ## <a name="how-to-select-relevant-threats-and-controls-risk-analysis">関連する脅威とコントロールをどのように選択するか？　リスク分析</a>
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/riskanalysis/
+
 このドキュメントには多くの脅威とコントロールについて説明します。どの脅威があなたに関係し、どのコントロールがあなたの責任となるかは、あなたの状況によって決まります。この選択プロセスは目前のユースケースとアーキテクチャのリスク分析 (またはリスク評価) を通じて実行できます。
 
 1. **リストの特定と推定**: まず、自分の状況に関連する脅威を選択し、影響度と確率を推定します。
@@ -274,24 +291,22 @@ LLM による主な新しい脅威は何ですか？
   #[SECPROGRAM](1_general_controls.md#SECPROGRAM) および #[SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) の一部
 
 ## 参考情報
+>カテゴリ: ディスカッション
+>Permalink: https://owaspai.org/goto/references/
 
-OWASP AI ガイド (このドキュメントはその一部のプロジェクトです) に関する参考情報:
-
-- 2023 年 2 月 15 日にダブリンで開催された OWASP Global AppSec イベントで OWASP AI ガイドが発表されました。[Rob van der Veer の講演](https://sched.co/1F9DT) の [動画](https://www.youtube.com/watch?v=ABmWHnFrMqI) と [スライド](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/20230215-Rob-AIsecurity-Appsec-ForSharing.pdf?raw=true) です。
-- OWASP AI ガイドに関する AppSec Podcast エピソードです ([音声](https://www.buzzsprout.com/1730684/12313155-rob-van-der-veer-owasp-ai-security-privacy-guide), [動画](https://www.youtube.com/watch?v=SLdn3AwlCAk&))。
-- [September 2023 MLSecOps Podcast](https://mlsecops.com/podcast/a-holistic-approach-to-understanding-the-ai-lifecycle-and-securing-ml-systems-protecting-ai-through-people-processes-technology)、短編をお望みであれば、[13分 AI セキュリティクイックトーク](https://www.brighttalk.com/webcast/19697/586526) をご覧ください。
+AI Exchange についてのウェビナーやポッドキャストは [Media ページ](https://owaspai.org/media/) を参照してください。
 
 AI セキュリティ脅威の概要:
 
+- [OWASP LLM top 10](https://llmtop10.com/)
 - [ENISA ML threats and countermeasures 2021](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms)
 - [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
+- [NIST threat taxonomy](https://csrc.nist.gov/publications/detail/white-paper/2023/03/08/adversarial-machine-learning-taxonomy-and-terminology/draft)
 - [ETSI SAI Problem statement Section 6](https://www.etsi.org/committee/1640-sai#)
 - [Microsoft AI failure modes](https://docs.microsoft.com/en-us/security/failure-modes-in-machine-learning)
 - [NIST](https://csrc.nist.gov/pubs/ai/100/2/e2023/final)
-- [NIST threat taxonomy](https://csrc.nist.gov/publications/detail/white-paper/2023/03/08/adversarial-machine-learning-taxonomy-and-terminology/draft)
 - [NISTIR 8269 - A Taxonomy and Terminology of Adversarial Machine Learning](https://csrc.nist.rip/external/nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8269-draft.pdf)
 - [OWASP ML top 10](https://mltop10.info/)
-- [OWASP LLM top 10](https://llmtop10.com/)
 - [BIML](https://berryvilleiml.com/taxonomy/)
 - [PLOT4ai threat library](https://plot4.ai/library)
 
