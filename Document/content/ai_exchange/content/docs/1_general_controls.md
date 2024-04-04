@@ -177,25 +177,25 @@ AI 固有のサプライチェーンのリスクについて説明している [
 
 コンプライアンスのチェック: コンプライアンスマネジメント (セキュリティの側面を含む) において、AI 関連の法規制が考慮されていることを確認します。個人データが関連する場合や個人に関する意思決定に AI が適用される場合は、プライバシーの法規制も適用範囲となります。AI のプライバシーの側面については [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) を参照してください。
 
-Global Jurisdictional considerations (as of end of 2023):
-- Canada: Artificial Intelligence & Data Act
-- USA: (i) Federal AI Disclosure Act, (ii) Federal Algorithmic Accountability Act
-- Brazil: AI Regulatory Framework
-- India: Digital India Act
-- Europe: (i) AI Act, (ii) AI Liability Directive, (iii) Product Liability Directive
-- China: (i) Regulations on the Administration of Deep Synthesis of Internet Information Services, (ii) Shanghai Municipal Regulations on Promoting Development of AI Industry, (iii) Shenzhen Special Economic Zone AI Industry Promotion Regulations, (iv) Provisional Administrative Measures for Generative AI Services
+世界の法的管轄区域に関する考慮事項 (2023年末時点):
+- カナダ: 人工知能およびデータ法 (Artificial Intelligence & Data Act)
+- アメリカ: (i) 連邦 AI 開示法 (Federal AI Disclosure Act), (ii) 連邦アルゴリズム責任法 (Federal Algorithmic Accountability Act)
+- ブラジル: AI 規制フレームワーク (AI Regulatory Framework)
+- インド: デジタルインド法 (Digital India Act)
+- ヨーロッパ: (i) AI 法 (AI Act), (ii) AI 責任指令 (AI Liability Directive), (iii) 製造物責任指令 (Product Liability Directive)
+- 中国: (i) インターネット情報サービス深層合成管理条例 (Regulations on the Administration of Deep Synthesis of Internet Information Services), (ii) 上海市 AI 産業発展促進条例 (Shanghai Municipal Regulations on Promoting Development of AI Industry), (iii) 深圳経済特区 AI 産業促進条例 (Shenzhen Special Economic Zone AI Industry Promotion Regulations), (iv) 生成 AI サービス暫定行政措置 (Provisional Administrative Measures for Generative AI Services)
 
-General Legal Considerations on AI/Security:
-- Privacy Laws: AI must comply with all local/global privacy laws at all times, such as GDPR, CCPA, HIPAA. See [Privacy](/goto/privacy/)
-- Data Governance: any AI components/functions provided by a 3rd party for integration must have data governance frameworks, including those for the protection of personal data and structure/definitions on how its collected, processed, stored
-- Data Breaches: any 3rd party supplier must answer as to how they store their data and security frameworks around it, which may include personal data or IP of end-users
+AI/セキュリティに関する一般的な法的考慮事項:
+- プライバシー法: AI は GDPR, CCPA, HIPAA などのすべてのローカル/グローバルのプライバシー法を常に遵守しなければいけません。[プライバシー](ai_security_overview.md#how-about-privacy) を参照。
+- データガバナンス: 統合のためにサードパーティから提供される AI コンポーネント/機能は、個人データの保護、その収集、処理、保存方法の構造/定義を含む、データガバナンスフレームワークを備えていなければいけません。
+- データ侵害: サードパーティサプライヤは、データの保存方法とそのセキュリティフレームワークについて回答しなければいけません。これはエンドユーザーの個人データや IP を含む可能性があります。
 
-Non-Security Compliance Considerations: 
-- Ethics: Deep fake weaponization and how system addresses and deals with it, protects against it and mitigates it
-- Human Control: any and all AI systems should be deployed with appropriate level of human control and oversight, based on ascertained risks to individuals. AI systems should be designed and utilized with the concept that the use of AI respects dignity and rights of individuals; “Keep the human in the loop” concept. See [Oversight](/goto/oversight/).
-- Discrimination: a process must be included to review datasets to avoid and prevent any bias. See [Unwanted bias testing](/goto/unwantedbiastesting/).
-- Transparency: ensure transparency in the AI system deployment, usage and proactive compliance with regulatory requirements; “Trust by Design”
-- Accountability: AI systems should be accountable for actions and outputs and usage of data sets. See [AI Program](/goto/aiprogram/)
+セキュリティ以外のコンプライアンスの考慮事項:
+- 倫理: ディープフェイクの武器化と、システムがそれにどのように対応し、対処し、保護し、軽減するか
+- 人的管理: あらゆる AI システムは、個人に対するリスクを確認した上で、適切なレベルの人的管理と監視の下で導入すべきです。AI システムは、AI の使用が個人の尊厳と権利を尊重するコンセプトで設計され活用されるべきです。「Keep the human in the loop」コンセプト。[OVERSIGHT](1_general_controls.md#OVERSIGHT) を参照。
+- 差別: バイアルを回避および防止するために、データセットをレビューするプロセスを含めなければいけません。[UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING) を参照。
+- 透明性: AI システムのデプロイメント、使用、規制要件への積極的なコンプライアンスにおける透明性を確保します。「Trust by Design」
+- 説明責任: AI システムは、アクション、出力、データセットの使用について説明責任を負うべきです。[AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照。
 
 標準へのリンク:
 
