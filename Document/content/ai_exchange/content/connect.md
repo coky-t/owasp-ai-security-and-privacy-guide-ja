@@ -16,7 +16,7 @@ excludeSearch: true
 
 さまざまなプラットフォームを通じて OWASP AI チームに参加します。
 
-- [OWASP Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai` チャンネルで私たちとつながってください。執筆者は非公開の `#project-ai-authors` チャンネルにいます。
+- [OWASP Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai-community` チャンネルで私たちとつながってください。執筆者は非公開の `#project-ai-authors` チャンネルにいます。
 - [Twitter](https://twitter.com/owasp) と [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/ "OWASP AI Exchange LinkedIn") で私たちをフォローして最新情報を確認してください。
 - 技術的な質問や提案については、[GitHub Discussions](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions) に参加するか、[GitHub Issues](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) で問題を報告及び追跡してください。
 
