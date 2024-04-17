@@ -26,15 +26,15 @@ AI は強力なパフォーマンス向上をもたらしますが、悪意の�
 2. モデルの使用 (入力の提供と出力の読み取り) を通じて
 3. 実行時 (本番環境) にシステムへの攻撃によって
 
-In AI we distinguish 6 types of impacts:
-1. confidentiality of train/test data
-2. confidentiality of model Intellectual property (the _model parameters_ or the process and data that led to them)
-3. confidentiality of input data
-4. integrity of model behaviour (the model is not manipulated to behave in an unwanted way)
-5. availability of the model
-6. confidentiality, integrity, and availability of non AI-specific assets
+AI では 6 つのタイプの影響を区別します:
+1. トレーニングデータやテストデータの機密性
+2. モデル知的財産 (_モデルパラメータ_ やそれにつながるプロセスとデータ) の機密性
+3. 入力データの機密性
+4. モデル動作の完全性 (モデルが望ましくない動作をするように操作されていない)
+5. モデルの可用性
+6. AI 固有ではない資産の機密性、完全性、可用性
 
-The threats that create these impacts use different attack surfaces. For example: the confidentiality of train data can be compromised by hacking into the database during development-time, but it can also leak by a _membership inference attack_ that can find out whether a certain individual was in the train data, simply by feeding that person's data into the model and looking at the details of the model output.
+このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発期間中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
 
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
 ![AI Security Threats](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
@@ -194,9 +194,9 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 
 ### 責任ある AI や信頼できる AI についてはどうですか？
 
-Where do you draw the line when it comes to AI topics you want to master?  
-There are many types of risks involved with AI, apart from security risks. It can be tempting to go down the so-called _rabbit hole_ and learn about these matters. People are curious about AI in the broad sense. At the same time this can be distracting from our primary goal as professionals. If our main responsibility is security, then the best strategy is to first focus on AI security and after that learn the details on the other AI aspects - which are helpful for us to understand, if only to help our colleagues to stay alert.  
-Therefore, it is important for leaders and stakeholders to be explicit about responsiblities, including those about privacy, legal and governance. Otherwise, security people may tend to take on too much responsibilities (e.g. accuracy of the model) and be overwhelmed, as they often care about the good of the organisation.
+習得したい AI トピックスについて、どこで線引きしますか？
+AI にはセキュリティリスク以外にもさまざまな種類のリスクがあります。いわゆる _ウサギの穴_ に落ちて、これらの事柄について学びたくなるかもしれません。人々は広い意味で AI に興味を持っています。同時に、これは専門家としての私たちの主要な目標から目をそらすことになりかねません。私たちの主な責任がセキュリティであるならば、最善の戦略はまず AI セキュリティに焦点を当て、その後で他の AI の側面について詳細を学ぶことです。同僚が警戒を怠らないようにするためであっても、私たちが理解するのに役立ちます。
+したがって、リーダーや利害関係者はプライバシー、法律、ガバナンスに関する責任を含めて、責任を明確にすることが重要です。そうしないと、セキュリティ担当者は組織のために気を配ることが多いため、あまりに多くの責任 (モデルの正確さなど) を負いすぎて、打ちのめされてしまう傾向にあるかもしれません。
 
 責任ある AI や信頼できる AI にはセキュリティが含まれますが、その逆ではありません。責任ある AI や信頼できる AI にはセキュリティ以外にも多くの側面があり、物事をややこしくしているのですが、これらの各側面はセキュリティと関連しています。わかりやすく説明してみましょう。
 - **正確性 (Accuracy)** はその「ビジネス機能」を実行するのに十分に正しいかどうかを指します。不正確であると、物理的な安全性の問題 (運転中に車のトランクが開いてしまうなど) やその他の有害な間違った判断 (ローンの不当な拒否など) につながる可能性があります。セキュリティとの関連は、ある種の攻撃が望ましくないモデル動作を引き起こすことであり、これは定義上、正確性の問題です。とはいえ、セキュリティの範囲ではそのような攻撃のリスクを軽減することに限定されており、正確なモデルの作成 (トレーニングセットの代表データの選択など) の問題全体を解決するものではありません。
