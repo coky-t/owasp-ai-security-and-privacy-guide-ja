@@ -273,16 +273,18 @@ PMLR, 2018.
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/trainadversarial/
 
-Train adversarial: Add adversarial examples to the training set to make the model more resilient (Data science). While adversarial training does make a model more robust against specific attacks, it is important to note that it also adds significant training overhead, does not scale well with model complexity / input dimension, can lead to overfitting, and may not generalize well to new attack methods. For a general summary of adversarial training, see [Bai et al.](https://arxiv.org/pdf/2102.01356.pdf)
+Train adversarial: Add adversarial examples to the training set to make the model more robust against evasion attacks. First, adversarial examples are generated, just like they would be generated for an evasion attack. By definition, the model produces the wrong output for those examples. By adding them to the training set with the right output, the model is in essence corrected. As a result it generalizes better. In other words, by training the model on adversarial examples, it learns to not overly rely on subtle patterns that might not generalize well, which are by the way similar to the patterns that poisoned data might introduce.
+
+It is important to note that generating the adversarial examples creates significant training overhead, does not scale well with model complexity / input dimension, can lead to overfitting, and may not generalize well to new attack methods.
 
   Links to standards:
 
   - Not covered yet in ISO/IEC standards
-
   - ENISA Securing Machine Learning Algorithms Annex C: "Add some adversarial examples to the training dataset"
   
   References:
 
+  - For a general summary of adversarial training, see [Bai et al.](https://arxiv.org/pdf/2102.01356.pdf)
   - Goodfellow, I.J.; Shlens, J.; Szegedy, C. Explaining and harnessing adversarial examples. arXiv 2014, arXiv:1412.6572.
   - Lyu, C.; Huang, K.; Liang, H.N. A unified gradient regularization family for adversarial examples. In Proceedings of the 2015 ICDM.
   - Papernot, N.; Mcdaniel, P. Extending defensive distillation. arXiv 2017, arXiv:1705.05264.
@@ -444,7 +446,7 @@ The model discloses sensitive training data or is abused to do so.
 >Category: threat through use  
 >Permalink: https://owaspai.org/goto/disclosureuseoutput/
 
-The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images. Once training data is in a GenAI model, original variations in access rights cannot be controled anymore. ([OWASP for LLM 06](https://llmtop10.com/llm06/))
+The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images(see [Copyright](ai_security_overview.md#how-about-copyright)). Once training data is in a GenAI model, original variations in access rights cannot be controled anymore. ([OWASP for LLM 06](https://llmtop10.com/llm06/))
 
 The disclosure is caused by an unintentional fault of including this data, and exposed through normal use or through provocation by an attacker using the system. See [MITRE ATLAS - LLM Data Leakage](https://atlas.mitre.org/techniques/AML.T0057)
 
@@ -502,7 +504,7 @@ Links to standards:
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/smallmodel/
 
-Small model: overfitting can be prevented by keeping the model small so it is not able to store detail at the level of individual training set samples.
+Small model: overfitting (storing individual training samples) can be prevented by keeping the model small so it is not able to store detail at the level of individual training set samples.
 
 Links to standards:
 
