@@ -46,16 +46,17 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Annegrit Seyerlein-Klug</td><td>ブランデンブルク応用科学大学</td><td>ドイツ</td><td>雑多な標準とのマッピング</td></tr>
     <tr><td>Anthony Glynn</td><td>CapitalOne</td><td>アメリカ</td><td>多くのテキストの改善と LLM Top 10 へのリンク</td></tr>
     <tr><td>Behnaz Karimi</td><td>アクセンチュア</td><td>ドイツ</td><td>モデルの難読化と説明を含む雑多な貢献</td></tr>
-    <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要</td></tr>
+    <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要と著作権</td></tr>
     <tr><td>Disesdi Susanna Cox</td><td>BobiHealth</td><td>アメリカ</td><td>連合学習</td></tr>
     <tr><td>Feiyang Tang</td><td>Software Improvement Group (SIG)</td><td></td><td></td></tr>
     <tr><td>John Sotiropoulos</td><td>Kainos</td><td></td><td>リーダーシップチームからの渉外</td></tr>
     <tr><td>Marko Lihter</td><td>SplxAI</td><td>クロアチア</td><td>組織向けのステップバイステップガイド、ウェブサイト作成、さまざまなテキストの改善</td></tr>
     <tr><td>Niklas Bunzel</td><td>フラウンホーファー研究所</td><td>ドイツ</td><td>回避攻撃に関するデータサイエンスの考察と参考情報</td></tr>
     <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクトリーダー</b></td></tr>
-    <tr><td>Rocky Heckman</td><td>Cyber Dynamo</td><td>Australia</td><td>セキュリティとプライバシーのリスク分析と ISO/IEC 27562</td></tr>
+    <tr><td>Rocky Heckman</td><td>Cyber Dynamo</td><td>オーストラリア</td><td>セキュリティとプライバシーのリスク分析と ISO/IEC 27562</td></tr>
+    <tr><td>Rubens Zimbres</td><td></td><td>ブラジル</td><td>敵対的機械学習</td></tr>
     <tr><td>Roger Sanz</td><td>イザベル大学</td><td>スペイン</td><td></td></tr>
-    <tr><td><b>Sandy Dunn</b></td><td>ボイシ州立大学, AI Cyber Advisors</td><td>アメリカ</td><td>リーダーシップチームからのコミュニティ管理</td></tr>
+    <tr><td>Sandy Dunn</td><td>ボイシ州立大学, AI Cyber Advisors</td><td>アメリカ</td><td>初期フェーズでのコミュニティ管理</td></tr>
     <tr><td>Sean Oesch</td><td>オークリッジ国立研究所</td><td>アメリカ</td><td>BLUF、敵対的トレーニング、OOD 検出、NISTIR 8269、ガイドの使いやすさ/構造</td></tr>
     <tr><td>Srajan Gupta</td><td>Dave</td><td></td><td></td></tr>
     <tr><td>Steve Francolla</td><td>Workforce Tech LLC</td><td></td><td></td></tr>
