@@ -16,7 +16,7 @@ excludeSearch: true
 
 さまざまなプラットフォームを通じて OWASP AI チームに参加します。
 
-- [OWASP Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai-community` チャンネルで私たちとつながってください。執筆者は非公開の `#project-ai-authors` チャンネルにいます。
+- [OWASP Slack](https://owasp.org/slack/invite) ワークスペースの `#project-ai-community` チャンネルで私たちとつながってください。執筆者は非公開の `#project-ai-authors` チャンネルにいます。
 - [Twitter](https://twitter.com/owasp) と [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/ "OWASP AI Exchange LinkedIn") で私たちをフォローして最新情報を確認してください。
 - 技術的な質問や提案については、[GitHub Discussions](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions) に参加するか、[GitHub Issues](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) で問題を報告及び追跡してください。
 
@@ -31,6 +31,7 @@ excludeSearch: true
 **OWASP AI Exchange** と **AI プライバシーおよびセキュリティガイド** のプロジェクトリーダー。
 OpenCRE, SAMM-agile.
 AI ライフサイクルに関する ISO/IEC 5338 の筆頭執筆者、AI セキュリティおよびプライバシーに関する ISO/IEC 27090/91 のワーキンググループメンバー、EU AI 法に関する CEN/CENELEC JTC21/WG5 のメンバー。
+Software Improvement Group の上級主任エキスパート。
 
 - [Twitter](https://twitter.com/robvanderveer "Twitter") <!-- {{< icon "x-twitter" >}} [Twitter](https://twitter.com/robvanderveer "Twitter") -->
 - [Slack](https://owasp.slack.com/team/UF0TXT8VD "Slack")<!-- {{< icon "slack" >}} [Slack](https://owasp.slack.com/team/UF0TXT8VD "Slack") -->
