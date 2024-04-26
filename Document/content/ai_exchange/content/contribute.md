@@ -40,6 +40,9 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 
 <table border='1'>
     <tr><th>名前</th><th>会社</th><th>国</th><th>貢献</th></tr>
+    <tr><td><b>Chris Ancharski</b></td><td>Global community builder</td><td>アメリカ</td><td>エンゲージメントスペシャリスト、リーダーシップチーム</td></tr>
+    <tr><td>John Sotiropoulos</td><td>Kainos</td><td></td><td>リーダーシップチームからの渉外</td></tr>
+    <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクトリーダー</b></td></tr>
     <tr><td>Adelin Travers</td><td>Trail of Bits</td><td></td><td></td></tr>
     <tr><td>Alon Tron</td><td>Stealth</td><td>イスラエル</td><td>サプライチェーンマネジメントの改善</td></tr>
     <tr><td>Angie Qarry</td><td>QDeepTech</td><td>オーストリア</td><td>データサイエンス防御メカニズムに関するいくつかの詳細と参考情報</td></tr>
@@ -49,10 +52,8 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要と著作権</td></tr>
     <tr><td>Disesdi Susanna Cox</td><td>BobiHealth</td><td>アメリカ</td><td>連合学習</td></tr>
     <tr><td>Feiyang Tang</td><td>Software Improvement Group (SIG)</td><td></td><td></td></tr>
-    <tr><td>John Sotiropoulos</td><td>Kainos</td><td></td><td>リーダーシップチームからの渉外</td></tr>
     <tr><td>Marko Lihter</td><td>SplxAI</td><td>クロアチア</td><td>組織向けのステップバイステップガイド、ウェブサイト作成、さまざまなテキストの改善</td></tr>
     <tr><td>Niklas Bunzel</td><td>フラウンホーファー研究所</td><td>ドイツ</td><td>回避攻撃に関するデータサイエンスの考察と参考情報</td></tr>
-    <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクトリーダー</b></td></tr>
     <tr><td>Rocky Heckman</td><td>Cyber Dynamo</td><td>オーストラリア</td><td>セキュリティとプライバシーのリスク分析と ISO/IEC 27562</td></tr>
     <tr><td>Rubens Zimbres</td><td></td><td>ブラジル</td><td>敵対的機械学習</td></tr>
     <tr><td>Roger Sanz</td><td>イザベル大学</td><td>スペイン</td><td></td></tr>
