@@ -18,7 +18,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 ## コンテンツ開発に参加する
 
 - 📥 提案を [プロジェクトリーダー](connect.md#owasp-ai-project-leader) に送信してください。
-- 👋 [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai` に参加してください。
+- 👋 [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#) ワークスペースの `#project-ai-community` に参加してください。
 - 🗣️ [プロジェクトリーダー](connect.md#owasp-ai-project-leader) と執筆グループの一員になる方法について話し合ってください。
 - 💡あなたの [コンセプト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/ideas) を提案するか、[問題](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) を投稿してください。
 - 📄 リポジトリをフォークして、具体的な修正 (文法/誤植など) やコアチームによってすでに承認されたコンテンツの [プルリクエスト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/pulls) を提出してください。
