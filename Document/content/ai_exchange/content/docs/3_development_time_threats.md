@@ -197,10 +197,10 @@ References
 - The below control(s), each marked with a # and a short name in capitals
   
 #### #MODELENSEMBLE
-> Category: development-time data science control  
+> Category: development-time data science control - including specific runtime implementation
 > Permalink: https://owaspai.org/goto/modelensemble/
 
-Model ensemble: include the model as part of an ensemble, where each model is trained in a separately protected environment. If one model's output deviates from the others, it can be ignored, as this indicates possible manipulation.
+Model ensemble: include the model as part of an ensemble, where each model is trained in a separately protected environment. If one model's output deviates from the others, it can be ignored, as this indicates possible manipulation. Also called: model isolation.
 
 Links to standards:
   - Not covered yet in ISO/IEC standards
@@ -224,12 +224,12 @@ Example 3: unwanted information (e.g. false facts) in documents on the internet 
 **Controls for data poisoning:**
 
 - See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
-- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
+- See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro) of primarily the training data
 - See controls for [broad model poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time)
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #MORETRAINDATA
-> Category: development-time data science control  
+> Category: development-time data science control - pre-training    
 > Permalink: https://owaspai.org/goto/moretraindata/
 
 More train data: increasing the amount of non-malicious data makes training more robust against poisoned examples - provided that these poisoned examples are small in number. One way to do this is through data augmentation - the creation of artificial training set samples that are small variations of existing samples.  The goal is to 'outnumber' the poisoned samples so the model 'forgets' them.
@@ -241,7 +241,7 @@ Links to standards:
 - Not covered yet in ISO/IEC standards
 
 #### #DATAQUALITYCONTROL
-> Category: development-time data science control  
+> Category: development-time data science control - pre-training  
 > Permalink: https://owaspai.org/goto/dataqualitycontrol/
 
 Data quality control: Perform quality control on data including detecting poisoned samples through statistical deviation or pattern recognition. For important data and scenarios this may involve human verification.
@@ -259,11 +259,13 @@ Links to standards:
 - Not further covered yet in ISO/IEC standards
 
 #### #TRAINDATADISTORTION
-> Category: development-time data science control  
+> Category: development-time data science control - pre-training  
 > Permalink: https://owaspai.org/goto/traindatadistortion/
 
 Train data distortion: distorting untrusted training data by smoothing or adding noise, to make poisoned 'triggers' ineffective. Such a trigger has been inserted by an attacker in the training data, together with an unwanted output. Whenever input data is presented that contains a similar 'trigger', the model can recognize it and output the unwanted value. The idea is to distort the triggers so that they are not recognized anymore by the model.  
-A special form of traindata distortion is complete removal of certain input fields. Technically, this is data minimization (see [DATAMINIMIZE)(1_general_controls.md#DATAMINIMIZE)), but its purpose is not protecting the confidentiality of that data per se, but reducing the ability to memorize poisoned samples.
+A special form of traindata distortion is complete removal of certain input fields. Technically, this is data minimization (see [DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE)), but its purpose is not protecting the confidentiality of that data per se, but reducing the ability to memorize poisoned samples.
+
+Data distortion can also be part of differential privacy: to make personal data less recognizable. This means that applying differential privacy can be a countermeasure to data poisoning as well.
 
 This control can only be applied during training and therefore not to an already trained model.
 
@@ -287,7 +289,7 @@ Link to standards:
 - Not covered yet in ISO/IEC standards
 
 #### #POISONROBUSTMODEL
-> Category: development-time data science control  
+> Category: development-time data science control - post-training  
 > Permalink: https://owaspai.org/goto/poisonrobustmodel/
 
 Poison robust model: select a model type and creation approach to reduce sensitivity to poisoned training data.
@@ -328,9 +330,12 @@ The type of manipulation can be through data poisoning, or by specifically chang
 **Controls specific for transfer learning:**
 
 - See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
-- See #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE). The other [controls for development-time protection](3_development_time_threats.md#developmenttimeintro), like for example protecting the training set database against data poisoning, need to be applied by the supplier of the model.
-- See controls for [broad model poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time)
-- See those controls for [data poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time) that work on models that have already been trained
+- See those controls for [data poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time) that work on models that have already been trained (post-training), e.g. [POISONROBUSTMODEL](3_development_time_threats.md#POISONROBUSTMODEL)
+- See #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE) to control obtaining a reliable model from a reliable supplier. 
+- Other controls need to be applied by the supplier of the model:
+  - Controls for [development-time protection](3_development_time_threats.md#developmenttimeintro), like for example protecting the training set database against data poisoning
+  - Controls for [broad model poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time)
+  - Controls for [data poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time) that work pre-training
 
 ---
 
