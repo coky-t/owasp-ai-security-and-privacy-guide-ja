@@ -132,38 +132,80 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 >カテゴリ: ディスカッション
 >Permalink: https://owaspai.org/goto/riskanalysis/
 
-このドキュメントには多くの脅威とコントロールについて説明します。どの脅威があなたに関係し、どのコントロールがあなたの責任となるかは、あなたの状況によって決まります。この選択プロセスは目前のユースケースとアーキテクチャのリスク分析 (またはリスク評価) を通じて実行できます。
+このドキュメントには多くの脅威とコントロールについて説明します。どの脅威があなたに関係し、どのコントロールがあなたの責任となるかは、あなたの状況と AI の使い方によって決まります。この選択プロセスは目前のユースケースとアーキテクチャのリスク分析 (またはリスク評価) を通じて実行できます。
 
 1. **リストの特定と推定**: まず、自分の状況に関連する脅威を選択し、影響度と確率を推定します。
 
-    これを行うには、脅威のリストを調べ、_影響 (Impact)_ の説明を使用して該当するかどうかを確認します。たとえば訓練データ内の個人を特定することによる影響は、訓練データが個人を所持していない場合、あなたのケースには適用されません。[ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf) では影響を紫色で示しています。すべての影響の簡単な概要は [AI セキュリティマトリクス](ai_security_overview.md#ai-security-matrix) でご覧いただけます。
+   **Unwanted model behaviour**
 
-    次に、残りの脅威を確認し、攻撃対象領域を調べて、関連するかどうかを確認します。たとえば、外部モデルを使用しない場合、モデルのサプライチェーンは関連する攻撃対象領域ではなく、関連する脅威でもありません。
+    Regarding model behaviour, we focus on manipulation by attackers, as the scope of this document is security. Other sources of unwanted behaviour are general inaccuracy (e.g. hallucinations) and/or unwanted bias regarding certain groups (discrimination).
+    
+    This will always be an applicable threat, independent of your situation, although the risk level may sometimes be accepted - see below.
 
-    以下の決定手順を使用して、関連する脅威をさらに選択できます。
+    Which means that you always need to have in place:
+      - [General governance controls](/goto/governancecontrols/) (e.g. having an inventory of AI use and some control over it)
+      - [Controls to limit effects of unwanted model behaviour](/goto/limitunwanted/) (e.g. human oversight)
 
-    訓練データが機密ではない場合、訓練データの機密性の脅威を無視します。特殊なケースとして _メンバーシップ推論_ の脅威があります。この脅威は、ある人物がトレーニングセットの一部であるという **事実** がその人物に関する有害な情報である場合にのみ適用されます。たとえば、トレーニングセットが犯罪者とその経歴で構成され、犯罪歴を予測する場合、そのセットのメンバーシップはその人物が有罪判決を受けた、あるいは犯罪容疑のあることを意味します。
+    Is the model GenAI (e.g. a Large Language Model)? 
+      - Prevent [prompt injection](/goto/directpromptinjection/) (mostly done by the model supplier) in case untrusted input goes directly into the model, and it is important that the model follows its policy instructions about how it communicates. Mostly this is the case if model input is from end users and output also goes straight to end users, who could show that the model can misbehave (e.g. be politically incorrect), which can lead to reputation damage. 
+      - Prevent [indirect prompt injection](/goto/indirectpromptinjection/), in case untrusted input goes somehow into the prompt e.g. you retrieve somebody's resume and include it in a prompt.
 
-    モデルが生成 AI モデルである場合、回避、モデル反転の脅威を無視します。また、生成 AI モデルが LLM ではない場合、プロンプトインジェクションと安全でない出力処理も無視します。
+    Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier given the cost of typically millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run at your own premises. The reasons to do this can be lower cost (if is is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the mode.
+    
+    Who trains/finetunes the model?
+      - The supplier: you need to prevent [obtaining a poisoned model](/goto/transferlearningattack/) by proper supply chain mangement (selecting a proper supplier and making sure you use the actual model), including assuring that: the supplier prevents development-time model poisoning including data poisoning and obtainubg poisoned data. If the remaining risk for data poisoning cannot be accepted, performing post-training countermeasures can be an option - see [POISONROBUSTMODEL](/goto/poisonrobustmodel/).
+      - You: you need to prevent [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data
+ 
+    If you use RAG (Retrieval Augmented Generation using GenAI), then your retrieval repository plays a role in determining the model behaviour.This means:
+      - You need to prevent [data poisoning](/goto/datapoison/) of your retrieval repository, which includes preventing that it contains externally obtained poisoned data.
 
-    モデルが生成 AI モデルではない場合、(直接) プロンプトインジェクションと安全でない出力処理を無視します。
+    Who runs the model?
+      - The supplier: make sure the supplier prevents [runtime model poisoning](/goto/runtimemodelpoison/) just like any supplier who you expect to protect the running application from manipulation
+      - You: You need to prevent [runtime model poisoning](/goto/runtimemodelpoison/)
 
-    入力データが機密ではない場合、「入力データの漏洩」を無視します。RAG を使用する場合、取得するデータも入力データとみなします。
+    Is the model predictive AI?
+     - Prevent an [evasion attack](/goto/evasion/) in which a user tries to fool the model into a wrong decision. Here, the level of risk is an important aspect to evaluate - see below. The risk of an evasion attack may be acceptable.
+    
+    In order to assess the level of risk for unwanted model behaviour through manipulation, consider what the motivation of an attacker could be. What could an attacker gain by for example sabotaging your model? Just a claim to fame? Could it be a disgruntled employee? Maybe a competitor? What could an attacker gain by a less conspicuous model behaviour attack, like an evasion attack or data poisoning with a trigger? Is there a scenario where an attacker benefits from fooling the model? An example where evasion IS interesting and possible: adding certain words in a spam email so that it is not recognized as such. An example where evasion is not interesting is when a patient gets a skin disease diagnosis based on a picture of the skin. The patient has no interest in a wrong decision, and also the patient typically has no control - well maybe by painting the skin. There are situations in which this CAN be of interest for the patient, for example to be eligible for compensation in case the (faked) skin disease was caused by certain restaurant food. This demonstrates that it all depends on the context whether a theoretical threat is a real threat or not. Depending on the probability and impact of the threats, and on the relevant policies, some threats may be accepted as risk. When not accepted, the level of risk is input to the strength of the controls. For example: if data poisoning can lead to substantial benefit for a group of attackers, then the training data needs to be get a high level of protection.
 
-    RAG (Retrieval Augmented Generation, 検索拡張生成) を使用する場合、検索リポジトリ (埋め込みを含む) を訓練データと同じように扱います。つまり、
-      - データポイズニングに関する脅威を含めます
-      - データが機密性の高い場合、訓練データやテストデータの漏洩に関する脅威を含めます
 
-    そうではなく、モデルを訓練やファインチューニングしない場合、
-      - サプライチェーン管理を除き、開発時の脅威を無視します。入手したモデルが操作されたものではなく本物であることを確認します。
-      - 訓練データの機密性の脅威を無視します
-      - モデル知的財産の機密性の脅威を無視します
-      - データポイズニングの脅威を無視します
-      - 開発時コントロール (機密性の高い訓練データをフィルタリングするなど) を無視します
+   **Leaking training data**
 
-    これらはモデル製作者の責任ですが、望ましくない結果の影響を受ける可能性があることに注意してください。製作者は機密保持の問題に対処して、問題の責任を負うかもしれませんが、操作されたモデルの動作によって事実上被害を受けることになります。
+    Do you train/finetune the model yourself?
+      - Yes: and is the training data sensitive? Then you need to prevent:
+        - [unwanted disclosure in model output](/goto/disclosureuse/)
+        - [model inversion](/goto/modelinversionandmembership/) (but not for GenAI)
+        - [training data leaking from your engineering environment](/goto/devdataleak/).
+        - [membership inference]((/goto/modelinversionandmembership/)) - but only if the **fact** that something or somebody was part of the training set is sensitive information. For example when the training set consists of criminals and their history to predict criminal careers: membership of that set gives away the person is a convicted or alleged criminal.
+    
+     If you use RAG: apply the above to your repository data, as if it was part of the training set: as the repository data feeds into the model and can therefore be part of the output as well.
 
-    モデルの動作に影響を与える脅威 (回避、データポイズニングなど) が残っている場合、攻撃者の動機が何であるかを考慮します。攻撃者はたとえばモデルを妨害することで何を得ることができるでしょうか？自慢するだけでしょうか？不満を持つ従業員なのでしょうか？競合相手でしょうか？攻撃者は回避攻撃やトリガーによるデータポイズニングなど、あまり目立たないモデル動作攻撃によって何を得ることができるでしょうか？攻撃者がモデルを欺くことで利益を得られるシナリオはありますか？回避が興味深く、かつ可能である例としては、スパムメールに特定の単語を追加して、それがスパムメールと認識されないようにすることです。回避が面白くない例としては、患者が皮膚の写真に基づいて皮膚病の診断を受ける場合があります。患者は間違った判断には興味がありませんし、また、通常、患者はなにも制御できません。まあ、皮膚に絵を描くことはできるかもしれませんが。これが患者にとって興味深いかもしれない状況があり、たとえば、(偽装された) 皮膚病が特定のレストランの食事によって引き起こされた場合に補償の対象になります。これは、理論上の脅威が実際の脅威であるかどうかはすべてコンテキストに依存することを示しています。脅威の発生確率と影響、および関連するポリシーに応じて、いくつかの脅威がリスクとして受け入れられることがあります。受け入れられない場合、リスクのレベルはコントロールの強さへの入力になります。たとえば、データポイズニングが攻撃者グループに多大な利益をもたらす可能性がある場合、トレーニングデータは高いレベルで保護する必要があります。
+    If you don't train/finetune the model, then the supplier of the model is responsible for unwanted content in the training data. This can be poisoned data (see above), data that is confidential, or data that is copyrighted. It is important to check licenses, warranties and contracts for these matters, or accept the risk based on your circumstances.
+
+
+   **Model theft**
+
+    Do you train/finetune the model yourself?
+      - Yes, and is the model regarded intellectual poperty? Then you need to prevent:
+        - [Model theft through use](/goto/modeltheftuse/)
+        - [Model theft development-time](/goto/devmodelleak/)
+        - [Source code/configuration leak](/goto/devcodeleak/)
+        - [Runtime model theft]/(goto/runtimemodeltheft/)
+      
+   **Leaking input data**
+ 
+    Is your input data sensitive?
+      Prevent [leaking input data](/goto/leakinput/). Especially if the model is run by a supplier, proper care needs to be taken that this data is transferred or stored in a protected way and as little as possible. Note, that if you use RAG, that the  data you retrieve and insert into the prompt is also input data. This typically contains company secrets or personal data.
+
+
+   **Misc.**
+
+    Is your model a Large Language Model? Then prevent [insecure output handling](/goto/insecureoutput/), for example when you display the output of the model on a website and the output contains malicious Javascript.
+
+    Make sure to prevent [model inavailability by malicious users](/denialmodelservice/) (e.g. large inputs, many requests). If your model is run by a supplier, then certain countermeasures may already be in place.
+
+    Since AI systems are software systems, they require appropriate conventional application security and operational security, apart from the AI-specific threats and controls mentioned in this section.
+
 
 3. **責任を采配する**: 選択した各脅威に対して、対処する責任者を決定します。デフォルトでは、AI システムの構築と配備を行う組織が責任を負いますが、構築と配備は別の組織が行うかもしれませんし、たとえば、モデルをホストしたり、アプリケーションを実行するためのクラウド環境を提供するなど、構築と配備の一部を別の組織に委ねるかもしれません。いくつかの側面では責任を共有します。
 
