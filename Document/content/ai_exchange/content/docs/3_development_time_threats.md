@@ -165,7 +165,7 @@ Links to standards:
 > Category: group of development-time threats  
 > Permalink: https://owaspai.org/goto/modelpoison/
 
-Model poisoning in de broad sense is manipulating model behaviour by altering training data, code, configuration, or model parameters during development-time.
+Model poisoning in the broad sense is manipulating model behaviour by altering training data, code, configuration, or model parameters during development-time.
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
@@ -307,7 +307,7 @@ Links to standards:
 > Category: development-time threat  
 > Permalink: https://owaspai.org/goto/devmodelpoison/
 
-This threat refers to manipulating behaviour of the model by not poisoning the training data, but insead alter the engineering elements that lead to the model or represent the model (i.e. model parameters) during development time, e.g. by attacking the engineering environment to manipulate storage. When the model is trained by a supplier in a manipulative way and supplied as-is, then it is a [Transfer learning attack](goto/transferlearningattack/).
+This threat refers to manipulating behaviour of the model by not poisoning the training data, but instead alter the engineering elements that lead to the model or represent the model (i.e. model parameters) during development time, e.g. by attacking the engineering environment to manipulate storage. When the model is trained by a supplier in a manipulative way and supplied as-is, then it is a [Transfer learning attack](3_development_time_threats.md#313-transfer-learning-attack).
 Data manipulation is referred to as data poisoning and is covered in separate threats.
 
 **Controls:**
@@ -317,7 +317,7 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 - See controls for broad model poisoning
 - Controls that are aimed to improve the generalization ability of the model - reducing the memorization of any poisoned samples: [training with adversarial samples](2_threats_through_use.md#TRAINADVERSARIAL) and [adversarial robust distillation](2_threats_through_use.md#ADVERSARIALROBUSTDISTILLATION)
 
-### 3.1.3 転移学習攻撃
+### 3.1.3 転移学習攻撃 <a name="313-transfer-learning-attack"></a>
 >Category: development-time threat  
 >Permalink: https://owaspai.org/goto/transferlearningattack/
 
