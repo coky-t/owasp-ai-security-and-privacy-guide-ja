@@ -3,7 +3,7 @@
 
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml.jpg?raw=true"> <!-- {{< image-centered src="/images/aixlogosml.jpg" alt="OWASP AI Exchange Logo" >}} -->
 
-> AI をセキュリティの脅威から保護する方法に関する、専門家による、専門家のための、包括的なガイダンスとアラインメント。
+> AI をセキュリティの脅威から保護する方法に関する、専門家による、専門家のための、包括的なガイダンスとアラインメント。 [OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) の一部。
 
 <!-- {{< spacer height="40" >}} -->
 
