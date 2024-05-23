@@ -4,10 +4,9 @@ excludeSearch: true
 ---
 
 ## プラットフォーム
-
 <!-- {{< cards >}} -->
-- [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
-- [Slack](https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#)    <!-- {{< small-card link="https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#" title="Slack" icon="slack-big" >}} -->
+- [著者に参加](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="著者に参加" icon="login" >}} -->
+- [Slack](https://owasp.org/slack/invite)    <!-- {{< small-card link="https://owasp.org/slack/invite" title="Slack" icon="slack-big" >}} -->
 - [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/)    <!-- {{< small-card link="https://www.linkedin.com/company/owasp-ai-exchange/" title="LinkedIn" icon="linkedin" >}} -->
 - [E-mail](mailto:rob.vanderveer@owasp.org)    <!-- {{< small-card link="mailto:rob.vanderveer@owasp.org" title="E-mail" icon="mail">}} -->
 - [Twitter](https://twitter.com/owasp)    <!-- {{< small-card link="https://twitter.com/owasp" title="Twitter" icon="x-twitter" >}} -->
@@ -34,6 +33,6 @@ AI ライフサイクルに関する ISO/IEC 5338 の筆頭執筆者、AI セキ
 Software Improvement Group の上級主任エキスパート。
 
 - [Twitter](https://twitter.com/robvanderveer "Twitter") <!-- {{< icon "x-twitter" >}} [Twitter](https://twitter.com/robvanderveer "Twitter") -->
-- [Slack](https://owasp.slack.com/team/UF0TXT8VD "Slack")<!-- {{< icon "slack" >}} [Slack](https://owasp.slack.com/team/UF0TXT8VD "Slack") -->
+- [Slack](https://owasp.org/slack/invite "Slack")<!-- {{< icon "slack" >}} [Slack](https://owasp.org/slack/invite "Slack") -->
 - [E-mail](mailto:rob.vanderveer@owasp.org "E-mail") <!-- {{< icon "mail" >}} [E-mail](mailto:rob.vanderveer@owasp.org "E-mail") -->
 - [LinkedIn](https://www.linkedin.com/in/robvanderveer "LinkedIn") <!-- {{< icon "linkedin" >}} [LinkedIn](https://www.linkedin.com/in/robvanderveer "LinkedIn") -->
