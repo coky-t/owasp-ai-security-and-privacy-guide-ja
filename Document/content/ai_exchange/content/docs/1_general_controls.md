@@ -204,6 +204,9 @@ AI/セキュリティに関する一般的な法的考慮事項:
 - 透明性: AI システムのデプロイメント、使用、規制要件への積極的なコンプライアンスにおける透明性を確保します。「Trust by Design」
 - 説明責任: AI システムは、アクション、出力、データセットの使用について説明責任を負うべきです。[AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照。
 
+参考情報
+  - [AI の法的側面について語る Vischer 氏](https://www.vischer.com/en/artificial-intelligence/)
+
 標準へのリンク:
 
   - [OpenCRE のコンプライアンス](https://www.opencre.org/cre/510-324)
