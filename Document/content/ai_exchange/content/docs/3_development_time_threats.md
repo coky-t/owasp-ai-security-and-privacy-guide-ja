@@ -24,18 +24,30 @@ ISO/IEC 42001 B.7.2 briefly mentions development-time data security risks.
 - The below control(s), each marked with a # and a short name in capitals
 
 #### **#DEVDATAPROTECT**
-> Category: development-time information security control  
+> Category: information security control  
 > Permalink: https://owaspai.org/goto/devdataprotect/
 
-Development data protect: protect (train/test) data, source code, configuration & parameters
+This control has been integrated with [#DEVSECURITY](/goto/devsecurity/).
 
-This data protection is important because when it leaks it hurts confidentiality of intellectual property and/or the confidentiality of train/test data which also may contain company secrets, or personal data for example. Also the integrity of this data is important to protect, to prevent data or model poisoning.
+#### #DEVSECURITY
+> Category: development-time information security control  
+> Permalink: https://owaspai.org/goto/devsecurity/
+ 
+Development security: appropriate security of the AI development infrastructure, also taking into account the sensitive information that is typical to AI: training data, test data, model parameters and technical documentation. 
+
+**How:** This can be achieved by adding said assets to the existing security management system. Security involves for example encryption, screening of development personnel, protection of source code/configuration, virus scanning on engineering machines.
+
+**Importance**: In case said assets leak, it hurts confidentiality of intellectual property and/or the confidentiality of train/test data which may contain company secrets, or personal data for example. Also the integrity of this data is important to protect, to prevent data or model poisoning.
+
+**Risks external to the development environment**
+
+Data and models may have been obtained externally, just like software components. Furthermore, software components often run within the AI development environment, introducing new risks, especially given that sensitive data is present in this environment. For details, see [SUPPLYCHAINMANAGE](/goto/supplychainmanage/).
 
 Training data is in most cases only present during development-time, but there are exceptions:
-  - A machine learning model may be continuously trained with data collected runtime, which puts (part of the) train data in the runtime environment, where it also needs protection
-  - For GenAI, information can be retrieved from a repository to be added to a prompt, for example to inform a large language model about the context to take into account for an instruction or question. This principle is called _in-context learning_. For example [OpenCRE-chat](https://opencre.org/chatbot) uses a repository of requirements from security standards to add to a user question so that the large language model is more informed with background information. In the case of OpenCRE-chat this information is public, but in many cases the application of this so-called Retrieval Augmented Generation (RAG) will have a repository with company secrets or otherwise sensitive data. Organizations can benefit from unlocking their unique data, to be used by themselves, or to be provided as service or product. This is an attractive architecture because the alternative would be to train an LLM or to finetune it, which is expensive and difficult. An RAG approach may suffice. Effectively this puts the repository data to the same use as training data is used: control the behaviour of the model. Therefore, the security controls that apply to train data, also apply to this run-time repository data.
+  - A machine learning model may be continuously trained with data collected runtime, which puts (part of the) train data in the runtime environment, where it also needs protection - as covered in this control section
+  - For GenAI, information can be retrieved from a repository to be added to a prompt, for example to inform a large language model about the context to take into account for an instruction or question. This principle is called _in-context learning_. For example [OpenCRE-chat](https://opencre.org/chatbot) uses a repository of requirements from security standards to add to a user question so that the large language model is more informed with background information. In the case of OpenCRE-chat this information is public, but in many cases the application of this so-called Retrieval Augmented Generation (RAG) will have a repository with company secrets or otherwise sensitive data. Organizations can benefit from unlocking their unique data, to be used by themselves, or to be provided as service or product. This is an attractive architecture because the alternative would be to train an LLM or to finetune it, which is expensive and difficult. A RAG approach may suffice. Effectively, this puts the repository data to the same use as training data is used: control the behaviour of the model. Therefore, the security controls that apply to train data, also apply to this run-time repository data.
 
-Protection strategies:
+**Details on the how: protection strategies:**
 
 - Encryption of data at rest  
   Links to standards:
@@ -50,6 +62,7 @@ Protection strategies:
   - There is no ISO 27002 control for this
   - [OpenCRE](https://www.opencre.org/cre/117-371)
 - Operational security to protect stored data  
+  One control to increase development security is to segregate the environment, see [SEGREGATEDATA](/goto/segregatedata/).  
   Links to standards:
   - Many ISO 27002 controls cover operational security. Gap: covers this control fully, with the particularities.
     - ISO 27002 control 5.23 Information security for use of cloud services
@@ -60,20 +73,51 @@ Protection strategies:
   Links to standards:
   - ISO 27002 control 8.16 Monitoring activities. Gap: covers this control fully
   - [OpenCRE on Detect and respond](https://www.opencre.org/cre/887-750)
+- Integrity checking: see section below
 
-#### #DEVSECURITY
-> Category: development-time information security control  
-> Permalink: https://owaspai.org/goto/devsecurity/
+
+**Integrity checking**
+
+Part of development security is checking the integrity of assets. These assets include train/test/validation data, models/model parameters, source code and binairies.
+
+Integrity checks can be performed at various stages including build, deploy, and supply chain management. The integration of these checks helps mitigate risks associated with tampering: unauthorized modifications and mistakes. 
+
+Integrity Checks - Build Stage  
+  During the build stage, it is crucial to validate the integrity of the source code and dependencies to ensure that no unauthorized changes have been introduced. Techniques include:
+  - Source Code Verification: Implementing code signing and checksums to verify the integrity of the source code. This ensures that the code has not been tampered with.
+  - Dependency Management: Regularly auditing and updating third-party libraries and dependencies to avoid vulnerabilities. Use tools like Software Composition Analysis (SCA) to automate this process. See [#SUPPLYCHAINMANAGE](/goto/supplychainmanage/).
+  - Automated Testing: Employing continuous integration (CI) pipelines with automated tests to detect issues early in the development cycle. This includes unit tests, integration tests, and security tests.
  
-Development security: sufficient security of the AI development infrastructure, also taking into account the sensitive information that is typical to AI: training data, test data, model parameters and technical documentation. This can be achieved by adding these assets to the existing security management system. Security involves for example screening of development personnel, protection of source code/configuration, virus scanning on engineering machines.
+  Example: A software company using CI pipelines can integrate automated security tools to scan for vulnerabilities in the codebase and dependencies, ensuring that only secure and verified code progresses through the pipeline.
+ 
+Integrity Checks - Deploy Stage  
+  The deployment stage requires careful management to ensure that the AI models and supporting infrastructure are securely deployed and configured. Key practices include:
+  - Environment Configuration: Ensuring that deployment environments are securely configured and consistent with security policies. This includes the use of Infrastructure as Code (IaC) tools to maintain configuration integrity.
+  - Secure Deployment Practices: Implementing deployment automation to minimize human error and enforce consistency. Use deployment tools that support rollback capabilities to recover from failed deployments.
+  - Runtime Integrity Monitoring: Continuously monitoring the deployed environment for integrity violations. Tools like runtime application self-protection (RASP) can provide real-time protection and alert on suspicious activities.
+ 
+  Example: A cloud-based AI service provider can use IaC tools to automate the deployment of secure environments and continuously monitor for configuration drifts or unauthorized changes.
+ 
+Supply Chain Management  
+  Managing the AI supply chain involves securing the components and processes involved in developing and deploying AI systems. This includes:
+  - Component Authenticity: Using cryptographic signatures to verify the authenticity and integrity of components received from suppliers. This prevents the introduction of malicious components into the system.
+  - For more details, see [#SUPPLYCHAINMANAGE](/goto/supplychainmanage/)
+ 
+  Example: An organization using pre-trained AI models from external vendors can require those vendors to provide cryptographic signatures for model files and detailed security assessments, ensuring the integrity and security of these models before integration.
 
-Apart from the AI-specific assets there is also the AI-specific supply chain of data and models, plus the fact that obtained software components are running in the development environment instead of in test, acceptance or production. This creates new risks of these components being a threat to development security. See [SUPPLYCHAINMANAGE](/goto/supplychainmanage/).
+ 
+A significant step forward for provable machine learning model provenance is the **cryptographic signing of models**, similar in concept to how we secure HTTP traffic using Secure Socket Layer (SSL) or Portable Executable (PE) files with Authenticode. However, there is one key difference: models encompass a number of associated artifacts of varying file formats rather than a single homogenous file, and so the approach must differ.
+As mentioned, models comprise code and data but often require additional information able to execute correctly, such as tokenizers, vocab files, configs, and inference code. These are used to initialize the model so it’s ready to accept data and perform its task. To comprehensively verify a model's integrity, all of these factors must be considered when assessing illicit tampering or manipulation of the model, as any change made to a file that is required for the model to run may introduce a malicious action or degradation of performance to the model. While no standard yet exists to tackle this, there is ongoing work by the OpenSSF Model Signing SIG to define a specification and drive industry adoption. As this is unfolding, there may be interplay with ML-BOM and AI-BOM to be codified into the certificate. Signing and verification will become a major part of the ML ecosystem as it has with many other practices, and guidance will be available following an agreed-upon open-source specification.
 
-One control to increase development security is to segregate the environment, see [SEGREGATEDATA](/goto/segregatedata/).
+The data a model consumes is the most influential part of the MLOps lifecycle and should be treated as such. Data is more often than not sourced from third parties via the internet or gathered on internal data for later training by the model, but can the integrity of the data be assured? 
 
-Links to standards:
+Often, datasets may not just be a collection of text or images but may be comprised of pointers to other pieces of data rather than the data itself. One such dataset is the LAOIN-400m, where pointers to images are stored as URLs - however, data stored at a URL is not permanent and may be subject to manipulation or removal of the content. As such having a level of indirection can introduce integrity issues and leave oneself vulnerable to data poisoning, as was shown by Carlini et al in their paper ‘Poisoning Web-Scale Datasets is practical’. For more information, see the [data poisoning section](/goto/datapoison/). 
+Verification of dataset entries through hashing is of the utmost importance so as to reduce the capacity for tampering, corruption, or potential for data poisoning. 
 
-- ISO 27001 Information Security Management System, with the particularity
+**Links to standards:**
+
+- ISO 27001 Information Security Management System does not cover development-environment security explicitly. Nevertheless, the information security management system is designed to take care of it, provided that the relevant assets and their threats are taken into account. Therefore it is important to add train/test/validation data, model parameters and technical documentation to the existing development environment asset list.
+
 
 #### #SEGREGATEDATA
 > Category: development-time information security control  
