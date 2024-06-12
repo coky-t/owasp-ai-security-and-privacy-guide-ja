@@ -51,6 +51,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Behnaz Karimi</td><td>アクセンチュア</td><td>ドイツ</td><td>モデルの難読化と説明を含む雑多な貢献</td></tr>
     <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要と著作権</td></tr>
     <tr><td>Disesdi Susanna Cox</td><td>BobiHealth</td><td>アメリカ</td><td>連合学習</td></tr>
+    <tr><td>Eoin Wickens</td><td>HiddenLayer</td><td>アメリカ</td><td>開発セキュリティへの追加</td></tr>
     <tr><td>Feiyang Tang</td><td>Software Improvement Group (SIG)</td><td></td><td></td></tr>
     <tr><td>Marko Lihter</td><td>SplxAI</td><td>クロアチア</td><td>組織向けのステップバイステップガイド、ウェブサイト作成、さまざまなテキストの改善</td></tr>
     <tr><td>Niklas Bunzel</td><td>フラウンホーファー研究所</td><td>ドイツ</td><td>回避攻撃に関するデータサイエンスの考察と参考情報</td></tr>
