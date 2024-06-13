@@ -137,6 +137,7 @@ For more development environment security, see [DEVSECURITY](/goto/devsecurity/)
 Links to standards:
 
 - ISO 27002 control 8.31 Separation of development, test and production environments. Gap: covers this control partly - the particularity is that the development environment typically has the sensitive data instead of the production environment - which is typically the other way around in non-AI systems. Therefore it helps to restrict access to that data within the development environment. Even more: within the development environment further segregation can take place to limit access to only those who need the data for their work, as some developers will not be processing data.
+- See the 'How' section above for further standard references
 
 #### #CONFCOMPUTE
 > Category: development-time information security control  
@@ -172,6 +173,12 @@ Federated machine learning may offer significant benefits for organizations in s
 - **Broadcast Latency & Security**. Efficient communication across a federated network introduces additional challenges. While strategies exist to minimize broadcast phase latency, they must also take into consideration potential data security risks. Because models are vulnerable during transmission phases, any communication optimizations must account for data security in transit.
 - **Querying the data creates a risk**. When collected data is stored on multiple clients, central data queries may be required for analysis work, next to Federated learning. Such queries would need the server to have access to the data at all clients, creating a security risk. In order to analyse the data without collecting it, various Privacy-preserving techniques exist, including cryptographic and information-theoretic strategies, such as Secure Function Evaluation (SFE), also known as Secure Multi-Party Computation (SMC/SMPC). However, all approaches entail tradeoffs between privacy and utility.
 
+References:
+
+- Yang, Qiang, Yang Liu, Tianjian Chen and Yongxin Tong. “Federated Machine Learning.” ACM Transactions on Intelligent Systems and Technology (TIST) 10 (2019): 1 - 19. [Link](https://dl.acm.org/doi/10.1145/3298981) (One of the most highly cited papers on FML. More than 1,800 citations.)
+- Wahab, Omar Abdel, Azzam Mourad, Hadi Otrok and Tarik Taleb. “Federated Machine Learning: Survey, Multi-Level Classification, Desirable Criteria and Future Directions in Communication and Networking Systems.” IEEE Communications Surveys & Tutorials 23 (2021): 1342-1397. [Link](https://oulurepo.oulu.fi/bitstream/handle/10024/30908/nbnfi-fe2021090144887.pdf;jsessionid=674F5A465BAAC880DF7621A6772251F8?sequence=1)
+- Sun, Gan, Yang Cong, Jiahua Dong, Qiang Wang and Ji Liu. “Data Poisoning Attacks on Federated Machine Learning.” IEEE Internet of Things Journal 9 (2020): 11365-11375. [Link](https://arxiv.org/pdf/2004.10020.pdf)
+
 Links to standards:
 
 - Not covered yet in ISO/IEC standards
@@ -180,19 +187,26 @@ Links to standards:
 > Category: development-time information security control  
 > Permalink: https://owaspai.org/goto/supplychainmanage/
 
-Supply chain management: Managing the supply chain to minimize the security risk from externally obtained elements. In regular software engineering these elements are source code or software components (e.g. open source). The particularities for AI are:
-1. supplied elements can include data and models, 
+Supply chain management: Managing the supply chain to minimize the security risk from externally obtained elements. In conventional software engineering these elements are source code or software components (e.g. open source). The particularities for AI are:
+1. supplied elements can also include data and models, 
 2. many of the software components are executed development-time instead of just in production (the runtime of the application),
-3. as explained in the development-time threats, there are new vulnerable assets during AI development: training data and model parameters.
+3. as explained in the development-time threats, there are new vulnerable assets during AI development: training data and model parameters - which can fall victim to software components running development-time.
 
-Security risks in obtained data or models can arise from accidental mistakes or from manipulations - just like with obtained source code or software components.
+ad. 1: Security risks in obtained data or models can arise from accidental mistakes or from manipulations - just like with obtained source code or software components.
 
-The AI supply chain can be complex. Just like with obtained source code or software components, data or models may involve multiple suppliers. For example: a model is trained by one vendor and then fine-tuned by another vendor. Or: an AI system contains multiple models, one is a model that has been fine-tuned with data from source X, using a base model from vendor A that claims data is used from sources Y and Z, where the data from source Z was labeled by vendor B.
+ad. 2: Data engineering and model engineering involve operations on data and models for which often external components are used (e.g. tools such as Notebooks, or other MLOps applications). Because AI development has new assets such as the data and model parameters, these components pose a new threat. To make matters worse, data scientists also install dependencies on the Notebooks which makes the data and model engineering environment a dangerous attack vector and the classic supply chain guardrails typically don’t scan it.
+
+**The AI supply chain can be complex**. Just like with obtained source code or software components, data or models may involve multiple suppliers. For example: a model is trained by one vendor and then fine-tuned by another vendor. Or: an AI system contains multiple models, one is a model that has been fine-tuned with data from source X, using a base model from vendor A that claims data is used from sources Y and Z, where the data from source Z was labeled by vendor B.
 Because of this supply chain complexity, data and model provenance is a helpful activity.  The Software Bill Of Materials (SBOM) becomes the AI Bill Of Materials (AIBOM) or Model Bill of Material (MBOM).
 
-Standard supply chain management includes provenance & pedigree, verifying signatures, using package repositories, frequent patching, and using dependency verification tools.
+Standard supply chain management includes:
 
-As said, in AI many of the software components are executed development-time, instead of just in production. Data engineering and model engineering involve operations on data and models for which often external components are used (e.g. tools such as Notebooks, or other MLOps applications). Because AI development has new assets such as the data and model parameters, these components pose a new threat. To make matters worse, data scientists also install dependencies on the Notebooks which makes the data and model engineering environment a dangerous attack vector and the classic supply chain guardrails typically don’t scan it.
+- Supplier Verification: Ensuring that all third-party components, including data, models, and software libraries, come from trusted sources. Provenance & pedigree are in order. This can be achieved through informed supplier selection, supplier audits and requiring attestations of security practices.
+- Traceability and Transparency: Maintaining detailed records of the origin, version, and security posture of all components used in the AI system. This aids in quick identification and remediation of vulnerabilities. This includes the following tactics:
+  - Using package repositories for software components
+  - Using dependency verification tools that identify supplied components and suggest actions
+- Frequent patching (including data and models)
+- Checking integrity of elements (see [#DEVSECURITY](/goto/devsecurity/))
 
 See [MITRE ATLAS - ML Supply chain compromise](https://atlas.mitre.org/techniques/AML.T0010).
 
@@ -317,7 +331,7 @@ Effectiveness:
 - The level of effectiveness needs to be tested by experimenting, which will not give conclusive results, as an attacker my find more clever ways to poison the data than the methods used during testing. It is a best practice to keep the original training data, in order to expertiment with the amount or distortion.
 - This control has no effect against attackers that have direct access to the training data after it has been distorted. For example, if the distorted training data is stored in a file or database to which the attacker has access, then the poisoned samples can still be injected. In other words: if there is zero trust in protection of the engineering environment, then train data distortion is only effective against data poisoning that took place outside the engineering environment (collected during runtime or obtained through the supply chain). This problem can be reduced by creating a trusted environment in which the model is trained, separated from the rest of the engineering environment. By doing so, controls such as train data distortion can be applied in that trusted environment and thus protect against data poisoning that may have taken place in the rest of the engineering environment.
 
-See also [EVASIONROBUSTMODEL](2_threats_through_use.md#EVASIONROBUSTMODEL) on adding noise against evasion attacks and [OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA) to minimize sensitive data through randomisation.
+See also [EVASIONROBUSTMODEL](/goto/evasionrobustmodel/) on adding noise against evasion attacks and [OBFUSCATETRAININGDATA](/goto/obfuscatetrainingdata/) to minimize data for confidentiality purposes (e.g. differential privacy).
 
 Examples:
 
