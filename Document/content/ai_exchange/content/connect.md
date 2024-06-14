@@ -5,7 +5,7 @@ excludeSearch: true
 
 ## プラットフォーム
 <!-- {{< cards >}} -->
-- [著者に参加](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="著者に参加" icon="login" >}} -->
+- [著者への参加申し込み](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="著者への参加申し込み" icon="login" >}} -->
 - [Slack](https://owasp.org/slack/invite)    <!-- {{< small-card link="https://owasp.org/slack/invite" title="Slack" icon="slack-big" >}} -->
 - [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/)    <!-- {{< small-card link="https://www.linkedin.com/company/owasp-ai-exchange/" title="LinkedIn" icon="linkedin" >}} -->
 - [E-mail](mailto:rob.vanderveer@owasp.org)    <!-- {{< small-card link="mailto:rob.vanderveer@owasp.org" title="E-mail" icon="mail">}} -->
