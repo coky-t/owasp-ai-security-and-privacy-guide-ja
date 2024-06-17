@@ -4,9 +4,9 @@ weight: 1
 ---
 ## 要旨 - AI セキュリティをどのように対処するか？
 > このイニシアチブについての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
-このページには AI セキュリティの概要があり、次の 1, 2, 3, 4 ページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/summary/
+このページには AI セキュリティの概要があり、次の 1, 2, 3, 4 ページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。  
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/summary/
 
 AI はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威と、ユースケースごとにどの脅威を優先するかを明確に理解して、AI アプリケーションに取り組むことが不可欠です。標準とガバナンスは AI 機能を活用する個々の事業体にとってこのプロセスの指針となります。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
 
@@ -21,8 +21,8 @@ AI はとてつもない好機を与える一方で、セキュリティ脅威�
 AI システムは、たとえば、大規模言語モデル、線形回帰関数、ルールベースのシステム、統計ベースのルックアップテーブルなどがあることに注意してください。このドキュメント全体を通じて、どのような脅威とコントロールがどのような役割を果たすかが明確になっています。
 
 ## 脅威の概要
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/threatsoverview/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/threatsoverview/
 
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します:
@@ -44,15 +44,15 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 ![AI Security Threats](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/aisecuritymatrix/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/aisecuritymatrix/
 
 以下の AI セキュリティマトリクス (クリックで拡大) は、すべての脅威とリスクを、タイプと影響の順に示しています。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
 
 ## コントロールの概要
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/controlsoverview/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/controlsoverview/
 
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
@@ -97,8 +97,8 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 
 
 ### ナビゲータ図
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/navigator/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/navigator/
 
 以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
 <!-- {{< callout type="info" >}} -->
@@ -108,8 +108,8 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 
 
 ## このドキュメントについて
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/about/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/about/
 
 このドキュメントでは AI サイバーセキュリティに対する脅威と、それらの脅威に対するコントロール (つまり、対策、要件、緩和策) について説明します。
 ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
@@ -133,8 +133,8 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
 
 ## <a name="how-to-select-relevant-threats-and-controls-risk-analysis">関連する脅威とコントロールをどのように選択するか？　リスク分析</a>
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/riskanalysis/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/riskanalysis/
 
 There are many threats and controls described in this document. Your situation and how you use AI determines which threats are relevant to you, to what extent, and what controls are who's responsibility. This selection process can be performed through risk analysis (or risk assessment) in light of the use case and architecture.
 
@@ -312,15 +312,15 @@ AI にはセキュリティリスク以外にもさまざまな種類のリス�
 - **説明責任 (Accountability)**。説明責任とセキュリティの関係は、セキュリティ対策はその対策に至ったプロセスを含めて実証可能であるべきということです。さらに、セキュリティインシデントを検出し、再構築し、対応して、説明責任を果たすためには、他の IT システムと同様に、セキュリティ特性としてのトレーサビリティが重要です。
 
 ### <a name="how-about-privacy">プライバシーについてはどうですか？</a>
-> カテゴリ: ディスカッション
-> Permalink: https://owaspai.org/goto/privacy/
+> カテゴリ: ディスカッション  
+> パーマリンク: https://owaspai.org/goto/privacy/
 
-As any system that processes data, AI systems can have privacy risks. There are some particual privacy aspects to AI:
-- AI systems are data-intensive and typically present additional risks regarding data collection and retention. Personal data may be collected from various sources, each subject to different levels of **sensitivity and regulatory constraints**. Legislation typicalle requires a **legal basis and/or consent** for the collection and use of personal data, and specifies **rights to individuals** to correct, request, and remove their own data.
-- **Protecting training data** is a challenge, especially because it typically needs to be retained for long periods - as models typically need to be retrained. Often, the actual identities of people involved are irrelevant for the data processing objectives, but privacy risks still remain even if identity data is removed because it might be possible to deduce individual identities from the remaining data. This is where differential privacy becomes crucial: by altering the data to make it sufficiently unrecognizable, it ensures individual privacy while still allowing for valuable insights to be derived from the data. Alteration can be done by for example adding noise or aggregating.
+Just like any system that processes data, AI systems can have privacy risks. There are some particual privacy aspects to AI:
+- AI systems are data-intensive and typically present additional risks regarding data collection and retention. Personal data may be collected from various sources, each subject to different levels of **sensitivity and regulatory constraints**. Legislation often requires a **legal basis and/or consent** for the collection and use of personal data, and specifies **rights to individuals** to correct, request, and remove their own data.
+- **Protecting training data** is a challenge, especially because it typically needs to be retained for long periods - as many models need to be retrained. Often, the actual identities of people involved are irrelevant for the model, but privacy risks still remain even if identity data is removed because it might be possible to deduce individual identities from the remaining data. This is where differential privacy becomes crucial: by altering the data to make it sufficiently unrecognizable, it ensures individual privacy while still allowing for valuable insights to be derived from the data. Alteration can be done by for example adding noise or aggregating.
 - An additional complication in the protection of training data is that the **training data is accessible in the engineering environment**, which therefore needs more protection than it usually does - since conventional systems normally don't have personal data available to technical teams.
 - The nature of machine learning allows for certain **unique strategies** to improve privacy, such as federated learning: splitting up the training set in different separated systems - typically aligning with separated data collection.
-- AI systems **make decisions** and if these decisions are about people they may be discriminating regarding certain protected attributes (e.g. gender, race), plus the decisions may result in actions that invade privacy, which makes the model a matter of concern. Furthermore, legislation may prohibit some types of decisions and sets rules regardin transparancy about how these decisions are made, and about how individuals have the right to object.
+- AI systems **make decisions** and if these decisions are about people they may be discriminating regarding certain protected attributes (e.g. gender, race), plus the decisions may result in actions that invade privacy, which may be an ethical or legal concern. Furthermore, legislation may prohibit some types of decisions and sets rules regarding transparancy about how these decisions are made, and about how individuals have the right to object.
 - Last but not least: AI models suffer from **model attack risks** that allow attackers to extract training data from the model, e.g. model inversion, memership inference, and disclosing sensitive data in large language models
 
 
@@ -427,7 +427,7 @@ LLM による主な新しい脅威は何ですか？
 
 ### <a name="how-about-copyright">How about copyright?</a>
 >Category: discussion  
->Permalink: https://owaspai.org/goto/copyright/
+>パーマリンク: https://owaspai.org/goto/copyright/
 
 #### Introduction
 AI and copyright are two (of many) areas of law and policy, (both public and 
@@ -565,8 +565,8 @@ Precedent | Fieldfisher](https://www.fieldfisher.com/en/insights/ai-related-laws
 
 
 ## OWASP AI Exchange の参考情報
->カテゴリ: ディスカッション
->Permalink: https://owaspai.org/goto/references/
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/references/
 
 AI Exchange についてのウェビナーやポッドキャストは [Media ページ](https://owaspai.org/media/) を参照してください。
 
