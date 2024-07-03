@@ -2,15 +2,15 @@
 title: 1. 一般的なコントロール
 weight: 2
 ---
-> カテゴリ: コントロールのグループ
-> Permalink: https://owaspai.org/goto/generalcontrols/
+> カテゴリ: コントロールのグループ  
+> パーマリンク: https://owaspai.org/goto/generalcontrols/
 ## 1.1 一般的なガバナンスコントロール
-> カテゴリ: コントロールのグループ
-> Permalink: https://owaspai.org/goto/governancecontrols/
+> カテゴリ: コントロールのグループ  
+> パーマリンク: https://owaspai.org/goto/governancecontrols/
 
 #### #AIPROGRAM
-> カテゴリ: ガバナンスコントロール
-> Permalink: https://owaspai.org/goto/aiprogram/
+> カテゴリ: ガバナンスコントロール  
+> パーマリンク: https://owaspai.org/goto/aiprogram/
 
 AI プログラム: AI を制御するプログラムをインストールして実行します。組織として AI に責任を持ち、AI への取り組みの一覧表を作成し、リスク分析を行い、それらのリスクを管理します。
 
@@ -54,8 +54,8 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
  - [UNESCO on AI ethics and governance](https://www.unesco.org/ethics-ai/en)
 
 #### #SECPROGRAM
-> カテゴリ: ガバナンスコントロール
-> Permalink: https://owaspai.org/goto/secprogram/
+> カテゴリ: ガバナンスコントロール  
+> パーマリンク: https://owaspai.org/goto/secprogram/
 
 セキュリティプログラム: 組織にセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) があり、AI ライフサイクル全体と AI 固有の側面を含むことを確認します。
 
@@ -129,8 +129,8 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 
 #### #SECDEVPROGRAM
-> カテゴリ: ガバナンスコントロール
-> Permalink: https://owaspai.org/goto/secdevprogram/
+> カテゴリ: ガバナンスコントロール  
+> パーマリンク: https://owaspai.org/goto/secdevprogram/
 
 セキュア開発プログラム: ソフトウェア開発に関するプロセスを整備し、AI システムにセキュリティが組み込まれていることを確認します。
 
@@ -160,8 +160,8 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 - [NIST SSDF AI practices](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.ipd.pdf)
 
 #### #DEVPROGRAM
-> カテゴリ: ガバナンスコントロール
-> Permalink: https://owaspai.org/goto/devprogram/
+> カテゴリ: ガバナンスコントロール  
+> パーマリンク: https://owaspai.org/goto/devprogram/
 
 開発プログラム: AI の開発ライフサイクルプログラムを持つこと。一般的な (セキュリティ指向だけではない) ソフトウェアエンジニアリングのベストプラクティスを AI 開発に適用します。
 
@@ -195,8 +195,8 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
   - [AI システムにおけるコード品質のギャップに関する研究](https://www.softwareimprovementgroup.com/averting-a-major-ai-crisis-we-need-to-fix-the-big-quality-gap-in-ai-systems/)
 
 #### #CHECKCOMPLIANCE
-> カテゴリ: ガバナンスコントロール
-> Permalink: https://owaspai.org/goto/checkcompliance/
+> カテゴリ: ガバナンスコントロール  
+> パーマリンク: https://owaspai.org/goto/checkcompliance/
 
 コンプライアンスのチェック: コンプライアンスマネジメント (セキュリティの側面を含む) において、AI 関連の法規制が考慮されていることを確認します。個人データが関連する場合や個人に関する意思決定に AI が適用される場合は、プライバシーの法規制も適用範囲となります。AI のプライバシーの側面については [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) を参照してください。
 目標としてのコンプライアンスは組織が AI への対応を高める強力な推進力となり得ます。そのためには、法規制には必ずしも組織に関連するすべてのリスクが含まれるわけではない範囲があることを念頭に置くことが重要です。多くの規則は個人や社会に対する潜在的な危害に関するものであり、ビジネスプロセス自体への影響はカバーしていません。たとえば、欧州の AI 法には企業秘密保護に関するリスクは含まれません。つまり、法律や規制をガイドとして使用する際には、盲点に注意する必要があります。
@@ -231,8 +231,8 @@ AI/セキュリティに関する一般的な法的考慮事項:
   - ISO 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
 
 #### #SECEDUCATE
-> カテゴリ: ガバナンスコントロール
-> Permalink: https://owaspai.org/goto/seceducate/
+> カテゴリ: ガバナンスコントロール  
+> パーマリンク: https://owaspai.org/goto/seceducate/
 
 データサイエンティストと開発チームに対して、モデルへの攻撃を含む AI 脅威の意識に関するセキュリティ教育を実施します。データサイエンティストを含むすべてのエンジニアがセキュリティの考え方を身につけることが不可欠です。
 
@@ -243,14 +243,14 @@ AI/セキュリティに関する一般的な法的考慮事項:
 ---
 
 ## 1.2 機密データ制限の一般的なコントロール
-> カテゴリ: コントロールのグループ
-> Permalink: https://owaspai.org/goto/datalimit/
+> カテゴリ: コントロールのグループ  
+> パーマリンク: https://owaspai.org/goto/datalimit/
 
 機密性と完全性に対するセキュリティ脅威の影響は、データの攻撃対象領域を制限することで軽減できます。つまり、データの量と種類および保存期間を可能な限り減らします。このセクションではこの制限を適用するためのいくつかのコントロールについて説明します。
 
 #### #DATAMINIMIZE
-> カテゴリ: 開発時および実行時のコントロール
-> Permalink: https://owaspai.org/goto/secdevprogram/
+> カテゴリ: 開発時および実行時のコントロール  
+> パーマリンク: https://owaspai.org/goto/secdevprogram/
 
 データの最小化: 潜在的なデータ漏洩や操作を防ぐために、アプリケーションにとって不必要なデータフィールドや (トレーニングセットなどからの) レコードを削除あるいは匿名化します。
 
@@ -263,8 +263,8 @@ AI/セキュリティに関する一般的な法的考慮事項:
   - ISO/IEC 標準ではまだカバーされていません。
 
 #### #ALLOWEDDATA
-> カテゴリ: 開発時および実行時のコントロール
-> Permalink: https://owaspai.org/goto/alloweddata/
+> カテゴリ: 開発時および実行時のコントロール    
+> パーマリンク: https://owaspai.org/goto/alloweddata/
 
 許可されたデータを確認します。つまり、意図した目的では禁止されているデータを (トレーニングデータなどから) 削除することを意味します。これは同意が得られておらず、データに別の目的で収集された個人情報を含む場合に特に重要です。
 
@@ -275,8 +275,8 @@ AI/セキュリティに関する一般的な法的考慮事項:
   - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
 
 #### #SHORTRETAIN
-> カテゴリ: 開発時および実行時のコントロール
-> Permalink: https://owaspai.org/goto/shortretain/
+> カテゴリ: 開発時および実行時のコントロール    
+> パーマリンク: https://owaspai.org/goto/shortretain/
 
 短期保持: 必要がなくなったり、法的に (プライバシー法などにより) 要求された場合、データを削除または匿名化します。
 
@@ -296,7 +296,11 @@ Obfuscate training data: attain a degree of obfuscation of sensitive data where 
 
 Purpose: minimize the impact of data leakage or manipulation
 
-When obfuscating training data is done for personal data, it is referred to as _differential privacy_ which is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
+**Anonymization**  
+Obfuscation for data on individuals has the goal to anonymize, meaning to prevent re-identification: deducing or inducing someone's identity.   
+Be very careful with anonymization: removing or obfuscating PII / personal data is often not sufficient, as someone's identity may be induced from the other data that you keep of the person (locations, times, visited websites, activities together with data and time, etc).  
+The risk of re-identification can be assessed by experts using statistical properties such as K-anonymity, L-diversity, and T-closeness.  
+Anonymity is not an absolute concept, but a statistical one. Even if someone's identity can be guessed from data with some certainty, it can be harmful. The concept of _differential privacy_ helps to analyse the level of anonymity. It is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
 
 Distorting training data can make it effectively uncrecognizable, which of course needs to be weighed against the inaccuracy that this typically creates. See also [TRAINDATADISTORTION](/goto/traindatadistortion/) which is about distortion against data poisoning and [EVASIONROBUSTMODEL](/goto/evasionrobustmodel/) for distortion against evasion attacks. Together with this control OBFUSCATETRAININGDATA, these are all approaches that distort training data, but for different purposes.
 
