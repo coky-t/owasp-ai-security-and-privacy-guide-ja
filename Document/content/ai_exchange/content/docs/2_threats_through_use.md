@@ -472,14 +472,16 @@ The disclosure is caused by an unintentional fault of including this data, and e
 **Controls specific for sensitive data output from model:**
 
 - See [General controls](1_general_controls.md), especially [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
-- See [controls for threats through use](2_threats_through_use.md)
+- See [controls for threats through use](2_threats_through_use.md), to limit the model user group, the amount of access and to detect disclosure attempts
 - The below control(s), each marked with a # and a short name in capitals
 
 #### #FILTERSENSITIVEMODELOUTPUT 
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/filtersensitivemodeloutput/
 
-Filter sensitive model output: actively censor sensitive data by detecting it when possible (e.g. phone number)
+Filter sensitive model output: actively censor sensitive data by detecting it when possible (e.g. phone number).
+
+A variation of this filtering is providing a GenAI model with instructions (e.g. in a _system prompt_) not to disclose certain data, which is susceptible to [Direct prompt injection](4_runtime_application_security_threats.md#45-direct-prompt-injection) attacks.
 
 Links to standards:
 
