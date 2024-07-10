@@ -24,6 +24,7 @@
 - [2. 使用による脅威](docs/2_threats_through_use.md)    <!-- {{< small-card link="/docs/2_threats_through_use/" title="2. 使用による脅威">}} -->
 - [3. 開発時の脅威](docs/3_development_time_threats.md)    <!-- {{< small-card link="/docs/3_development_time_threats/" title="3. 開発時の脅威">}} -->
 - [4. 実行時のアプリケーションのセキュリティ脅威](docs/4_runtime_application_security_threats.md)    <!-- {{< small-card link="/docs/4_runtime_application_security_threats/" title="4. 実行時のアプリケーションのセキュリティ脅威">}} -->
+- [参考情報](docs/ai_security_references.md)    <!-- {{< small-card link="/docs/ai_security_references/" title="References">}} -->
 <!-- {{< /cards >}} -->
 
 ## 趣旨
@@ -38,9 +39,10 @@ AI セキュリティコミュニティによる [OWASP AI Exchange](https://owa
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="cc:attributionName">AI セキュリティコミュニティ</span> による <a property="dct:title" rel="cc:attributionURL" href="https://owaspai.org">OWASP AI Exchange</a> には <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1"></a> のマークが付けられており、著作権や帰属を明示することなく、どの部分でも自由に利用できることを意味します。可能であれば、読者がより多くの情報を見つけられるように、OWASP AI Exchange のクレジットやリンクを記載していただけると幸いです。</p>
 
-## その他の OWASP AI イニシアチブ
+## OWASP AI イニシアチブ
 
 <!-- {{< cards >}} -->
+- [OWASP AI Exchange](https://owaspai.org/)    <!-- {{< small-card link="https://owaspai.org/" title="OWASP AI Exchange (this)" icon="lock-closed" >}} -->
 - [AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/)    <!-- {{< small-card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI セキュリティおよびプライバシーガイド" icon="lock-closed" >}} -->
 - [LLM Top 10](https://llmtop10.com/)    <!-- {{< small-card link="https://llmtop10.com/" title="LLM Top 10" icon="brain" >}} -->
 - [ML Top 10](https://mltop10.info/)    <!-- {{< small-card link="https://mltop10.info/" title="ML Top 10" icon="machinelearning" >}} -->
