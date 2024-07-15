@@ -318,6 +318,8 @@ AI の側面を明確にし、それらがセキュリティとどのように�
   - [開発時](3_development_time_threats.md#32-sensitive-data-leak-development-time) または実行時 (下記参照) に、トレーニングデータ、モデル入力、出力、またはモデル自体などの AI 資産を盗みます
   - さらに [実行時の従来のセキュリティ攻撃](4_runtime_application_security_threats.md##41-non-ai-specific-application-security-threats)
 
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/aiwayfinder.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/aiwayfinder.png)
+
 ### <a name="how-about-privacy">プライバシーについてはどうですか？</a>
 > カテゴリ: ディスカッション  
 > パーマリンク: https://owaspai.org/goto/privacy/
