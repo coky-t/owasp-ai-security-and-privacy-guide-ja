@@ -40,9 +40,10 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 
 <table border='1'>
     <tr><th>名前</th><th>会社</th><th>国</th><th>貢献</th></tr>
+    <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクト創設者兼リーダー、コンテンツ、リーダーシップチーム</b></td></tr>
     <tr><td><b>Chris Ancharski</b></td><td>Global community builder</td><td>アメリカ</td><td>エンゲージメントスペシャリスト、リーダーシップチーム</td></tr>
-    <tr><td>John Sotiropoulos</td><td>Kainos</td><td></td><td>リーダーシップチームからの渉外</td></tr>
-    <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクトリーダー</b></td></tr>
+    <tr><td>John Sotiropoulos</td><td>Kainos</td><td></td><td>渉外、コンテンツ、リーダーシップチーム</td></tr>
+    <tr><td><b>Aruneesh Salhotra</b></td><td>SNM Consulting Inc</td><td>アメリカ</td><td><b>アウトリーチ、マネジメント、コンテンツ、リーダーシップチーム</b></td></tr>
     <tr><td>Adelin Travers</td><td>Trail of Bits</td><td></td><td></td></tr>
     <tr><td>Alon Tron</td><td>Stealth</td><td>イスラエル</td><td>サプライチェーンマネジメントの改善</td></tr>
     <tr><td>Angie Qarry</td><td>QDeepTech</td><td>オーストリア</td><td>データサイエンス防御メカニズムに関するいくつかの詳細と参考情報</td></tr>
