@@ -3,7 +3,7 @@ title: AI セキュリティ概要
 weight: 1
 ---
 ## 要旨 - AI セキュリティをどのように対処するか？
-> このイニシアチブについての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
+> このイニシアチブ (OWASP AI Exchange) についての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
 このページには AI セキュリティの概要があり、次の 1, 2, 3, 4 ページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。  
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/summary/
@@ -19,6 +19,35 @@ AI はとてつもない好機を与える一方で、セキュリティ脅威�
 - 権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
 
 AI システムは、たとえば、大規模言語モデル、線形回帰関数、ルールベースのシステム、統計ベースのルックアップテーブルなどがあることに注意してください。このドキュメント全体を通じて、どのような脅威とコントロールがどのような役割を果たすかが明確になっています。
+
+---
+
+## このドキュメントについて
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/about/
+
+このドキュメントでは AI サイバーセキュリティに対する脅威と、それらの脅威に対するコントロール (つまり、対策、要件、緩和策) について説明します。
+ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
+
+AI Exchange イニシアチブは OWASP により採択されており、[Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって起こされました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) のシニアディレクター、AI とセキュリティで 31 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で EU AI 法に関するセキュリティ要件に取り組んでいます。
+
+この資料はすべて草案であり、他の人がレビューして修正できるよう仕掛品です。
+これは EU AI 法、AI セキュリティに関する ISO/IEC 27090、AI プライバシーに関する ISO/IEC 27091、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/) などの進行中の主要なイニシアチブへのインプットとして機能し、さらに多くのイニシアチブが世界中で一貫した用語と洞察から恩恵を受けることができます。
+
+### 情報源
+
+- オープンソースとしてこれに貢献した AI セキュリティの専門家たち。
+- これらの専門家の洞察はこのドキュメントの末尾に参考情報として記載されている研究成果 (ENISA, NIST, Microsoft, BIML, MITRE など) からインスピレーションを得たものです。
+
+### 脅威とコントロールをどのように整理するか
+
+脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル盗用は概要の三つの異なる部分で言及されています。
+
+1. 稼働中のシステムからモデルパラメータを盗むことによるモデル盗用。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
+2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル盗用。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
+3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
+
+---
 
 ## 脅威の概要
 >カテゴリ: ディスカッション  
@@ -50,6 +79,8 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 以下の AI セキュリティマトリクス (クリックで拡大) は、すべての脅威とリスクを、タイプと影響の順に示しています。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
 
+---
+
 ## コントロールの概要
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/controlsoverview/
@@ -63,7 +94,7 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 2. AI システムは IT システムであるため、従来の **技術的な IT セキュリティコントロール** を適用します。
     - 2a **標準** 的な従来の IT セキュリティコントロール (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
-        >([DEVDATAPROTECT](3_development_time_threats.md#DEVDATAPROTECT), [DEVSECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), [SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE), [DISCRETE](1_general_controls.md#DISCRETE))
+        >([DEVSECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), [SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE), [DISCRETE](1_general_controls.md#DISCRETE))
       - 実行時: モデルの保存、モデルの使用、プラグイン、モデルの入出力
         >([RUNTIMEMODELINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIMEMODELIOINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIMEMODELCONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODEMODELOUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMITRESOURCES](2_threats_through_use.md#LIMITRESOURCES))
     - 2b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
@@ -80,7 +111,6 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 5. モデルが間違いや操作によって望ましくない方法で動作する可能性があるため、**動作への影響を制御** します。
    >([OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEASTMODELPRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
 
-
 すべての脅威とコントロールについては AI Exchange の詳細なコンテンツで説明します。
 
 ### 脅威モデルとコントロール - 生成 AI をトレーニング/ファインチューニング
@@ -95,6 +125,32 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 
 [![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
 
+### AI Exchange lookup table
+>Category: discussion  
+>Permalink: https://owaspai.org/goto/lookuptable/
+
+The below table, called the AI Exchange lookup table, shows the various threats, their impact and the corresponding controls, organized by asset, impact and attack surface:
+|Asset & Impact|Attack surface with lifecycle|Threat/Risk category|Controls|
+|-|-|-|-|
+|Model behaviour Integrity|Runtime -Model use (provide input/ read output)|[Direct prompt injection](/goto/directpromptinjection/)|Implemented in the model itself, [Input validation](/goto/promptinputvalidation/)|
+|&nbsp;&nbsp;,,  ,, |&nbsp;&nbsp;,,  ,, |[Indirect prompt injection](/goto/indirectpromptinjection/)|[Input validation](/goto/promptinputvalidation/), [Input segregation](/goto/inputsegregation/)|
+|&nbsp;&nbsp;,,  ,, |Runtime - Break into deployed model|[Model poisoning runtime](/goto/runtimemodelpoison/) (reprogramming)|[Runtime model integrity](/goto/runtimemodelintegrity/), [runtime model input/output integrity](/goto/runtimemodeliointegrity/)|
+|&nbsp;&nbsp;,,  ,, |&nbsp;&nbsp;,,  ,, |[Evasion](/goto/evasion/) (e.g. adversarial examples)|[Monitor](/goto/monitoruse/), [rate limit](/goto/ratelimit/), [model access control](/goto/modelaccesscontrol/) plus:<br><br> [Detect odd input](/goto/detectoddinput/), [detect adversarial input](/goto/detectadversarialinput/), [evasion robust model](/goto/evasionrobustmodel/), [train adversarial](/goto/trainadversarial/), [input distortion](/goto/inputdistortion/), [adversarial robust distillation](/goto/adversarialrobustdistillation/)|
+|&nbsp;&nbsp;,,  ,, |Development -Engineering environment|[Model poisoning development time](/goto/devmodelpoison/)|[Development environment security](/goto/devsecurity/), [data segregation](/goto/segregatedata/), [federated learning](/goto/federatedlearning/), [supply chain management](/goto/supplychainmanage/) plus:<br><br>[model ensemble](/goto/modelensemble/)|
+|&nbsp;&nbsp;,,  ,, |&nbsp;&nbsp;,,  ,, |[Data poisoning of train/finetune data](/goto/datapoison/)|[Development environment security](/goto/devsecurity/), [data segregation](/goto/segregatedata/), [federated learning](/goto/federatedlearning/), [supply chain management](/goto/supplychainmanage/) plus:<br><br>  [model ensemble](/goto/modelensemble/) plus:<br><br>  [More training data](/goto/moretraindata/), [data quality control](/goto/dataqualitycontrol/), [train data distortion](/goto/traindatadistortion/), [poison robust model](/goto/poisonrobustmodel/)|
+|&nbsp;&nbsp;,,  ,, |Development - Supply chain|[Model/data poisoning in supply chain](/goto/transferlearningattack/)|Supplier: [Development environment security](/goto/devsecurity/), [data segregation](/goto/segregatedata/), [federated learning](/goto/federatedlearning/)<br><br>Producer: [supply chain management](/goto/supplychainmanage/) plus:<br><br>[model ensemble](/goto/modelensemble/)|
+|Training data Confidentiality|Runtime - Model use|[Data disclosure in model output](/goto/disclosureuseoutput/)|[Sensitive data limitation](/goto/datalimit/) (data minimize, short retain, obfuscate training data) plus:<br><br>[Monitor](/goto/monitoruse/), [rate limit](/goto/ratelimit/), [model access control](/goto/modelaccesscontrol/) plus:<br><br>[Filter sensitive model output](/goto/filtersensitivemodeloutput/)|
+|&nbsp;&nbsp;,,  ,, |&nbsp;&nbsp;,,  ,, |[Model inversion / Membership inference](/goto/modelinversionandmembership/)|[Sensitive data limitation](/goto/datalimit/) (data minimize, short retain, obfuscate training data) plus:<br><br>[Monitor](/goto/monitoruse/), [rate limit](/goto/ratelimit/), [model access control](/goto/modelaccesscontrol/) plus:<br><br>  [Obscure confidence](/goto/obscureconfidence/), [Small model](/goto/smallmodel/)|
+|&nbsp;&nbsp;,,  ,, |Development - Engineering environment|[Training data leaks](/goto/devdataleak/)|[Sensitive data limitation](/goto/datalimit/) (data minimize, short retain, obfuscate training data) plus:<br><br>[Development environment security](/goto/devsecurity/), [data segregation](/goto/segregatedata/), [federated learning](/goto/federatedlearning/)|
+|Model confidentiality|Runtime - Model use|[Model theft through use](/goto/modeltheftuse/) (input-output harvesting)|[Monitor](/goto/monitoruse/), [rate limit](/goto/ratelimit/), [model access control](/goto/modelaccesscontrol/)|
+|&nbsp;&nbsp;,,  ,, |Runtime - Break into deployed model|[Direct model theft runtime](/goto/runtimemodeltheft/)|[Runtime model confidentiality](/goto/runtimemodelconfidentiality/), [Model obfuscation](/goto/modelobfuscation/)|
+|&nbsp;&nbsp;,,  ,, |Development - Engineering environment|[Model theft development-time](/goto/devmodelleak/)|[Development environment security](/goto/devsecurity/), [data segregation](/goto/segregatedata/), [federated learning](/goto/federatedlearning/)|
+|Model behaviour Availability|Model use|[Denial of model service](/goto/denialmodelservice/) (model resource depletion)|[Monitor](/goto/monitoruse/), [rate limit](/goto/ratelimit/), [model access control](/goto/modelaccesscontrol/) plus:<br><br>[Dos input validation](/goto/dosinputvalidation/), [limit resources](/goto/limitresources/)|
+|Model input data Confidentialiy|Runtime - All IT|[Model input leak](/goto/leakinput/)|[Model input confidentiality](/goto/modelinputconfidentiality/)|
+|Any asset, CIA|Runtime-All IT|[Model output contains injection](/goto/insecureoutput/)|[Encode model output](/goto/encodemodeloutput/)|
+|Any asset, CIA|Runtime - All IT|Conventional runtime security attack on conventional asset|Conventional runtime security controls|
+|Any asset, CIA|Runtime - All IT|Conventional attack on conventional supply chain|Conventional supply chain management controls|
+
 
 ### ナビゲータ図
 >カテゴリ: ディスカッション  
@@ -106,31 +162,7 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
 <!-- {{< /callout >}} -->
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
 
-
-## このドキュメントについて
->カテゴリ: ディスカッション  
->パーマリンク: https://owaspai.org/goto/about/
-
-このドキュメントでは AI サイバーセキュリティに対する脅威と、それらの脅威に対するコントロール (つまり、対策、要件、緩和策) について説明します。
-ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
-
-AI Exchange イニシアチブは OWASP により採択されており、[Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって起こされました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) のシニアディレクター、AI とセキュリティで 31 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で EU AI 法に関するセキュリティ要件に取り組んでいます。
-
-この資料はすべて草案であり、他の人がレビューして修正できるよう仕掛品です。
-これは EU AI 法、AI セキュリティに関する ISO/IEC 27090、AI プライバシーに関する ISO/IEC 27091、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/) などの進行中の主要なイニシアチブへのインプットとして機能し、さらに多くのイニシアチブが世界中で一貫した用語と洞察から恩恵を受けることができます。
-
-### 情報源
-
-- オープンソースとしてこれに貢献した AI セキュリティの専門家たち。
-- これらの専門家の洞察はこのドキュメントの末尾に参考情報として記載されている研究成果 (ENISA, NIST, Microsoft, BIML, MITRE など) からインスピレーションを得たものです。
-
-### 脅威とコントロールをどのように整理するか
-
-脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル盗用は概要の三つの異なる部分で言及されています。
-
-1. 稼働中のシステムからモデルパラメータを盗むことによるモデル盗用。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
-2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル盗用。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
-3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
+---
 
 ## <a name="how-to-select-relevant-threats-and-controls-risk-analysis">関連する脅威とコントロールをどのように選択するか？　リスク分析</a>
 >カテゴリ: ディスカッション  
@@ -277,6 +309,7 @@ In the end you need to be able to accept the risks that remain regarding each th
 ### 10. Further management of these controls
 (see [SECPROGRAM](/goto/secprogram/)), which includes continuous monitoring, documentation, reporting, and incident response.
 
+---
 
 ## ... についてはどうですか？
 ### 機械学習以外の AI についてはどうですか？
@@ -404,7 +437,7 @@ LLM による主な新しい脅威は何ですか？
 - サプライチェーンを保護します:
   #[SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
 - 資産を特定、追跡、保護します:
-  #[DEVDATAPROTECT](3_development_time_threats.md#DEVDATAPROTECT), #[DEVSECURITY](3_development_time_threats.md#DEVSECURITY), #[SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), #[CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), #[MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[RUNTIMEMODELCONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), #[DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE), #[ALLOWEDDATA](1_general_controls.md#ALLOWEDDATA), #[SHORTRETAIN](1_general_controls.md#SHORTRETAIN), #[OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA) および #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部
+  #[DEVSECURITY](3_development_time_threats.md#DEVSECURITY), #[SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), #[CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), #[MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[RUNTIMEMODELCONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), #[DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE), #[ALLOWEDDATA](1_general_controls.md#ALLOWEDDATA), #[SHORTRETAIN](1_general_controls.md#SHORTRETAIN), #[OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA) および #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部
 - データ、モデル、プロンプトを文書化します:
   #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 - 技術的負債を管理します:
