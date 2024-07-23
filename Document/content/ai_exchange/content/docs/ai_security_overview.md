@@ -100,7 +100,7 @@ AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) �
     - 2b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
       >([MONITORUSE](2_threats_through_use.md#MONITORUSE), [MODELACCESSCONTROL](2_threats_through_use.md#MODELACCESSCONTROL), [RATELIMIT](2_threats_through_use.md#RATELIMIT))
     - 2c **新規** の IT セキュリティコントロールを採用します。
-      >([CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODELOBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [PROMPTINPUTVALIDATION](4_runtime_application_security_threats.md#PROMPTINPUTVALIDATION), [INPUTSEGREGATION](4_runtime_application_security_threats.md#INPUTSEGREGATION))
+      >([CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODELOBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [PROMPTINPUTVALIDATION](2_threats_through_use.md#PROMPTINPUTVALIDATION), [INPUTSEGREGATION](2_threats_through_use.md#INPUTSEGREGATION))
 3. データサイエンティストはリスクベースの **データサイエンスセキュリティコントロール** を適用します。
     - 3a モデル開発時の開発時コントロール
       >([FEDERATEDLEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASIONROBUSTMODEL](2_threats_through_use.md#EVASIONROBUSTMODEL), [POISONROBUSTMODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAINADVERSARIAL](2_threats_through_use.md#TRAINADVERSARIAL), [TRAINDATADISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIALROBUSTDISTILLATION](2_threats_through_use.md#ADVERSARIALROBUSTDISTILLATION), [MODELENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORETRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALLMODEL](2_threats_through_use.md#SMALLMODEL), [DATAQUALITYCONTROL](3_development_time_threats.md#DATAQUALITYCONTROL))
@@ -448,7 +448,7 @@ LLM による主な新しい脅威は何ですか？
 - インフラストラクチャを保護します:
   #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部と「資産を特定、追跡、保護します」を参照してください
 - モデルを継続的に保護します:
-  #[INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), #[FILTERSENSITIVEMODELOUTPUT](2_threats_through_use.md#FILTERSENSITIVEMODELOUTPUT), #[RUNTIMEMODELIOINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), #[MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[PROMPTINPUTVALIDATION](4_runtime_application_security_threats.md#PROMPTINPUTVALIDATION), #[INPUTSEGREGATION](4_runtime_application_security_threats.md#INPUTSEGREGATION)
+  #[INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), #[FILTERSENSITIVEMODELOUTPUT](2_threats_through_use.md#FILTERSENSITIVEMODELOUTPUT), #[RUNTIMEMODELIOINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), #[MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[PROMPTINPUTVALIDATION](2_threats_through_use.md#PROMPTINPUTVALIDATION), #[INPUTSEGREGATION](2_threats_through_use.md#INPUTSEGREGATION)
 - インシデント管理手順を策定します:
   #[SECPROGRAM](1_general_controls.md#SECPROGRAM) の一部
 - 責任をもって AI をリリースします:
