@@ -13,7 +13,7 @@
 - [貢献](contribute.md)    <!-- {{< small-card link="/contribute" title="貢献" icon="star" >}} -->
 - [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
 - [メディア](media.md)    <!-- {{< small-card link="/media" title="メディア" icon="speakerphone" >}} -->
-- [ナビゲータ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)    <!-- {{< small-card link="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf" title="ナビゲータ" icon="document-download">}} -->
+- [周期表](docs/ai_security_overview.md#periodic-table-of-ai-security)    <!-- {{< small-card link="/goto/periodictable/" title="周期表" icon="document-text">}} -->
 <!-- {{< /cards >}} -->
 
 ## コンテンツ
