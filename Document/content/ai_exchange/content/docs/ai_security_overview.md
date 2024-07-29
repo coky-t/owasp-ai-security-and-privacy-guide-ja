@@ -4,11 +4,10 @@ weight: 1
 ---
 ## 要旨 - AI セキュリティをどのように対処するか？
 > このイニシアチブ (OWASP AI Exchange) についての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
-このページには AI セキュリティの概要があり、次の 1, 2, 3, 4 ページでは主要なコンテンツである AI に対するセキュリティ脅威とそのコントロールの詳細を提供します。各ページの下部または左サイドバーでページを移動できます。右サイドバーにはページのさまざまなセクションを表示します。小さい画面ではメニューから移動できます。  
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/summary/
 
-AI はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威と、ユースケースごとにどの脅威を優先するかを明確に理解して、AI アプリケーションに取り組むことが不可欠です。標準とガバナンスは AI 機能を活用する個々の事業体にとってこのプロセスの指針となります。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
+AI はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
 
 - **AI ガバナンス** を導入します。
 - このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して **セキュリティプラクティスを拡張** します。
@@ -26,27 +25,26 @@ AI システムは、たとえば、大規模言語モデル、線形回帰関�
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/about/
 
-このドキュメントでは AI サイバーセキュリティに対する脅威と、それらの脅威に対するコントロール (つまり、対策、要件、緩和策) について説明します。
+This page contains an overview of AI security and the next pages provide the main content about security threats to AI and controls against them, organized by attack surface:
+1. [General controls, such as AI governance](/goto/generalcontrols/)
+2. [Threats through use, such as Evasion attacks](/goto/threatsuse/)
+3. [Development-time threats, such as data poisoning](/goto/developmenttime/)
+4. [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
+
+You can navigate through pages at the bottom of every page, or in the left sidebar. The right sidebar shows the different sections on a page. On small screens you can navigate through the menu.  
+
 ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
 
 AI Exchange イニシアチブは OWASP により採択されており、[Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって起こされました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) のシニアディレクター、AI とセキュリティで 31 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で EU AI 法に関するセキュリティ要件に取り組んでいます。
 
-この資料はすべて草案であり、他の人がレビューして修正できるよう仕掛品です。
+This material is evolving constantly through open source continuous delivery. The authors group consists of 50 experts (researchers, practitioners, vendors, data scientists, etc.) and other people in the community are welcome to provide input too. See the [contribute page](/contribute).
 これは EU AI 法、AI セキュリティに関する ISO/IEC 27090、AI プライバシーに関する ISO/IEC 27091、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/) などの進行中の主要なイニシアチブへのインプットとして機能し、さらに多くのイニシアチブが世界中で一貫した用語と洞察から恩恵を受けることができます。
 
-### 情報源
-
-- オープンソースとしてこれに貢献した AI セキュリティの専門家たち。
-- これらの専門家の洞察はこのドキュメントの末尾に参考情報として記載されている研究成果 (ENISA, NIST, Microsoft, BIML, MITRE など) からインスピレーションを得たものです。
-
-### 脅威とコントロールをどのように整理するか
-
-脅威は影響ごとではなく、攻撃対象領域 (攻撃がどこでどのように行われるか) ごとに整理されています。これは、たとえばモデル盗用は概要の三つの異なる部分で言及されています。
-
-1. 稼働中のシステムからモデルパラメータを盗むことによるモデル盗用。たとえば、ネットワークに侵入してファイルからパラメータを読み取ります。
-2. エンジニアリング環境からモデルプロセスやパラメータを盗むことによるモデル盗用。たとえば、データサイエンティストのバージョン管理システムに保存されているもの。
-3. AI システムを使用したリバースエンジニアリングによるモデル盗用。これらは三つの大きく異なる攻撃ですが、同様の影響を及ぼします。目標は脅威をコントロールに結び付けることであり、これらのコントロールは攻撃対象領域ごとに異なるため、このような整理方法は役に立ちます。
-
+This page will continue about:
+- Threats high-over
+- Various overviews of threats and controls: the matrix, the periodic table, and the navigator
+- Risk analysis to select relevant threats and controls
+- Discussion (how about ...) of various topics: heuristic systems, responsible AI, privacy, generative AI, the NCSC/CISA guidelines,and copyright
 ---
 
 ## 脅威の概要
@@ -261,7 +259,7 @@ Selecting potential risks (Threats) that could impact the organization requires 
 
   Since AI systems are software systems, they require appropriate conventional application security and operational security, apart from the AI-specific threats and controls mentioned in this section.
 
-### 2. **Evaluating Risks by Estimating Likelihood and Impact**
+### 2. Evaluating Risks by Estimating Likelihood and Impact
 To determine the severity of a risk, it is necessary to assess the probability of the risk occurring and evaluating the potential consequences should the risk materialize.
 
 **Estimating the Likelihood:**  
@@ -273,11 +271,11 @@ Evaluating the impact of risks in AI systems involves understanding the potentia
 **Prioritizing risks**
 The combination of likelihood and impact assessments forms the basis for prioritizing risks and informs the development of Risk Treatment decisions. Commonly organizations use a risk heat map to visually categorize risks by impact and likelihood. This approach facilitates risk communication and  decision-making.  It allows the management to focus on risks with highest severity (high likelihood and high impact).
 
-### 3. **Risk Treatment**
+### 3. Risk Treatment
 Risk treatment is about deciding what to do with the risks. It involves selecting and implementing measures to mitigate, transfer, avoid, or accept cybersecurity risks associated with AI systems.  This process is critical due to the unique vulnerabilities and threats related to AI systems such as  data poisoning, model theft, and adversarial attacks. Effective risk treatment is essential to robust, reliable, and trustworthy AI.
 
 Risk Treatment options are:
-  1. **Mitigation**: Implementing controls to reduce the likelihood or impact of a risk. This is often the most common approach for managing AI cybersecurity risks. See the many controls in this resource. 
+  1. **Mitigation**: Implementing controls to reduce the likelihood or impact of a risk. This is often the most common approach for managing AI cybersecurity risks. See the many controls in this resource and the 'Select controls' subsection below.  
     - Example: Enhancing data validation processes to prevent data poisoning attacks, where malicious data is fed into the Model to corrupt its learning process and negatively impact its performance.
   2. **Transfer**: Shifting the risk to a third party, typically through transfer learning, federated learning, insurance or outsourcing certain functions. 
     - Example: Using third-party cloud services with robust security measures for AI model training, hosting, and data storage, transferring the risk of data breaches and infrastructure attacks.
@@ -300,18 +298,23 @@ If an external party is not open about how certain risks are mitigated, consider
 
 ### 6. Verify external responsibilities
 For the threats that are the responsibility of other organisations: attain assurance whether these organisations take care of it. This would involve the controls that are linked to these threats.
+
+Example: Regular audits and assessments of third-party security measures.
  
 ### 7. Select controls
 Then, for the threats that are relevant to you and for which you are responsible: consider the various controls listed with that threat (or the parent section of that threat) and the general controls (they always apply). When considering a control, look at its purpose and determine if you think it is important enough to implement it and to what extent. This depends on the cost of implementation compared to how the purpose mitigates the threat, and the level of risk of the threat. These elements also play a role of course in the order you select controls: highest risks first, then starting with the lower cost controls (low hanging fruit).
 
-### 8. Use references
-When implementing a control, consider the references and the links to standards. You may have implemented some of these standards, or the content of the standards may help you to implement the control.
+Controls typically have quality aspects to them, that need to be fine tuned to the situation and the level of risk. For example: the amount of noise to add to input data, or setting thresholds for anomaly detection. The effectiveness of controls can be tested in a simulation environement to evaluate the performance impact and security improvements to find the optimal balance. Fine tuning controls needs to continuously take place, based on feedback from testing in simulation in in production.
 
-### 9. Risk acceptance**
+### 8. Residual risk acceptance
 In the end you need to be able to accept the risks that remain regarding each threat, given the controls that you implemented.
 
-### 10. Further management of these controls
+### 9. Further management of the selected controls
 (see [SECPROGRAM](/goto/secprogram/)), which includes continuous monitoring, documentation, reporting, and incident response.
+
+### 10. Continuous risk assessment
+Implement continuous monitoring to detect and respond to new threats. Update the risk management strategies based on evolving threats and feedback from incident response activities.  
+Example: Regularly reviewing and updating risk treatment plans to adapt to new vulnerabilities.
 
 ---
 
