@@ -25,26 +25,26 @@ AI システムは、たとえば、大規模言語モデル、線形回帰関�
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/about/
 
-This page contains an overview of AI security and the next pages provide the main content about security threats to AI and controls against them, organized by attack surface:
-1. [General controls, such as AI governance](/goto/generalcontrols/)
-2. [Threats through use, such as Evasion attacks](/goto/threatsuse/)
-3. [Development-time threats, such as data poisoning](/goto/developmenttime/)
-4. [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
+このページでは AI セキュリティの概要を説明し、次のページでは AI に対するセキュリティの脅威とそれに対するコントロールに関する主要なコンテンツを攻撃対象領域ごとにまとめています。
+1. [一般的なコントロール: AI ガバナンスなど](1_general_controls.md)
+2. [使用による脅威: 回避攻撃など](2_threats_through_use.md)
+3. [開発時の脅威: データポイズニングなど](3_development_time_threats.md)
+4. [実行時のセキュリティ脅威: 安全でない出力](4_runtime_application_security_threats.md)
 
-You can navigate through pages at the bottom of every page, or in the left sidebar. The right sidebar shows the different sections on a page. On small screens you can navigate through the menu.  
+各ページの下部、または左側のサイドバーでページ間を移動できます。右側のサイドバーにはページ上のさまざまなセクションが表示されます。小さな画面ではメニューから移動できます。
 
 ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
 
 AI Exchange イニシアチブは OWASP により採択されており、[Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって起こされました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) のシニアディレクター、AI とセキュリティで 31 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で EU AI 法に関するセキュリティ要件に取り組んでいます。
 
-This material is evolving constantly through open source continuous delivery. The authors group consists of 50 experts (researchers, practitioners, vendors, data scientists, etc.) and other people in the community are welcome to provide input too. See the [contribute page](/contribute).
+この資料はオープンソースの継続的デリバリによって常に進化しています。著者グループは 50 人の専門家 (研究者、実務家、ベンダー、データサイエンティストなど) で構成しており、コミュニティの他の人々も意見を述べることができます。[貢献ページ](../contribute.md) を参照してください。
 これは EU AI 法、AI セキュリティに関する ISO/IEC 27090、AI プライバシーに関する ISO/IEC 27091、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/) などの進行中の主要なイニシアチブへのインプットとして機能し、さらに多くのイニシアチブが世界中で一貫した用語と洞察から恩恵を受けることができます。
 
-This page will continue about:
-- Threats high-over
-- Various overviews of threats and controls: the matrix, the periodic table, and the navigator
-- Risk analysis to select relevant threats and controls
-- Discussion (how about ...) of various topics: heuristic systems, responsible AI, privacy, generative AI, the NCSC/CISA guidelines,and copyright
+このページでは以下について取り上げます。
+- 脅威の概要
+- 脅威とコントロールのさまざまな概要: マトリックス、周期表、ナビゲータ
+- 関連する脅威とコントロールを選択するためのリスク分析
+- さまざまなトピックに関する議論 (... についてはどうですか): ヒューリスティックシステム、責任ある AI、プライバシー、生成 AI、NCSC/CISA ガイドライン、著作権
 ---
 
 ## 脅威の概要
