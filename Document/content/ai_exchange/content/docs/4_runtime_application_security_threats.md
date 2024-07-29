@@ -2,6 +2,8 @@
 title: 4. 実行時のアプリケーションのセキュリティ脅威
 weight: 5
 ---
+> Category: group of runtime threats  
+> Permalink: https://owaspai.org/goto/runtimeappsec/
 
 ## 4.1. AI 特有ではないアプリケーションセキュリティの脅威
 > Category: group of runtime threats  
