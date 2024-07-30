@@ -170,23 +170,23 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/riskanalysis/
 
-There are many threats and controls described in this document. Your situation and how you use AI determines which threats are relevant to you, to what extent, and what controls are who's responsibility. This selection process can be performed through risk analysis (or risk assessment) in light of the use case and architecture.
+このドキュメントには多くの脅威とコントロールを記載しています。状況や AI の使い方によって、どの脅威がどの程度関連しているか、どのコントロールが誰の責任であるかが決まります。この選択プロセスはユースケースとアーキテクチャに照らして、リスク分析 (またはリスク評価) を通じて実行できます。
 
-**Risk management introduction**  
-Organizations classify their risks into several key areas: Strategic, Operational, Financial, Compliance, Reputation, Technology, Environmental, Social, and Governance (ESG). A threat becomes a risk when it exploits one or more vulnerabilities. AI threats, as discussed in this resource, can have significant impact across multiple risk domains. For example, adversarial attacks on AI systems can lead to disruptions in operations, distort financial models, and result in compliance issues.  See the [AI security matrix](/goto/aisecuritymatrix/) for an overview of potential impact.
+**リスクマネジメント入門**  
+組織はリスクをいくつかの主要な領域に分類します。戦略、運用、財務、コンプライアンス、評判、テクノロジ、環境、社会、ガバナンス (ESG) です。脅威は一つ以上の脆弱性を悪用するとリスクになります。このリソースで説明しているように、AI の脅威は複数のリスク領域にわたって大きな影響を及ぼす可能性があります。たとえば、AI システムに対する敵対的攻撃は、運用の中断、財務モデルの歪曲、コンプライアンスの問題を引き起こす可能性があります。潜在的な影響の概要については [AI セキュリティマトリクス](ai_security_overview.md#ai-security-matrix) を参照してください。
 
-General risk management for AI systems is typically driven by AI governance - see [AIPROGRAM](/goto/aiprogram/) and includes both risks BY relevant AI systems and risks TO those systems. Security risk assessment is typically driven by the security management system - see [SECPROGRAM](/goto/secprogram) as this system is tasked to include AI assets, AI threats, and AI systems into consideration - provided that these have been added to the corresponding repositories.
+AI システムの一般的なリスクマネジメントは、通常、AI ガバナンス ([AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照) によって推進され、関連する AI システムによるリスクとそれらのシステムに対するリスクの両方を含みます。セキュリティリスク評価は、通常、セキュリティマネジメントシステム ([SECPROGRAM](1_general_controls.md#SECPROGRAM) を参照) によって推進され、このシステムは、AI 資産、AI 脅威、AI システムを考慮に含めることが求められます (これらが対応するリポジトリに追加されている場合)。
 
-Organizations often adopt a Risk Management framework, commonly based on ISO 31000 or similar standards such as ISO 23894. These frameworks guide the process of managing risks through four key steps as outlined below:
+組織は一般的に ISO 31000 または ISO 23894 などの類似の規格に基づくリスクマネジメントフレームワークを採用することがよくあります。これらのフレームワークは下記の四つの主要なステップを通じてリスク管理のプロセスをガイドします。
 
-1. **Identifying  Risks**: Recognizing potential risks (Threats) that could impact the organization.  See “Threat through use” section to identify potential risks (Threats).
-2. **Evaluating Risks by Estimating Likelihood and Impact**: To determine the severity of a risk, it is necessary to assess the probability of the risk occurring and evaluating the potential consequences should the risk materialize. Combining likelihood and impact to gauge the risk's overall severity.  This is typically presented in the form of a heatmap. See below for further details.  
-3. **Deciding What to Do (Risk Treatment)**: Choosing an appropriate strategy to address the risk. These strategies include: Risk Mitigation, Transfer, Avoidance, or Acceptance. See below for further details.
-4. **Risk Communication and Monitoring**: Regularly sharing risk information with stakeholders to ensure awareness and support for risk management activities. Ensuring effective Risk Treatments are applied. This requires a Risk Register, a comprehensive list of risks and their attributes (e.g. severity, treatment plan, ownership, status, etc).  See below for further details.
+1. **リスクの特定**: 組織に影響を及ぼす可能性のある潜在的なリスク (脅威) を認識します。潜在的なリスク (脅威) を特定するには「使用による脅威」セクションを参照してください。
+2. **発生可能性と影響度の推定によるリスクの評価**: リスクの深刻度を判断するには、リスクが発生する可能性を評価し、リスクが顕在化した場合の潜在的な影響を評価する必要があります。発生可能性と影響度を組み合わせて、リスクの全体的な深刻度を測定します。これは一般的にヒートマップの形で示されます。詳細については以下を参照してください。
+3. **すべきことの決定 (リスク処置)**: リスクに対処するための適切な戦略を選択します。これらの戦略には、リスクの軽減、移転、回避、受容があります。詳細については以下を参照してください。
+4. **リスクコミュニケーションとモニタリング**: リスク情報を利害関係者と定期的に共有し、リスクマネジメント活動に対する意識と支援を確保します。効果的なリスク処置を確実に適用します。これには、リスクとその属性 (深刻度、処置計画、オーナーシップ、ステータスなど) の包括的なリストであるリスク登録簿が必要です。詳細については以下を参照してください。
 
-Let's go through the risk management steps one by one.
+リスクマネジメントの手順を一つずつ見てきましょう。
 
-### 1. Identifying  Risks
+### 1. リスクの特定
 Selecting potential risks (Threats) that could impact the organization requires technical and business assessment of the applicable threats. A method to do this is discussed below, for every type of risk impact:
 
 **Unwanted model behaviour**
@@ -259,7 +259,7 @@ Selecting potential risks (Threats) that could impact the organization requires 
 
   Since AI systems are software systems, they require appropriate conventional application security and operational security, apart from the AI-specific threats and controls mentioned in this section.
 
-### 2. Evaluating Risks by Estimating Likelihood and Impact
+### 2. 発生可能性と影響度の推定によるリスクの評価
 To determine the severity of a risk, it is necessary to assess the probability of the risk occurring and evaluating the potential consequences should the risk materialize.
 
 **Estimating the Likelihood:**  
@@ -271,7 +271,7 @@ Evaluating the impact of risks in AI systems involves understanding the potentia
 **Prioritizing risks**
 The combination of likelihood and impact assessments forms the basis for prioritizing risks and informs the development of Risk Treatment decisions. Commonly organizations use a risk heat map to visually categorize risks by impact and likelihood. This approach facilitates risk communication and  decision-making.  It allows the management to focus on risks with highest severity (high likelihood and high impact).
 
-### 3. Risk Treatment
+### 3. リスク処置
 Risk treatment is about deciding what to do with the risks. It involves selecting and implementing measures to mitigate, transfer, avoid, or accept cybersecurity risks associated with AI systems.  This process is critical due to the unique vulnerabilities and threats related to AI systems such as  data poisoning, model theft, and adversarial attacks. Effective risk treatment is essential to robust, reliable, and trustworthy AI.
 
 Risk Treatment options are:
@@ -284,7 +284,7 @@ Risk Treatment options are:
   4. **Acceptance**: Acknowledging the risk and deciding to bear the potential loss without taking specific actions to mitigate it. This option is chosen when the cost of treating the risk outweighs the potential impact.
     - Example: Accepting the minimal risk of model inversion attacks (where an attacker attempts to reconstruct publicly available input data from model outputs) in non-sensitive applications where the impact is considered low.
 
-### 4. Risk Communication & Monitoring
+### 4. リスクコミュニケーションとモニタリング
 Regularly sharing risk information with stakeholders to ensure awareness and support for risk management activities. 
 
 A central tool in this process is the Risk Register, which serves as a comprehensive repository of all identified risks, their attributes (such as severity, treatment plan, ownership, and status), and the controls implemented to mitigate them.  Most large organizations already have such a Risk Register.  It is important to align AI risks and chosen vocabularies from Enterprise Risk Management to facilitate effective communication of risks throughout the organization.  
