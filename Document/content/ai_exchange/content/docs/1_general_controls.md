@@ -44,7 +44,7 @@ AI イニシアチブでリスク分析を行う際には、少なくとも以�
 7. 聴くことも話すこともできます: ユーザーインタフェースではなく自然言語を通じてやり取りします。
 8. 聞くことも見ることもできます: 音声認識能力と視覚認識能力を持ちます。
 
-標準へのリンク:
+有用な標準:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
  - [US Federal Reserve SR 11-07: Guidance on Model Risk Management](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm): 銀行組織および監督当局のための監督指針。
 
@@ -97,7 +97,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 監視とインシデント対応はセキュリティプログラムの標準的な要素であり、AI は関連する AI セキュリティ資産、脅威、コントロールを理解することでそれに含めることができます。脅威の説明には監視の一部となる検出メカニズムを含みます。
 
-**標準へのリンク:**
+**有用な標準:**
 
   - ISO 27000-27005 の全範囲は IT システムであるため、一般的な意味で AI システムに適用できます。ギャップ: プロセスに関してこのコントロールを完全にカバーしており、情報セキュリティマネジメントで考慮する必要がある三つの AI 固有の攻撃対象領域があるという高レベルの特殊性があります: 1) AI 開発時の攻撃、2) モデルの使用による攻撃、3) AI アプリケーションセキュリティ攻撃。特殊性の詳細については対応するセクションのコントロールを参照してください。
     これらの標準には以下があります。
@@ -149,7 +149,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 - [サプライチェーンマネジメント](3_development_time_threats.md#SUPPLYCHAINMANAGE) は AI 固有のサプライチェーンリスクについて説明しています。
 - [開発セキュリティ](3_development_time_threats.md#DEVSECURITY) は開発環境の保護に関するものです。
 
-標準へのリンク:
+有用な標準:
 - ISO 27002 コントロール 8.25 安全な開発ライフサイクル。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴いますが、詳細は欠如しています - ISO 27002:2022 の 8.25 コントロール の説明は一ページですが、安全なソフトウェア開発は大規模かつ複雑なトピックです - 詳細については以下を参照してください。
 - ISO/IEC 27115 (複合システムのサイバーセキュリティ評価)
 - [OpenCRE の安全なソフトウェア開発プロセス](https://www.opencre.org/cre/616-305) を参照してください。NIST SSDF や OWASP SAMM への注目すべきリンクがあります。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います。
@@ -184,7 +184,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 以下の ISO/IEC 5338 の解釈図は、関連するトピックの概要を把握するのに適しています。
 ![5338](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/5338.png)
 
-標準へのリンク:
+有用な標準:
 
   - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - ISO 5338 はソフトウェアライフサイクルに関する既存の ISO 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。[このブログ](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/) も参照してください。
   - [ISO/IEC 27002](https://www.iso.org/standard/75652.html) コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
@@ -225,7 +225,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 参考情報
   - [AI の法的側面について語る Vischer 氏](https://www.vischer.com/en/artificial-intelligence/)
 
-標準へのリンク:
+有用な標準:
 
   - [OpenCRE のコンプライアンス](https://www.opencre.org/cre/510-324)
   - ISO 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
@@ -236,7 +236,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 データサイエンティストと開発チームに対して、モデルへの攻撃を含む AI 脅威の意識に関するセキュリティ教育を実施します。データサイエンティストを含むすべてのエンジニアがセキュリティの考え方を身につけることが不可欠です。
 
-標準へのリンク:
+有用な標準:
 
   - ISO 27002 コントロール 6.3 意識向上トレーニング。ギャップ: このコントロールを完全にカバーしますが、詳細が不足しており、特殊性を考慮する必要があります。トレーニング資料は AI セキュリティの脅威とコントロールをカバーする必要があります。
 
@@ -260,7 +260,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 どのフィールドやレコードを削除できるかを決定する方法は、どのデータ要素がモデルのパフォーマンスに影響を及ぼさないかを統計的に分析することです。
 
-  標準へのリンク:
+  有用な標準:
 
   - ISO/IEC 標準ではまだカバーされていません。
 
@@ -272,7 +272,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 目的: コンプライアンスとは別に、データの漏洩や操作の影響を最小限に抑えることが目的です。
 
-標準へのリンク:
+有用な標準:
 
   - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
 
@@ -286,7 +286,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 データの保存期間を制限することは、データ最小化の特殊な形態とみなすことができます。プライバシー規制では一般的に、個人データが収集された目的に対して必要なくなった場合に、その個人データを削除することが求められます。場合によっては、他の規則 (証跡の記録を残すためなど) のために例外を設ける必要があります。これらの規制とは別に、データ漏洩の影響を軽減するために、機密データを使用しなくなった時点で削除することが一般的なベストプラクティスです。
 
-標準へのリンク:
+有用な標準:
 
   - ISO/IEC 標準ではまだカバーされていません。
 
@@ -365,7 +365,7 @@ Tokenization proves particularly advantageous in development-time data science w
 - Abadi, M., Chu, A., Goodfellow, I., McMahan, H. B., Mironov, I., Talwar, K., & Zhang, L. (2016). Deep learning with differential privacy. Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, 308-318. [Link](https://doi.org/10.1145/2976749.2978318)
   - Dwork, C., & Roth, A. (2014). The Algorithmic Foundations of Differential Privacy. Foundations and Trends in Theoretical Computer Science. [Link](https://doi.org/10.1561/0400000042)
 
-**Links to standards:**
+**Useful standards include:**
 
 - Not covered yet in ISO/IEC standards.
 
@@ -388,7 +388,7 @@ For example:
   - Minimize model output regarding technical details
 
 
-Links to standards:
+Useful standards include:
 
   - ISO 27002 Control 5.9: Inventory of information and other associated assets. Gap: covers this control fully, with the particularity that technical data science details can be sensitive. .
   - See [OpenCRE on data classification and handling](https://www.opencre.org/cre/074-873). Gap: idem
@@ -444,7 +444,7 @@ Examples:
   - Requesting user confirmation before sending a large number of emails as instructed by a model
   - A special form of guardrails is censoring unwanted output of GenAI models (e.g. violent, unethical)
   - 
-Links to standards:
+Useful standards include:
 
   - ISO/IEC 42001 B.9.3 defines controls for human oversight and decisions regarding autonomy. Gap: covers this control partly (human oversight only, not business logic)
   - Not covered further in ISO/IEC standards.
@@ -457,7 +457,7 @@ Least model privilege: Minimize privileges of a model to autonomously take actio
 
 For example: avoid connecting a model to an email facility to prevent it from sending incorrect or sensitive information to others.
 
-Links to standards:
+Useful standards include:
 
   - ISO 27002 control 8.2 Privileged access rights. Gap: covers this control fully, with the particularity that privileges assigned to autonomous model decisions need to be assigned with the risk of unwanted model behaviour in mind.
   - [OpenCRE on least privilege](https://www.opencre.org/cre/368-633) Gap: idem
@@ -470,7 +470,7 @@ AI transparency: By being transparent with users about the rough workings of the
 
 See the [DISCRETE](#discrete) control for the balance between being transparent and being discrete about the model. 
 
-Links to standards:
+Useful standards include:
 
   - ISO/IEC 42001 B.7.2 describes data management to support transparency. Gap: covers this control minimally, as it only covers the data mnanagement part.
   - Not covered further in ISO/IEC standards.
@@ -485,7 +485,7 @@ Continuous validation is a process that is often in place to detect other issues
 
 Note that continuous validation is typically not suitable for detecting backdoor poisoning attacks, as these are designed to trigger with very specific input that would normally not be present in test sets. In fact. Such attacks are often designed to pass validation tests.
 
-Links to standards:
+Useful standards include:
 
 - ISO 5338 (AI lifecycle) Continuous validation. Gap: covers this control fully
 
