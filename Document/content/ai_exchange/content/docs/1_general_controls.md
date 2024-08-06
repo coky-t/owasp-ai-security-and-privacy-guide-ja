@@ -139,10 +139,32 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 このための最善の方法は既存の安全なソフトウェア開発プラクティスの上に AI チームと AI の特殊性を取り入れることです。つまり、データサイエンス開発アクティビティが安全なソフトウェア開発プラクティスの一部になるべきです。これらのプラクティスの例: セキュア開発トレーニング、コードレビュー、セキュリティ要件、セキュアコーディングガイドライン、脅威モデリング (AI 固有の脅威を含む)、静的解析ツール、動的解析ツール、ペネトレーションテスト。AI のための独立したセキュア開発フレームワークは必要ありません。
 
 安全なソフトウェア開発における AI の特殊性:
-- AI チーム (データサイエンティストなど) をセキュア開発アクティビティのスコープに含める必要があります。
+- AI チーム (データサイエンティストなど) をセキュア開発アクティビティのスコープに含める必要があります。for them to address both conventional security threats and AI-specific threats, applying both conventional security controls and AI-specific ones. Typically, technical teams depend on the AI engineers when it comes to the AI-specific controls as they mostly require deep AI expertise. For example: if training data is confidential and collected in a distributed way, then a federated learning approach may be considered.
 - AI セキュリティ資産、脅威、コントロール (このドキュメントでカバーしている) を考慮する必要があり、要件、ポリシー、コーディングガイドライン、トレーニング、ツール、テストプラクティスなどに影響します。通常、これは [SECPROGRAM](1_general_controls.md#SECPROGRAM) で説明しているように、組織の情報セキュリティ管理システムにこれらの要素を追加し、従来の資産、脅威、コントロールに合わせて調整しているのと同様に、安全なソフトウェア開発をそれに合わせて調整します。
+- Apart from software components, the supply chain for AI can also include data and models which may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/goto/supplychainmanage/).
+- In AI, software components can also run in the development environment instead of in production, for example to train models, which increases the attack surface e.g. malicious development components attacking training data.
 
-リスク分析によっては、特定の脅威に対して開発ライフサイクルで特定のプラクティスが必要になることがあります。これらの脅威とコントロールについてはこのドキュメントの別の箇所で説明しています。たとえば、外部から入手したモデルを使用する場合、特定のサプライチェーンマネジメントが必要です。あるいは、トレーニングデータが機密であり、分散された方法で収集される場合は、[連合学習](3_development_time_threats.md#FEDERATEDLEARNING) アプローチを検討できます。
+AI-specific elements in the development environment (sometimes referred to as MLops):
+- Supply chain management of data and models, including provenance of the internal processes (for data this effectively means data governance)
+- In addition supply chain management: integrity checks on elements that can have been poisoned (data, models), using an internal or external signed registry for example
+- Static code analysis
+  - Running big data/AI technology-specific static analysis rules (e.g the typical mistake of creating a new dataframe in Python without assigning it to a new one)
+  - Running maintainability analysis on code, as data and model engineering code is typically hindered by code quality issues
+  - Evaluating code for the percentage of code for automated testing. Industry average is 43% (SIG benchmark report 2023). An often cited recommendation is 80%. Research shows that automated testing in AI engineering is often neglected (SIG benchmark report 2023), as the performance of the AI model is mistakenly regarded as the ground truth of correctness.
+- Training (if required)
+  - Automated training of the model when necessary
+  - Automated detection of training set issues (standard data quality control plus checking for potential poisoning using pattern recognition or anomaly detection)
+  - Any pre-training controls to mitigate poisoning risks, especially if the deployment process is segregated from the rest of the engineering environment in which poisoning an have taken place, e.g. fine pruning (reducing the size of the model and doing extra training with a ground truth training set)
+  - Automated data collection and transformation to prepare the train set, when required
+- Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
+- Running AI-specific dynamic tests before deployment:
+  - Automated validation of the model, including discrimination bias measurement
+  - Security tests (e.g. data poisoning payloads, prompt injection payloads, adversarial robustness testing)
+- Running AI-specific dynamic tests in production:
+  - Continual automated validation of the model, including discrimination bias measurement and the detection of staleness: the input space changing over time, causing the training set to get out of date
+- Potential protection measures in deployment of the model (e.g. obfuscation, encryption, or hashing)
+
+リスク分析によっては、特定の脅威に対して開発ライフサイクルで特定のプラクティスが必要になることがあります。これらの脅威とコントロールについてはこのドキュメントの別の箇所で説明しています
 
 関連コントロール:
 - [開発プログラム](1_general_controls.md#DEVPROGRAM) はすべてのソフトウェアライフサイクルプロセス (バージョン管理、ポートフォリオ管理、リタイアメントなど) に AI エンジニアリングを含めることに関するものです。
