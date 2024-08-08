@@ -15,7 +15,7 @@ AI はとてつもない好機を与える一方で、セキュリティ脅威�
   - データおよび AI エンジニアリングを従来の **(セキュア) ソフトウェア開発プラクティス** に組み込みます。
   - このドキュメントで説明している脅威を理解して、適切なプロセス **コントロール** と技術的コントロールを適用します。
 - AI **サプライヤ** が適切なコントロールを適用していることを確認します。
-- 権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
+- データと権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
 
 AI システムは、たとえば、大規模言語モデル、線形回帰関数、ルールベースのシステム、統計ベースのルックアップテーブルなどがあることに注意してください。このドキュメント全体を通じて、どのような脅威とコントロールがどのような役割を果たすかが明確になっています。
 
@@ -187,12 +187,12 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
 リスクマネジメントの手順を一つずつ見てきましょう。
 
 ### 1. リスクの特定
-Selecting potential risks (Threats) that could impact the organization requires technical and business assessment of the applicable threats. A method to do this is discussed below, for every type of risk impact:
+組織に影響を及ぼす可能性のある潜在的なリスク (脅威) を選択するには、該当する脅威の技術的およびビジネス的な評価が必要です。これを行う方法については、リスクの影響の種類ごとに以下で説明します。
 
-**Unwanted model behaviour**
+**望ましくないモデルの動作**
 
-  Regarding model behaviour, we focus on manipulation by attackers, as the scope of this document is security. Other sources of unwanted behaviour are general inaccuracy (e.g. hallucinations) and/or unwanted bias regarding certain groups (discrimination).
-    
+  モデルの動作に関しては、このドキュメントのスコープがセキュリティであるため、攻撃者による操作に焦点を当てています。その他の望ましくない動作の原因には一般的な不正確さ (ハルシネーションなど) や特定のグループに関する望ましくない偏見 (差別) があります。
+
   This will always be an applicable threat, independent of your situation, although the risk level may sometimes be accepted - see below.
 
   Which means that you always need to have in place:
