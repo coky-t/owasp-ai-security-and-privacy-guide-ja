@@ -6,15 +6,19 @@ weight: 4
 > Category: group of development-time threats  
 > Permalink: https://owaspai.org/goto/developmenttime/
 
+This section discusses the AI security threats during the development of the AI system, which includes the engineering environment and the supply chain as attack surfaces.
+
 **Background:**
 
-Data science (data engineering and model engineering - for machine learning often referred to as _training phase_) uses a development environment typically outside of the regular application development scope, introducing a new attack surface. Data engineering (collecting, storing, and preparing data) is typically a large and important part of machine learning engineering. Together with model engineering, it requires appropriate security to protect against data leaks, data poisoning, leaks of intellectual property, and supply chain attacks (see further below). In addition, data quality assurance can help reduce risks of intended and unintended data issues.
+Data science (data engineering and model engineering - for machine learning often referred to as _training phase_) introduces new elements and therefore new attack surface into the engineering environment. Data engineering (collecting, storing, and preparing data) is typically a large and important part of machine learning engineering. Together with model engineering, it requires appropriate security to protect against data leaks, data poisoning, leaks of intellectual property, and supply chain attacks (see further below). In addition, data quality assurance can help reduce risks of intended and unintended data issues.
 
 **Particularities:**
 
 - Particularity 1: the data in the AI development environment is real data that is typically sensitive, because it is needed to train the model and that obviously needs to happen on real data, instead of fake data that you typically see in standard development environment situations (e.g. for testing). Therefore, data protection activities need to be extended from the live system to the development environment.
 - Particularity 2: elements in the AI development environment (data, code, configuration & parameters) require extra protection as they are prone to attacks to manipulate model behaviour (called _poisoning_)
 - Particularity 3: source code, configuration, and parameters are typically critical intellectual property in AI
+- Particularity 4: the supply chain for AI systems introduces two new elements: data and models
+- Particularity 5: external software components may run within the engineering environments, for example to train models, introducing a new threat of malicious components gaining access to assets in that environment (e.g. to poison training data)
 
 ISO/IEC 42001 B.7.2 briefly mentions development-time data security risks.
 
@@ -162,7 +166,7 @@ Broadly, Federated Learning generally consists of four high-level steps: First, 
 **Federated machine learning benefits & use cases**  
 Federated machine learning may offer significant benefits for organizations in several domains, including regulatory compliance, enhanced privacy, scalability and bandwidth, and other user/client considerations.  
 - **Regulatory compliance**. In federated machine learning, data collection is decentralized, which may allow for greater ease of regulatory compliance. Decentralization of data may be especially beneficial for international organizations, where data transfer across borders may be unlawful.
-- **Enhanced confidentiality**. Federated learning can provide enhanced conidentiality, as data does not leave the client, minimizing the potential for exposure of sensitive information.
+- **Enhanced confidentiality**. Federated learning can provide enhanced confidentiality, as data does not leave the client, minimizing the potential for exposure of sensitive information.
 - **Scalability & bandwidth**. Decreased training data transfer between client devices and central server may provide significant benefits for organizations where data transfer costs are high. Similarly, federation may provide advantages in resource-constrained environments where bandwidth considerations might otherwise limit data uptake and/or availability for modeling. Further, because federated learning optimizes network resources, these benefits may on aggregate allow for overall greater capacity & flexible scalability.  
 - **Data diversity**. Because federated learning relies on a plurality of models to aggregate an update to the central model, it may provide benefits in data & model diversity. The ability to operate efficiently in resource-constrained environments may further allow for increases in heterogeneity of client devices, further increasing the diversity of available data.
 
@@ -224,9 +228,10 @@ Useful standards include:
 > Category: group of development-time threats  
 > Permalink: https://owaspai.org/goto/modelpoison/
 
-Development-time model poisoning in the broad sense is when an attacker manipulates elements of the development environment to alter the behavior of the model. There are two types, each covered in a subsection:
-1. [data poisoning](/goto/datapoison/): manipulating training data, or data used for in-context learning
-2. [development-time model poisoning](/goto/devmodelpoison/): manipulating model parameters, or other engineering elements that take part in creating the model, such as code, configuration or libraries.
+Development-time model poisoning in the broad sense is when an attacker manipulates development elements (the engineering environment and the supplky chain), to alter the behavior of the model. There are two types, each covered in a subsection:
+1. [data poisoning](/goto/datapoison/): an attacker manipulates training data, or data used for in-context learning.
+2. [development-environment model poisoning](/goto/devmodelpoison/): an attacker manipulates model parameters, or other engineering elements that take part in creating the model, such as code, configuration or libraries.
+3. [supply-chain model poisoning](/goto/supplymodelpoison/): using a supplied trained model which has been manipulated by an attacker.
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
@@ -265,7 +270,7 @@ Useful standards include:
 > Category: development-time threat  
 > Permalink: https://owaspai.org/goto/datapoison/
 
-An attacker manipulates data that the model uses to learn, in order to affect the algorithm's behavior. Also called _causative attacks_. There are mutiple ways to do this (see the attack surface diagram in the [broad model poisong section](/goto/modelpoison/)):
+An attacker manipulates data that the model uses to learn, in order to affect the algorithm's behavior. Also called _causative attacks_. There are multiple ways to do this (see the attack surface diagram in the [broad model poisoning section](/goto/modelpoison/)):
 - Changing the data while in storage during development-time (e.g. by hacking the database)
 - Changing the data while in transit to the storage (e.g. by hacking into a data transfer)
 - Changing the data while at the supplier, before the data is obtained from the supplier
@@ -397,12 +402,12 @@ References:
 - ['How to adversarially train against data poisoning'](https://arxiv.org/abs/2102.13624)
 - ['Is Adversarial Training Really a Silver Bullet for Mitigating Data Poisoning?'](https://openreview.net/forum?id=zKvm1ETDOq)
 
-### 3.1.2. 開発時のモデルポイズニング
+### 3.1.2. 開発環境のモデルポイズニング
 > Category: development-time threat  
 > Permalink: https://owaspai.org/goto/devmodelpoison/
 
-This threat refers to manipulating behaviour of the model by not poisoning the training data, but instead alter the engineering elements that lead to the model or represent the model (i.e. model parameters) during development time, e.g. by attacking the engineering environment to manipulate storage. When the model is trained by a supplier in a manipulative way and supplied as-is, then it is a [Transfer learning attack](3_development_time_threats.md#313-transfer-learning-attack).
-Data manipulation is referred to as data poisoning and is covered in separate threats.
+This threat refers to manipulating behaviour of the model by not poisoning the training data, but instead manipalte elements in the development-environment that lead to the model or represent the model (i.e. model parameters), e.g. by manipulating storage of model parameters. When the model is trained by a supplier in a manipulative way and supplied as-is, then it is [supply-chain model poisoning](goto/supplymodelpoison/).
+Training data manipulation is referred to as [data poisoning](/goto/datapoison).  See the attack surface diagram in the [broad model poisoning section](/goto/modelpoison/).
 
 **Controls:**
 
@@ -411,17 +416,17 @@ Data manipulation is referred to as data poisoning and is covered in separate th
 - See controls for broad model poisoning
 - Controls that are aimed to improve the generalization ability of the model - reducing the memorization of any poisoned samples: [training with adversarial samples](2_threats_through_use.md#TRAINADVERSARIAL) and [adversarial robust distillation](2_threats_through_use.md#ADVERSARIALROBUSTDISTILLATION)
 
-### 3.1.3 転移学習攻撃 <a name="313-transfer-learning-attack"></a>
+### 3.1.3 サプライチェーンのモデルポイズニング <a name="313-supply-chain-model-poisoning"></a>
 >Category: development-time threat  
->Permalink: https://owaspai.org/goto/transferlearningattack/
+>Permalink: https://owaspai.org/goto/supplymodelpoison/
 
-An attacker supplies a manipulated pre-trained model which is then obtained and unknowingly further used and/or trained/fine tuned, with still having the unwanted behaviour.
+An attacker manipulates a third-party (pre-)trained model which is then supplied, obtained and unknowingly further used and/or trained/fine tuned, with still having the unwanted behaviour (see the attack surface diagram in the [broad model poisoning section](/goto/modelpoison/)). If the supplied model is used for urther training, then the attack is called a _transfer learning attack_.
 
 AI models are sometimes obtained elsewhere (e.g. open source) and then further trained or fine-tuned. These models may have been manipulated(poisoned) at the source, or in transit. See [OWASP for LLM 05: Supply Chain Vulnerabilities.](https://genai.owasp.org/llmrisk/llm05/).
 
-The type of manipulation can be through data poisoning, or by specifically changing the model parameters. Therefore, the same controls apply that help against those attacks. Since changing the model parameters requires protection of the parameters at the moment they are manipulated, this is not in the hands of the one who obtained the model. What remains are the controls against data poisoning, the controls against model poisoning in general (e.g. model ensembles), plus of course good supply chain management, and some specific controls that help against transfer learning attacks.
+The type of manipulation can be through data poisoning, or by specifically changing the model parameters. Therefore, the same controls apply that help against those attacks. Since changing the model parameters requires protection of the parameters at the moment they are manipulated, this is not in the hands of the one who obtained the model. What remains are the controls against data poisoning, the controls against model poisoning in general (e.g. model ensembles), plus of course good supply chain management.
 
-**Controls specific for transfer learning:**
+**Controls:**
 
 - See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
 - See those controls for [data poisoning](3_development_time_threats.md#31-broad-model-poisoning-development-time) that work on models that have already been trained (post-training), e.g. [POISONROBUSTMODEL](3_development_time_threats.md#POISONROBUSTMODEL)
