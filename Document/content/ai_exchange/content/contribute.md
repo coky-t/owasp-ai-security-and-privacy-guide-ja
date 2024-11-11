@@ -9,7 +9,7 @@ excludeSearch: true
 
 <!-- &nbsp;{{< github-stars user="OWASP" repo="www-project-ai-security-and-privacy-guide" repo_url="https://github.com/OWASP/www-project-ai-security-and-privacy-guide" >}} -->
 
-<!-- {{< tabs items="Guidelines,Authors" >}} -->
+<!-- {{< tabs items="Guidelines,Contributing authors" >}} -->
 
 # ガイドライン <!-- {{< tab >}} -->
 
@@ -42,7 +42,6 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><th>名前</th><th>会社</th><th>国</th><th>貢献</th></tr>
     <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクト創設者兼リーダー、コンテンツ、リーダーシップチーム</b></td></tr>
     <tr><td><b>Chris Ancharski</b></td><td>Global community builder</td><td>アメリカ</td><td>エンゲージメントスペシャリスト、リーダーシップチーム</td></tr>
-    <tr><td>John Sotiropoulos</td><td>Kainos</td><td></td><td>渉外、コンテンツ、リーダーシップチーム</td></tr>
     <tr><td><b>Aruneesh Salhotra</b></td><td>SNM Consulting Inc</td><td>アメリカ</td><td><b>アウトリーチ、マネジメント、コンテンツ、リーダーシップチーム</b></td></tr>
     <tr><td>Adelin Travers</td><td>Trail of Bits</td><td></td><td></td></tr>
     <tr><td>Alon Tron</td><td>Stealth</td><td>イスラエル</td><td>サプライチェーンマネジメントの改善</td></tr>
@@ -55,6 +54,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Disesdi Susanna Cox</td><td>OTW</td><td>アメリカ</td><td>連合学習</td></tr>
     <tr><td>Eoin Wickens</td><td>HiddenLayer</td><td>アイルランド</td><td>開発セキュリティへの追加</td></tr>
     <tr><td>Feiyang Tang</td><td>Software Improvement Group (SIG)</td><td></td><td></td></tr>
+    <tr><td><b>John Sotiropoulos</b></td><td>Kainos</td><td>イギリス</td><td>複数の機関との連絡役</td></tr>
     <tr><td>Manish Garg</td><td>VE3</td><td>UK</td><td>実行時のモデル保護</td></tr>
     <tr><td>Marko Lihter</td><td>SplxAI</td><td>クロアチア</td><td>組織向けのステップバイステップガイド、ウェブサイト作成、さまざまなテキストの改善</td></tr>
     <tr><td>Niklas Bunzel</td><td>フラウンホーファー研究所</td><td>ドイツ</td><td>回避攻撃に関するデータサイエンスの考察と参考情報</td></tr>
@@ -62,6 +62,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Rubens Zimbres</td><td></td><td>ブラジル</td><td>敵対的機械学習</td></tr>
     <tr><td>Roger Sanz</td><td>イザベル大学</td><td>スペイン</td><td></td></tr>
     <tr><td>Sandy Dunn</td><td>ボイシ州立大学, AI Cyber Advisors</td><td>アメリカ</td><td>初期フェーズでのコミュニティ管理</td></tr>
+    <tr><td>S M Zia Ur Rashid</td><td>Paycom</td><td>アメリカ</td><td>参考情報の下にある学習および研修リソースの表</td></tr>
     <tr><td>Sean Oesch</td><td>オークリッジ国立研究所</td><td>アメリカ</td><td>BLUF、敵対的トレーニング、OOD 検出、NISTIR 8269、ガイドの使いやすさ/構造</td></tr>
     <tr><td>Srajan Gupta</td><td>Dave</td><td></td><td></td></tr>
     <tr><td>Steve Francolla</td><td>Workforce Tech LLC</td><td></td><td></td></tr>
