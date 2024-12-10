@@ -3,7 +3,7 @@
 
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml.jpg?raw=true"> <!-- {{< image-centered src="/images/aixlogosml.jpg" alt="OWASP AI Exchange Logo" >}} -->
 
-> AI とデータ中心のシステムをセキュリティの脅威から保護する方法に関する、専門家による、専門家のための、包括的なガイダンスとアラインメント。 [OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) の一部。
+> AI セキュリティに関するナンバーワンのブックマークへようこそ。AI とデータ中心のシステムをセキュリティの脅威から保護する方法に関する 170 ページ以上の包括的なガイダンスで、国際標準に直接反映されます。コミュニティによって作成され、コミュニティにオープンソースとして提供されます。[OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) の一部です。
 
 <!-- {{< spacer height="40" >}} -->
 
