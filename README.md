@@ -30,6 +30,6 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 * [4. 実行時のアプリケーションのセキュリティ脅威](Document/content/ai_exchange/content/docs/4_runtime_application_security_threats.md)
 * [参考情報](Document/content/ai_exchange/content/docs/ai_security_references.md)
 
-## Author (日本語訳)
+## Translator (Japanese)
 
 [Koki Takeyama](https://github.com/coky-t)
