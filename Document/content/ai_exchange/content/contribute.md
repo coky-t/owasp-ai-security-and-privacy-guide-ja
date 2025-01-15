@@ -40,15 +40,15 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 
 <table border='1'>
     <tr><th>名前</th><th>会社</th><th>国</th><th>貢献</th></tr>
-    <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td><b>プロジェクト創設者兼リーダー、コンテンツ、リーダーシップチーム</b></td></tr>
+    <tr><td><b>Rob van der Veer</b></td><td>Software Improvement Group (SIG)</td><td>オランダ</td><td>プロジェクト創設者兼リーダー、コンテンツ、リーダーシップチーム</td></tr>
+    <tr><td><b>Aruneesh Salhotra</b></td><td>SNM Consulting Inc</td><td>アメリカ</td><td>アウトリーチ、マネジメント、コンテンツ、リーダーシップチーム</td></tr>
+    <tr><td><b>Behnaz Karimi</b></td><td>アクセンチュア</td><td>ドイツ</td><td>モデルの難読化と説明を含む雑多な貢献、リーダーシップチーム</td></tr>
     <tr><td><b>Chris Ancharski</b></td><td>Global community builder</td><td>アメリカ</td><td>エンゲージメントスペシャリスト、リーダーシップチーム</td></tr>
-    <tr><td><b>Aruneesh Salhotra</b></td><td>SNM Consulting Inc</td><td>アメリカ</td><td><b>アウトリーチ、マネジメント、コンテンツ、リーダーシップチーム</b></td></tr>
     <tr><td>Adelin Travers</td><td>Trail of Bits</td><td></td><td></td></tr>
     <tr><td>Alon Tron</td><td>Stealth</td><td>イスラエル</td><td>サプライチェーンマネジメントの改善</td></tr>
     <tr><td>Angie Qarry</td><td>QDeepTech</td><td>オーストリア</td><td>データサイエンス防御メカニズムに関するいくつかの詳細と参考情報</td></tr>
     <tr><td>Annegrit Seyerlein-Klug</td><td>ブランデンブルク応用科学大学</td><td>ドイツ</td><td>雑多な標準とのマッピング</td></tr>
     <tr><td>Anthony Glynn</td><td>CapitalOne</td><td>アメリカ</td><td>多くのテキストの改善と LLM Top 10 へのリンク</td></tr>
-    <tr><td>Behnaz Karimi</td><td>アクセンチュア</td><td>ドイツ</td><td>モデルの難読化と説明を含む雑多な貢献</td></tr>
     <tr><td>Dan Sorensen</td><td>Centil</td><td>アメリカ</td><td>開発セキュリティなどのその他の追加</td></tr>
     <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要と著作権</td></tr>
     <tr><td>Disesdi Susanna Cox</td><td>OTW</td><td>アメリカ</td><td>連合学習</td></tr>
