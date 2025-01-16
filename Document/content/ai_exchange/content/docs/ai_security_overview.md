@@ -57,7 +57,7 @@ AI Exchange イニシアチブは OWASP により採択されており、[Rob va
 2. モデルの使用 (入力の提供と出力の読み取り) を通じて
 3. 実行時 (本番環境) にシステムへの攻撃によって
 
-AI では、3 つのタイプの攻撃者の目的 (妨害、欺瞞、開示) に対して、6 つのタイプの影響を区別します:
+AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) に対して、6 つのタイプの影響を区別します:
 1. 開示: トレーニングデータやテストデータの機密性が損なわれる
 2. 開示: モデル知的財産 (_モデルパラメータ_ やそれにつながるプロセスとデータ) の機密性が損なわれる
 3. 開示: 入力データの機密性が損なわれる
@@ -203,7 +203,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   - Prevent [prompt injection](/goto/directpromptinjection/) (mostly done by the model supplier) in case untrusted input goes directly into the model, and it is important that the model follows its policy instructions about how it communicates. Mostly this is the case if model input is from end users and output also goes straight to end users, who could show that the model can misbehave (e.g. be politically incorrect), which can lead to reputation damage. 
   - Prevent [indirect prompt injection](/goto/indirectpromptinjection/), in case untrusted input goes somehow into the prompt e.g. you retrieve somebody's resume and include it in a prompt.
 
-  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier given the cost of typically millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run at your own premises. The reasons to do this can be lower cost (if is is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the mode.
+  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier given the cost of typically millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run at your own premises. The reasons to do this can be lower cost (if is is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
     
   Who trains/finetunes the model?
   - The supplier: you need to prevent [obtaining a poisoned model](/goto/transferlearningattack/) by proper supply chain mangement (selecting a proper supplier and making sure you use the actual model), including assuring that: the supplier prevents development-time model poisoning including data poisoning and obtaining poisoned data. If the remaining risk for data poisoning cannot be accepted, performing post-training countermeasures can be an option - see [POISONROBUSTMODEL](/goto/poisonrobustmodel/).
