@@ -85,7 +85,7 @@ GDPR の第 5 条は「公正な処理 (fair processing)」に言及しており
 * セキュアマルチパーティコンピューティング: データを分散暗号化して保存します
 
 参考情報:
-* [AI とデータ保護に関する ICO ガイダンス](https://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/)
+* [AI とデータ保護に関する ICO ガイダンス](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/)
 * [自動意思決定に関する FPF 判例分析](https://fpf.org/blog/fpf-report-automated-decision-making-under-the-gdpr-a-comprehensive-case-law-analysis/)
 
 
