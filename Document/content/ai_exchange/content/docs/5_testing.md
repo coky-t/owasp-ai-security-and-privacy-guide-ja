@@ -63,7 +63,7 @@ The below section will cover the tools for predictive AI, followed by the sectio
 
 ## **予測 AI レッドチームのためのオープンソースツール**
 
-This sub section covers the following tools for security testing Predictive AI: Adversarial Robustness Toolbox (ART), Armory, Foolbox**, DeepSec, and TextAttack.
+This sub section covers the following tools for security testing Predictive AI: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, and TextAttack.
 
 ### **ツール名: 敵対的ロバストネスツールボックス (Adversarial Robustness Toolbox, ART)**
 
