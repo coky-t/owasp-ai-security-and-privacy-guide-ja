@@ -8,12 +8,12 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 - Project Repository - <https://github.com/OWASP/www-project-ai-security-and-privacy-guide>
 - Document Site - <https://owaspai.org/>
 
-# OWASP AI セキュリティおよびプライバシーガイド 日本語版
+## OWASP AI セキュリティおよびプライバシーガイド 日本語版
 
 * [OWASP AI セキュリティおよびプライバシーガイド](Document/index.md)
 * [リーダー](Document/leaders.md)
 
-## AI セキュリティ
+### AI セキュリティ
 
 * [OWASP AI Exchange](Document/content/ai_exchange/content/_index.md)
 * [憲章](Document/content/ai_exchange/content/charter.md)
@@ -23,6 +23,7 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 
 ### コンテンツ
 
+* [コンテンツ](Document/content/ai_exchange/content/docs/_index.md)
 * [AI セキュリティ概要](Document/content/ai_exchange/content/docs/ai_security_overview.md)
 * [1. 一般的なコントロール](Document/content/ai_exchange/content/docs/1_general_controls.md)
 * [2. 使用による脅威](Document/content/ai_exchange/content/docs/2_threats_through_use.md)
