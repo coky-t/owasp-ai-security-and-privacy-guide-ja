@@ -1,9 +1,9 @@
 {
-  "root" : "./Document",
+  "root" : ".",
   "plugins" : [ "anchors" ],
 
   "structure": {
-    "readme": "index.md"
+    "readme": "README.md"
   }
 
 }
