@@ -29,7 +29,7 @@ excludeSearch: true
 
 **OWASP AI Exchange** と **AI プライバシーおよびセキュリティガイド** のプロジェクトリーダー。
 OpenCRE, SAMM-agile.
-AI ライフサイクルに関する ISO/IEC 5338 の筆頭執筆者、AI セキュリティおよびプライバシーに関する ISO/IEC 27090/91 のワーキンググループメンバー、EU AI 法に関する CEN/CENELEC JTC21/WG5 のメンバー。
+AI ライフサイクルに関する ISO/IEC 5338 の筆頭執筆者、AI セキュリティおよびプライバシーに関する ISO/IEC 27090/91 のワーキンググループメンバー、EU AI 法に関する CEN/CENELEC JTC21/WG5 の共同執筆者/専門家。
 Software Improvement Group の上級主任エキスパート。
 
 - [Twitter](https://twitter.com/robvanderveer "Twitter") <!-- {{< icon "x-twitter" >}} [Twitter](https://twitter.com/robvanderveer "Twitter") -->
