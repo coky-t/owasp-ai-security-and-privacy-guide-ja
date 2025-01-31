@@ -11,6 +11,7 @@ AI Exchange についてのウェビナーやポッドキャストは [Media ペ
 ## AI セキュリティ脅威の概要:
 ---
 - [OWASP LLM top 10](https://genai.owasp.org/)
+- [ENISA Cybersecurity threat landscape](https://www.enisa.europa.eu/publications/artificial-intelligence-cybersecurity-challenges)
 - [ENISA ML threats and countermeasures 2021](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms)
 - [MITRE ATLAS framework for AI threats](https://atlas.mitre.org/)
 - [NIST threat taxonomy](https://csrc.nist.gov/publications/detail/white-paper/2023/03/08/adversarial-machine-learning-taxonomy-and-terminology/draft)
