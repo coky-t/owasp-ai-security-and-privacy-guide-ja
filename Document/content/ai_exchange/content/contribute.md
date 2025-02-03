@@ -62,7 +62,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Rubens Zimbres</td><td></td><td>ブラジル</td><td>敵対的機械学習</td></tr>
     <tr><td>Roger Sanz</td><td>イザベル大学</td><td>スペイン</td><td></td></tr>
     <tr><td>Sandy Dunn</td><td>ボイシ州立大学, AI Cyber Advisors</td><td>アメリカ</td><td>初期フェーズでのコミュニティ管理</td></tr>
-    <tr><td>S M Zia Ur Rashid</td><td>Paycom</td><td>アメリカ</td><td>参考情報の下にある学習および研修リソースの表</td></tr>
+    <tr><td>S M Zia Ur Rashid</td><td>Paycom</td><td>アメリカ</td><td>AI レッドチームおよびサプライチェーン要件プロジェクト、参考情報の下にある学習および研修リソースの表</td></tr>
     <tr><td>Sean Oesch</td><td>オークリッジ国立研究所</td><td>アメリカ</td><td>BLUF、敵対的トレーニング、OOD 検出、NISTIR 8269、ガイドの使いやすさ/構造</td></tr>
     <tr><td>Srajan Gupta</td><td>Dave</td><td></td><td></td></tr>
     <tr><td>Steve Francolla</td><td>Workforce Tech LLC</td><td></td><td></td></tr>
