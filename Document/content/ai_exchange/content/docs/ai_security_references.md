@@ -46,6 +46,7 @@ AI Exchange についてのウェビナーやポッドキャストは [Media ペ
 - [Awesome MLSecOps references](https://github.com/RiccardoBiosas/awesome-MLSecOps)
 - [OffSec ML Playbook](https://wiki.offsecml.com/)
 - [MIT AI Risk Repository](https://airisk.mit.edu/)
+- [Failure Modes in Machine Learning by Microsoft](https://learn.microsoft.com/en-us/security/engineering/failure-modes-in-machine-learning)
 
 ## 学習とトレーニング:
 ---
