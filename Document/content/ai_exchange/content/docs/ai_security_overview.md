@@ -2,8 +2,39 @@
 title: 0. AI セキュリティ概要
 weight: 1
 ---
+## AI Exchange について
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/about/
+
+OWASP AI Exchange は AI とデータ中心のシステムのセキュリティに関するグローバルな議論をオープンソース化しました。これは AI の脅威、コントロール、セキュリティベストプラクティスの包括的な概要を提供することで、AI のセキュリティ標準と規制の開発を促進するためのオープンな共同プロジェクトです。このコンテンツは EU AI 法、ISO/IEC 27090 (AI セキュリティ)、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/)、[OpenCRE](https://opencre.org) の標準に影響しており、セキュリティチャットボット [OpenCRE-Chat](https://opencre.org/chatbot) を通じて AI Exchange コンテンツを提供するために使用したいと考えています。
+
+<p align="center">
+<a href="https://youtu.be/kQC7ouDB_z8" target="_blank" rel="noopener noreferrer"><img width="177" height="123" src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixinfomercialthumbnail-small2.png?raw=true" border="1"/></a>
+</p>
+
+データ中心のシステムは、AI システムと、AI Exchange の脅威とコントロール (データポイズニング、データサプライチェーンマネジメント、データパイプラインセキュリティなど) の多くに関連する AI モデルを持たない「ビッグデータ」システム (データウェアハウス、BI、レポーティング、ビッグデータなど) に分けられます。
+
+私たちの **使命** は、AI セキュリティの実務者にとって頼りになるリソースとなり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[LinkedIn の AI Exchange LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/) をフォローしてください。
+
+AI Exchange はここ [owaspai.org](https://owaspai.org) で展示され、[GitHub リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (_Edit on Github_ のリンクを参照してください)。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きた出版物** であり、[OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部です。「コンテンツ」の下にある複数のセクションから成る、ひとまとまりのリソースとして構成されており、それぞれがこのウェブサイト上のページとして現れます。
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="cc:attributionName">AI セキュリティコミュニティ</span> による <a property="dct:title" rel="cc:attributionURL" href="https://owaspai.org">OWASP AI Exchange</a> には <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0</a> のマークが付けられており、著作権や帰属を明示することなく、どの部分でも自由に利用できることを意味します。可能であれば、読者がより多くの情報を見つけられるように、OWASP AI Exchange のクレジットやリンクを記載していただけると幸いです。</p>
+
+AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって設立されました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) の最高 AI 責任者、AI とセキュリティで 33 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で ISO/IEC 27090 と EU AI 法に関するセキュリティ要件に取り組んでいます。
+
+この資料はオープンソースの継続的デリバリによって常に進化しています。著者グループは 65 人の専門家 (研究者、実務家、ベンダー、データサイエンティストなど) で構成しており、コミュニティの他の人々も意見を述べることができます。[貢献ページ](../contribute.md) を参照してください。
+
+他の OWASP AI イニシアチブ:
+
+<!-- {{< cards >}} -->
+- [OWASP AI Exchange](https://owaspai.org/)    <!-- {{< small-card link="https://owaspai.org/" title="OWASP AI Exchange (this)" icon="lock-closed" >}} -->
+- [AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/)    <!-- {{< small-card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI セキュリティおよびプライバシーガイド" icon="lock-closed" >}} -->
+- [LLM Top 10](https://llmtop10.com/)    <!-- {{< small-card link="https://llmtop10.com/" title="LLM Top 10" icon="brain" >}} -->
+- [ML Top 10](https://mltop10.info/)    <!-- {{< small-card link="https://mltop10.info/" title="ML Top 10" icon="machinelearning" >}} -->
+<!-- {{< /cards >}}
+
+
 ## 要旨 - AI セキュリティをどのように対処するか？
-> このイニシアチブ (OWASP AI Exchange) についての詳細、貢献や参加の方法については [ホーム](https://owaspai.org/) をご覧ください。
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/summary/
 
@@ -21,9 +52,9 @@ AI システムは、たとえば、大規模言語モデル、線形回帰関�
 
 ---
 
-## このドキュメントについて
+## このドキュメントの使い方
 >カテゴリ: ディスカッション  
->パーマリンク: https://owaspai.org/goto/about/
+>パーマリンク: https://owaspai.org/goto/document/
 
 このページでは AI セキュリティの概要を説明し、次のページでは AI に対するセキュリティの脅威とそれに対するコントロールに関する主要なコンテンツを攻撃対象領域ごとにまとめています。
 1. [一般的なコントロール: AI ガバナンスなど](1_general_controls.md)
@@ -35,10 +66,6 @@ AI システムは、たとえば、大規模言語モデル、線形回帰関�
 
 ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
 
-AI Exchange イニシアチブは OWASP により採択されており、[Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって起こされました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) のシニアディレクター、AI とセキュリティで 31 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で EU AI 法に関するセキュリティ要件に取り組んでいます。
-
-この資料はオープンソースの継続的デリバリによって常に進化しています。著者グループは 50 人の専門家 (研究者、実務家、ベンダー、データサイエンティストなど) で構成しており、コミュニティの他の人々も意見を述べることができます。[貢献ページ](../contribute.md) を参照してください。
-これは EU AI 法、AI セキュリティに関する ISO/IEC 27090、AI プライバシーに関する ISO/IEC 27091、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/) などの進行中の主要なイニシアチブへのインプットとして機能し、さらに多くのイニシアチブが世界中で一貫した用語と洞察から恩恵を受けることができます。
 
 このページでは以下について取り上げます。
 - 脅威の概要
@@ -154,11 +181,12 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 </tbody></table>
 
 
-### ナビゲータ図
+### 詳細セクションにおける脅威とコントロールの構造
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/navigator/
 
-以下のナビゲータ図はすべての脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
+このドキュメントの次の大きなセクションは、すべての AI セキュリティ脅威とそのコントロールに関する広範な詳細です。
+以下のナビゲータ図は詳細セクションの構造を示し、脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
 <!-- {{< callout type="info" >}} -->
   画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 <!-- {{< /callout >}} -->
