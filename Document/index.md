@@ -10,8 +10,8 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 ---
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aisecprivlogosml.jpeg?raw=true" width="600" height ="127"><img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/humansonly.png?raw=true" align="right"/>
 
-このページは OWASP AI セキュリティおよびプライバシーガイドです。これには二つの部分があります。
-1. [AI セキュリティの取り組み方](#how-to-address-ai-security)
+OWASP AI セキュリティおよびプライバシーガイドは二つの部分で構成されています。
+1. [AI セキュリティの取り組み方](#how-to-address-ai-security): 200 ページ以上の資料を [OWASP AI Exchange ウェブサイト](https://owaspai.org) に掲載しています
 2. [AI プライバシーの取り組み方](#how-to-address-ai-privacy)
 
 人工知能 (AI) は増加傾向にあり、AI のセキュリティとプライバシーに関する懸念も高まっています。このガイドは安全でプライバシーを保護する AI システムの設計、作成、テスト、調達に関する明確で実用的な洞察を提供する実用的な文書です。
@@ -23,7 +23,7 @@ pitch: 安全でプライバシーを保護する AI システムの設計、作
 プルリクエストや issues ([リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/) を参照) を通じて、またはプロジェクトリーダーへの電子メールでご意見をお願いします。このガイドをどんどん良くしていきましょう。 Uber のリードプライバシーアーキテクトである Engin Bozdag 氏の多大な貢献に感謝します。
 
 # AI セキュリティの取り組み方 <a name="how-to-address-ai-security"></a>
-このコンテンツは現在 [OWASP AI exchange](https://owaspai.org) にあります。
+このコンテンツは現在 [OWASP AI exchange](https://owaspai.org) にあり、国際標準にそのまま反映されます。
 <br />
 <br />
 <br />
