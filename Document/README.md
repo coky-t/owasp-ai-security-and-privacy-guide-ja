@@ -1,9 +1,9 @@
 # OWASP AI Exchange & OWASP AI セキュリティおよびプライバシーガイド
 
-二つの取り組みの GitHub リポジトリへようこそ。
+二つのリソースの GitHub リポジトリへようこそ。
 
 1. OWASP AI Exchange, これは [owaspai.org](http://owaspai.org) にあります: 世界中の専門家のコラボレーションによる AI の脅威とコントロールを収集した生きたドキュメント群です。
-2. OWASP AI セキュリティおよびプライバシーガイドプロジェクト, [owasp.org/www-project-ai-security-and-privacy-guide/#](https://owasp.org/www-project-ai-security-and-privacy-guide/#) で自動的に公開されます。AI Exchange に直接リンクするセキュリティパートと、プライバシーパートがあります。
+2. OWASP AI セキュリティおよびプライバシーガイドのプライバシーパート, [owasp.org/www-project-ai-security-and-privacy-guide/#](https://owasp.org/www-project-ai-security-and-privacy-guide/#) で自動的に公開されます。AI Exchange に直接リンクするセキュリティパートと、プライバシーパートがあります。
 
 これらの取り組みの目標は、コミュニティの協力を通じてこれらのトピックに関する最先端の情報を収集し、明確に提示することです。
 
