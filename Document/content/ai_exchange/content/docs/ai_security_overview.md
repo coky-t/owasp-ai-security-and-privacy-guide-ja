@@ -24,14 +24,16 @@ AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) �
 
 この資料はオープンソースの継続的デリバリによって常に進化しています。著者グループは 65 人の専門家 (研究者、実務家、ベンダー、データサイエンティストなど) で構成しており、コミュニティの他の人々も意見を述べることができます。[貢献ページ](../contribute.md) を参照してください。
 
-他の OWASP AI イニシアチブ:
+## 関連する OWASP AI イニシアチブ
+>カテゴリ: ディスカッション  
+>パーマリンク: https://owaspai.org/goto/aiatowasp/
 
-<!-- {{< cards >}} -->
-- [OWASP AI Exchange](https://owaspai.org/)    <!-- {{< small-card link="https://owaspai.org/" title="OWASP AI Exchange (this)" icon="lock-closed" >}} -->
-- [AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/)    <!-- {{< small-card link="https://owasp.org/www-project-ai-security-and-privacy-guide/" title="AI セキュリティおよびプライバシーガイド" icon="lock-closed" >}} -->
-- [LLM Top 10](https://llmtop10.com/)    <!-- {{< small-card link="https://llmtop10.com/" title="LLM Top 10" icon="brain" >}} -->
-- [ML Top 10](https://mltop10.info/)    <!-- {{< small-card link="https://mltop10.info/" title="ML Top 10" icon="machinelearning" >}} -->
-<!-- {{< /cards >}}
+- [OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) は、2022 年に Rob van der Veer によって設立され、AI Exchange が設立された公式 OWASP プロジェクトです。このプロジェクトの成果物は、1) AI Exchange へのリンクの形での AI セキュリティに関するガイダンスと、2) AI プライバシーのガイダンステキストで構成しています。
+- [OWASP LLM top 10](https://llmtop10.com/) は最も重要な LLM セキュリティ問題のリストに加えて、LLM AI セキュリティおよびガバナンスチェックリストなど、LLM セキュリティに焦点を当てたさまざまな個別の成果物を提供します。
+- [OpenCRE.org](https://opencre.org) は OWASP 統合標準プロジェクトの下で設立され、OWASP 内外のさまざまなセキュリティ標準にわたる共通要件のカタログを保持しています。OpenCRE はまもなく AI セキュリティコントロールをリンクする予定です。
+- [OWASP AI Exchange (本作品)](https://owaspai.org) は、効果的な AI セキュリティに関するグローバルな合意と明確化を達成するために、AI セキュリティ標準化をオープンソース化しました。その目的は以下の二つです。
+  1. AI セキュリティ実務者に対して、ドキュメントのコレクションではなく、単一の包括的で一貫性のあるリソースで、実用的なガイダンスであり頼りになるブックマークを提供すること。
+  2. AI セキュリティに関するグローバル標準 ISO/IEC 27090 や AI 法の公式セキュリティ標準など、国際標準へのコンテンツの重要なソースとなること。これは国際標準化機構との独自のリエゾンパートナーシップを通じて可能になりました。そうすることで、すべてを著作権フリーで提供し、主要な機関と提携することで、AI Exchange は AI セキュリティに関するグローバルな合意を提示します。
 
 
 ## 要旨 - AI セキュリティをどのように対処するか？
