@@ -52,6 +52,8 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
 
 参考情報:
  - [UNESCO on AI ethics and governance](https://www.unesco.org/ethics-ai/en)
+ - [GenAI security project LLM AI Cybersecurity & governance checklist](https://genai.owasp.org/resource/llm-applications-cybersecurity-and-governance-checklist-english/)
+ - 
 
 #### #SECPROGRAM
 > カテゴリ: ガバナンスコントロール  
@@ -126,6 +128,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
     - [OpenCRE のセキュリティリスク分析](https://www.opencre.org/cre/307-242)
     - [NIST SP 800-53 の一般的なセキュリティ/プライバシーコントロール](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
     - [NIST サイバーセキュリティフレームワーク](https://www.nist.gov/cyberframework)
+    - [GenAI security project LLM and GenAI Security Center of Excellence guide](https://genai.owasp.org/resource/llm-and-generative-ai-security-center-of-excellence-guide/)
 
 
 #### #SECDEVPROGRAM
@@ -180,6 +183,7 @@ AI-specific elements in the development environment (sometimes referred to as ML
 - [OWASP SAMM](https://owaspsamm.org)
 - [NIST SSDF](https://csrc.nist.gov/projects/ssdf)
 - [NIST SSDF AI practices](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.ipd.pdf)
+- [GenAI security project solutions overview](https://genai.owasp.org/ai-security-solutions-landscape/)
 
 #### #DEVPROGRAM
 > カテゴリ: ガバナンスコントロール  
