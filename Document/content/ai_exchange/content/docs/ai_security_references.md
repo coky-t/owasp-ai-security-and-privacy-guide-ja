@@ -7,6 +7,7 @@ weight: 7
 >パーマリンク: https://owaspai.org/goto/references/
 
 AI Exchange についてのウェビナーやポッドキャストは [Media ページ](https://owaspai.org/media/) を参照してください。
+特定のトピックに関する参考情報は AI Exchange のコンテンツを通じて見つけることができます。したがってこの参考情報セクションにはより広範な出版物を含んでいます。
 
 ## AI セキュリティ脅威の概要:
 ---
