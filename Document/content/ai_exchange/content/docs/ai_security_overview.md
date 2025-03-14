@@ -458,31 +458,36 @@ LLM による主な新しい脅威は何ですか？
 英国 NCSC / CISA の [安全な AI システム開発のガイドライン](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) を AI Exchange のコントロールにマッピングします。
 脅威とリンクしているコントロールを確認するには、[AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) を参照してください。
 
+Note that the UK Government drove an initiative through their DSIT repartment to build on these joint guidelines and produce the [DSIT Code of Practice for the Cyber Secyrity of AI](https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai#code-of-practice-principles), which reorganizes things according to 13 principles, does a few tweaks, and adds a bit more governance. The principle mapping is added below, and adds mostly post-market aspects:
+- Principle 10: Communication and processes assoiated with end-users and affected entities
+- Principle 13: Ensure proper data and model disposal
+
+
 1. 安全な設計
 
-- 脅威とリスクに対するスタッフの意識を高めます:
+- 脅威とリスクに対するスタッフの意識を高めます (DSIT principle 1):
   #[SECURITY EDUCATE](1_general_controls.md#SECEDUCATE)
-- システムに対する脅威をモデル化します:
+- システムに対する脅威をモデル化します (DSIT principle 3):
   #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) のリスク分析を参照してください
-- 機能性とパフォーマンスだけでなくセキュリティも考慮してシステムを設計します:
+- 機能性とパフォーマンスだけでなくセキュリティも考慮してシステムを設計します (DSIT principle 2):
   #[AI PROGRAM](1_general_controls.md#AIPROGRAM), #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM), #[DEVELOPMENT PROGRAM](1_general_controls.md#DEVPROGRAM), #[SECURE DEVELOPMENT PROGRAM](1_general_controls.md#SECDEVPROGRAM), #[CHECK COMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), #[LEAST MODEL PRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), #[DISCRETE](1_general_controls.md#DISCRETE), #[OBSCURE CONFIDENCE](2_threats_through_use.md#OBSCURECONFIDENCE), #[OVERSIGHT](1_general_controls.md#OVERSIGHT), #[RATE LIMIT](2_threats_through_use.md#RATELIMIT), #[DOS INPUT VALIDATION](2_threats_through_use.md#DOSINPUTVALIDATION), #[LIMIT RESOURCES](2_threats_through_use.md#LIMITRESOURCES), #[MODEL ACCESS CONTROL](2_threats_through_use.md#MODELACCESSCONTROL), #[AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY)
 - AI モデルを選択する際に、セキュリティの利点とトレードオフを考慮します
   すべての開発時のデータサイエンスコントロール (現在 13), #[EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY)
 
 2. 安全な開発
 
-- サプライチェーンを保護します:
+- サプライチェーンを保護します (DSIT principle 7):
   #[SUPPLY CHAIN MANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
-- 資産を特定、追跡、保護します:
+- 資産を特定、追跡、保護します (DSIT principle 5):
   #[DEVELOPMENT SECURITY](3_development_time_threats.md#DEVSECURITY), #[SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), #[CONFIDENTIAL COMPUTE](3_development_time_threats.md#CONFCOMPUTE), #[MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), #[DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), #[ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), #[SHORT RETAIN](1_general_controls.md#SHORTRETAIN), #[OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA) および #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部
-- データ、モデル、プロンプトを文書化します:
+- データ、モデル、プロンプトを文書化します (DSIT principle 8):
   #[DEVELOPMENT PROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 - 技術的負債を管理します:
   #[DEVELOPMENT PROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 
 3. 安全な展開
 
-- インフラストラクチャを保護します:
+- インフラストラクチャを保護します (DSIT principle 6):
   #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部と「資産を特定、追跡、保護します」を参照してください
 - モデルを継続的に保護します:
   #[INPUT DISTORTION](2_threats_through_use.md#INPUTDISTORTION), #[FILTER SENSITIVE MODEL OUTPUT](2_threats_through_use.md#FILTERSENSITIVEMODELOUTPUT), #[RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), #[MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), #[PROMPT INPUT VALIDATION](2_threats_through_use.md#PROMPTINPUTVALIDATION), #[INPUT SEGREGATION](2_threats_through_use.md#INPUTSEGREGATION)
@@ -490,16 +495,16 @@ LLM による主な新しい脅威は何ですか？
   #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部
 - 責任をもって AI をリリースします:
   #[DEVELOPMENT PROGRAM](1_general_controls.md#DEVPROGRAM) の一部
-- ユーザーが正しいことを簡単にできるようにします:
-  #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部
+- ユーザーが正しいことを簡単にできるようにします (DSIT principe 4, called Enable human responsibility for AI systems):
+  #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部, and also involving #[EXPLAINABILITY](/goto/explainability/), documenting prohibited use cases, and #[HUMAN OVERSIGHT](/goto/humanoversight))
 
 4. 安全な運用と保守
 
-- システムの動作を監視します:
+- システムの動作を監視します (DSIT principle 12 and similar to DSIT principle 9 - appropriate testing and validation):
   #[CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), #[UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING)
 - システムの入力を監視します:
   #[MONITOR USE](2_threats_through_use.md#MONITORUSE), #[DETECT ODD INPUT](2_threats_through_use.md#DETECTODDINPUT), #[DETECT ADVERSARIAL INPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT)
-- セキュアバイデザインのアプローチに従ってアップデートを行います:
+- セキュアバイデザインのアプローチに従ってアップデートを行います (DSIT Principle 11: Maintain regular security updates, patches and mitigations):
   #[SECURE DEVELOPMENT PROGRAM](1_general_controls.md#SECDEVPROGRAM) の一部
 - 教訓を収集して共有します:
   #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) および #[SECURE DEVELOPMENT PROGRAM](1_general_controls.md#SECDEVPROGRAM) の一部
