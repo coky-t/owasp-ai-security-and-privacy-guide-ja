@@ -6,33 +6,61 @@ weight: 1
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/about/
 
-OWASP AI Exchange は AI とデータ中心のシステムのセキュリティに関するグローバルな議論をオープンソース化しました。これは AI の脅威、コントロール、セキュリティベストプラクティスの包括的な概要を提供することで、AI のセキュリティ標準と規制の開発を促進するためのオープンな共同プロジェクトです。このコンテンツは EU AI 法、ISO/IEC 27090 (AI セキュリティ)、[OWASP ML Top 10](https://mltop10.info/)、[OWASP LLM Top 10](https://llmtop10.com/)、[OpenCRE](https://opencre.org) の標準に影響しており、セキュリティチャットボット [OpenCRE-Chat](https://opencre.org/chatbot) を通じて AI Exchange コンテンツを提供するために使用したいと考えています。
+**Summary**  
+Welcome to the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships. Through broad collaboration with key institutes and SDOs the _Exchange_ represents the consensus on AI security and privacy.
 
-<p align="center">
-<a href="https://youtu.be/kQC7ouDB_z8" target="_blank" rel="noopener noreferrer"><img width="177" height="123" src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixinfomercialthumbnail-small2.png?raw=true" border="1"/></a>
-</p>
+ <p align="center">
+ <a href="https://youtu.be/kQC7ouDB_z8" target="_blank" rel="noopener noreferrer"><img width="177" height="123" src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixinfomercialthumbnail-small2.png?raw=true" border="1"/></a>
+ </p>
+
+**Details**  
+The OWASP AI Exchange has open sourced the global discussion on the security and privacy of AI and data-centric systems. It is an open collaborative OWASP project to advance the development of AI security & privacy standards, by providing a comprehensive framework of AI threats, controls, and related best practices. Through a unique official liaison partnership, this content is feeding into standards for the EU AI Act (50 pages contributed), ISO/IEC 27090 (AI security, 70 pages contributed), ISO/IEC 27091 (AI privacy), and [OpenCRE](https://opencre.org) - which we are currently preparing to provide the AI Exchange content through the security chatbot [OpenCRE-Chat](https://opencre.org/chatbot).
 
 データ中心のシステムは、AI システムと、AI Exchange の脅威とコントロール (データポイズニング、データサプライチェーンマネジメント、データパイプラインセキュリティなど) の多くに関連する AI モデルを持たない「ビッグデータ」システム (データウェアハウス、BI、レポーティング、ビッグデータなど) に分けられます。
 
-私たちの **使命** は、AI セキュリティの実務者にとって頼りになるリソースとなり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[LinkedIn の AI Exchange LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/) をフォローしてください。
+私たちの **使命** は、AI とデータ中心のシステムにおけるセキュリティとプライバシーの実務者にとって頼りになるリソースとなり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[LinkedIn の AI Exchange LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/) をフォローしてください。
 
-AI Exchange はここ [owaspai.org](https://owaspai.org) で展示され、[GitHub リポジトリ](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (_Edit on Github_ のリンクを参照してください)。これは AI セキュリティの専門知識を世界的に交換するための **オープンソースの生きた出版物** であり、[OWASP AI セキュリティおよびプライバシーガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) プロジェクトの一部です。「コンテンツ」の下にある複数のセクションから成る、ひとまとまりのリソースとして構成されており、それぞれがこのウェブサイト上のページとして現れます。
+**How it works**  
+The AI Exchange is displayed here at [owaspai.org](https://owaspai.org) and edited using a [GitHub repository](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (see the links _Edit on Github_). It is is an **open-source living publication** for the worldwide exchange of AI security & privacy expertise. It is structured as one coherent resource consisting of several sections under 'content', each represented by a page on this website.
+
+This material is evolving constantly through open source continuous delivery. The authors group consists of over 70 carefully selected experts (researchers, practitioners, vendors, data scientists, etc.) and other people in the community are welcome to provide input too. See the [contribute page](/contribute).
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="cc:attributionName">AI セキュリティコミュニティ</span> による <a property="dct:title" rel="cc:attributionURL" href="https://owaspai.org">OWASP AI Exchange</a> には <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0</a> のマークが付けられており、著作権や帰属を明示することなく、どの部分でも自由に利用できることを意味します。可能であれば、読者がより多くの情報を見つけられるように、OWASP AI Exchange のクレジットやリンクを記載していただけると幸いです。</p>
 
-AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって設立されました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) の最高 AI 責任者、AI とセキュリティで 33 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で ISO/IEC 27090 と EU AI 法に関するセキュリティ要件に取り組んでいます。
+**History**  
+AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって設立されました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) の最高 AI 責任者、AI とセキュリティで 33 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で ISO/IEC 27090、ISO/IEC 27091、EU AI 法に関するセキュリティ要件に取り組んでおり、EU 加盟国によって共同編集者に選出されました。
 
-この資料はオープンソースの継続的デリバリによって常に進化しています。著者グループは 65 人の専門家 (研究者、実務家、ベンダー、データサイエンティストなど) で構成しており、コミュニティの他の人々も意見を述べることができます。[貢献ページ](../contribute.md) を参照してください。
+The project started out as the 'AI security and privacy guide' in October 22 and was rebranded a year later as 'AI Exchange' to highlight the element of global collaboration. In March 2025 the AI Exchange was awarded the status of 'OWASP Flagship project' because of its critical importance, together with the ['GenAI Project'](https://genai.owasp.org/).
+
 
 ## <a name="relevant-owasp-ai-initiatives">関連する OWASP AI イニシアチブ</a>
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/aiatowasp/
 
-- [OWASP AI Exchange (本作品)](https://owaspai.org) は、AI の脅威とコントロールに関する包括的なコアフレームワークを提供し、生成 AI を含むあらゆる種類の AI を網羅します。その目的は以下の二つです。
-  1. AI セキュリティ実務者に対して、実用的なガイダンスであり頼りになるブックマークを提供すること。包括的なリファレンスであるため、多くの既存の AI イニシアチブへの入り口として機能します。
-  2. AI セキュリティに関するグローバル標準 ISO/IEC 27090 や AI 法の公式セキュリティ標準など、国際標準へのコンテンツの重要なソースとして機能すること。これは国際標準化機構との独自のリエゾンパートナーシップを通じて可能になりました。そうすることで、すべてを著作権フリーで提供し、主要な機関と提携することで、AI Exchange は AI セキュリティに関するグローバルな合意を提示します。
-- [OWASP 生成 AI セキュリティプロジェクト](https://genai.owasp.org/) では、大規模言語モデルの最も深刻なセキュリティリスクを特集した LLM Top 10 を含む、生成 AI セキュリティに関する多数のドキュメント (LLM AI セキュリティおよびガバナンスチェックリストなど) を提供します。
-- [OpenCRE.org](https://opencre.org) は OWASP 統合標準プロジェクトの下で設立され、OWASP 内外のさまざまなセキュリティ標準にわたる共通要件のカタログを保持しています。OpenCRE はまもなく AI セキュリティコントロールをリンクする予定です。
+In short:
+- The AI Exchange is broad by covering all types of AI, and privacy next to security. It focuses on comprehensive threats and controls.
+- The GenAI Project focuses on Generative AI and security, and is broad in terms of topics.
+
+if you're looking for information on AI at OWASP: 
+- If you want to **ensure security or privacy of your AI or data-centric system** (GenAI or not), including testing, or want to know where AI security standardisation is going, use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
+- If you want to get a **brief overview** of security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
+- For all **other topics** around Generative AI security, check the [GenAI security project](https://genai.owasp.org/) or the [AI Exchange references](/goto/references/).
+
+
+Current active and ready AI-related projects at OWASP are: 
+- [The OWASP AI Exchange(this work)](/goto/about/) is the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships.
+- The [OWASP GenAI security project](https://genai.owasp.org/) is an umbrella project of various initiatives that publish documents on Generative AI security, including the LLM AI Security & Governance Checklist and the LLM top 10 - featuring the most severe security risks of Large Language Models.
+- [OpenCRE.org](https://opencre.org) has been established under the OWASP Integration standards project(from the _Project wayfinder_) and holds a catalog of common requirements across various security standards inside and outside of OWASP. OpenCRE will link AI security controls soon.
+
+When comparing the AI Exchange with the GenAI project, the Exchange:
+- feeds straight into international standards
+- is about all AI and data centric systems instead of just Generative AI
+- is delivered as a single comprehensive resource instead of a collection of documents
+- is updated continuously instead of released occasionally
+- is focusing on a framework of threats, controls, and related practices, so more technical-oriented, whereas the GenAI project covers a broader range of management aspects
+- also covers AI privacy
+- is offered completely free of copyright and attribution
+
 
 ## 要旨 - AI セキュリティをどのように対処するか？
 >カテゴリ: ディスカッション  
@@ -387,29 +415,6 @@ AI の側面を明確にし、それらがセキュリティとどのように�
   - さらに [実行時の従来のセキュリティ攻撃](4_runtime_application_security_threats.md##41-non-ai-specific-application-security-threats)
 
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/aiwayfinder.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/aiwayfinder.png)
-
-### <a name="how-about-privacy">プライバシーについてはどうですか？</a>
-> カテゴリ: ディスカッション  
-> パーマリンク: https://owaspai.org/goto/privacy/
-
-Just like any system that processes data, AI systems can have privacy risks. There are some particualar privacy aspects to AI:
-- AI systems are data-intensive and typically present additional risks regarding data collection and retention. Personal data may be collected from various sources, each subject to different levels of **sensitivity and regulatory constraints**. Legislation often requires a **legal basis and/or consent** for the collection and use of personal data, and specifies **rights to individuals** to correct, request, and remove their own data.
-- **Protecting training data** is a challenge, especially because it typically needs to be retained for long periods - as many models need to be retrained. Often, the actual identities of people involved are irrelevant for the model, but privacy risks still remain even if identity data is removed because it might be possible to deduce individual identities from the remaining data. This is where differential privacy becomes crucial: by altering the data to make it sufficiently unrecognizable, it ensures individual privacy while still allowing for valuable insights to be derived from the data. Alteration can be done by for example adding noise or aggregating.
-- An additional complication in the protection of training data is that the **training data is accessible in the engineering environment**, which therefore needs more protection than it usually does - since conventional systems normally don't have personal data available to technical teams.
-- The nature of machine learning allows for certain **unique strategies** to improve privacy, such as federated learning: splitting up the training set in different separated systems - typically aligning with separated data collection.
-- AI systems **make decisions** and if these decisions are about people they may be discriminating regarding certain protected attributes (e.g. gender, race), plus the decisions may result in actions that invade privacy, which may be an ethical or legal concern. Furthermore, legislation may prohibit some types of decisions and sets rules regarding transparency about how these decisions are made, and about how individuals have the right to object.
-- Last but not least: AI models suffer from **model attack risks** that allow attackers to extract training data from the model, e.g. model inversion, membership inference, and disclosing sensitive data in large language models
-
-
-AI プライバシーは二つのパートに分けることができます。
-
-1. AI セキュリティに対する脅威とそのコントロール (このドキュメント) は、以下を含みます。
-  - トレーニングデータとテストデータ、モデル入出力における個人データの機密性と完全性の保護 - 以下で構成します。
-    - 転送時および保存時の個人データの「従来型」セキュリティ
-    - 個人データを取得しようとするモデル攻撃 (モデル反転など) に対する保護
-    - 個人データの最小化/差分プライバシー (最小保持を含む)
-  - モデルの動作が個人のプライバシーを侵害する可能性がある場合のモデル動作の完全性保護。これはたとえば個人が違法に差別される場合や、モデルの出力がプライバシーを侵害するアクション (詐欺調査を受けるなど) につながる場合に発生します。
-2. セキュリティに関するものではありませんが、個人のさらなる権利に関する脅威とコントロールは GDPR などのプライバシー規制でカバーされます。これには使用制限、同意、公平性、透明性、データの正確性、訂正/異議申し立て/消去/請求の権利が含まれます。概要については、[OWASP AI ガイドのプライバシーパート](https://owasp.org/www-project-ai-security-and-privacy-guide/) を参照してください。
 
 ### 生成 AI (LLM など) についてはどうですか？
 > カテゴリ: ディスカッション  
