@@ -67,3 +67,6 @@
 <!--     </td> -->
 <!--   </tr> -->
 <!-- </table> -->
+<hr>
+<center>スポンサー</center><br>
+<a href="https://www.straiker.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_straiker.jpg" style="display: block; margin: auto;" alt="Straiker sponsor"></a>
