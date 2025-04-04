@@ -25,12 +25,11 @@ excludeSearch: true
 
 <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/content/ai_exchange/static/images/rob_van_der_veer.jpeg?raw=true"> <!-- {{< image-left src="/images/rob_van_der_veer.jpeg" alt="Image description" width="auto" height="150px" >}} -->
 
-### Rob van der Veer
+### [Rob van der Veer](https://robvanderveer.com)
 
-**OWASP AI Exchange** と **AI プライバシーおよびセキュリティガイド** のプロジェクトリーダー。
-OpenCRE, SAMM-agile.
+**OWASP AI Exchange**, OpenCRE のプロジェクトリーダーであり、SAMM の Agile ガイドの著者。
 AI ライフサイクルに関する ISO/IEC 5338 の筆頭執筆者、AI セキュリティおよびプライバシーに関する ISO/IEC 27090/91 のワーキンググループメンバー、EU AI 法に関する CEN/CENELEC JTC21/WG5 の共同執筆者/専門家。
-Software Improvement Group の上級主任エキスパート。
+Exchange に AI 脅威とコントロールの最初の枠組みを寄贈した企業、Software Improvement Group の最高 AI 責任者。
 
 - [Twitter](https://twitter.com/robvanderveer "Twitter") <!-- {{< icon "x-twitter" >}} [Twitter](https://twitter.com/robvanderveer "Twitter") -->
 - [Slack](https://owasp.org/slack/invite "Slack")<!-- {{< icon "slack" >}} [Slack](https://owasp.org/slack/invite "Slack") -->
