@@ -5,7 +5,7 @@
 <table style="border: none;">
   <tr>
     <td style="border: none;">
-      <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml3.jpg?raw=true" alt="OWASP AI Exchange Logo"/>
+      <img src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixlogosml3-flag.jpg?raw=true" alt="OWASP AI Exchange Logo"/>
     </td>
     <td style="border: none;">
       <a href="https://youtu.be/kQC7ouDB_z8" target="_blank" rel="noopener noreferrer">
@@ -25,7 +25,7 @@
 - [概要](docs/ai_security_overview.md#about-the-ai-exchange)    <!-- {{< small-card link="/goto/about/" title="概要" icon="document-text" >}} -->
 - [私たちとつながろう！](connect.md)    <!-- {{< small-card link="/connect" title="私たちとつながろう！" icon="chat" >}} -->
 - [貢献](contribute.md)    <!-- {{< small-card link="/contribute" title="貢献" icon="star" >}} -->
-- [登録](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="登録" icon="login" >}} -->
+- [スポンサー](https://owaspai.org/sponsor/)    <!-- {{< small-card link="/sponsor" title="スポンサー" icon="star" >}} -->
 - [メディア](media.md)    <!-- {{< small-card link="/media" title="メディア" icon="speakerphone" >}} -->
 - [周期表](docs/ai_security_overview.md#periodic-table-of-ai-security)    <!-- {{< small-card link="/goto/periodictable/" title="周期表" icon="document-text">}} -->
 <!-- {{< /cards >}} -->
