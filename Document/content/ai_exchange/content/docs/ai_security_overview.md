@@ -28,9 +28,9 @@ This material is evolving constantly through open source continuous delivery. Th
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="cc:attributionName">AI セキュリティコミュニティ</span> による <a property="dct:title" rel="cc:attributionURL" href="https://owaspai.org">OWASP AI Exchange</a> には <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0</a> のマークが付けられており、著作権や帰属を明示することなく、どの部分でも自由に利用できることを意味します。可能であれば、読者がより多くの情報を見つけられるように、OWASP AI Exchange のクレジットやリンクを記載していただけると幸いです。</p>
 
 **History**  
-AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって設立されました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) の最高 AI 責任者、AI とセキュリティで 33 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で ISO/IEC 27090、ISO/IEC 27091、EU AI 法に関するセキュリティ要件に取り組んでおり、EU 加盟国によって共同編集者に選出されました。
+AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって 2022 年に設立されました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) の最高 AI 責任者、AI とセキュリティで 33 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で ISO/IEC 27090、ISO/IEC 27091、EU AI 法に関するセキュリティ要件に取り組んでおり、EU 加盟国によって共同編集者に選出されました。
 
-The project started out as the 'AI security and privacy guide' in October 22 and was rebranded a year later as 'AI Exchange' to highlight the element of global collaboration. In March 2025 the AI Exchange was awarded the status of 'OWASP Flagship project' because of its critical importance, together with the ['GenAI Project'](https://genai.owasp.org/).
+The project started out as the 'AI security and privacy guide' in October 22 and was rebranded a year later as 'AI Exchange' to highlight the element of global collaboration. In March 2025 the AI Exchange was awarded the status of 'OWASP Flagship project' because of its critical importance, together with the ['GenAI Security Project'](https://genai.owasp.org/).
 
 
 ## <a name="relevant-owasp-ai-initiatives">関連する OWASP AI イニシアチブ</a>
@@ -38,26 +38,25 @@ The project started out as the 'AI security and privacy guide' in October 22 and
 >パーマリンク: https://owaspai.org/goto/aiatowasp/
 
 In short:
-- The AI Exchange is broad by covering all types of AI, and privacy next to security. It focuses on comprehensive threats and controls.
-- The GenAI Project focuses on Generative AI and security, and is broad in terms of topics.
+- The **OWASP AI Exchange** is a comprehensive core framework of threats, controls and related best practices for all AI, actively aligned with international standards and feeding into them. It covers all types of AI, and next to security it discusses privacy as well.
+- The **OWASP GenAI Security Project** is a growing collection of documents on the security of Generative AI, covering a wide range of topics including the LLM top 10.
 
 if you're looking for information on AI at OWASP: 
-- If you want to **ensure security or privacy of your AI or data-centric system** (GenAI or not), including testing, or want to know where AI security standardisation is going, use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
-- If you want to get a **brief overview** of security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
-- For all **other topics** around Generative AI security, check the [GenAI security project](https://genai.owasp.org/) or the [AI Exchange references](/goto/references/).
+- If you want to **ensure security or privacy of your AI or data-centric system** (GenAI or not), or want to know where AI security standardisation is going, you can use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
+- If you want to get a **quick overview** of key security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
+- For **any specific topic** around Generative AI security, check the [GenAI security project](https://genai.owasp.org/) or the [AI Exchange references](/goto/references/).
 
-
-Current active and ready AI-related projects at OWASP are: 
+Some more details on the projects: 
 - [The OWASP AI Exchange(this work)](/goto/about/) is the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships.
-- The [OWASP GenAI security project](https://genai.owasp.org/) is an umbrella project of various initiatives that publish documents on Generative AI security, including the LLM AI Security & Governance Checklist and the LLM top 10 - featuring the most severe security risks of Large Language Models.
+- The [OWASP GenAI Security Project](https://genai.owasp.org/) is an umbrella project of various initiatives that publish documents on Generative AI security, including the LLM AI Security & Governance Checklist and the LLM top 10 - featuring the most severe security risks of Large Language Models.
 - [OpenCRE.org](https://opencre.org) has been established under the OWASP Integration standards project(from the _Project wayfinder_) and holds a catalog of common requirements across various security standards inside and outside of OWASP. OpenCRE will link AI security controls soon.
 
-When comparing the AI Exchange with the GenAI project, the Exchange:
+When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 - feeds straight into international standards
 - is about all AI and data centric systems instead of just Generative AI
-- is delivered as a single comprehensive resource instead of a collection of documents
-- is updated continuously instead of released occasionally
-- is focusing on a framework of threats, controls, and related practices, so more technical-oriented, whereas the GenAI project covers a broader range of management aspects
+- is delivered as a single resource instead of a collection of documents
+- is updated continuously instead of published at specific times
+- is focusing on a framework of threats, controls, and related practices, so more technical-oriented, whereas the GenAI project covers a broader range of aspects
 - also covers AI privacy
 - is offered completely free of copyright and attribution
 
