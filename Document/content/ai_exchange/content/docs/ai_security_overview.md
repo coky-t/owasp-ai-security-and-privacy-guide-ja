@@ -18,6 +18,8 @@ The OWASP AI Exchange has open sourced the global discussion on the security and
 
 データ中心のシステムは、AI システムと、AI Exchange の脅威とコントロール (データポイズニング、データサプライチェーンマネジメント、データパイプラインセキュリティなど) の多くに関連する AI モデルを持たない「ビッグデータ」システム (データウェアハウス、BI、レポーティング、ビッグデータなど) に分けられます。
 
+Security here means preventing unauthorized access, use, disclosure, disruption, modification, or destruction. Modification includes manipulating the behaviour of an AI model in unwanted ways.
+
 私たちの **使命** は、AI とデータ中心のシステムにおけるセキュリティとプライバシーの実務者にとって頼りになるリソースとなり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[LinkedIn の AI Exchange LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/) をフォローしてください。
 
 **How it works**  
@@ -83,22 +85,35 @@ AI システムは、たとえば、大規模言語モデル、線形回帰関�
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/document/
 
-このページでは AI セキュリティの概要を説明し、次のページでは AI に対するセキュリティの脅威とそれに対するコントロールに関する主要なコンテンツを攻撃対象領域ごとにまとめています。
-1. [一般的なコントロール: AI ガバナンスなど](1_general_controls.md)
-2. [使用による脅威: 回避攻撃など](2_threats_through_use.md)
-3. [開発時の脅威: データポイズニングなど](3_development_time_threats.md)
-4. [実行時のセキュリティ脅威: 安全でない出力](4_runtime_application_security_threats.md)
+The AI Exchange is a single coherent resource on how to protect AI systems, presented on this website, divided over several pages.
 
-各ページの下部、または左側のサイドバーでページ間を移動できます。右側のサイドバーにはページ上のさまざまなセクションが表示されます。小さな画面ではメニューから移動できます。
+**Ways to start**
+- If you want to **protect your AI system**, start with [risk analysis](/goto/riskanalysis/) which will guide you through a number of questions, resulting in the  attacks that apply. And when you click on those attacks you'll find the controls to select and implement.
+- If you want to get an overview of the **attacks** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the attack you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
+- To understand how **controls** link to the attacks, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/).
+- If you want to **test** the security of AI systems with tools, gogo [the testing page](/goto/testing/).
+- To learn about **privacy** of AI systems, check [the privacy section](/goto/aiprivacy/).
+- Looking for more information, or training material: see the [references](/goto/references/).
 
-ここでいうセキュリティとは認可されていないアクセス、使用、開示、中断、改変、破壊を防止することを意味します。改変には AI モデルの動作を望ましくない方法で操作することが含まれます。
+**The structure**  
+You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu.
 
+In short the structure is:  
+0. [AI security overview - this page](/docs/ai_security_overview), contais an overview of AI security and discussions of various topics.
+1. [General controls, such as AI governance](/goto/generalcontrols/)
+2. [Threats through use, such as evasion attacks](/goto/threatsuse/)
+3. [Development-time threats, such as data poisoning](/goto/developmenttime/)
+4. [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
+5. [AI security testing](/goto/testing/)
+6. [AI privacy](/goto/aiprivacy)
+7. [References](/goto/references/)
 
 このページでは以下について取り上げます。
 - 脅威の概要
 - 脅威とコントロールのさまざまな概要: マトリックス、周期表、ナビゲータ
 - 関連する脅威とコントロールを選択するためのリスク分析
-- さまざまなトピックに関する議論 (... についてはどうですか): ヒューリスティックシステム、責任ある AI、プライバシー、生成 AI、NCSC/CISA ガイドライン、著作権
+- さまざまなトピックに関する議論 (... についてはどうですか): ヒューリスティックシステム、責任ある AI、生成 AI、NCSC/CISA ガイドライン、著作権
+
 ---
 
 ## 脅威の概要
