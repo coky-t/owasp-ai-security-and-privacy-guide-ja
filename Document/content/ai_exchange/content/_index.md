@@ -19,7 +19,7 @@
 > 広範な AI セキュリティとプライバシーに関する頼りになるリソースへようこそ。AI とデータ中心のシステムを脅威から保護するための 200 ページ以上にわたる実践的なアドバイスとリファレンスです。このコンテンツは実務者にとって重要なブックマークとして機能し、公式の標準パートナーシップを通じて ISO/IEC や AI 法などの国際標準に積極的かつ大きく貢献しています。主要機関や SDO との広範な協力を通じて、_Exchange_ は AI セキュリティとプライバシーに関するコンセンサスを表しています。<br>
 [OWASP の AI プロジェクトの概要](docs/ai_security_overview.md#relevant-owasp-ai-initiatives) を参照してください。
 
-<!-- {{< spacer height="40" >}} -->
+<!-- {{< spacer height="10" >}} -->
 
 <!-- {{< cards >}} -->
 - [概要](docs/ai_security_overview.md#about-the-ai-exchange)    <!-- {{< small-card link="/goto/about/" title="概要" icon="document-text" >}} -->
@@ -67,6 +67,15 @@
 <!--     </td> -->
 <!--   </tr> -->
 <!-- </table> -->
+
 <hr>
 <center>スポンサー</center><br>
 <a href="https://www.straiker.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_straiker.jpg" style="display: block; margin: auto;" alt="Straiker sponsor"></a>
+
+<hr>
+<br>
+<b>オランダ鉄道サイバーセキュリティディレクター、Dimitri van Zantvliet 氏:</b><br>
+「OWASP Exchange が提唱しているような、リスクベースでコンテキストを意識したアプローチは、AI の責任ある使用をサポートするだけでなく、エンジニアに無関係なチェックリストで負担をかけることなく、実際の脅威を確実に緩和できます。私たちは、日々これらのシステムを構築し、防御している人々によって作成された標準を必要としています。」<br>
+
+<b>Peloton Interactive 最高セキュリティ＆トラスト責任者、Sri Manda 氏:</b><br>
+「AI 規制は安全性とセキュリティを確保し、ベンダーにとって公平な競争環境を作るために不可欠です。課題は、標準を明確にすることで法的な不確実性を排除し、柔軟なコンプライアンスを組み込むことで不要な要件を避けることです。OWASP Exchgange がセキュリティコミュニティを巻き込み、効果的な標準を確立することでこうした課題に取り組んでいることを大変嬉しく思います。」<br>
