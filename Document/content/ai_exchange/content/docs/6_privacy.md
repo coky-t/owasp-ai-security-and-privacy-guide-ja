@@ -5,16 +5,16 @@ weight: 7
 > カテゴリ: ディスカッション  
 > パーマリンク: https://owaspai.org/goto/aiprivacy/
 
-Just like any system that processes data, AI systems can have privacy risks. There are some particualar privacy aspects to AI:
-- AI systems are data-intensive and typically present additional risks regarding data collection and retention. Personal data may be collected from various sources, each subject to different levels of **sensitivity and regulatory constraints**. Legislation often requires a **legal basis and/or consent** for the collection and use of personal data, and specifies **rights to individuals** to correct, request, and remove their own data.
-- **Protecting training data** is a challenge, especially because it typically needs to be retained for long periods - as many models need to be retrained. Often, the actual identities of people involved are irrelevant for the model, but privacy risks still remain even if identity data is removed because it might be possible to deduce individual identities from the remaining data. This is where differential privacy becomes crucial: by altering the data to make it sufficiently unrecognizable, it ensures individual privacy while still allowing for valuable insights to be derived from the data. Alteration can be done by for example adding noise or aggregating.
-- An additional complication in the protection of training data is that the **training data is accessible in the engineering environment**, which therefore needs more protection than it usually does - since conventional systems normally don't have personal data available to technical teams.
-- The nature of machine learning allows for certain **unique strategies** to improve privacy, such as federated learning: splitting up the training set in different separated systems - typically aligning with separated data collection.
-- AI systems **make decisions** and if these decisions are about people they may be discriminating regarding certain protected attributes (e.g. gender, race), plus the decisions may result in actions that invade privacy, which may be an ethical or legal concern. Furthermore, legislation may prohibit some types of decisions and sets rules regarding transparency about how these decisions are made, and about how individuals have the right to object.
-- Last but not least: AI models suffer from **model attack risks** that allow attackers to extract training data from the model, e.g. model inversion, membership inference, and disclosing sensitive data in large language models
+データを処理するあらゆるシステムと同様に、AI システムにもプライバシーリスクが伴う可能性があります。AI には以下のようなプライバシーに関する特有の側面がいくつかあります。
+- AI システムはデータ集約型であり、一般的にデータの収集と保持に関してさらなるリスクを伴います。個人データはさまざまなソースから収集される可能性があり、それぞれ異なるレベルの **機密性と規制上の制約** の対象となります。法律では個人データの収集と使用に **法的根拠や同意** を必要とすることが多く、自身のデータを訂正、要求、削除する **個人の権利** を規定しています。
+- **トレーニングデータの保護** は、特に、多くのモデルを再学習する必要があり、一般的に長期間保持する必要があるため、困難です。多くの場合、関係する人物の実際のアイデンティティはモデルには無関係ですが、残りのデータから個人のアイデンティティを推測できる可能性があるため、たとえアイデンティティデータを削除してもプライバシーリスクは依然として残ります。ここで差分プライバシーが重要になります。データを変更して十分に認識できないようにすることで、個人のプライバシーを確保しながら、データから貴重な洞察を引き出すことを可能にします。変更は、たとえばノイズを追加したり集約することで行うことができます。
+- トレーニングデータの保護でさらに複雑なのは、**トレーニングデータがエンジニアリング環境でアクセス可能である** ことです。そのため、従来のシステムでは通常は技術チームが利用できる個人データが存在しないため、通常よりも強力な保護が必要になります。
+- 機械学習の性質上、プライバシーと向上させるために、連合学習 (トレーニングセットを異なる分離されたシステムに分割し、通常は分離されたデータ収集と連携する) などの特定の **独自の戦略** が可能になります。
+- AI システムは **意思決定を行います** が、これらの意思決定が人物に関するものである場合、特定の保護属性 (性別、人種など) に関して差別的となる可能性があります。さらに、その意思決定はプライバシーを侵害する行為につながる可能性があり、倫理的または法的な懸念となる可能性があります。さらに、法令によってはある種の意思決定を禁止し、これらの意思決定がどのように行われるか、そして個人が異議を申し立てる権利をどのように持つかについての透明性についての規則を定めていることがあります。
+- 最後になりますが、AI モデルは **モデル攻撃リスク** を抱えており、攻撃者はモデルからトレーニングデータを抽出することができます。たとえば、モデル反転、メンバーシップ推論、大規模言語モデルにおける機密データの開示などです。
 
 
-AI Privacy can be divided into two parts:
+AI プライバシーは二つのパートに分けられます。
 
 1. AI セキュリティに対する脅威とそのコントロール (AI Exchange の他の章を参照) は、以下を含みます。
   - トレーニングデータとテストデータ、モデル入出力における個人データの機密性と完全性の保護 - 以下で構成します。
@@ -24,7 +24,7 @@ AI Privacy can be divided into two parts:
   - モデルの動作が個人のプライバシーを侵害する可能性がある場合のモデル動作の完全性保護。これはたとえば個人が違法に差別される場合や、モデルの出力がプライバシーを侵害するアクション (詐欺調査を受けるなど) につながる場合に発生します。
 2. セキュリティに関するものではありませんが、個人のさらなる権利に関する脅威とコントロールは GDPR などのプライバシー規制でカバーされます。これには使用制限、同意、公平性、透明性、データの正確性、訂正/異議申し立て/消去/請求の権利が含まれます。
 
-Privacy principles and requirements come from different legislations (e.g. GDPR, LGPD, PIPEDA, etc.) and privacy standards (e.g. ISO 31700, ISO 29100, ISO 27701, FIPS, NIST Privacy Framework, etc.). This guideline does not guarantee compliance with privacy legislation and it is also not a guide on privacy engineering of systems in general. For that purpose, please consider work from [ENISA](https://www.enisa.europa.eu/publications/data-protection-engineering), [NIST](https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf), [mplsplunk](https://github.com/mplspunk/awesome-privacy-engineering), [OWASP](https://owasp.org/www-project-top-10-privacy-risks/) and [OpenCRE](https://www.opencre.org/cre/362-550). The general principle for engineers is to regard personal data as 'radioactive gold'. It's valuable, but it's also something to minimize, carefully store, carefully handle, limit its usage, limit sharing, keep track of where it is, etc.
+プライバシーの原則と要件は、さまざまな法令 (GDPR, LGPD, PIPEDA など) やプライバシー標準 (ISO 31700, ISO 29100, ISO 27701, FIPS, NIST Privacy Framework など) に由来します。本ガイドラインはプライバシー法への準拠を保証するものではなく、また、システム全般のプライバシーエンジニアリングに関するガイドでもありません。その目的のためには、[ENISA](https://www.enisa.europa.eu/publications/data-protection-engineering), [NIST](https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf), [mplsplunk](https://github.com/mplspunk/awesome-privacy-engineering), [OWASP](https://owasp.org/www-project-top-10-privacy-risks/), [OpenCRE](https://www.opencre.org/cre/362-550) の成果を考慮してください。エンジニアにとっての一般的な原則は、個人データを「放射性ゴールド」とみなすことです。それは貴重なものですが、最小限に抑え、慎重に保管し、慎重に取り扱い、使用を制限し、共有を制限し、その所在を追跡するなどのものでもあります。
 
 このセクションではプライバシーの原則が AI システムにどのように適用されるかについて説明します。
 
