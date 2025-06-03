@@ -139,6 +139,25 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
+**How about Agentic AI?**  
+Think of Agentic AI as voice assistants that can control your heating, send emails, and even invite more assistants into the conversation. That’s powerful—but you’d probably want it to check with you first before sending a thousand emails.  
+There are four key aspects to understand:
+1. Action: Agents don’t just chat—they invoke functions such as sending an email.
+2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up).
+3. Complex: Agentic behaviour is emergent.
+4. Multi-system: You often work with a mix of systems and interfaces.
+
+What does this mean for security?
+- Hallucinations and prompt injections can change commands—or even escalate privileges. Don’t give GenAI direct access control. Build that into your architecture.
+- The attack surface is wide, and the potential impact should not be underestimated.
+- Because of that, the known controls become even more important—such as traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
+
+For more details on the agentic AI threats, see the [Agentic AI threats and mitigations, from the GenAI security project](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/). For a more general discussion of Agentic AI, see [this article from Chip Huyen](https://huyenchip.com/2025/01/07/agents.html).
+
+The [testing section](/goto/testing/) goes into agentic AI red teaming.
+
+
+
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/aisecuritymatrix/
