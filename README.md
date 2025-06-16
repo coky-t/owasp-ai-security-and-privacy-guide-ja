@@ -2,6 +2,9 @@
 
 This is the unofficial Japanese translation of the [OWASP AI Security and Privacy Guide](https://github.com/OWASP/www-project-ai-security-and-privacy-guide).
 
+- Document Site - <https://coky-t.gitbook.io/owasp-ai-security-and-privacy-guide-ja/>
+- Document Repository - <https://github.com/coky-t/owasp-ai-security-and-privacy-guide-ja>
+
 ### Originator
 
 - Project Site - <https://owasp.org/www-project-ai-security-and-privacy-guide/>
@@ -36,3 +39,6 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 ## Translator (Japanese)
 
 [Koki Takeyama](https://github.com/coky-t)
+
+- Document Site - <https://coky-t.gitbook.io/owasp-docs-ja/>
+- Document Repository - <https://github.com/coky-t/owasp-docs-ja>
