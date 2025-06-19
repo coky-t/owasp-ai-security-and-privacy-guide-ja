@@ -71,11 +71,15 @@
 <hr>
 <center>スポンサー</center><br>
 <a href="https://www.straiker.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_straiker.jpg" style="display: block; margin: auto;" alt="Straiker sponsor"></a>
-
+<br>
 <hr>
+<center>AI Exchange は業界大手から信頼されています</center><br>
 <br>
 <b>オランダ鉄道サイバーセキュリティディレクター、Dimitri van Zantvliet 氏:</b><br>
 「OWASP Exchange が提唱しているような、リスクベースでコンテキストを意識したアプローチは、AI の責任ある使用をサポートするだけでなく、エンジニアに無関係なチェックリストで負担をかけることなく、実際の脅威を確実に緩和できます。私たちは、日々これらのシステムを構築し、防御している人々によって作成された標準を必要としています。」<br>
 
 <b>Peloton Interactive 最高セキュリティ＆トラスト責任者、Sri Manda 氏:</b><br>
 「AI 規制は安全性とセキュリティを確保し、ベンダーにとって公平な競争環境を作るために不可欠です。課題は、標準を明確にすることで法的な不確実性を排除し、柔軟なコンプライアンスを組み込むことで不要な要件を避けることです。OWASP Exchange がセキュリティコミュニティを巻き込み、効果的な標準を確立することでこうした課題に取り組んでいることを大変嬉しく思います。」<br>
+
+<b>Lenovo スタッフ AI セキュリティエンジニア、Prateek Kalasannavar 氏:</b><br>
+「Lenovo では、デバイスへの組み込み推論から大規模なクラウドホスト型モデルに至るまで、AI 製品のセキュリティを大規模に運用しています。OWASP AI Exchange は、進化する攻撃対象領域のマッピング、AI 固有のテスト手法の体系化、AI リスク軽減のためのコミュニティで統一された標準の推進において重要な基盤として機能します。これは理論とエンジニアリングのギャップを埋めるものです。」
