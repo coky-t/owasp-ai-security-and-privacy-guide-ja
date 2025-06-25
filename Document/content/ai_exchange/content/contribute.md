@@ -17,7 +17,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 
 いずれにせよ、AI セキュリティに興味があるなら、[OWASP Slack に参加](https://join.slack.com/t/owasp/shared_invite/zt-36ppepxs2-ncLn77RK_Ybg_wX5CJsGig) して、#project-ai-community で学び、議論しましょう。
 
-## コンテンツ開発に参加する
+## [owaspai.org](https://owaspai.org) のコンテンツ開発に参加する
 
 - 📥 提案を [プロジェクトリーダー](connect.md#owasp-ai-project-leader) に送信してください。
 - 📄 または [著者グループに参加申し込みしてください](https://forms.gle/XwEEK52y4iZQChuJ6)。
