@@ -7,7 +7,7 @@ weight: 1
 >パーマリンク: https://owaspai.org/goto/about/
 
 **Summary**  
-Welcome to the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships. Through broad collaboration with key institutes and SDOs the _Exchange_ represents the consensus on AI security and privacy.
+Welcome to the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships. Through broad collaboration with key institutes and SDOs, the _Exchange_ represents the consensus on AI security and privacy.
 
  <p align="center">
  <a href="https://youtu.be/kQC7ouDB_z8" target="_blank" rel="noopener noreferrer"><img width="177" height="123" src="https://github.com/OWASP/www-project-ai-security-and-privacy-guide/blob/main/assets/images/aixinfomercialthumbnail-small2.png?raw=true" border="1"/></a>
@@ -43,7 +43,7 @@ In short:
 - The **OWASP AI Exchange** is a comprehensive core framework of threats, controls and related best practices for all AI, actively aligned with international standards and feeding into them. It covers all types of AI, and next to security it discusses privacy as well.
 - The **OWASP GenAI Security Project** is a growing collection of documents on the security of Generative AI, covering a wide range of topics including the LLM top 10.
 
-if you're looking for information on AI at OWASP: 
+Here's more information on AI at OWASP: 
 - If you want to **ensure security or privacy of your AI or data-centric system** (GenAI or not), or want to know where AI security standardisation is going, you can use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
 - If you want to get a **quick overview** of key security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
 - For **any specific topic** around Generative AI security, check the [GenAI security project](https://genai.owasp.org/) or the [AI Exchange references](/goto/references/).
@@ -58,7 +58,7 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 - is about all AI and data centric systems instead of just Generative AI
 - is delivered as a single resource instead of a collection of documents
 - is updated continuously instead of published at specific times
-- is focusing on a framework of threats, controls, and related practices, so more technical-oriented, whereas the GenAI project covers a broader range of aspects
+- is focusing on a framework of threats, controls, and related practices, making it more technical-oriented, whereas the GenAI project covers a broader range of aspects
 - also covers AI privacy
 - is offered completely free of copyright and attribution
 
@@ -91,7 +91,7 @@ The AI Exchange is a single coherent resource on how to protect AI systems, pres
 - If you want to **protect your AI system**, start with [risk analysis](/goto/riskanalysis/) which will guide you through a number of questions, resulting in the  attacks that apply. And when you click on those attacks you'll find the controls to select and implement.
 - If you want to get an overview of the **attacks** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the attack you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
 - To understand how **controls** link to the attacks, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/).
-- If you want to **test** the security of AI systems with tools, gogo [the testing page](/goto/testing/).
+- If you want to **test** the security of AI systems with tools, go to [the testing page](/goto/testing/).
 - To learn about **privacy** of AI systems, check [the privacy section](/goto/aiprivacy/).
 - Looking for more information, or training material: see the [references](/goto/references/).
 
@@ -109,10 +109,10 @@ In short the structure is:
 7. [References](/goto/references/)
 
 このページでは以下について取り上げます。
-- 脅威の概要
+- 脅威の上位の概要
 - 脅威とコントロールのさまざまな概要: マトリックス、周期表、ナビゲータ
 - 関連する脅威とコントロールを選択するためのリスク分析
-- さまざまなトピックに関する議論 (... についてはどうですか): ヒューリスティックシステム、責任ある AI、生成 AI、NCSC/CISA ガイドライン、著作権
+- さまざまな他のトピック: ヒューリスティックシステム、責任ある AI、生成 AI、NCSC/CISA ガイドライン、著作権
 
 ---
 
@@ -126,12 +126,12 @@ In short the structure is:
 2. モデルの使用 (入力の提供と出力の読み取り) を通じて
 3. 実行時 (本番環境) にシステムへの攻撃によって
 
-AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) に対して、6 つのタイプの影響を区別します:
-1. 開示: トレーニングデータやテストデータの機密性が損なわれる
-2. 開示: モデル知的財産 (_モデルパラメータ_ やそれにつながるプロセスとデータ) の機密性が損なわれる
-3. 開示: 入力データの機密性が損なわれる
-4. 欺瞞: モデル動作の完全性が損なわれる (モデルが望ましくない動作をするように操作されて欺かれる)
-5. 妨害: モデルの可用性が損なわれる (モデルが機能しないか、望ましくない動作をする - 欺くためではなく妨害するため)
+AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) に沿って、6 つのタイプの影響を概説します:
+1. 開示: トレーニングデータやテストデータの機密性を損なう
+2. 開示: モデル知的財産 (_モデルパラメータ_ やそれにつながるプロセスとデータ) の機密性を損なう
+3. 開示: 入力データの機密性を損なう
+4. 欺瞞: モデル動作の完全性を損なう (モデルが望ましくない動作をするように操作され、結果としてユーザーを欺く)
+5. 妨害: モデルの可用性を損なう (モデルが機能しないか、望ましくない動作をする - ユーザーを欺くためではなく、通常の運用を妨害するため)
 6. 開示/妨害: AI 固有ではない資産の機密性、完全性、可用性
 
 このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発期間中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
