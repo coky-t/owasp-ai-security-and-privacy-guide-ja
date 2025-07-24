@@ -63,6 +63,8 @@
 
 * [参考情報](docs/ai_security_references.md)
 
+コンテンツは [pdf (英語)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/OWASP-AI-Exchange.pdf) でもご覧いただけます。
+
 <!-- </div> -->
 <!--     </td> -->
 <!--   </tr> -->
