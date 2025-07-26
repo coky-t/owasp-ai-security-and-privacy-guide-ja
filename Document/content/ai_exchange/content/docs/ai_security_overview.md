@@ -134,7 +134,7 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 5. 妨害: モデルの可用性を損なう (モデルが機能しないか、望ましくない動作をする - ユーザーを欺くためではなく、通常の運用を妨害するため)
 6. 開示/妨害: AI 固有ではない資産の機密性、完全性、可用性
 
-このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発期間中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
+このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
 
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
@@ -142,19 +142,19 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 **How about Agentic AI?**  
 Think of Agentic AI as voice assistants that can control your heating, send emails, and even invite more assistants into the conversation. That’s powerful—but you’d probably want it to check with you first before sending a thousand emails.  
 There are four key aspects to understand:
-1. Action: Agents don’t just chat—they invoke functions such as sending an email.
+1. Action: Agents don’t just chat — they invoke functions such as sending an email.
 2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up).
 3. Complex: Agentic behaviour is emergent.
 4. Multi-system: You often work with a mix of systems and interfaces.
 
 What does this mean for security?
-- Hallucinations and prompt injections can change commands—or even escalate privileges. Don’t give GenAI direct access control. Build that into your architecture.
+- Hallucinations and prompt injections can change commands — or even escalate privileges. Don’t give GenAI models/agents direct access control. Build that into your architecture.
 - The attack surface is wide, and the potential impact should not be underestimated.
-- Because of that, the known controls become even more important—such as traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
+- Because of that, the known controls become even more important — such as traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
 
 For more details on the agentic AI threats, see the [Agentic AI threats and mitigations, from the GenAI security project](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/). For a more general discussion of Agentic AI, see [this article from Chip Huyen](https://huyenchip.com/2025/01/07/agents.html).
 
-The [testing section](/goto/testing/) goes into agentic AI red teaming.
+The [testing section](/goto/testing/) discusses more about agentic AI red teaming.
 
 
 
@@ -175,9 +175,9 @@ The [testing section](/goto/testing/) goes into agentic AI red teaming.
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
-1. **AI ガバナンス**: AI リスクに対するガバナンスプロセスを導入し、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を組み込みます。
+1. **AI ガバナンス**: AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
    >([AIPROGRAM](1_general_controls.md#AIPROGRAM), [SECPROGRAM](1_general_controls.md#SECPROGRAM), [DEVPROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SECEDUCATE](1_general_controls.md#SECEDUCATE))
-2. AI システムは IT システムであるため、従来の **技術的な IT セキュリティコントロール** を適用します。
+2. AI システムは IT システムであるため、リスクに基づいて従来の **技術的な IT セキュリティコントロール** を適用します。
     - 2a **標準** 的な従来の IT セキュリティコントロール (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
         >([DEVSECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), [SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE), [DISCRETE](1_general_controls.md#DISCRETE))
@@ -187,27 +187,34 @@ The [testing section](/goto/testing/) goes into agentic AI red teaming.
       >([MONITORUSE](2_threats_through_use.md#MONITORUSE), [MODELACCESSCONTROL](2_threats_through_use.md#MODELACCESSCONTROL), [RATELIMIT](2_threats_through_use.md#RATELIMIT))
     - 2c **新規** の IT セキュリティコントロールを採用します。
       >([CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODELOBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [PROMPTINPUTVALIDATION](2_threats_through_use.md#PROMPTINPUTVALIDATION), [INPUTSEGREGATION](2_threats_through_use.md#INPUTSEGREGATION))
-3. データサイエンティストはリスクベースの **データサイエンスセキュリティコントロール** を適用します。
+3. リスクベースの **データサイエンスセキュリティコントロール** を適用します。
     - 3a モデル開発時の開発時コントロール
       >([FEDERATEDLEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASIONROBUSTMODEL](2_threats_through_use.md#EVASIONROBUSTMODEL), [POISONROBUSTMODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAINADVERSARIAL](2_threats_through_use.md#TRAINADVERSARIAL), [TRAINDATADISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIALROBUSTDISTILLATION](2_threats_through_use.md#ADVERSARIALROBUSTDISTILLATION), [MODELENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORETRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALLMODEL](2_threats_through_use.md#SMALLMODEL), [DATAQUALITYCONTROL](3_development_time_threats.md#DATAQUALITYCONTROL))
     - 3b 攻撃をフィルタして検出するための実行時コントロール
       >([DETECTODDINPUT](2_threats_through_use.md#DETECTODDINPUT), [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT), [DOSINPUTVALIDATION](2_threats_through_use.md#DOSINPUTVALIDATION), [INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), [FILTERSENSITIVEMODELOUTPUT](2_threats_through_use.md#FILTERSENSITIVEMODELOUTPUT), [OBSCURECONFIDENCE](2_threats_through_use.md#OBSCURECONFIDENCE))
-4. **データを最小限に抑える:** 保存時および転送時のデータ量、保存時間を開発時、実行時に制限します。
+4. **データを最小限に抑える:** 保存時および転送時のデータ量を制限します。また、データの保存時間を開発時、実行時に制限します。
    >([DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWEDDATA](1_general_controls.md#ALLOWEDDATA), [SHORTRETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA))
-5. モデルが間違いや操作によって望ましくない方法で動作する可能性があるため、**動作への影響を制御** します。
+5. モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**動作への影響を制御** します。
    >([OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEASTMODELPRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
 
-すべての脅威とコントロールについては AI Exchange の詳細なコンテンツで説明します。
+すべての脅威とコントロールについては AI Exchange の以降のセクションでより詳細に説明します。
 
 ### 脅威モデルとコントロール - 生成 AI をトレーニング/ファインチューニング
-下図は、**トレーニングやファインチューニング** が組織によって行われる状況においての、生成 AI への脅威とコントロールにのみ制限しています (注: これはコストが高く、専門知識が必要であることを考慮すると、あまり一般的ではありません)。
+下図は、生成 AI に関連する脅威とコントロール、特に組織がモデルを **トレーニングやファインチューニング** する責任を負うシナリオに焦点を当てています。(注: これはコストが高く、専門知識が必要であるため、あまり一般的ではありません)。
 
 [![AI Security Threats and controls - GenAI trained or fine tuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
 
 ### 脅威モデルとコントロール - 生成 AI を現状のまま <a name="threat-model-with-controls---genai-as-is"></a>
-下図は、モデルが組織によって **現状のまま** 使用される生成 AI への脅威とコントロールにのみ制限しています。プロバイダ (OpenAI など) がトレーニングやファインチューニングを行っています。そのため、いくつかの脅威はモデルプロバイダの責任です (機密データや著作権があるデータ、プロバイダでの操作)。とはいえ、モデルを使用する組織はこれらのリスクを考慮し、プロバイダからその保証を得る必要があります。
+下図は、組織がモデルをそのまま使用し、追加のトレーニングやファインチューニングを行わない場合の生成 AI に関連する脅威とコントロールに焦点を当てています。プロバイダ (OpenAI など) がトレーニングやファインチューニングを行っています。そのため、いくつかのリスクはモデルプロバイダの責任です (機密データや著作権があるデータ、プロバイダでの操作)。とはいえ、モデルを使用する組織はこれらのリスクを考慮し、プロバイダからその保証を得る必要があります。
 
-多くの状況では、現状のままのモデルが外部にホストされるため、セキュリティは、セキュリティ構成を含め、サプライヤがデータをどのように処理するかによって決まります。API はどのように保護されていますか？仮想プライベートクラウドとは何ですか？外部モデル全体ですか、それとも API だけですか？鍵管理は？データ保持は？ログ記録は？そのモデルは機密性の高い入力データを送信することでサードパーティのソースに接触しますか？
+In many cases, the as-is model is hosted externally, meaning security largely depends on how the supplier handles data, including the security configuration. 
+Some relevant questions to ask here include: 
+- How is the API protected? 
+- What is hosted within the Virtual Private Cloud (VPC)? The entire external model, or just the API? 
+- How is key management handled? 
+- What are the data retention policies? 
+- Is logging enabled, and if so, what is logged? 
+- Does the model send out sensitive input data when communicating with third-party sources?
 
 [![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
 
@@ -247,7 +254,7 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 >パーマリンク: https://owaspai.org/goto/navigator/
 
 このドキュメントの次の大きなセクションは、すべての AI セキュリティ脅威とそのコントロールに関する広範な詳細です。
-以下のナビゲータ図は詳細セクションの構造を示し、脅威、コントロール、リスクとコントロールの種類を含むそれらの関係を示しています。
+以下のナビゲータ図は詳細セクションの構造を示し、脅威、コントロール、関連するリスク、適用されるコントロールの種類の間の関係を示しています。
 <!-- {{< callout type="info" >}} -->
   画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 <!-- {{< /callout >}} -->
@@ -259,53 +266,53 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/riskanalysis/
 
-このドキュメントには多くの脅威とコントロールを記載しています。状況や AI の使い方によって、どの脅威がどの程度関連しているか、どのコントロールが誰の責任であるかが決まります。この選択プロセスはユースケースとアーキテクチャに照らして、リスク分析 (またはリスク評価) を通じて実行できます。
+There are quite a number of threats and controls described in this document. The relevance and severity of each threat and the appropriate controls depend on your specific use case and how AI is deployed within your environment. Determining which threats apply, to what extent, and who is responsible for implementing controls should be guided by a risk assessment based on your architecture and intended use. 
 
 **リスクマネジメント入門**  
-組織はリスクをいくつかの主要な領域に分類します。戦略、運用、財務、コンプライアンス、評判、テクノロジ、環境、社会、ガバナンス (ESG) です。脅威は一つ以上の脆弱性を悪用するとリスクになります。このリソースで説明しているように、AI の脅威は複数のリスク領域にわたって大きな影響を及ぼす可能性があります。たとえば、AI システムに対する敵対的攻撃は、運用の中断、財務モデルの歪曲、コンプライアンスの問題を引き起こす可能性があります。潜在的な影響の概要については [AI セキュリティマトリクス](ai_security_overview.md#ai-security-matrix) を参照してください。
+組織はリスクをいくつかの主要な領域に分類します。戦略、運用、財務、コンプライアンス、評判、テクノロジ、環境、社会、ガバナンス (ESG) です。脅威は一つ以上の脆弱性を悪用するとリスクになります。このリソースで説明しているように、AI の脅威は複数のリスク領域にわたって大きな影響を及ぼす可能性があります。たとえば、AI システムに対する敵対的攻撃は、運用の中断、財務モデルの歪曲、コンプライアンスの問題を引き起こす可能性があります。AI 関連の脅威、リスク、潜在的な影響の概要については [AI セキュリティマトリクス](ai_security_overview.md#ai-security-matrix) を参照してください。
 
-AI システムの一般的なリスクマネジメントは、通常、AI ガバナンス ([AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照) によって推進され、関連する AI システムによるリスクとそれらのシステムに対するリスクの両方を含みます。セキュリティリスク評価は、通常、セキュリティマネジメントシステム ([SECPROGRAM](1_general_controls.md#SECPROGRAM) を参照) によって推進され、このシステムは、AI 資産、AI 脅威、AI システムを考慮に含めることが求められます (これらが対応するリポジトリに追加されている場合)。
+AI システムの一般的なリスクマネジメントは、通常、AI ガバナンス ([AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照) によって推進され、関連する AI システムによるリスクとそれらのシステムに対するリスクの両方を含みます。セキュリティリスク評価は、通常、セキュリティマネジメントシステム ([SECPROGRAM](1_general_controls.md#SECPROGRAM) を参照) によって推進され、このシステムは、AI 資産、AI 脅威、AI システムを含めることが求められます (これらが対応するリポジトリに追加されている場合)。
 
 組織は一般的に ISO 31000 または ISO 23894 などの類似の規格に基づくリスクマネジメントフレームワークを採用することがよくあります。これらのフレームワークは下記の四つの主要なステップを通じてリスク管理のプロセスをガイドします。
 
-1. **リスクの特定**: 組織に影響を及ぼす可能性のある潜在的なリスク (脅威) を認識します。潜在的なリスク (脅威) を特定するには「使用による脅威」セクションを参照してください。
-2. **発生可能性と影響度の推定によるリスクの評価**: リスクの深刻度を判断するには、リスクが発生する可能性を評価し、リスクが顕在化した場合の潜在的な影響を評価する必要があります。発生可能性と影響度を組み合わせて、リスクの全体的な深刻度を測定します。これは一般的にヒートマップの形で示されます。詳細については以下を参照してください。
+1. **リスクの特定**: 組織に影響を及ぼす可能性のある潜在的なリスクを認識します。潜在的なリスクを特定するには「使用による脅威」セクションを参照してください。
+2. **発生可能性と影響度の推定によるリスクの評価**: リスクの深刻度を判断するには、リスクが発生する可能性を評価し、リスクが顕在化した場合の潜在的な影響を評価する必要があります。発生可能性と影響度を組み合わせて、リスクの全体的な深刻度を測定します。これは一般的にヒートマップの形で示されます。これについては以降のセクションでさらに詳しく説明します。
 3. **すべきことの決定 (リスク処置)**: リスクに対処するための適切な戦略を選択します。これらの戦略には、リスクの軽減、移転、回避、受容があります。詳細については以下を参照してください。
-4. **リスクコミュニケーションとモニタリング**: リスク情報を利害関係者と定期的に共有し、リスクマネジメント活動に対する意識と支援を確保します。効果的なリスク処置を確実に適用します。これには、リスクとその属性 (深刻度、処置計画、オーナーシップ、ステータスなど) の包括的なリストであるリスク登録簿が必要です。詳細については以下を参照してください。
+4. **リスクコミュニケーションとモニタリング**: リスク情報を利害関係者と定期的に共有し、リスクマネジメント活動に対する意識と継続的な支援を確保します。効果的なリスク処置を確実に適用します。これには、リスクとその属性 (深刻度、処置計画、オーナーシップ、ステータスなど) の包括的なリストであるリスク登録簿が必要です。これについては以降のセクションでさらに詳しく説明します。
 
 リスクマネジメントの手順を一つずつ見てきましょう。
 
 ### 1. リスクの特定
-組織に影響を及ぼす可能性のある潜在的なリスク (脅威) を選択するには、該当する脅威の技術的およびビジネス的な評価が必要です。これを行う方法については、リスクの影響の種類ごとに以下で説明します。
+組織に影響を及ぼす可能性のある潜在的なリスクを発見するには、該当する脅威の技術的およびビジネス的な評価が必要です。以降のセクションではリスクの影響の種類ごとに個別に対処する方法について概説します。
 
 **望ましくないモデルの動作**
 
   モデルの動作に関しては、このドキュメントのスコープがセキュリティであるため、攻撃者による操作に焦点を当てています。その他の望ましくない動作の原因には一般的な不正確さ (ハルシネーションなど) や特定のグループに関する望ましくない偏見 (差別) があります。
 
-  This will always be an applicable threat, independent of your situation, although the risk level may sometimes be accepted - see below.
+  This will always be an applicable threat, independent of your use-case, although the risk level may sometimes be accepted as shown below.
 
-  Which means that you always need to have in place:
-  - [General governance controls](/goto/governancecontrols/) (e.g. having an inventory of AI use and some control over it)
+  This means that you always need to have in place the following:
+  - [General governance controls](/goto/governancecontrols/) (e.g. maintaining a documented inventory of AI applications and implementing mechanisms to ensure appropriate oversight and accountability.)
   - [Controls to limit effects of unwanted model behaviour](/goto/limitunwanted/) (e.g. human oversight)
 
   Is the model GenAI (e.g. a Large Language Model)? 
-  - Prevent [prompt injection](/goto/directpromptinjection/) (mostly done by the model supplier) in case untrusted input goes directly into the model, and there are risks that the model output creates harm, for example by offending, by providing dangerous information, or misinformation, or output that triggers harmful functions (Agentic AI). Mostly this is the case if model input is from end users and output also goes straight to end users, or can trigger functions. 
-  - Prevent [indirect prompt injection](/goto/indirectpromptinjection/), in case untrusted data goes somehow into the prompt e.g. you retrieve somebody's resume and include it in a prompt.
+  - Prevent [prompt injection](/goto/directpromptinjection/) (mostly done by the model supplier). When untrusted input goes directly into a model, and there's a possibility that the model's output could be harmful (for example, by offending, providing dangerous information, or spreading misinformation, or output that triggers harmful functions (Agentic AI) )- it's a significant concern. This is particularly the case if model input comes from end-users and output goes straight to them, or can trigger functions.
+  - Prevent [indirect prompt injection](/goto/indirectpromptinjection/), in case untrusted data is a part of the prompt e.g. you retrieve somebody's resume and include it in a prompt.
 
-  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier given the cost of typically millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run at your own premises. The reasons to do this can be lower cost (if is is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
+  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier because it is expensive and usually costs millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this could be lower cost (if is is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
     
   Who trains/finetunes the model?
-  - The supplier: you need to prevent [obtaining a poisoned model](/goto/transferlearningattack/) by proper supply chain management (selecting a proper supplier and making sure you use the actual model), including assuring that: the supplier prevents development-time model poisoning including data poisoning and obtaining poisoned data. If the remaining risk for data poisoning cannot be accepted, performing post-training countermeasures can be an option - see [POISONROBUSTMODEL](/goto/poisonrobustmodel/).
-  - You: you need to prevent [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data or a poisoned pre-trained model in case you finetune
+  - The supplier: you need to avoid [obtaining a poisoned model](/goto/transferlearningattack/) through proper supply chain management (by selecting a trustworthy supplier and verifying the authenticity of the model). This involves ensuring that the supplier prevents model poisoning during development, including data poisoning, and uses uncompromised data. If the risk of data poisoning remains unacceptable, implementing post-training countermeasures can be a viable option. See [POISONROBUSTMODEL](/goto/poisonrobustmodel/).
+  - You: you need to prevent [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data or a poisoned pre-trained model in case you're finetuning the model.
  
-  If you use RAG (Retrieval Augmented Generation using GenAI), then your retrieval repository plays a role in determining the model behaviour.This means:
+  If you use RAG (Retrieval Augmented Generation using GenAI), then your retrieval repository plays a role in determining the model behaviour. This means:
   - You need to prevent [data poisoning](/goto/datapoison/) of your retrieval repository, which includes preventing that it contains externally obtained poisoned data.
 
   Who runs the model?
-  - The supplier: make sure the supplier prevents [runtime model poisoning](/goto/runtimemodelpoison/) just like any supplier who you expect to protect the running application from manipulation
+  - The supplier: make sure the supplier prevents [runtime model poisoning](/goto/runtimemodelpoison/) just the way you would expect any supplier to protect their running application from manipulation
   - You: You need to prevent [runtime model poisoning](/goto/runtimemodelpoison/)
 
-  Is the model predictive AI or Generative AI used in a judgement task (e.g. does this text look like spam)?
+  Is the model (predictive AI or Generative AI) used in a judgement task (e.g. spam detection)?
   - Prevent an [evasion attack](/goto/evasion/) in which a user tries to fool the model into a wrong decision using data (not instructions). Here, the level of risk is an important aspect to evaluate - see below. The risk of an evasion attack may be acceptable.
     
   In order to assess the level of risk for unwanted model behaviour through manipulation, consider what the motivation of an attacker could be. What could an attacker gain by for example sabotaging your model? Just a claim to fame? Could it be a disgruntled employee? Maybe a competitor? What could an attacker gain by a less conspicuous model behaviour attack, like an evasion attack or data poisoning with a trigger? Is there a scenario where an attacker benefits from fooling the model? An example where evasion IS interesting and possible: adding certain words in a spam email so that it is not recognized as such. An example where evasion is not interesting is when a patient gets a skin disease diagnosis based on a picture of the skin. The patient has no interest in a wrong decision, and also the patient typically has no control - well maybe by painting the skin. There are situations in which this CAN be of interest for the patient, for example to be eligible for compensation in case the (faked) skin disease was caused by certain restaurant food. This demonstrates that it all depends on the context whether a theoretical threat is a real threat or not. Depending on the probability and impact of the threats, and on the relevant policies, some threats may be accepted as risk. When not accepted, the level of risk is input to the strength of the controls. For example: if data poisoning can lead to substantial benefit for a group of attackers, then the training data needs to be get a high level of protection.
@@ -313,13 +320,13 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
  **Leaking training data**
 
   Do you train/finetune the model yourself?
-  - Yes: and is the training data sensitive? Then you need to prevent:
+  - If yes, is the training data sensitive? If your response is in the affirmative, you need to prevent:
     - [unwanted disclosure in model output](/goto/disclosureuse/)
     - [model inversion](/goto/modelinversionandmembership/) (but not for GenAI)
     - [training data leaking from your engineering environment](/goto/devdataleak/).
-    - [membership inference]((/goto/modelinversionandmembership/)) - but only if the **fact** that something or somebody was part of the training set is sensitive information. For example when the training set consists of criminals and their history to predict criminal careers: membership of that set gives away the person is a convicted or alleged criminal.
+    - [membership inference]((/goto/modelinversionandmembership/)) - but only in the event where something or someone that was part of the training data constitutes sensitive information. For example, when the training set consists of criminals and their history to predict criminal careers. Membership of that set gives away the person is a convicted or alleged criminal.
     
-   If you use RAG: apply the above to your repository data, as if it was part of the training set: as the repository data feeds into the model and can therefore be part of the output as well.
+   If you use RAG: If you use RAG: apply the above to your repository data, as if it was part of the training set: as the repository data feeds into the model and can therefore be part of the output as well.
 
   If you don't train/finetune the model, then the supplier of the model is responsible for unwanted content in the training data. This can be poisoned data (see above), data that is confidential, or data that is copyrighted. It is important to check licenses, warranties and contracts for these matters, or accept the risk based on your circumstances.
 
@@ -327,7 +334,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
  **Model theft**
 
   Do you train/finetune the model yourself?
-  - Yes, and is the model regarded intellectual property? Then you need to prevent:
+  - If yes, is the model regarded as  intellectual property? Then you need to prevent:
     - [Model theft through use](/goto/modeltheftuse/)
     - [Model theft development-time](/goto/devmodelleak/)
     - [Source code/configuration leak](/goto/devcodeleak/)
@@ -336,15 +343,15 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
  **Leaking input data**
  
   Is your input data sensitive?
-  - Prevent [leaking input data](/goto/leakinput/). Especially if the model is run by a supplier, proper care needs to be taken that this data is transferred or stored in a protected way and as little as possible. Study the security level that the supplier provides and the options you have to for example disable logging or monitoring at the supplier side. Note, that if you use RAG, that the  data you retrieve and insert into the prompt is also input data. This typically contains company secrets or personal data.
+  - Prevent [leaking input data](/goto/leakinput/). Especially if the model is run by a supplier, proper care needs to be taken to ensure that this data is minimized and transferred or stored securely. Review the security measures provided by the supplier, including any options to disable logging or monitoring on their end. If you're using a RAG system, remember that the data you retrieve and inject into the prompt also counts as input data. This often includes sensitive company information or personal data.
 
 
  **Misc.**
 
   Is your model a Large Language Model?
-  - Prevent [insecure output handling](/goto/insecureoutput/), for example when you display the output of the model on a website and the output contains malicious Javascript.
+  - Prevent [insecure output handling](/goto/insecureoutput/), for example, when you display the output of the model on a website and the output contains malicious Javascript.
 
-  Make sure to prevent [model inavailability by malicious users](/denialmodelservice/) (e.g. large inputs, many requests). If your model is run by a supplier, then certain countermeasures may already be in place.
+  Make sure to prevent [model inavailability by malicious users](/denialmodelservice/) (e.g. large inputs, many requests). If your model is run by a supplier, then certain countermeasures may already be in place to address this.
 
   Since AI systems are software systems, they require appropriate conventional application security and operational security, apart from the AI-specific threats and controls mentioned in this section.
 
@@ -379,9 +386,9 @@ Regularly sharing risk information with stakeholders to ensure awareness and sup
 A central tool in this process is the Risk Register, which serves as a comprehensive repository of all identified risks, their attributes (such as severity, treatment plan, ownership, and status), and the controls implemented to mitigate them.  Most large organizations already have such a Risk Register.  It is important to align AI risks and chosen vocabularies from Enterprise Risk Management to facilitate effective communication of risks throughout the organization.  
 
 ### 5. Arrange responsibility
-For each selected threat, determine who is responsible to address it. By default, the organization that builds and deploys the AI system is responsible, but building and deploying may be done by different organizations, and some parts of the building and deployment may be deferred to other organizations, e.g. hosting the model, or providing a cloud environment for the application to run. Some aspects are shared responsibilities.
+For each selected threat, determine who is responsible for addressing it. By default, the organization that builds and deploys the AI system is responsible, but building and deploying may be done by different organizations, and some parts of the building and deployment may be deferred to other organizations, e.g. hosting the model, or providing a cloud environment for the application to run. Some aspects are shared responsibilities.
 
-If components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider, using for example a responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure. See [Threat model of using a model as-is](#threat-model-with-controls---genai-as-is).
+If some components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider by using a tool like the responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure. See [Threat model of using a model as-is](#threat-model-with-controls---genai-as-is).
 
 If an external party is not open about how certain risks are mitigated, consider requesting this information and when this remains unclear you are faced with either 1) accept the risk, 2) or provide your own mitigations, or 3)avoid the risk, by not engaging with the third party.
 
@@ -391,12 +398,12 @@ For the threats that are the responsibility of other organisations: attain assur
 Example: Regular audits and assessments of third-party security measures.
  
 ### 7. Select controls
-Then, for the threats that are relevant to you and for which you are responsible: consider the various controls listed with that threat (or the parent section of that threat) and the general controls (they always apply). When considering a control, look at its purpose and determine if you think it is important enough to implement it and to what extent. This depends on the cost of implementation compared to how the purpose mitigates the threat, and the level of risk of the threat. These elements also play a role of course in the order you select controls: highest risks first, then starting with the lower cost controls (low hanging fruit).
+Next, for the threats that are relevant to your use-case and fall under your responsibility, review the associated controls, both those listed directly under the threat (or its parent category) and the general controls, which apply universally. For each control, consider its purpose and assess whether it's worth implementing, and to what extent. This decision should weigh the cost of implementation against how effectively the control addresses the threat, along with the severity of the associated risk. These factors also influence the order in which you apply controls. Start with the highest-risk threats and prioritize low-cost, quick-win controls (the "low-hanging fruit").
 
-Controls typically have quality aspects to them, that need to be fine tuned to the situation and the level of risk. For example: the amount of noise to add to input data, or setting thresholds for anomaly detection. The effectiveness of controls can be tested in a simulation environment to evaluate the performance impact and security improvements to find the optimal balance. Fine tuning controls needs to continuously take place, based on feedback from testing in simulation in in production.
+Controls often have quality-related parameters that need to be adjusted to suit the specific situation and level of risk. For example, this could involve deciding how much noise to add to input data or setting appropriate thresholds for anomaly detection. Testing the effectiveness of these controls in a simulation environment helps you evaluate their performance and security impact to find the right balance. This tuning process should be continuous, using insights from both simulated tests and real-world production feedback.
 
 ### 8. Residual risk acceptance
-In the end you need to be able to accept the risks that remain regarding each threat, given the controls that you implemented.
+In the end you need to be able to accept the risks that remain regarding each threat, given the controls that you implemented. The severity level of the risks you deem aceptable should be significantly low to the point where it won't hurt your business on any front.
 
 ### 9. Further management of the selected controls
 (see [SECPROGRAM](/goto/secprogram/)), which includes continuous monitoring, documentation, reporting, and incident response.
@@ -409,13 +416,13 @@ Example: Regularly reviewing and updating risk treatment plans to adapt to new v
 
 ## ... についてはどうですか？
 ### 機械学習以外の AI についてはどうですか？
-AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の AI タイプ) モデルと _ヒューリスティックモデル_ から構成されていると考えることです。モデルはデータに基づいて計算方法を学習した機械学習モデルであることも、ルールベースのシステムなどの人間の知識に基づいて設計されたヒューリスティックモデルであることもあります。ヒューリスティックモデルは依然としてテストのためにデータを必要とし、さらに人間の知識を構築して検証するために分析を行うこともあります。
+AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の AI タイプ) モデルと _ヒューリスティックモデル_ から構成されていると考えることです。モデルはデータに基づいて計算方法を学習した機械学習モデルであることも、ルールベースのシステムなどの人間の知識に基づいて設計されたヒューリスティックモデルであることもあります。ヒューリスティックモデルは依然としてテストのためにデータを必要とし、場合によっては、人間が導出した知識のさらなる開発と検証をサポートする分析を実施するためにもデータが必要です。
 このドキュメントは機械学習に焦点を当てています。とはいえ、ここではヒューリスティックシステムにも適用される、このドキュメントの機械学習の脅威を簡単に要約します。
 
-- モデル回避はヒューリスティックモデルでも可能です - ルールの抜け穴を見つけようと試みます
+- モデル回避はヒューリスティックモデルでも可能です。攻撃者は定義されたルールの抜け穴や弱点を見つけようとする可能性があります。
 - 使用によるモデル盗用 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます
 - 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります
-- データポイズニングとモデルポイズニングは知識を向上させるために使用されるデータを操作したり、開発時や実行時にルールを操作する可能性があります
+- データポイズニングとモデルポイズニングはどちらも、知識を強化するために使用されるデータの改竄や、開発時や実行時にルールを操作することによって発生する可能性があります。
 - 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります
 - 知識、ソースコード、設定が知的財産である場合、機密データとみなされる可能性があり、保護が必要です
 - たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します
@@ -426,9 +433,9 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 
 AI には、リスクを軽減しながら良い結果をもたらすという点で、さまざまな側面があります。これは、責任ある AI や信頼できる AI と呼ばれることが多く、前者は倫理、社会、ガバナンスを重視し、後者はより技術的、運用的側面を重視します。
 
-主な責務がセキュリティであるなら、最善の戦略はまず AI セキュリティに焦点を当て、その後に他の AI の側面について学ぶことです。たとえ、対応する責任を負っている同僚が警戒を怠らないようにするためであってもです。結局のところ、セキュリティ専門家は一般的にうまくいかない可能性のあるものを特定することに長けています。さらに、いくつかの側面は侵害された AI の結果である可能性があり、したがって _安全性 (safety)_ などを理解しておくと役立ちます。
+主な責務がセキュリティであるなら、まず AI セキュリティに焦点を当てることが最善です。AI セキュリティをしっかりと理解したら、他の AI の側面にも知識を広げることです。たとえ、その領域に責任を負っている同僚をサポートし、警戒を怠らないようにするためであってもです。結局のところ、セキュリティ専門家は潜在的な障害点を見つけることが得意なことが多くあります。さらに、いくつかの側面は侵害された AI の結果である可能性があり、したがって _安全性 (safety)_ などを理解しておくと役立ちます。
 
-AI の側面を明確にし、それらがセキュリティとどのように関係しているかを見てみましょう。
+AI の原則を分析し、それぞれがセキュリティとどのように関連しているかを見てみましょう。
 - **正確性 (Accuracy)** はその「ビジネス機能」を実行するのに十分に正しいかどうかを指します。不正確であると、(物理的な) 安全性の問題 (運転中に車のトランクが開いてしまうなど) やその他の有害な間違った判断 (ローンの不当な拒否など) などの危害につながる可能性があります。セキュリティとの関連は、ある種の攻撃が望ましくないモデル動作を引き起こすことであり、これは定義上、正確性の問題です。とはいえ、セキュリティの範囲ではそのような攻撃のリスクを軽減することに限定されており、正確なモデルの作成 (トレーニングセットの代表データの選択など) の問題全体を解決するものではありません。
 - **安全性 (Safety)** は危害から保護されている、あるいは危害を引き起こす可能性が低い状態を指します。したがって、AI システムの安全性は危害 (一般的に物理的な危害を意味しますが、それに限定されません) のリスクがある場合の正確性のレベルのことであり、さらに (正確性とは別に) それらのリスクを軽減するために設けられたものです。これには正確性を保護するためのセキュリティに加えて、モデルのビジネス機能にとって重要な多くの安全性の対策を含みます。これらはセキュリティ上の理由だけでなく、他の理由 (不適切なトレーニングデータなど) でモデルが安全でない決定を下す可能性があるため、安全性とセキュリティの間で共通する懸念事項であることに注意する必要があります。
   -  安全でない動作を制限するための [監視](1_general_controls.md#OVERSIGHT)、およびそれに関連して、モデルへの最小権限の割り当て
@@ -437,9 +444,9 @@ AI の側面を明確にし、それらがセキュリティとどのように�
   -  [説明可能性](1_general_controls.md#EXPLAINABILITY): 下記参照
 - **透明性 (Transparency)**: アプローチに関する情報を共有すること、ユーザーおよび依存するシステムに正確性のリスクを警告すること、さらに、多くの場合、ユーザーは使用されているモデルについての詳細とそれがどのように作成されたかを知る権利を持っています。そのため、セキュリティ、プライバシー、安全性の間で共通する懸念事項になります。
 - **説明可能性 (Explainability)**: 情報を共有すること、特定の結果がどのようにしてもたらされたかをより詳しく説明することで、ユーザーが正確性を検証するのに役立つこと。正確性を検証することとは別に、ユーザーが透明性を取得でき、異なる結果を得るには何を変更する必要があるかを理解することができます。そのため、セキュリティ、プライバシー、安全性、ビジネス機能の間で共通する懸念事項になります。特別なケースには、プライバシーとは別に説明可能性を法律で要求されている場合であり、この懸念を共有する側面のリストに「コンプライアンス」を追加します。
-- **堅牢性 (Robustness)** は、入力に予期したバリエーションや予期しないバリエーションがあっても正確性を維持する能力です。セキュリティの範囲ではそのようなバリエーションが悪意のある場合 (_敵対的堅牢性_) に関するものであり、通常のバリエーション (_一般的堅牢性_) に対して必要な対策とは異なる対策が必要になることがよくあります。正確性の場合と同様に、セキュリティ自体は通常のバリエーションに対する堅牢なモデルの作成には関与しません。この例外は一般的堅牢性、敵対的悪意のある堅牢性の場合であり、この場合には安全性とセキュリティの間で共通する懸念事項になります。これはケースバイケースで異なります。
+- **堅牢性 (Robustness)** は、入力に予期したバリエーションや予期しないバリエーションがあっても正確性を維持する能力です。セキュリティの範囲ではそのようなバリエーションが悪意のある場合 (_敵対的堅牢性_) に関するものであり、通常のバリエーション (_一般的堅牢性_) に対して必要な対策とは異なる対策が必要になることがよくあります。正確性の場合と同様に、セキュリティ自体は通常のバリエーションに対する堅牢なモデルの作成には関与しません。例外は一般的堅牢性、敵対的堅牢性が関連する場合であり、これは安全性とセキュリティの間で共通する懸念事項になります。どちらに当てはまるかは具体的なケースによって異なります。
 - **差別からの自由 (Free of discrimination)** 保護された属性に望ましくないバイアスがない、つまり、モデルが特定のグループ (性別、民族など) を「不当に扱う」ような体系的な不正確さがないこと。差別は法的および倫理的な理由から望ましくありません。セキュリティとの関係は、望ましくないバイアスを検出することで、攻撃によって引き起こされる望ましくないモデル動作を特定するのに役立つことです。たとえば、データポイズニング攻撃はトレーニングセットに悪意のあるデータサンプルを挿入します。最初は気付かれませんが、モデル内の原因不明のバイアスが検出されることによって発見されます。「公平性 (fairness)」という用語は差別問題を指すために使用されることもありますが、プライバシーにおける公平性は、と名声、倫理的使用、プライバシー権など、個人に対する公平な扱いを指す幅広い用語であることがほとんどです。
-- **共感性 (Empathy)**。セキュリティとの関係は、AI の特定のアプリケーションを検証する際に、常に実現可能なセキュリティレベルを考慮すべきであるということです。十分なレベルのセキュリティを個人や組織に提供できないのであれば、共感性とはそのアイデアを無効にするか、他の予防措置を講じることを意味します。
+- **共感性 (Empathy)**。AI アプリケーションを評価する際に、セキュリティが達成できる具体的な限界を認識することが、セキュリティとの関連性につながります。個人や組織が適切に保護できない場合、共感性とはアイデアを再考することを意味します。つまり、そのアイデアを完全に拒否するか、潜在的な危害を軽減するための追加の予防措置を講じることになります。
 - **説明責任 (Accountability)**。説明責任とセキュリティの関係は、セキュリティ対策はその対策に至ったプロセスを含めて実証可能であるべきということです。さらに、セキュリティインシデントを検出し、再構築し、対応して、説明責任を果たすためには、他の IT システムと同様に、セキュリティ特性としてのトレーサビリティが重要です。
 - **AI セキュリティ**。AI のセキュリティの側面は AI Exchange の中心的なトピックです。簡単に言うと、以下のように分けられます。
   - [入力攻撃](2_threats_through_use.md)、モデルに入力を提供することで実行されます
@@ -458,7 +465,7 @@ AI の側面を明確にし、それらがセキュリティとどのように�
 重要な注意: セキュリティ脅威の観点からは、生成 AI は他の形式の AI (_予測 AI_) とそれほど違いはありません。生成 AI の脅威とコントロールは一般的な AI と大部分が重複しており、非常によく似ています。とはいえ、一部のリスクは (はるかに) 高くなります。低いものもあります。生成 AI 固有のリスクはごくわずかです。生成 AI と予測 AI ではコントロールカテゴリが大きく異なるものがあり、主にデータサイエンスコントロール (トレーニングセットへのノイズ追加など) です。多くの場合、生成 AI ソリューションはモデルをそのまま使用し、組織によるトレーニングを一切行わず、セキュリティ責任の一部を組織からサプライヤに移します。それでも、既製のモデルを使用する場合は、依然としてそうした脅威に注意する必要があります。
 
 LLM による主な新しい脅威は何ですか？
-- まず第一に、LLM は脆弱性のあるコードを作成するために使用されたり、攻撃者がマルウェアを作成したり、ハルシネーションによって害を及ぼす可能性があるため、セキュリティに新たな脅威をもたらしますが、AI Exchange の範囲外であり、AI システムへのセキュリティ脅威に焦点を当てています。
+- まず第一に、LLM は脆弱性のあるコードを作成するために使用されたり、攻撃者がマルウェアを作成するために使用されたり、ハルシネーションによって害を及ぼす可能性があるため、セキュリティに新たな脅威をもたらします。しかし、これらの懸念事項は AI Exchange の範囲外であり、AI システム自体へのセキュリティ脅威に焦点を当てています。
 - 入力について:
   - プロンプトインジェクションは全く新しい脅威です。攻撃者は細工した命令や、時には隠された命令で、モデルの動作を操作します。
   - また、企業秘密や個人データを含む、大量のデータをプロンプトで送信する組織も新たにあります。
@@ -473,7 +480,7 @@ LLM による主な新しい脅威は何ですか？
 |1| 生成 AI モデルはプロンプト内の自然言語によって制御されるため、[プロンプトインジェクション](2_threats_through_use.md#22-prompt-injection) のリスクが生じます。直接プロンプトインジェクションはモデルを騙して望ましくない動作 (不快な言動など) をさせようとするもので、間接プロンプトインジェクションは第三者がこの目的 (決定を操作するなど) のためにプロンプトにコンテンツを注入するものです。 |  ([OWASP for LLM 01:Prompt injection](https://genai.owasp.org/llmrisk/llm01/))  | 
 |2| 生成 AI モデルは一般的に非常に大規模なデータセットでトレーニングされているため、[機密データ](2_threats_through_use.md#221-sensitive-data-output-from-model) や [ライセンスされているデータ](ai_security_overview.md#how-about-copyright) を出力する可能性が高くなりますが、モデルにはアクセス権限の制御が組み込まれていません。すべてのデータはモデルユーザーがアクセスできるでしょう。システムプロンプトや出力フィルタリングに関していくつかのメカニズムが実装されているかもしれませんが、それらは一般的に完全ではありません。 | ([OWASP for LLM 02: Sensitive Information Disclosure](https://genai.owasp.org/llmrisk/llm02/)) |
 |3| [データとモデルのポイズニング](3_development_time_threats.md#31-broad-model-poisoning-development-time) は AI 全般の問題ですが、生成 AI ではトレーニングデータがインターネットなどの制御が困難なさまざまな情報源から供給される可能性があるため、リスクは一般的に高くなります。たとえば、攻撃者はドメインを乗っ取り、操作された情報を配置する可能性があります。 | ([OWASP for LLM 04: Data and Model Poisoning](https://genai.owasp.org/llmrisk/llm04/)) |
-|4| 生成 AI モデルは不正確で幻覚を起こす可能性があります。これは AI 全般のリスク要因であり、さらに大規模言語モデル (生成 AI) は非常に機密性が高く知識を持っていると思われることで事態を悪化させる可能性があります。要するに、これはモデルが間違っていたり、モデルが操作されていたりするという可能性を過小評価するリスクに関するものです。つまり、それぞれすべてのセキュリティコントロールに関連しています。最も強く結びつくのは [望ましくないモデル動作の影響を制限するためのコントロール](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)、特に [最小モデル権限](/1_general_controls.md#LEASTMODELPRIVILEGE) です。 | ([OWASP for LLM 06: Excessive agency](https://genai.owasp.org/llmrisk/llm06/)) および ([OWASP for LLM 09: Misinformation](https://genai.owasp.org/llmrisk/llm09/)) |
+|4| 生成 AI モデルは不正確で幻覚を起こす可能性があります。これは AI 全般のリスク要因であり、さらに大規模言語モデル (生成 AI) は非常に機密性が高く知識を持っているという印象を与えることで事態を悪化させる可能性があります。要するに、これはモデルが間違っていたり、モデルが操作されていたりするという可能性を過小評価するリスクに関するものです。つまり、それぞれすべてのセキュリティコントロールに関連しています。最も強く結びつくのは [望ましくないモデル動作の影響を制限するためのコントロール](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)、特に [最小モデル権限](/1_general_controls.md#LEASTMODELPRIVILEGE) です。 | ([OWASP for LLM 06: Excessive agency](https://genai.owasp.org/llmrisk/llm06/)) および ([OWASP for LLM 09: Misinformation](https://genai.owasp.org/llmrisk/llm09/)) |
 |5| [入力データの漏洩](4_runtime_application_security_threats.md#47-leak-sensitive-input-data): 生成 AI モデルはほとんどがクラウドに存在し、多くの場合は外部パーティによって管理されているため、トレーニングデータの漏洩やプロンプトの漏洩のリスクが高まる可能性があります。この問題は生成 AI に限定されるものではありませんが、生成 AI には特に 2 つのリスクがあります。1) モデルの使用にはプロンプトを介したユーザーとのやり取り、ユーザーデータの追加、対応するプライバシーやセンシティビティの問題が含まれます。2) 生成 AI モデルの入力 (プロンプト) には機密データ (企業秘密など) を持つ豊富なコンテキスト情報を含む可能性があります。後者の問題はたとえば、コンサルタント会社でこれまでに書かれたすべてのレポートのデータなど、*コンテキスト内学習 (In Context Learning)* や *検索拡張生成 (Retrieval Augmented Generation, RAG)* で発生します。まず第一に、この情報はプロンプトとともにクラウドに移動し、第二に、システムは情報に対する本来のアクセス権を考慮しない可能性があります。 | LLM Top 10 でのカバーなし |
 |6| 事前トレーニング済みモデルは操作されている可能性があります。事前トレーニングの概念は生成 AI に限ったことではありませんが、このアプローチは生成 AI ではごく一般的であり、 [サプライチェーンのモデルポイズニング](3_development_time_threats.md#313-supply-chain-model-poisoning) のリスクを高めます。 | ([OWASP for LLM 03 - Supply chain vulnerabilities](https://genai.owasp.org/llmrisk/llm03/)) |
 |7| [モデル反転とメンバーシップ推論](2_threats_through_use.md##222-model-inversion-and-membership-inference) は生成 AI にとって低リスクまたはゼロリスクです。 | LLM Top 10 でのカバーなし、異なるアプローチを使用する LLM06 を除く、上記を参照 |
@@ -494,7 +501,7 @@ LLM による主な新しい脅威は何ですか？
 英国 NCSC / CISA の [安全な AI システム開発のガイドライン](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development) を AI Exchange のコントロールにマッピングします。
 脅威とリンクしているコントロールを確認するには、[AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) を参照してください。
 
-Note that the UK Government drove an initiative through their DSIT repartment to build on these joint guidelines and produce the [DSIT Code of Practice for the Cyber Secyrity of AI](https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai#code-of-practice-principles), which reorganizes things according to 13 principles, does a few tweaks, and adds a bit more governance. The principle mapping is added below, and adds mostly post-market aspects:
+Note that the UK Government drove an initiative through their DSIT department to build on these joint guidelines and produce the [DSIT Code of Practice for the Cyber Security of AI](https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai#code-of-practice-principles), which reorganizes things according to 13 principles, does a few tweaks, and adds a bit more of governance. The principle mapping is added below, and adds mostly post-market aspects:
 - Principle 10: Communication and processes assoiated with end-users and affected entities
 - Principle 13: Ensure proper data and model disposal
 
@@ -576,7 +583,7 @@ question of whether the use of copyrighted works to train AI models constitutes
 infringement, potentially exposing developers to legal claims. On the other hand, 
 the majority of the industry grapples with the ownership of AI-generated works and 
 the use of unlicensed content in training data. This legal ambiguity affects all 
-stakeholders—developers, content creators, and copyright owners alike.
+stakeholders including developers, content creators, and copyright owners alike.
 
 #### Lawsuits Related to AI & Copyright
 Recent lawsuits (writing is April 2024) highlight the urgency of these issues. For instance, a class 
@@ -623,7 +630,7 @@ Note that AI vendors have started to take responsibility for copyright issues of
 Read more at [The Verge on Microsoft indemnification](https://www.theverge.com/2023/9/7/23863349/microsoft-ai-assume-responsibility-copyright-lawsuit) and [Direction Microsoft on the requirements of the indemnification](https://www.directionsonmicrosoft.com/blog/why-microsofts-copilot-copyright-commitment-may-not-mean-much-for-customers-yet/).
 
 #### Do generative AI models really copy existing work?
-Do generative AI models really lookup existing work that may be copyrighted? In essence: no. A Generative AI model does not have sufficient capacity to store all the examples of code or pictures that were in its training set. Instead, during training it extracts patterns about how things work in the data that it sees, and then later, based on those patterns, it generates new content. Parts of this content may show remnants of existing work, but that is more of a coincidence. In essence, a model doesn't recall exact blocks of code, but uses its 'understanding' of coding to create new code. Just like with human beings, this understanding may result in reproducing parts of something you have seen before, but not per se because this was from exact memory. Having said that, this remains a difficult discussion that we also see in the music industry: did a musician come up with a chord sequence because she learned from many songs that this type of sequence works and then coincidentally created something that already existed, or did she copy it exactly from that existing song?
+Do generative AI models really lookup existing work that may be copyrighted? In essence: no. A Generative AI model does not have sufficient capacity to store all the examples of code or pictures that were in its training set. Instead, during training, it extracts patterns about how things work in the data that it sees, and then later, based on those patterns, it generates new content. Parts of this content may show remnants of existing work, but that is more of a coincidence. In essence, a model doesn't recall exact blocks of code, but uses its 'understanding' of coding to create new code. Just like with human beings, this understanding may result in reproducing parts of something you have seen before, but not per se because this was from exact memory. Having said that, this remains a difficult discussion that we also see in the music industry: did a musician come up with a chord sequence because she learned from many songs that this type of sequence works and then coincidentally created something that already existed, or did she copy it exactly from that existing song?
 
 #### Mitigating Risk
 Organizations have several key strategies to mitigate the risk of copyright 
@@ -658,7 +665,7 @@ system will help check against potential infringements by the AI system.
 quickly and effectively to any potential infringement claims.
 10. Additional mitigating factors to consider include seeking licenses and/or warranties 
 from AI suppliers regarding the organization’s intended use, as well as all future uses by the AI system. With the 
-help of legal counsel the organization should also consider other contractually 
+help of a legal counsel, the organization should also consider other contractually 
 binding obligations on suppliers to cover any potential claims of infringement.
 
 
