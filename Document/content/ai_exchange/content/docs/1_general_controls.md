@@ -61,7 +61,7 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
 
 セキュリティプログラム: 組織にセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) があり、AI ライフサイクル全体と AI 固有の側面を含むことを確認します。
 
-目的: セキュリティプログラムが AI 固有の脅威と対応に責任を持つことにより、情報セキュリティマネジメントを通じて AI セキュリティリスクを適切に軽減します。リスク分析でのこのドキュメントの使用の詳細については [リスク分析セクション](ai_security_overview.md#how-to-select-relevant-threats-and-controls-risk-analysis) を参照してください。
+目的: セキュリティプログラムが AI 固有の脅威と対応するリスクに責任を持つことにより、情報セキュリティマネジメントを通じて AI セキュリティリスクを適切に軽減します。リスク分析でのこのドキュメントの使用の詳細については [リスク分析セクション](ai_security_overview.md#how-to-select-relevant-threats-and-controls-risk-analysis) を参照してください。
 
 AI 固有の資産とそれらに対する脅威を必ず含めます。脅威はこのリソースでカバーされており、資産は以下のとおりです。
 - トレーニングデータ
@@ -145,11 +145,11 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 - AI チーム (データサイエンティストなど) をセキュア開発アクティビティのスコープに含める必要があります。for them to address both conventional security threats and AI-specific threats, applying both conventional security controls and AI-specific ones. Typically, technical teams depend on the AI engineers when it comes to the AI-specific controls as they mostly require deep AI expertise. For example: if training data is confidential and collected in a distributed way, then a federated learning approach may be considered.
 - AI セキュリティ資産、脅威、コントロール (このドキュメントでカバーしている) を考慮する必要があり、要件、ポリシー、コーディングガイドライン、トレーニング、ツール、テストプラクティスなどに影響します。通常、これは [SECPROGRAM](1_general_controls.md#SECPROGRAM) で説明しているように、組織の情報セキュリティ管理システムにこれらの要素を追加し、従来の資産、脅威、コントロールに合わせて調整しているのと同様に、安全なソフトウェア開発をそれに合わせて調整します。
 - Apart from software components, the supply chain for AI can also include data and models which may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/goto/supplychainmanage/).
-- In AI, software components can also run in the development environment instead of in production, for example to train models, which increases the attack surface e.g. malicious development components attacking training data.
+- In AI, software components can also run in the development environment instead of in production, for example, to train models, which increases the attack surface e.g. malicious development components attacking training data.
 
 AI-specific elements in the development environment (sometimes referred to as MLops):
 - Supply chain management of data and models, including provenance of the internal processes (for data this effectively means data governance)
-- In addition supply chain management: integrity checks on elements that can have been poisoned (data, models), using an internal or external signed registry for example
+- In addition to supply chain management: integrity checks on elements that can be poisoned (data, models), using an internal or external signed registry for example
 - Static code analysis
   - Running big data/AI technology-specific static analysis rules (e.g the typical mistake of creating a new dataframe in Python without assigning it to a new one)
   - Running maintainability analysis on code, as data and model engineering code is typically hindered by code quality issues
@@ -157,7 +157,7 @@ AI-specific elements in the development environment (sometimes referred to as ML
 - Training (if required)
   - Automated training of the model when necessary
   - Automated detection of training set issues (standard data quality control plus checking for potential poisoning using pattern recognition or anomaly detection)
-  - Any pre-training controls to mitigate poisoning risks, especially if the deployment process is segregated from the rest of the engineering environment in which poisoning an have taken place, e.g. fine pruning (reducing the size of the model and doing extra training with a ground truth training set)
+  - Any pre-training controls to mitigate poisoning risks, especially if the deployment process is segregated from the rest of the engineering environment in which poisoning may have taken place, e.g. fine pruning (reducing the size of the model and doing extra training with a ground truth training set)
   - Automated data collection and transformation to prepare the train set, when required
 - Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
 - Running AI-specific dynamic tests before deployment:
@@ -282,7 +282,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 目的: データ漏洩や操作の影響を最小化します。
 
-機械学習で不要なデータを削除する典型的な機会は、実験目的で使用されたデータをクリーンアップすることです。
+機械学習で不要なデータを削除する典型的な機会は、実験目的でのみ使用されるデータをクリーンアップすることです。
 
 どのフィールドやレコードを削除できるかを決定する方法は、どのデータ要素がモデルのパフォーマンスに影響を及ぼさないかを統計的に分析することです。
 
@@ -403,7 +403,7 @@ Minimize access to technical details that could help attackers.
 
 Purpose: reduce the information available to attackers, which can assist them in selecting and tailoring their attacks, thereby lowering the probability of a successful attack.
 
-Miminizing and protecting technical details can be achieved by incorporating such details as an asset into information security management. This will ensure proper asset management, data classification, awareness education, policy, and inclusion in risk analysis.
+Minimizing and protecting technical details can be achieved by incorporating such details as an asset into information security management. This will ensure proper asset management, data classification, awareness education, policy, and inclusion in risk analysis.
 
 Note: this control needs to be weighed against the [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY) control that requires to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
 
@@ -411,7 +411,7 @@ For example:
 
   - Consider this risk when publishing technical articles on the AI system
   - When choosing a model type or model implementation, take into account that there is an advantage of having technology with which attackers are less familiar
-  - Minimize model output regarding technical details
+  - Minimize technical details in model output
 
 
 Useful standards include:
@@ -502,7 +502,7 @@ See the [DISCRETE](#discrete) control for the balance between being transparent 
 
 Useful standards include:
 
-  - ISO/IEC 42001 B.7.2 describes data management to support transparency. Gap: covers this control minimally, as it only covers the data mnanagement part.
+  - ISO/IEC 42001 B.7.2 describes data management to support transparency. Gap: covers this control minimally, as it only covers the data management part.
   - Not covered further in ISO/IEC standards.
 
 #### #CONTINUOUSVALIDATION
@@ -529,4 +529,4 @@ Explainability: Explaining how individual model decisions are made, a field refe
 > Category: runtime data science control  
 > Permalink: https://owaspai.org/goto/unwantedbiastesting/
 
-Unwanted bias testing: by doing test runs of the model to measure unwanted bias, unwanted behaviour caused by an attack can be detected. The details of bias detection fall outside the scope of this document as it is not a security concern - other than that an attack on model behaviour can cause bias.
+Unwanted bias testing: By doing test runs of the model to measure unwanted bias, unwanted behaviour caused by an attack can be detected. The details of bias detection fall outside the scope of this document as it is not a security concern - other than that, an attack on model behaviour can cause bias.
