@@ -392,7 +392,7 @@ The general principle of reducing sensitivity to poisoned training data is to ma
 Useful standards include:
 - Not covered yet in ISO/IEC standards
 
-#### #TRAINADVERSARIAL
+#### #TRAIN-ADVERSARIAL
 Training with adversarial examples is used as a control against evasion attacks, but can also be helpful against data poison trigger attacks that are based on slight alterations of training data, since these triggers are like adversarial samples.
 
 For example: adding images of stop signs in a training database for a self driving car, labeled as 35 miles an hour, where the stop sign is slightly altered. What this effectively does is to force the model to make a mistake with traffic signs that have been altered in a similar way. This type of data poisoning aims to prevent anomaly detection of the poisoned samples.  
@@ -415,7 +415,7 @@ Training data manipulation is referred to as [data poisoning](/goto/datapoison).
 - See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
 - See [controls for development-time protection](3_development_time_threats.md#developmenttimeintro)
 - See controls for broad model poisoning
-- Controls that are aimed to improve the generalization ability of the model - reducing the memorization of any poisoned samples: [training with adversarial samples](2_threats_through_use.md#TRAINADVERSARIAL) and [adversarial robust distillation](2_threats_through_use.md#ADVERSARIALROBUSTDISTILLATION)
+- Controls that are aimed to improve the generalization ability of the model - reducing the memorization of any poisoned samples: [training with adversarial samples](2_threats_through_use.md#TRAIN-ADVERSARIAL) and [adversarial robust distillation](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION)
 
 ### 3.1.3 サプライチェーンのモデルポイズニング <a name="313-supply-chain-model-poisoning"></a>
 >Category: development-time threat  

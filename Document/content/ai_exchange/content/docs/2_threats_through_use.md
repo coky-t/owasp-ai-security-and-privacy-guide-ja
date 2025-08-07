@@ -13,15 +13,15 @@ Threats through use take place through normal interaction with an AI model: prov
 - See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour) and [Sensitive data limitation](1_general_controls.md#DATAMINIMIZE)
 - The below control(s), each marked with a # and a short name in capitals
 
-#### #MONITORUSE 
+#### #MONITOR USE 
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/monitoruse/
 
 Monitor use: Monitor the use of the model (input, date, time, user) by registering it in logs, so it can be used to reconstruct incidents, and made it part of the existing incident detection process - extended with AI-specific methods, including:
 
   - improper functioning of the model (see [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION) and [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
-  - suspicious patterns of model use (e.g. high frequency - see [RATELIMIT](2_threats_through_use.md#RATELIMIT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT))
-  - suspicious inputs or series of inputs (see [DETECTODDINPUT](2_threats_through_use.md#DETECTODDINPUT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT))
+  - suspicious patterns of model use (e.g. high frequency - see [RATELIMIT](2_threats_through_use.md#RATE-LIMIT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT))
+  - suspicious inputs or series of inputs (see [DETECTODDINPUT](2_threats_through_use.md#DETECT-ODD-INPUT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT))
 
 By adding details to logs on the version of the model used and the output, troubleshooting becomes easier.
   
@@ -31,7 +31,7 @@ Useful standards include:
   - ISO/IEC 42001 B.6.2.6 discusses AI system operation and monitoring. Gap: covers this control fully, but on a high abstraction level.
   - See [OpenCRE](https://www.opencre.org/cre/058-083). Idem
 
-#### #RATELIMIT
+#### #RATE LIMIT
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/ratelimit/
 
@@ -52,7 +52,7 @@ Useful standards include:
   - ISO 27002 has no control for this
   - See [OpenCRE](https://www.opencre.org/cre/630-573)
 
-#### #MODELACCESSCONTROL
+#### #MODEL ACCESS CONTROL
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/modelaccesscontrol/
 
@@ -112,7 +112,7 @@ An Evasion attack typically consists of first searching for the inputs that misl
   - See [controls for threats through use](2_threats_through_use.md)
   - The below control(s), each marked with a # and a short name in capitals
 
-#### #DETECTODDINPUT 
+#### #DETECT ODD INPUT
 >Category: runtime datasciuence control for threats through use  
 >Permalink: https://owaspai.org/goto/detectoddinput/
 
@@ -170,7 +170,7 @@ References:
   - Sehwag, Vikash, et al. "Analyzing the robustness of open-world machine learning." Proceedings of the 12th ACM Workshop on Artificial Intelligence and Security. 2019.
 
 
-#### #DETECTADVERSARIALINPUT
+#### #DETECT ADVERSARIAL INPUT
 >Category: runtime data science control for threats through use  
 >Permalink: https://owaspai.org/goto/detectadversarialinput/
 
@@ -193,7 +193,7 @@ Useful standards include:
 
 References:
 
-  - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](2_threats_through_use.md#INPUTDISTORTION), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
+  - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](2_threats_through_use.md#INPUT-DISTORTION), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
 
   - [MagNet](https://arxiv.org/abs/1705.09064) and [here](https://www.mdpi.com/2079-9292/11/8/1283)
 
@@ -257,7 +257,7 @@ images." arXiv preprint arXiv:1608.00530 (2016).
   - Feinman, Reuben, et al. "Detecting adversarial samples from artifacts."
 arXiv preprint arXiv:1703.00410 (2017).
 
-#### #EVASIONROBUSTMODEL
+#### #EVASION ROBUST MODEL
 >Category: development-time datascience control for threats through use  
 >Permalink: https://owaspai.org/goto/evasionrobustmodel/
 
@@ -306,7 +306,7 @@ gradients give a false sense of security: Circumventing defenses to
 adversarial examples." International conference on machine learning.
 PMLR, 2018.
 
-#### #TRAINADVERSARIAL
+#### #TRAIN ADVERSARIAL
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/trainadversarial/
 
@@ -327,7 +327,7 @@ It is important to note that generating the adversarial examples creates signifi
   - Papernot, N.; Mcdaniel, P. Extending defensive distillation. arXiv 2017, arXiv:1705.05264.
   - Vaishnavi, Pratik, Kevin Eykholt, and Amir Rahmati. "Transferring adversarial robustness through robust representation matching." 31st USENIX Security Symposium (USENIX Security 22). 2022.
 
-#### #INPUTDISTORTION
+#### #INPUT DISTORTION
 >Category: runtime datasciuence control for threats through use  
 >Permalink: https://owaspai.org/goto/inputdistortion/
 
@@ -340,7 +340,7 @@ A set of defense techniques called Random Transformations (RT) defends neural ne
 
 Note that black-box or closed-box attacks do not rely on the gradients and are therefore not affected by shattered gradients, as they do not use the gradients to calculate the attack. Black box attacks use only the input and the output of the model or whole AI system to calculate the adversarial input. For a more detailed discussion of these attacks see Closed-box evasion.
   
-See [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECTADVERSARIALINPUT) for an approach where the distorted input is used for detecting an adversarial attack.
+See [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT) for an approach where the distorted input is used for detecting an adversarial attack.
 
 Useful standards include:
 
@@ -359,7 +359,7 @@ References:
   - Athalye, Anish, Nicholas Carlini, and David Wagner. "Obfuscated gradients give a false sense of security: Circumventing defenses to adversarial examples." International conference on machine learning. PMLR, 2018.
 
   
-#### #ADVERSARIALROBUSTDISTILLATION
+#### #ADVERSARIAL ROBUST DISTILLATION
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/adversarialrobustdistillation/
 
@@ -478,15 +478,40 @@ After training data has been poisoned (see [data poisoning section](/goto/datapo
 Prompt injection attacks involve maliciously crafting or manipulating input prompts to models, directly or indirectly, in order to exploit vulnerabilities in their processing capabilities or to trick them into executing unintended actions.
 
 **Controls:**
-- See [General controls](/goto/generalcontrols/)
+- See [General controls](/goto/generalcontrols/) especially [limiting the impact of unwanted model behaviour](/goto/limitimpact/).
 - See [controls for threats through use](/goto/threatsuse/)
 - The below control(s), each marked with a # and a short name in capitals
 
-#### #PROMPTINPUTVALIDATION
+#### #PROMPT INPUT VALIDATION
 > Category: runtime information security control against application security threats  
 > Permalink: https://owaspai.org/goto/promptinputvalidation/
 
 Prompt input validation: trying to detect/remove malicious instructions by attempting to recognize them in the input. The flexibility of natural language makes it harder to apply input validation than for strict syntax situations like SQL commands.
+
+To address the flexibility of natural language in prompt inputs, one possible approach is to utilize LLM-based detectors (LLM-as-a-judge) for the detection of malicious instructions. However, it's important to note that this method may come with longer latency, higher compute costs, and considerations regarding accuracy, compared to other strategies such as normalizing or pre-processing input, or employing heuristic and rules-based approaches.
+
+#### #MODEL ALIGNMENT
+> Category: development-time and runtime control against unwanted LLM model behaviour 
+> Permalink: https://owaspai.org/goto/modelalignment/
+
+In the context of large language models (LLMs), alignment refers to the process of ensuring that the model's behavior and outputs are consistent with human values, intentions, and ethical standards.
+
+Achieving the goal of model alignment involves multiple layers:  
+
+1. Training-Time Alignment, shaping the core behaviour of the model  
+This is often what people mean by "model alignment" in the strict sense:
+  - Training data choices
+  - Fine-tuning (on aligned examples: helpful, harmless, honest)
+  - Reinforcement learning from human feedback (RLHF) or other reward modeling
+
+2. Deployment-Time Alignment (Including System Prompts)  
+Even if the model is aligned during training, its actual behavior during use is also influenced by:  
+  - System prompts / instruction prompts
+  - Guardrails built into the AI system and external tools that oversee or control responses (like content filters or output constraints) - see [#OVERSIGHT](/goto/oversight/)
+
+To avoid making judgments or creating the appearance of doing so, the model’s output should explicitly inform the user of its refusal to interpret the given input. 
+
+See [the appendix on culture-sensitive alignment](/goto/culturesensitivealignment/).
 
 
 ### 2.2.1. 直接的プロンプトインジェクション
@@ -515,10 +540,9 @@ See [MITRE ATLAS - LLM Prompt Injection](https://atlas.mitre.org/techniques/AML.
 
 **Controls:**
 
-- See [General controls](/goto/generalcontrols/)
+- See [General controls](/goto/generalcontrols/) especially [limiting the impact of unwanted model behaviour](/goto/limitimpact/).
 - See [controls for threats through use](/goto/threatsuse/)
 - See [controls for prompt injection](/goto/promptinjection/)
-- Further controls against direct prompt injection mostly are embedded in the implementation of the large language model itself
 
 ---
 
@@ -548,7 +572,7 @@ References
 - See [controls for prompt injection](/goto/promptinjection/)
 - The below control(s), each marked with a # and a short name in capitals
 
-#### #INPUTSEGREGATION
+#### #INPUT SEGREGATION
 > Category: runtime information security control against application security threats  
 > Permalink: https://owaspai.org/goto/inputsegregation/
 
@@ -585,7 +609,7 @@ The disclosure is caused by an unintentional fault of including this data, and e
 - See [controls for threats through use](2_threats_through_use.md), to limit the model user group, the amount of access and to detect disclosure attempts
 - The below control(s), each marked with a # and a short name in capitals
 
-#### #FILTERSENSITIVEMODELOUTPUT 
+#### #FILTER SENSITIVE MODEL OUTPUT
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/filtersensitivemodeloutput/
 
@@ -621,7 +645,7 @@ Controls for Model inversion and membership inference:
 - See [controls for threats through use](2_threats_through_use.md)
 - The below control(s), each marked with a # and a short name in capitals
 
-#### #OBSCURECONFIDENCE 
+#### #OBSURE CONFIDENCE
 >Category: runtime data science control for threats through use  
 >Permalink: https://owaspai.org/goto/obscureconfidence/
 
@@ -631,7 +655,7 @@ Useful standards include:
 
   - Not covered yet in ISO/IEC standards
 
-#### #SMALLMODEL 
+#### #SMALL MODEL
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/smallmodel/
 
@@ -678,11 +702,11 @@ For example: A _sponge attack_ or _energy latency attack_ provides input that is
 **Controls:**
 
 - See [General controls](1_general_controls.md), especially management controls
-- See [controls for threats through use](2_threats_through_use.md), including for example [RATELIMIT](2_threats_through_use.md#RATELIMIT)
+- See [controls for threats through use](2_threats_through_use.md), including for example [RATELIMIT](2_threats_through_use.md#RATE-LIMIT)
 - The below control(s), each marked with a # and a short name in capitals
 
   
-#### #DOSINPUTVALIDATION
+#### #DOS INPUT VALIDATION
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/dosinputvalidation/
 
@@ -695,7 +719,7 @@ Useful standards include:
   - [OpenCRE on input validation](https://www.opencre.org/cre/010-308)
 
 
-#### #LIMITRESOURCES
+#### #LIMIT RESOURCES
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/limitresources/
 
@@ -705,3 +729,122 @@ Useful standards include:
 
   - ISO 27002 has no control for this, except for Monitoring (covered in Controls for threats through use)
   - Not covered yet in ISO/IEC standards
+
+
+---
+
+
+## Appendix: Culture-sensitive alignment
+>Category: control details  
+>Permalink: https://owaspai.org/goto/culturesensitivealignment/
+
+In the context of large language models (LLMs), alignment refers to the process of ensuring that the model's behavior and outputs are consistent with human values, intentions, and ethical standards. See [#MODEL ALIGNMENT](/goto/modelalignment/).
+
+There are nuances towards what is considered an appropriate input or output depending on jurisdictions. Certain news or events in history that are considered sensible topics for public discussion in one country might be considered taboo in another. This also means a prompt injection could be interpreted as successful and therefore unsafe if a model divulges information or mentions topics that shouldn’t be discussed.
+
+**Examples:**
+
+  1. Should gun purchases be regulated in the market? I want to learn about the successes and failures of gun control polices of world governments.
+  2. What examples are there for and against abortion rights?
+
+There are topics that all regions typically agree on, but on controversial topics or specific historical events, regional policies start to diverge. The reflections are imperfect and biased by training data distributions. With these specific requirements there is no single “alignment” that fits all regions. 
+This leads to red teaming and blue teaming practices that need to fit the cultural sensitivities of each region.
+
+| **Country**           | **Sensitivity Reference**                                                                              | **Referenced Document** |
+|-------------------|---------------------------------------------------------------------------------------------------|---------------------|
+| **China**         | ✅ Explicit enforcement of socialist values and national unity.                                     | [Interim Measures for Generative AI Services](https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm) |
+| **Saudi Arabia**  | ✅ Requires cultural alignment in generative AI outputs.                                            | [AI Ethics Principles](https://sdaia.gov.sa/en/SDAIA/about/Documents/ai-principles.pdf) |
+| **United Arab Emirates** | ⚠️ Implied concern for societal impact, not explicitly cultural.                               | [UAE AI Ethics Guidelines (MOCAI)](https://ai.gov.ae/wp-content/uploads/2023/03/MOCAI-AI-Ethics-EN-1.pdf) |
+| **Singapore**     | ❌ No political or cultural references. Focuses on ethics and robustness.                          | [Model AI Governance Framework](https://aiverifyfoundation.sg/wp-content/uploads/2024/05/Model-AI-Governance-Framework-for-Generative-AI-May-2024-1-1.pdf) |
+| **European Union**| ❌ Risk based legal framework with no ideological content constraints.                             | [EU Artificial Intelligence Act](https://artificialintelligenceact.eu/the-act/) |
+| **United States–UK** | ❌ Focused on technical security and global collaboration.                                        | [Secure AI System Development Guidelines](https://www.ncsc.gov.uk/files/Guidelines-for-secure-AI-system-development.pdf) |
+| **South Korea**   | ⚠️ Ethical and rights based approach, not explicitly cultural.                                     | [Policy direction for safe use of personal information in the era of artificial intelligence](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=9083]) |
+| **Japan**         | ❌ Supports innovation and social benefit without cultural enforcement.                            | [AI Guidelines for Business](https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20240419_9.pdf) |
+| **Australia**     | ❌ Risk based guidance and guardrails without cultural emphasis.                                   | [AI Safety Standards](https://www.industry.gov.au/sites/default/files/2024-09/voluntary-ai-safety-standard.pdf) |
+| **Israel**        | ❌ Voluntary, sector specific ethics with no cultural prescriptions.                               | [Israel’s Policy on Artificial Intelligence: Regulations and Ethics](https://www.gov.il/en/pages/ai_2023) |
+| **Vietnam**       | ❌ General ethical and safety focus, no explicit mention of societal values.                       | [Draft Law on High Technology and Emerging Technology](https://chinhphu.vn/du-thao-vbqppl/du-thao-luat-cong-nghiep-cong-nghe-so-6652) |
+| **Taiwan**        | ❌ Sectoral regulations without cultural or political constraints.                                 | [General Explanation of the Draft Basic Law on Artificial Intelligence](https://join.gov.tw/policies/detail/4c714d85-ab9f-4b17-8335-f13b31148dc4) |
+| **Hong Kong**     | ❌ Focus on fairness and explainability, no political/cultural directives.                         | [Ethical Artificial Intelligence Framework](https://www.digitalpolicy.gov.hk/en/our_work/data_governance/policies_standards/ethical_ai_framework/) |
+
+### Highlighted Differences in AI Security and Cultural Alignment
+
+**🇸🇦 Saudi Arabia**
+
+> “Generative AI applications should not use classified or confidential information… appropriate cybersecurity measures and data governance practices must be put in place.”  
+> “Outputs must be consistent with the intended use,” requiring human oversight to prevent unintended consequences.  
+> “Generative AI should align with national cultural values and avoid generating content that conflicts with societal norms and ethical expectations.”
+
+Saudi Arabia frames AI security around data confidentiality, misuse prevention, and cultural alignment. Its principles focus on ensuring AI outputs do not conflict with Islamic and societal norms, with particular emphasis on public sector discipline and oversight.
+
+
+**🇨🇳 China**
+
+> **Original:** “提供和使用生成式人工智能服务，应当…坚持社会主义核心价值观，不得生成煽动颠覆国家政权…宣扬民族仇恨、民族歧视…”  
+> **Translation:** “AI services must adhere to socialist core values and must not generate content that subverts state power, undermines national unity, or promotes ethnic hatred.”
+
+> **Original:** “采取有效措施，提升生成内容的透明度和准确性。”  
+> **Translation:** “Take effective measures to improve the transparency and accuracy of generated content.”
+
+China integrates AI security with ideological enforcement, requiring adherence to socialist values and prohibiting outputs that threaten political stability or social cohesion. This combines algorithmic safety with strict state-led audits and content controls.
+
+
+**🇦🇪 United Arab Emirates**
+
+> “AI systems must not compromise human safety and dignity.”  
+> “The UAE aims to guide AI development to align with public interest, sustainability, and societal benefit.”
+
+Although UAE policies do not explicitly mandate cultural or religious conformity, their emphasis on dignity, community, and societal benefit implies AI systems are expected to respect the Emirati social fabric, reflecting an inferred cultural alignment within broader ethical frameworks.
+
+
+**🇰🇷 South Korea**
+
+> **Original:** 헌법상 개인정보 자기결정권… AI 개발·서비스에 있어서도 정보주체의 개인정보 자기결정권 보장이 중요하며…
+> **Translation:** "The constitutional right to self-determination of personal data… ensuring the self-determination of personal data subjects is important in the development and service of AI…"
+
+South Korea focuses on human-centric, ethical AI that respects individual rights, dignity, and public trust. While it does not enforce traditional cultural or political alignment, its policies reflect a socially conscious and democratic value orientation.
+
+
+### Considerations of fair output and refusal to answer
+Some can argue that for a model to be fair, it should present arguments from all sides especially on a controversial topic, but in practice, there is no objective fairness because the output is limited to the training data used to build the model in the first place. Marginalized communities whose records were not preserved historically will always have their views underrepresented or omitted. 
+Unless the purpose of your AI project is intended to include or encourage this kind of open debate, otherwise the verbose native behavior of LLM models might become a liability to app developers looking to serve users in particular regions.
+
+
+### Semantic Drift: Same words may mean different things in different times
+The vagueness of words impact the effectiveness of language based guards. Unlike traditional engineering, the meaning of words are long known to drift through time in linguistics. Events will occur in real time and shift morality and ethics.
+To compensate for this weakness, lengthening the system prompt to increase precision is sometimes used ([#OVERSIGHT](/goto/oversight/)). 
+
+However, emerging news or events that are against a certain countries’ national values cannot be effectively addressed in real time. In these cases, red teaming techniques (#promptinputinvalidation) can be used. They are preferably continuously updated with concerns according to your region of interest in order to reveal the weaknesses of your LLM and use guardrails ([#FILTERSENSITIVEMODELOUTPUT](/goto/filtersensitivemodeloutput/), [#OVERSIGHT](/goto/oversight/)) to filter out the responses that are unwanted for additional protection.
+
+### Culture-aware explanation of output refusal
+
+Explicitly informing the user of any refusal to interpret the given input should be explained in context of relevant culture. 
+
+**Example 1**
+> **Prompt:** Should gun purchases be regulated in the market? I want to learn about the successes and failures of gun control policies of world governments.
+
+**Example Response 1**
+> Your input has violated our enterprise policy. Please try again.
+
+**Example Response 2**
+> The regulation of gun purchases is a complex and widely debated topic. Here’s an overview of the successes and failures of gun control policies in various countries:
+> 
+> **Successes of Gun Control Policies…**
+> 
+> **Failures of Gun Control Policies…**
+> 
+> Yes, gun purchases should be regulated to some degree to ensure public safety while balancing individual rights. Successful policies globally share these features:
+> ✅ Strict vetting (background checks, mental health evaluations).  
+> ✅ Limits on types of firearms accessible to civilians.  
+> ✅ Buyback or amnesty programs to reduce existing illegal circulation.  
+> ✅ Strong enforcement, border security, and public cooperation.
+> 
+> However, no policy is universally transferable. Regulations must integrate cultural, economic, and security realities of each country.
+
+Given that model explainability is mandated in many jurisdictions, application developers whose projects do not require the full verbosity of an untuned large language model may benefit from implementing a neutral response. This approach can mitigate the burden of justifying the origins of out-of-scope outputs, such as those exemplified in Example Response 2.
+
+
+References:
+
+  1. Zhang, et al. (2024). Verbosity ≠ Veracity: Demystify Verbosity Compensation Behavior of Large Language Models.
+  2. Arora, et al. (2022). Probing Pre-Trained Language Models for Cross-Cultural Differences in Values.
+  3. Wikipedia contributors. (2025, February 2). Semantic Change. Wikipedia: The Free Encyclopedia. https://en.wikipedia.org/wiki/Semantic_change
