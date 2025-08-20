@@ -7,7 +7,7 @@ excludeSearch: true
 ## プラットフォーム
 <!-- {{< cards >}} -->
 - [著者への参加申し込み](https://forms.gle/XwEEK52y4iZQChuJ6)    <!-- {{< small-card link="https://forms.gle/XwEEK52y4iZQChuJ6" title="著者への参加申し込み" icon="login" >}} -->
-- [Slack](https://owasp.slack.com/join/shared_invite/zt-3a46jwqqa-AXyy3Eq33ie5~ZtIy_Bs_Q#/shared-invite/email)    <!-- {{< small-card link="https://owasp.slack.com/join/shared_invite/zt-3a46jwqqa-AXyy3Eq33ie5~ZtIy_Bs_Q#/shared-invite/email" title="Slack" icon="slack-big" >}} -->
+- [Slack](https://owasp.org/slack/invite)    <!-- {{< small-card link="https://owasp.org/slack/invite" title="Slack" icon="slack-big" >}} -->
 - [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/)    <!-- {{< small-card link="https://www.linkedin.com/company/owasp-ai-exchange/" title="LinkedIn" icon="linkedin" >}} -->
 - [E-mail](mailto:rob.vanderveer@owasp.org)    <!-- {{< small-card link="mailto:rob.vanderveer@owasp.org" title="E-mail" icon="mail">}} -->
 - [Twitter](https://twitter.com/owasp)    <!-- {{< small-card link="https://twitter.com/owasp" title="Twitter" icon="x-twitter" >}} -->
@@ -16,7 +16,7 @@ excludeSearch: true
 
 さまざまなプラットフォームを通じて OWASP AI チームに参加します。
 
-- [OWASP Slack](https://join.slack.com/t/owasp/shared_invite/zt-36ppepxs2-ncLn77RK_Ybg_wX5CJsGig) ワークスペースの `#project-ai-community` チャンネルで私たちとつながってください。執筆者は非公開の `#project-ai-authors` チャンネルにいます。
+- [OWASP Slack](https://owasp.org/slack/invite) ワークスペースの `#project-ai-community` チャンネルで私たちとつながってください。執筆者は非公開の `#project-ai-authors` チャンネルにいます。
 - [LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/ "OWASP AI Exchange LinkedIn") で私たちをフォローして最新情報を確認してください。
 - 技術的な質問や提案については、[GitHub Discussions](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions) に参加するか、[GitHub Issues](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) で問題を報告及び追跡してください。
 
