@@ -69,14 +69,19 @@
 <!--     </td> -->
 <!--   </tr> -->
 <!-- </table> -->
-
-<hr>
-<center>スポンサー</center><br>
-<a href="https://www.straiker.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_straiker.jpg" style="display: block; margin: auto;" alt="Straiker sponsor"></a>
+<!-- </div> -->
 <br>
 <hr>
-<center>AI Exchange は業界大手から信頼されています</center><br>
+<b>スポンサー</b>
+<table style="border: none;">
+<tr style="border: none;">
+  <td style="border: none;"><a href="https://www.straiker.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_straiker.jpg" style="display: block; margin: auto;" alt="Straiker sponsor"></a></td>
+  <td style="border: none;"><a href="https://www.casco.com/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_casco.png" style="display: block; margin: auto;" alt="Casco sponsor"></a></td>
+</tr>
+</table>
 <br>
+<hr>
+<b>AI Exchange は業界大手から信頼されています</b><br><br>
 <b>オランダ鉄道サイバーセキュリティディレクター、Dimitri van Zantvliet 氏:</b><br>
 「OWASP Exchange が提唱しているような、リスクベースでコンテキストを意識したアプローチは、AI の責任ある使用をサポートするだけでなく、エンジニアに無関係なチェックリストで負担をかけることなく、実際の脅威を確実に緩和できます。私たちは、日々これらのシステムを構築し、防御している人々によって作成された標準を必要としています。」<br>
 
