@@ -54,6 +54,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Dan Sorensen</td><td>Centil</td><td>アメリカ</td><td>開発セキュリティなどのその他の追加</td></tr>
     <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要と著作権</td></tr>
     <tr><td>Disesdi Susanna Cox</td><td>OTW</td><td>アメリカ</td><td>連合学習その他</td></tr>
+    <tr><td>Engin Bozdag</td><td>Uber</td><td>アメリカ</td><td>プライバシーセクションに関する実質的な意見</td></tr>
     <tr><td>Eoin Wickens</td><td>HiddenLayer</td><td>アイルランド</td><td>開発セキュリティへの追加</td></tr>
     <tr><td>Feiyang Tang</td><td>Software Improvement Group (SIG)</td><td></td><td></td></tr>
     <tr><td><b>John Sotiropoulos</b></td><td>Kainos</td><td>イギリス</td><td>複数の機関との連絡役</td></tr>
