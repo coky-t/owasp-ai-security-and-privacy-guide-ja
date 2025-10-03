@@ -139,13 +139,19 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
-**How about Agentic AI?**  
-Think of Agentic AI as voice assistants that can control your heating, send emails, and even invite more assistants into the conversation. That’s powerful—but you’d probably want it to check with you first before sending a thousand emails.  
-There are four key aspects to understand:
-1. Action: Agents don’t just chat — they invoke functions such as sending an email.
-2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up).
+### Threats to agentic AI
+>Category: discussion  
+>Permalink: https://owaspai.org/goto/agenticaithreats/
+
+In Agentic AI, AI systems can take action instead of just present output, and sometimes act pro-actively or communicate with other agents. Important note: these are still software systems and AI systems, so everything in the AI Exchange applies, but there are a few attention points. 
+
+An example of Agentic AI is a set of voice assistants that can control your heating, send emails, and even invite more assistants into the conversation. That’s powerful—but you’d probably want it to check with you first before sending a thousand emails.  
+
+There are four typical properties of agentic AI:
+1. Action: Agents don’t just chat — they invoke functions such as sending an email. That makes [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) a key control.
+2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up). That makes [OVERSIGHT](/goto/oversight/) important, and it makes working memory an attack vector because that's where the state of an automonous agent lives.
 3. Complex: Agentic behaviour is emergent.
-4. Multi-system: You often work with a mix of systems and interfaces.
+4. Multi-system: You often work with a mix of systems and interfaces. Because of that, developers tend to assign responsibilities regarding access control to the AI using instructions, opening up the door for manipulation through [prompt injection](/goto/promptinjection/).
 
 What does this mean for security?
 - Hallucinations and prompt injections can change commands — or even escalate privileges. Don’t give GenAI models/agents direct access control. Build that into your architecture.
