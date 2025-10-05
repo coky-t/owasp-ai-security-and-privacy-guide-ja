@@ -27,7 +27,7 @@
 - [貢献](contribute.md)    <!-- {{< small-card link="/contribute" title="貢献" icon="star" >}} -->
 - [スポンサー](https://owaspai.org/sponsor/)    <!-- {{< small-card link="/sponsor" title="スポンサー" icon="star" >}} -->
 - [メディア](media.md)    <!-- {{< small-card link="/media" title="メディア" icon="speakerphone" >}} -->
-- [周期表](docs/ai_security_overview.md#periodic-table-of-ai-security)    <!-- {{< small-card link="/goto/periodictable/" title="周期表" icon="document-text">}} -->
+- [用語集](docs/ai_security_glossary.md)    <!-- {{< small-card link="/goto/glossary/" title="用語集" icon="document-text">}} -->
 <!-- {{< /cards >}} -->
 
 <!-- <table style="width: 100%;  border: 0; margin: 0; padding: 0;"> -->

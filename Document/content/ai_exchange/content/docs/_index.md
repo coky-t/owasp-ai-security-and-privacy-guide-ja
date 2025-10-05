@@ -10,4 +10,5 @@ title: コンテンツ
 - [4. 実行時のアプリケーションのセキュリティ脅威](4_runtime_application_security_threats.md)    <!-- {{< small-card link="/docs/4_runtime_application_security_threats/" title="4. 実行時のアプリケーションのセキュリティ脅威">}} -->
 - [5. AI セキュリティテスト](5_testing.md)    <!-- {{< small-card link="/docs/5_testing/" title="5. AI security testing">}} -->
 - [参考情報](ai_security_references.md)    <!-- {{< small-card link="/docs/ai_security_references/" title="References">}} -->
+- [用語集](ai_security_glossary.md)    <!-- {{< small-card link="/docs/ai_security_glossary/" title="Glossary">}} -->
 <!-- {{< /cards >}} -->

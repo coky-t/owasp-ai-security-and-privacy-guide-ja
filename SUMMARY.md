@@ -26,3 +26,4 @@
 - [5. AI セキュリティテスト](Document/content/ai_exchange/content/docs/5_testing.md)
 - [6. AI プライバシー](Document/content/ai_exchange/content/docs/6_privacy.md)
 - [参考情報](Document/content/ai_exchange/content/docs/ai_security_references.md)
+- [用語集](Document/content/ai_exchange/content/docs/ai_security_glossary.md)
