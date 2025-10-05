@@ -8,7 +8,7 @@ title: コンテンツ
 - [2. 使用による脅威](2_threats_through_use.md)    <!-- {{< small-card link="/docs/2_threats_through_use/" title="2. 使用による脅威">}} -->
 - [3. 開発時の脅威](3_development_time_threats.md)    <!-- {{< small-card link="/docs/3_development_time_threats/" title="3. 開発時の脅威">}} -->
 - [4. 実行時のアプリケーションのセキュリティ脅威](4_runtime_application_security_threats.md)    <!-- {{< small-card link="/docs/4_runtime_application_security_threats/" title="4. 実行時のアプリケーションのセキュリティ脅威">}} -->
-- [5. AI セキュリティテスト](5_testing.md)    <!-- {{< small-card link="/docs/5_testing/" title="5. AI security testing">}} -->
-- [参考情報](ai_security_references.md)    <!-- {{< small-card link="/docs/ai_security_references/" title="References">}} -->
-- [用語集](ai_security_glossary.md)    <!-- {{< small-card link="/docs/ai_security_glossary/" title="Glossary">}} -->
+- [5. AI セキュリティテスト](5_testing.md)    <!-- {{< small-card link="/docs/5_testing/" title="5. AI セキュリティテスト">}} -->
+- [参考情報](ai_security_references.md)    <!-- {{< small-card link="/docs/ai_security_references/" title="参考情報">}} -->
+- [インデックス](ai_security_index.md)    <!-- {{< small-card link="/docs/ai_security_index/" title="インデックス">}} -->
 <!-- {{< /cards >}} -->

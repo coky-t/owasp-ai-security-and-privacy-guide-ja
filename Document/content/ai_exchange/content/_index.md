@@ -27,7 +27,7 @@
 - [貢献](contribute.md)    <!-- {{< small-card link="/contribute" title="貢献" icon="star" >}} -->
 - [スポンサー](https://owaspai.org/sponsor/)    <!-- {{< small-card link="/sponsor" title="スポンサー" icon="star" >}} -->
 - [メディア](media.md)    <!-- {{< small-card link="/media" title="メディア" icon="speakerphone" >}} -->
-- [用語集](docs/ai_security_glossary.md)    <!-- {{< small-card link="/goto/glossary/" title="用語集" icon="document-text">}} -->
+- [インデックス](docs/ai_security_index.md)    <!-- {{< small-card link="/goto/index/" title="インデックス" icon="document-text">}} -->
 <!-- {{< /cards >}} -->
 
 <!-- <table style="width: 100%;  border: 0; margin: 0; padding: 0;"> -->
@@ -62,6 +62,8 @@
 * [AI プライバシー](docs/6_privacy.md)
 
 * [参考情報](docs/ai_security_references.md)
+
+* [インデックス](docs/ai_security_index.md)
 
 コンテンツは [pdf (英語)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/OWASP-AI-Exchange.pdf) でもご覧いただけます。
 
