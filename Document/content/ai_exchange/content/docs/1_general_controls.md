@@ -224,8 +224,8 @@ AI-specific elements in the development environment (sometimes referred to as ML
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/checkcompliance/
 
-コンプライアンスのチェック: コンプライアンスマネジメント (セキュリティの側面を含む) において、AI 関連の法規制が考慮されていることを確認します。個人データが関連する場合や個人に関する意思決定に AI が適用される場合は、プライバシーの法規制も適用範囲となります。AI のプライバシーの側面については [OWASP AI ガイド](https://owasp.org/www-project-ai-security-and-privacy-guide/) を参照してください。
-目標としてのコンプライアンスは組織が AI への対応を高める強力な推進力となり得ます。そのためには、法規制には必ずしも組織に関連するすべてのリスクが含まれるわけではない範囲があることを念頭に置くことが重要です。多くの規則は個人や社会に対する潜在的な危害に関するものであり、ビジネスプロセス自体への影響はカバーしていません。たとえば、欧州の AI 法には企業秘密保護に関するリスクは含まれません。つまり、法律や規制をガイドとして使用する際には、盲点に注意する必要があります。
+コンプライアンスのチェック: コンプライアンスマネジメント (セキュリティの側面を含む) において、AI 関連の法規制が考慮されていることを確認します。個人データが関連する場合や個人に関する意思決定に AI が適用される場合は、プライバシーの法規制も適用範囲となります。詳細については [プライバシーセクション](6_privacy.md) を参照してください。
+目標としてのコンプライアンスは組織が AI への対応を高める強力な推進力となり得ます。そのためには、法規制には必ずしも組織に関連するすべてのリスクが含まれるわけではない範囲があることを念頭に置くことが重要です。多くの規則は個人や社会に対する潜在的な危害に関するものであり、ビジネスの利害そのものへの影響はカバーしていません。たとえば、欧州の AI 法には企業秘密保護に関するリスクは含まれません。つまり、法律や規制をガイドとして使用する際には、盲点に注意する必要があります。
 
 
 世界の法的管轄区域に関する考慮事項 (2023年末時点):
@@ -237,7 +237,7 @@ AI-specific elements in the development environment (sometimes referred to as ML
 - 中国: (i) インターネット情報サービス深層合成管理条例 (Regulations on the Administration of Deep Synthesis of Internet Information Services), (ii) 上海市 AI 産業発展促進条例 (Shanghai Municipal Regulations on Promoting Development of AI Industry), (iii) 深圳経済特区 AI 産業促進条例 (Shenzhen Special Economic Zone AI Industry Promotion Regulations), (iv) 生成 AI サービス暫定行政措置 (Provisional Administrative Measures for Generative AI Services)
 
 AI/セキュリティに関する一般的な法的考慮事項:
-- プライバシー法: AI は GDPR, CCPA, HIPAA などのすべてのローカル/グローバルのプライバシー法を常に遵守しなければいけません。[プライバシー](ai_security_overview.md#how-about-privacy) を参照。
+- プライバシー法: AI は GDPR, CCPA, HIPAA などのすべてのローカル/グローバルのプライバシー法を常に遵守しなければいけません。[プライバシーセクション](6_privacy.md) を参照。
 - データガバナンス: 統合のためにサードパーティから提供される AI コンポーネント/機能は、個人データの保護、その収集、処理、保存方法の構造/定義を含む、データガバナンスフレームワークを備えていなければいけません。
 - データ侵害: サードパーティサプライヤは、データの保存方法とそのセキュリティフレームワークについて回答しなければいけません。これはエンドユーザーの個人データや IP を含む可能性があります。
 
@@ -249,12 +249,16 @@ AI/セキュリティに関する一般的な法的考慮事項:
 - 説明責任: AI システムは、アクション、出力、データセットの使用について説明責任を負うべきです。[AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照。
 
 参考情報
-  - [AI の法的側面について語る Vischer 氏](https://www.vischer.com/en/artificial-intelligence/)
+  - [AI の法的側面について語る Vischer](https://www.vischer.com/en/artificial-intelligence/)
+  - [SIG による AI 法の概要](https://www.softwareimprovementgroup.com/eu-ai-act-summary/)
+  - [SIG による米国の AI 関連法制の概要](https://www.softwareimprovementgroup.com/us-ai-legislation-overview/)
 
 有用な標準:
 
   - [OpenCRE のコンプライアンス](https://www.opencre.org/cre/510-324)
   - ISO 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
+  - ISO/IEC 27090 (AI セキュリティ) と 27091 (AI プライバシー) は本稿執筆時点 (2025 年 10 月) で開発中であり、2026 年に発行される見込みです。AI Exchange は 27090 のコンテンツに多大な貢献をしています。
+  - prEN 18282 は AI セキュリティに関する欧州規格です。CEN/CENELEC によって策定され、AI Exchange が重要な部分を貢献しています。Exchange の創設者 Rob van der Veer  は、AI Exchange と CEN/CENELEC/ISO 間の公式なパートナーシップにおける連絡担当者であり、18282 の共同編集者でもあります。この規格は本稿執筆時点 (2025 年 10 月) で約二年間開発が進められており、10 月に公開調査が開始され、2026 年に発行される予定です。
 
 #### #SECEDUCATE
 > カテゴリ: ガバナンスコントロール  
