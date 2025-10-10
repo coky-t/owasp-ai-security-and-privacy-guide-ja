@@ -23,7 +23,7 @@ Security here means preventing unauthorized access, use, disclosure, disruption,
 私たちの **使命** は、AI とデータ中心のシステムにおけるセキュリティとプライバシーの実務者にとって頼りになるリソースとなり、連携を促進し、イニシアチブ間のコラボレーションを推進することです。そうすることで、誰もが洞察を見つけて共有できる安全でオープンかつ独立した場所を提供します。[LinkedIn の AI Exchange LinkedIn](https://www.linkedin.com/company/owasp-ai-exchange/) をフォローしてください。
 
 **How it works**  
-The AI Exchange is displayed here at [owaspai.org](https://owaspai.org) and edited using a [GitHub repository](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (see the links _Edit on Github_). It is is an **open-source living publication** for the worldwide exchange of AI security & privacy expertise. It is structured as one coherent resource consisting of several sections under 'content', each represented by a page on this website.
+The AI Exchange is displayed here at [owaspai.org](https://owaspai.org) and edited using a [GitHub repository](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/tree/main/content/ai_exchange/content) (see the links _Edit on Github_). It is an **open-source living publication** for the worldwide exchange of AI security & privacy expertise. It is structured as one coherent resource consisting of several sections under 'content', each represented by a page on this website.
 
 This material is evolving constantly through open source continuous delivery. The authors group consists of over 70 carefully selected experts (researchers, practitioners, vendors, data scientists, etc.) and other people in the community are welcome to provide input too. See the [contribute page](/contribute).
 
@@ -67,7 +67,7 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/summary/
 
-AI はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
+人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
 
 - **AI ガバナンス** を導入します。
 - このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して **セキュリティプラクティスを拡張** します。
@@ -77,7 +77,7 @@ AI はとてつもない好機を与える一方で、セキュリティ脅威�
 - AI **サプライヤ** が適切なコントロールを適用していることを確認します。
 - データと権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
 
-AI システムは、たとえば、大規模言語モデル、線形回帰関数、ルールベースのシステム、統計ベースのルックアップテーブルなどがあることに注意してください。このドキュメント全体を通じて、どのような脅威とコントロールがどのような役割を果たすかが明確になっています。
+AI Exchange はヒューリスティック人工知能と機械学習の両方をカバーします。つまり、AI システムについて話す場合、たとえば、大規模言語モデル、線形回帰関数、ルールベースのシステム、統計ベースのルックアップテーブルなどがあります。このドキュメント全体を通じて、どのような脅威とコントロールがどのような役割を果たすかが明確になっています。
 
 ---
 
@@ -122,9 +122,9 @@ In short the structure is:
 
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します:
-1. 開発時 (データを取得および準備し、モデルをトレーニング/取得するとき)
-2. モデルの使用 (入力の提供と出力の読み取り) を通じて
-3. 実行時 (本番環境) にシステムへの攻撃によって
+1. 開発時 (データを取得および準備し、モデルをトレーニング/取得するとき) の攻撃
+2. モデルの使用 (入力の提供と出力の読み取り) を通じた攻撃
+3. 実行時 (運用環境) のシステムでの攻撃
 
 AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) に沿って、6 つのタイプの影響を概説します:
 1. 開示: トレーニングデータやテストデータの機密性を損なう
@@ -305,7 +305,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   - Prevent [prompt injection](/goto/directpromptinjection/) (mostly done by the model supplier). When untrusted input goes directly into a model, and there's a possibility that the model's output could be harmful (for example, by offending, providing dangerous information, or spreading misinformation, or output that triggers harmful functions (Agentic AI) )- it's a significant concern. This is particularly the case if model input comes from end-users and output goes straight to them, or can trigger functions. The question becomes: has the model supplier done enough according to your risk appetite. For this, you can check tests that the supplier or others hav performed and when not available: do these tests yourself. What you accept depends on your context. If a user wants the AI to say something offensive: do you regard it as a problem if that user succeeds in getting offended? Do you regard it as a problem if users can get a recipe to make poison - given that they can get this from many AI's out there. See the linked threat section for more details.
   - Prevent [indirect prompt injection](/goto/indirectpromptinjection/), in case your system inserts untrusted data in a prompt e.g. you retrieve somebody's resume and include it in a prompt.
 
-  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier because it is expensive and often costs millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this could be lower cost (if is is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
+  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier because it is expensive and often costs millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this could be lower cost (if it is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
     
   Who trains/finetunes the model?
   - The supplier: you need to avoid [obtaining a poisoned model](/goto/transferlearningattack/) through proper supply chain management (by selecting a trustworthy supplier and verifying the authenticity of the model). This involves ensuring that the supplier prevents model poisoning during development, including data poisoning, and uses uncompromised data. If the risk of data poisoning remains unacceptable, implementing post-training countermeasures can be a viable option. See [POISONROBUSTMODEL](/goto/poisonrobustmodel/).
