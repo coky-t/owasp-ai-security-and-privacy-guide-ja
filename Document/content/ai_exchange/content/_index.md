@@ -17,7 +17,8 @@
 </p>
 
 > 広範な AI セキュリティとプライバシーに関する頼りになるリソースへようこそ。AI とデータ中心のシステムを脅威から保護するための 200 ページ以上にわたる実践的なアドバイスとリファレンスです。このコンテンツは実務者にとって重要なブックマークとして機能し、公式の標準パートナーシップを通じて ISO/IEC や AI 法などの国際標準に積極的かつ大きく貢献しています。主要機関や SDO との広範な協力を通じて、_Exchange_ は AI セキュリティとプライバシーに関するコンセンサスを表しています。<br>
-[OWASP の AI プロジェクトの概要](docs/ai_security_overview.md#relevant-owasp-ai-initiatives) を参照してください。
+
+ここからスタート: [このドキュメントの使い方](docs/ai_security_overview.md#how-to-use-this-document)
 
 <!-- {{< spacer height="10" >}} -->
 
