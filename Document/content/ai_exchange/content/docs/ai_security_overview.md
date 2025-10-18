@@ -81,15 +81,24 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/summary/
 
-人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
+人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。
 
-- Implement [AI governance](/goto/aiprogram/) including arranging [compliance](/goto/checkcompliance/).
-- このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して [セキュリティプラクティスを拡張](1_general_controls.md#secprogram) します。
-- AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも):
-  - Involve your data and AI engineering into your traditional [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/). This involves [education on AI security](/goto/seceducate/).
-  - このドキュメントで説明している [脅威](ai_security_overview.md#threats-overview) を理解して、適切な [プロセスコントロールと技術的コントロール](ai_security_overview.md#periodic-table-of-ai-security) を適用します。
-- [Minimize or obfuscate sensitive data](/goto/datalimit/) and [limit the impact](/goto/limitunwanted/) of AI by managing privileges annd adding oversight, e.g. guardrails, human oversight.
-- AI **サプライヤ** が適切なコントロールを適用していることを確認します。
+The five steps - G.U.A.R.D - to address AI security are: 
+
+1. **Govern**  
+  Implement [AI governance](/goto/aiprogram/) including arranging [compliance](/goto/checkcompliance/). Agree on responsibilities, know what is going on, implement policy, [education](/goto/seceducate/), etc. 
+2. **Understand**  
+   Know the relevant [AI security threats](/goto/threatsoverview/) and the corresponding [process controls and technical controls](/goto/periodictable/) that need to be applied by you or your suppliers.
+3. **Adapt**  
+  - このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して [セキュリティプラクティスを拡張](1_general_controls.md#secprogram) します。
+  - Extend your threat modelling to include the [AI security threat model(/goto/riskanalysis/)
+  - Extend your testing with [AI-specific security testing](/goto/testing/)
+  - Extend your supply chain management with [data and model supply chain management](/goto/supplychainmanage/)
+  - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Involve your data and AI engineering into your traditional [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/). 
+4. **Reduce**  
+  Reduce potential impact by [minimizing or obfuscating sensitive data](/goto/datalimit/) and [limiting the impact of unwanted behaviour](/goto/limitunwanted/) (e.g., managing privileges, guardrails, human oversight etc. Basically: apply Murphy's law.
+5. **Demonstrate**  
+    Show evidence of responsible AI security through transparency, documentation, and communication. Prove to management, regulators, and clients that your AI systems are under control and that the applied safeguards work as intended.
 
 ---
 
