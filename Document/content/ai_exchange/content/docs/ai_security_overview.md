@@ -37,6 +37,17 @@ AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) �
 
 The project started out as the 'AI security and privacy guide' in October 22 and was rebranded a year later as 'AI Exchange' to highlight the element of global collaboration. In March 2025 the AI Exchange was awarded the status of 'OWASP Flagship project' because of its critical importance, together with the ['GenAI Security Project'](https://genai.owasp.org/).
 
+**The AI Exchange is trusted by industry giants**
+
+Dimitri van Zantvliet, Director Cybersecurity, Dutch Railways:
+> "A risk-based, context-aware approach—like the one OWASP Exchange champions—not only supports the responsible use of AI, but ensures that real threats are mitigated without burdening engineers with irrelevant checklists. We need standards written by those who build and defend these systems every day."
+
+Sri Manda, Chief Security & Trust Officer at Peloton Interactive:
+> “AI regulation is critical for protecting safety and security, and for creating a level playing field for vendors. The challenge is to remove legal uncertainty by making standards really clear, and to avoid unnecessary requirements by building in flexible compliance. I’m very happy to see that OWASP Exchange has taken on these challenges by bringing the security community to the table to ensure we get standards that work.”
+
+Prateek Kalasannavar, Staff AI Security Engineer, Lenovo:
+> “At Lenovo, we’re operationalizing AI product security at scale, from embedded inference on devices to large-scale cloud-hosted models. OWASP AI Exchange serves as a vital anchor for mapping evolving attack surfaces, codifying AI-specific testing methodologies, and driving community-aligned standards for AI risk mitigation. It bridges the gap between theory and engineering.”
+
 
 ## <a name="relevant-owasp-ai-initiatives">関連する OWASP AI イニシアチブ</a>
 >カテゴリ: ディスカッション  
@@ -72,15 +83,13 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 
 人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。簡単に言えば、AI セキュリティに対処するための主な手順は以下のとおりです。
 
-- **AI ガバナンス** を導入します。
-- このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して **セキュリティプラクティスを拡張** します。
+- Implement [AI governance](/goto/aiprogram/) including arranging [compliance](/goto/checkcompliance/).
+- このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して [セキュリティプラクティスを拡張](1_general_controls.md#secprogram) します。
 - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも):
-  - データおよび AI エンジニアリングを従来の **(セキュア) ソフトウェア開発プラクティス** に組み込みます。
-  - このドキュメントで説明している脅威を理解して、適切なプロセス **コントロール** と技術的コントロールを適用します。
+  - Involve your data and AI engineering into your traditional [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/). This involves [education on AI security](/goto/seceducate/).
+  - このドキュメントで説明している [脅威](ai_security_overview.md#threats-overview) を理解して、適切な [プロセスコントロールと技術的コントロール](ai_security_overview.md#periodic-table-of-ai-security) を適用します。
+- [Minimize or obfuscate sensitive data](/goto/datalimit/) and [limit the impact](/goto/limitunwanted/) of AI by managing privileges annd adding oversight, e.g. guardrails, human oversight.
 - AI **サプライヤ** が適切なコントロールを適用していることを確認します。
-- データと権限を最小限に抑え、ガードレールや人間の監視などの監視を追加して、AI の **影響を制限** します。
-
-AI Exchange はヒューリスティック人工知能と機械学習の両方をカバーします。つまり、AI システムについて話す場合、たとえば、大規模言語モデル、線形回帰関数、ルールベースのシステム、統計ベースのルックアップテーブルなどがあります。このドキュメント全体を通じて、どのような脅威とコントロールがどのような役割を果たすかが明確になっています。
 
 ---
 
@@ -88,15 +97,29 @@ AI Exchange はヒューリスティック人工知能と機械学習の両方�
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/document/
 
-The AI Exchange is a single coherent resource on how to protect AI systems, presented on this website, divided over several pages.
+The AI Exchange is a single coherent resource on the security and privacy of AI systems, presented on this website, divided over several pages - containing threats, controls, guidelines, tests and references.
 
-**Ways to start**
-- If you want your **AI system to be secure**, start with [risk analysis](/goto/riskanalysis/) which will guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls to select and implement.
-- If you want to get an overview of the **threats** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
-- To understand how **controls** link to the threats, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/).
-- If you want to **test** the security of AI systems with tools, go to [the testing page](/goto/testing/).
-- To learn about **privacy** of AI systems, check [the privacy section](/goto/aiprivacy/).
-- Looking for more information, or training material: see the [references](/goto/references/).
+**Ways to start, depending on your need:**
+- **Learn more about the AI Exchange**:  
+  See [About](https://owaspai.org/goto/about/)
+- **Start AI security as organization**:  
+  See [How to address AI security?](https://owaspai.org/goto/summary/) for the key steps to get started as organization.
+- **Start AI security as individual**:  
+  See 'learn/lookup' below to familiarize yourself with the threats and controls.
+- **Secure a system**:  
+   If you want your **AI system to be secure**, start with [risk analysis](/goto/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
+- **Learn / look up**:  
+  - To see a general overview and discussion of all **threats** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
+  - To find out what to do against a specific threat, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/) to find the right **controls**.
+  - To learn about **privacy** of AI systems, check [the privacy section](/goto/aiprivacy/).
+  - Agentic AI aspects are covered throughout all content, with a specific section [here](/goto/agenticaithreats/).
+  - To look up a specific topic, use the search function or the [index](/goto/index/).
+  - Looking for more information, or training material: see the [references](/goto/references/).
+- **Test**:  
+  If you want to **test** the security of AI systems with tools, go to [the testing page](/goto/testing/).
+
+The AI exchange covers both heuristic artificial intelligence (e.g. expert systems) and machine learning. This means that when we talk about an AI system, it can for example be a Large Language Model, a linear regression function, a rule-based system, or a lookup table based on statistics. Throughout this document it is made clear when which threats and controls play a role.
+
 
 **The structure**  
 You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu.
