@@ -83,6 +83,8 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 
 人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。
 
+[![](../../static/images/guard.png)](../../static/images/guard.png)
+
 The five steps - G.U.A.R.D - to address AI security are: 
 
 1. **Govern**  
@@ -90,11 +92,11 @@ The five steps - G.U.A.R.D - to address AI security are:
 2. **Understand**  
    Know the relevant [AI security threats](/goto/threatsoverview/) and the corresponding [process controls and technical controls](/goto/periodictable/) that need to be applied by you or your suppliers.
 3. **Adapt**  
-  - このドキュメントの AI セキュリティ資産、脅威、コントロールを使用して [セキュリティプラクティスを拡張](1_general_controls.md#secprogram) します。
-  - Extend your threat modelling to include the [AI security threat model(/goto/riskanalysis/)
-  - Extend your testing with [AI-specific security testing](/goto/testing/)
-  - Extend your supply chain management with [data and model supply chain management](/goto/supplychainmanage/)
-  - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Involve your data and AI engineering into your traditional [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/). 
+  -  [セキュリティプラクティスを採用](1_general_controls.md#secprogram) して、このドキュメントの AI セキュリティ資産、脅威、コントロールを含めます。
+  - Adapt your threat modelling to include the [AI security threat model](/goto/riskanalysis/)
+  - Adapt your testing to include [AI-specific security testing](/goto/testing/)
+  - Adapt your supply chain management to include [data and model management](/goto/supplychainmanage/)
+  - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Adapt your [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/) to involve AI engineering . 
 4. **Reduce**  
   Reduce potential impact by [minimizing or obfuscating sensitive data](/goto/datalimit/) and [limiting the impact of unwanted behaviour](/goto/limitunwanted/) (e.g., managing privileges, guardrails, human oversight etc. Basically: apply Murphy's law.
 5. **Demonstrate**  
