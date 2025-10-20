@@ -37,7 +37,7 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 * [5. AI セキュリティテスト](Document/content/ai_exchange/content/docs/5_testing.md)
 * [6. AI プライバシー](Document/content/ai_exchange/content/docs/6_privacy.md)
 * [参考情報](Document/content/ai_exchange/content/docs/ai_security_references.md)
-* [インデックス](Document/content/ai_exchange/content/docs/ai_security_index.md)
+* [索引](Document/content/ai_exchange/content/docs/ai_security_index.md)
 
 ## Translator (Japanese)
 
