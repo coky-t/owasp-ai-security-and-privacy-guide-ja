@@ -15,16 +15,16 @@ excludeSearch: true
 
 OWASP プロジェクトはオープンソースの取り組みであり、私たちはあらゆる形態の貢献とフィードバックを熱烈に歓迎します。
 
-いずれにせよ、AI セキュリティに興味があるなら、[OWASP Slack に参加](https://owasp.org/slack/invite) して、#project-ai-community で学び、議論しましょう。
-
 ## [owaspai.org](https://owaspai.org) のコンテンツ開発に参加する
 
 - 📥 提案を [プロジェクトリーダー](connect.md#owasp-ai-project-leader) に送信してください。
-- 📄 または [著者グループに参加申し込みしてください](https://forms.gle/XwEEK52y4iZQChuJ6)。
+- 📄 または [AI Exchange を構築および成長するグループに参加申し込みしてください](https://forms.gle/XwEEK52y4iZQChuJ6) ('AI Exchange Authors group')
 - 🗣️ または [プロジェクトリーダー](connect.md#owasp-ai-project-leader) と著者グループの一員になる方法について話し合ってください。
 - 💡 または、あなたの [アイデア](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/ideas) を提案するか、[問題](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/issues) を投稿してください。
 - 📄 または、リポジトリをフォークして、修正や提案の [プルリクエスト](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/pulls) を提出してください。
 - 🙏 または [GitHub](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/discussions/categories/q-a) か #project-ai-community に質問を投げてください。
+- [OWASP Slack に参加](https://owasp.org/slack/invite) して、#project-ai-community で学び、議論しましょう。
+
 
 
 ## 避けるべきこと
