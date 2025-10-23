@@ -136,7 +136,7 @@ The AI exchange covers both heuristic artificial intelligence (e.g. expert syste
 You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu.
 
 In short the structure is:  
-0. [AI security overview - this page](/docs/ai_security_overview), contais an overview of AI security and discussions of various topics.
+0. [AI security overview - this page](/docs/ai_security_overview), contains an overview of AI security and discussions of various topics.
 1. [General controls, such as AI governance](/goto/generalcontrols/)
 2. [Threats through use, such as evasion attacks](/goto/threatsuse/)
 3. [Development-time threats, such as data poisoning](/goto/developmenttime/)
