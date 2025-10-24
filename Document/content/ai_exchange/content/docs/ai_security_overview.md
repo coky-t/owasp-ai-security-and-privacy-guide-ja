@@ -374,7 +374,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   - You: you need to prevent [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data or a poisoned pre-trained model in case you're finetuning the model.
  
   Do you use RAG (Retrieval Augmented Generation using GenAI) ?
-  Yes: Thenour retrieval repository plays a role in determining the model behaviour. This means:
+  Yes: Then your retrieval repository plays a role in determining the model behaviour. This means:
   - You need to prevent [data poisoning](/goto/datapoison/) of your retrieval repository, which includes preventing that it contains externally obtained poisoned data.
 
   Who runs the model?
@@ -459,7 +459,7 @@ For each selected threat, determine who is responsible for addressing it. By def
 
 If some components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider by using a tool like the responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure. See [Threat model of using a model as-is](#threat-model-with-controls---genai-as-is).
 
-If an external party is not open about how certain risks are mitigated, consider requesting this information and when this remains unclear you are faced with either 1) accept the risk, 2) or provide your own mitigations, or 3)avoid the risk, by not engaging with the third party.
+If an external party is not open about how certain risks are mitigated, consider requesting this information and when this remains unclear you are faced with either 1) accept the risk, 2) or provide your own mitigations, or 3) avoid the risk, by not engaging with the third party.
 
 ### 6. Verify external responsibilities
 For the threats that are the responsibility of other organisations: attain assurance whether these organisations take care of it. This would involve the controls that are linked to these threats.
@@ -489,12 +489,12 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 このドキュメントは機械学習に焦点を当てています。とはいえ、ここではヒューリスティックシステムにも適用される、このドキュメントの機械学習の脅威を簡単に要約します。
 
 - モデル回避はヒューリスティックモデルでも可能です。攻撃者は定義されたルールの抜け穴や弱点を見つけようとする可能性があります。
-- 使用によるモデル盗用 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます
-- 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります
+- 使用によるモデル盗用 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます。
+- 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります。
 - データポイズニングとモデルポイズニングはどちらも、知識を強化するために使用されるデータの改竄や、開発時や実行時にルールを操作することによって発生する可能性があります。
-- 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります
-- 知識、ソースコード、設定が知的財産である場合、機密データとみなされる可能性があり、保護が必要です
-- たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します
+- 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります。
+- 知識、ソースコード、設定が知的財産である場合、機密データとみなされる可能性があり、保護が必要です。
+- たとえばヒューリスティックシステムが患者を診断する必要がある場合、機密性の高い入力データが漏洩します。
 
 ### 責任ある AI や信頼できる AI についてはどうですか？
 > カテゴリ: ディスカッション  
@@ -658,7 +658,7 @@ stakeholders including developers, content creators, and copyright owners alike.
 #### Lawsuits Related to AI & Copyright
 Recent lawsuits (writing is April 2024) highlight the urgency of these issues. For instance, a class 
 action suit filed against Stability AI, Midjourney, and DeviantArt alleges infringement
-on the rights of millions of artists by training their tools on web-scraped images2.  
+on the rights of millions of artists by training their tools on web-scraped images.  
 Similarly, Getty Images’ lawsuit against Stability AI for using images from its catalog
 without permission to train an art-generating AI underscores the potential for 
 copyright disputes to escalate. Imagine the same scenario where a supplier 
@@ -716,7 +716,7 @@ applications, interfaces and other tech stacks.
 3. Clear Legal Framework and Policy: development and enforcement of legal 
 policies and procedures for AI use, which ensure they align with current IP 
 laws including copyright.
-4. Ethics in Data Sourcing: source data ethically, ensuring all date used for 
+4. Ethics in Data Sourcing: source data ethically, ensuring all data used for 
 training the AI models is either created in-house, or obtained with all 
 necessary permissions, or is sourced from public domains which provide 
 sufficient license for the organization’s intended use.
