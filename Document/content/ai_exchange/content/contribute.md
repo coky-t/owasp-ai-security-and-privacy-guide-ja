@@ -9,7 +9,7 @@ excludeSearch: true
 
 <!-- &nbsp;{{< github-stars user="OWASP" repo="www-project-ai-security-and-privacy-guide" repo_url="https://github.com/OWASP/www-project-ai-security-and-privacy-guide" >}} -->
 
-<!-- {{< tabs items="Guidelines,Contributing authors" >}} -->
+<!-- {{< tabs items="Guidelines,Contributing authors, Project leadership" >}} -->
 
 # ガイドライン <!-- {{< tab >}} -->
 
@@ -76,4 +76,12 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
 </table>
 
 <!-- {{< /html-tab >}} -->
+
+<!-- {{< tab >}} -->
+リーダーシップチーム:
+- Behnaz Karimi
+- Aruneesh Salhotra
+- Rob van der Veer
+<!-- {{< /tab >}} -->
+
 <!-- {{< /tabs >}} -->
