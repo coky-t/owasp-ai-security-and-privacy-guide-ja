@@ -2,31 +2,31 @@
 title: 5. AI セキュリティテスト
 weight: 6
 ---
-> Category: discussion  
-> Permalink: https://owaspai.org/goto/testing/
+> カテゴリ: ディスカッション  
+> パーマリンク: https://owaspai.org/goto/testing/
 
 ## イントロダクション
-Testing an AI system’s security relies on three strategies:
-1.	**Conventional security testing** (i.e. _pentesting_). See [secure software development](/goto/secdevprogram/).
-2.	**Model performance validation** (see [continuous validation](/goto/continuousvalidation/)): testing if the model behaves according to its specified acceptance criteria using a validation set with inputs and outputs that represent the intended behaviour of the model. For security,this is to detect if the model behaviour has been altered permanently through data poisoning or model poisoning. For non-security, it is for testing functional correctness, model drift etc.
-3.	**AI security testing** (this section), the part of _AI red teaming_ that tests if the AI model can withstand certain attacks, by simulating these attacks.
+AI システムのセキュリティをテストするには、以下の三つの戦略に依存します。
+1. **従来のセキュリティテスト** (つまり _ペンテスト_)。 [セキュアソフトウェア開発](1_general_controls.md#secdevprogram) を参照してください。
+2. **モデルパフォーマンスバリデーション** ([継続的バリデーション](1_general_controls.md#continuousvalidation) を参照): モデルの意図した動作を表す入力と出力を持つバリデーションセットを用いて、モデルが指定された受け入れ基準に従って動作するかどうかをテストします。セキュリティとしては、これはデータポイズニングやモデルポイズニングによってモデルの動作が恒久的に改変されていないかを検出することです。セキュリティ以外としては、これは機能の正確性やモデルドリフトなどをテストすることです。
+3. **AI セキュリティテスト** (本セクション) は、特定の攻撃をシミュレートして AI モデルがこれらの攻撃を耐えることができるかどうかをテストする、_AI レッドチーミング_ の一部です。
 
-AI security tests simulate adversarial behaviors to uncover vulnerabilities, weaknesses, and risks in AI systems. While the focus areas of traditional AI testing are functionality and performance, the focus areas of AI Red Teaming go beyond standard validation and include intentional stress testing, attacks, and attempts to bypass safeguards. While the focus of red teaming can extend beyond Security, in this document, we focus primarily on “AI Red Teaming for AI Security”.
+AI セキュリティテストは敵対的な動作をシミュレートして、AI システムの脆弱性、弱点、リスクを明らかにします。従来の AI テストの焦点領域は機能性とパフォーマンスですが、AI レッドチーミングの焦点領域は標準的なバリデーションを超え、意図的なストレステスト、攻撃、セーフガードのバイパスの試みを含みます。レッドチーミングの焦点はセキュリティにとどまりませんが、このドキュメントでは、主に「AI セキュリティのための AI レッドチーミング」に焦点を当てています。
 
-In this section, we differentiate AI Red Teaming for Predictive and Generative AI due to their distinct nature, risks, and applications. While some threats, such as development-time supply chain threats, could be common to both types of AI, the way they manifest in their applications can differ significantly.
+このセクションでは、予測 AI と生成 AI の異なる性質、リスク、用途に基づき、AI レッドチーミングを区別します。開発時のサプライチェーンの脅威など、一部の脅威は両方のタイプの AI に共通する可能性がありますが、アプリケーションでそれらが発現する方法は大きく異なることがあります。
 
-A systematic approach to AI Red Teaming involves a few key steps, listed below:
+AI レッドチーミングへの体系的なアプローチには、以下に示した重要なステップがあります。
 
-- **Define Objectives and Scope**: Identification of objectives, alignment with organizational, compliance, and risk management requirements.
-- **Understand the AI System:** Details about the model, use cases, and deployment scenarios.
-- **Identify Potential Threats:** Threat modeling, identification of attack surface, exploration, and threat actors.
-- **Develop Attack Scenarios:** Design of attack scenarios and edge cases.
-- **Test Execution:** Conduct manual or automated tests for the attack scenarios.
-- **Risk Assessment:** Documentation of the identified vulnerabilities and risks.
-- **Prioritization and Risk Mitigation:** Develop an action plan for remediation, implement mitigation measures, and calculate residual risk.
-- **Validation of Fixes:** Retest the system post-remediation.
+- **目的とスコープの定義**: 目的の特定。組織、コンプライアンス、リスク管理要件との整合。
+- **AI システムの理解:** モデル、ユースケース、デプロイメントシナリオの詳細。
+- **潜在的な脅威の特定:** 脅威モデリング。攻撃対象領域、調査、脅威アクターの特定。
+- **攻撃シナリオの作成:** 攻撃シナリオとエッジケースの設計。
+- **テスト実行:** 攻撃シナリオの手動テストや自動テストの実施。
+- **リスク評価:** 特定された脆弱性とリスクの文書化。
+- **優先順位付けとリスク緩和:** 修復のための行動計画の策定、緩和策の実施、残存リスクの算出。
+- **修正の検証:** 修復後システムの再テスト。
 
-For more information on AI security testing, see the [OWASP AI Testing guide](https://github.com/OWASP/www-project-ai-testing-guide).
+AI セキュリティテストの詳細については、[OWASP AI テストガイド](https://github.com/OWASP/www-project-ai-testing-guide) を参照してください。
 
 
 ## テストすべき脅威
