@@ -53,15 +53,19 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Chris Ancharski</td><td>Global community builder</td><td>アメリカ</td><td>リーダーシップチーム(2024年の一部期間)</td></tr>
     <tr><td>Dan Sorensen</td><td>Centil</td><td>アメリカ</td><td>開発セキュリティなどのその他の追加</td></tr>
     <tr><td>Dennis Charolle</td><td>MilliporeSigma</td><td>アメリカ</td><td>コンプライアンス概要と著作権</td></tr>
-    <tr><td>Disesdi Susanna Cox</td><td>OTW</td><td>アメリカ</td><td>連合学習その他</td></tr>
+    <tr><td>Disesdi Susanna Cox</td><td>OTW</td><td>アメリカ</td><td>連合学習、テストその他多数</td></tr>
     <tr><td>Elias Botterli Sørensen</td><td>Kantega</td><td>ノルウェー</td><td>いくつかの明確化と改善</td></tr>  
     <tr><td>Engin Bozdag</td><td>Uber</td><td>アメリカ</td><td>プライバシーセクションに関する実質的な意見</td></tr>
     <tr><td>Eoin Wickens</td><td>HiddenLayer</td><td>アイルランド</td><td>開発セキュリティへの追加</td></tr>
+    <tr><td>Iryna Schwindt</td><td></td><td>ドイツ</td><td>テスト</td></tr>
     <tr><td>Feiyang Tang</td><td>Software Improvement Group (SIG)</td><td></td><td></td></tr>
+    <tr><td>Jolly Trivedi</td><td></td><td>フィンランド</td><td>テスト</td></tr>
     <tr><td>John Sotiropoulos</td><td>Kainos</td><td>イギリス</td><td>複数の機関との連絡役</td></tr>
     <tr><td>Manish Garg</td><td>VE3</td><td>UK</td><td>実行時のモデル保護</td></tr>
+    <tr><td>Maryam Alhashemi</td><td></td><td></td><td>テスト</td></tr>
     <tr><td>Marko Lihter</td><td>SplxAI</td><td>クロアチア</td><td>組織向けのステップバイステップガイド、ウェブサイト作成、さまざまなテキストの改善</td></tr>
     <tr><td>Niklas Bunzel</td><td>フラウンホーファー研究所</td><td>ドイツ</td><td>回避攻撃に関するデータサイエンスの考察と参考情報</td></tr>
+    <tr><td>Rajiv Bahl</td><td></td><td>インド</td><td>テスト</td></tr>
     <tr><td>Rocky Heckman</td><td>Cyber Dynamo</td><td>オーストラリア</td><td>セキュリティとプライバシーのリスク分析と ISO/IEC 27562</td></tr>
     <tr><td>Rubens Zimbres</td><td></td><td>ブラジル</td><td>敵対的機械学習</td></tr>
     <tr><td>Roger Sanz</td><td>イザベル大学</td><td>スペイン</td><td></td></tr>
@@ -72,6 +76,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Steve Francolla</td><td>Workforce Tech LLC</td><td></td><td></td></tr>
     <tr><td>Wei Wei</td><td>IBM</td><td>ドイツ</td><td>ISO/IEC 42001 とのマッピング</td></tr>
     <tr><td>Yiannis Kanellopoulos and team</td><td>Code4thought</td><td>ギリシャ</td><td>回避の堅牢性</td></tr>
+    <tr><td>Yuvaraj Govindarjulu</td><td>AI Shield</td><td>インド</td><td>テスト</td></tr>
     <tr><td>Zoe Braiterman</td><td>Mutual Knowledge Systems</td><td>アメリカ</td><td>多くのマークダウンの改善</td></tr>
 </table>
 
