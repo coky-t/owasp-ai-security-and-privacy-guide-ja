@@ -80,6 +80,7 @@
 <tr style="border: none;">
   <td style="border: none;"><a href="https://www.straiker.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_straiker.jpg" style="display: block; margin: auto;" alt="Straiker sponsor"></a></td>
   <td style="border: none;"><a href="https://www.casco.com/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_casco.png" style="display: block; margin: auto;" alt="Casco sponsor"></a></td>
+  <td style="border: none;"><a href="https://aisecurityacademy.ai/" rel="noopener noreferrer" target="_blank"><img src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/sp_academy3.png" style="display: block; margin: auto;" alt="AI security academy sponsor"></a></td>
 </tr>
 </table>
 <br>
