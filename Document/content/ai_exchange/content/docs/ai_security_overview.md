@@ -96,26 +96,26 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 - is offered completely free of copyright and attribution
 
 
-## 要旨 - AI セキュリティをどのように対処するか？
+## AI セキュリティをどのように編成するか？
 >カテゴリ: ディスカッション  
->パーマリンク: https://owaspai.org/goto/summary/
+>パーマリンク: https://owaspai.org/goto/organize/
 
 人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。
 
 [![](../../static/images/guard.png)](../../static/images/guard.png)
 
-The five steps - G.U.A.R.D - to address AI security as an organization are: 
+The five steps - G.U.A.R.D - to organize AI security as an organization are: 
 
 1. **Govern**  
   Implement [AI governance](/goto/aiprogram/) including arranging [compliance](/goto/checkcompliance/). Agree on responsibilities, know what is going on, implement policy, [education](/goto/seceducate/), etc. 
 2. **Understand**  
-   Know the relevant [AI security threats](/goto/threatsoverview/) and the corresponding [process controls and technical controls](/goto/periodictable/) that need to be applied by you or your suppliers.
+   Make sure engineers and security officers know the relevant [AI security threats](/goto/threatsoverview/) and the corresponding [process controls and technical controls](/goto/periodictable/) that need to be applied by you or your suppliers.
 3. **Adapt**  
-  -  [セキュリティプラクティスを採用](1_general_controls.md#secprogram) して、このドキュメントの AI セキュリティ資産、脅威、コントロールを含めます。
-  - Adapt your threat modelling to include the [AI security threat model](/goto/riskanalysis/) approach.
-  - Adapt your testing to include [AI-specific security testing](/goto/testing/)
-  - Adapt your supply chain management to include [data and model management](/goto/supplychainmanage/)
-  - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Adapt your [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/) to involve AI engineering activities. 
+    -  [セキュリティプラクティスを採用](1_general_controls.md#secprogram) して、このドキュメントの AI セキュリティ資産、脅威、コントロールを含めます。
+    - Adapt your threat modelling to include the [AI security threat model](/goto/riskanalysis/) approach and do cross-team threat modelling, involving all engineers.
+    - Adapt your testing to include [AI-specific security testing](/goto/testing/).
+    - Adapt your supply chain management to include [data and model management](/goto/supplychainmanage/) and to make sure that your suppliers are taking care of security.
+    - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Adapt your [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/) to involve AI engineering activities. 
 4. **Reduce**  
   Reduce potential impact by [minimizing or obfuscating sensitive data](/goto/datalimit/) and [limiting the impact of unwanted behaviour](/goto/limitunwanted/) (e.g., managing privileges, guardrails, human oversight etc. Basically: apply Murphy's law.
 5. **Demonstrate**  
@@ -133,12 +133,13 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 - **Learn more about the AI Exchange**:  
   See [About](https://owaspai.org/goto/about/)
 - **Start AI security as organization**:  
-  See [How to address AI security?](https://owaspai.org/goto/summary/) for the key steps to get started as organization.
+  See [How to organize AI security](https://owaspai.org/goto/organize/) for the key steps to get started as organization.
 - **Start AI security as individual**:  
   See 'learn/lookup' below to familiarize yourself with the threats and controls.
 - **Secure a system**:  
    If you want your **AI system to be secure**, start with [risk analysis](/goto/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
 - **Learn / look up**:  
+  - For the short story with the main insights about what is special about AI security: see the [AI Exchange essentials](/goto/essentials/).
   - To see a general overview and discussion of all **threats** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
   - To find out what to do against a specific threat, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/) to find the right **controls**.
   - To learn about **privacy** of AI systems, check [the privacy section](/goto/aiprivacy/).
@@ -169,6 +170,38 @@ In short the structure is:
 - 脅威とコントロールのさまざまな概要: マトリックス、周期表、ナビゲータ
 - 関連する脅威とコントロールを選択するためのリスク分析
 - さまざまな他のトピック: ヒューリスティックシステム、責任ある AI、生成 AI、NCSC/CISA ガイドライン、著作権
+
+---
+
+## AI security essentials
+>Category: discussion  
+>Permalink: https://owaspai.org/goto/essentials/
+
+The upcoming sections discuss AI security threats and corresponding controls. Below are the main insights to understand the bigger picture of AI security What is different for AI systems?
+
+**New threats:**
+  - Model input threats:
+    - A misled model by crafted data to force wrong decisions (Evasion)
+    - A misled model by crafted instructions to manipulate behaviour (Prompt injection)
+    - Extracted sensitive training data, augmentation data, or input
+    - Extracted model 
+  - Threats from new suppliers:
+    - Corrupted external data, models, and model hosting
+  - Conventional threats to new assets- notably:
+    - Model (model theft or poisoning)
+    - Input (leak)
+    - Output, which needs to be treated as untrusted data
+    - Training data / augmentation data (changing it manipulates model behaviour - data poisoning)
+
+**New controls:**
+- Specific AI engineering controls, to work against poisoning and model input attacks - next to conventional controls
+- Impact limitation controls (because of zero model trust: assume a model can be misled or leak data):
+  - Minimize or obfuscate sensitive data
+  - Limit model behaviour (oversight, guardrails, minimal model privilege)
+
+(*) Note: Attackers that have a similar model (or a copy) can craft misleading input covertly
+
+[![](/images/essentials.png)](/images/essentials.png)
 
 ---
 
@@ -286,24 +319,39 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 
 すべての脅威とコントロールについては AI Exchange の以降のセクションでより詳細に説明します。
 
-### 脅威モデルとコントロール - 生成 AI をトレーニング/ファインチューニング
-下図は、生成 AI に関連する脅威とコントロール、特に組織がモデルを **トレーニングやファインチューニング** する責任を負うシナリオに焦点を当てています。(注: これはコストが高く、専門知識が必要であるため、あまり一般的ではありません)。
+### Threat model with controls - ready-made model
+>Category: discussion  
+>Permalink: https://owaspai.org/goto/readymademodel/
 
-[![AI Security Threats and controls - GenAI trained or fine tuned](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-genainotready.png)
+If possible, and depending on price, organisations can prefer to use a ready-made model, instead of training or fine-tuning themselves. For example: an open source model to detect people in a camera image, or a general purpose LLM such as Google Gemini, OpenAI ChatGPT, Anthropic Claude, Alibaba QWen, Deepseek, Mistral, Grok or Falkon. Training such models yourself can cost millions of dollars, requires deep expertise and vast amounts of data.  
 
-### 脅威モデルとコントロール - 生成 AI を現状のまま <a name="threat-model-with-controls---genai-as-is"></a>
-下図は、組織がモデルをそのまま使用し、追加のトレーニングやファインチューニングを行わない場合の生成 AI に関連する脅威とコントロールに焦点を当てています。プロバイダ (OpenAI など) がトレーニングやファインチューニングを行っています。そのため、いくつかのリスクはモデルプロバイダの責任です (機密データや著作権があるデータ、プロバイダでの操作)。とはいえ、モデルを使用する組織はこれらのリスクを考慮し、プロバイダからその保証を得る必要があります。
+The following deployment options apply for ready-made models:
+- Closed source model, hosted by the provider - for the largest models typically the only available option
+- Self-hosted: Open source model (open weights) deployed on-premise (most secure) or in the virtual private cloud (secure if the cloud provider is trusted) - these options provide more security and may be the best option cost-wise, but do not support the largest models
+- Open source model (open weights) at a paid hosting service - convenient
 
-In many cases, the as-is model is hosted externally, meaning security largely depends on how the supplier handles data, including the security configuration. 
+The provider (e.g. OpenAI) has done the training/fine tuning and therefore is responsible for part of security. Hence, proper supply chain management regarding the model provider is required. 
+
+The diagram below shows threats and controls in a self-hosting situation.
+
+[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-selfhosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-selfhosted.png)
+
+If the model is hosted externally, security largely depends on how the supplier handles data, including the security configuration. 
 Some relevant questions to ask here include: 
 - How is the API protected? 
 - What is hosted within the Virtual Private Cloud (VPC)? The entire external model, or just the API? 
 - How is key management handled? 
-- What are the data retention policies? 
-- Is logging enabled, and if so, what is logged? 
-- Does the model send out sensitive input data when communicating with third-party sources?
+- What are the data retention policies? Has there been a court order that the provider needs to retain input and output for a certain period?
+- Is logging enabled, and if so, what is logged? And what is monitored - by operators and by algorithms? And in the case of monitoring algorithms: how is that infrastructure protected? Some providers require a special license and opting out of monitoring, so reading the small print is critical.
+- Does the model send out sensitive input data when communicating with third-party services?
 
-[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel.png)
+It is important to realise that a provider-hosted model needs your input data in clear text, because the model must read the data to process it. This means your sensitive data will exist unencrypted outside your infrastructure.  
+This is not unique to LLM providers — it is the same for other multi-tenant SaaS services, such as commercial hosted Office suites. Even though providers usually minimise data storage, limit retention, and reduce data movement, the fact remains:
+your data leaves your environment in readable form.
+
+The diagram below shows threats and controls in an externally hosted situation.
+
+[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png)
 
 ### <a name="periodic-table-of-ai-security">AI セキュリティの周期表</a>
 >カテゴリ: ディスカッション  
