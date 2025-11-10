@@ -40,8 +40,9 @@
 
 * [AI セキュリティ概要](docs/ai_security_overview.md)
   - [AI Exchange について](docs/ai_security_overview.md#about-the-ai-exchange)
-  - [要旨](docs/ai_security_overview.md#summary---how-to-address-ai-security)
+  - [編成](docs/ai_security_overview.md#how-to-organize-ai-security)
   - [このドキュメントの使い方](docs/ai_security_overview.md#how-to-use-this-document)
+  - [要旨](docs/ai_security_overview.md#ai-security-essentials)
   - [脅威](docs/ai_security_overview.md#threats-overview)
     - [ハイライト: 脅威マトリクス](docs/ai_security_overview.md#ai-security-matrix)
   - [コントロール](docs/ai_security_overview.md#controls-overview)
