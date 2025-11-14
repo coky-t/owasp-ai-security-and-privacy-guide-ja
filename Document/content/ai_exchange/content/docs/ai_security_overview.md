@@ -195,13 +195,14 @@ The upcoming sections discuss AI security threats and corresponding controls. Be
     
 **[New controls](/goto/controlsoverview/):**
 - Specific **AI engineering controls**, to work against poisoning and model input attacks - next to conventional controls
+- **Monitoring** of model performance and inference allows detecting unintended behaviour, and filtering, stopping or alterting to unwanted input or output
 - **Impact limitation controls** (because of zero model trust: assume a model can be misled or leak data):
   - Minimize or obfuscate sensitive data
   - Limit model behaviour (oversight, guardrails, minimal model privilege)
 
 (*) Note: Attackers that have a similar model (or a copy) can craft misleading input covertly
 
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials4.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials4.png)
 
 ---
 
