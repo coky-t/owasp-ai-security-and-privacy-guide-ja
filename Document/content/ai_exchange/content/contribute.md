@@ -47,6 +47,7 @@ OWASP プロジェクトはオープンソースの取り組みであり、私�
     <tr><td>Alan Hau</td><td>AIFT (Vulcan)</td><td>シンガポール</td><td>文化的機密性と全世界的比較</td></tr>
     <tr><td>Alex Leung</td><td>AIFT (Vulcan)</td><td>シンガポール</td><td>文化的機密性と全世界的比較</td></tr>
     <tr><td>Alon Tron</td><td>Stealth</td><td>イスラエル</td><td>サプライチェーンマネジメントの改善</td></tr>
+    <tr><td>Andrew Stokes</td><td>Pebl</td><td>アメリカ</td><td>選択的健忘の追加</td></tr>
     <tr><td>Angie Qarry</td><td>QDeepTech</td><td>オーストリア</td><td>データサイエンス防御メカニズムに関するいくつかの詳細と参考情報</td></tr>
     <tr><td>Annegrit Seyerlein-Klug</td><td>ブランデンブルク応用科学大学</td><td>ドイツ</td><td>雑多な標準とのマッピング</td></tr>
     <tr><td>Anthony Glynn</td><td>CapitalOne</td><td>アメリカ</td><td>多くのテキストの改善と LLM Top 10 へのリンク</td></tr>
