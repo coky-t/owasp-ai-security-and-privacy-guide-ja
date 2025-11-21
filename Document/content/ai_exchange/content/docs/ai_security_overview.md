@@ -248,10 +248,17 @@ What does this mean for security?
 - The attack surface is wide, and the potential impact should not be underestimated.
 - Because of that, the known controls become even more important — such as traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
 
+For leaking sensitive data in agentic AI, you need three things, also called the lethal trifecta:
+1. Data: Control of the attacker of data that find its way into an LLM at some point in the session of a user that has the desired access 
+2. Access: Access of that LLM or connected agents to sensitive data
+3. Send: The ability of that LLM or connected agents to initiate sending out data to the attacker
+
+See [Simon Willison’s excellent work](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for more details, and for examples in agentic AI software development [here](https://www.darkreading.com/application-security/github-copilot-camoleak-ai-attack-exfils-data) and [here](https://ainativedev.io/news/malicious-github-issue-ai-agent-leak).
+
+
 For more details on the agentic AI threats, see the [Agentic AI threats and mitigations, from the GenAI security project](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/). For a more general discussion of Agentic AI, see [this article from Chip Huyen](https://huyenchip.com/2025/01/07/agents.html).
 
-The [testing section](/goto/testing/) discusses more about agentic AI red teaming.
-
+The [testing section](/goto/testing/) discusses more about agentic AI red teaming and links to the collaboration between CSA and the Exchange: the Agentic AI red teaming guide.
 
 
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
@@ -382,7 +389,7 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 <table><thead>
 <tr><th>資産と影響</th><th>ライフサイクルと攻撃対象領域</th><th>脅威/リスクのカテゴリ</th><th>コントロール</th></tr>
 </thead><tbody>
-<tr><td rowspan="7">モデル動作の完全性</td><td rowspan="3">ランタイム - モデル使用 (入力の提供 / 出力の読み取り)</td><td><a href="2_threats_through_use.md#221-direct-prompt-injection">直接的プロンプトインジェクション</a></td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="2_threats_through_use.md#PROMPT-INPUT-VALIDATION">プロンプト入力バリデーション</a>, <a href="2_threats_through_use.md#MODEL-ALIGNMENT">モデルアラインメント</a></td></tr>
+<tr><td rowspan="7">モデル動作の完全性</td><td rowspan="3">ランタイム - モデル使用 (入力の提供 / 出力の読み取り)</td><td><a href="2_threats_through_use.md#221-direct-prompt-injection">直接的プロンプトインジェクション</a></td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> プラス:, <a href="2_threats_through_use.md#PROMPT-INPUT-VALIDATION">プロンプト入力バリデーション</a>, <a href="2_threats_through_use.md#MODEL-ALIGNMENT">モデルアラインメント</a></td></tr>
 <tr>                                         <td><a href="2_threats_through_use.md#222-indirect-prompt-injection">間接的プロンプトインジェクション</a></td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="2_threats_through_use.md#PROMPT-INPUT-VALIDATION">入力バリデーション</a>, <a href="2_threats_through_use.md#INPUT-SEGREGATION">入力セグリゲーション</a></td></tr>
 <tr>                                         <td><a href="2_threats_through_use.md#21-evasion">回避</a> (例: 敵対的事例)</td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追補:<br><br><a href="2_threats_through_use.md#DETECT-ODD-INPUT">奇妙な入力の検出</a>, <a href="2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT">敵対的入力の検出</a>, <a href="2_threats_through_use.md#EVASION-ROBUST-MODEL">回避ロバストモデル</a>, <a href="2_threats_through_use.md#TRAIN-ADVERSARIAL">敵対的トレーニング</a>, <a href="2_threats_through_use.md#INPUT-DISTORTION">入力の歪曲</a>, <a href="2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION">敵対的ロバスト蒸留</a></td></tr>
 <tr>                                         <td>ランタイム - デプロイされるモデルへの侵入</td><td><a href="4_runtime_application_security_threats.md#42-runtime-model-poisoning-manipulating-the-model-itself-or-its-inputoutput-logic">実行時のモデルポイズニング</a> (リプログラミング)</td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY">実行時のモデルの完全性</a>, <a href="4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY">実行時のモデル入出力の完全性</a></td></tr>
