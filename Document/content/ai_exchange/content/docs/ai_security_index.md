@@ -71,6 +71,7 @@ O
 P  
 [周期表 (Periodic table)](ai_security_overview.md#periodic-table-of-ai-security)  
 [プライバシー (Privacy)](6_privacy.md)  
+[プロンプトインジェクション (Prompt injection)](2_threats_through_use.md#22-prompt-injection)  
 
 R  
 [レッドチーミング (Red teaming)](5_testing.md)  
