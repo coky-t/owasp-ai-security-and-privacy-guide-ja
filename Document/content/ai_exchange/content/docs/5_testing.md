@@ -30,28 +30,28 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 
 ## テストすべき脅威
-A comprehensive list of threats and controls coverage based on assets, impact, and attack surfaces is available as a [Periodic Table of AI Security](/goto/periodictable/). In this section, we provide a list of tools for AI Red Teaming Predictive and Generative AI systems, aiding steps such as Attack Scenarios, Test Execution through automated red teaming, and, oftentimes, Risk Assessment through risk scoring.
+資産、影響、攻撃対象領域に基づいた脅威とコントロールのカバレッジの包括的なリストは [AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) として利用できます。このセクションでは、AI レッドチーミングの予測型および生成型 AI システム向けのツールのリストを提供し、攻撃シナリオ、自動レッドチーミングを通じたテスト実行、そして多くの場合、リスクスコアリングを通じたリスク評価などのステップを支援します。
 
-Each listed tool addresses a subset of the threat landscape of AI systems. Below, we list some key threats to consider:
+リストされている各ツールは AI システムの脅威ランドスケープのサブセットに対応しています。以下に、考慮すべき主要な脅威をいくつか挙げます。
 
-**Predictive AI:** Predictive AI systems are designed to make predictions or classifications based on input data. Examples include fraud detection, image recognition, and recommendation systems.
+**予測 AI (Predictive AI):** 予測 AI システムは入力データに基づいて予測や分類を行うように設計されています。例としては、不正検知、画像認識、レコメンデーションシステムなどがあります。
 
-**Key Threats to Predictive AI:**
+**予測 AI への主要な脅威:**
 
-- [Evasion Attacks:](https://owaspai.org/goto/evasion/) These attacks occur when an attacker crafts inputs that mislead the model, causing it to perform its task incorrectly.
-- [Model Theft](https://owaspai.org/goto/modeltheftuse/): In this attack, the model’s parameters or functionality are stolen. This enables the attacker to create a replica model, which can then be used as an oracle for crafting adversarial attacks and other compounded threats.
-- [Model Poisoning](https://owaspai.org/goto/modelpoison/): This involves the manipulation of data, the data pipeline, or the model training supply chain during the training phase (development phase). The attacker’s goal is to alter the model’s behavior which could result in undesired model operation.
+- [回避攻撃](2_threats_through_use.md#21-evasion): これらの攻撃は、攻撃者がモデルを誤誘導する入力を作成する際に発生し、タスクを誤って実行させます。
+- [モデル窃取](2_threats_through_use.md#24-model-theft-through-use): この攻撃では、モデルのパラメータや機能が盗まれます。これは、攻撃者がレプリカモデルを作成することを可能にし、それを敵対的攻撃やその他の複合的な脅威を作成するためのオラクルとして使用できます。
+- [モデルポイズニング](3_development_time_threats.md#31-broad-model-poisoning-development-time): これは、トレーニングフェーズ (開発フェーズ) 時にデータ、データパイプライン、またはモデルトレーニングサプライチェーンの操作を伴います。攻撃者の目的は、モデルの動作を改変し、望ましくないモデル操作を引き起こすことです。
 
-**Generative AI:** Generative AI systems produce outputs such as text, images, or audio. Examples include large language models (LLMs) like ChatGPT and large vision models (LVMs) like DALL-E and MidJourney.
+**生成 AI (Generative AI):** 生成 AI システムは、テキスト、画像、音声などの出力を生成します。例としては、ChatGPT などの大規模言語モデル (LLM) や、DALL-E や MidJourney などの大規模視覚モデル (LVM) などがあります。
 
-**Key Threats to Generative AI**:
+**生成 AI への主要な脅威:**
 
-- [Prompt Injection](https://owaspai.org/goto/promptinjection/): In this type of attack, the attacker provides the model with manipulative instructions aimed at achieving malicious outcomes or objectives.
-- [Direct Runtime Model Theft](https://owaspai.org/goto/runtimemodeltheft/): Attackers target parts of the model or critical components like the system prompt. By doing so, they gain the ability to craft sophisticated inputs that bypass guardrails.
-- [Insecure Output Handling](https://owaspai.org/goto/insecureoutput/): Generative AI systems can be vulnerable to traditional injection attacks, leading to risks if the outputs are improperly handled or processed.
-- For details on agentic AI system testing, see the [Agentic AI red teaming guide](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) which is a collaboration between the CSA and the AI Exchange.
+- [プロンプトインジェクション](2_threats_through_use.md#222-indirect-prompt-injection): この種の攻撃では、攻撃者はモデルに対して、悪意のある結果や目的を達成することを目指した操作指示を与えます。
+- [直接的な実行時のモデル盗用](4_runtime_application_security_threats.md#43-direct-runtime-model-theft): 攻撃者はモデルの一部、またはシステムプロンプトなどの重要なコンポーネントを標的とします。そうすることで、ガードレールをバイパスする高度な入力を作成できるようになります。
+- [安全でない出力処理](4_runtime_application_security_threats.md#44-insecure-output-handling): 生成 AI システムは、従来のインジェクション攻撃に脆弱である可能性があり、出力が不適切に対処ないし処理されるとリスクにつながります。
+- エージェント AI システムのテストの詳細については、CSA と AI Exchange の間でコラボレーションした [Agentic AI red teaming guide](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) を参照してください。
 
-While we have mentioned the key threats for each of the AI Paradigm, we strongly encourage the reader to refer to all threats at the AI Exchange, based on the outcome of the Objective and scope definition phase in AI Red Teaming.
+各 AI パラダイムに対する主要な脅威について言及しましたが、AI レッドチーミングの目標とスコープの定義フェーズの結果に基づき、AI Exchange のすべての脅威を参照することを読者に強くお勧めします。
 
 ## **AI および生成 AI のためのレッドチームツール**
 
