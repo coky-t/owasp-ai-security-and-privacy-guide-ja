@@ -53,19 +53,19 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 各 AI パラダイムに対する主要な脅威について言及しましたが、AI レッドチーミングの目標とスコープの定義フェーズの結果に基づき、AI Exchange のすべての脅威を参照することを読者に強くお勧めします。
 
-## **AI および生成 AI のためのレッドチームツール**
+## **AI および生成 AI のためのレッドチーミングツール**
 
-The below mind map provides an overview of open-source tools for AI Red Teaming, categorized into Predictive AI Red Teaming and Generative AI Red Teaming, highlighting examples like ART, Armory, TextAttack, and Promptfoo. These tools represent current capabilities but are not exhaustive or ranked by importance, as additional tools and methods will likely emerge and be integrated into this space in the future.
+以下のマインドマップは、AI レッドチーミングのオープンソースツールの概要を示しており、予測 AI レッドチーミングと生成 AI レッドチーミングに分類され、ART, Armory, TextAttack, Promptfoo などの例を挙げています。これらのツールは現時点での機能を示していますが、網羅的ではなく、重要度順にランク付けされているわけでもありません。今後、新たなツールや手法が出現し、この分野に統合される可能性が高いためです。
 
 [![](https://owaspai.org/images/testtoolstoattacks.png)](https://owaspai.org/images/testtoolstoattacks.png)
 
-The diagram below categorizes threats in AI systems and maps them to relevant open-source tools designed to address these threats.
+以下の図は AI システムの脅威を分類し、これらの脅威に対処するために設計された関連するオープンソースツールにマップしています。
 
 [![](https://owaspai.org/images/attackstotesttools.jpg)](https://owaspai.org/images/attackstotesttools.jpg)
 
-The below section will cover the tools for predictive AI, followed by the section for generative AI.
+以下のセクションでは予測 AI のツールについて説明し、その後に生成 AI のセクションに続きます。
 
-## **予測 AI レッドチームのためのオープンソースツール**
+## **予測 AI レッドチーミングのためのオープンソースツール**
 
 This sub section covers the following tools for security testing Predictive AI: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, and TextAttack.
 
@@ -532,7 +532,7 @@ Notes:
 - Development-time Model poisoning: Simulates attacks during development to evaluate vulnerabilities[*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
 - Evasion:Tests model performance against adversarial inputs[*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
-## 生成 AI レッドチームのためのオープンソースツール
+## 生成 AI レッドチーミングのためのオープンソースツール
 
 This sub section covers the following tools for security testing Generative AI: PyRIT, Garak, Prompt Fuzzer, Guardrail, and Promptfoo.
 
