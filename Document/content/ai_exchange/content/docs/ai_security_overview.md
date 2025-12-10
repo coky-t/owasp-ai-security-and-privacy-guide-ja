@@ -244,12 +244,12 @@ There are four typical properties of agentic AI:
 4. Multi-system: You often work with a mix of systems and interfaces. Because of that, developers tend to assign responsibilities regarding access control to the AI using instructions, opening up the door for manipulation through [prompt injection](/goto/promptinjection/).
 
 What does this mean for security?
-- Hallucinations and prompt injections can change commands — or even escalate privileges. Key controls are defense in depth and blast radius control ([impact limitation(/goto/limitunwanted/)). Don’t assign the responsibility of access control to GenAI models/agents. Build that into your architecture.
+- Hallucinations and prompt injections can change commands — or even escalate privileges. Key controls are defense in depth and blast radius control ([impact limitation](/goto/limitunwanted/)). Don’t assign the responsibility of access control to GenAI models/agents. Build that into your architecture.
 - The attack surface is wide, and the potential impact should not be underestimated.
-- Because of that, the known controls become even more important — such as traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
+- Because of that, the known controls become even more important — such as security of inter-model communication (e.g. MCP), traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
 
 For leaking sensitive data in agentic AI, you need three things, also called the lethal trifecta:
-1. Data: Control of the attacker of data that find its way into an LLM at some point in the session of a user that has the desired access 
+1. Data: Control of the attacker of data that find its way into an LLM at some point in the session of a user that has the desired access, to perform [indirect prompt injection](/goto/indirectpromptinjection/) 
 2. Access: Access of that LLM or connected agents to sensitive data
 3. Send: The ability of that LLM or connected agents to initiate sending out data to the attacker
 
