@@ -49,9 +49,12 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 - [プロンプトインジェクション](2_threats_through_use.md#222-indirect-prompt-injection): この種の攻撃では、攻撃者はモデルに対して、悪意のある結果や目的を達成することを目指した操作指示を与えます。
 - [直接的な実行時のモデル盗用](4_runtime_application_security_threats.md#43-direct-runtime-model-theft): 攻撃者はモデルの一部、またはシステムプロンプトなどの重要なコンポーネントを標的とします。そうすることで、ガードレールをバイパスする高度な入力を作成できるようになります。
 - [安全でない出力処理](4_runtime_application_security_threats.md#44-insecure-output-handling): 生成 AI システムは、従来のインジェクション攻撃に脆弱である可能性があり、出力が不適切に対処ないし処理されるとリスクにつながります。
-- エージェント AI システムのテストの詳細については、CSA と AI Exchange の間でコラボレーションした [Agentic AI red teaming guide](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) を参照してください。
 
 各 AI パラダイムに対する主要な脅威について言及しましたが、AI レッドチーミングの目標とスコープの定義フェーズの結果に基づき、AI Exchange のすべての脅威を参照することを読者に強くお勧めします。
+
+**AI セキュリティテストの参考情報**:
+- エージェント AI システムのテストの詳細については、CSA と AI Exchange の間でコラボレーションした [エージェント AI レッドチーミングガイド](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) を参照してください。
+- [OWASP AI セキュリティテストガイド](https://owasp.org/www-project-ai-testing-guide/)
 
 ## **AI および生成 AI のためのレッドチーミングツール**
 
@@ -67,25 +70,25 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 ## **予測 AI レッドチーミングのためのオープンソースツール**
 
-This sub section covers the following tools for security testing Predictive AI: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, and TextAttack.
+このサブセクションは予測 AI のセキュリティテストのための次のツールについてカバーします: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, TextAttack
 
 ### **ツール名: 敵対的ロバストネスツールボックス (Adversarial Robustness Toolbox, ART)**
 
-| **Tool Name: The Adversarial Robustness Toolbox (ART)** |  |
+| **ツール名: 敵対的ロバストネスツールボックス (Adversarial Robustness Toolbox, ART)** |  |
 | --- | --- |
-| Developer/ Source | IBM Research / the Linux Foundation AI & Data Foundation (LF AI & Data) |
-| Github Reference | https://github.com/Trusted-AI/adversarial-robustness-toolbox |
-| Language | Python |
-| Licensing | Open-source under the MIT License. |
-| Provides Mitigation | Prevention: No ❌ Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 開発元/ソース | IBM Research / the Linux Foundation AI & Data Foundation (LF AI & Data) |
+| GitHub 参照 | https://github.com/Trusted-AI/adversarial-robustness-toolbox |
+| 言語 | Python |
+| ライセンス | MIT ライセンスの下でのオープンソース |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~4.9K stars (as of 2024) |
-|  | - **GitHub Forks:** ~1.2K forks |
-|  | - **Number of Issues:** ~131 open issues, 761 closed issues |
-|  | - **Trend:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
+| **人気** | - **GitHub スター:** ~4.9K stars (as of 2024) |
+|  | - **GitHub フォーク:** ~1.2K forks |
+|  | - **Issues の数:** ~131 open issues, 761 closed issues |
+|  | - **傾向:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
 | **Community Support** | - **Active Issues:** Responsive team, typically addressing issues within a week. |
 |  | - **Documentation:** Detailed and regularly updated, with comprehensive guides and API documentation on IBM's website. |
 |  | - **Discussion Forums:** Primarily discussed in academic settings, with some presence on Stack Overflow and GitHub. |
@@ -98,7 +101,7 @@ This sub section covers the following tools for security testing Predictive AI: 
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** | ✅ |  |  |
+| **人気** | ✅ |  |  |
 | **Community Support** | ✅ |  |  |
 | **Scalability** | ✅ |  |  |
 | **Ease of Integration** | ✅ |  |  |
@@ -165,21 +168,21 @@ Notes:
 
 ### **ツール名: Armory**
 
-| **Tool Name: Armory** |  |
+| **ツール名: Armory** |  |
 | --- | --- |
-| Developer/ Source | MITRE Corporation |
-| Github Reference | [https://github.com/twosixlabs/armory-library](https://github.com/twosixlabs/armory-library)[https://github.com/twosixlabs/armory](https://github.com/twosixlabs/armory) |
-| Language | Python |
-| Licensing | Open-source under the MIT License. |
-| Provides Mitigation | Prevention: No ❌Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 開発元/ソース | MITRE Corporation |
+| GitHub 参照 | [https://github.com/twosixlabs/armory-library](https://github.com/twosixlabs/armory-library)[https://github.com/twosixlabs/armory](https://github.com/twosixlabs/armory) |
+| 言語 | Python |
+| ライセンス | MIT ライセンスの下でのオープンソース |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:**  ~176 stars (as of 2024) |
-|  | - **GitHub Forks:**  ~67 forks |
-|  | - **Number of Issues:** ~ 59 open issues, 733 closed, 26 contributors |
-|  | - **Trend:** Growing, particularly within defense and cybersecurity sectors. |
+| **人気** | - **GitHub スター:**  ~176 stars (as of 2024) |
+|  | - **GitHub フォーク:**  ~67 forks |
+|  | - **Issues の数:** ~ 59 open issues, 733 closed, 26 contributors |
+|  | - **傾向:** Growing, particularly within defense and cybersecurity sectors. |
 | **Community Support** | - **Active Issues:**  Fast response to issues (typically resolved within days to a week). |
 |  | - **Documentation:** Comprehensive, but more security-focused, with advanced tutorials on adversarial attacks and defenses. |
 |  | - **Discussion Forums:** Active GitHub discussions, some presence on security-specific forums (e.g., in relation to DARPA projects). |
@@ -193,7 +196,7 @@ Notes:
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** |  |  | ✅ |
+| **人気** |  |  | ✅ |
 | **Community Support** |  | ✅ |  |
 | **Scalability** |  | ✅ |  |
 | **Ease of Integration** | ✅ |  |  |
@@ -259,21 +262,21 @@ Notes:
 
 ### **ツール名: Foolbox**
 
-| **Tool Name: Foolbox** |  |
+| **ツール名: Foolbox** |  |
 | --- | --- |
-| Developer/ Source | Authors/Developers of Foolbox |
-| Github Reference | [https://github.com/bethgelab/foolbox](https://github.com/bethgelab/foolbox) |
-| Language | Python |
-| Licensing | Open-source under the MIT License. |
-| Provides Mitigation | Prevention: No ❌Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 開発元/ソース | Authors/Developers of Foolbox |
+| GitHub 参照 | [https://github.com/bethgelab/foolbox](https://github.com/bethgelab/foolbox) |
+| 言語 | Python |
+| ライセンス | MIT ライセンスの下でのオープンソース |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:**  ~2,800 stars (as of 2024) |
-|  | - **GitHub Forks:** ~428 forks |
-|  | - **Number of Issues:** ~21 open issues, 350 closed issues |
-|  | - **Trend:** Steady, with consistent updates from the academic community. |
+| **人気** | - **GitHub スター:**  ~2,800 stars (as of 2024) |
+|  | - **GitHub フォーク:** ~428 forks |
+|  | - **Issues の数:** ~21 open issues, 350 closed issues |
+|  | - **傾向:** Steady, with consistent updates from the academic community. |
 | **Community Support** | - **Active Issues:** Typically resolved within a few weeks. |
 |  | - **Documentation:** Moderate documentation with basic tutorials; more research-focused. |
 |  | - **Discussion Forums:** Primarily discussed in academic settings, with limited industry forum activity. |
@@ -286,7 +289,7 @@ Notes:
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** |  | ✅ |  |
+| **人気** |  | ✅ |  |
 | **Community Support** |  | ✅ |  |
 | **Scalability** |  |  | ✅ |
 | **Ease of Integration** |  | ✅ |  |
@@ -349,23 +352,23 @@ Evasion:Tests model performance against adversarial inputs
 
 [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
-**Tool Name: DeepSec**
+**ツール名: DeepSec**
 
-| **Tool Name: DeepSec** |  |
+| **ツール名: DeepSec** |  |
 | --- | --- |
-| Developer/ Source | Developed by a team of academic researchers in collaboration with the National University of Singapore. |
-| Github Reference | [https://github.com/ryderling/DEEPSEC](https://github.com/ryderling/DEEPSEC) |
-| Language | Python |
-| Licensing | Open-source under the Apache License 2.0. |
-| Provides Mitigation | Prevention: No ❌Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 開発元/ソース | Developed by a team of academic researchers in collaboration with the National University of Singapore. |
+| GitHub 参照 | [https://github.com/ryderling/DEEPSEC](https://github.com/ryderling/DEEPSEC) |
+| 言語 | Python |
+| ライセンス | Open-source under the Apache License 2.0. |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** 209 (as of 2024) |
-|  | - **GitHub Forks:** ~70 |
-|  | - **Number of Issues:** ~15 open issues |
-|  | - **Trend:** Stable with a focus on deep learning security |
+| **人気** | - **GitHub スター:** 209 (as of 2024) |
+|  | - **GitHub フォーク:** ~70 |
+|  | - **Issues の数:** ~15 open issues |
+|  | - **傾向:** Stable with a focus on deep learning security |
 | **Community Support** | - **Active Issues:** Currently has ongoing issues and updates, suggesting active maintenance. |
 |  | - **Documentation:** Available through GitHub, covering setup, use, and contributions. |
 |  | - **Discussion Forums:**  GitHub Discussions section and community channels support developer interactions. |
@@ -378,7 +381,7 @@ Evasion:Tests model performance against adversarial inputs
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** |  |  | ✅ |
+| **人気** |  |  | ✅ |
 | **Community Support** |  |  | ✅ |
 | **Scalability** |  |  | ✅ |
 | **Ease of Integration** |  |  | ✅ |
@@ -443,21 +446,21 @@ Evasion:Tests model performance against adversarial inputs
 
 ### ツール名: TextAttack
 
-| **Tool Name: TextAttack** |  |
+| **ツール名: TextAttack** |  |
 | --- | --- |
-| Developer/ Source | Developed by researchers at the University of Maryland and Google Research. |
-| Github Reference | [https://github.com/QData/TextAttack](https://github.com/QData/TextAttack) |
-| Language | Python |
-| Licensing | Open-source under the MIT License. |
-| Provides Mitigation | Prevention: No ❌ Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 開発元/ソース | Developed by researchers at the University of Maryland and Google Research. |
+| GitHub 参照 | [https://github.com/QData/TextAttack](https://github.com/QData/TextAttack) |
+| 言語 | Python |
+| ライセンス | MIT ライセンスの下でのオープンソース |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~3.7K (as of 2024) |
-|  | - **GitHub Forks:** ~455 |
-|  | - **Number of Issues:** ~130 open issues |
-|  | - **Trend:** Popular with ongoing updates and regular contributions |
+| **人気** | - **GitHub スター:** ~3.7K (as of 2024) |
+|  | - **GitHub フォーク:** ~455 |
+|  | - **Issues の数:** ~130 open issues |
+|  | - **傾向:** Popular with ongoing updates and regular contributions |
 | **Community Support** | - **Active Issues:**  Issues are actively managed with frequent bug fixes and improvements. |
 |  | - **Documentation:** Detailed documentation is available, covering everything from attack configuration to custom dataset integration |
 |  | - **Discussion Forums:** GitHub Discussions are active, with support for technical queries and community interaction. |
@@ -470,7 +473,7 @@ Evasion:Tests model performance against adversarial inputs
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** | ✅ |  |  |
+| **人気** | ✅ |  |  |
 | **Community Support** | ✅ |  |  |
 | **Scalability** |  | ✅ |  |
 | **Ease of Integration** | ✅ |  |  |
@@ -541,21 +544,21 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 
 ### ツール名: PyRIT
 
-| **Tool Name: PyRIT** |  |
+| **ツール名: PyRIT** |  |
 | --- | --- |
-| Developer/ Source | Microsoft |
-| Github Reference | [https://github.com/Azure/PyRIT](https://github.com/Azure/PyRIT) |
-| Language | Python |
-| Licensing | Open-source under the MIT License. |
-| Provides Mitigation | Prevention: No ❌ Detection: Yes ✅ |
-| API Availability | Yes ✅ , library based |
+| 開発元/ソース | Microsoft |
+| GitHub 参照 | [https://github.com/Azure/PyRIT](https://github.com/Azure/PyRIT) |
+| 言語 | Python |
+| ライセンス | MIT ライセンスの下でのオープンソース |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ , library based |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~2k (as of Dec-2024) |
-|  | - **GitHub Forks:** ~384forks |
-|  | - **Number of Issues:** ~63 open issues, 79 closed issues |
-|  | - **Trend:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
+| **人気** | - **GitHub スター:** ~2k (as of Dec-2024) |
+|  | - **GitHub フォーク:** ~384forks |
+|  | - **Issues の数:** ~63 open issues, 79 closed issues |
+|  | - **傾向:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
 | **Community Support** | - **Active Issues:** Issues are being addressed within a week. |
 |  | - **Documentation:** Detailed and regularly updated, with comprehensive guides and API documentation. |
 |  | - **Discussion Forums:** Active GitHub issues |
@@ -568,7 +571,7 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** |  | ✅ |  |
+| **人気** |  | ✅ |  |
 | **Community Support** | ✅ |  |  |
 | **Scalability** | ✅ |  |  |
 | **Ease of Integration** |  | ✅ |  |
@@ -632,23 +635,23 @@ Notes:
 
 ### ツール名: Garak
 
-| **Tool Name: Garak** |  |
+| **ツール名: Garak** |  |
 | --- | --- |
-| Developer/ Source | NVIDIA |
-| Github Reference | https://docs.garak.ai/garak  moved to https://github.com/NVIDIA/garak
+| 開発元/ソース | NVIDIA |
+| GitHub 参照 | https://docs.garak.ai/garak  moved to https://github.com/NVIDIA/garak
 Literature: https://arxiv.org/abs/2406.11036
 https://github.com/NVIDIA/garak |
-| Language | Python |
-| Licensing | Apache 2.0 License |
-| Provides Mitigation | Prevention: No ❌ Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 言語 | Python |
+| ライセンス | Apache 2.0 License |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~3,5K stars (as of Dec 2024) |
-|  | - **GitHub Forks:** ~306forks |
-|  | - **Number of Issues:** ~303 open issues, 299 closed issues |
-|  | - **Trend:** Growing, particularly with in attack generation, and LLM vulnerability scanning. |
+| **人気** | - **GitHub スター:** ~3,5K stars (as of Dec 2024) |
+|  | - **GitHub フォーク:** ~306forks |
+|  | - **Issues の数:** ~303 open issues, 299 closed issues |
+|  | - **傾向:** Growing, particularly with in attack generation, and LLM vulnerability scanning. |
 | **Community Support** | - **Active Issues:** Actively responds to the issues and tries to close it within a week |
 |  | - **Documentation:** Detailed documentation with guidance and example experiments. |
 |  | - **Discussion Forums:**  Active GitHub discussions, as well as discord. |
@@ -661,7 +664,7 @@ https://github.com/NVIDIA/garak |
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** | ✅ |  |  |
+| **人気** | ✅ |  |  |
 | **Community Support** |  | ✅ |  |
 | **Scalability** |  | ✅ |  |
 | **Ease of Integration** |  | ✅ |  |
@@ -724,21 +727,21 @@ https://github.com/NVIDIA/garak |
 
 ### ツール名: Prompt Fuzzer
 
-| **Tool Name: Prompt Fuzzer** |  |
+| **ツール名: Prompt Fuzzer** |  |
 | --- | --- |
-| Developer/ Source | Prompt Security |
-| Github Reference | [https://github.com/prompt-security/ps-fuzz](https://github.com/prompt-security/ps-fuzz) |
-| Language | Python |
-| Licensing | Open-source under the MIT License. |
-| Provides Mitigation | Prevention: No ❌ Detection: Yes ✅ |
-| API Availability | Yes ✅ |
+| 開発元/ソース | Prompt Security |
+| GitHub 参照 | [https://github.com/prompt-security/ps-fuzz](https://github.com/prompt-security/ps-fuzz) |
+| 言語 | Python |
+| ライセンス | MIT ライセンスの下でのオープンソース |
+| 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
+| API の可用性 | Yes ✅ |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~427 stars (as of Dec 2024) |
-|  | - **GitHub Forks:** ~56 forks |
-|  | - **Number of Issues:**  ~10 open issues, 6 closed issues |
-|  | - **Trend:** Not updating since Aug |
+| **人気** | - **GitHub スター:** ~427 stars (as of Dec 2024) |
+|  | - **GitHub フォーク:** ~56 forks |
+|  | - **Issues の数:**  ~10 open issues, 6 closed issues |
+|  | - **傾向:** Not updating since Aug |
 | **Community Support** | - **Active Issues:** Not updated nor solved any bugs since July. |
 |  | - **Documentation:** Moderate documentation with few examples |
 |  | - **Discussion Forums:**  GitHub issue forums |
@@ -751,7 +754,7 @@ https://github.com/NVIDIA/garak |
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** |  |  | ✅ |
+| **人気** |  |  | ✅ |
 | **Community Support** |  |  | ✅ |
 | **Scalability** |  | ✅ |  |
 | **Ease of Integration** |  | ✅ |  |
@@ -818,21 +821,21 @@ Notes:
 
 ### ツール名: Guardrail
 
-| **Tool Name: Guardrail** |  |
+| **ツール名: Guardrail** |  |
 | --- | --- |
-| Developer/ Source | Guardrails AI |
-| Github Reference | [GitHub - guardrails-ai/guardrails: Adding guardrails to large language models.](https://github.com/guardrails-ai/guardrails) | [Guardrails Hub | Guardrails AI](https://hub.guardrailsai.com/) |
-| Language | Python |
-| Licensing | Apache 2.0 License |
-| Provides Mitigation | Prevention: Yes ✅ Detection: Yes ✅ |
-| API Availability |  |
+| 開発元/ソース | Guardrails AI |
+| GitHub 参照 | [GitHub - guardrails-ai/guardrails: Adding guardrails to large language models.](https://github.com/guardrails-ai/guardrails) | [Guardrails Hub | Guardrails AI](https://hub.guardrailsai.com/) |
+| 言語 | Python |
+| ライセンス | Apache 2.0 License |
+| 緩和策の提供 | 防止: Yes ✅ 検出: Yes ✅ |
+| API の可用性 |  |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~4,3K (as 2024) |
-|  | - **GitHub Forks:** ~326 |
-|  | - **Number of Issues:**  ~296 Closed, 40 Open.  |
-|  | - **Trend:** Steady growth with consistent and timely updates. |
+| **人気** | - **GitHub スター:** ~4,3K (as 2024) |
+|  | - **GitHub フォーク:** ~326 |
+|  | - **Issues の数:**  ~296 Closed, 40 Open.  |
+|  | - **傾向:** Steady growth with consistent and timely updates. |
 | **Community Support** | - **Active Issues:** Issues are mostly solved within weeks. |
 |  | - **Documentation:** Detailed documentation with examples and user guide |
 |  | - **Discussion Forums:**  Primarily github issues and also, support is available on discord Server and twitter. |
@@ -845,7 +848,7 @@ Notes:
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** | ✅ |  |  |
+| **人気** | ✅ |  |  |
 | **Community Support** | ✅ |  |  |
 | **Scalability** |  | ✅ |  |
 | **Ease of Integration** | ✅ |  |  |
@@ -910,26 +913,26 @@ Notes:
 
 ### ツール名: Promptfoo
 
-| **Tool Name: Promptfoo** |  |
+| **ツール名: Promptfoo** |  |
 | --- | --- |
-| Developer/ Source | Promptfoo community |
-| Github Reference | [https://github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [Types of LLM vulnerabilities | promptfoo](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/) |
-| Language | Python, NodeJS |
-| Licensing | Open-source under the MIT License.  |
+| 開発元/ソース | Promptfoo community |
+| GitHub 参照 | [https://github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [Types of LLM vulnerabilities | promptfoo](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/) |
+| 言語 | Python, NodeJS |
+| ライセンス | MIT ライセンスの下でのオープンソース  |
 |  | This project is licensed under multiple licenses:
 
 1. The main codebase is licensed under the MIT License (see below)
 2. The `/src/redteam/` directory is proprietary and licensed under the Promptfoo Enterprise License
 3. Some third-party components have their own licenses as indicated by LICENSE files in their respective directories |
-| Provides Mitigation | Prevention: Yes ✅ Detection: Yes ✅ |
-| API Availability | Yes ✅  |
+| 緩和策の提供 | 防止: Yes ✅ 検出: Yes ✅ |
+| API の可用性 | Yes ✅  |
 
-| Factor | Details |
+| 要素 | 詳細 |
 | --- | --- |
-| **Popularity** | - **GitHub Stars:** ~4.3K stars (as of 2024) |
-|  | - **GitHub Forks:**  ~320 forks |
-|  | - **Number of Issues:** ~523 closed, 108 open |
-|  | - **Trend:** Consistent update |
+| **人気** | - **GitHub スター:** ~4.3K stars (as of 2024) |
+|  | - **GitHub フォーク:**  ~320 forks |
+|  | - **Issues の数:** ~523 closed, 108 open |
+|  | - **傾向:** Consistent update |
 | **Community Support** | - **Active Issues:** Issues are  addressed within acouple of days. |
 |  | - **Documentation:** Detailed documentation with user guide and examples. |
 |  | - **Discussion Forums:** Active Github issue and also support available on Discord |
@@ -942,7 +945,7 @@ Notes:
 
 | **Criteria** | **High** | **Medium** | **Low** |
 | --- | --- | --- | --- |
-| **Popularity** | ✅ |  |  |
+| **人気** | ✅ |  |  |
 | **Community Support** | ✅ |  |  |
 | **Scalability** |  | ✅ |  |
 | **Ease of Integration** |  | ✅ |  |
@@ -1013,7 +1016,7 @@ This section rates the discussed tools by Popularity, Community Support, Scalabi
 
 | **Attribute** | High | Medium | Low |
 | --- | --- | --- | --- |
-| Popularity | >3,000 stars | 1,000–3,000 stars | <1,000 stars |
+| 人気 | >3,000 stars | 1,000–3,000 stars | <1,000 stars |
 | Community Support | >100 contributors, quick response (<3 days) | 50–100 contributors, response in 3–14 days | <50 contributors, slow response (>14 days) |
 | Scalability | Proven enterprise-grade, multi-framework | Moderate scalability, limited frameworks | Research focused, small-scale |
 | Integration | Broad compatibility | Limited compatibility, narrow use-case | Minimal or no integration, research tools only |
