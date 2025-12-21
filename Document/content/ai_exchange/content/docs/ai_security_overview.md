@@ -130,15 +130,16 @@ The five steps - G.U.A.R.D - to organize AI security as an organization are:
 The AI Exchange is a single coherent resource on the security and privacy of AI systems, presented on this website, divided over several pages - containing threats, controls, guidelines, tests and references.
 
 **Ways to start, depending on your need:**
-- **Learn more about the AI Exchange**:  
+- **Learn more what the AI Exchange is**:  
   See [About](https://owaspai.org/goto/about/)
 - **Start AI security as organization**:  
   See [How to organize AI security](https://owaspai.org/goto/organize/) for the key steps to get started as organization.
 - **Start AI security as individual**:  
-  See 'learn/lookup' below to familiarize yourself with the threats and controls.
+  See 'learn/lookup' below to familiarize yourself with the threats and controls or look in the [references section](/goto/references/) for a large table with training material.
 - **Secure a system**:  
    If you want your **AI system to be secure**, start with [risk analysis](/goto/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
 - **Learn / look up**:  
+  - Ask AI an AI security/privacy question based on the content of the Exchange: [here](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) (requires Google account).
   - For the short story with the main insights in what is special about AI security: see the [AI Exchange essentials](/goto/essentials/).
   - To see a general overview and discussion of all **threats** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
   - To find out what to do against a specific threat, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/) to find the right **controls**.
@@ -260,7 +261,7 @@ Further links:
 - For more details on the agentic AI threats, see the [Agentic AI threats and mitigations, from the GenAI security project](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/).
 - For a more general discussion of Agentic AI, see [this article from Chip Huyen](https://huyenchip.com/2025/01/07/agents.html).
 - The [testing section](/goto/testing/) discusses more about agentic AI red teaming and links to the collaboration between CSA and the Exchange: the Agentic AI red teaming guide.
-- [Blog on the OWASP Agentic AI security top 10, soft-launched December 10 2025](https://www.rockcybermusings.com/p/owasp-top-10-agentic-applications-security-guide)
+- [OWASP Agentic AI security top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) plus [Rock's blog on it](https://www.rockcybermusings.com/p/owasp-top-10-agentic-applications-security-guide)
 
 
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
