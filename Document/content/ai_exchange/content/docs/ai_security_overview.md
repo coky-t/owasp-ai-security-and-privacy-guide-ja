@@ -307,26 +307,27 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
 1. **AI ガバナンス**: AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
-   >([AIPROGRAM](1_general_controls.md#AIPROGRAM), [SECPROGRAM](1_general_controls.md#SECPROGRAM), [DEVPROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECKCOMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SECEDUCATE](1_general_controls.md#SECEDUCATE))
-2. AI システムは IT システムであるため、リスクに基づいて従来の **技術的な IT セキュリティコントロール** を適用します。
-    - 2a **標準** 的な従来の IT セキュリティコントロール (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
+   >([AI PROGRAM](1_general_controls.md#AIPROGRAM), [SEC PROGRAM](1_general_controls.md#SECPROGRAM), [DEV PROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEV PROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECK COMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SEC EDUCATE](1_general_controls.md#SECEDUCATE))
+2. **データを最小限に抑えます/難読化します:** 保存時および転送時のデータ量を制限します。また、データの保存時間を開発時、実行時に制限します。
+3. データとモデルのガバナンスによりサプライチェーン管理を拡張します:  [SUPPLY CHAIN MANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
+4. AI システムは IT システムであるため、リスクに基づいて従来の **技術的な IT セキュリティコントロール** を適用します。
+    - 4a 標準的な **従来のセキュリティコントロール** (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
-        >([DEVSECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATEDATA](3_development_time_threats.md#SEGREGATEDATA), [SUPPLYCHAINMANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE), [DISCRETE](1_general_controls.md#DISCRETE))
+        >([DEV SECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), [DISCRETE](1_general_controls.md#DISCRETE))
       - 実行時: モデルの保存、モデルの使用、プラグイン、モデルの入出力
-        >([RUNTIMEMODELINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIMEMODELIOINTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIMEMODELCONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODELINPUTCONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODEMODELOUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMITRESOURCES](2_threats_through_use.md#LIMIT-RESOURCES))
-    - 2b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
-      >([MONITORUSE](2_threats_through_use.md#MONITOR-USE), [MODELACCESSCONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATELIMIT](2_threats_through_use.md#RATE-LIMIT))
-    - 2c **新規** の IT セキュリティコントロールを採用します。
-      >([CONFCOMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODELOBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [PROMPTINPUTVALIDATION](2_threats_through_use.md#PROMPT-INPUT-VALIDATION), [INPUTSEGREGATION](2_threats_through_use.md#INPUT-SEGREGATION))
-3. リスクベースの **データサイエンスセキュリティコントロール** を適用します。
-    - 3a モデル開発時の開発時コントロール
-      >([FEDERATEDLEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASIONROBUSTMODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISONROBUSTMODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAINADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAINDATADISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIALROBUSTDISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODELENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORETRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALLMODEL](2_threats_through_use.md#SMALL-MODEL), [DATAQUALITYCONTROL](3_development_time_threats.md#DATAQUALITYCONTROL)), [MODELALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT))
-    - 3b 攻撃をフィルタして検出するための実行時コントロール
-      >([DETECTODDINPUT](2_threats_through_use.md#DETECT-ODD-INPUT), [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT), [DOSINPUTVALIDATION](2_threats_through_use.md#DOS-INPUT-VALIDATION), [INPUTDISTORTION](2_threats_through_use.md#INPUT-DISTORTION), [FILTERSENSITIVEMODELOUTPUT](2_threats_through_use.md#FILTER-SENSITIVE-MODEL-OUTPUT), [OBSCURECONFIDENCE](2_threats_through_use.md#OBSCURE-CONFIDENCE))
-4. **データを最小限に抑える:** 保存時および転送時のデータ量を制限します。また、データの保存時間を開発時、実行時に制限します。
-   >([DATAMINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWEDDATA](1_general_controls.md#ALLOWEDDATA), [SHORTRETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATETRAININGDATA](1_general_controls.md#OBFUSCATETRAININGDATA))
-5. モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**動作への影響を制御** します。
-   >([OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEASTMODELPRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
+        >([RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES))
+    - 4b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
+      >([MONITOR USE](2_threats_through_use.md#MONITOR-USE), [MODEL ACCESS CONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATE LIMIT](2_threats_through_use.md#RATE-LIMIT))
+    - 4c **新規** の IT セキュリティコントロールを採用します。
+      >([CONF COMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODEL OBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [INPUT　SEGREGATION](2_threats_through_use.md#INPUT-SEGREGATION))
+5. **AI エンジニアリングセキュリティコントロール** を適用します。
+    - 5a 開発の一環としてのデータ/モデルエンジニアリングコントロール
+      >([FEDERATED LEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASION ROBUST MODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISON ROBUST MODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAIN ADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAIN DATA DISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIAL ROBUST DISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODEL ENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORE TRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALL MODEL](2_threats_through_use.md#SMALL-MODEL), [DATA QUALITY CONTROL](3_development_time_threats.md#DATAQUALITYCONTROL)), [MODEL ALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT))
+    - 5b 攻撃をフィルタして検出するための実行時コントロール時のモデル I/O 処理
+      >([DETECT ODD INPUT](2_threats_through_use.md#DETECT-ODD-INPUT), [DETECT ADVERSARIAL INPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT), [PROMPT INPUT VALIDATION](2_threats_through_use.md#PROMPT-INPUT-VALIDATION), [DOS INPUT VALIDATION](2_threats_through_use.md#DOS-INPUT-VALIDATION), [INPUT DISTORTION](2_threats_through_use.md#INPUT-DISTORTION), [FILTER SENSITIVE MODEL OUTPUT](2_threats_through_use.md#FILTER-SENSITIVE-MODEL-OUTPUT), [OBSCURE CONFIDENCE](2_threats_through_use.md#OBSCURE-CONFIDENCE))
+   >([DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), [SHORT RETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA))
+5. モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**モデルの動作を制限** します。
+   >([OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEAST MODEL PRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING))
 
 すべての脅威とコントロールについては AI Exchange の以降のセクションでより詳細に説明します。
 
