@@ -429,21 +429,21 @@ Useful standards include:
 > Category: group of controls  
 > Permalink: https://owaspai.org/goto/limitunwanted/
 
-Unwanted model behaviour is the intended result of many AI security attacks. There are many ways to prevent and to detect these attacks. This section is about how the effects of unwanted model behaviour can be controlled, in order to reduce the impact of an attack.
+Unwanted model behaviour is the intended result of many AI security attacks. There are many ways to prevent and to detect these attacks, but this section is about how the effects of unwanted model behaviour can be controlled, in order to reduce the impact of an attack.
 
 Besides attacks, AI systems can display unwanted behaviour for other reasons, making the control of this behaviour a shared responsibility. Main potential causes of unwanted model behaviour:
 
 - Insufficient or incorrect training data
 - Model staleness/ Model drift (i.e. the model becoming outdated)
 - Mistakes during model and data engineering
-- Security threats: attacks as laid out in this document, e.g. model poisoning, evasion attacks
+- Security threats: attacks as laid out in this document, e.g. model poisoning, evasion attack, prompt injection
 
 Successfully mitigating unwanted model behaviour has its own threats:
 
 - Overreliance: the model is being trusted too much by users
 - Excessive agency: the model is being trusted too much by engineers and gets excessive functionality, permissions, or autonomy
 
-Example: The typical use of plug-ins in Large Language Models (GenAI) presents specific risks concerning the protection and privileges of these plug-ins. This is because they enable Large Language Models (LLMs, a GenAI) to perform actions beyond their normal interactions with users. ([OWASP for LLM 07](https://llmtop10.com/llm07/))
+Example: When Large Language Models (GenAI) can perform actions, the privileges around which actions and when become important ([OWASP for LLM 07](https://llmtop10.com/llm07/)).
 
 Example: LLMs (GenAI), just like most AI models, induce their results based on training data, meaning that they can make up things that are false. In addition, the training data can contain false or outdated information. At the same time, LLMs (GenAI) can come across very confident about their output. These aspects make overreliance of LLM (GenAI) ([OWASP for LLM 09](https://llmtop10.com/llm09/)) a real risk, plus excessive agency as a result of that ([OWASP for LLM 08](https://llmtop10.com/llm08/)). Note that all AI models in principle can suffer from overreliance - not just Large Language Models.
 
@@ -482,18 +482,21 @@ Useful standards include:
 > Category: runtime information security control    
 > Permalink: https://owaspai.org/goto/leastmodelprivilege/
 
-Least model privilege: Minimize what actions a model can autonomously trigger, to prevent harmful events by a manipulated model (or a model that makes a mistake):
-- Reduce actions that the model can potentially trigger to the minimum set of actions necessary for the use cases. This can also be done dynamically, depending on the request (e.g., some actions can be disabled for requests containing untrusted inputs).
-- Execute the actions with appropriate rights and privileges. This includes performing actions for a specific user within this user’s security context, thus inheriting their rights and privileges. This ensures that no actions are invoked and no data is retrieved outside the user's authoritization.
-- Avoid implementing authorization in Generative AI instructions, as these are vulnerable to hallunications and manipulation (e.g., prompt injection). This is especially applicable in Agentic AI. This includes the prevention of Generative AI outputting commands that include references to the user context as it would open up the opportunity to escalate privileges by manipulating that output.
+Least model privilege: Minimize what a model can do (trigger actions or access data), to prevent harm in case the model is manipulated (or makes a mistake by itself):
+- Apply context privilege: Execute the actions with appropriate rights and privileges. This includes performing actions for a specific user within this user’s security context, thus inheriting their rights and privileges. This ensures that no actions are invoked and no data is retrieved outside the user's authoritization.
+- Task-based minimization: Reduce actions that the model can potentially trigger, and what they can be triggered on, to the minimum necessary for the use case. Ideally this is done dynamically, depending on the request or data used (e.g., some actions can be disabled for requests containing untrusted inputs). This requires aspects that may not be offered by Identity and Access Management mechanisms in place as: ephemeral, dynamic, and narrow permissions at scale, combined with trust establishment and potential revokation across different domains. 
+- Avoid implementing authorization in Generative AI instructions, as these are vulnerable to hallucinations and manipulation (e.g., prompt injection). This is especially applicable in Agentic AI. This includes the prevention of Generative AI outputting commands that include references to the user context as it would open up the opportunity to escalate privileges by manipulating that output.
 
-For example: if a model is connected to an email facility to summarize incoming emails - limit the access to read-only to avoid the model being manipulated to unwantedly send emails.
+For example: if a model is connected to an email facility to summarize incoming emails - limit the access to read-only, and only to emails the end user has access to - with the goald to avoid the model being manipulated to unwantedly send emails and/or gain access to unauthorized emails.
+
+It is a pitfall for engineers to simply ignore all this and allow AI to do everything,  as it saves them time hardening the privileges, and it delivers powerful agents, without the hassle of having to add privileges over time. Still, least model privilege is critical if successful manipulation is probable and the potential effects severe.
+
 
 Useful references include:
 
   - ISO 27002 control 8.2 Privileged access rights. Gap: covers this control fully, with the particularity that privileges assigned to autonomous model decisions need to be assigned with the risk of unwanted model behaviour in mind.
   - [OpenCRE on least privilege](https://www.opencre.org/cre/368-633) Gap: idem
-  - [A Novel Zero-Trust Identity Framework for Agentic AI: Decentralized Authentication and Fine-Grained Access Control](https://arxiv.org/pdf/)
+  - [A Novel Zero-Trust Identity Framework for Agentic AI: Decentralized Authentication and Fine-Grained Access Control](https://arxiv.org/abs/2505.19301)
 
 #### #AITRANSPARENCY
 > Category: runtime control    
