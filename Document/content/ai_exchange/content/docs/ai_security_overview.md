@@ -30,7 +30,7 @@ This material is evolving constantly through open source continuous delivery. Th
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="cc:attributionName">AI セキュリティコミュニティ</span> による <a property="dct:title" rel="cc:attributionURL" href="https://owaspai.org">OWASP AI Exchange</a> には <a href="http://creativecommons.org/publicdomain/zero/1.0?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0</a> のマークが付けられており、著作権や帰属を明示することなく、どの部分でも自由に利用できることを意味します。可能であれば、読者がより多くの情報を見つけられるように、OWASP AI Exchange のクレジットやリンクを記載していただけると幸いです。</p>
 
 **Who is this for**  
-The Exchange is for practitioners in security, privacy, engineering, testing, governance, and for end users in an organization - anyone interested in the security and privacy of AI systems. The goal is to make the material as easy as possible to access. Using the [Risk analysis section](/goto/riskanalysis/) your can quickly narrow down the issues that matter to your situation, whether you are a large equipment manufacturer designing an AI medical device, or a small travel agency using a chatbot for HR purposes.
+The Exchange is for practitioners in security, privacy, engineering, testing, governance, and for end users in an organization - anyone interested in the security and privacy of AI systems. The goal is to make the material as easy as possible to access. Using the [Risk analysis section](/goto/riskanalysis/) you can quickly narrow down the issues that matter to your situation, whether you are a large equipment manufacturer designing an AI medical device, or a small travel agency using a chatbot for HR purposes.
 
 **History**  
 AI Exchange は [Rob van der Veer](https://www.linkedin.com/in/robvanderveer/) によって 2022 年に設立されました。セキュリティ標準の橋渡し役、[Software Improvement Group](https://www.softwareimprovementgroup.com) の最高 AI 責任者、AI とセキュリティで 33 年の経験を持ち、AI ライフサイクルに関する ISO/IEC 5338 の主執筆者、OpenCRE の創設者であり、現在は CEN/CENELEC で ISO/IEC 27090、ISO/IEC 27091、EU AI 法に関するセキュリティ要件に取り組んでおり、EU 加盟国によって共同編集者に選出されました。
@@ -82,7 +82,7 @@ Here's more information on AI at OWASP:
 - For **any specific topic** around Generative AI security, check the [GenAI security project](https://genai.owasp.org/) or the [AI Exchange references](/goto/references/).
 
 Some more details on the projects: 
-- [The OWASP AI Exchange(this work)](/goto/about/) is the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships.
+- [The OWASP AI Exchange(this work)](/goto/about/) is the go-to single resource for AI security & privacy - over 200 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as a key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships.
 - The [OWASP GenAI Security Project](https://genai.owasp.org/) is an umbrella project of various initiatives that publish documents on Generative AI security, including the LLM AI Security & Governance Checklist and the LLM top 10 - featuring the most severe security risks of Large Language Models.
 - [OpenCRE.org](https://opencre.org) has been established under the OWASP Integration standards project(from the _Project wayfinder_) and holds a catalog of common requirements across various security standards inside and outside of OWASP. OpenCRE will link AI security controls soon.
 
@@ -151,8 +151,7 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 - **Test**:  
   If you want to **test** the security of AI systems with tools, go to [the testing page](/goto/testing/).
 
-The AI exchange covers both heuristic artificial intelligence (e.g. expert systems) and machine learning. This means that when we talk about an AI system, it can for example be a Large Language Model, a linear regression function, a rule-based system, or a lookup table based on statistics. Throughout this document it is made clear when which threats and controls play a role.
-
+The AI exchange covers both heuristic artificial intelligence (e.g. expert systems) and machine learning. This means that when we talk about an AI system, it can for example be a Large Language Model, a linear regression function, a rule-based system, or a lookup table based on statistics. Throughout this document, it is made clear which threats and controls play a role and when.
 
 **The structure**  
 You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu.
@@ -212,6 +211,10 @@ Many experts and organizations contributed to this overview, notably SANS Instit
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/threatsoverview/
 
+### Scope of Threats
+In the AI Exchange we focus on AI-specific threats, meaning threats to AI assets (see [#SEC PROGRAM](/goto/secprogram/), such as model parameters. Threats to other assets are already covered in many other resources - for example the protection of a user database. AI systems are IT systems so they suffer from various security threats. Therefore, when securing AI systems, the AI Exchange needs to be seen as an extension of your existing security program: 
+AI security = threats to AI-specific assets (AI Exchange) +threats to other assets (other resources)
+
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します:
 1. 開発時 (データの取得および準備時、モデルの学習/取得時) の脅威 - 例: データポイズニング
@@ -231,6 +234,11 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
 
+Note that some threats represent attacks consisting of several steps, and therefore present multiple threats in one, for example:
+—	An adversary performs a data poisoning attack by hacking into the training database and placing poisoned samples, and then after the data has been used for training, presents specific inputs to make use of the corrupted behaviour.
+—	An adversary breaking into a development environment to steal a model so it can be used to experiment on to craft manipulated inputs to achieve a certain goal, and then present that input to the deployed system.
+
+
 ### Threats to agentic AI
 >Category: discussion  
 >Permalink: https://owaspai.org/goto/agenticaithreats/
@@ -241,7 +249,7 @@ An example of Agentic AI is a set of voice assistants that can control your heat
 
 There are four typical properties of agentic AI:
 1. Action: Agents don’t just chat — they invoke functions such as sending an email. That makes [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) a key control.
-2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up). That makes [OVERSIGHT](/goto/oversight/) important, and it makes working memory an attack vector because that's where the state of an automonous agent lives.
+2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up). That makes [OVERSIGHT](/goto/oversight/) important, and it makes working memory an attack vector because that's where the state of an autonomous agent lives.
 3. Complex: Agentic behaviour is emergent.
 4. Multi-system: You often work with a mix of systems and interfaces. Because of that, developers tend to assign responsibilities regarding access control to the AI using instructions, opening up the door for manipulation through [prompt injection](/goto/promptinjection/).
 
@@ -301,6 +309,9 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 ## コントロールの概要
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/controlsoverview/
+
+### Scope of controls
+In the AI Exchange we focus on AI-specific threats and their corresponding controls. Some of the controls are AI-specific (e.g. adding noise to the training set) and others are not (e.g. encrypting the training database). We refer to the latter as ‘conventional controls’. The Exchange focuses on the details of the AI-specific controls because the details of conventional controls are specified elsewhere - see for example [OpenCRE](https://opencre.org). We do provide AI-specific aspects of those controls, for example that protection of model parameters can be implemented using a Trusted Execution Environment.
 
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
@@ -436,19 +447,24 @@ There are quite a number of threats and controls described in this document. The
 **リスクマネジメント入門**  
 組織はリスクをいくつかの主要な領域に分類します。戦略、運用、財務、コンプライアンス、評判、テクノロジ、環境、社会、ガバナンス (ESG) です。脅威は一つ以上の脆弱性を悪用するとリスクになります。このリソースで説明しているように、AI の脅威は複数のリスク領域にわたって大きな影響を及ぼす可能性があります。たとえば、AI システムに対する敵対的攻撃は、運用の中断、財務モデルの歪曲、コンプライアンスの問題を引き起こす可能性があります。AI 関連の脅威、リスク、潜在的な影響の概要については [AI セキュリティマトリクス](ai_security_overview.md#ai-security-matrix) を参照してください。
 
-AI システムの一般的なリスクマネジメントは、通常、AI ガバナンス ([AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照) によって推進され、関連する AI システムによるリスクとそれらのシステムに対するリスクの両方を含みます。セキュリティリスク評価は、通常、セキュリティマネジメントシステム ([SECPROGRAM](1_general_controls.md#SECPROGRAM) を参照) によって推進され、このシステムは、AI 資産、AI 脅威、AI システムを含めることが求められます (これらが対応するリポジトリに追加されている場合)。
+AI システムの一般的なリスクマネジメントは、通常、AI ガバナンス ([AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照) によって推進され、関連する AI システムによるリスクとそれらのシステムに対するリスクの両方を含みます。セキュリティリスク評価は、通常、セキュリティマネジメントシステム ([SECPROGRAM](1_general_controls.md#SECPROGRAM) を参照) によって推進され、このシステムは、AI 資産、AI 脅威、AI システムを含めることが求められます (これらが対応するリポジトリに追加されている場合)。ISO/IEC 27005 はセキュリティリスク管理の国際標準です。
 
 組織は一般的に ISO 31000 または ISO 23894 などの類似の規格に基づくリスクマネジメントフレームワークを採用することがよくあります。これらのフレームワークは下記の四つの主要なステップを通じてリスク管理のプロセスをガイドします。
 
-1. **リスクの特定**: 組織に影響を及ぼす可能性のある潜在的なリスクを認識します。潜在的なリスクを特定するには「使用による脅威」セクションを参照してください。
-2. **発生可能性と影響度の推定によるリスクの評価**: リスクの深刻度を判断するには、リスクが発生する可能性を評価し、リスクが顕在化した場合の潜在的な影響を評価する必要があります。発生可能性と影響度を組み合わせて、リスクの全体的な深刻度を測定します。これは一般的にヒートマップの形で示されます。これについては以降のセクションでさらに詳しく説明します。
-3. **すべきことの決定 (リスク処置)**: リスクに対処するための適切な戦略を選択します。これらの戦略には、リスクの軽減、移転、回避、受容があります。詳細については以下を参照してください。
-4. **リスクコミュニケーションとモニタリング**: リスク情報を利害関係者と定期的に共有し、リスクマネジメント活動に対する意識と継続的な支援を確保します。効果的なリスク処置を確実に適用します。これには、リスクとその属性 (深刻度、処置計画、オーナーシップ、ステータスなど) の包括的なリストであるリスク登録簿が必要です。これについては以降のセクションでさらに詳しく説明します。
+1. **リスクの特定**:  
+組織などに影響を及ぼす可能性のある潜在的なリスクを認識します。
+2. **リスクの評価**:  
+リスクが顕在化した場合の影響の発生可能性と深刻度を推定することにより、リスク発生の確立を評価し、リスクが顕在化した場合の潜在的な結果を評価する必要があります。発生可能性と深刻度の組み合わせがリスクのレベルを表します。これは一般的に発生可能性と深刻度を組み合わせたヒートマップの形で提示されます。
+3. **リスク処置**:  
+リスク処置はリスクに対処するための適切な戦略を選択することを意味します。これらの戦略には、リスクの軽減、移転、回避、受容があります。詳細については以下を参照してください。
+4. **リスクコミュニケーションとモニタリング**:  
+リスク情報を利害関係者と定期的に共有し、リスクマネジメント活動に対する意識と継続的な支援を確保します。効果的なリスク処置を確実に適用します。これには、リスクとその属性 (深刻度、処置計画、オーナーシップ、ステータスなど) の包括的なリストであるリスク登録簿が必要です。これについては以降のセクションでさらに詳しく説明します。
+5. 上記のプロセスを定期的に、および変更が必要になったときに、繰り返します。
 
 リスクマネジメントの手順を一つずつ見てきましょう。
 
-### 1. リスクの特定
-組織に影響を及ぼす可能性のある潜在的なリスクを発見するには、該当する脅威の技術的およびビジネス的な評価が必要です。以降のセクションではリスクの影響の種類ごとに個別に対処する方法について概説します。
+### 1. リスクの特定 - 決定ツリー
+組織に影響を及ぼす可能性のある潜在的なリスクを発見するには、該当する脅威の技術的およびビジネス的な評価が必要です。このドキュメントでは、AI 固有のリスク、つまり AI 固有の資産に対するリスクのみに焦点を当てています。以降のセクションではリスクの影響の種類ごとに個別に対処する方法について概説します。
 
 **望ましくないモデルの動作**
 
@@ -467,7 +483,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier because it is expensive and often costs millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this could be lower cost (if it is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
     
   Who trains/finetunes the model?
-  - The supplier: you need to avoid [Supply chain model poisoning](/goto/supplymodelpoison/): obtaining or working with a model that has been manipulated to behave in unintended ways. This is done through proper [supply chain management](/goto/supplychainmanage/) (by selecting a trustworthy supplier and verifying the authenticity of the model). This is to ensure that the supplier prevents model poisoning during development, including data poisoning, and uses uncompromised data. If the risk of data poisoning remains unacceptable, implementing post-training countermeasures can be an option if you have the expertise, and if you have access to the model parameters (e.g. open source weights). See [POISONROBUSTMODEL](/goto/poisonrobustmodel/).
+  - The supplier: you need to avoid [Supply chain model poisoning](/goto/supplymodelpoison/): obtaining or working with a model that has been manipulated to behave in unintended ways. This is done through proper [supply chain management](/goto/supplychainmanage/) (by selecting a trustworthy supplier and verifying the authenticity of the model). This is to gain assurance on the security posture of the provider, meaning the provider prevents model poisoning during development, including data poisoning, and uses uncompromised data. If the risk of data poisoning remains unacceptable, implementing post-training countermeasures can be an option if you have the expertise and if you have access to the model parameters (e.g. open source weights). See [POISONROBUSTMODEL](/goto/poisonrobustmodel/). Note that providers are typically not very open about their security countermeasures, which means that it can be challenging to gain sufficient assurance. Regulations will hopefully help achieve more provider transparency.
   - You: you need to prevent [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data or a poisoned pre-trained model in case you're finetuning the model.
  
   Do you use RAG (Retrieval Augmented Generation using GenAI) ?
@@ -475,7 +491,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   - You need to prevent [data poisoning](/goto/datapoison/) of your retrieval repository, which includes preventing that it contains externally obtained poisoned data.
 
   Who runs the model?
-  - The supplier: select a trusthworthy supplier through [supply chain management](/goto/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/goto/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation
+  - The supplier: select a trustworthy supplier through [supply chain management](/goto/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/goto/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation
   - You: You need to prevent [runtime model poisoning](/goto/runtimemodelpoison/) where attackers change the model that you have deployed.
 
   Is the model (predictive AI or Generative AI) used in a judgement task (e.g. spam detection)?
@@ -522,10 +538,19 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   Since AI systems are software systems, they require appropriate conventional application security and operational security, apart from the AI-specific threats and controls mentioned in this section.
 
 ### 2. 発生可能性と影響度の推定によるリスクの評価
-To determine the severity of a risk, it is necessary to assess the probability of the risk occurring and evaluating the potential consequences should the risk materialize.
+To determine the severity of a risk, it is necessary to assess the likelihood of the risk occurring and evaluating the potential consequences should the risk materialize.
 
 **Estimating the Likelihood:**  
 Estimating the likelihood and impact of an AI risk requires a thorough understanding of both the technical and contextual aspects of the AI system in scope. The likelihood of a risk occurring in an AI system is influenced by several factors, including the complexity of the AI algorithms, the data quality and sources, the conventional security measures in place, and the potential for adversarial attacks. For instance, an AI system that processes public data is more susceptible to data poisoning and inference attacks, thereby increasing the likelihood of such risks.  A financial institution's AI system, which assesses loan applications using public credit scores, is exposed to data poisoning attacks. These attacks could manipulate creditworthiness assessments, leading to incorrect loan decisions. 
+
+Examples of aspects involved in rating probability:
+- Opportunity regarding attacker access (OWASP, FAIR - Factor Analysis for Information Risk)
+- Risk of getting caught (FAIR)
+- Capabilities/tools/budget (ISO/IEC 27005, OWASP, FAIR)
+- Susceptibility of the system (ISO/IEC 27005, FAIR)
+- Motive(OWASP, FAIR, ISO/IEC 27005)
+- Number of potential attackers(OWASP)
+- Data regarding incidents and attempts (ISO/IEC 27005)
 
 **Evaluating the Impact:**
 Evaluating the impact of risks in AI systems involves understanding the potential consequences of threats materializing. This includes both the direct consequences, such as compromised data integrity or system downtime, and the indirect consequences, such as reputational damage or regulatory penalties. The impact is often magnified in AI systems due to their scale and the critical nature of the tasks they perform. For instance, a successful attack on an AI system used in healthcare diagnostics could lead to misdiagnosis, affecting patient health and leading to significant legal, trust, and reputational repercussions for the involved entities.
@@ -534,7 +559,7 @@ Evaluating the impact of risks in AI systems involves understanding the potentia
 The combination of likelihood and impact assessments forms the basis for prioritizing risks and informs the development of Risk Treatment decisions. Commonly organizations use a risk heat map to visually categorize risks by impact and likelihood. This approach facilitates risk communication and  decision-making.  It allows the management to focus on risks with highest severity (high likelihood and high impact).
 
 ### 3. リスク処置
-Risk treatment is about deciding what to do with the risks. It involves selecting and implementing measures to mitigate, transfer, avoid, or accept cybersecurity risks associated with AI systems.  This process is critical due to the unique vulnerabilities and threats related to AI systems such as  data poisoning, model theft, and adversarial attacks. Effective risk treatment is essential to robust, reliable, and trustworthy AI.
+Risk treatment is about deciding what to do with the risks: transfer, avoid, accept, or mitigate. Mitigation involves selecting and implementing controls. This process is critical due to the unique vulnerabilities and threats related to AI systems such as  data poisoning, model theft, and adversarial attacks. Effective risk treatment is essential to robust, reliable, and trustworthy AI.
 
 Risk Treatment options are:
   1. **Mitigation**: Implementing controls to reduce the likelihood or impact of a risk. This is often the most common approach for managing AI cybersecurity risks. See the many controls in this resource and the 'Select controls' subsection below.  
@@ -564,7 +589,7 @@ For the threats that are the responsibility of other organisations: attain assur
 Example: Regular audits and assessments of third-party security measures.
  
 ### 7. Select controls
-Next, for the threats that are relevant to your use-case and fall under your responsibility, review the associated controls, both those listed directly under the threat (or its parent category) and the general controls, which apply universally. For each control, consider its purpose and assess whether it's worth implementing, and to what extent. This decision should weigh the cost of implementation against how effectively the control addresses the threat, along with the severity of the associated risk. These factors also influence the order in which you apply controls. Start with the highest-risk threats and prioritize low-cost, quick-win controls (the "low-hanging fruit").
+Next, for the threats that are relevant to your use-case and fall under your responsibility, review the associated controls, both those listed directly under the threat (or its parent category) and the general controls, which apply universally. See the Periodic table(ADD LINK) for an overview of which controls mitigate the risks for each threat. For each control, consider its purpose and assess whether it's worth implementing, and to what extent. This decision should weigh the cost of implementation against how effectively the control addresses the threat, along with the severity of the associated risk. These factors also influence the order in which you apply controls. Start with the highest-risk threats and prioritize low-cost, quick-win controls (the "low-hanging fruit").
 
 Controls often have quality-related parameters that need to be adjusted to suit the specific situation and level of risk. For example, this could involve deciding how much noise to add to input data or setting appropriate thresholds for anomaly detection. Testing the effectiveness of these controls in a simulation environment helps you evaluate their performance and security impact to find the right balance. This tuning process should be continuous, using insights from both simulated tests and real-world production feedback.
 
