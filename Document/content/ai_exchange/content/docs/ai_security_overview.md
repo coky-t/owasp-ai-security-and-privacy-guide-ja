@@ -195,13 +195,13 @@ Many experts and organizations contributed to this overview, notably SANS Instit
     - Output (containing [injection attacks](/goto/insecureoutput/))
     
 **New controls (overview [here](/goto/controlsoverview/)):**
-- Specific **AI engineering controls**, to work against poisoning and model input attacks - next to conventional controls. This category is divided into **Data/model engineering** and **Model I/O handling** for filtering, stopping or alterting to suspicious input or output.
+- Specific **AI engineer controls**, to work against poisoning and model input attacks - next to conventional controls. This category is divided into **Data/model engineering** and **Model I/O handling** for filtering, stopping or alterting to suspicious input or output. It is typically the territory of AI experts e.g. data scientist with elements from mathematics, statistics, linguistics and machine learning.
 - **[Monitoring](/goto/monitoruse/)** of model performance and inference - extending model I/O handing and overlooking general usage of the AI system
 - **Impact limitation controls** (because of zero model trust: assume a model can be misled or leak data):
   - [Minimize or obfuscate sensitive data](/goto/datalimit/)
   - [Limit model behaviour](/goto/limitunwanted/) (oversight, guardrails, minimal model privilege)
 
-(*) Note: Attackers that have a similar model (or a copy) can craft misleading input covertly
+(*) Note: Attackers that have a similar model (or a copy) can typically craft misleading input efficiently and without being noticed
 
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials5.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials5.png)
 
