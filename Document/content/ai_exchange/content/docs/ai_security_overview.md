@@ -121,6 +121,9 @@ The five steps - G.U.A.R.D - to organize AI security as an organization are:
 5. **Demonstrate**  
     Show evidence of responsible AI security through transparency, documentation, and communication. Prove to management, regulators, and clients that your AI systems are under control and that the applied safeguards work as intended.
 
+And finally: think before you build an AI system. Securing AI is typically harder than securing non-AI systems, first because it's relatively new, but also because there is a level of uncertainty in all data-driven technology. For example the case of LLMs, we are dealing with the fluidity of natural language. LLMs essentially offer an unstable, undocumented interface with an unclear set of policies. That means that security measures applied to AI often cannot offer security properties to a standard you might be used to with other software. Consider whether AI is the appropriate technology choice for the problem you are trying to solve. Removing an unnecessary AI component eliminates all AI-related risks. 
+
+
 ---
 
 ## このドキュメントの使い方
@@ -236,7 +239,7 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 
 Note that some threats represent attacks consisting of several steps, and therefore present multiple threats in one, for example:
 —	An adversary performs a data poisoning attack by hacking into the training database and placing poisoned samples, and then after the data has been used for training, presents specific inputs to make use of the corrupted behaviour.
-—	An adversary breaking into a development environment to steal a model so it can be used to experiment on to craft manipulated inputs to achieve a certain goal, and then present that input to the deployed system.
+—	An adversary breaks into a development environment to steal a model so it can be used to experiment on to craft manipulated inputs to achieve a certain goal, and then present that input to the deployed system.
 
 
 ### Threats to agentic AI
@@ -278,7 +281,7 @@ Further links:
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/aisecuritymatrix/
 
-以下の AI セキュリティマトリクス (クリックで拡大) は、脅威とリスクのリストを、タイプと影響の順に示しています。
+以下の AI セキュリティマトリクス (クリックで拡大) は、主要な脅威とリスクを、タイプと影響の順に示しています。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
 
 Clickable version, based on the [Periodic table](/goto/periodictable/):
@@ -311,7 +314,9 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 ## コントロールの概要
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/controlsoverview/
-The AI exchange lists a number of controls that can mitigate risks of malicious attack. Be aware that many of the controls are subject to trade-offs with other machine learning properties that can affect accuracy and normal operations of the model. Particularly, controls that involve changes to the learning process and data distributions can have un-intented downstream side-effects, and must be considered and introduced with care.
+
+### Select and implement controls with care
+The AI exchange lists a number of controls to mitigate risks of attack. Be aware that many of the controls are expensive to implement and are subject to trade-offs with other machine learning properties that can affect accuracy and normal operations of the model. Particularly, controls that involve changes to the learning process and data distributions can have un-intented downstream side-effects, and must be considered and introduced with care.
 
 ### Scope of controls
 In the AI Exchange we focus on AI-specific threats and their corresponding controls. Some of the controls are AI-specific (e.g. adding noise to the training set) and others are not (e.g. encrypting the training database). We refer to the latter as ‘conventional controls’. The Exchange focuses on the details of the AI-specific controls because the details of conventional controls are specified elsewhere - see for example [OpenCRE](https://opencre.org). We do provide AI-specific aspects of those controls, for example that protection of model parameters can be implemented using a Trusted Execution Environment.
@@ -491,7 +496,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
  
   Do you use RAG (Retrieval Augmented Generation using GenAI) ?
   Yes: Then your retrieval repository plays a role in determining the model behaviour. This means:
-  - You need to prevent [data poisoning](/goto/datapoison/) of your retrieval repository, which includes preventing that it contains externally obtained poisoned data.
+  - You need to prevent [leaking](/goto/leakaugmentation) or [manipulation](/goto/manipulateaugmentation] of your augmentation data (e.g. vector database), which includes preventing that it contains externally obtained poisoned data.
 
   Who runs the model?
   - The supplier: select a trustworthy supplier through [supply chain management](/goto/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/goto/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation
@@ -502,7 +507,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
     
   In order to assess the level of risk for unwanted model behaviour through manipulation, consider what the motivation of an attacker could be. What could an attacker gain by for example sabotaging your model? Just a claim to fame? Could it be a disgruntled employee? Maybe a competitor? What could an attacker gain by a less conspicuous model behaviour attack, like an evasion attack or data poisoning with a trigger? Is there a scenario where an attacker benefits from fooling the model? An example where evasion IS interesting and possible: adding certain words in a spam email so that it is not recognized as such. An example where evasion is not interesting is when a patient gets a skin disease diagnosis based on a picture of the skin. The patient has no interest in a wrong decision, and also the patient typically has no control - well maybe by painting the skin. There are situations in which this CAN be of interest for the patient, for example to be eligible for compensation in case the (faked) skin disease was caused by certain restaurant food. This demonstrates that it all depends on the context whether a theoretical threat is a real threat or not. Depending on the probability and impact of the threats, and on the relevant policies, some threats may be accepted as risk. When not accepted, the level of risk is input to the strength of the controls. For example: if data poisoning can lead to substantial benefit for a group of attackers, then the training data needs to be given a high level of protection.
 
- **Leaking training data**
+ **Identify risks of leaking training data**
 
   Do you train/finetune the model yourself?
   - If yes, is the training data sensitive? If your response is in the affirmative, you need to prevent:
@@ -516,7 +521,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   If you don't train/finetune the model, then the supplier of the model is responsible for unwanted content in the training data. This can be poisoned data (see above), data that is confidential, or data that is copyrighted. It is important to check licenses, warranties and contracts for these matters, or accept the risk based on your circumstances.
 
 
- **Model theft**
+ **Identify risks of model theft**
 
   Do you train/finetune the model yourself?
   - If yes, is the model regarded as  intellectual property? Then you need to prevent:
@@ -525,13 +530,13 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
     - [Source code/configuration leak](/goto/devcodeleak/)
     - [Runtime model theft](/goto/runtimemodeltheft/)
       
- **Leaking input data**
+ **Identify risks of leaking input data**
  
   Is your input data sensitive?
   - Prevent [leaking input data](/goto/leakinput/). Especially if the model is run by a supplier, proper care needs to be taken to ensure that this data is minimized and transferred or stored securely. Review the security measures provided by the supplier, including any options to disable logging or monitoring on their end. Realise that most Cloud AI models have your input and output unencrypted in their infrastructure (just like Google and Microsoft 365). If you use the right license and configuration, you can prevent it from being stored or analysed. One risk that remains is that the government of the supplier may be forced to store and keep input and output to serve for subpoenas. If you're using a RAG system, remember that the data you retrieve and inject into the prompt also counts as input data. This often includes sensitive company information or personal data.
 
 
- **Misc.**
+ **Identify further risks**
 
   Is your model a Large Language Model?
   - Prevent [insecure output handling](/goto/insecureoutput/), for example, when you display the output of the model on a website and the output contains malicious Javascript.
