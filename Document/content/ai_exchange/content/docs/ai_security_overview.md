@@ -252,7 +252,7 @@ An example of Agentic AI is a set of voice assistants that can control your heat
 
 There are four typical properties of agentic AI:
 1. Action: Agents don’t just chat — they invoke functions such as sending an email. That makes [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) a key control.
-2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up). That makes [OVERSIGHT](/goto/oversight/) important, and it makes working memory an attack vector because that's where the state of an autonomous agent lives.
+2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g. a script receives an email, triggering a GenAI follow-up). That makes [OVERSIGHT](/goto/oversight/) important, and it makes working memory an attack vector because that's where the state and the plan of an autonomous agent lives.
 3. Complex: Agentic behaviour is emergent.
 4. Multi-system: You often work with a mix of systems and interfaces. Because of that, developers tend to assign responsibilities regarding access control to the AI using instructions, opening up the door for manipulation through [prompt injection](/goto/promptinjection/).
 
@@ -261,9 +261,9 @@ What does this mean for security?
 - Existing assumptions about things like trust boundaries and other established security measures might need to be revisited because agentic AI changes interconnectivity and data flows between system components.
 - Agents deployed with their own sets of permissions open up privilege escalation vectors because they are susceptible to becoming a confused deputy
 - The attack surface is wide, and the potential impact should not be underestimated.
-- Because of that, the known controls become even more important — such as security of inter-model communication (e.g. MCP), traceability, protecting memory integrity, prompt injection defenses, rule-based guardrails, least model privilege, and human oversight. See the [controls overview section](/goto/controlsoverview/).
+- Because of that, the known controls become even more important — such as security of inter-model communication (e.g. MCP), [traceability](/goto/monitoruse/), protecting memory integrity, [prompt injection defenses](/goto/promptinjectionm/), [rule-based / human oversight](/goto/oversight/), and [least model privilege](/goto/leastmodelprivilege/). See the [controls overview section](/goto/controlsoverview/).
 
-For leaking sensitive data in agentic AI, you need three things, also called the lethal trifecta:
+For leaking sensitive data in agentic AI, you need three things, also called the _lethal trifecta_:
 1. Data: Control of the attacker of data that find its way into an LLM at some point in the session of a user that has the desired access, to perform [indirect prompt injection](/goto/indirectpromptinjection/) 
 2. Access: Access of that LLM or connected agents to sensitive data
 3. Send: The ability of that LLM or connected agents to initiate sending out data to the attacker
@@ -402,6 +402,8 @@ The diagram below shows threats and controls in an externally hosted situation.
 
 [![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png)
 
+A typical challenge for organizations is to control the use of ready-made-models for general purpose Generative AI (e.g. ChatGPT), since employees typically can access many of them, even for free. Some of these models may not satisfy the organization's requirements for security and privacy. Still, employees can be very tempted to use them with the lack of a better alterative, sometimes referred to as _shadow AI_. The best solution for this problem is to provide a good alternative in the form of an AI model that has been deployed and configured in a secure and privacy-preserving way, of sufficient quality, and complying with the organization's values and policies. In addition, the risks of shadow AI need to be made very clear to users.
+
 ### <a name="periodic-table-of-ai-security">AI セキュリティの周期表</a>
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/periodictable/
@@ -472,59 +474,62 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
 リスクマネジメントの手順を一つずつ見てきましょう。
 
 ### 1. リスクの特定 - 決定ツリー
-組織に影響を及ぼす可能性のある潜在的なリスクを発見するには、該当する脅威の技術的およびビジネス的な評価が必要です。このドキュメントでは、AI 固有のリスク、つまり AI 固有の資産に対するリスクのみに焦点を当てています。以降のセクションではリスクの影響の種類ごとに個別に対処する方法について概説します。
+組織に影響を及ぼす可能性のある潜在的なリスクを発見するには、該当する脅威の技術的およびビジネス的な評価が必要です。このドキュメントでは、AI 固有のリスク、つまり AI 固有の資産に対するリスクのみに焦点を当てています。以降のセクションでは種類ごとにリスクの影響について概説し、自分のケースに当てはまるリスクを特定します。
 
 **望ましくないモデルの動作**
 
   モデルの動作に関しては、このドキュメントのスコープがセキュリティであるため、攻撃者による操作に焦点を当てています。その他の望ましくない動作の原因には一般的な不正確さ (ハルシネーションなど) や特定のグループに関する望ましくない偏見 (差別) があります。
 
-  This will always be an applicable threat, independent of your use-case, although the risk level may sometimes be accepted as shown below.
+  This will always be an applicable threat, independent of your use-case, simply because the model behaviour matters by definition. Nevertheless, the risk level may sometimes be accepted as shown below.
 
   This means that you always need to have in place the following:
   - [General governance controls](/goto/governancecontrols/) (e.g. maintaining a documented inventory of AI applications and implementing mechanisms to ensure appropriate oversight and accountability.)
-  - [Controls to limit effects of unwanted model behaviour](/goto/limitunwanted/) (e.g. human oversight)
+  - [Controls to limit effects of unwanted model behaviour](/goto/limitunwanted/) (e.g. human oversight when necessary, model least privilege for agents)
 
-  Is the model GenAI (e.g. a Large Language Model)? 
-  - Prevent [prompt injection](/goto/directpromptinjection/) (mostly done by the model supplier). When untrusted input goes directly into a model (e.g. any user can talk to your chatbot), and there's a possibility that the model's output could be harmful (for example, by offending, providing dangerous information, or spreading misinformation, or output that triggers harmful functions (Agentic AI) )- it can be a significant concern. This is particularly the case if model input comes from end-users and output goes straight to them, or can trigger functions. The question becomes: has the model supplier done enough according to your risk appetite. For this, you can check tests that the supplier or others have performed tests and when not available: do these tests yourself. What you accept depends on your context. If a user wants the AI to say something offensive: do you regard it as a problem if that user succeeds in getting offended? Do you regard it as a problem if users can get a recipe to make poison - given that they can get this from many AI's out there. See the linked threat section for more details.
-  - Prevent [indirect prompt injection](/goto/indirectpromptinjection/), in case your system inserts untrusted data in a prompt e.g. you retrieve somebody's resume and include it in a prompt.
+  Question: Is the model GenAI (e.g. a Large Language Model)? 
+  - Protect against [prompt injection](/goto/directpromptinjection/) when an attacker can cobtrol the model input (e.g. a prompt), and with not too much effort create output that is too harmful - for example: offensive output, dangerous information, misinformation, or triggering harmful functions (Agentic AI). This is particularly the case if model input comes from end-users and output goes straight to them, or can trigger functions. The first question is: has the model supplier done enough according to your risk appetite. For this, you can check tests that the supplier or others have performed tests and when not available: do these tests yourself. What you accept, in other words: wjhat you find too much effort in combination with too harmful, depends on your context. If a user wants the AI to say something offensive: do you regard it as a problem if that user succeeds in getting offended? Do you regard it as a problem if users can get a recipe to make poison - given that they can get this from many other AI's out there. See the linked threat section for more details.
+  - Protect against [indirect prompt injection](/goto/indirectpromptinjection/) when your system inserts untrusted data in a prompt e.g. you retrieve somebody's resume and include it in a prompt.
 
-  Sometimes model training and running the model is deferred to a supplier. For generative AI, training is mostly performed by an external supplier because it is expensive and often costs millions of dollars. Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this could be lower cost (if it is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
-    
-  Who trains/finetunes the model?
-  - The supplier: you need to avoid [Supply chain model poisoning](/goto/supplymodelpoison/): obtaining or working with a model that has been manipulated to behave in unintended ways. This is done through proper [supply chain management](/goto/supplychainmanage/) (by selecting a trustworthy supplier and verifying the authenticity of the model). This is to gain assurance on the security posture of the provider, meaning the provider prevents model poisoning during development, including data poisoning, and uses uncompromised data. If the risk of data poisoning remains unacceptable, implementing post-training countermeasures can be an option if you have the expertise and if you have access to the model parameters (e.g. open source weights). See [POISONROBUSTMODEL](/goto/poisonrobustmodel/). Note that providers are typically not very open about their security countermeasures, which means that it can be challenging to gain sufficient assurance. Regulations will hopefully help achieve more provider transparency.
-  - You: you need to prevent [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data or a poisoned pre-trained model in case you're finetuning the model.
- 
-  Do you use RAG (Retrieval Augmented Generation using GenAI) ?
+
+  Question: Who trains/finetunes the model?
+  - The supplier: protect against [Supply chain model poisoning](/goto/supplymodelpoison/): obtaining or working with a model that has been manipulated to behave in unintended ways. This is done through proper [supply chain management](/goto/supplychainmanage/) (e.g. selecting a trustworthy supplier and verifying the authenticity of the model). This is to gain assurance on the security posture of the provider, meaning the provider prevents model poisoning during development, including data poisoning, and uses uncompromised data. If the risk of data poisoning remains unacceptable, implementing post-training countermeasures can be an option if you have the expertise and if you have access to the model parameters (e.g. open source weights). See [POISONROBUSTMODEL](/goto/poisonrobustmodel/). Note that providers are typically not very open about their security countermeasures, which means that it can be challenging to gain sufficient assurance. Regulations will hopefully help achieve more provider transparency. For more details, see [ready made models](/goto/readymademodel/).
+  - You: you need to protect against [development-time model poisoning](/goto/modelpoison/) which includes model poisoning, data poisoning and obtaining poisoned data or a poisoned pre-trained model in case you're finetuning the model.
+
+  Why not train/finetune a model yourself? There are many third party and open source models that may be able to perfrom the required task, perhaps after some fine tuning. Organizations often choose external GenAI models because they are typically general purpose, and training is difficult and expensive (often millions of dollars). Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this can be lower cost (if it is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
+
+
+  Question: Do you use RAG (Retrieval Augmented Generation) ?
   Yes: Then your retrieval repository plays a role in determining the model behaviour. This means:
-  - You need to prevent [leaking](/goto/leakaugmentation) or [manipulation](/goto/manipulateaugmentation] of your augmentation data (e.g. vector database), which includes preventing that it contains externally obtained poisoned data.
+  - You need to protect against [leaking](/goto/leakaugmentation/) or [manipulation](/goto/manipulateaugmentation/) of your augmentation data (e.g. vector database), which includes preventing that it contains externally obtained poisoned data.
 
-  Who runs the model?
-  - The supplier: select a trustworthy supplier through [supply chain management](/goto/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/goto/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation
-  - You: You need to prevent [runtime model poisoning](/goto/runtimemodelpoison/) where attackers change the model that you have deployed.
+  Question: Who runs the model?
+  - The supplier: select a trustworthy supplier through [supply chain management](/goto/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/goto/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation.
+  - You: You need to protect against [runtime model poisoning](/goto/runtimemodelpoison/) where attackers change the model that you have deployed.
 
-  Is the model (predictive AI or Generative AI) used in a judgement task (e.g. spam detection)?
-  - Yes: Prevent an [evasion attack](/goto/evasion/) in which a user tries to fool the model into a wrong decision using data (not instructions). Here, the level of risk is an important aspect to evaluate - see below. The risk of an evasion attack may be acceptable.
+  Question: Is the model (predictive AI or Generative AI) used in a classification task (e.g. spam or fraud detection)?
+  - Yes: Protect against an [evasion attack](/goto/evasion/) in which a user tries to fool the model into a wrong decision using data (not instructions). Here, the level of risk is an important aspect to evaluate - see below. The risk of an evasion attack may be acceptable.
     
   In order to assess the level of risk for unwanted model behaviour through manipulation, consider what the motivation of an attacker could be. What could an attacker gain by for example sabotaging your model? Just a claim to fame? Could it be a disgruntled employee? Maybe a competitor? What could an attacker gain by a less conspicuous model behaviour attack, like an evasion attack or data poisoning with a trigger? Is there a scenario where an attacker benefits from fooling the model? An example where evasion IS interesting and possible: adding certain words in a spam email so that it is not recognized as such. An example where evasion is not interesting is when a patient gets a skin disease diagnosis based on a picture of the skin. The patient has no interest in a wrong decision, and also the patient typically has no control - well maybe by painting the skin. There are situations in which this CAN be of interest for the patient, for example to be eligible for compensation in case the (faked) skin disease was caused by certain restaurant food. This demonstrates that it all depends on the context whether a theoretical threat is a real threat or not. Depending on the probability and impact of the threats, and on the relevant policies, some threats may be accepted as risk. When not accepted, the level of risk is input to the strength of the controls. For example: if data poisoning can lead to substantial benefit for a group of attackers, then the training data needs to be given a high level of protection.
 
  **Identify risks of leaking training data**
 
-  Do you train/finetune the model yourself?
-  - If yes, is the training data sensitive? If your response is in the affirmative, you need to prevent:
+  Question: Do you train/finetune the model yourself?
+  - If yes, is the training data sensitive? If so, you need to protect against:
     - [unwanted disclosure in model output](/goto/disclosureuse/)
-    - [model inversion](/goto/modelinversionandmembership/) (but not for GenAI)
+    - [model inversion](/goto/modelinversionandmembership/) 
     - [training data leaking from your engineering environment](/goto/devdataleak/).
-    - [membership inference]((/goto/modelinversionandmembership/)) - but only in the event where something or someone that was part of the training data constitutes sensitive information. For example, when the training set consists of criminals and their history to predict criminal careers. Membership of that set gives away the person is a convicted or alleged criminal.
+    - [membership inference]((/goto/modelinversionandmembership/)) - but only when the fact that something or someone was part of the training data constitutes sensitive information. For example, when the training set consists of criminals and their history to predict criminal careers. Membership of that set gives away the person is a convicted or alleged criminal.
     
-   If you use RAG: apply the above to your repository data, as if it was part of the training set: as the repository data feeds into the model and can therefore be part of the output as well.
+  Question: do you use RAG?
+  - Yes: apply the above to your augmentation data, as if it was part of the training set: as the repository data feeds into the model and can therefore be part of the output as well.
 
   If you don't train/finetune the model, then the supplier of the model is responsible for unwanted content in the training data. This can be poisoned data (see above), data that is confidential, or data that is copyrighted. It is important to check licenses, warranties and contracts for these matters, or accept the risk based on your circumstances.
 
 
  **Identify risks of model theft**
 
-  Do you train/finetune the model yourself?
-  - If yes, is the model regarded as  intellectual property? Then you need to prevent:
+  Question: Do you train/finetune the model yourself?
+  - If yes, is the model regarded as  intellectual property? Then you need to protect against:
     - [Model theft through use](/goto/modeltheftuse/)
     - [Model theft development-time](/goto/devmodelleak/)
     - [Source code/configuration leak](/goto/devcodeleak/)
@@ -532,16 +537,16 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
       
  **Identify risks of leaking input data**
  
-  Is your input data sensitive?
-  - Prevent [leaking input data](/goto/leakinput/). Especially if the model is run by a supplier, proper care needs to be taken to ensure that this data is minimized and transferred or stored securely. Review the security measures provided by the supplier, including any options to disable logging or monitoring on their end. Realise that most Cloud AI models have your input and output unencrypted in their infrastructure (just like Google and Microsoft 365). If you use the right license and configuration, you can prevent it from being stored or analysed. One risk that remains is that the government of the supplier may be forced to store and keep input and output to serve for subpoenas. If you're using a RAG system, remember that the data you retrieve and inject into the prompt also counts as input data. This often includes sensitive company information or personal data.
+  Question: Is your input data sensitive?
+  - Protect against [leaking input data](/goto/leakinput/). Especially if the model is run by a supplier, proper care needs to be taken to ensure that this data is minimized and transferred or stored securely. Review the security measures provided by the supplier, including any options to disable logging or monitoring on their end. Realise that most Cloud AI models have your input and output unencrypted in their infrastructure (just like documents in Google Suite and Microsoft 365). If you use the right license and configuration, you can prevent it from being stored or analysed. One risk that remains is that the government of the supplier may be forced to store and keep input and output to serve for subpoenas. If you're using a RAG system, remember that the data you retrieve and inject into the prompt also counts as input data. This often includes sensitive company information or personal data.
 
 
  **Identify further risks**
 
-  Is your model a Large Language Model?
-  - Prevent [insecure output handling](/goto/insecureoutput/), for example, when you display the output of the model on a website and the output contains malicious Javascript.
+  Question: Does your model create text output?
+  - Protect against [insecure output handling](/goto/insecureoutput/), for example, when you display the output of the model on a website and the output contains malicious Javascript.
 
-  Make sure to prevent [model unavailability by malicious users](/denialmodelservice/) (e.g. large inputs, many requests). If your model is run by a supplier, then certain countermeasures may already be in place to address this.
+  Make sure to protect against [model unavailability by malicious users](/denialmodelservice/) (e.g. large inputs, many requests). If your model is run by a supplier, then certain countermeasures may already be in place to address this.
 
   Since AI systems are software systems, they require appropriate conventional application security and operational security, apart from the AI-specific threats and controls mentioned in this section.
 
@@ -704,9 +709,10 @@ LLM による主な新しい脅威は何ですか？
 脅威とリンクしているコントロールを確認するには、[AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) を参照してください。
 
 Note that the UK Government drove an initiative through their DSIT department to build on these joint guidelines and produce the [DSIT Code of Practice for the Cyber Security of AI](https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice/code-of-practice-for-the-cyber-security-of-ai#code-of-practice-principles), which reorganizes things according to 13 principles, does a few tweaks, and adds a bit more of governance. The principle mapping is added below, and adds mostly post-market aspects:
+
+
 - Principle 10: Communication and processes associated with end-users and affected entities
 - Principle 13: Ensure proper data and model disposal
-
 
 1. 安全な設計
 
