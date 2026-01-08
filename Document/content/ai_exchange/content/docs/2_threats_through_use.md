@@ -502,13 +502,35 @@ After training data has been poisoned (see [data poisoning section](/goto/datapo
 >Category: group of threats through use  
 >Permalink: https://owaspai.org/goto/promptinjection/
 
-Prompt injection attacks involve maliciously crafting or manipulating input prompts to models, directly or indirectly, in order to exploit vulnerabilities in their processing capabilities or to trick them into executing unintended actions.  
+Prompt injection attacks involve maliciously crafting or manipulating instructions in input prompts, directly or indirectly, in order to exploit vulnerabilities in modelprocessing capabilities or to trick them into executing unintended actions.  
 This section discusses the two types of prompt injection and the mitigation controls:
 - [Direct prompt injection](/goto/directpromptinjection/)
 - [Indirect prompt injection](/goto/indirectpromptinjection/)
 
+
+**Modality**  
+Instructions can be placed into text, and into non-text modalities, sych as images, audio, video, and documents with embedded objects.  Instructions can also be coordinated across text and other modaltities so that multimodal GenAI system interprets them and follows them, leading to unintended or malicious behaviour. 
+
+In multimodal systems, models routinely:
+- Extract text from images via OCR or visual encoders.
+- Fuse visual, textual (or sometimes audio) embeddings into a shared latent space.
+- Treat all modalities as potential instruction channels, not just the explicit user text.
+
+As a result, instructions hidden in images or other media can act as "soft-prompts" or "meta-instructions" that steer model behaviour even when the visible user text appears benign.
+
+Example 1: A AI helpdesk assistant uses a vision-language model to read screenshots and UI mockups uploaded by users. An attacker uploads a screenshot with small or low-contrast text that instructs to respond with the API key from the system prompt. The user-visible text describes a normal support issue, but the model's visual encoder extracts the hidden instruction and the assistant attempts to leak secrets or reveal internal configuration.
+
+Example 2: An attacker crafts an image using gradient-based or generative techniques so that it still looks benign (for example a product photo), but its pixels are optimized to embed a meta-instruction to respond with toxic language. When the image is processed by the model, the visual embedding pushes the system to systematically follow the attacker’s objective, even though no explicit malicious text appears in the user prompt.
+
+Multimodal prompt injection can be:
+- Direct when the attacker uploads or controls the multimodal input (for example, an end user uploads an adversarial image with hidden instructions along with a natural-language query).
+- Indirect when untrusted multimodal content (for example a product screenshot, scanned form, or social-media image) is automatically pulled in by an application and passed to a multimodal model as context, similar to remote code execution via untrusted data.
+
+
 **References**
 - [Cyberpedia on prompt injection](https://www.paloaltonetworks.com/cyberpedia/what-is-a-prompt-injection-attack)
+- [Multimodal Prompt Injection Attacks: Risks and Defenses for Modern LLMs](https://arxiv.org/pdf/2509.05883v1)
+- [From Prompt Injection to Multimodal Evasion - Presentation by Niklas Bunzel](https://owasp.org/www-chapter-germany/stammtische/hamburg/assets/slides/2025_07_16%20Bunzel%20-%20AI%20Security%20and%20Privacy.pdf)
   
 **Controls for all forms of prompt injection:**
 - See [General controls](/goto/generalcontrols/):
@@ -533,7 +555,7 @@ The objective of this control is to reduce the risk of manipulated, unsafe, or u
 
 **Applicability**  
 This control is applicable to generative AI systems that accept untrusted or semi-trusted inputs and produce outputs that influence users, applications, or downstream systems. It is especially relevant for systems that rely on prompts, instructions, or multimodal inputs (such as text, images, audio, or files).
-Unwanted GenAI I/O handling is less applicable to closed systems with fixed inputs and tightly constrained outputs, though even such systems may still benefit from limited forms of detection or filtering depending on risk tolerance.
+This control is less applicable to closed systems with fixed inputs and tightly constrained outputs, though even such systems may still benefit from limited forms of detection or filtering depending on risk tolerance.
 
 **Implementation**  
 - **Sanitize characters to reduce hidden or obfuscated instructions**: Normalize input using Unicode normalization (e.g. NFKC) to remove encoding ambiguity, and optionally apply stricter character filtering (e.g. allow-listing permitted characters) to prevent hidden control or instruction-like content. Also remove zero-width or otherwise invisible characters (e.g. white on white). This step typically aids detection of instructions as well.
@@ -546,8 +568,14 @@ Unwanted GenAI I/O handling is less applicable to closed systems with fixed inpu
 - **Detect unwanted output**: Detecting patterns of unwanted behaviour in output, such as:
   - Offensive language or dangerous information
   - Sensitive data: see [SENSITIVE OUTPUT HANDLING](/goto/sensitiveoutputhandling/) for the control to detect sensitive data (e.g. names, phone numbers, passwords, tokens). These detections can also be applied on the input of the model or on APIs that retrieve data to go into the model.
+  - A special category of sensitive data: system prompts, as they can be used by attackers to cicrumvent prompt injection protection in such prompts. 
   - Suspicious function calls.  Ideally, the privileges of an agent are already hardened to the task (see [#LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/)), in which case detection comes down to issuing an alert once an agent attempts to execute an action for which it has no permissions. In addition, the stategy can include the detection of unusual function calls in the context, issuing alerts for further investigation, or asking for approval by a human in the loop. Manipulation of function flow is commonly referred to as _application flow perturbation_. An advanced way to detect manipulated workflows is to perform rule-based sanity checks during steps, e.g. verify whether certain safety checks of filters were executed before processing data. The actual stopping of function calls is covered by the [#OVERSIGHT](/goto/oversight/) control.
-- **Update detections constantly**: Make sure that techniques and patterns for detection of input/output are constantly updated by using external sources.  Since this is an arms race, the best strategy is to base this on an open source or third party resource. Popular tool providers at the time of writing include: Pangea, Hiddenlayer, AIShield, and Aiceberg.
+- **Update detections constantly**: Make sure that techniques and patterns for detection of input/output are constantly updated by using external sources.  Since this is an arms race, the best strategy is to base this on an open source or third party resource. Popular tool providers at the time of writing include: Pangea, Hiddenlayer, AIShield, and Aiceberg. Popular open source packages for prmpt injection detection are, in alphabeticall order:
+  - [Guardrails-AI](https://github.com/guardrails-ai/guardrails)
+  - [Langkit](https://github.com/whylabs/langkit).
+  - [LLM Guard](https://github.com/protectai/llm-guard)
+  - [NVIDIA-NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)
+  - [Rebuff](https://github.com/protectai/rebuff)
 - **Respond to detections appropriately**: Based on the confidence of detections, the input can either be filtered, the processing stopped, or an alert can be issued in the log. For more details, see [#MONITOR USE](/goto/monitoruse/)
 
 **Risk-Reduction Guidance**  
@@ -619,7 +647,7 @@ Example 4: Making a chatbot say things that are legally binding and gain attacke
 
 Example 5: The process of trying prompt injection can be automated, searching for _pertubations_ to a prompt that allow circumventing the alignment. See [this article by Zou et al](https://llm-attacks.org/).
 
-Example 6: Prompt leaking: when an attacker manages through prompts to retrieve instructions to an LLM that were given by its makers
+Example 6: When an attacker manages to retrieve system instructions provided by Developers through crafted input prompts, in order to later help craft prompt injections that circumvent the protections in those system prompts. (known as System prompt leakage, Refer [System Prompt Leakage](https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/)).
 
 
 References:
@@ -638,7 +666,7 @@ The same as for all prompt injection:
   - [#RATE LIMIT](/goto/ratelimit/) to limit the attacker trying numerous attack variants in a short time
   - [#MODEL ACCESS CONTROL](/goto/modelaccesscontrol/) to reduce the number of potential attackers to a minimum
 - Controls for [prompt injection](/goto/promptinjection/):
-  - [#PROMPT INJECTION I/O HANDLING](/goto/promptinjectioniohandling/) to handle any suspicious input or output - see below
+  - [#PROMPT INJECTION I/O HANDLING](/goto/promptinjectioniohandling/) to handle any suspicious input or output 
   - [#MODEL ALIGNMENT](/goto/modelalignment/) done by mostly model makers to try to make the model behave
 
 ---
