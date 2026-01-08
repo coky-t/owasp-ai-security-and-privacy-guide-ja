@@ -6,6 +6,61 @@ weight: 3
 >Category: group of threats through use  
 >Permalink: https://owaspai.org/goto/threatsuse/
 
+Threats through use (also called “input attacks”, “inference-time attacks”, or “runtime adversarial attacks”) occur when an adversary crafts inputs to a deployed AI system to achieve malicious goals such as:
+
+- Bypassing decisions (evasion)
+- Extracting sensitive information (model inversion, membership inference, sensitive data disclosure)
+- Stealing the model itself via queries (model theft through use)
+- Hijacking behaviour in GenAI systems (prompt injection)
+- Causing resource exhaustion or system malfunction
+
+These threats are the most common attack vector for publicly exposed AI services (APIs, chatbots, embedded models) because the attacker only needs access to the inference interface – no privileged development access is required. An AI defence-in-depth approach is to apply controls in progressive layers. Start with the simplest and most effective ones; only add more complex layers if residual risk remains unacceptable.
+
+**Base layer – Protect model confidentiality (do this first)**
+
+Many input attacks become dramatically easier (or even feasible) when the attacker can download or access the model attributes(referred to as a white-box setting). Examples:
+- Evasion attacks become much more efficient and effective as gradient-based evasion tactics can be applied that require access to the model attributes.
+- Model inversion and membership inference are orders of magnitude faster with parameters.
+- Stolen models bypass runtime protections (rate limits, input filters, system prompts) so attackers can experiment without being constrained or observed.
+
+**Controls:** Treat model attributes as high-value secrets. Apply conventional confidentiality controls both in development (#DEVSECURITY) and operation (secure serving, API authentication, no public model downloads).
+Allowed exception: Publicly available models (e.g., Llama 3 on Hugging Face) or when equivalent public models already exist.
+
+**Layer 1 – Reduce information leakage in outputs**
+
+Many query-based attacks rely on rich feedback (confidence scores, logits, verbose explanations). Removing unnecessary information raises the bar significantly.
+
+**Controls:**
+Hide, segregate from process  or quantise confidence scores (#HIDECONFIDENCE).
+Return only final labels or generated text – no probabilities unless strictly required.
+For GenAI: Use deterministic sampling (temperature=0) or top-p filtering to reduce variability exploitable for attacks.
+
+**Layer 2 – Limit exposure and query volume**
+
+If Layer 1 is insufficient (for example, if you cannot hide output information), restrict who can query the model and how much.
+
+**Controls:**
+Strong authentication and authorisation (#ACCESSCONTROL) – only identified users/services get inference access.
+Per-user/service rate limiting (#RATELIMIT) – e.g., 100 queries/hour for standard users, higher for trusted internal services.
+CAPTCHA or proof-of-work for public endpoints if appropriate.
+**Exception:** Publicly available models (e.g., Llama 3 on Hugging Face) or when equivalent public models already exist. Using these models bypasses the controls mentioned.
+
+**Layer 3 – Filter, detect, and respond**
+
+If residual risk is still unacceptable:
+
+**Controls:**
+- Input/output monitoring and anomaly detection - create alerts, repetitive adversarial patterns, unusual query spikes.
+- Automated response (block, throttle, alert).
+- Training-data minimisation and obfuscation (#DATAMINIMIZE) where reconstruction attacks are a concern.
+
+**Beyond Layer 3 – Advanced or architectural mitigations**
+
+If residual risk is still unacceptable, and if these controls are applicable:
+- Adversarial training or certified robustness (expensive, often limited scope).
+- Ensemble models or randomised defences.
+- Architectural changes (e.g., add guard models, use retrieval-only systems instead of full generation).
+
 Threats through use take place through normal interaction with an AI model: providing input and receiving output. Many of these threats require experimentation with the model, which is referred to in itself as an _Oracle attack_.
 
 **Controls for threats through use:**
@@ -17,14 +72,156 @@ Threats through use take place through normal interaction with an AI model: prov
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/monitoruse/
 
-Monitor use: Monitor the use of the model (input, date, time, user) by registering it in logs, so it can be used to reconstruct incidents, and made it part of the existing incident detection process - extended with AI-specific methods, including:
+Monitor use: observe, correlate, and log model usage (date, time, user), inputs, outputs, and system behavior to identify events or patterns that may indicate a cybersecurity incident. This can be used to reconstruct incidents, and make it part of the existing incident detection process - extended with AI-specific methods, including:
 
-  - improper functioning of the model (see [CONTINUOUSVALIDATION](1_general_controls.md#CONTINUOUSVALIDATION) and [UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING))
-  - suspicious patterns of model use (e.g. high frequency - see [RATELIMIT](2_threats_through_use.md#RATE-LIMIT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT))
-  - suspicious inputs or series of inputs (see [DETECTODDINPUT](2_threats_through_use.md#DETECT-ODD-INPUT) and [DETECTADVERSARIALINPUT](2_threats_through_use.md#DETECT-ADVERSARIAL-INPUT))
+  - improper functioning of the model (see [CONTINUOUSVALIDATION](/goto/continuousvalidation/) and [UNWANTEDBIASTESTING](/goto/unwantedbiastesting/))
+  - suspicious patterns of model use (e.g. high frequency - see [RATELIMIT](#ratelimit))
+  - suspicious inputs or series of inputs (see anomalous input handling and prompt injection I/O handling)
 
-By adding details to logs on the version of the model used and the output, troubleshooting becomes easier.
+By adding details to logs on the version of the model used and the output, troubleshooting becomes easier. This control provides centralized visibility into how AI systems are used over time and across actors, sessions, and models.
+
+Detection mechanisms are typically paired with predefined response actions to limit impact, preserve evidence, and support recovery when suspicious behaviour is identified.
+
+**Objective**
+
+Monitoring use enables early identification and investigation of potential attacks or misuse by detecting suspicious events or a series of events. It supports both real-time interception and retrospective analysis by preserving sufficient context to reconstruct what happened, identify potential attack sources, and design appropriate incident responses. Incident response measures prevent and minimize damage or harm. 
+
+Monitoring also strengthens other controls by correlating their signals and providing historical evidence during incident response. 
+
+**Applicability**
+
+Monitoring use applies broadly to AI systems exposed to users, integrations, or other systems where misuse, probing, or manipulation is possible.
+
+It is particularly relevant when:
+
+- multiple detection controls are in place and need correlation,
+- attacks may unfold over time (e.g., model inversion, probing),
+- Post-incident reconstruction or attribution is required.
+- Timely response may significantly reduce impact.
+
+In some deployments, implementation may be more appropriate at the deployer or platform layer, provided monitoring requirements are clearly communicated.
+
+**Implementation Options**
+  **- Event and signal monitoring:**
+  Monitoring can observe signals across:
   
+    - inputs and input streams,
+    - outputs and output streams,
+    - system and model behavior,
+    - model-to-model or system-to-system interactions.
+    - system logs
+    
+This allows us to observe a chain of thoughts in which various models perform a chain of inferences and ideally includes observing signals generated by complementary controls such as:
+
+    - #RATE LIMIT,
+    - #MODEL ACCESS CONTROL,
+    - #ODD INPUT HANDLING,
+    - #OVERSIGHT (including automated and human)
+    - #UNWANTED INPUT SERIES HANDLING,
+    - #OBSCURE CONFIDENCE,
+    - # SENSITIVE OUTPUT HANDLING,
+    - #CONTINUOUSVALIDATION,
+    - training data scanning and filtering.
+    
+For each monitored risk, criteria can be defined to identify suspicious patterns, anomalies, or intent.
+
+  **- Logging and traceability:**
+  Logging supports both detection and later investigation. Depending on legal, privacy, and technical constraints, logs may include:
+  
+    - Trace metadata: timestamps, trace or session identifiers, actor or session linkage, request rates.
+    - Request context: input content, preprocessing steps, detection signals triggered.
+    - Processing context: model version, execution time, errors.
+    - Response context: output content, post-processing steps, filtering or blocking actions.
+    - Logs are retained for a period sufficient to support analysis, in alignment with legal and contractual requirements.
+
+  **- Incident qualification and alerting:**
+    When suspicious behavior is detected, monitoring supports:
+
+    - classifying the potential incident type,
+    - assigning confidence or severity levels,
+    - generating alerts for follow-up investigation when appropriate with sufficient information such as unique alert id, timestamp, threat classification, attack source, severity, request and response context,       description of observed behavior etc.
+
+  Decision rules can distinguish between:
+
+    - no action,
+    - automated responses (e.g., filtering, slowing, blocking),
+    - follow-up requiring human investigation.
+  
+  Thresholds and rules can be revisited as risks evolve to balance detection accuracy, system usability, and alert fatigue.
+
+  **- Monitoring AI-specific lifecycle events:**
+    Beyond runtime activity, monitoring also benefits from tracking AI-specific events such as:
+
+    - deployment or rollback of model versions,
+    - updates to model parameters or prompts,
+    - changes to detection mechanisms or safeguards.
+
+    These events support incident reconstruction and may themselves indicate compromise or misconfiguration.
+
+  **- Recommended logging enrichment:** In addition to core request and response logging, additional operational context can improve incident analysis and prioritization. This may include system-level signals such as         memory utilization, CPU utilization, processing node identifiers, and environment or deployment context (for example, production, staging, or test).
+
+    When alerts are generated, attaching guidance on potential next steps can support faster and more consistent responses. Examples include suggested actions such as blocking a request, slowing a session, or investigating   a suspected source. This information helps responders understand both the nature of the detected behavior and the intended handling approach.
+
+  **- Detection-to-response loop:** Detection mechanisms benefit from being explicitly linked to response actions, such as filtering, throttling, escalation, or containment. Response selection is typically driven by         detection confidence, threat type, and potential impact, and may range from automated safeguards to follow-up investigation.
+
+**- Incident Response and Containment**
+Detection mechanisms benefit from being paired with predefined response actions that limit harm, preserve evidence, and support recovery. For each detection used in the system, a corresponding response approach can be documented (e.g. incident response playbook - SOP), specifying when actions are automated, when follow-up is required, and what escalation paths apply.
+Response actions may vary depending on the certainty of detection, the threat type, and the potential impact, and can include:
+
+  **- Immediate containment**
+      - stopping the current inference or workflow when confidence of malicious activity is high,
+      - sanitizing input or output (for example trimming prompts, removing sensitive content, or normalizing input) and continuing execution,
+      - switching to a more conservative operating mode, such as reduced functionality, additional filtering, or temporary human oversight.
+      
+  **- Follow-up and investigation**
+      - issuing alerts for triage and investigation,
+      - preserving relevant system state and logs to support analysis,
+      - increasing monitoring or sampling for affected actors or sessions,
+      - throttling, rate-limiting, or suspending suspicious accounts or sessions,
+      - restricting or disabling tools and functions that could cause harm,
+      - Add noise to the output to disturb possible attacks
+      - rolling back models or data to a known-good state when compromise is suspected.
+      
+  **- Broader response actions**
+      - informing users when AI system may be unreliable or compromised,
+      - notifying affected individuals if sensitive data may have been exposed,
+      - engaging suppliers when external data or models are implicated,
+      - involving legal, compliance, or communications teams where appropriate.
+
+In some cases, no immediate action beyond logging may be appropriate, particularly when detection confidence is low or impact is negligible.
+
+  **- Learning and improvement:** Incident response includes a feedback loop to improve the system’s security posture over time. Following detections or confirmed incidents, teams review events to determine whether additional controls, configuration changes, or detection improvements are required. This may include adding new attack patterns to tests, refining detection thresholds, updating validation checks, or revisiting risk assessments to reflect new insights or accepted residual risks.
+
+**Risk-Reduction Guidance**
+
+Monitoring use reduces the probability of successful attacks by enabling earlier detection and correlation of suspicious behaviour. The degree of probability reduction depends on the accuracy and timeliness of the detection mechanisms and the extent to which attackers are able to evade them.
+
+Impact reduction depends primarily on the type and timeliness of the response triggered by detection. Immediate automated responses, such as blocking, filtering, or stopping inference, can reduce impact severity to zero when attacks are detected with sufficient confidence. However, overly aggressive responses introduce the risk of false positives, which may disrupt legitimate use or cause unintended system malfunction.
+
+Follow-up responses, such as investigation, rollback, throttling, or enhanced monitoring, can significantly reduce impact when attacks unfold over time, for example by limiting the amount of sensitive data extracted or by containing the blast radius of a compromised model or session. The effectiveness of such responses depends on response speed, operational readiness, and the severity of downstream consequences, including non-technical effects such as user trust, availability, and reputational impact.
+
+Monitoring, therefore, provides its strongest risk reduction when detection quality, response proportionality, and operational readiness are aligned.
+
+**Particularity** 
+
+Unlike conventional application monitoring, AI monitoring must observe not only system events but also model behavior, inference patterns, and semantic signals derived from inputs and outputs.
+
+This makes correlation across controls and over time essential.
+
+**Limitations**
+
+Monitoring depends on:
+
+- the completeness and accuracy of logged data,
+- the ability to correlate signals meaningfully,
+- legal and privacy constraints on data retention.
+  
+High-volume or opaque systems may limit visibility, and monitoring must be combined with preventive and response controls to be effective.
+
+Additionally, Response actions introduce trade-offs. Overly aggressive responses may disrupt legitimate use or introduce new risks through false positives, while delayed or manual responses may reduce effectiveness for fast-moving attacks. Monitoring and response, therefore, benefit from periodic review and tuning.
+
+**References** 
+
 Useful standards include:
 
   - ISO 27002 Controls 8.15 Logging and 8.16 Monitoring activities. Gap: covers this control fully, with the particularity: monitoring needs to look for specific patterns of AI attacks (e.g. model attacks through use). The ISO 27002 control has no details on that.
@@ -35,20 +232,82 @@ Useful standards include:
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/ratelimit/
 
-Rate limit: Limit the rate (frequency) of access to the model (e.g. API) - preferably per user.
+**Description**
 
-Purpose: severely delay attackers trying many inputs to perform attacks through use (e.g. try evasion attacks or for model inversion).
+Limit the rate (frequency) of access to the model - preferably per actor (user, API key or session). The goal is not only to prevent resource exhaustion but also to severely slow down experimentation that underlies many AI attacks through use. 
 
-Particularity: limit access not to prevent system overload (conventional rate limiting goal) but to also prevent experimentation for AI attacks.
 
-Remaining risk: this control does not prevent attacks that use low frequency of interaction (e.g. don't rely on heavy experimentation)
+**Objective**
 
-References:
+To delay and discourage attackers who rely on many model interactions to:
+[TODO: add links to the mentioned attacks]
+- Search for adversarial or evasion samples: pairs of (successful attack, unwanted output) data is useful for constructing evasion attacks and jailbreaks.
+- Perform data poisoning exploration and extract exposure-restricted data.
+- Experiment with various direct and indirect prompt injection techniques to both exploit the system and/or study the attack behavior.
+- Attempt model inversion and/or membership inference.
+- Extract training data or model parameters, or
+- Copy or re-train a model via large scale harvesting (model theft)
+
+By restricting the number and speed of model interactions, cost of attacks increase (effort, time, resources) thereby making the attacks less practical and allowing an opportunity for detection and incident response.
+
+**Applicability**
+
+Defined by risk management (see #RISKANALYSIS). It is a primary control against many “threats through use”. Natural rate limits can exist in systems whose context inherently restricts query rates (e.g., medical imaging or human supervised processes). Exceptions may apply when rate limiting would block intended safety-critical or real-time functions, such as:
+
+- Emergency dispatch or medical triage models.
+- Cybersecurity monitoring that must analyze all traffic.
+- Real-time identity or fraud detection under strict latency constraints. 
+
+When rate limiting is impractical for the provider but feasible for the deployer, this responsibility must be clearly delegated and documented (see #SECPROGRAM)
+
+**Implementation**
+
+  a. Per-Actor Limiting
+    - Track and limit inference frequency for each identifiable actor (authenticated user id, api key, session token)
+    - If identity is unavailable or not reliable (eg lack of access control) then approximate using IP or device fingerprint.
+    - Helps distinguish legitimate use from brute-force experimentation.
+  b. Total-Use Limiting
+    - Set an overall cap across all actors to mitigate distributed or collusive attacks. 
+    - Can use fixed or sliding windows, adaptive limits or dynamic throttling based on risk.
+c. Optimize & Calibrate
+    - Base thresholds on usage analytics or theoretical workload to balance availability with risk reduction.
+    - Lower limits increase security but may affect user experience - tune for acceptable residual risk, possibly with the help of additional controls . 
+d. Detection & Response
+    - Breaching a rate limit must trigger event logging and potential incident workflows. 
+    - Integrate with #MONITORUSE and incident response (see #SECPROGRAM)
+    
+Complement this control with #MODEL ACCESS CONTROL, #MONITORUSE and detection mechanisms. 
+
+**Risk-Reduction Guidance**
+
+Rate limiting slows down attacks rather than preventing them outright. To evaluate effectiveness, estimate how many inferences an attack requires and calculate the delay imposed. AI system’s intended use, current best practices and existing attack tests can serve as useful indicators.
+
+**Example:** An attack needing 10,000 interactions at 1 per minute takes approximately 167 hours (~ 7days). This may move the residual risk below acceptance thresholds, especially if the detection is active. 
+
+Typical inference volumes for attack feasibility:
+  - Evasion attacks and model inversion (where attackers try to fool or reverse-engineer a model): thousands of queries when the attacker has no knowledge of the model. If the attacker has full knowledge of the model, the number of required queries is typically an order of magnitude less.
+  - Adversarial patches (where small, localized changes are made to inputs): tens of queries
+  - Transfer attacks: zero queries on the target model as the attacks can be performed on a similar surrogate model.
+  - Membership inference: 1-many, depending on the dataset. For eg: known target vs scanning through a large list of possible individuals.
+  - Model theft (input-output replication): proportional to input-space diversity. 
+  - Attacks that try to extract sensitive training data or manipulate models (like prompt injection): may involve dozens to hundreds of crafted inputs, but they don’t always rely on trial-and-error. In many cases, attackers can use standard, pre-designed inputs that are known to expose weaknesses.
+
+**Note:** Effective rate limiting can differ from configured limits due to mult-accounting or multi-model instances; consider this in the risk evaluation. 
+
+**Particularity**
+
+Unlike traditional IT rate limiting (which protects performance), here it primarily mitigates security threats to AI systems through experimentation. It does come with extra benefits like stability, cost control and DoS resilience. 
+
+**Limitations:**
+
+  - Low-frequency or single-try attacks (e.g., prompt injection or indirect leakage) remain unaffected. 
+  - Attackers may circumvent limits by parallel access or multi-instance use, or through a transferability attack (link).
+
+**References:**
  - [Article on token bucket and leaky bucket rate limiting](https://medium.com/@apurvaagrawal_95485/token-bucket-vs-leaky-bucket-1c25b388436c)
  - [OWASP Cheat sheet on denial of service, featuring rate limiting](https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html)
 
 Useful standards include:
-
   - ISO 27002 has no control for this
   - See [OpenCRE](https://www.opencre.org/cre/630-573)
 
@@ -56,36 +315,242 @@ Useful standards include:
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/modelaccesscontrol/
 
-Model access control: Securely limit allowing access to use the model to authorized users.
+**Description**
 
-Purpose: prevent attackers that are not authorized to perform attacks through use.
+Restrict access to model inference functions to approved and identifiable users. This involves applying authentication (verifying who is accessing) and authorization (limiting what they can access) so that only trusted actors can interact with the model.
 
-Remaining risk: attackers may succeed in authenticating as an authorized user, or qualify as an authorized user, or bypass the access control through a vulnerability, or it is easy to become an authorized user (e.g. when the model is publicly available)
+**Objective**
 
-Note: this is NOT protection of a stored model. For that, see Model confidentiality in Runtime and Development at the [Periodic table](https://owaspai.org/goto/periodictable/). 
+To reduce risk of input-based  and misuse attacks (attacks through use) by ensuring that only authorized users can send requests to the model. Access control limits the number of potential attackers, helps attribute actions to individuals or systems (adhering to privacy obligations), and strengthens related controls such as rate limits, activity monitoring and incident investigation.
 
+**Applicability**
 
-Additional benefits of model access control are:
-- Linking users to activity is Opportunity to link certain use or abuse to individuals - of course under privacy obligations
-- Linking activity to a user (or using service) allows more accurate [rate limiting](/goto/ratelimit/) to user-accounts, and detection suspect series of actions - since activity can be linked to paterns of individual users
+This control applies whenever AI models are exposed for inference, especially in multi-use or public facing systems. It is a primary safeguard against attacks through input or repeated experimentation.
 
-Useful standards include:
+Exceptions may apply when:
+  - The model must remain publicly accessible without authentication for its intended use
+  - Legal or regulatory conditions prohibit access control.
+  - The physical or operational environment already ensures restricted access (e.g., on-premise medical device requiring physical presence)
 
+If implementation is more practical for the deployer than the provider, this responsibility should be explicitly documented in accordance with risk management policies. 
+
+**Implementation Options**
+
+1. **Authenticate users:** Actors accessing model inference are typically authenticated (e.g., user accounts, API Keys, tokens).
+2. **Apply least privilege:** Grant access only to functions or models necessary for each user’s role or purpose.
+   - **Implement fine-grained access control:** Restrict access to specific AI models, features, or datasets based on their sensitivity and the user’s risk profile.
+   - **Use role-based and purpose-based permissions:** Define permissions for different groups (e.g., developers, testers, operators, end users) and grant access only for the tasks they must perform.
+3. **Apply defence-in-depth:**  Access control should be enforced at multiple layers of the AI system (API gateway, application layer, model endpoint) so that a single failure does not expose the model.
+4. **Log access events:** Record both successful and failed access attempts, considering privacy obligations when storing identifiers (e.g., IPs, device IDs).
+5. **Reduce the risk of multi-account abuse:** Attackers may create or use multiple accounts to avoid per-user rate limits. Increase the cost of account creation through measures such as multi-factor authentication, CAPTCHA, identity verification, or additional trust checks.
+6. **Detect and respond to suspicious activity:**
+   - **Temporarily block the AI systems to the users after repeated failed authentication attempts.**
+   - **Generate alerts for investigation of** suspicious **access behavior.**
+7. Integrate with other controls:** Use authenticated identity for per-user rate limiting, anomaly detection and incident reconstruction.
+
+**Risk-Reduction Guidance**
+
+Access control lowers the probability of attacks by reducing the number of actors who can interact with the model and linking actions to identities.
+
+This traceability includes:
+- Individualized rate limiting and behavioral detection
+- Faster containment and forensic reconstruction of attacks
+- Better accountability and deterrence for malicious use.
+  
+Residual risk can be analyzed by estimating:
+- Consider the likelihood that an attacker may already belong to an authorized user group. An insider or a legitimately authorized external user can still misuse access to conduct attacks through the model.
+- The chance that authorized users themselves are compromised (phishing, session hijacking, password theft, coercion)
+- The likelihood of bypassing authentication or authorization mechanisms.
+- The exposure level of systems that require open access.
+
+**Particularity**
+
+In AI systems, access control protects model endpoints and data-dependent inference rather than static resources. Unlike traditional IT access control that safeguards files or databases, this focuses on restricting who can query or experiment with a model. Even publicly available models benefit from identity-based tracking to enable rate limits, anomaly detection, and incident handling.
+
+This control focuses on restricting and managing who can access model inference, not on protecting a stored model file for example.  
+
+For protection of trained model artifacts, see “Model Confidentiality” in the Runtime and Development sections of the [Periodic table](https://owaspai.org/goto/periodictable/). 
+
+**Limitations**
+
+  - Attackers may still exploit authorized accounts via compromise or insider misuse or vulnerabilities.
+  - Some attacks can occur indirectly within allowed sessions (e.g., indirectsubtle prompt injection).
+  - Publicly available models remain vulnerable if alternative protections are not in place.
+
+Complement this control with #RATE LIMIT #MONITORUSE and incident response (#SECPROGRAM)
+
+**References:**
   - Technical access control: ISO 27002 Controls 5.15, 5.16, 5.18, 5.3, 8.3. Gap: covers this control fully
   - [OpenCRE on technical access control](https://www.opencre.org/cre/724-770)
   - [OpenCRE on centralized access control](https://www.opencre.org/cre/117-371)
 
----
+## #ANOMALOUS INPUT HANDLING
+Category: runtime data science control for threats through use
+Permalink: https://owaspai.org/goto/anomalousinputhandling/ 
+
+**Description:**
+Detect odd input: implement tools to detect whether input is odd and potentially respond, where ‘odd’ means significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like.
+
+
+**Objective:**
+Address unusual input as it is indicative of malicious activity. Response can vary between ignore, issue an alert, stop inference, or even take further steps to control the threat (see #monitor use for more details).
+
+**Applicability:**
+Odd input is suspicious for every attack that happens through use, because attackers obviously behave differently than normal users do. However, detecting odd input has strong limitations (see below) and therefore its applicability depends on the successful detection rate on the one hand and on the other hand: 1) implementation effort, 2_ performance penalty, and 3_ the number of false positives which can hinder users, security operations or both. Only a representative test can provide the required insight. This can be achieved by testing the detection on normal use, and setting a threshold at a level where the false positive rate is still acceptable. 
+
+**Implementation Options:**
+We use an example of a machine learning system designed for a self-driving car to illustrate these approaches.
+
+**Types of detecting odd input**
+Out-of-Distribution Detection (OOD), Novelty Detection (ND), Outlier Detection (OD), Anomaly Detection (AD), and Open Set Recognition (OSR) are all related and sometimes overlapping tasks that deal with unexpected or unseen data. However, each of these tasks has its own specific focus and methodology. In practical applications, the techniques used to solve the problems may be similar or the same.
+
+**Out-of-Distribution Detection (OOD) - the broad category of detecting odd input:**
+Identifying data points that differ significantly from the distribution of the training data. OOD is a broader concept that can include aspects of novelty, anomaly, and outlier detection, depending on the context.
+
+**Example:** 
+The system is trained on vehicles, pedestrians, and common animals like dogs and cats. One day, however, it encounters a horse on the street. The system needs to recognize that the horse is an out-of-distribution object.
+
+Methods for detecting out-of-distribution (OOD) inputs incorporate approaches from outlier detection, anomaly detection, novelty detection, and open set recognition, using techniques like similarity measures between training and test data, model introspection for activated neurons, and OOD sample generation and retraining. 
+
+Approaches such as thresholding the output confidence vector help classify inputs as in or out-of-distribution, assuming higher confidence for in-distribution examples. Techniques like supervised contrastive learning, where a deep neural network learns to group similar classes together while separating different ones, and various clustering methods, also enhance the ability to distinguish between in-distribution and OOD inputs. 
+
+For more details, one can refer to the survey by Yang et al. and other resources on the learnability of OOD: here.
+
+**Outlier Detection (OD) - a form of OOD:**
+Identifying data points that are significantly different from the majority of the data. Outliers can be a form of anomalies or novel instances, but not all outliers are necessarily out-of-distribution.
+
+**Example:**
+Suppose the system is trained on cars and trucks moving at typical city speeds. One day, it detects a car moving significantly faster than all the others. This car is an outlier in the context of normal traffic behavior.
+
+**Anomaly Detection (AD) - a form of OOD:**
+Identifying abnormal or irregular instances that raise suspicions by differing significantly from the majority of the data. Anomalies can be outliers, and they might also be out-of-distribution, but the key aspect is their significance in terms of indicating a problem or rare event. 
+
+**Example:** 
+
+The system might flag a vehicle going the wrong way on a one-way street as an anomaly. It’s not just an outlier; it’s an anomaly that indicates a potentially dangerous situation.
+
+An example of how to implement this is Activation Analysis: Examining the activations of different layers in a neural network can reveal unusual patterns (anomalies) when processing an adversarial input. These anomalies can be used as a signal to detect potential attacks.
+
+Another example of how to implement this is similarity-based analysis: Comparing incoming input against a ground truth data set, which typically corresponds to the training data and represents the normal input space. If the input is sufficiently dissimilar from this reference data, it can be treated as deviating from expected behavior and flagged as odd input. Various similarity metrics can be used for this comparison (see table below).
+
+
+| Modality | Similarity Measures - Recommended | Notes or Tools |
+|:---------|:----------------------------------|:----------------|
+| Text | Cosine similarity, Jaccard Index, Embedding distance (e.g., BERT, Sentence-BERT), Word/Token Histograms | Use transformer-based embeddings |
+| Image | Structural Similarity Index (SSIM), Euclidean distance, Pixel-Wise MSE, Perceptual Loss (VGG-based) | Normalize lighting or scaling; Patch-based SSIM helps detect targeted attacks in specific image regions.|
+| Audio | MFCC-base distance, Dynamic Time Warping (DTW), Spectral Convergence, Cosine similarity on embeddings | Use frame-wise comparison for streaming; DTW corrects time shifts. |
+| Tabular | Euclidean distance, Mahalanobis distance, Correlation coefficient, Gower distance | Ensure normalization and categorical encoding before analysis; Mahalanobis distance offers strong outlier detection.|
+
+**Open Set Recognition (OSR) - a way to perform Anomaly Detection):**
+Classifying known classes while identifying and rejecting unknown classes during testing. OSR is a way to perform anomaly detection, as it involves recognizing when an instance does not belong to any of the learned categories. This recognition makes use of the decision boundaries of the model.
+
+**Example: **
+During operation, the system identifies various known objects such as cars, trucks, pedestrians, and bicycles. However, when it encounters an unrecognized object, such as a fallen tree, it must classify it as “unknown”. Open set recognition is critical because the system must be able to recognize that this object doesn’t fit into any of its known categories.
+
+**Novelty Detection (ND) - OOD input that is recognized as not malicious:**
+OOD input data can sometimes be recognized as not malicious and relevant or of interest. The system can decide how to respond: perhaps trigger another use case, or log its specifically, or let the model process the input if the expectation is that it can generalize to produce a sufficiently accurate result.
+
+**Example:** 
+The system has been trained on various car models. However, it has never seen a newly released model. When it encounters a new model on the road, novelty detection recognizes it as a new car type it hasn’t seen, but understands it’s still a car, a novel instance within a known category.
+
+**Risk-Reduction Guidance:**
+Detecting odd input is critical to maintaining model integrity, addressing potential concept drift, and preventing adversarial attacks that may take advantage of model behaviors on out of distribution data. 
+
+**Particularity:**
+Unlike detection mechanisms in conventional systems that rely on predefined rules or signatures, AI systems often rely on statistical or behavioral detection  methods such as presented here. In other words, AI systems typically rely more on pattern-based detection in contrast to  rule-based detection.
+
+**Limitations**
+Not all odd input is malicious, and not all malicious input is odd. There are examples of adversarial input specifically crafted to bypass detection of odd input. Detection mechanisms may not identify all malicious inputs, and some odd inputs may be benign or relevant.
+
+For evasion attacks, detecting odd input is often ineffective because adversarial samples are specifically designed to appear similar to normal input by definition. As a result, many evasion attacks will not be detected by deviation-based methods. Some forms of evasion, such as adversarial patches, may still produce detectable anomalies.
+
+**References:**
+- Hendrycks, Dan, and Kevin Gimpel. “A baseline for detecting misclassified and out-of-distribution examples in neural networks.” arXiv preprint arXiv:1610.02136 (2016). ICLR 2017.
+- Yang, Jingkang, et al. “Generalized out-of-distribution detection: A survey.” arXiv preprint arXiv:2110.11334 (2021).
+- Khosla, Prannay, et al. “Supervised contrastive learning.” Advances in neural information processing systems 33 (2020): 18661-18673.
+- Sehwag, Vikash, et al. “Analyzing the robustness of open-world machine learning.” Proceedings of the 12th ACM Workshop on Artificial Intelligence and Security. 2019.
+
+Useful standards include:
+- Not covered yet in ISO/IEC standards
+- ENISA Securing Machine Learning Algorithms Annex C: “Ensure that the model is sufficiently resilient to the environment in which it will operate.”
+
+## #UNWANTED INPUT SERIES HANDLING
+Category: runtime data science control for threats through use
+Permalink: TODO
+TODO: also link this from here to other parts
+
+**Description:**
+Unwanted input series handling: Implement tools to detect and respond to suspicious or unwanted patterns across a series of inputs, which may indicate abuse, reconnaissance, or multi-step attacks.
+This control focuses on behavior across multiple inputs, rather than adversarial properties of a single sample.
+
+**Objective:**
+Unwanted input series handling aims to identify suspicious behavior that emerges only when multiple inputs are analyzed together. Many attacks, such as model inversion, evasion search, or model theft through use, rely on iterative probing rather than a single malicious input. Detecting these patterns helps surface reconnaissance, abuse, and multi-step attacks that would otherwise appear benign at the individual input level.
+Secondary benefits include improved abuse monitoring, better attribution of malicious behavior, and stronger signals for investigation and response.
+
+**Applicability**
+This control is most applicable to systems that allow repeated interaction over time, such as APIs, chat-based models, or decision services exposed to external users. It is especially relevant when attackers can submit many inputs from the same actor, source, or session.
+Unwanted input series handling is less applicable in environments where inputs are isolated, rate-limited by design, or physically constrained. Its effectiveness depends on the ability to reliably group inputs by actor, source, or context.
+
+**Implementation Options:**
+The main concepts of detecting series of  unwanted inputs include:
+ ** - Statistical analysis of input series:** Adversarial attacks often follow certain patterns, which can be analysed by looking at input on a per-user basis. 
+      - Examples:
+         - A series of small deviations in the input space, indicating a possible attack such as a search to perform model inversion or an evasion attack. These attacks also typically have a series of inputs with a general increase of confidence value.          
+          - Inputs that appear systematic (very random or very uniform or covering the entire input space) may indicate a model theft through use attack.
+
+** - Behavior-based detection of odd input usage:** In addition to analysing individual inputs (see #ODD INPUT HANDLING), the system may analyse inference usage patterns. A significantly higher-than-normal number of inferences by a single actor over a defined period of time can be treated as odd behavior and used as a signal to decide on a response. This detection complements input-based methods and aligns with principles described in rate limiting (see #RATE LIMIT).
+
+** - Input optimization pattern detection:** Some attacks rely on repeatedly adjusting inputs to gradually achieve a successful outcome, such as finding an adversarial example, extracting sensitive behavior, or manipulating model responses. These attacks such as evasion attacks, model inversion attacks, sensitive training data output from instructions attack, often appear as a series of closely related inputs from the same actor, rather than a single malicious request. 
+
+One way to identify such behavior is to analyze input series for unusually high similarity across many inputs. Slightly altered inputs that remain close in the input space can indicate probing or optimization activity rather than normal usage. 
+
+Detection approaches may include:
+  - clustering input series to identify dense groups of highly similar inputs,
+  - measuring pairwise similarity across inputs within a time window, not limited to consecutive requests,
+  - analyzing the frequency and distribution of similar inputs to distinguish systematic probing from benign repetition.
+
+Considering similarity across a broader range of past inputs helps reduce evasion strategies where attackers alternate between probing inputs and unrelated requests to avoid detection.
+
+Signals from rate-based controls (see #RATE LIMIT), such as unusually frequent requests, can complement similarity analysis by providing additional context about suspicious optimization behavior.
+
+**Risk-Reduction Guidance**
+
+Analyzing input series can reveal attack strategies that rely on gradual exploration of the input space, confidence probing, or systematic coverage of model behavior. These patterns often indicate higher-effort attacks such as model extraction or inversion rather than accidental misuse.
+
+While this control improves visibility into complex attacks, its effectiveness depends on baseline modeling of normal behavior and careful tuning to avoid false positives, particularly for legitimate high-volume or exploratory use cases.
+
+**Particularity**
+
+Unlike traditional abuse detection, unwanted input series handling focuses on how models are learned and probed, rather than on explicit violations or malformed inputs. Many AI-specific attacks only become visible through temporal or statistical analysis of interactions with the model.
+
+**Limitations**
+
+Legitimate users may exhibit behavior similar to attack patterns, such as systematic testing or research-driven exploration. Attackers may distribute inputs across multiple identities or sources to reduce detectability. This control does not prevent attacks on its own and is most effective when combined with rate limiting, access control, and investigation workflows.
+
+**References**
+
+See also #ODD INPUT HANDLING for detecting abnormal input which can be an indication of adversarial input and #EVASION INPUT HANDLING for detecting single input evasion inputs. Useful standards include:
+- Not covered yet in ISO/IEC standards
 
 ## 2.1. 回避
 >Category: group of threats through use  
 >Permalink: https://owaspai.org/goto/evasion/
 
-Evasion: an attacker fools the model by crafting input to mislead it into performing its task incorrectly. 
+Evasion: an attacker fools the model by crafting input to mislead it into performing its task incorrectly. Evasion attacks force a model to make a wrong decision by feeding it carefully crafted inputs (adversarial examples). The model behaves correctly on normal data but fails on these malicious inputs.
+
+This is different from a Prompt injection(link) attack which inputs manipulative instructions (instead of data) to make the model perform its task incorrectly.
+
+In evasion attacks on AI systems, adversaries craft **adversarial examples** to mislead models.
+- **Untargeted attacks** aim for any incorrect output (e.g., misclassifying a cat as anything else).
+-** Targeted attacks** force a specific wrong output (e.g., misclassifying a panda as a gibbon).
+- **Digital attacks** directly alter data like pixels or text in software.
+- **Physical attacks** modify real-world objects, such as adding stickers to signs or wearing adversarial clothing, which cameras then capture as fooled inputs.
+- **Diffuse perturbations** apply tiny, imperceptible noise across the entire input (hard for humans to notice).
+- **Localized patches** concentrate visible but innocuous-looking changes in one area (e.g., a small sticker), making them practical for physical-world attacks. 
 
 Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
-A typical attacker goal with Evasion is to find out how to slightly change a certain input (say an image, or a text) to fool the model. The advantage of slight change is that it is harder to detect by humans or by an automated detection of unusual input, and it is typically easier to perform (e.g. slightly change an email message by adding a word so it still sends the same message, but it fools the model in for example deciding it is not a phishing message).  
+A typical attacker's goal with evasion is to find out how to slightly change a certain input (say an image, or a text) to fool the model. The advantage of slight change is that it is harder to detect by humans or by an automated detection of unusual input, and it is typically easier to perform (e.g. slightly change an email message by adding a word so it still sends the same message, but it fools the model in for example deciding it is not a phishing message).  
 Such small changes (call 'perturbations') lead to a large (and false) modification of its outputs. The modified inputs are often called *adversarial examples*.  
 
 Evasion attacks can be categorized into physical (e.g. changing the real world to influence for example a camera image) and digital (e.g. changing a digital image). Furthermore, they can be categorized in either untargeted (any wrong output) and targeted (a specific wrong output). Note that Evasion of a binary classifier (i.e. yes/no) belongs to both categories.
@@ -106,7 +571,7 @@ See [MITRE ATLAS - Evade ML model](https://atlas.mitre.org/techniques/AML.T0015)
 
 **Controls for evasion:**
 
-An Evasion attack typically consists of first searching for the inputs that mislead the model, and then applying it. That initial search can be very intensive, as it requires trying many variations of input. Therefore, limiting access to the model with for example Rate limiting mitigates the risk, but still leaves the possibility of using a so-called transfer attack (see [Closed box evasion](/goto/closedboxevasion/) to search for the inputs in another, similar, model.  
+An evasion attack typically consists of first searching for the inputs that mislead the model, and then applying it. That initial search can be very intensive, as it requires trying many variations of input. Therefore, limiting access to the model with for example rate limiting mitigates the risk, but still leaves the possibility of using a so-called transfer attack (see -link to transfer attacks to search for the inputs in another, similar model.  
 
 - See [General controls](/goto/generalcontrols/):
   - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/).
