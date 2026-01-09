@@ -72,7 +72,7 @@ This allows us to observe a chain of thoughts in which various models perform a 
 
   - #RATE LIMIT,
   - #MODEL ACCESS CONTROL,
-  - #ODD INPUT HANDLING,
+  - #ANOMALOUS INPUT HANDLING,
   - #OVERSIGHT (including automated and human)
   - #UNWANTED INPUT SERIES HANDLING,
   - #OBSCURE CONFIDENCE,
@@ -348,22 +348,22 @@ Category: runtime data science control for threats through use
 Permalink: https://owaspai.org/goto/anomalousinputhandling/ 
 
 **Description**  
-Detect odd input: implement tools to detect whether input is odd and potentially respond, where ‘odd’ means significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like.
+Anomalous input hanlding: implement tools to detect whether input is odd and potentially respond, where ‘odd’ means significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like.
 
 **Objective**  
 Address unusual input as it is indicative of malicious activity. Response can vary between ignore, issue an alert, stop inference, or even take further steps to control the threat (see #monitor use for more details).
 
 **Applicability**  
-Odd input is suspicious for every attack that happens through use, because attackers obviously behave differently than normal users do. However, detecting odd input has strong limitations (see below) and therefore its applicability depends on the successful detection rate on the one hand and on the other hand: 1) implementation effort, 2_ performance penalty, and 3_ the number of false positives which can hinder users, security operations or both. Only a representative test can provide the required insight. This can be achieved by testing the detection on normal use, and setting a threshold at a level where the false positive rate is still acceptable. 
+Anomalous input is suspicious for every attack that happens through use, because attackers obviously behave differently than normal users do. However, detecting anomalous input has strong limitations (see below) and therefore its applicability depends on the successful detection rate on the one hand and on the other hand: 1) implementation effort, 2_ performance penalty, and 3_ the number of false positives which can hinder users, security operations or both. Only a representative test can provide the required insight. This can be achieved by testing the detection on normal use, and setting a threshold at a level where the false positive rate is still acceptable. 
 
 **Implementation:**
 
 We use an example of a machine learning system designed for a self-driving car to illustrate these approaches.
 
-**Types of detecting odd input**  
+**Types of anomaly detection**  
 Out-of-Distribution Detection (OOD), Novelty Detection (ND), Outlier Detection (OD), Anomaly Detection (AD), and Open Set Recognition (OSR) are all related and sometimes overlapping tasks that deal with unexpected or unseen data. However, each of these tasks has its own specific focus and methodology. In practical applications, the techniques used to solve the problems may be similar or the same.
 
-**Out-of-Distribution Detection (OOD) - the broad category of detecting odd input:**  
+**Out-of-Distribution Detection (OOD) - the broad category of detecting anomalous input:**  
 Identifying data points that differ significantly from the distribution of the training data. OOD is a broader concept that can include aspects of novelty, anomaly, and outlier detection, depending on the context.
 
 **Example:**  
@@ -390,7 +390,7 @@ The system might flag a vehicle going the wrong way on a one-way street as an an
 
 An example of how to implement this is Activation Analysis: Examining the activations of different layers in a neural network can reveal unusual patterns (anomalies) when processing an adversarial input. These anomalies can be used as a signal to detect potential attacks.
 
-Another example of how to implement this is similarity-based analysis: Comparing incoming input against a ground truth data set, which typically corresponds to the training data and represents the normal input space. If the input is sufficiently dissimilar from this reference data, it can be treated as deviating from expected behavior and flagged as odd input. Various similarity metrics can be used for this comparison (see table below).
+Another example of how to implement this is similarity-based analysis: Comparing incoming input against a ground truth data set, which typically corresponds to the training data and represents the normal input space. If the input is sufficiently dissimilar from this reference data, it can be treated as deviating from expected behavior and flagged as anomalous input. Various similarity metrics can be used for this comparison (see table below).
 
 
 | Modality | Similarity Measures - Recommended | Notes or Tools |
@@ -413,15 +413,15 @@ OOD input data can sometimes be recognized as not malicious and relevant or of i
 The system has been trained on various car models. However, it has never seen a newly released model. When it encounters a new model on the road, novelty detection recognizes it as a new car type it hasn’t seen, but understands it’s still a car, a novel instance within a known category.
 
 **Risk-Reduction Guidance:**  
-Detecting odd input is critical to maintaining model integrity, addressing potential concept drift, and preventing adversarial attacks that may take advantage of model behaviors on out of distribution data. 
+Detecting anomalous input is critical to maintaining model integrity, addressing potential concept drift, and preventing adversarial attacks that may take advantage of model behaviors on out of distribution data. 
 
 **Particularity:**  
 Unlike detection mechanisms in conventional systems that rely on predefined rules or signatures, AI systems often rely on statistical or behavioral detection  methods such as presented here. In other words, AI systems typically rely more on pattern-based detection in contrast to  rule-based detection.
 
 **Limitations**  
-Not all odd input is malicious, and not all malicious input is odd. There are examples of adversarial input specifically crafted to bypass detection of odd input. Detection mechanisms may not identify all malicious inputs, and some odd inputs may be benign or relevant.
+Not all anomous input is malicious, and not all malicious input is odd. There are examples of adversarial input specifically crafted to bypass detection of anomalous input. Detection mechanisms may not identify all malicious inputs, and some anomlous inputs may be benign or relevant.
 
-For evasion attacks, detecting odd input is often ineffective because adversarial samples are specifically designed to appear similar to normal input by definition. As a result, many evasion attacks will not be detected by deviation-based methods. Some forms of evasion, such as adversarial patches, may still produce detectable anomalies.
+For evasion attacks, detecting anomalous input is often ineffective because adversarial samples are specifically designed to appear similar to normal input by definition. As a result, many evasion attacks will not be detected by deviation-based methods. Some forms of evasion, such as adversarial patches, may still produce detectable anomalies.
 
 **References:**  
 - Hendrycks, Dan, and Kevin Gimpel. “A baseline for detecting misclassified and out-of-distribution examples in neural networks.” arXiv preprint arXiv:1610.02136 (2016). ICLR 2017.
@@ -457,7 +457,7 @@ The main concepts of detecting series of  unwanted inputs include:
          - A series of small deviations in the input space, indicating a possible attack such as a search to perform model inversion or an evasion attack. These attacks also typically have a series of inputs with a general increase of confidence value.          
           - Inputs that appear systematic (very random or very uniform or covering the entire input space) may indicate a model theft through use attack.
 
-- **Behavior-based detection of odd input usage:** In addition to analysing individual inputs (see #ODD INPUT HANDLING), the system may analyse inference usage patterns. A significantly higher-than-normal number of inferences by a single actor over a defined period of time can be treated as odd behavior and used as a signal to decide on a response. This detection complements input-based methods and aligns with principles described in rate limiting (see #RATE LIMIT).
+- **Behavior-based detection of anomalous input usage:** In addition to analysing individual inputs (see [#ANOMALOUS INPUT HANDLING](/goto/anomalousinputhandling/), the system may analyse inference usage patterns. A significantly higher-than-normal number of inferences by a single actor over a defined period of time can be treated as anomalous behavior and used as a signal to decide on a response. This detection complements input-based methods and aligns with principles described in rate limiting (see #RATE LIMIT).
 
 - **Input optimization pattern detection:** Some attacks rely on repeatedly adjusting inputs to gradually achieve a successful outcome, such as finding an adversarial example, extracting sensitive behavior, or manipulating model responses. These attacks such as evasion attacks, model inversion attacks, sensitive training data output from instructions attack, often appear as a series of closely related inputs from the same actor, rather than a single malicious request. 
 
@@ -488,7 +488,7 @@ Legitimate users may exhibit behavior similar to attack patterns, such as system
 
 **References**
 
-See also #ODD INPUT HANDLING for detecting abnormal input which can be an indication of adversarial input and #EVASION INPUT HANDLING for detecting single input evasion inputs. Useful standards include:
+See also [#ANOMALOUS INPUT HANDLING](/goto/anomalous input handling/) for detecting abnormal input which can be an indication of adversarial input and #EVASION INPUT HANDLING for detecting single input evasion inputs. Useful standards include:
 - Not covered yet in ISO/IEC standards
 
 ## 2.1. 回避
@@ -538,70 +538,14 @@ An evasion attack typically consists of first searching for the inputs that misl
   - [#MONITOR USE](/goto/monitoruse/) to detect suspicious input or output
   - [#RATE LIMIT](/goto/ratelimit/) to limit the attacker trying numerous attack variants in a short time
   - [#MODEL ACCESS CONTROL](/goto/modelaccesscontrol/) to reduce the number of potential attackers to a minimum
+  - [#ANOMALOUS INPUT HANDLING](/goto/anomalousinputhandling/) as unusual input can be suspicious for evasion 
 - Specifically for evasion:
-  - [#DETECT ODD INPUT](/goto/detectoddinput/) as unusual input can be suspicious for evasion - discussed below
-  - [#DETECT ADVERSARIAL INPUT](/goto/detectadversarialinput/) to find typical attack forms or multiple tries in a row - discussed below
+    - [#DETECT ADVERSARIAL INPUT](/goto/detectadversarialinput/) to find typical attack forms or multiple tries in a row - discussed below
   - [#EVASION ROBUST MODEL](/goto/evasionrobustmodel/): choose an evasion-robust model design, configuration and/or training approach - discussed below
   - [#TRAIN ADVERSARIAL](/goto/trainadversarial/): correcting the decision boundary of the model by injecting adversarial samples with correct output in the training set - discussed below
   - [#INPUT DISTORTION](/goto/inputdistortion/): disturbing attempts to present precisely crafted input - discussed below
   - [#ADVERSARIAL ROBUST DESTILLATION](/goto/adversarialrobustdestillation/): in essence trying to smooth decision boundaries - discussed below
 
-#### #DETECT ODD INPUT 
->Category: runtime datasciuence control for threats through use  
->Permalink: https://owaspai.org/goto/detectoddinput/
-
-Detect odd input: implement tools to detect whether input is odd: significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like.
-
-Purpose: Odd input can result in unwanted model behaviour because the model by definition has not seen this data before and will likely produce false results, whether the input is malicious or not. When detected, the input can be logged for analysis and optionally discarded. It is important to note that not all odd input will be malicious and not all malicious input will be odd. There are examples of adversarial input specifically crafted to bypass detection of odd input. Nevertheless, detecting odd input is critical to maintaining model integrity, addressing potential concept drift, and preventing adversarial attacks that may take advantage of model behaviors on out of distribution data.
-
-**Types of detecting odd input**  
-Out-of-Distribution Detection (OOD), Novelty Detection (ND), Outlier Detection (OD), Anomaly Detection (AD), and Open Set Recognition (OSR) are all related and sometimes overlapping tasks that deal with unexpected or unseen data. However, each of these tasks has its own specific focus and methodology. In practical applications, the techniques used to solve the problems may be similar or the same. Which task or problem should be addressed and which solution is most appropriate also depends on the definition of in-distribution and out-of-distribution. We use an example of a machine learning system designed for a self-driving car to illustrate all these concepts.
-
-**Out-of-Distribution Detection (OOD)** - the broad category of detecting odd input:  
-Identifying data points that differ significantly from the distribution of the training data. OOD is a broader concept that can include aspects of novelty, anomaly, and outlier detection, depending on the context.
-
-Example: The system is trained on vehicles, pedestrians, and common animals like dogs and cats. One day, however, it encounters a horse on the street. The system needs to recognize that the horse is an out-of-distribution object.
-
-Methods for detecting out-of-distribution (OOD) inputs incorporate approaches from outlier detection, anomaly detection, novelty detection, and open set recognition, using techniques like similarity measures between training and test data, model introspection for activated neurons, and OOD sample generation and retraining. Approaches such as thresholding the output confidence vector help classify inputs as in or out-of-distribution, assuming higher confidence for in-distribution examples. Techniques like supervised contrastive learning, where a deep neural network learns to group similar classes together while separating different ones, and various clustering methods, also enhance the ability to distinguish between in-distribution and OOD inputs. For more details, one can refer to the survey by [Yang et al.](https://arxiv.org/pdf/2110.11334.pdf) and other resources on the learnability of OOD: [here](https://arxiv.org/abs/2210.14707).
-
-**Outlier Detection (OD)** - a form of OOD:  
-Identifying data points that are significantly different from the majority of the data. Outliers can be a form of anomalies or novel instances, but not all outliers are necessarily out-of-distribution.
-
-Example: Suppose the system is trained on cars and trucks moving at typical city speeds. One day, it detects a car moving significantly faster than all the others. This car is an outlier in the context of normal traffic behavior.
-
-**Anomaly Detection (AD)** - a form of OOD:  
-Identifying abnormal or irregular instances that raise suspicions by differing significantly from the majority of the data. Anomalies can be outliers, and they might also be out-of-distribution, but the key aspect is their significance in terms of indicating a problem or rare event.
-
-Example: The system might flag a vehicle going the wrong way on a one-way street as an anomaly. It's not just an outlier; it's an anomaly that indicates a potentially dangerous situation.
-
-An example of how to implement this is _activation Analysis_: Examining the activations of different layers in a neural network can reveal unusual patterns (anomalies) when processing an adversarial input. These anomalies can be used as a signal to detect potential attacks.
-
-**Open Set Recognition (OSR)** - a way to perform Anomaly Detection:  
-Classifying known classes while identifying and rejecting unknown classes during testing. OSR is a way to perform anomaly detection, as it involves recognizing when an instance does not belong to any of the learned categories. This recognition makes use of the decision boundaries of the model.
-
-Example: During operation, the system identifies various known objects such as cars, trucks, pedestrians, and bicycles. However, when it encounters an unrecognized object, such as a fallen tree, it must classify it as "unknown". Open set recognition is critical because the system must be able to recognize that this object doesn't fit into any of its known categories.
-
-**Novelty Detection (ND)** - OOD input that is recognized as not malicious:  
-OOD input data can sometimes be recognized as not malicious and relevant or of interest. The system can decide how to respond: perhaps trigger another use case, or log it specifically, or let the model process the input if the expectation is that it can generalize to produce a sufficiently accurate result.
-
-Example: The system has been trained on various car models. However, it has never seen a newly released model. When it encounters a new model on the road, novelty detection recognizes it as a new car type it hasn't seen, but understands it's still a car, a novel instance within a known category.
-
-
-Useful standards include:
-
-  - Not covered yet in ISO/IEC standards
-
-  - ENISA Securing Machine Learning Algorithms Annex C: "Ensure that the model is sufficiently resilient to the environment in which it will operate."
-
-References:
-
-  - Hendrycks, Dan, and Kevin Gimpel. "A baseline for detecting misclassified and out-of-distribution examples in neural networks." arXiv preprint arXiv:1610.02136 (2016). ICLR 2017.
-    
-  - Yang, Jingkang, et al. "Generalized out-of-distribution detection: A survey." arXiv preprint arXiv:2110.11334 (2021).
-    
-  - Khosla, Prannay, et al. "Supervised contrastive learning." Advances in neural information processing systems 33 (2020): 18661-18673.
-
-  - Sehwag, Vikash, et al. "Analyzing the robustness of open-world machine learning." Proceedings of the 12th ACM Workshop on Artificial Intelligence and Security. 2019.
 
 ## #EVASION INPUT HANDLING
 Category: runtime data science control for threats through use
@@ -665,7 +609,9 @@ Adversarial examples may be crafted to evade both the primary model and dedicate
 - Hendrycks, Dan, and Kevin Gimpel. “Early methods for detecting adversarial images.” arXiv preprint arXiv:1608.00530 (2016).
 - Feinman, Reuben, et al. “Detecting adversarial samples from artifacts.” arXiv preprint arXiv:1703.00410 (2017).
 
-See also [ODD INPUT HANDLING](https://owaspai.org/goto/oddinputhandling/) for detecting abnormal input which can be an indication of adversarial input. Useful standards include:
+See also [#ANOMALOUS INPUT HANDLING](/goto/anomalousinputhandling/) for detecting abnormal input which can be an indication of adversarial input.
+
+Useful standards include:
 - Not covered yet in ISO/IEC standards
 - ENISA Securing Machine Learning Algorithms Annex C: “Implement tools to detect if a data point is an adversarial example or not”
 
@@ -1193,13 +1139,67 @@ The disclosure is caused by an unintentional fault of including this data, and e
 -Specifically for Sensitive data output from model:
   - [#FILTER SENSITIVE MODEL OUTPUT](/goto/filtersensitivemodeloutput/) - discussed below
 
-#### #FILTER SENSITIVE MODEL OUTPUT 
+#### #SENSITIVE OUTPUT HANDLING
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/filtersensitivemodeloutput/
 
-Filter sensitive model output: actively censor sensitive data by detecting it when possible (e.g. phone number).
+**Description**
 
-A variation of this filtering is providing a GenAI model with instructions (e.g. in a _system prompt_) not to disclose certain data, which is susceptible to [Direct prompt injection](/goto/directpromptinjection/) attacks.
+Handle sensitive model output by actively detecting and blocking, masking, or stopping the release of data that should not be disclosed. This includes exposure-restricted information such as personal data (e.g. name, phone number), confidential identifiers, or other content that the model is not allowed to reveal.
+
+**Objective**
+
+The objective of handling sensitive model output is to prevent unintended disclosure of protected or harmful information produced by the model. Even when access controls and prompt-level instructions are in place, models may still generate sensitive data due to manipulation, hallucination, or misuse. Filtering at the Output-level acts as a final safeguard before data is exposed to users or downstream systems.
+
+**Applicability**
+
+This control applies to AI systems that generate user-visible output or trigger downstream actions based on model output.
+It is especially relevant when models may have been trained on, fine-tuned with, or have access to sensitive data.
+
+Sensitive output handling is required whenever:
+
+- exposure-restricted data must not leave the system,
+- outputs can be influenced by untrusted inputs, or
+- misuse or manipulation of model behaviour is a concern.
+
+If implementation is more appropriate for the deployer (for example, output filtering integrated into an application layer), the provider can clearly communicate this expectation to the deployer.
+
+**Implementation Options**
+
+  - **Detect sensitive data in output:** Model output can be analysed to identify exposure-restricted information such as names, phone numbers, identifiers, or other sensitive content. @@add what you do with it.
+  - **Apply enforcement at output time:** When sensitive content is detected, disclosure can be prevented through filtering, masking, or stopping the output before it is exposed.
+  - **Detect recitation of training data:** Where feasible, recitation checks can be applied to identify whether long strings or sequences in model output appear in an indexed set of training data, including pretraining and fine-tuning datasets. This can help identify unintended memorization and potential data leakage.
+
+@@Because natural language allows for many variations, synonyms, and indirect phrasing, semantic interpretation using language models can complement rules-based approaches and improve robustness. When such extraction intent is suspected, the signal can be used to trigger additional safeguards, such as stricter output filtering, logging for investigation, or increased scrutiny of subsequent interactions.
+
+**Risk-Reduction Guidance**
+
+Filtering sensitive output directly reduces the risk of data exposure by stopping disclosure at the last possible stage. It is the only way to prevent sensitive data from being exposed. This is particularly important because output-based attacks may succeed even when prompt-level controls fail. 
+
+Detection effectiveness relies heavily on the accuracy of classifiers, rules, or pattern-matching techniques, as these determine the system's ability to correctly identify threats or anomalies. Inaccuracies can lead to false positives, which may disrupt operations or degrade system functionality, and false negatives, which pose serious risks such as data leakage or undetected breaches. This is particularly critical in safety-sensitive environments, where the consequences of misclassification can be severe. Therefore, output filtering must be rigorously tested and carefully tuned to ensure that system behavior remains aligned with intended use after safeguards are introduced. 
+
+Output filtering and detection also support human oversight by providing signals, alerts, and evidence that enable review and intervention. 
+
+Recitation checks are particularly useful for detecting unintended disclosure of memorized training data. However, they are limited to data that is indexed and may not detect shorter or paraphrased disclosures.
+
+**Particularity**
+
+In AI systems, sensitive information can be generated dynamically rather than retrieved from a database.
+Unlike traditional systems where access controls prevent retrieval, language models may construct sensitive data in response to prompts. Output filtering is therefore a uniquely important control for AI systems, acting as a final enforcement layer independent of prompt instructions.
+
+Providing models with instructions not to disclose certain data (for example via system prompts) is not sufficient on its own, as such instructions can be bypassed through [Direct prompt injection](https://owaspai.org/goto/directpromptinjection/) attacks.
+
+**Limitations**
+
+- Filtering relies on detection accuracy and may miss sensitive data that does not match known patterns.
+- False positives can cause serious system malfunction or prevent legitimate output.
+- Some sensitive disclosures may be subtle or context-dependent and difficult to detect automatically.
+- This control does not prevent the model from attempting to generate sensitive data; it only prevents disclosure.
+- Attackers may attempt to craft function-call outputs that look normal or fall outside known suspect lists, reducing detection effectiveness.
+
+This control should be combined with #MODEL ACCESS CONTROL, #RATE LIMIT, prompt hardening, and #MONITOR USE.
+
+**References**
 
 Useful standards include:
 
@@ -1221,7 +1221,7 @@ References:
 
 - [Article on membership inference](https://medium.com/disaitek/demystifying-the-membership-inference-attack-e33e510a0c39)
 
-The more details a model is able to learn, the more it can store information on individual training set entries. If this happens more than necessary, this is called _overfitting_, which can be prevented by configuring smaller models.
+The more details a model is able to learn, the more it can store information on individual training set entries. If this happens more than necessary, this is called overfitting. Overfitting increases the risk of model inversion and membership inference by making it easier to infer or reconstruct characteristics of specific training records.  Model design and training choices therefore influence the feasibility of these attacks. Models with excessive capacity or parameter counts are generally more capable of memorizing fine-grained details of the training data therefore smaller models are preferred to prevent overfitting. Additionally choosing model types such linear models or Naive Bayes Classifiers over neural networks and decision trees reduces the likelihood of overfitting individual samples. Using regularization during training can also help.
 
 **Controls for Model inversion and Membership inference:**
 
@@ -1239,9 +1239,60 @@ The more details a model is able to learn, the more it can store information on 
 >Category: runtime data science control for threats through use  
 >Permalink: https://owaspai.org/goto/obscureconfidence/
 
-Obscure confidence: exclude indications of confidence in the output, or round confidence so it cannot be used for optimization.
+**Description:**
 
-Useful standards include:
+Limit or hide confidence related information in model outputs so it cannot be used for optimization. Instead of exposing precise confidence scores or probabilities, the system reduces their precision or removes them entirely, while still supporting the intended user task.
+
+**Objective:**
+
+The goal of obscuring confidence is to reduce the usefulness of model outputs for attackers who rely on confidence information to probe, analyze, or copy the model. Detailed confidence values can facilitate various attacks including model inversion, membership inference, evasion and model theft through use, by aiding in adversarial sample construction. Reducing this information makes these attacks harder, slower, and less reliable.
+
+**Applicability:**
+
+This control applies to AI systems where outputs include confidence scores, probabilities, likelihoods, or similar certainty indicators. Whether it is required should be determined through risk management, based on the likelihood of: Evasion attacks, Model Inversion or Membership inference attacks and Model theft by use. 
+
+**Exceptions may apply** when confidence information is essential for the system’s intended use (for example, in medical decision support or safety-critical decision-making confidence level is an important piece of information for users). In such cases, confidence information should still be minimized to the least amount necessary by incorporating techniques like rounding the number, adding noise.
+
+If the deployer is better positioned than the provider to implement this control, the provider can clearly communicate this expectation to the deployer.
+
+**Implementation Options:**
+
+  a. Reduce confidence precision: Confidence values can be presented with the minimum level of detail needed to support the intended task. This may involve rounding numbers, using coarse ranges, or removing confidence   information entirely.
+  b. Add uncertainty where appropriate: When allowed, noise may be added to confidence values to reduce precision while preserving overall usefulness.
+  c. Avoid unnecessary exposure: Do not expose confidence information by default if it is not required for user decision-making.
+  d. Assess impact on accuracy: Any modification of confidence or output should be evaluated to ensure it does not unacceptably degrade the system’s intended function or model’s accuracy.
+  e. Confidence-based anomaly detection
+  In some attack scenarios, unusually high confidence in model output can itself be a signal of misuse. For example, membership inference attacks rely on probing inputs associated with known entities and observing whether the model responds with exceptionally high confidence. While high confidence is common in normal operation and should not automatically block output, it can be treated as a weak indicator and flagged for follow-up analysis.
+  
+  As a secondary response, systems may slow down interactions associated with repeated high-confidence probing, for example by applying tighter rate limits at the session or actor level, to reduce the effectiveness of iterative attacks without disrupting legitimate use.
+
+**Risk-Reduction Guidance**
+
+Obscuring confidence reduces the amount of information attackers can extract from model outputs.
+This makes it harder to:
+
+  - estimate decision boundaries,
+  - infer training data membership,
+  - reverse-engineer the model, or
+  - construct adversarial inputs efficiently.
+
+However, attackers may still approximate confidence indirectly by submitting similar inputs and observing whether outputs change.
+Because effectiveness depends heavily on the model architecture, training method, and data distribution, the actual risk reduction should be validated through testing and evaluation, rather than assumed. 
+
+**Particularity** 
+
+In AI systems, confidence values are not just user-facing explanations. They can act as side-channel signals that leak sensitive information about the model. Unlike traditional software outputs, probabilistic confidence can reveal internal model behavior and training characteristics. Obscuring confidence is therefore a mitigation specifically relevant to machine learning systems.
+
+**Limitations**
+
+  - Attackers may still estimate confidence by probing the model with small input variations.
+  - Obscuring confidence does not fully prevent attacks such as label-only membership inference.
+  - Adding noise or reducing output detail can reduce usability or accuracy if not carefully balanced.
+  - This control can resemble gradient masking for zero-knowledge evasion attacks, which is known to be a fragile defense if used alone.
+
+For best results, combine this control with rate limiting, access control, monitoring, and output evaluation.
+
+**References:**
 
   - Not covered yet in ISO/IEC standards
 
@@ -1274,11 +1325,25 @@ This attack is known as model stealing attack or model extraction attack or mode
   - [#MONITOR USE](/goto/monitoruse/) to detect suspicious input 
   - [#RATE LIMIT](/goto/ratelimit/) to limit the attacker presenting many inputs in a short time
   - [#MODEL ACCESS CONTROL](/goto/modelaccesscontrol/) to reduce the number of potential attackers to a minimum
+  - #MODEL WATERMARKING to enable post-theft ownership verification when residual risk remains.
 
 References
 
 - [Article on model theft through use](https://www.mlsecurity.ai/post/what-is-model-stealing-and-why-it-matters)
 - ['Thieves on Sesame street' on model theft of large language models](https://arxiv.org/abs/1910.12366) (GenAI)
+
+## 2.4.1 #MODEL WATERMARKING
+Category: threat through use
+Permalink: TODO
+
+Model Watermarking: embed a hidden, secret marker into a trained model so that, if a suspected copy appears elsewhere, the original owner can verify that the model was derived from their system. This is used to demonstrate ownership after a model has been stolen or replicated, rather than to prevent the theft itself.
+
+Watermarking techniques should be designed to remain detectable even if the model is modified (for example through fine-tuning or pruning) and to avoid ambiguity where multiple parties could plausibly claim ownership of the same model.
+
+In addition to its technical role, watermarking supports intellectual property protection by enabling post-hoc attribution of stolen or misused models, which can be critical for legal claims, contractual enforcement, and regulatory investigations. As part of a layered security strategy, watermarking complements preventive controls by providing accountability and ownership assurance when other defenses fail.
+
+References
+[USENIX: Entangled Watermarks as a Defense against Model Extraction](https://www.usenix.org/conference/usenixsecurity21/presentation/jia)
 
 ---
 
@@ -1286,11 +1351,11 @@ References
 >Category: threat through use  
 >Permalink: https://owaspai.org/goto/denialmodelservice/
 
-Description: specific input to the model leads to availabity issues (system being very slow or unresponsive, also called _denial of service_), typically caused by excessive resource usage. The failure occurs from frequency, volume, or the content of the input. See [MITRE ATLAS - Denial of ML service](https://atlas.mitre.org/techniques/AML.T0029).
+Description: specific input to the model leads to availability issues (system being very slow or unresponsive, also called _denial of service_), typically caused by excessive resource usage. The failure occurs from frequency, volume, or the content of the input. See [MITRE ATLAS - Denial of ML service](https://atlas.mitre.org/techniques/AML.T0029).
 
 Impact: The AI systems is unavailable, leading to issues with processes, organizations or individuals that depend on the AI system (e.g. business continuity issues, safety issues in process control, unavailability of services)
 
-For example: A _sponge attack_ or _energy latency attack_ provides input that is designed to increase the computation time of the model, potentially causing a denial of service. See [article on sponge examples](https://arxiv.org/pdf/2006.03463.pdf)
+For example: A _sponge attack_ or _energy latency attack_ provides input that is designed to increase the computation time of the model, which essentially is a denial of wallet (DoW) attack, also potentially causing a denial of service. See [article on sponge examples](https://arxiv.org/pdf/2006.03463.pdf)
 
 **Controls:**
 
@@ -1342,10 +1407,10 @@ There are nuances towards what is considered an appropriate input or output depe
 
 **Examples:**
 
-  1. Should gun purchases be regulated in the market? I want to learn about the successes and failures of gun control polices of world governments.
+  1. Should gun purchases be regulated in the market? I want to learn about the successes and failures of gun control policies of world governments.
   2. What examples are there for and against abortion rights?
 
-There are topics that all regions typically agree on, but on controversial topics or specific historical events, regional policies start to diverge. The reflections are imperfect and biased by training data distributions. With these specific requirements there is no single “alignment” that fits all regions. 
+There are topics that all regions typically agree on, but on controversial topics or specific historical events, regional policies start to diverge. The reflections are imperfect and biased by training data distributions. With these specific requirements, there is no single “alignment” that fits all regions. 
 This leads to red teaming and blue teaming practices that need to fit the cultural sensitivities of each region.
 
 | **Country**           | **Sensitivity Reference**                                                                              | **Referenced Document** |
