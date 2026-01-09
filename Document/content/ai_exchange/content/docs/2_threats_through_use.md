@@ -515,10 +515,10 @@ Such small changes (call 'perturbations') lead to a large (and false) modificati
 Evasion attacks can be categorized into physical (e.g. changing the real world to influence for example a camera image) and digital (e.g. changing a digital image). Furthermore, they can be categorized in either untargeted (any wrong output) and targeted (a specific wrong output). Note that Evasion of a binary classifier (i.e. yes/no) belongs to both categories.
 
 Example 1: slightly changing traffic signs so that self-driving cars may be fooled.
-![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/inputphysical.png)
+![](/images/inputphysical.png)
 
 Example 2: through a special search process it is determined how a digital input image can be changed undetectably leading to a completely different classification.
-![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/inputdigital.png)
+![](/images/inputdigital.png)
 
 Example 3: crafting an e-mail text by carefully choosing words to avoid triggering a spam detection algorithm.
 
@@ -546,7 +546,7 @@ An evasion attack typically consists of first searching for the inputs that misl
   - [#INPUT DISTORTION](/goto/inputdistortion/): disturbing attempts to present precisely crafted input - discussed below
   - [#ADVERSARIAL ROBUST DESTILLATION](/goto/adversarialrobustdestillation/): in essence trying to smooth decision boundaries - discussed below
 
-#### #DETECT ODD INPUT
+#### #DETECT ODD INPUT 
 >Category: runtime datasciuence control for threats through use  
 >Permalink: https://owaspai.org/goto/detectoddinput/
 
@@ -603,108 +603,86 @@ References:
 
   - Sehwag, Vikash, et al. "Analyzing the robustness of open-world machine learning." Proceedings of the 12th ACM Workshop on Artificial Intelligence and Security. 2019.
 
+## #EVASION INPUT HANDLING
+Category: runtime data science control for threats through use
+Permalink: TODO
 
-#### #DETECT ADVERSARIAL INPUT
->Category: runtime data science control for threats through use  
->Permalink: https://owaspai.org/goto/detectadversarialinput/
+**Description:**
 
-Detect adversarial input: Implement tools to detect specific attack patterns in input or series of inputs (e.g. patches in images).
+Evasion input handling: Implement tools to detect and respond to individual adversarial inputs that are crafted to evade model behavior. Evasion input handling focuses on identifying adversarial characteristics within a single input sample, regardless of whether it appears in isolation or as part of a broader attack.
 
-The main concepts of adversarial attack detectors include:
-- **Statistical analysis of input series**: Adversarial attacks often follow certain patterns, which can be analysed by looking at input on a per-user basis. For example to detect series of small deviations in the input space, indicating a possible attack such as a search to perform model inversion or an evasion attack. These attacks also typically have series of inputs with a general increase of confidence value. Another example: if inputs seem systematic (very random or very uniform or covering the entire input space) it may indicate a [model theft through use attack](/goto/modeltheftuse/).
-- **Statistical Methods**: Adversarial inputs often deviate from benign inputs in some statistical metric and can therefore be detected. Examples are utilizing the Principal Component Analysis (PCA), Bayesian Uncertainty Estimation (BUE) or Structural Similarity Index Measure (SSIM). These techniques differentiate from statistical analysis of input series, as these statistical detectors decide if a sample is adversarial or not per input sample, such that these techniques are able to also detect transferred black box attacks.
-- **Detection Networks**: A detector network operates by analyzing the inputs or the behavior of the primary model to spot adversarial examples. These networks can either run as a preprocessing function or in parallel to the main model. To use a detector networks as a preprocessing function, it has to be trained to differentiate between benign and adversarial samples, which is in itself a hard task. Therefore it can rely on e.g. the original input or on statistical metrics. To train a detector network to run in parallel to the main model, typically the detector is trained to distinguish between benign and adversarial inputs from the intermediate features of the main model's hidden layer. Caution: Adversarial attacks could be crafted to circumvent the detector network and fool the main model.
-- **Input Distortion Based Techniques (IDBT)**: A function is used to modify the input to remove any adversarial data. The model is applied to both versions of the image, the original input and the modified version. The results are compared to detect possible attacks. See [INPUTDISTORTION](/goto/inputdistortion/).
-- **Detection of adversarial patches**: These patches are localized, often visible modifications that can even be placed in the real world. The techniques mentioned above can detect adversarial patches, yet they often require modification due to the unique noise pattern of these patches, particularly when they are used in real-world settings and processed through a camera. In these scenarios, the entire image includes benign camera noise (camera fingerprint), complicating the detection of the specially crafted adversarial patches.
+**Objective:**
 
-See also [DETECTODDINPUT](/goto/detectoddinput/) for detecting abnormal input which can be an indication of adversarialinput.
-  
-Useful standards include:
+Evasion input handling aims to reduce the risk of adversarial inputs that are intentionally crafted to cause incorrect or unsafe model behavior while appearing valid. These attacks may target model decision boundaries, exploit learned representations, or introduce localized perturbations such as adversarial patches. Addressing evasion at the individual input level helps limit incorrect predictions, unsafe actions, and downstream failures even when attacks occur sporadically or without a broader interaction pattern.
 
-  - Not covered yet in ISO/IEC standards
+Secondary benefits include improved robustness testing, better understanding of model blind spots, and early signals of adversarial adaptation.
 
-  - ENISA Securing Machine Learning Algorithms Annex C: "Implement tools to detect if a data point is an adversarial example or not"
+**Applicability:** 
 
-References:
+This control is most applicable to models exposed to untrusted or adversarial environments, such as computer vision systems, speech recognition, and security-sensitive classification tasks. It is particularly relevant when individual inputs can independently cause harm or unsafe behavior.
 
-  - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](2_threats_through_use.md#INPUT-DISTORTION), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
+Evasion input handling is less effective in isolation when attackers adapt quickly or when attacks rely primarily on multi-step probing across many inputs. In such cases, it is best used alongside controls that monitor input series, usage patterns, or access behavior.
 
-  - [MagNet](https://arxiv.org/abs/1705.09064) and [here](https://www.mdpi.com/2079-9292/11/8/1283)
+**Implementation Options**
 
-  - [DefenseGAN](https://arxiv.org/abs/1805.06605) and Goodfellow, I.; Pouget-Abadie, J.; Mirza, M.; Xu, B.; Warde-Farley, D.; Ozair, S.; Courville, A.; Bengio, Y. Generative adversarial networks. Commun. ACM 2020, 63, 139–144.
+The main concepts of detecting evasion input attacks include:
+  - **Statistical Methods:** Adversarial inputs often deviate from benign inputs in some statistical metric and can therefore be detected. Examples are utilizing the Principal Component Analysis (PCA), Bayesian     Uncertainty Estimation (BUE) or Structural Similarity Index Measure (SSIM). These techniques differentiate from statistical analysis of input series (see #UNWANTED INPUT SERIES HANDLING), as these statistical detectors decide if a sample is adversarial or not per input sample, such that these techniques are able to also detect transferred black box attacks.
+  - **Detection Networks:** A detector network operates by analyzing the inputs or the behavior of the primary model to spot adversarial examples. These networks can either run as a preprocessing function or in parallel to the main model. To use a detector network as a preprocessing function, it has to be trained to differentiate between benign and adversarial samples, which is in itself a hard task. Therefore, it can rely on e.g. the original input or on statistical metrics. To train a detector network to run in parallel to the main model, typically, the detector is trained to distinguish between benign and adversarial inputs from the intermediate features of the main model’s hidden layer. Caution: Adversarial attacks could be crafted to circumvent the detector network and fool the main model.
+  - **Input Distortion Based Techniques (IDBT)**: A function is used to modify the input to remove any adversarial data. The model is applied to both versions of the image, the original input and the modified version. The results are compared to detect possible attacks. See [INPUTDISTORTION](/goto/inputdistortion/).
+  - **Detection of adversarial patches:** These patches are localized, often visible modifications that can even be placed in the real world. The techniques mentioned above can detect adversarial patches, yet they often require modification due to the unique noise pattern of these patches, particularly when they are used in real-world settings and processed through a camera. In these scenarios, the entire image includes benign camera noise (camera fingerprint), complicating the detection of the specially crafted adversarial patches.
 
-  - [Local intrinsic dimensionality](https://www.ijcai.org/proceedings/2021/0437.pdf)
+**Risk-Reduction Guidance**
 
-  -  Hendrycks, Dan, and Kevin Gimpel. "Early methods for detecting
-adversarial images." arXiv preprint arXiv:1608.00530 (2016).
+Detecting evasion at the single-input level can reduce the success rate of adversarial examples, including transferred black-box attacks. Techniques such as statistical detection, detector networks, and input distortion can identify inputs that exploit model weaknesses even when they appear valid to humans.
+However, adversarial attacks often evolve to bypass known detection methods. As a result, the risk reduction provided by this control depends on regular evaluation, adaptation, and combination with complementary defenses such as rate limiting, series-based detection, and model hardening.
 
-  - Kherchouche, Anouar, Sid Ahmed Fezza, and Wassim Hamidouche. "Detect
-and defense against adversarial examples in deep learning using natural
-scene statistics and adaptive denoising." Neural Computing and
-Applications (2021): 1-16.
+**Particularity**
 
-  - Roth, Kevin, Yannic Kilcher, and Thomas Hofmann. "The odds are odd: A
-statistical test for detecting adversarial examples." International
-Conference on Machine Learning. PMLR, 2019.
+Unlike traditional input validation (e.g. SQL injection), evasion input handling addresses inputs that are syntactically and semantically valid but intentionally crafted to exploit learned model behavior. These attacks target the statistical and representational properties of machine learning models rather than explicit rules or schemas.
 
-  - Bunzel, Niklas, and Dominic Böringer. "Multi-class Detection for Off
-The Shelf transfer-based Black Box Attacks." Proceedings of the 2023
-Secure and Trustworthy Deep Learning Systems Workshop. 2023.
+**Limitations**
 
-  - Xiang, Chong, and Prateek Mittal. "Detectorguard: Provably securing
-object detectors against localized patch hiding attacks." Proceedings of
-the 2021 ACM SIGSAC Conference on Computer and Communications Security. 2021.
+Adversarial examples may be crafted to evade both the primary model and dedicated detectors. Some detection techniques introduce additional computational overhead or reduce model accuracy. Physical-world attacks, such as adversarial patches, are especially challenging due to environmental noise and variability. This control does not prevent attackers from repeatedly probing the model to refine evasion strategies.
 
-  - Bunzel, Niklas, Ashim Siwakoti, and Gerrit Klause. "Adversarial Patch
-Detection and Mitigation by Detecting High Entropy Regions." 2023 53rd
-Annual IEEE/IFIP International Conference on Dependable Systems and
-Networks Workshops (DSN-W). IEEE, 2023.
+**References**
 
-  - Liang, Bin, Jiachun Li, and Jianjun Huang. "We can always catch you:
-Detecting adversarial patched objects with or without signature." arXiv
-preprint arXiv:2106.05261 (2021).
+- [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](https://owaspai.org/docs/2_threats_through_use/#inputdistortion), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
+- [MagNet](https://arxiv.org/abs/1705.09064) and [here](https://www.mdpi.com/2079-9292/11/8/1283)
+- [DefenseGAN](https://arxiv.org/abs/1805.06605) and Goodfellow, I.; Pouget-Abadie, J.; Mirza, M.; Xu, B.; Warde-Farley, D.; Ozair, S.; Courville, A.; Bengio, Y. Generative adversarial networks. Commun. ACM 2020, 63, 139–144.
+- [Local intrinsic dimensionality](https://www.ijcai.org/proceedings/2021/0437.pdf)
+- Hendrycks, Dan, and Kevin Gimpel. “Early methods for detecting adversarial images.” arXiv preprint arXiv:1608.00530 (2016).
+- Kherchouche, Anouar, Sid Ahmed Fezza, and Wassim Hamidouche. “Detect and defense against adversarial examples in deep learning using natural scene statistics and adaptive denoising.” Neural Computing and Applications (2021): 1-16.
+- Roth, Kevin, Yannic Kilcher, and Thomas Hofmann. “The odds are odd: A statistical test for detecting adversarial examples.” International Conference on Machine Learning. PMLR, 2019.
+- Bunzel, Niklas, and Dominic Böringer. “Multi-class Detection for Off The Shelf transfer-based Black Box Attacks.” Proceedings of the 2023 Secure and Trustworthy Deep Learning Systems Workshop. 2023.
+- Xiang, Chong, and Prateek Mittal. “Detectorguard: Provably securing object detectors against localized patch hiding attacks.” Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security. 2021.
+- Bunzel, Niklas, Ashim Siwakoti, and Gerrit Klause. “Adversarial Patch Detection and Mitigation by Detecting High Entropy Regions.” 2023 53rd Annual IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W). IEEE, 2023.
+- Liang, Bin, Jiachun Li, and Jianjun Huang. “We can always catch you: Detecting adversarial patched objects with or without signature.” arXiv preprint arXiv:2106.05261 (2021).
+- Chen, Zitao, Pritam Dash, and Karthik Pattabiraman. “Jujutsu: A Two-stage Defense against Adversarial Patch Attacks on Deep Neural Networks.” Proceedings of the 2023 ACM Asia Conference on Computer and Communications Security. 2023.
+- Liu, Jiang, et al. “Segment and complete: Defending object detectors against adversarial patch attacks with robust patch detection.” Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
+- Metzen, Jan Hendrik, et al. “On detecting adversarial perturbations.” arXiv preprint arXiv:1702.04267 (2017).
+- Gong, Zhitao, and Wenlu Wang. “Adversarial and clean data are not twins.” Proceedings of the Sixth International Workshop on Exploiting Artificial Intelligence Techniques for Data Management. 2023.
+- Tramer, Florian. “Detecting adversarial examples is (nearly) as hard as classifying them.” International Conference on Machine Learning. PMLR, 2022.
+- Hendrycks, Dan, and Kevin Gimpel. “Early methods for detecting adversarial images.” arXiv preprint arXiv:1608.00530 (2016).
+- Feinman, Reuben, et al. “Detecting adversarial samples from artifacts.” arXiv preprint arXiv:1703.00410 (2017).
 
-  - Chen, Zitao, Pritam Dash, and Karthik Pattabiraman. "Jujutsu: A
-Two-stage Defense against Adversarial Patch Attacks on Deep Neural
-Networks." Proceedings of the 2023 ACM Asia Conference on Computer and
-Communications Security. 2023.
+See also [ODD INPUT HANDLING](https://owaspai.org/goto/oddinputhandling/) for detecting abnormal input which can be an indication of adversarial input. Useful standards include:
+- Not covered yet in ISO/IEC standards
+- ENISA Securing Machine Learning Algorithms Annex C: “Implement tools to detect if a data point is an adversarial example or not”
 
-  - Liu, Jiang, et al. "Segment and complete: Defending object detectors
-against adversarial patch attacks with robust patch detection."
-Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
-Recognition. 2022.
-
-  - Metzen, Jan Hendrik, et al. "On detecting adversarial perturbations."
-arXiv preprint arXiv:1702.04267 (2017).
-
-  - Gong, Zhitao, and Wenlu Wang. "Adversarial and clean data are not twins."
-Proceedings of the Sixth International Workshop on Exploiting Artificial
-Intelligence Techniques for Data Management. 2023.
-
-  - Tramer, Florian. "Detecting adversarial examples is (nearly) as
-hard as classifying them." International Conference on Machine Learning.
-PMLR, 2022.
-
-  - Hendrycks, Dan, and Kevin Gimpel. "Early methods for detecting adversarial
-images." arXiv preprint arXiv:1608.00530 (2016).
-
-  - Feinman, Reuben, et al. "Detecting adversarial samples from artifacts."
-arXiv preprint arXiv:1703.00410 (2017).
 
 #### #EVASION ROBUST MODEL
->Category: development-time datascience control for threats through use  
+>Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/evasionrobustmodel/
 
 Evasion-robust model: choose an evasion-robust model design, configuration and/or training approach to maximize resilience against evasion.
 
-A robust model in the light of evasion is a model that does not display significant changes in output for minor changes in input. Adversarial examples are the name for inputs that represent input with an unwanted result, where the input is a minor change of an input that leads to a wanted result.
+A robust model in the light of evasion is a model that does not display significant changes in output for minor changes in input. Adversarial examples are inputs that result in an unwanted result, where the input is a minor change of an input that leads to a wanted result.
 
-In other words: if we interpret the model with its inputs as a "system" and the sensitivity to evasion attacks as the "system fault" then this sensitivity may also be interpreted as (local) lack of graceful degradation.
-
-Reinforcing adversarial robustness is an experimental process where model robustness is measured in order to determine countermeasures. Measurement takes place by trying minor input deviations to detect meaningful outcome variations that undermine the model's reliability. If these variations are undetectable to the human eye but can produce false or incorrect outcome descriptions, they may also significantly undermine the model's reliability. Such cases indicate lack of model resilience to input variance resulting in sensitivity to evasion attacks and require detailed investigation.  
+Reinforcing adversarial robustness is an experimental process where model robustness is measured in order to determine countermeasures. Measurement takes place by trying minor input deviations to detect meaningful outcome variations that undermine the model's reliability. If these variations are undetectable to the human eye but can produce false or incorrect outcome descriptions, they may also significantly undermine the model's reliability. Such cases indicate the lack of model resilience to input variance results in sensitivity to evasion attacks and require detailed investigation.  
 Adversarial robustness (the sensitivity to adversarial examples) can be assessed with tools like [IBM Adversarial Robustness Toolbox](https://research.ibm.com/projects/adversarial-robustness-toolbox), [CleverHans](https://github.com/cleverhans-lab/cleverhans), or [Foolbox](https://github.com/bethgelab/foolbox).
 
 Robustness issues can be addressed by:
+
 - Adversarial training - see [TRAINADVERSARIAL](/goto/trainadversarial/)
 - Increasing training samples for the problematic part of the input domain
 - Tuning/optimising the model for variance
@@ -749,44 +727,51 @@ PMLR, 2018.
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/trainadversarial/
 
-Train adversarial: Add adversarial examples to the training set to make the model more robust against evasion attacks. First, adversarial examples are generated, just like they would be generated for an evasion attack. By definition, the model produces the wrong output for those examples. By adding them to the training set with the right output, the model is in essence corrected. As a result it generalizes better. In other words, by training the model on adversarial examples, it learns to not overly rely on subtle patterns that might not generalize well, which are by the way similar to the patterns that poisoned data might introduce.
+Train adversarial:  Introducing adversarial examples into the training set and using them to train the model to be more robust against evasion attacks and/or data poisoning. First, adversarial examples are generated using one or more specific adversarial attack methods that have been defined in advance. These attacks are employed to create adversarial examples, such as using the PGD attack in Madry Adversarial Training. 
 
-It is important to note that generating the adversarial examples creates significant training overhead, does not scale well with model complexity / input dimension, can lead to overfitting, and may not generalize well to new attack methods.
+By definition, the model produces the wrong output for these adversarial  examples. By introducing adversarial examples into the training set with the correct output, the model is essentially corrected. i.e., it is less affected by the perturbation from the adversarial attacks (in the production phase), and it may be able to generalize better over the data used in production environment. In other words, by training the model on adversarial examples, it learns not to overly rely on subtle patterns in the data that might burden the model's ability to predict/generalize well.
 
-Note that adversarial samples may also be used as  poisoned data, in which cases training with adversarial samples also mitigates data poisoning risk.
+Note that adversarial samples may also be used as  poisoned data, in which cases training with adversarial samples also mitigates data poisoning risk. On the other hand, it is important to note that generating the adversarial examples creates significant training overhead, does not scale well with model complexity / input dimension, can lead to overfitting and may not generalize well to new attack methods.
 
-  Useful standards include:
+Useful standards include:
 
-  - Not covered yet in ISO/IEC standards
-  - ENISA Securing Machine Learning Algorithms Annex C: "Add some adversarial examples to the training dataset"
-  
-  References:
+- Not covered yet in ISO/IEC standards
+- ENISA Securing Machine Learning Algorithms Annex C: “Add some adversarial examples to the training dataset”
 
-  - For a general summary of adversarial training, see [Bai et al.](https://arxiv.org/pdf/2102.01356.pdf)
-  - Goodfellow, I.J.; Shlens, J.; Szegedy, C. Explaining and harnessing adversarial examples. arXiv 2014, [arXiv:1412.6572](https://arxiv.org/abs/1412.6572).
-  - Lyu, C.; Huang, K.; Liang, H.N. A unified gradient regularization family for adversarial examples. In Proceedings of the 2015 ICDM.
-  - Papernot, N.; Mcdaniel, P. Extending defensive distillation. arXiv 2017, arXiv:1705.05264.
-  - Vaishnavi, Pratik, Kevin Eykholt, and Amir Rahmati. "Transferring adversarial robustness through robust representation matching." 31st USENIX Security Symposium (USENIX Security 22). 2022.
+References:
+
+- For a general summary of adversarial training, see Bai et al.
+- Goodfellow, I.J.; Shlens, J.; Szegedy, C. Explaining and harnessing adversarial examples. arXiv 2014, arXiv:1412.6572.
+- Lyu, C.; Huang, K.; Liang, H.N. A unified gradient regularization family for adversarial examples. In Proceedings of the 2015 ICDM.
+- Papernot, N.; Mcdaniel, P. Extending defensive distillation. arXiv 2017, arXiv:1705.05264.
+- Vaishnavi, Pratik, Kevin Eykholt, and Amir Rahmati. “Transferring adversarial robustness through robust representation matching.” 31st USENIX Security Symposium (USENIX Security 22). 2022.
+- Tsipras, D., Santurkar, S., Engstrom, L., Turner, A., & Madry, A. (2018). Robustness may be at odds with accuracy. arXiv preprint arXiv:1805.12152.
+
 
 #### #INPUT DISTORTION
->Category: runtime datasciuence control for threats through use  
+>Category: runtime data science control for threats through use  
 >Permalink: https://owaspai.org/goto/inputdistortion/
 
-Input distortion: Lightly modify the input to make attacks fail, while maintaining sufficient model correctness. Modification can be done by e.g. adding noise (randomization), smoothing or JPEG compression.
+Input distortion: The process of slightly modifying and/or adding noise to the input with the intent of distorting the adversarial attack, causing it to fail, while maintaining sufficient model correctness. Modification can be done by  adding noise (randomization), smoothing or JPEG compression.
 
-Maintaining model correctness can be supported by performing multiple random modifications (e.g. randomized smoothing) to the input and then comparing the model output (e.g. best of three).  
+Input distortion defenses are effective against both evasion attacks and data poisoning attacks.
 
-Input distortion can stop both evasion attacks and targeted data poisoning.
+  **Input distortion against Evasion Attacks**
+  Evasion attacks rely on specific inputs that have been carefully prepared to give unwanted output. By distorting this input, chances are that the attack fails. Because all input is distorted, this can reduce model correctness. A way around that is to first use input without distortion and then one or  more distortions of that input. If the results deviate strongly, it would indicate an evasion attack. In that case, the output of the distorted input can be used and optionally an alert generated. In all other cases, the undistorted input can be used, yielding the most correct result.
+  
+  In addition, distorted input also hinders attackers searching for adversarial samples, where they  rely on gradients. However, there are ways in which attackers can work around this. A specific defense method called Random Transformations (RT) introduces enough randomness into the input data to make it computationally difficult for attackers to create adversarial examples. This randomness is typically achieved by applying a random subset of input transformations with random parameters. Since multiple transformations are applied to each input sample, the model's accuracy on regular data might drop, so the model needs to be retrained with these random transformations in place.
+  
+  Note that black-box / closed-box attacks do not rely on the gradients and are therefore not affected by shattered gradients, as they do not use the gradients to calculate the attack. Black box attacks use only the input and the output of the model or whole AI system to calculate the adversarial input. For a more detailed discussion of these attacks, see Closed-box evasion.
 
-**Evasion attacks**
+  **Input Distortion against Data Poisoning Attacks**
 
-Constructing adversarial samples relies on analysing how output changes when changing the input. If the input is distorted, the output will change more erratically, making this process more difficult. The way that output changes is often referred to as the _gradient_. In a way, input distortion serves as gradient masking or _gradient shattering_.
+  Data poisoning attacks involve injecting malicious data into the training set to manipulate the model's behavior, often by embedding/adding features that cause the model to behave incorrectly when encountering certain inputs, see [3.1.1 Data Poisoning](https://owaspai.org/goto/datapoison/). Input distortion defenses mitigate these attacks by disrupting the poisoning features embedded in the data, rendering them less effective.
+  
+  Adversarial Samples: For data poisoning through adversarial samples, input distortion works similarly to how it defends against evasion attacks.
+  
+  Other Poisoning Features: When the poisoning feature is brittle, e.g. a high-frequency noise the input distortion removes or breaks the pattern as is the case for adversarial samples, for example, slight JPEG compression can neutralize high-frequency noise-based poisons. If the poisoning feature is more distinct or robust, such as visible patches in images, the defense must apply stronger or more varied transformations.  The randomness and strength of these transformations are key; if the same transformation is applied uniformly, the model might still learn the malicious pattern. Randomization also ensures that the model doesn't consistently encounter the same poisoned feature, reducing the risk that it will learn to associate it with certain outputs.
 
-A counter attack against input distortion is approximating the gradients, e.g., using BPDA, or creating adversarial samples that are more robust to distrortion, e.g., using EOT.  
-A set of defense techniques called Random Transformations (RT) defends neural networks by implementing enough randomness that computing adversarial examples using EOT is computationally inefficient. This randomness is typically achieved by using a random subset of input transformations with random parameters. Since multiple transformations are applied to each input sample, the benign accuracy drops significantly, thus the network must be trained with the RT in place.
-
-**Targeted data poisoning**
-Distorted inputs can hinder attempts by attackers to trigger unintended behaviour which was created by targeted data poisoning, e.g. inserting _trigger samples_ in the training set that make the model provide specific output for specific inputs. Distortion in essence intends to make the trigger unrecognizable.
+See [DETECTADVERSARIALINPUT](https://owaspai.org/docs/2_threats_through_use/#detectadversarialinput) for an approach where the distorted input is used for detecting an adversarial attack.
 
 Useful standards include:
 
@@ -834,29 +819,17 @@ Black box or closed-box attacks are methods where an attacker crafts an input to
 Since the attacker does not have access to the inner workings of the model, he cannot calculate the internal model gradients to efficiently create the adversarial inputs - in contrast to white-box or open-box attacks (see 2.1.2. Open-box evasion).
 
 Black box attack strategies are:
-- Transferability-Based Attacks:
-  Attackers can execute a transferability-based black box attack by first creating adversarial examples using a surrogate model, a copy or approximation of the closed-box target model, and then applying these adversarial examples to the target model. This approach leverages the concept of an open-box evasion attack, where the attacker utilizes the internals of a surrogate model to construct a successful attack. The goal is to create adversarial examples that will 'hopefully' transfer to the original target model, even though the surrogate may be internally different from the target. The likelihood of a successful transfer is generally higher when the surrogate model closely resembles the target model in terms of complexity and structure. However, it's noted that even attacks developed using simpler surrogate models tend to transfer effectively. To maximize similarity and therefore the effectiveness of the attack, one approach is to reverse-engineer a version of the target model, creating a surrogate that mirrors the target as closely as possible. This strategy is grounded in the rationale that many adversarial examples are inherently transferable across different models, particularly when they share similar architectures or training data. This method of attack, including the creation of a surrogate model through model theft, is detailed in resources such as [this article](https://arxiv.org/abs/1602.02697), which describes this approach in depth.
 
 - Query-Based Attacks:
   In query-based black box attacks, an attacker systematically queries the target model using carefully designed inputs and observes the resulting outputs to search for variations of input that lead to a false decision of the model.
 This approach enables the attacker to indirectly reconstruct or estimate the model's decision boundaries, thereby facilitating the creation of inputs that can mislead the model.
 These attacks are categorized based on the type of output the model provides:
-  - Desicion-based (or Label-based) attacks: where the model only reveals the top prediction label
-  - Score-based attacks: where the model discloses a score (like a softmax score), often in the form of a vector indicating the top-k predictions.In research typically models which output the whole vector are evaluated, but the output could also be restricted to e.g. top-10 vector. The confidence scores provide more detailed feedback about how close the adversarial example is to succeeding, allowing for more precise adjustments. In a score-based scenario an attacker can for example approximate the gradient by evaluating the objective function values at two very close points.
+  - Decision-based (or Label-based) attacks: where the model only reveals the top prediction label
+  - Score-based attacks: where the model discloses a score (like a softmax score), often in the form of a vector indicating the top-k predictions.In research typically models which output the whole vector are evaluated, but the output could also be restricted to e.g. top-10 vectors. The confidence scores provide more detailed feedback about how close the adversarial example is to succeeding, allowing for more precise adjustments. In a score-based scenario, an attacker can for example, approximate the gradient by evaluating the objective function values at two very close points.
+ 
+- Transferability-Based Attacks: A special kind of black box attack without querying the target model, but finding effective attack inputs using a similar model. See link to Transferability-based evasion attacks.
 
 References:
-
-- Papernot, Nicolas, Patrick McDaniel, and Ian Goodfellow.
-"Transferability in machine learning: from phenomena to black-box
-attacks using adversarial samples." arXiv preprint arXiv:1605.07277 (2016).
-
-- Papernot, Nicolas, et al. "Practical black-box attacks against machine
-learning." Proceedings of the 2017 ACM on Asia conference on computer and
-communications security. 2017.
-
-- Demontis, Ambra, et al. "Why do adversarial attacks transfer?
-explaining transferability of evasion and poisoning attacks." 28th
-USENIX security symposium (USENIX security 19). 2019.
 
 - Andriushchenko, Maksym, et al. "Square attack: a query-efficient
 black-box adversarial attack via random search." European conference on
@@ -877,20 +850,16 @@ Proceedings of the 10th ACM workshop on artificial intelligence and security. 20
 - Guo, Chuan, et al. "Simple black-box adversarial attacks." International
 Conference on Machine Learning. PMLR, 2019.
 
-- Andriushchenko, Maksym, et al. "Square attack: a query-efficient
-black-box adversarial attack via random search." European conference on
-computer vision. Cham: Springer International Publishing, 2020.
-
 **Controls:**
 
-- See [General controls](1_general_controls.md), especially [Limiting the effect of unwanted behaviour](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)
-- See [controls for threats through use](2_threats_through_use.md)
+- See [General controls](/goto/generalcontrols/), especially [Limiting the effect of unwanted behaviour](/goto/limitunwanted/)
+- See [controls for threats through use](/goto/threatsuse/)
 
 ### 2.1.2. オープンボックス回避
 >Category: threat through use  
 >Permalink: https://owaspai.org/goto/openboxevasion/
 
-In open-box or white-box attacks, the attacker knows the architecture, parameters, and weights of the target model. Therefore, the attacker has the ability to create input data designed to introduce errors in the model's predictions. These attacks may be targeted or untargeted. In a targeted attack, the attacker wants to force a specific prediction, while in an untargeted attack, the goal is to cause the model to make a false prediction. A famous example in this domain is the Fast Gradient Sign Method (FGSM) developed by Goodfellow et al. which demonstrates the efficiency of white-box attacks. FGSM operates by calculating a perturbation $p$ for a given image $x$ and it's label $l$, following the equation $p = \varepsilon \textnormal{sign}(\nabla_x J(\theta, x, l))$, where $\nabla_x J(\cdot, \cdot, \cdot)$ is the gradient of the cost function with respect to the input, computed via backpropagation. The model's parameters are denoted by $\theta$ and $\varepsilon$ is a scalar defining the perturbation's magnitude. Even universal adversarial attacks, perturbations that can be applied to any input and result in a successful attack, or attacks against certified defenses are possible.
+In open-box or white-box attacks, the attacker knows the architecture, parameters, and weights of the target model. Therefore, the attacker has the ability to create input data designed to introduce errors in the model's predictions. A famous example in this domain is the Fast Gradient Sign Method (FGSM) developed by Goodfellow et al. which demonstrates the efficiency of white-box attacks. FGSM operates by calculating a perturbation $p$ for a given image $x$ and it's label $l$, following the equation $p = \varepsilon \textnormal{sign}(\nabla_x J(\theta, x, l))$, where $\nabla_x J(\cdot, \cdot, \cdot)$ is the gradient of the cost function with respect to the input, computed via backpropagation. The model's parameters are denoted by $\theta$ and $\varepsilon$ is a scalar defining the perturbation's magnitude. Even attacks against certified defenses are possible.
 
 In contrast to white-box attacks, black-box attacks operate without direct access to the inner workings of the model and therefore without access to the gradients. Instead of exploiting detailed knowledge, black-box attackers must rely on output observations to infer how to effectively craft adversarial examples.
 
@@ -911,10 +880,48 @@ References:
 adversarial attacks." arXiv preprint arXiv:1706.06083 (2017).
 - Ghiasi, Amin, Ali Shafahi, and Tom Goldstein. "Breaking certified defenses: Semantic adversarial examples with spoofed robustness certificates." arXiv preprint arXiv:2003.08937 (2020).
 - Hirano, Hokuto, and Kazuhiro Takemoto. "Simple iterative method for generating targeted universal adversarial perturbations." Algorithms 13.11 (2020): 268.
-- [Traffic signs](https://openaccess.thecvf.com/content_cvpr_2018/papers/Eykholt_Robust_Physical-World_Attacks_CVPR_2018_paper.pdf)
-- [Panda images](https://arxiv.org/pdf/1412.6572.pdf)
+- Eykholt, Kevin, et al. "Robust physical-world attacks on deep learning visual classification." Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.
 
-### 2.1.3. データポイズニング後の回避
+### 2.1.3 転用可能性に基づく回避攻撃
+
+Attackers can execute a transferability-based attack in a closed-box situation by first creating adversarial examples using a surrogate model: a copy or approximation of the closed-box target model, and then applying these adversarial examples to the target model.  The surrogate model can be a model from another supplier that performs a similar task (e.g. recognize traffic signs), or a model that the attacker trained based on available or self-collected or self-labeled data.
+
+The advantage of a surrogate model is that it may expose its internals (e,g. because it’s open source), allowing a white-box attack. But even closed models (e.g. an API in the cloud) may be beneficial in case detection mechanisms and rate limiting are less strict than the target model - making a closed-box attack easier and quicker to perform, 
+
+The goal is to create adversarial examples that will ‘hopefully’ transfer to the original target model, even though the surrogate may be internally different from the target. Because the task is similar, it can be expected that the decision boundaries in the model are similar. The likelihood of a successful transfer is generally higher when the surrogate model closely resembles the target model in terms of complexity and structure. However, it’s noted that even attacks developed using simpler surrogate models tend to transfer effectively. 
+
+To maximize similarity and therefore the effectiveness of the attack, one approach is to reverse-engineer a version of the target model, using a model theft in use attack (add link). This creates a surrogate that mirrors the target as closely as possible. This strategy is grounded in the rationale that many adversarial examples are inherently transferable across different models, particularly when they share similar architectures or training data. This method of attack, including the creation of a surrogate model through model theft, is detailed in resources such as [this article](https://arxiv.org/abs/1602.02697), which describes this approach in depth.
+
+The ultimate surrogate model to perform an open-box attack on and transfer that to the target model is of course the target model itself. If the attacker manages to steal that using model theft development time(link) or model theft runtime (link) - the transfer attack equals an open-box attack.
+
+Controls:
+
+Controls for [threats through use](https://owaspai.org/goto/threatsuse/):
+
+- DETECT ODD Input
+- DETECT Adversarial Input
+- Train Adversarial
+- Input Distortion
+
+References:
+
+- Klause, Gerrit, and Niklas Bunzel. "The Relationship Between Network Similarity and Transferability of Adversarial Attacks." arXiv preprint arXiv:2501.18629 (2025).
+- Zhao, Zhiming, et al. "Enhancing Adversarial Transferability via Self-Ensemble Feature Alignment." Proceedings of the 2025 International Conference on Multimedia Retrieval. 2025.
+- Kim, Jungwoo, and Jong-Seok Lee. "Exploring Cross-Stage Adversarial Transferability in Class-Incremental Continual Learning." arXiv preprint arXiv:2508.08920 (2025).
+- Disesdi Susanna Cox, Niklas Bunzel. “Quantifying the Risk of Transferred Black Box Attacks” arXiv preprint arXiv::2511.05102
+- Demontis, Ambra, et al. "Why do adversarial attacks transfer? explaining transferability of evasion and poisoning attacks." 28th USENIX security symposium (USENIX security 19). 2019.
+- Papernot, Nicolas, Patrick McDaniel, and Ian Goodfellow. “Transferability in machine learning: from phenomena to black-box attacks using adversarial samples.” arXiv preprint arXiv:1605.07277 (2016).
+- Papernot, Nicolas, et al. “Practical black-box attacks against machine learning.” Proceedings of the 2017 ACM on Asia conference on computer and communications security. 2017.
+
+### 2.1.4 グレーボックス回避攻撃
+
+Gray-box adversarial evasion attacks occupy a middle ground between white-box and black-box adversarial attacks, where the attacker possesses partial knowledge of the target system like its architecture, training data, but lacks complete access/knowledge to its inner workings (e.g. gradients). In these attacks, the adversary leverages limited information to craft input perturbations designed to mislead machine learning models, by exploiting surrogate models (transferability) or improving known black-box attacks with the given knowledge. Gray-box attacks can be more efficient and effective due to the additional insights available. This approach is particularly relevant in real-world scenarios where full model transparency is rare, but some information may be accessible.
+
+Controls:
+
+Controls for [threats through use](https://owaspai.org/goto/threatsuse/): See Closed-box and Transferability-based attacks
+
+### 2.1.5. データポイズニング後の回避
 >Category: threat through use  
 >Permalink: https://owaspai.org/goto/evasionafterpoison/
 
@@ -926,14 +933,14 @@ After training data has been poisoned (see [data poisoning section](/goto/datapo
 >Category: group of threats through use  
 >Permalink: https://owaspai.org/goto/promptinjection/
 
-Prompt injection attacks involve maliciously crafting or manipulating instructions in input prompts, directly or indirectly, in order to exploit vulnerabilities in modelprocessing capabilities or to trick them into executing unintended actions.  
+Prompt injection attacks involve maliciously crafting or manipulating instructions in input prompts, directly or indirectly, in order to exploit vulnerabilities in model processing capabilities or to trick them into executing unintended actions.  
 This section discusses the two types of prompt injection and the mitigation controls:
 - [Direct prompt injection](/goto/directpromptinjection/)
 - [Indirect prompt injection](/goto/indirectpromptinjection/)
 
 
 **Modality**  
-Instructions can be placed into text, and into non-text modalities, sych as images, audio, video, and documents with embedded objects.  Instructions can also be coordinated across text and other modaltities so that multimodal GenAI system interprets them and follows them, leading to unintended or malicious behaviour. 
+Instructions can be placed into text, and into non-text modalities, sych as images, audio, video, and documents with embedded objects.  Instructions can also be coordinated across text and other modalities so that multimodal GenAI system interprets them and follows them, leading to unintended or malicious behaviour. 
 
 In multimodal systems, models routinely:
 - Extract text from images via OCR or visual encoders.
@@ -949,7 +956,7 @@ Example 2: An attacker crafts an image using gradient-based or generative techni
 Multimodal prompt injection can be:
 - Direct when the attacker uploads or controls the multimodal input (for example, an end user uploads an adversarial image with hidden instructions along with a natural-language query).
 - Indirect when untrusted multimodal content (for example a product screenshot, scanned form, or social-media image) is automatically pulled in by an application and passed to a multimodal model as context, similar to remote code execution via untrusted data.
-
+​
 
 **References**
 - [Cyberpedia on prompt injection](https://www.paloaltonetworks.com/cyberpedia/what-is-a-prompt-injection-attack)
@@ -1171,7 +1178,7 @@ The model discloses sensitive training data or is abused to do so.
 >Category: threat through use  
 >Permalink: https://owaspai.org/goto/disclosureuseoutput/
 
-The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images(see [Copyright](ai_security_overview.md#how-about-copyright)). Once training data is in a GenAI model, original variations in access rights cannot be controlled anymore. ([OWASP for LLM 02](https://genai.owasp.org/llmrisk/llm02/))
+The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images(see [Copyright](/goto/copyright/)). Once training data is in a GenAI model, original variations in access rights cannot be controlled anymore. ([OWASP for LLM 02](https://genai.owasp.org/llmrisk/llm02/))
 
 The disclosure is caused by an unintentional fault of including this data, and exposed through normal use or through provocation by an attacker using the system. See [MITRE ATLAS - LLM Data Leakage](https://atlas.mitre.org/techniques/AML.T0057)
 
@@ -1186,13 +1193,13 @@ The disclosure is caused by an unintentional fault of including this data, and e
 -Specifically for Sensitive data output from model:
   - [#FILTER SENSITIVE MODEL OUTPUT](/goto/filtersensitivemodeloutput/) - discussed below
 
-#### #FILTER SENSITIVE MODEL OUTPUT
+#### #FILTER SENSITIVE MODEL OUTPUT 
 >Category: runtime information security control for threats through use  
 >Permalink: https://owaspai.org/goto/filtersensitivemodeloutput/
 
 Filter sensitive model output: actively censor sensitive data by detecting it when possible (e.g. phone number).
 
-A variation of this filtering is providing a GenAI model with instructions (e.g. in a _system prompt_) not to disclose certain data, which is susceptible to [Direct prompt injection](4_runtime_application_security_threats.md#45-direct-prompt-injection) attacks.
+A variation of this filtering is providing a GenAI model with instructions (e.g. in a _system prompt_) not to disclose certain data, which is susceptible to [Direct prompt injection](/goto/directpromptinjection/) attacks.
 
 Useful standards include:
 
@@ -1204,11 +1211,11 @@ Useful standards include:
 
 Model inversion (or _data reconstruction_) occurs when an attacker reconstructs a part of the training set by intensive experimentation during which the input is optimized to maximize indications of confidence level in the output of the model.
 
-![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/inversion3.png)
-
+![](/images/inversion3.png)
+  
 Membership inference is presenting a model with input data that identifies something or somebody (e.g. a personal identity or a portrait picture), and using any indication of confidence in the output to infer the presence of that something or somebody in the training set.
 
-![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/membership3.png)
+![](/images/membership3.png)
 
 References:
 
@@ -1228,7 +1235,7 @@ The more details a model is able to learn, the more it can store information on 
   - [#OBSCURE CONFIDENCE](/goto/obscureconfidence/) to limit information that the attacker can use - discussed below
   - [#SMALL MODEL](/goto/smallmodel/) to limit the amount of information that can be retrieved - discussed below
 
-#### #OBSURE CONFIDENCE
+#### #OBSCURE CONFIDENCE 
 >Category: runtime data science control for threats through use  
 >Permalink: https://owaspai.org/goto/obscureconfidence/
 
@@ -1238,7 +1245,7 @@ Useful standards include:
 
   - Not covered yet in ISO/IEC standards
 
-#### #SMALL MODEL
+#### #SMALL MODEL 
 >Category: development-time data science control for threats through use  
 >Permalink: https://owaspai.org/goto/smallmodel/
 
@@ -1258,7 +1265,7 @@ Impact: Confidentiality breach of model parameters, which can result in intellec
 
 This attack is known as model stealing attack or model extraction attack or model exfiltration attack. It occurs when an attacker collects inputs and outputs of an existing model and uses those combinations to train a new model, in order to replicate the original model. Alternative ways of model theft are [development time model theft](/goto/devmodelleak/) and [direct runtime model theft](/goto/runtimemodeltheft/).
 
-![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/theft3.png)
+![](/images/theft3.png)
 
 **Controls:**
 
