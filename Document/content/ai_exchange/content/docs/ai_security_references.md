@@ -1,5 +1,7 @@
 ---
-title: AI Security References
+title: AI セキュリティリファレンス
+heroTitle: "AI セキュリティリファレンス"
+heroText: "特定のトピックに関する参考情報は AI Exchange コンテンツ全体を通じて見つけることができます。このセクションは概要を含んでいます。"
 weight: 8
 ---
 ## OWASP AI Exchange の参考情報
