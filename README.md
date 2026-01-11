@@ -18,16 +18,6 @@ This is the unofficial Japanese translation of the [OWASP AI Security and Privac
 * [OWASP AI セキュリティおよびプライバシーガイド](Document/index.md)
 * [リーダー](Document/leaders.md)
 
-### AI セキュリティ
-
-* [OWASP AI Exchange](Document/content/ai_exchange/content/_index.md)
-* [憲章](Document/content/ai_exchange/content/charter.md)
-* [私たちとつながろう！](Document/content/ai_exchange/content/connect.md)
-* [貢献](Document/content/ai_exchange/content/contribute.md)
-* [メディア](Document/content/ai_exchange/content/media.md)
-
-### コンテンツ
-
 * [コンテンツ](Document/content/ai_exchange/content/docs/_index.md)
 * [AI セキュリティ概要](Document/content/ai_exchange/content/docs/ai_security_overview.md)
 * [1. 一般的なコントロール](Document/content/ai_exchange/content/docs/1_general_controls.md)
