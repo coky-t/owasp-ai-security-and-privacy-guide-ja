@@ -1,5 +1,7 @@
 ---
 title: 4. 実行時のアプリケーションのセキュリティ脅威
+heroTitle: "実行時のアプリケーションのセキュリティ脅威"
+heroText: "入力攻撃とは別の、運用中の AI システムへの攻撃と保護コントロール"
 weight: 5
 ---
 > Category: group of runtime threats  
