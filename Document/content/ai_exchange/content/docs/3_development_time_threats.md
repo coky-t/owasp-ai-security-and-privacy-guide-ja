@@ -1,5 +1,7 @@
 ---
 title: 3. 開発時の脅威
+heroTitle: "開発時の脅威"
+heroText: "AI システムの開発環境とサプライチェーンへの攻撃と、それに対して何ができるか。"
 weight: 4
 ---
 ## 3.0 <a name="developmenttimeintro">開発時の脅威 - イントロダクション</a>
