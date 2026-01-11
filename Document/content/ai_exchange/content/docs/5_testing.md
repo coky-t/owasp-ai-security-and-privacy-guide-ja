@@ -1,5 +1,7 @@
 ---
 title: 5. AI セキュリティテスト
+heroTitle: "AI セキュリティテスト"
+heroText: "AI セキュリティテストは敵対的行動をシミュレートして、AI システムの脆弱性、弱点、リスクを明らかにします。"
 weight: 6
 ---
 > カテゴリ: ディスカッション  
@@ -89,26 +91,26 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 |  | - **GitHub フォーク:** ~1.2K forks |
 |  | - **Issues の数:** ~131 open issues, 761 closed issues |
 |  | - **傾向:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
-| **Community Support** | - **Active Issues:** Responsive team, typically addressing issues within a week. |
+| **コミュニティサポート** | - **Active Issues:** Responsive team, typically addressing issues within a week. |
 |  | - **Documentation:** Detailed and regularly updated, with comprehensive guides and API documentation on IBM's website. |
 |  | - **Discussion Forums:** Primarily discussed in academic settings, with some presence on Stack Overflow and GitHub. |
 |  | - **Contributors:** Over 100 contributors, including IBM researchers and external collaborators. |
-| **Scalability** | - **Framework Support:** Scales across TensorFlow, Keras, and PyTorch with out-of-the-box support. |
+| **拡張性** | - **Framework Support:** Scales across TensorFlow, Keras, and PyTorch with out-of-the-box support. |
 |  | - **Large-Scale Deployment:** Proven to handle large, enterprise-level deployments in industries like healthcare, finance, and defense. |
-| **Integration** | - **Compatibility:** Works with TensorFlow, PyTorch, Keras, MXNet, and Scikit-learn. |
+| **統合** | - **Compatibility:** Works with TensorFlow, PyTorch, Keras, MXNet, and Scikit-learn. |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** | ✅ |  |  |
-| **Community Support** | ✅ |  |  |
-| **Scalability** | ✅ |  |  |
-| **Ease of Integration** | ✅ |  |  |
+| **コミュニティサポート** | ✅ |  |  |
+| **拡張性** | ✅ |  |  |
+| **統合の容易さ** | ✅ |  |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image | ✅ |
@@ -183,27 +185,27 @@ Notes:
 |  | - **GitHub フォーク:**  ~67 forks |
 |  | - **Issues の数:** ~ 59 open issues, 733 closed, 26 contributors |
 |  | - **傾向:** Growing, particularly within defense and cybersecurity sectors. |
-| **Community Support** | - **Active Issues:**  Fast response to issues (typically resolved within days to a week). |
+| **コミュニティサポート** | - **Active Issues:**  Fast response to issues (typically resolved within days to a week). |
 |  | - **Documentation:** Comprehensive, but more security-focused, with advanced tutorials on adversarial attacks and defenses. |
 |  | - **Discussion Forums:** Active GitHub discussions, some presence on security-specific forums (e.g., in relation to DARPA projects). |
 |  | - **Contributors:** Over 40 contributors, mostly security experts and researchers. |
-| **Scalability** | - **Framework Support:** Supports TensorFlow and Keras natively, with some integration options for PyTorch. |
+| **拡張性** | - **Framework Support:** Supports TensorFlow and Keras natively, with some integration options for PyTorch. |
 |  | - **Large-Scale Deployment:** Mostly used in security-related deployments; scalability for non-security tasks is less documented. |
-| **Integration** | - **Compatibility:** Works well with TensorFlow and Keras; IBM ART integration for enhanced robustness |
+| **統合** | - **Compatibility:** Works well with TensorFlow and Keras; IBM ART integration for enhanced robustness |
 |  | - **API Availability**: Limited compared to IBM ART, but sufficient for adversarial ML use cases. |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** |  |  | ✅ |
-| **Community Support** |  | ✅ |  |
+| **コミュニティサポート** |  | ✅ |  |
 | **Scalability** |  | ✅ |  |
-| **Ease of Integration** | ✅ |  |  |
+| **統合の容易さ** | ✅ |  |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image | ✅ |
@@ -277,26 +279,26 @@ Notes:
 |  | - **GitHub フォーク:** ~428 forks |
 |  | - **Issues の数:** ~21 open issues, 350 closed issues |
 |  | - **傾向:** Steady, with consistent updates from the academic community. |
-| **Community Support** | - **Active Issues:** Typically resolved within a few weeks. |
+| **コミュニティサポート** | - **Active Issues:** Typically resolved within a few weeks. |
 |  | - **Documentation:** Moderate documentation with basic tutorials; more research-focused. |
 |  | - **Discussion Forums:** Primarily discussed in academic settings, with limited industry forum activity. |
 |  | - **Contributors:** Over 30 contributors, largely from academia. |
-| **Scalability** | - **Framework Support:** Framework Support: Compatible with TensorFlow, PyTorch, and JAX |
+| **拡張性** | - **Framework Support:** Framework Support: Compatible with TensorFlow, PyTorch, and JAX |
 |  | - **Large-Scale Deployment:**  Limited scalability for large-scale industry deployments, more focused on research and experimentation. |
-| **Integration** | - **Compatibility:**  Strong integration with TensorFlow, PyTorch, and JAX. |
+| **統合** | - **Compatibility:**  Strong integration with TensorFlow, PyTorch, and JAX. |
 
 **Total Rating**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** |  | ✅ |  |
-| **Community Support** |  | ✅ |  |
-| **Scalability** |  |  | ✅ |
-| **Ease of Integration** |  | ✅ |  |
+| **コミュニティサポート** |  | ✅ |  |
+| **拡張性** |  |  | ✅ |
+| **統合の容易さ** |  | ✅ |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image | ✅ |
@@ -369,26 +371,26 @@ Evasion:Tests model performance against adversarial inputs
 |  | - **GitHub フォーク:** ~70 |
 |  | - **Issues の数:** ~15 open issues |
 |  | - **傾向:** Stable with a focus on deep learning security |
-| **Community Support** | - **Active Issues:** Currently has ongoing issues and updates, suggesting active maintenance. |
+| **コミュニティサポート** | - **Active Issues:** Currently has ongoing issues and updates, suggesting active maintenance. |
 |  | - **Documentation:** Available through GitHub, covering setup, use, and contributions. |
 |  | - **Discussion Forums:**  GitHub Discussions section and community channels support developer interactions. |
 |  | - **Contributors:**  A small but dedicated contributor base. |
-| **Scalability** | - **Framework Support:**  Primarily supports PyTorch and additional libraries like TorchVision. |
+| **拡張性** | - **Framework Support:**  Primarily supports PyTorch and additional libraries like TorchVision. |
 |  | - **Large-Scale Deployment:** Suitable for research and testing environments but may need adjustments for production-grade scaling |
-| **Integration** | - **Compatibility:** Compatible with machine learning libraries in Python. |
+| **統合** | - **Compatibility:** Compatible with machine learning libraries in Python. |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** |  |  | ✅ |
-| **Community Support** |  |  | ✅ |
-| **Scalability** |  |  | ✅ |
-| **Ease of Integration** |  |  | ✅ |
+| **コミュニティサポート** |  |  | ✅ |
+| **拡張性** |  |  | ✅ |
+| **統合の容易さ** |  |  | ✅ |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image | ✅ |
@@ -461,26 +463,26 @@ Evasion:Tests model performance against adversarial inputs
 |  | - **GitHub フォーク:** ~455 |
 |  | - **Issues の数:** ~130 open issues |
 |  | - **傾向:** Popular with ongoing updates and regular contributions |
-| **Community Support** | - **Active Issues:**  Issues are actively managed with frequent bug fixes and improvements. |
+| **コミュニティサポート** | - **Active Issues:**  Issues are actively managed with frequent bug fixes and improvements. |
 |  | - **Documentation:** Detailed documentation is available, covering everything from attack configuration to custom dataset integration |
 |  | - **Discussion Forums:** GitHub Discussions are active, with support for technical queries and community interaction. |
 |  | - **Contributors:** Over 20 contributors, reflecting diverse input and enhancements. |
-| **Scalability** | - **Framework Support:** Supports NLP models in PyTorch and integrates well with Hugging Face’s Transformers and Datasets libraries, making it compatible with a broad range of NLP tasks. |
+| **拡張性** | - **Framework Support:** Supports NLP models in PyTorch and integrates well with Hugging Face’s Transformers and Datasets libraries, making it compatible with a broad range of NLP tasks. |
 |  | - **Large-Scale Deployment:** Primarily designed for research and experimentation; deployment at scale would likely require customization. |
-| **Integration** | - **Compatibility:** Model-agnostic, allowing use with various NLP model architectures as long as they meet the interface requirements. |
+| **統合** | - **Compatibility:** Model-agnostic, allowing use with various NLP model architectures as long as they meet the interface requirements. |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** | ✅ |  |  |
-| **Community Support** | ✅ |  |  |
-| **Scalability** |  | ✅ |  |
-| **Ease of Integration** | ✅ |  |  |
+| **コミュニティサポート** | ✅ |  |  |
+| **拡張性** |  | ✅ |  |
+| **統合の容易さ** | ✅ |  |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image |  |
@@ -559,26 +561,26 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 |  | - **GitHub フォーク:** ~384forks |
 |  | - **Issues の数:** ~63 open issues, 79 closed issues |
 |  | - **傾向:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
-| **Community Support** | - **Active Issues:** Issues are being addressed within a week. |
+| **コミュニティサポート** | - **Active Issues:** Issues are being addressed within a week. |
 |  | - **Documentation:** Detailed and regularly updated, with comprehensive guides and API documentation. |
 |  | - **Discussion Forums:** Active GitHub issues |
 |  | - **Contributors:** Over 125 contributors. |
-| **Scalability** | - **Framework Support:** Scales across TensorFlow, PyTorch and supports models on local like ONNX |
+| **拡張性** | - **Framework Support:** Scales across TensorFlow, PyTorch and supports models on local like ONNX |
 |  | - **Large-Scale Deployment:** Can be extended to Azure pipeline. |
-| **Integration** | - **Compatibility:** Compatible with majority of LLMs |
+| **統合** | - **Compatibility:** Compatible with majority of LLMs |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** |  | ✅ |  |
-| **Community Support** | ✅ |  |  |
-| **Scalability** | ✅ |  |  |
-| **Ease of Integration** |  | ✅ |  |
+| **コミュニティサポート** | ✅ |  |  |
+| **拡張性** | ✅ |  |  |
+| **統合の容易さ** |  | ✅ |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image |  |
@@ -652,26 +654,26 @@ https://github.com/NVIDIA/garak |
 |  | - **GitHub フォーク:** ~306forks |
 |  | - **Issues の数:** ~303 open issues, 299 closed issues |
 |  | - **傾向:** Growing, particularly with in attack generation, and LLM vulnerability scanning. |
-| **Community Support** | - **Active Issues:** Actively responds to the issues and tries to close it within a week |
+| **コミュニティサポート** | - **Active Issues:** Actively responds to the issues and tries to close it within a week |
 |  | - **Documentation:** Detailed documentation with guidance and example experiments. |
 |  | - **Discussion Forums:**  Active GitHub discussions, as well as discord. |
 |  | - **Contributors:** Over 27 contributors. |
-| **Scalability** | - **Framework Support:** Supports various LLMs from hugging face, openai api, litellm.   |
+| **拡張性** | - **Framework Support:** Supports various LLMs from hugging face, openai api, litellm.   |
 |  | - **Large-Scale Deployment:** Mostly used in attack LLM, detect LLM failures and assessing LLM security. Can be integrated with NeMo Guardrails |
-| **Integration** | - **Compatibility:**  All LLMs, Nvidia models |
+| **統合** | - **Compatibility:**  All LLMs, Nvidia models |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** | ✅ |  |  |
-| **Community Support** |  | ✅ |  |
-| **Scalability** |  | ✅ |  |
-| **Ease of Integration** |  | ✅ |  |
+| **コミュニティサポート** |  | ✅ |  |
+| **拡張性** |  | ✅ |  |
+| **統合の容易さ** |  | ✅ |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image |  |
@@ -742,26 +744,26 @@ https://github.com/NVIDIA/garak |
 |  | - **GitHub フォーク:** ~56 forks |
 |  | - **Issues の数:**  ~10 open issues, 6 closed issues |
 |  | - **傾向:** Not updating since Aug |
-| **Community Support** | - **Active Issues:** Not updated nor solved any bugs since July. |
+| **コミュニティサポート** | - **Active Issues:** Not updated nor solved any bugs since July. |
 |  | - **Documentation:** Moderate documentation with few examples |
 |  | - **Discussion Forums:**  GitHub issue forums |
 |  | - **Contributors:** Over 10 contributors. |
-| **Scalability** | - **Framework Support:** Python and docker image. |
+| **拡張性** | - **Framework Support:** Python and docker image. |
 |  | - **Large-Scale Deployment:** It only assesses the security of your GenAI application's system prompt against various dynamic LLM-based attacks, so it can be integrated with current env. |
-| **Integration** | - **Compatibility:**  Any device. |
+| **統合** | - **Compatibility:**  Any device. |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** |  |  | ✅ |
-| **Community Support** |  |  | ✅ |
-| **Scalability** |  | ✅ |  |
-| **Ease of Integration** |  | ✅ |  |
+| **コミュニティサポート** |  |  | ✅ |
+| **拡張性** |  | ✅ |  |
+| **統合の容易さ** |  | ✅ |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image |  |
@@ -836,26 +838,26 @@ Notes:
 |  | - **GitHub フォーク:** ~326 |
 |  | - **Issues の数:**  ~296 Closed, 40 Open.  |
 |  | - **傾向:** Steady growth with consistent and timely updates. |
-| **Community Support** | - **Active Issues:** Issues are mostly solved within weeks. |
+| **コミュニティサポート** | - **Active Issues:** Issues are mostly solved within weeks. |
 |  | - **Documentation:** Detailed documentation with examples and user guide |
 |  | - **Discussion Forums:**  Primarily github issues and also, support is available on discord Server and twitter. |
 |  | - **Contributors:** Over 60 contributors |
-| **Scalability** | - **Framework Support:** Supports Pytorch. Language: Python and Javascript. Working to add more support |
+| **拡張性** | - **Framework Support:** Supports Pytorch. Language: Python and Javascript. Working to add more support |
 |  | - **Large-Scale Deployment:** Can be extended to Azure, langchain. |
-| **Integration** | - **Compatibility:**  Compatible with various open source LLMs like OpenAI, Gemini, Anthropic. |
+| **統合** | - **Compatibility:**  Compatible with various open source LLMs like OpenAI, Gemini, Anthropic. |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** | ✅ |  |  |
-| **Community Support** | ✅ |  |  |
-| **Scalability** |  | ✅ |  |
-| **Ease of Integration** | ✅ |  |  |
+| **コミュニティサポート** | ✅ |  |  |
+| **拡張性** |  | ✅ |  |
+| **統合の容易さ** | ✅ |  |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image |  |
@@ -918,7 +920,7 @@ Notes:
 | 開発元/ソース | Promptfoo community |
 | GitHub 参照 | [https://github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [Types of LLM vulnerabilities | promptfoo](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/) |
 | 言語 | Python, NodeJS |
-| ライセンス | MIT ライセンスの下でのオープンソース  |
+| ライセンス | MIT ライセンスの下でのオープンソース |
 |  | This project is licensed under multiple licenses:
 
 1. The main codebase is licensed under the MIT License (see below)
@@ -933,26 +935,26 @@ Notes:
 |  | - **GitHub フォーク:**  ~320 forks |
 |  | - **Issues の数:** ~523 closed, 108 open |
 |  | - **傾向:** Consistent update |
-| **Community Support** | - **Active Issues:** Issues are  addressed within acouple of days. |
+| **コミュニティサポート** | - **Active Issues:** Issues are  addressed within acouple of days. |
 |  | - **Documentation:** Detailed documentation with user guide and examples. |
 |  | - **Discussion Forums:** Active Github issue and also support available on Discord |
 |  | - **Contributors:** Over 113 contributors. |
-| **Scalability** | - **Framework Support:**  Language: JavaScript |
+| **拡張性** | - **Framework Support:**  Language: JavaScript |
 |  | - **Large-Scale Deployment:** Enterprise version available, that supports cloud deployment. |
-| **Integration** | - **Compatibility:** Compatible with majority of the LLMs |
+| **統合** | - **Compatibility:** Compatible with majority of the LLMs |
 
-**Tool Rating**
+**ツールの評価**
 
-| **Criteria** | **High** | **Medium** | **Low** |
+| **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
 | **人気** | ✅ |  |  |
-| **Community Support** | ✅ |  |  |
-| **Scalability** |  | ✅ |  |
-| **Ease of Integration** |  | ✅ |  |
+| **コミュニティサポート** | ✅ |  |  |
+| **拡張性** |  | ✅ |  |
+| **統合の容易さ** |  | ✅ |  |
 
-**Data Modality**
+**データモダリティ**
 
-| Data Modality | Supported |
+| データモダリティ | サポートあり |
 | --- | --- |
 | Text | ✅ |
 | Image |  |
@@ -1017,9 +1019,9 @@ This section rates the discussed tools by Popularity, Community Support, Scalabi
 | **Attribute** | High | Medium | Low |
 | --- | --- | --- | --- |
 | 人気 | >3,000 stars | 1,000–3,000 stars | <1,000 stars |
-| Community Support | >100 contributors, quick response (<3 days) | 50–100 contributors, response in 3–14 days | <50 contributors, slow response (>14 days) |
-| Scalability | Proven enterprise-grade, multi-framework | Moderate scalability, limited frameworks | Research focused, small-scale |
-| Integration | Broad compatibility | Limited compatibility, narrow use-case | Minimal or no integration, research tools only |
+| コミュニティサポート | >100 contributors, quick response (<3 days) | 50–100 contributors, response in 3–14 days | <50 contributors, slow response (>14 days) |
+| 拡張性 | Proven enterprise-grade, multi-framework | Moderate scalability, limited frameworks | Research focused, small-scale |
+| 統合 | Broad compatibility | Limited compatibility, narrow use-case | Minimal or no integration, research tools only |
 
 Disclaimer on the use of the Assessment:
 
