@@ -46,6 +46,7 @@ AI イニシアチブで影響分析を行う際には、少なくとも以下�
 - 望ましくない動作は緩和策 (望ましくない動作を制限するコントロールを参照) によって十分に抑制できますか？
 - プライバシーを含むセキュリティ固有のリスク分析については [SECPROGRAM](1_general_controls.md#SECPROGRAM) のリスクマネジメントを参照してください。
 
+**特殊性**  
 一般的なリスクマネジメントでは、以下のような AI の特殊性を念頭に置くと役立つかもしれません。
 1. 演繹的ではなく帰納的、つまり、機械学習モデルにとって間違っていることはゲームの一部であり、損害につながる可能性があります。
 2. 1 に関連: モデルは陳腐化する可能性があります。
@@ -56,24 +57,29 @@ AI イニシアチブで影響分析を行う際には、少なくとも以下�
 7. 聴くことも話すこともできます: ユーザーインタフェースではなく自然言語を通じてやり取りします。
 8. 聞くことも見ることもできます: 音声認識能力と視覚認識能力を持ちます。
 
+**参考情報**  
+
+ - [UNESCO on AI ethics and governance](https://www.unesco.org/ethics-ai/en)
+ - [GenAI security project LLM AI Cybersecurity & governance checklist](https://genai.owasp.org/resource/llm-applications-cybersecurity-and-governance-checklist-english/)
+
 有用な標準:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
  - [US Federal Reserve SR 11-07: Guidance on Model Risk Management](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm): 銀行組織および監督当局のための監督指針。
 
 ISO 42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。ISO 5338 (下記 #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。ISO 27001 が情報セキュリティのマネジメントシステムであるのと同様に、ISO 42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。ISO 42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
-参考情報:
- - [UNESCO on AI ethics and governance](https://www.unesco.org/ethics-ai/en)
- - [GenAI security project LLM AI Cybersecurity & governance checklist](https://genai.owasp.org/resource/llm-applications-cybersecurity-and-governance-checklist-english/)
 
 #### #SECPROGRAM
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/secprogram/
 
+**説明**  
 セキュリティプログラム: 組織にセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) があり、AI ライフサイクル全体と AI 固有の側面を含むことを確認します。
 
-目的: セキュリティプログラムが AI 固有の脅威と対応するリスクに責任を持つことにより、情報セキュリティマネジメントを通じて AI セキュリティリスクを適切に軽減します。リスク分析でのこのドキュメントの使用の詳細については [リスク分析セクション](ai_security_overview.md#how-to-select-relevant-threats-and-controls-risk-analysis) を参照してください。
+**目的**  
+セキュリティプログラムが AI 固有の脅威と対応するリスクに責任を持つことにより、情報セキュリティマネジメントを通じて AI セキュリティリスクを適切に軽減します。リスク分析でのこのドキュメントの使用の詳細については [リスク分析セクション](ai_security_overview.md#how-to-select-relevant-threats-and-controls-risk-analysis) を参照してください。
 
+**実施**  
 AI 固有の資産とそれらに対する脅威を必ず含めます。脅威はこのリソースでカバーされており、資産は以下のとおりです。
 - トレーニングデータ
 - テストデータ
@@ -111,7 +117,9 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 監視とインシデント対応はセキュリティプログラムの標準的な要素であり、AI は関連する AI セキュリティ資産、脅威、コントロールを理解することでそれに含めることができます。脅威の説明には監視の一部となる検出メカニズムを含みます。
 
-**有用な標準:**
+
+**参考情報**  
+有用な標準:
 
   - ISO 27000-27005 の全範囲は IT システムであるため、一般的な意味で AI システムに適用できます。ギャップ: プロセスに関してこのコントロールを完全にカバーしており、情報セキュリティマネジメントで考慮する必要がある三つの AI 固有の攻撃対象領域があるという高レベルの特殊性があります: 1) AI 開発時の攻撃、2) モデルの使用による攻撃、3) AI アプリケーションセキュリティ攻撃。特殊性の詳細については対応するセクションのコントロールを参照してください。
     これらの標準には以下があります。
@@ -147,12 +155,16 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/secdevprogram/
 
+**説明**  
 セキュア開発プログラム: ソフトウェア開発に関するプロセスを整備し、AI システムにセキュリティが組み込まれていることを確認します。
 
-目的: ソフトウェア開発時にリスクを軽減するために適切な注意を払うことでセキュリティリスクを低減します。
+**目的**  
+ソフトウェア開発時にリスクを軽減するために適切な注意を払うことでセキュリティリスクを低減します。
 
+**実施**  
 このための最善の方法は既存の安全なソフトウェア開発プラクティスの上に AI チームと AI の特殊性を取り入れることです。つまり、データサイエンス開発アクティビティが安全なソフトウェア開発プラクティスの一部になるべきです。これらのプラクティスの例: セキュア開発トレーニング、コードレビュー、セキュリティ要件、セキュアコーディングガイドライン、脅威モデリング (AI 固有の脅威を含む)、静的解析ツール、動的解析ツール、ペネトレーションテスト。AI のための独立したセキュア開発フレームワークは必要ありません。
 
+**特殊性**  
 ソフトウェア開発における AI の特殊性、およびその対処方法:
 - AI involves new types of engineering: data engineering and model engineering (e.g. model training), together with new types of engineers: e.g. data scientists, data engineers, AI engineers. Make sure this new engineering becomes an integral part of the general [Development program](/goto/devprogram/) with its best practices (e.g. versioning, portfolio management, retirement). For example: Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
 
@@ -177,29 +189,34 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
   - Run continual automated validation of the model, including discrimination bias measurement and the detection of staleness: the input space changing over time, causing the training set to get out of date
 - Model deployment is a new aspect to AI and it may offer  specific protection measures such as obfuscation, encryption, integrity checks or a Trusted Execution Environment.
 
+**Risk-Reduction guidance**  
 Depending on risk analysis, certain threats may require specific practices in the development lifecycle. These threats and controls are covered elsewhere in this document.
+
+**参考情報**  
+- [OWASP SAMM](https://owaspsamm.org)
+- [NIST SSDF](https://csrc.nist.gov/projects/ssdf)
+- [NIST SSDF AI practices](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.ipd.pdf)
+- [GenAI security project solutions overview](https://genai.owasp.org/ai-security-solutions-landscape/)
 
 有用な標準:
 - ISO 27002 コントロール 8.25 安全な開発ライフサイクル。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴いますが、詳細は欠如しています - ISO 27002:2022 の 8.25 コントロール の説明は一ページですが、安全なソフトウェア開発は大規模かつ複雑なトピックです - 詳細については以下を参照してください。
 - ISO/IEC 27115 (複合システムのサイバーセキュリティ評価)
 - [OpenCRE の安全なソフトウェア開発プロセス](https://www.opencre.org/cre/616-305) を参照してください。NIST SSDF や OWASP SAMM への注目すべきリンクがあります。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います。
 
-参考情報:
-- [OWASP SAMM](https://owaspsamm.org)
-- [NIST SSDF](https://csrc.nist.gov/projects/ssdf)
-- [NIST SSDF AI practices](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.ipd.pdf)
-- [GenAI security project solutions overview](https://genai.owasp.org/ai-security-solutions-landscape/)
 
 #### #DEVPROGRAM
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/devprogram/
 
+**説明**  
 開発プログラム: AI の開発ライフサイクルプログラムを持つこと。一般的な (セキュリティ指向だけではない) ソフトウェアエンジニアリングのベストプラクティスを AI 開発に適用します。
 
 データサイエンティストは実用的なモデルを作成することに重点を置いているのであって、いわゆる将来性のあるソフトウェアを作成することではありません。多くの場合、組織はすでにソフトウェアのプラクティスとプロセスを導入しています。AI を別のアプローチが必要なものとして扱うのではなく、これらを AI 開発に拡張することが重要です。AI エンジニアリングを分離しないでください。これには自動テスト、コード品質、文書化、バージョン管理を含みます。ISO/IEC 5338 ではこれらのプラクティスを AI に適用する方法について説明しています。
 
-目的: こうすることで、AI システムは保守が容易になり、移転可能で、安全で、信頼性が高まり、将来性があるものになります。
+**目的**  
+こうすることで、AI システムは保守が容易になり、移転可能で、安全で、信頼性が高まり、将来性があるものになります。
 
+**実施**  
 ベストプラクティスはチーム内でデータサイエンティストのプロファイルとソフトウェアエンジニアリングのプロファイルを混在させることです。通常、ソフトウェアエンジニアはデータサイエンスについてさらに学ぶ必要があり、データサイエンティストは一般的に将来性があり、保守可能で、テストしやすいコードの作成についてさらに学ぶ必要があるためです。
 
 もう一つのベストプラクティスはデータサイエンスコードの品質面 (保守性、テストコードカバレッジ) を継続的に測定し、それらの品質レベルを管理する方法についてデータサイエンティストにコーチングを提供することです。
@@ -215,23 +232,25 @@ Depending on risk analysis, certain threats may require specific practices in th
 以下の ISO/IEC 5338 の解釈図は、関連するトピックの概要を把握するのに適しています。
 ![5338](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/5338.png)
 
+**参考情報**  
+
+  - [AI システムにおけるコード品質のギャップに関する研究](https://www.softwareimprovementgroup.com/averting-a-major-ai-crisis-we-need-to-fix-the-big-quality-gap-in-ai-systems/)
+
 有用な標準:
 
   - [ISO/IEC 5338 - AI ライフサイクル](https://www.iso.org/standard/81118.html) ギャップ: このコントロールを完全にカバーします - ISO 5338 はソフトウェアライフサイクルに関する既存の ISO 12207 標準を拡張することにより、AI のソフトウェア開発ライフサイクル全体をカバーします。いくつかの新しいプロセスを定義し、既存のプロセスの AI 固有の特殊性について議論します。[このブログ](https://www.softwareimprovementgroup.com/iso-5338-get-to-know-the-global-standard-on-ai-systems/) も参照してください。
   - [ISO/IEC 27002](https://www.iso.org/standard/75652.html) コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
   - [OpenCRE の機能の文書化](https://www.opencre.org/cre/162-655) ギャップ: このコントロールを最小限にカバーします
 
-  参考情報:
-
-  - [AI システムにおけるコード品質のギャップに関する研究](https://www.softwareimprovementgroup.com/averting-a-major-ai-crisis-we-need-to-fix-the-big-quality-gap-in-ai-systems/)
-
 #### #CHECKCOMPLIANCE
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/checkcompliance/
 
+**説明**  
 コンプライアンスのチェック: コンプライアンスマネジメント (セキュリティの側面を含む) において、AI 関連の法規制が考慮されていることを確認します。個人データが関連する場合や個人に関する意思決定に AI が適用される場合は、プライバシーの法規制も適用範囲となります。詳細については [プライバシーセクション](6_privacy.md) を参照してください。
-目標としてのコンプライアンスは組織が AI への対応を高める強力な推進力となり得ます。そのためには、法規制には必ずしも組織に関連するすべてのリスクが含まれるわけではない範囲があることを念頭に置くことが重要です。多くの規則は個人や社会に対する潜在的な危害に関するものであり、ビジネスの利害そのものへの影響はカバーしていません。たとえば、欧州の AI 法には企業秘密保護に関するリスクは含まれません。つまり、法律や規制をガイドとして使用する際には、盲点に注意する必要があります。
 
+**目的**  
+目標としてのコンプライアンスは組織が AI への対応を高める強力な推進力となり得ます。そのためには、法規制には必ずしも組織に関連するすべてのリスクが含まれるわけではない範囲があることを念頭に置くことが重要です。多くの規則は個人や社会に対する潜在的な危害に関するものであり、ビジネスの利害そのものへの影響はカバーしていません。たとえば、欧州の AI 法には企業秘密保護に関するリスクは含まれません。つまり、法律や規制をガイドとして使用する際には、盲点に注意する必要があります。
 
 世界の法的管轄区域に関する考慮事項 (2023年末時点):
 - カナダ: 人工知能およびデータ法 (Artificial Intelligence & Data Act)
@@ -241,6 +260,7 @@ Depending on risk analysis, certain threats may require specific practices in th
 - ヨーロッパ: (i) AI 法 (AI Act), (ii) AI 責任指令 (AI Liability Directive), (iii) 製造物責任指令 (Product Liability Directive)
 - 中国: (i) インターネット情報サービス深層合成管理条例 (Regulations on the Administration of Deep Synthesis of Internet Information Services), (ii) 上海市 AI 産業発展促進条例 (Shanghai Municipal Regulations on Promoting Development of AI Industry), (iii) 深圳経済特区 AI 産業促進条例 (Shenzhen Special Economic Zone AI Industry Promotion Regulations), (iv) 生成 AI サービス暫定行政措置 (Provisional Administrative Measures for Generative AI Services)
 
+**実施**  
 AI/セキュリティに関する一般的な法的考慮事項:
 - プライバシー法: AI は GDPR, CCPA, HIPAA などのすべてのローカル/グローバルのプライバシー法を常に遵守しなければいけません。[プライバシーセクション](6_privacy.md) を参照。
 - データガバナンス: 統合のためにサードパーティから提供される AI コンポーネント/機能は、個人データの保護、その収集、処理、保存方法の構造/定義を含む、データガバナンスフレームワークを備えていなければいけません。
@@ -253,7 +273,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 - 透明性: AI システムのデプロイメント、使用、規制要件への積極的なコンプライアンスにおける透明性を確保します。「Trust by Design」
 - 説明責任: AI システムは、アクション、出力、データセットの使用について説明責任を負うべきです。[AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照。
 
-参考情報
+**参考情報**  
   - [AI の法的側面について語る Vischer](https://www.vischer.com/en/artificial-intelligence/)
   - [SIG による AI 法の概要](https://www.softwareimprovementgroup.com/eu-ai-act-summary/)
   - [SIG による米国の AI 関連法制の概要](https://www.softwareimprovementgroup.com/us-ai-legislation-overview/)
@@ -269,10 +289,11 @@ AI/セキュリティに関する一般的な法的考慮事項:
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/seceducate/
 
+**説明**  
 データサイエンティストと開発チームに対して、モデルへの攻撃を含む AI 脅威の意識に関するセキュリティ教育を実施します。データサイエンティストを含むすべてのエンジニアがセキュリティの考え方を身につけることが不可欠です。
 
+**参考情報**  
 有用な標準:
-
   - ISO 27002 コントロール 6.3 意識向上トレーニング。ギャップ: このコントロールを完全にカバーしますが、詳細が不足しており、特殊性を考慮する必要があります。トレーニング資料は AI セキュリティの脅威とコントロールをカバーする必要があります。
 
 ---
@@ -318,10 +339,13 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 > カテゴリ: 開発時および実行時のコントロール    
 > パーマリンク: https://owaspai.org/goto/alloweddata/
 
+**説明**  
 許可されたデータを確認します。つまり、意図した目的では禁止されているデータを (トレーニングデータなどから) 削除することを意味します。これは同意が得られておらず、データに別の目的で収集された個人情報を含む場合に特に重要です。
 
-目的: コンプライアンスとは別に、データの漏洩や操作の影響を最小限に抑えることが目的です。
+**目的**  
+コンプライアンスとは別に、データの漏洩や操作の影響を最小限に抑えることが目的です。
 
+**参考情報**  
 有用な標準:
 
   - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
@@ -330,12 +354,16 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 > カテゴリ: 開発時および実行時のコントロール    
 > パーマリンク: https://owaspai.org/goto/shortretain/
 
+**説明**  
 短期保持: 必要がなくなったり、法的に (プライバシー法などにより) 要求された場合、データを削除または匿名化します。
 
-目的: データ漏洩や操作の影響を最小限に抑えます
+**目的**  
+データ漏洩や操作の影響を最小限に抑えます
 
+**実施**  
 データの保存期間を制限することは、データ最小化の特殊な形態とみなすことができます。プライバシー規制では一般的に、個人データが収集された目的に対して必要なくなった場合に、その個人データを削除することが求められます。場合によっては、他の規則 (証跡の記録を残すためなど) のために例外を設ける必要があります。これらの規制とは別に、データ漏洩の影響を軽減するために、機密データを使用しなくなった時点で削除することが一般的なベストプラクティスです。
 
+**参考情報**  
 有用な標準:
 
   - ISO/IEC 標準ではまだカバーされていません。
@@ -394,7 +422,7 @@ Anonymity is not an absolute concept, but a statistical one. Even if someone's i
 
 Distorting training data can make it effectively uncrecognizable, which of course needs to be weighed against the negative effect on model performance that this typically creates. See also [TRAINDATADISTORTION](/goto/traindatadistortion/) which is about distortion against data poisoning and [EVASIONROBUSTMODEL](/goto/evasionrobustmodel/) for distortion against evasion attacks. Together with this control OBFUSCATETRAININGDATA, these are all approaches that distort training data, but for different purposes.
 
-**References:**  
+**References**  
 - [SF-PATE: Scalable, Fair, and Private Aggregation of Teacher Ensembles](https://arxiv.org/abs/2204.05157)
 - [Differentially Private Objective Perturbation: Beyond Smoothness and Convexity](https://arxiv.org/abs/1909.01783v1)
 - [Data Masking with Privacy Guarantees]([https://arxiv.org/abs/1909.01783v1](https://arxiv.org/abs/1901.02185))
@@ -408,10 +436,13 @@ Useful standards include:
 > Category: development-time and runtime control    
 > Permalink: https://owaspai.org/goto/discrete/
 
+**Description**  
 Minimize access to technical details that could help attackers.
 
-Purpose: reduce the information available to attackers, which can assist them in selecting and tailoring their attacks, thereby lowering the probability of a successful attack.
+**Objective**  
+Reduce the information available to attackers, which can assist them in selecting and tailoring their attacks, thereby lowering the probability of a successful attack.
 
+**Implementation**  
 Minimizing and protecting technical details can be achieved by incorporating such details as an asset into information security management. This will ensure proper asset management, data classification, awareness education, policy, and inclusion in risk analysis.
 
 Note: this control needs to be weighed against the [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY) control that requires to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
@@ -422,9 +453,8 @@ For example:
   - When choosing a model type or model implementation, take into account that there is an advantage of having technology with which attackers are less familiar
   - Minimize technical details in model output
 
-
+**References**  
 Useful standards include:
-
   - ISO 27002 Control 5.9: Inventory of information and other associated assets. Gap: covers this control fully, with the particularity that technical data science details can be sensitive. .
   - See [OpenCRE on data classification and handling](https://www.opencre.org/cre/074-873). Gap: idem
   - [MITRE ATlAS Acquire Public ML Artifacts](https://atlas.mitre.org/techniques/AML.T0002)
@@ -460,12 +490,25 @@ Example: LLMs (GenAI), just like most AI models, induce their results based on t
 > Category: runtime control    
 > Permalink: https://owaspai.org/goto/oversight/
 
-Description: Oversight of model behaviour by humans or automated (using logic in the form of rules).
-  
-Objective: Detect unwanted model behavior and correct or halt the execution of a model's decision.
+**Description**  
+Oversight of model behaviour by humans or automated (using logic in the form of rules).
 
+**Objective**  
+Detect unwanted model behavior and correct or halt the execution of a model's decision.
+
+**Applicability**  
 A separate form of oversight is [MODEL ALIGNMENT](/goto/modelalignment/) which intends to constrain model behaviour through training, fine tuning, and system prompts. This is treated as a separate control because the effectiveness is limited and therefore no guarantee.
 
+**Implementation**  
+Designing automated systems that require some level of human engagement or regularly update the human operator on the system's status can help maintain situational awareness and ensure safer operations. When automated oversight may not be enough to prevent unacceptable outcomes, systems can be designed to escalate to human review. In such cases, the review is typically carried out by individuals who are qualified or appropriately instructed. This escalation is often triggered by rules that flag suspicious or high-risk situations.
+  
+Examples:
+  - Logic preventing the trunk of a car from opening while the car is moving, even if the driver seems to request it
+  - Requesting user confirmation before sending a large number of emails as instructed by a model
+  - Another form of human oversight is allowing users to undo or revert actions initiated by the AI system, such as reversing changes made to a file
+  - A special form of guardrails is censoring unwanted output of GenAI models (e.g. violent, unethical)
+
+**Limitations**  
 **Limitations of automated oversight:**
 The properties of wanted or unwanted model behavior often cannot be entirely specified, limiting the effectiveness of guardrails.
 
@@ -474,15 +517,7 @@ The alternative to guardrails is to apply human oversight. This is of course mor
 For human operators or drivers of automated systems like self-driving cars, staying actively involved or having a role in the control loop helps maintain situational awareness. This involvement can prevent complacency and ensures that the human operator is ready to take over control if the automated system fails or encounters a scenario it cannot handle. However, maintaining situational awareness can be challenging with high levels of automation due to the "out-of-the-loop" phenomenon, where the human operator may become disengaged from the task at hand, leading to slower response times or decreased effectiveness in managing unexpected situations.
 In other words: If you as a user are not involved actively in performing a task, then you lose understanding of whether it is correct or what the impact can be. If you then only need to confirm something by saying 'go ahead' or 'cancel', a badly informed 'go ahead' is easy to pick.
 
-Designing automated systems that require some level of human engagement or regularly update the human operator on the system's status can help maintain situational awareness and ensure safer operations. When automated oversight may not be enough to prevent unacceptable outcomes, systems can be designed to escalate to human review. In such cases, the review is typically carried out by individuals who are qualified or appropriately instructed. This escalation is often triggered by rules that flag suspicious or high-risk situations.
-  
-Examples:
-
-  - Logic preventing the trunk of a car from opening while the car is moving, even if the driver seems to request it
-  - Requesting user confirmation before sending a large number of emails as instructed by a model
-  - Another form of human oversight is allowing users to undo or revert actions initiated by the AI system, such as reversing changes made to a file
-  - A special form of guardrails is censoring unwanted output of GenAI models (e.g. violent, unethical)
-
+**References**  
 Useful standards include:
 
   - ISO/IEC 42001 B.9.3 defines controls for human oversight and decisions regarding autonomy. Gap: covers this control partly (human oversight only, not business logic)
@@ -492,9 +527,10 @@ Useful standards include:
 > Category: runtime information security control    
 > Permalink: https://owaspai.org/goto/leastmodelprivilege/
 
+**Description**  
 Least model privilege: Minimize what a model can do (trigger actions or access data), to prevent harm in case the model is manipulated, or makes a mistake by itself. 
 
-**Requirements:**
+**Implementation**
 - Honor limitations of the served: Execute actions of AI systems with the rights and privileges of the user or service being served. This ensures that no actions are invoked and no data is retrieved outside authorizations.
 - Task-based minimization: Take the served-limitation a step further by reducing actions that the model can potentially trigger, and what they can be triggered on, to the minimum necessary for the reasonably foreseeable use cases. See below for the flexibility balance. The purpose of this is _blast radius control_: to limit the attack surface in case the AI model is compromised, or in case the AI model makes a mistake. This requires mechanisms that may not be offered by the Identity and Access Management in place, such as: ephemeral tokens, dynamic permissions, and narrow permission control at scale, combined with trust establishment and potential revocation across different domains. 
 - Avoid implementing authorization in Generative AI instructions, as these are vulnerable to hallucinations and manipulation (e.g., prompt injection). This is especially applicable in Agentic AI. This includes the prevention of Generative AI outputting commands that include references to the user context as it would open up the opportunity to escalate privileges by manipulating that output.
@@ -515,8 +551,7 @@ One of the most powerful things to let AI agents do is to execute code. That is 
 - Removing commands (e.g. deleting them from a deployed operating system
 - Sand boxing the code execution by for example network segmentation, to minimize the attack surface of commands
 
-
-Useful references include:
+**References** 
 
   - ISO 27002 control 8.2 Privileged access rights. Gap: covers this control fully, with the particularity that privileges assigned to autonomous model decisions need to be assigned with the risk of unwanted model behaviour in mind.
   - [OpenCRE on least privilege](https://www.opencre.org/cre/368-633) Gap: idem
@@ -570,10 +605,12 @@ Therefore, alignment should be seen as a probabilistic, model-internal control t
 > Category: runtime control    
 > Permalink: https://owaspai.org/goto/aitransparency/
 
+**Description**  
 AI transparency: By being transparent with users about the rough workings of the model, its training process, and the general expected accuracy and reliability of the AI system's output, people can adjust their reliance ([OWASP for LLM 09](https://llmtop10.com/llm09/)) on it accordingly. The simplest form of this is to inform users that an AI model is being involved. Transparency here is about providing abstract information regarding the model and is therefore something else than _explainability_.
 
 See the [DISCRETE](#discrete) control for the balance between being transparent and being discrete about the model. 
 
+**References**  
 Useful standards include:
 
   - ISO/IEC 42001 B.7.2 describes data management to support transparency. Gap: covers this control minimally, as it only covers the data management part.
@@ -649,10 +686,12 @@ Useful standards include:
 > Category: runtime data science control  
 > Permalink: https://owaspai.org/goto/explainability/
 
+**Description**  
 Explainability: Explaining how individual model decisions are made, a field referred to as Explainable AI (XAI), can aid in gaining user trust in the model. In some cases, this can also prevent overreliance, for example, when the user observes the simplicity of the 'reasoning' or even errors in that process. See [this Stanford article on explainability and overreliance](https://hai.stanford.edu/news/ai-overreliance-problem-are-explanations-solution). Explanations of how a model works can also aid security assessors to evaluate AI security risks of a model.
 
 #### #UNWANTEDBIASTESTING 
 > Category: runtime data science control  
 > Permalink: https://owaspai.org/goto/unwantedbiastesting/
 
+**Description**  
 Unwanted bias testing: By doing test runs of the model to measure unwanted bias, unwanted behaviour caused by an attack can be detected. The details of bias detection fall outside the scope of this document as it is not a security concern - other than that, an attack on model behaviour can cause bias.
