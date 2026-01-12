@@ -167,7 +167,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 
 - New best practices or pitfalls in AI-specific code:
-  - Run static analysis rules specific to big data/AI technology(e.g the typical mistake of creating a new dataframe in Python without assigning it to a new one)
+  - Run static analysis rules specific to big data/AI technology (e.g., the typical mistake of creating a new dataframe in Python without assigning it to a new one)
   - Run maintainability analysis on code, as data and model engineering code is typically hindered by code quality issues
   - Evaluate code for the percentage of code for automated testing. Industry average is 43% (SIG benchmark report 2023). An often cited recommendation is 80%. Research shows that automated testing in AI engineering is often neglected (SIG benchmark report 2023), as the performance of the AI model is mistakenly regarded as the ground truth of correctness.
 
@@ -175,7 +175,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
   - Run AI-specific dynamic performance tests before deployment (see [#CONTINUOUSVALIDATION](/goto/continuousvalidation/)):
   - Run security tests (e.g. data poisoning payloads, prompt injection payloads, adversarial robustness testing). See the [testing section](/goto/testing/).
   - Run continual automated validation of the model, including discrimination bias measurement and the detection of staleness: the input space changing over time, causing the training set to get out of date
-- Model deployment is a new aspect to AI and it may offer  specific protection measures such as obfuscation, encryption, integrity checks or a Trusted Execution Environment.)
+- Model deployment is a new aspect to AI and it may offer  specific protection measures such as obfuscation, encryption, integrity checks or a Trusted Execution Environment.
 
 Depending on risk analysis, certain threats may require specific practices in the development lifecycle. These threats and controls are covered elsewhere in this document.
 
@@ -386,7 +386,7 @@ AI models typically do not require exact or human-readable representations of tr
 
 **Limitations**  
 Obfuscation reduces the risk of re-identification or inference, but does not eliminate it:
-- Removing or obfuscating PII / personal data is often not sufficient, as someone's identity may be induced from the other data that you keep of the person (locations, times, visited websites, activities together with data and time, etc). 
+- Removing or obfuscating PII / personal data is often not sufficient, as someone's identity may be induced from the other data that you keep of the person (locations, times, visited websites, activities together with data and time, etc.). 
 - Token-based approaches introduce additional risk if mapping tables are compromised.
 
 The risk of re-identification can be assessed by experts using statistical properties such as K-anonymity, L-diversity, and T-closeness.  
@@ -522,6 +522,50 @@ Useful references include:
   - [OpenCRE on least privilege](https://www.opencre.org/cre/368-633) Gap: idem
   - [A Novel Zero-Trust Identity Framework for Agentic AI: Decentralized Authentication and Fine-Grained Access Control](https://arxiv.org/abs/2505.19301)
 
+
+#### #MODEL ALIGNMENT
+> Category: development-time and runtime AI engineer control against unwanted GenAI model behaviour 
+> Permalink: https://owaspai.org/goto/modelalignment/
+
+**Description and objective**  
+In the context of Generative AI (e.g., LLMs), alignment refers to the process of ensuring that the model's behavior and outputs are consistent with human values, intentions, and ethical standards.  
+Controls external to the model to manage model behaviour are: 
+- [OVERSIGHT](/goto/oversight/): conventional mechanisms responding to the actual outcome of the model
+- [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/): conventional mechanisms that put boundaries on what the model can affect
+- [PROMPT INJECTION I/O handling](/goto/promptinjectioniohandling): detection mechanisms on input and output to prevent unwanted behaviour
+
+The intent of Model alignment is achieve similar goals by baking it into the model itself, through training and instruction.
+
+**Implementation**  
+Achieving the goal of model alignment involves multiple layers:  
+
+1. Training-Time Alignment: the maker of the model shaping its core behaviour
+
+    This is often what people mean by "model alignment" in the strict sense:
+    - Training data choices
+    - Fine-tuning (on aligned examples: helpful, harmless, honest)
+    - Reinforcement learning from human feedback (RLHF) or other reward modeling
+
+2. Deployment-Time Alignment (Including System Prompts)
+
+    Even if the model is aligned during training, its actual behavior during use is also influenced by:
+    - System prompts / instruction prompts
+    - Guardrails built into the AI system and external tools that oversee or control responses (like content filters or output constraints) - see [#PROMPT INJECTION IO HANDLING](/goto/promptinjectioniohandling/) and [#OVERSIGHT](/goto/oversight/)
+
+See [the appendix on culture-sensitive alignment](/goto/culturesensitivealignment/).
+
+**Limitations**  
+Advantage of Model alignment over the external mechanisms:
+- Training-time alignment is in essence able to capture complex behavioural boundaries in the form of many examples of wanted and less-wanted behaviour
+- Recognition of unwanted behaviour is very flexible as the GenAI model typically has powerful judgement abilities. 
+
+Disadvantages of Model alignment:
+- A model's ability to behave through alignment suffers from reliability issues, as it can be prone to manipulation or imperfect memorization and application of what it has learned and what it has been told. 
+- The boundaries of unwanted model behaviour may change after model training (e.g., through new findings), forcing the use of system prompts and/or external controls
+
+Therefore, alignment should be seen as a probabilistic, model-internal control that must be combined with deterministic, external mechanisms for high-risk or regulated use cases.
+
+
 #### #AITRANSPARENCY
 > Category: runtime control    
 > Permalink: https://owaspai.org/goto/aitransparency/
@@ -555,7 +599,7 @@ Continuous validation applies to AI systems where changes in model behaviour cou
 
 **Implementation**  
 
-**Validation timing and triggers**  
+**Implementation of timing and triggers**  
 Continuous validation can be performed at points in the system lifecycle where model behaviour may reasonably change or be at risk of manipulation. This includes:
 - after initial training, retraining, or fine-tuning,
 - before deployment or redeployment, and
@@ -563,7 +607,7 @@ Continuous validation can be performed at points in the system lifecycle where m
 
 Operational validation is particularly relevant when models remain exposed to updates, external dependencies, or environments where unauthorized modification is plausible. The frequency and scope of validation are typically informed by risk analysis and the criticality of the model’s output.
 
-**Detection of degradation and response handling**  
+**Implementation of degradation detection and response handling**  
 Validation results can be monitored for unexpected or unexplained changes in model performance, which may indicate permanent behavioural changes caused by attacks, configuration errors, or environmental drift.  
 When performance degradation or abnormal behaviour is observed, possible response options include:
 - investigating the underlying cause;
@@ -574,9 +618,9 @@ When performance degradation or abnormal behaviour is observed, possible respons
 - temporarily disabling the system if continued operation is unsafe.  
 The choice of response influences both the impact of the issue and the timeliness of recovery.
 
-**Protection and management of validation data**  
-Test datasets serve as a reference for intended or acceptable model behaviour and therefore benefit from protection against manipulation. Storing validation data separately from training data or model artifacts can reduce the likelihood that attackers influence both the model and its evaluation baseline.
-When validation data remains less exposed than training data or deployed model components, continuous validation can help surface integrity issues even if other parts of the system are compromised.
+**Implementation of test data management and protection**  
+Test datasets serve as a reference for intended or acceptable model behaviour and therefore benefit from protection against manipulation. Storing test data separately from training data or model artifacts can reduce the likelihood that attackers influence both the model and its evaluation baseline.
+When test data remains less exposed than training data or deployed model components, continuous validation can help surface integrity issues even if other parts of the system are compromised.
 
 **Risk-Reduction Guidance**  
 Continuous validation can be an effective mechanism for detecting permanent behavioural changes caused by attacks such as data poisoning or model poisoning. Detection timeliness depends on how frequently validation is performed and whether the manipulated model has already been deployed.
