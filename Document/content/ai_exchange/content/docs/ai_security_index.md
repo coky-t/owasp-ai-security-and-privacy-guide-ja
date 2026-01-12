@@ -6,15 +6,15 @@ weight: 9
 
 以下のアルファベット順のクリック可能なトピックを探します。脅威とそのコントロールの概要については [AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) をご覧ください。
 
-A  
+### A
 [敵対的攻撃 (Adversarial attacks)](2_threats_through_use.md#21-evasion)  
 [エージェント AI (Agentic AI)](ai_security_overview.md#threats-to-agentic-ai)  
 [アライメント (Alignment)](2_threats_through_use.md#model-alignment)  
 
-B  
+### B
 [バイアス (Bias)](1_general_controls.md#unwantedbiastesting)  
 
-C  
+### C
 [コンプライアンス (Compliance)](1_general_controls.md#checkcompliance)  
 [継続的バリデーション (Continuous validation)](1_general_controls.md#continuousvalidation)  
 [貢献 (Contribute)](../contribute.md)  
@@ -22,34 +22,39 @@ C
 [著作権 (Copyright)](ai_security_overview.md#how-about-copyright)  
 [文化的センシティビティ (Cultural sensitivity)](2_threats_through_use.md#appendix-culture-sensitive-alignment)  
 
-D  
+### D
 [データとモデルのガバナンス (Data and model governance)](3_development_time_threats.md#supplychainmanage)  
 [モデル出力でのデータ開示 (Data disclosure in model output)](2_threats_through_use.md#231-sensitive-data-output-from-model)  
 [訓練データ/ファインチューンデータのデータポイズニング (Data poisoning of train/finetune data)](3_development_time_threats.md#311-data-poisoning)  
 [モデルサービス拒否 (Denial of model service)](2_threats_through_use.md#25-failure-or-malfunction-of-ai-specific-elements-through-use)  
 [直接プロンプトインジェクション (Direct prompt injection)](2_threats_through_use.md#222-indirect-prompt-injection)  
 
-E  
+### E
 [欧州 AI 法 (EU AI Act)](1_general_controls.md#checkcompliance)  
 [回避 (Evasion)](2_threats_through_use.md#21-evasion)  
 [説明可能性 (Explainability)](1_general_controls.md#explainability)  
 
-F  
+### F
 [連合学習 (Federated learning)](3_development_time_threats.md#federatedlearning)  
 
-G  
+### G
 [GDPR](6_privacy.md)  
 [生成 AI (Generative AI)](ai_security_overview.md#how-about-generative-ai-eg-llm)  
 [ガバナンス (Governance)](1_general_controls.md#11-general-governance-controls)  
 
-I  
+### H
+
+### I
 [間接プロンプトインジェクション (Indirect prompt injection)](2_threats_through_use/#222-indirect-prompt-injection)  
 
-L  
+### J
+### K
+
+### L
 [LLM (LLMs)](ai_security_overview.md#how-about-generative-ai-eg-llm)  
 [ログ記録 (Logging)](2_threats_through_use.md#monitor-use)  
 
-M  
+### M
 [MCP](ai_security_overview.md#threats-to-agentic-ai)  
 [メディア (Media)](../media.md)  
 [モデルアライメント (Model alignment)](2_threats_through_use.md#model-alignment)  
@@ -65,26 +70,30 @@ M
 [使用によるモデル窃取 (Model theft through use)](2_threats_through_use.md#24-model-theft-through-use)  
 [監視 (Monitoring)](2_threats_through_use.md#monitor-use)  
 
-O  
+### N
+
+### O
 [監督 (Oversight)](1_general_controls.md/#oversight)  
 
-P  
+### P
 [周期表 (Periodic table)](ai_security_overview.md#periodic-table-of-ai-security)  
 [プライバシー (Privacy)](6_privacy.md)  
 [プロンプトインジェクション (Prompt injection)](2_threats_through_use.md#22-prompt-injection)  
 
-R  
+### Q
+
+### R
 [レッドチーミング (Red teaming)](5_testing.md)  
 [参考情報 (References)](ai_security_references.md)  
 [責任ある AI (Responsible AI)](ai_security_overview.md#how-about-responsible-or-trustworthy-ai)  
 [リスク分析 (Risk analysis)](ai_security_overview.md#how-to-select-relevant-threats-and-controls-risk-analysis)  
 
-S  
+### S
 [安全性トレーニング (Safety training)](2_threats_through_use.md#model-alignment)  
 [スポンサー (Sponsoring)](https://owaspai.org/sponsor/)  
 [サプライチェーンマネジメント (Supply chain management)](3_development_time_threats.md#supplychainmanage)  
 
-T  
+### T
 [テスト (Testing)](5_testing.md)  
 [脅威モデリング (Threat modelling)](ai_security_overview.md#how-to-select-relevant-threats-and-controls-risk-analysis)  
 [脅威 (Threats)](ai_security_overview.md#threats-overview)  
