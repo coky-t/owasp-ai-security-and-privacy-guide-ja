@@ -31,8 +31,8 @@ These are the controls for threats through use in general - more specific contro
 Monitor use: observe, correlate, and log model usage (date, time, user), inputs, outputs, and system behavior to identify events or patterns that may indicate a cybersecurity incident. This can be used to reconstruct incidents, and make it part of the existing incident detection process - extended with AI-specific methods, including:
 
   - improper functioning of the model (see [CONTINUOUSVALIDATION](/goto/continuousvalidation/) and [UNWANTEDBIASTESTING](/goto/unwantedbiastesting/))
-  - suspicious patterns of model use (e.g. high frequency - see [RATELIMIT](#ratelimit))
-  - suspicious inputs or series of inputs (see anomalous input handling and prompt injection I/O handling)
+  - suspicious patterns of model use (e.g., high frequency - see [RATELIMIT](#ratelimit))
+  - suspicious inputs or series of inputs (see [ANOMALOUS INPUT HANDLING](/goto/anomalousinputhandling/). [UNWANTEDINPUTSERIESHANDLING](goto/unwantedinputserieshandling/) and [PROMPT INJECTION I/O handling](/goto/promptinjectioniohandling/))
 
 By adding details to logs on the version of the model used and the output, troubleshooting becomes easier. This control provides centralized visibility into how AI systems are used over time and across actors, sessions, and models.
 
@@ -125,7 +125,7 @@ For each monitored risk, criteria can be defined to identify suspicious patterns
   Detection mechanisms benefit from being explicitly linked to response actions, such as filtering, throttling, escalation, or containment. Response selection is typically driven by confidence, threat type, and potential impact, and may range from automated safeguards to follow-up investigation.
 
 **- Incident Response and Containment**
-Detection mechanisms benefit from being paired with predefined response actions that limit harm, preserve evidence, and support recovery. For each detection used in the system, a corresponding response approach can be documented (e.g. incident response playbook - SOP), specifying when actions are automated, when follow-up is required, and what escalation paths apply.
+Detection mechanisms benefit from being paired with predefined response actions that limit harm, preserve evidence, and support recovery. For each detection used in the system, a corresponding response approach can be documented (e.g., incident response playbook - SOP), specifying when actions are automated, when follow-up is required, and what escalation paths apply.
 Response actions may vary depending on the certainty of detection, the threat type, and the potential impact, and can include:
 
   **- Immediate containment**
@@ -184,7 +184,7 @@ Additionally, Response actions introduce trade-offs. Overly aggressive responses
 
 Useful standards include:
 
-  - ISO 27002 Controls 8.15 Logging and 8.16 Monitoring activities. Gap: covers this control fully, with the particularity: monitoring needs to look for specific patterns of AI attacks (e.g. model attacks through use). The ISO 27002 control has no details on that.
+  - ISO 27002 Controls 8.15 Logging and 8.16 Monitoring activities. Gap: covers this control fully, with the particularity: monitoring needs to look for specific patterns of AI attacks (e.g., model attacks through use). The ISO 27002 control has no details on that.
   - ISO/IEC 42001 B.6.2.6 discusses AI system operation and monitoring. Gap: covers this control fully, but on a high abstraction level.
   - See [OpenCRE](https://www.opencre.org/cre/058-083). Idem
 
@@ -344,9 +344,9 @@ Complement this control with #RATE LIMIT #MONITORUSE and incident response (#SEC
   - [OpenCRE on technical access control](https://www.opencre.org/cre/724-770)
   - [OpenCRE on centralized access control](https://www.opencre.org/cre/117-371)
 
-## #ANOMALOUS INPUT HANDLING
-Category: runtime data science control for threats through use
-Permalink: https://owaspai.org/goto/anomalousinputhandling/ 
+#### #ANOMALOUS INPUT HANDLING
+>Category: runtime AI engineer control for threats through use
+>Permalink: https://owaspai.org/goto/anomalousinputhandling/ 
 
 **Description**  
 Anomalous input handling: implement tools to detect whether input is odd and potentially respond, where ‘odd’ means significantly different from the training data or even invalid - also called input validation - without knowledge on what malicious input looks like.
@@ -434,10 +434,9 @@ Useful standards include:
 - Not covered yet in ISO/IEC standards
 - ENISA Securing Machine Learning Algorithms Annex C: “Ensure that the model is sufficiently resilient to the environment in which it will operate.”
 
-## #UNWANTED INPUT SERIES HANDLING
-Category: runtime data science control for threats through use
-Permalink: TODO
-TODO: also link this from here to other parts
+#### #UNWANTED INPUT SERIES HANDLING
+>Category: runtime AI engineer control for threats through use
+>Permalink: https://owaspai.org/goto/unwantedinputserieshandling/ 
 
 **Description:**  
 Unwanted input series handling: Implement tools to detect and respond to suspicious or unwanted patterns across a series of inputs, which may indicate abuse, reconnaissance, or multi-step attacks.
@@ -564,12 +563,12 @@ In evasion attacks on AI systems, adversaries craft **adversarial examples** to 
 - **Diffuse perturbations** apply tiny, imperceptible noise across the entire input (hard for humans to notice).
 - **Localized patches** concentrate visible but innocuous-looking changes in one area (e.g., a small sticker), making them practical for physical-world attacks. 
 
-Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g. failing fraud detection, decisions leading to safety issues, reputation damage, liability).
+Impact: Integrity of model behaviour is affected, leading to issues from unwanted model output (e.g., failing fraud detection, decisions leading to safety issues, reputation damage, liability).
 
-A typical attacker's goal with evasion is to find out how to slightly change a certain input (say an image, or a text) to fool the model. The advantage of slight change is that it is harder to detect by humans or by an automated detection of unusual input, and it is typically easier to perform (e.g. slightly change an email message by adding a word so it still sends the same message, but it fools the model in for example deciding it is not a phishing message).  
+A typical attacker's goal with evasion is to find out how to slightly change a certain input (say an image, or a text) to fool the model. The advantage of slight change is that it is harder to detect by humans or by an automated detection of unusual input, and it is typically easier to perform (e.g., slightly change an email message by adding a word so it still sends the same message, but it fools the model in for example deciding it is not a phishing message).  
 Such small changes (call 'perturbations') lead to a large (and false) modification of its outputs. The modified inputs are often called *adversarial examples*.  
 
-Evasion attacks can be categorized into physical (e.g. changing the real world to influence for example a camera image) and digital (e.g. changing a digital image). Furthermore, they can be categorized in either untargeted (any wrong output) and targeted (a specific wrong output). Note that Evasion of a binary classifier (i.e. yes/no) belongs to both categories.
+Evasion attacks can be categorized into physical (e.g., changing the real world to influence for example a camera image) and digital (e.g., changing a digital image). Furthermore, they can be categorized in either untargeted (any wrong output) and targeted (a specific wrong output). Note that Evasion of a binary classifier (i.e. yes/no) belongs to both categories.
 
 Example 1: slightly changing traffic signs so that self-driving cars may be fooled.
 ![](/images/inputphysical.png)
@@ -605,27 +604,24 @@ An evasion attack typically consists of first searching for the inputs that misl
   - [#ADVERSARIAL ROBUST DESTILLATION](/goto/adversarialrobustdestillation/): in essence trying to smooth decision boundaries - discussed below
 
 
-## #EVASION INPUT HANDLING
-Category: runtime data science control for threats through use
-Permalink: TODO
+#### #EVASION INPUT HANDLING
+>Category: runtime AI engineer control for threats through use
+>Permalink: https://owaspai.org/goto/evasioninputhandling/ 
 
-**Description:**
-
+**Description**  
 Evasion input handling: Implement tools to detect and respond to individual adversarial inputs that are crafted to evade model behavior. Evasion input handling focuses on identifying adversarial characteristics within a single input sample, regardless of whether it appears in isolation or as part of a broader attack.
 
-**Objective:**
-
+**Objective**  
 Evasion input handling aims to reduce the risk of adversarial inputs that are intentionally crafted to cause incorrect or unsafe model behavior while appearing valid. These attacks may target model decision boundaries, exploit learned representations, or introduce localized perturbations such as adversarial patches. Addressing evasion at the individual input level helps limit incorrect predictions, unsafe actions, and downstream failures even when attacks occur sporadically or without a broader interaction pattern.
 
 Secondary benefits include improved robustness testing, better understanding of model blind spots, and early signals of adversarial adaptation.
 
-**Applicability:** 
-
+**Applicability**  
 This control is most applicable to models exposed to untrusted or adversarial environments, such as computer vision systems, speech recognition, and security-sensitive classification tasks. It is particularly relevant when individual inputs can independently cause harm or unsafe behavior.
 
 Evasion input handling is less effective in isolation when attackers adapt quickly or when attacks rely primarily on multi-step probing across many inputs. In such cases, it is best used alongside controls that monitor input series, usage patterns, or access behavior.
 
-**Implementation Options**
+**Implementation**  
 
 The main concepts of detecting evasion input attacks include:
   - **Statistical Methods:** Adversarial inputs often deviate from benign inputs in some statistical metric and can therefore be detected. Examples are utilizing the Principal Component Analysis (PCA), Bayesian     Uncertainty Estimation (BUE) or Structural Similarity Index Measure (SSIM). These techniques differentiate from statistical analysis of input series (see #UNWANTED INPUT SERIES HANDLING), as these statistical detectors decide if a sample is adversarial or not per input sample, such that these techniques are able to also detect transferred black box attacks.
@@ -633,21 +629,17 @@ The main concepts of detecting evasion input attacks include:
   - **Input Distortion Based Techniques (IDBT)**: A function is used to modify the input to remove any adversarial data. The model is applied to both versions of the image, the original input and the modified version. The results are compared to detect possible attacks. See [INPUTDISTORTION](/goto/inputdistortion/).
   - **Detection of adversarial patches:** These patches are localized, often visible modifications that can even be placed in the real world. The techniques mentioned above can detect adversarial patches, yet they often require modification due to the unique noise pattern of these patches, particularly when they are used in real-world settings and processed through a camera. In these scenarios, the entire image includes benign camera noise (camera fingerprint), complicating the detection of the specially crafted adversarial patches.
 
-**Risk-Reduction Guidance**
-
+**Risk-Reduction Guidance**  
 Detecting evasion at the single-input level can reduce the success rate of adversarial examples, including transferred black-box attacks. Techniques such as statistical detection, detector networks, and input distortion can identify inputs that exploit model weaknesses even when they appear valid to humans.
 However, adversarial attacks often evolve to bypass known detection methods. As a result, the risk reduction provided by this control depends on regular evaluation, adaptation, and combination with complementary defenses such as rate limiting, series-based detection, and model hardening.
 
-**Particularity**
-
+**Particularity**  
 Unlike traditional input validation (e.g. SQL injection), evasion input handling addresses inputs that are syntactically and semantically valid but intentionally crafted to exploit learned model behavior. These attacks target the statistical and representational properties of machine learning models rather than explicit rules or schemas.
 
-**Limitations**
-
+**Limitations**  
 Adversarial examples may be crafted to evade both the primary model and dedicated detectors. Some detection techniques introduce additional computational overhead or reduce model accuracy. Physical-world attacks, such as adversarial patches, are especially challenging due to environmental noise and variability. This control does not prevent attackers from repeatedly probing the model to refine evasion strategies.
 
 **References**
-
 - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](https://owaspai.org/docs/2_threats_through_use/#inputdistortion), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
 - [MagNet](https://arxiv.org/abs/1705.09064) and [here](https://www.mdpi.com/2079-9292/11/8/1283)
 - [DefenseGAN](https://arxiv.org/abs/1805.06605) and Goodfellow, I.; Pouget-Abadie, J.; Mirza, M.; Xu, B.; Warde-Farley, D.; Ozair, S.; Courville, A.; Bengio, Y. Generative adversarial networks. Commun. ACM 2020, 63, 139–144.
@@ -888,9 +880,9 @@ adversarial attacks." arXiv preprint arXiv:1706.06083 (2017).
 
 ### 2.1.3 転用可能性に基づく回避攻撃
 
-Attackers can execute a transferability-based attack in a closed-box situation by first creating adversarial examples using a surrogate model: a copy or approximation of the closed-box target model, and then applying these adversarial examples to the target model.  The surrogate model can be a model from another supplier that performs a similar task (e.g. recognize traffic signs), or a model that the attacker trained based on available or self-collected or self-labeled data.
+Attackers can execute a transferability-based attack in a closed-box situation by first creating adversarial examples using a surrogate model: a copy or approximation of the closed-box target model, and then applying these adversarial examples to the target model.  The surrogate model can be a model from another supplier that performs a similar task (e.g., recognize traffic signs), or a model that the attacker trained based on available or self-collected or self-labeled data.
 
-The advantage of a surrogate model is that it may expose its internals (e,g. because it’s open source), allowing a white-box attack. But even closed models (e.g. an API in the cloud) may be beneficial in case detection mechanisms and rate limiting are less strict than the target model - making a closed-box attack easier and quicker to perform, 
+The advantage of a surrogate model is that it may expose its internals (e.g., because it's open source), allowing a white-box attack. But even closed models (e.g., an API in the cloud) may be beneficial in case detection mechanisms and rate limiting are less strict than the target model - making a closed-box attack easier and quicker to perform, 
 
 The goal is to create adversarial examples that will ‘hopefully’ transfer to the original target model, even though the surrogate may be internally different from the target. Because the task is similar, it can be expected that the decision boundaries in the model are similar. The likelihood of a successful transfer is generally higher when the surrogate model closely resembles the target model in terms of complexity and structure. However, it’s noted that even attacks developed using simpler surrogate models tend to transfer effectively. 
 
@@ -969,14 +961,14 @@ Multimodal prompt injection can be:
   
 **Controls for all forms of prompt injection:**
 - See [General controls](/goto/generalcontrols/):
-  - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/) with highlights [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) and [OVERSIGHT](/goto/oversight/).
+  - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/) with highlights [MODEL ALIGNMENT](/goto/modelalignment/), [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) and [OVERSIGHT](/goto/oversight/).
 - Controls for [threats through use](/goto/threatsuse/):
   - [#MONITOR USE](/goto/monitoruse/) to detect suspicious input or output
   - [#RATE LIMIT](/goto/ratelimit/) to limit the attacker trying numerous attack variants in a short time
   - [#MODEL ACCESS CONTROL](/goto/modelaccesscontrol/) to reduce the number of potential attackers to a minimum
 - Controls for [prompt injection](/goto/promptinjection/):
   - [#PROMPT INJECTION I/O HANDLING](/goto/promptinjectioniohandling/) to handle any suspicious input or output - see below
-  - [#MODEL ALIGNMENT](/goto/modelalignment/) done by mostly model makers to try to make the model behave - see below
+
 
 #### #PROMPT INJECTION I/O HANDLING
 > Category: runtime AI engineer controls against input threats  
@@ -1012,6 +1004,7 @@ This control is less applicable to closed systems with fixed inputs and tightly 
   - [NVIDIA-NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)
   - [Rebuff](https://github.com/protectai/rebuff)
 - **Respond to detections appropriately**: Based on the confidence of detections, the input can either be filtered, the processing stopped, or an alert can be issued in the log. For more details, see [#MONITOR USE](/goto/monitoruse/)
+- **Inform users when necessary**: It is a best practice to inform users when their input is blocked (e.g., requesting potentially harmful information), as the user may not be aware of certain policies - unless the input is clearly malicious. 
 
 **Risk-Reduction Guidance**  
 Prompt injection defense at inference reduces the likelihood that crafted inputs or ambiguous language will cause the model to behave outside its intended purpose. It is particularly effective against instruction-based attacks that rely on the model’s tendency to follow natural language commands.
@@ -1028,34 +1021,6 @@ This control does not replace access control, rate limiting, or monitoring, but 
 - [Invisible prompt injection](https://arxiv.org/abs/2505.16957)
 - [Instruction detection](https://arxiv.org/html/2505.06311v2)
 - [Techniques to bypass prompt injection detection](https://arxiv.org/html/2504.11168v1)
-
-
-
-
-#### #MODEL ALIGNMENT
-> Category: development-time and runtime control against unwanted LLM model behaviour 
-> Permalink: https://owaspai.org/goto/modelalignment/
-
-In the context of large language models (LLMs), alignment refers to the process of ensuring that the model's behavior and outputs are consistent with human values, intentions, and ethical standards.
-
-Achieving the goal of model alignment involves multiple layers:  
-
-1. Training-Time Alignment, shaping the core behaviour of the model
-
-    This is often what people mean by "model alignment" in the strict sense:
-    - Training data choices
-    - Fine-tuning (on aligned examples: helpful, harmless, honest)
-    - Reinforcement learning from human feedback (RLHF) or other reward modeling
-
-2. Deployment-Time Alignment (Including System Prompts)
-
-    Even if the model is aligned during training, its actual behavior during use is also influenced by:
-    - System prompts / instruction prompts
-    - Guardrails built into the AI system and external tools that oversee or control responses (like content filters or output constraints) - see [#OVERSIGHT](/goto/oversight/)
-
-To avoid making judgments or creating the appearance of doing so, the model’s output should explicitly inform the user of its refusal to interpret the given input. 
-
-See [the appendix on culture-sensitive alignment](/goto/culturesensitivealignment/).
 
 
 ### 2.2.1. 直接的プロンプトインジェクション
@@ -1080,7 +1045,7 @@ Example 3: Embarrass a company that offers an AI Chat service by letting it spea
 
 Example 4: Making a chatbot say things that are legally binding and gain attackers certain rights. See [Chevy AI bot story in 2023](https://hothardware.com/news/car-dealerships-chatgpt-goes-awry-when-internet-gets-to-it).
 
-Example 5: The process of trying prompt injection can be automated, searching for _pertubations_ to a prompt that allows circumventing the alignment. See [this article by Zou et al](https://llm-attacks.org/).
+Example 5: The process of trying prompt injection can be automated, searching for _perturbations_ to a prompt that allows circumventing the alignment. See [this article by Zou et al](https://llm-attacks.org/).
 
 Example 6: When an attacker manages to retrieve system instructions provided by Developers through crafted input prompts, in order to later help craft prompt injections that circumvent the protections in those system prompts. (known as System prompt leakage, Refer [System Prompt Leakage](https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/)).
 
@@ -1095,14 +1060,13 @@ References:
 The same as for all prompt injection:
 
 - See [General controls](/goto/generalcontrols/):
-  - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/) with highlights [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) and [OVERSIGHT](/goto/oversight/).
+  - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/) with highlights [MODEL ALIGNMENT](/goto/modelalignment/), [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) and [OVERSIGHT](/goto/oversight/).
 - Controls for [threats through use](/goto/threatsuse/):
   - [#MONITOR USE](/goto/monitoruse/) to detect suspicious input or output
   - [#RATE LIMIT](/goto/ratelimit/) to limit the attacker trying numerous attack variants in a short time
   - [#MODEL ACCESS CONTROL](/goto/modelaccesscontrol/) to reduce the number of potential attackers to a minimum
 - Controls for [prompt injection](/goto/promptinjection/):
   - [#PROMPT INJECTION I/O HANDLING](/goto/promptinjectioniohandling/) to handle any suspicious input or output 
-  - [#MODEL ALIGNMENT](/goto/modelalignment/) done by mostly model makers to try to make the model behave
 
 ---
 
@@ -1133,7 +1097,7 @@ References
 **Controls:**
 
 - See [General controls](/goto/generalcontrols/):
-  - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/) with highlights [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) and [OVERSIGHT](/goto/oversight/).
+  - Especially [limiting the impact of unwanted model behaviour](/goto/limitunwanted/) with highlights [MODEL ALIGNMENT](/goto/modelalignment/), [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/) and [OVERSIGHT](/goto/oversight/).
 - Controls for [threats through use](/goto/threatsuse/):
   - [#MONITOR USE](/goto/monitoruse/) to detect suspicious input or output - and for INDIRECT prompt injection: looking primarily at the untrusted data that is inserted in the prompt
   - [#RATE LIMIT](/goto/ratelimit/) to limit the attacker trying numerous attack variants in a short time
@@ -1182,7 +1146,7 @@ The model discloses sensitive training data or is abused to do so.
 >Category: threat through use  
 >Permalink: https://owaspai.org/goto/disclosureuseoutput/
 
-The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images(see [Copyright](/goto/copyright/)). Once training data is in a GenAI model, original variations in access rights cannot be controlled anymore. ([OWASP for LLM 02](https://genai.owasp.org/llmrisk/llm02/))
+The output of the model may contain sensitive data from the training set, for example a large language model (GenAI) generating output including personal data that was part of its training set. Furthermore, GenAI can output other types of sensitive data, such as copyrighted text or images (see [Copyright](/goto/copyright/)). Once training data is in a GenAI model, original variations in access rights cannot be controlled anymore. ([OWASP for LLM 02](https://genai.owasp.org/llmrisk/llm02/))
 
 The disclosure is caused by an unintentional fault of including this data, and exposed through normal use or through provocation by an attacker using the system. See [MITRE ATLAS - LLM Data Leakage](https://atlas.mitre.org/techniques/AML.T0057)
 
@@ -1331,7 +1295,7 @@ References
 
 #### #MODEL WATERMARKING
 >Category: development-time AI engineer control for threats through use  
->Permalink: TODO
+>Permalink: https://owaspai.org/goto/modelwatermarking/
 
 Model Watermarking: embed a hidden, secret marker into a trained model so that, if a suspected copy appears elsewhere, the original owner can verify that the model was derived from their system. This is used to demonstrate ownership after a model has been stolen or replicated, rather than to prevent the theft itself.
 
@@ -1339,20 +1303,22 @@ Watermarking techniques should be designed to remain detectable even if the mode
 
 In addition to its technical role, watermarking supports intellectual property protection by enabling post-hoc attribution of stolen or misused models, which can be critical for legal claims, contractual enforcement, and regulatory investigations. As part of a layered security strategy, watermarking complements preventive controls by providing accountability and ownership assurance when other defenses fail.
 
-References
-[USENIX: Entangled Watermarks as a Defense against Model Extraction](https://www.usenix.org/conference/usenixsecurity21/presentation/jia)
+References:
+- [USENIX: Entangled Watermarks as a Defense against Model Extraction](https://www.usenix.org/conference/usenixsecurity21/presentation/jia)
 
 ---
 
-## 2.5. 使用による AI 特有の要素の故障や誤動作
+## 2.5. AI リソース枯渇
 >Category: threat through use  
->Permalink: https://owaspai.org/goto/denialmodelservice/
+>Permalink: https://owaspai.org/goto/airesourceexhaustion/
 
-Description: specific input to the model leads to availability issues (system being very slow or unresponsive, also called _denial of service_), typically caused by excessive resource usage. The failure occurs from frequency, volume, or the content of the input. See [MITRE ATLAS - Denial of ML service](https://atlas.mitre.org/techniques/AML.T0029).
+Description: specific input to the model leads to resource exhaustion, which can be the depletion of funds or availability issues (system being very slow or unresponsive, also called _denial of service_). The failure occurs from frequency, volume, or the content of the input. See [MITRE ATLAS - Denial of ML service](https://atlas.mitre.org/techniques/AML.T0029).
 
-Impact: The AI systems is unavailable, leading to issues with processes, organizations or individuals that depend on the AI system (e.g. business continuity issues, safety issues in process control, unavailability of services)
+Impact: Loss of money or the AI systems is unavailable, leading to issues with processes, organizations or individuals that depend on the AI system (e.g. business continuity issues, safety issues in process control, unavailability of services)
 
-For example: A _sponge attack_ or _energy latency attack_ provides input that is designed to increase the computation time of the model, which essentially is a denial of wallet (DoW) attack, also potentially causing a denial of service. See [article on sponge examples](https://arxiv.org/pdf/2006.03463.pdf)
+Examples:
+- Malicious intensive use of a paid third party model leads to high costs for the use
+- A _sponge attack_ or _energy latency attack_ provides input that is designed to increase the computation time of the model, which essentially is a denial of wallet (DoW) attack, also potentially causing a denial of service. See [article on sponge examples](https://arxiv.org/pdf/2006.03463.pdf)
 
 **Controls:**
 
