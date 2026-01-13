@@ -1,5 +1,7 @@
 ---
 title: 索引
+heroTitle: "索引"
+heroText: "クリック可能なトピック。"
 weight: 9
 ---
 > パーマリンク: https://owaspai.org/goto/index/
