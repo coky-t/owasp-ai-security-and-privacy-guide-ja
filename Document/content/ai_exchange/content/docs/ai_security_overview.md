@@ -200,8 +200,8 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 - **Secure a system**:  
    If you want your **AI system to be secure**, start with [risk analysis](/goto/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
 - **Learn / look up**:  
-  - Ask AI an AI security/privacy question based on the content of the Exchange: [here](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) (requires Google account).
   - For the short story with the main insights in what is special about AI security: see the [AI Exchange essentials](/goto/essentials/).
+  - Ask AI an AI security/privacy question based on the content of the Exchange: [here](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) (requires Google account).
   - To see a general overview and discussion of all **threats** from different angles, check the [AI threat model](/goto/threatsoverview/) or the [AI security matrix](/goto/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
   - To find out what to do against a specific threat, check the [controls overview](/goto/controlsoverview/) or the [periodic table](/goto/periodictable/) to find the right **controls**.
   - To understand what controls to apply in different deployment models: have a look at the [section on ready-made models](/goto/readymademodel/).
@@ -215,19 +215,19 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 The AI exchange covers both heuristic artificial intelligence (e.g., expert systems) and machine learning. This means that when we talk about an AI system, it can for example be a Large Language Model, a linear regression function, a rule-based system, or a lookup table based on statistics. Throughout this document, it is made clear which threats and controls play a role and when.
 
 **The structure**  
-You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu.
+You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu. There is also a section with the most importent topics in a [Table of contents](/goto/toc/).
 
-In short the structure is:  
-0. [AI security overview - this page](/docs/ai_security_overview), contains an overview of AI security and discussions of various topics.
-1. [General controls, such as AI governance](/goto/generalcontrols/)
-2. [Threats through use, such as evasion attacks](/goto/threatsuse/)
-3. [Development-time threats, such as data poisoning](/goto/developmenttime/)
-4. [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
-5. [AI security testing](/goto/testing/)
-6. [AI privacy](/goto/aiprivacy)
-7. [References](/goto/references/)
+The main structure is made of the following pages:  
+  (0) [AI security overview - this page](/docs/ai_security_overview), contains an overview of AI security and discussions of various topics.
+  (1) [General controls, such as AI governance](/goto/generalcontrols/)
+  (2) [Threats through use, such as evasion attacks](/goto/threatsuse/)
+  (3) [Development-time threats, such as data poisoning](/goto/developmenttime/)
+  (4) [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
+  (5) [AI security testing](/goto/testing/)
+  (6) [AI privacy](/goto/aiprivacy)
+  (7) [References](/goto/references/)
 
-このページでは以下について取り上げます。
+このページ (AI セキュリティ概要) では以下について取り上げます。
 - 脅威の上位の概要
 - 脅威とコントロールのさまざまな概要: マトリックス、周期表、ナビゲータ
 - 関連する脅威とコントロールを選択するためのリスク分析
@@ -239,7 +239,7 @@ In short the structure is:
 >Category: discussion  
 >Permalink: https://owaspai.org/goto/essentials/
 
-The upcoming sections discuss AI security threats and corresponding controls. Below are the main insights to understand the bigger picture of AI security What is different for AI systems?  
+The upcoming sections discuss AI security threats and corresponding controls. Below are the main insights to understand the bigger picture of AI security. What is different for AI systems?  
 Many experts and organizations contributed to this overview. This included close collaboration with SANS Institute - ensuring alignment with SANS’ Critical AI security guidelines, as part of the ongoing collaboration between SANS and the AI Exchange to share expertise and support broad education.
 
 **New threats (overview [here](/goto/threatsoverview/)):**
@@ -258,9 +258,9 @@ Many experts and organizations contributed to this overview. This included close
 **New controls (overview [here](/goto/controlsoverview/)):**
 - Specific **AI engineer controls**, to work against poisoning and model input attacks - next to conventional controls. This category is divided into **Data/model engineering** and **Model I/O handling** for filtering, stopping or alerting to suspicious input or output. It is typically the territory of AI experts e.g. data scientists with elements from mathematics, statistics, linguistics and machine learning.
 - **[Monitoring](/goto/monitoruse/)** of model performance and inference - extending model I/O handing and overlooking general usage of the AI system
-- **Impact limitation controls** (because of zero model trust: assume a model can be misled or leak data):
+- **Impact limitation controls** (because of zero model trust: assume a model can be misled, make mistakes, or leak data):
   - [Minimize or obfuscate sensitive data](/goto/datalimit/)
-  - [Limit model behaviour](/goto/limitunwanted/) (oversight, guardrails, minimal model privilege)
+  - [Limit model behaviour](/goto/limitunwanted/) (e.g., [oversight](/goto/oversight/), [least model privilege](/goto/leastmodelprivilege/), [model alignment](/goto/modelalignment))
 
 (*) Note: Attackers that have a similar model (or a copy) can typically craft misleading input efficiently and without being noticed
 
@@ -353,14 +353,14 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 <tr><td rowspan="2">Development -Engineering environment</td><td><a href="/goto/devmodelpoison/">Development-environment model poisoning</a></td></tr>
 <tr>                                         <td><a href="/goto/datapoison/">Data poisoning of train/finetune data</a></td></tr>
 <tr><td>Development - Supply chain</td><td><a href="/goto/supplymodelpoison/">Supply-chain model poisoning</a></td></tr>
-<tr><td rowspan="3">Training data Confidentiality</td><td rowspan="2">Runtime - Model use</td><td><a href="/goto/disclosureuseoutput/">Data disclosure in model output</a></td></tr>
+<tr><td rowspan="3">Training data Confidentiality</td><td rowspan="2">Runtime - Model use</td><td><a href="/goto/disclosureuseoutput/">Sensitive data output from model</a></td></tr>
 <tr><td><a href="/goto/modelinversionandmembership/">Model inversion / Membership inference</a></td></tr>
-<tr><td>Development - Engineering environment</td><td><a href="/goto/devdataleak/">Training data leaks</a></td></tr>
+<tr><td>Development - Engineering environment</td><td><a href="/goto/devdataleak/">Developmen-time data leak</a></td></tr>
 <tr><td rowspan="3">Model confidentiality</td><td>Runtime - Model use</td><td><a href="/goto/modeltheftuse/">Model theft through use</a> (input-output harvesting)</td></tr>
 <tr><td>Runtime - Break into deployed model</td><td><a href="/goto/runtimemodeltheft/">Direct model theft runtime</a></td></tr>
 <tr><td>Development - Engineering environment</td><td><a href="/goto/devmodelleak/">Model theft development-time</a></td></tr>
 <tr><td>Model behaviour Availability</td><td>Model use</td><td><a href="/goto/airesourceexhaustion/">AI resource exhaustion</a></td></tr>
-<tr><td>Model input data Confidentialiy</td><td>Runtime - All IT</td><td><a href="/goto/leakinput/">Model input leak</a></td></tr>
+<tr><td>Model input data Confidentialiy</td><td>Runtime - All IT</td><td><a href="/goto/leakinput/">Leak sensitive input data</a></td></tr>
 <tr><td>Any asset, CIA</td><td>Runtime-All IT</td><td><a href="/goto/insecureoutput/">Model output contains injection</a></td></tr>
 <tr><td>Any asset, CIA</td><td>Runtime - All IT</td><td>Conventional runtime security attack on conventional asset</td></tr>
 <tr><td>Any asset, CIA</td><td>Runtime - All IT</td><td>Conventional attack on conventional supply chain</td></tr>
@@ -373,40 +373,41 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/controlsoverview/
 
-### Select and implement controls with care
-The AI exchange lists a number of controls to mitigate risks of attack. Be aware that many of the controls are expensive to implement and are subject to trade-offs with other machine learning properties that can affect accuracy and normal operations of the model. Particularly, controls that involve changes to the learning process and data distributions can have un-intented downstream side-effects, and must be considered and introduced with care.
+**Select and implement controls with care**  
+The AI exchange lists a number of controls to mitigate risks of attack. Be aware that many of the controls are expensive to implement and are subject to trade-offs with other AI properties that can affect accuracy and normal operations of the model. Particularly, controls that involve changes to the learning process and data distributions can have un-intented downstream side-effects, and must be considered and introduced with care.
 
-### Scope of controls
+**Scope of controls**
 In the AI Exchange we focus on AI-specific threats and their corresponding controls. Some of the controls are AI-specific (e.g., adding noise to the training set) and others are not (e.g., encrypting the training database). We refer to the latter as 'conventional controls'. The Exchange focuses on the details of the AI-specific controls because the details of conventional controls are specified elsewhere - see for example [OpenCRE](https://opencre.org). We do provide AI-specific aspects of those controls, for example that protection of model parameters can be implemented using a Trusted Execution Environment.
 
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
-1. **AI ガバナンス**: AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
+- **AI ガバナンス**(1): AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
    >([AI PROGRAM](1_general_controls.md#AIPROGRAM), [SEC PROGRAM](1_general_controls.md#SECPROGRAM), [DEV PROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEV PROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECK COMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SEC EDUCATE](1_general_controls.md#SECEDUCATE))
-2. **データを最小限に抑えます/難読化します:** 保存時および転送時のデータ量を制限します。また、データの保存時間を開発時、実行時に制限します。
-3. データとモデルのガバナンスによりサプライチェーン管理を拡張します:  [SUPPLY CHAIN MANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
-4. AI システムは IT システムであるため、リスクに基づいて従来の **技術的な IT セキュリティコントロール** を適用します。
-    - 4a 標準的な **従来のセキュリティコントロール** (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
+- データとモデルのガバナンスにより **サプライチェーン管理を拡張します**(2):
+   > [SUPPLY CHAIN MANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
+- **データを最小限に抑えます/難読化します**(4): 保存時および転送時のデータ量を制限します。また、データの保存時間を開発時、実行時に制限します。
+   > ([DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), [SHORT RETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA))
+- AI システムは IT システムであるため、リスクに基づいて従来の **技術的な IT セキュリティコントロール**(2) を適用します。
+    - 標準的な **従来のセキュリティコントロール** (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
-        >([DEV SECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), [DISCRETE](1_general_controls.md#DISCRETE))
+        > [DEV SECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), [DISCRETE](1_general_controls.md#DISCRETE)
       - 実行時: モデルの保存、モデルの使用、プラグイン、モデルの入出力
-        >([RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES))
-    - 4b 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
-      >([MONITOR USE](2_threats_through_use.md#MONITOR-USE), [MODEL ACCESS CONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATE LIMIT](2_threats_through_use.md#RATE-LIMIT))
-    - 4c **新規** の IT セキュリティコントロールを採用します。
-      >([CONF COMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODEL OBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [INPUT　SEGREGATION](2_threats_through_use.md#INPUT-SEGREGATION))
-5. **AI エンジニアリングセキュリティコントロール** を適用します。
-    - 5a 開発の一環としてのデータ/モデルエンジニアリングコントロール
-      >([FEDERATED LEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASION ROBUST MODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISON ROBUST MODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAIN ADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAIN DATA DISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIAL ROBUST DISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODEL ENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORE TRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALL MODEL](2_threats_through_use.md#SMALL-MODEL), [DATA QUALITY CONTROL](3_development_time_threats.md#DATAQUALITYCONTROL)), [MODEL ALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT))
-    - 5b 攻撃をフィルタして検出するための実行時コントロール時のモデル I/O 処理
-      >([ANOMALOUS INPUT HANDLING](2_threats_through_use.md#ANOMALOUS-INPUT-HANDLING), [EVASION INPUT HANDLING](2_threats_through_use.md#EVASION-INPUT-HANDLING), [UNWANTED INPUT SERIES HANDLING](2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING), [PROMPT INJECTION I/O HANDLING](2_threats_through_use.md#PROMPT-INJECTION-IO-HANDLING), [DOS INPUT VALIDATION](2_threats_through_use.md#DOS-INPUT-VALIDATION), [INPUT DISTORTION](2_threats_through_use.md#INPUT-DISTORTION), [FILTER SENSITIVE MODEL OUTPUT](2_threats_through_use.md#FILTER-SENSITIVE-MODEL-OUTPUT), [OBSCURE CONFIDENCE](2_threats_through_use.md#OBSCURE-CONFIDENCE))
-   >([DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), [SHORT RETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA))
-5. モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**モデルの動作を制限** します。
-   >([OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEAST MODEL PRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING))
+        > [RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES)
+    - 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
+      > [MONITOR USE](2_threats_through_use.md#MONITOR-USE), [MODEL ACCESS CONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATE LIMIT](2_threats_through_use.md#RATE-LIMIT)
+    - **新規** の IT セキュリティコントロールを採用します。
+      > [CONF COMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODEL OBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [INPUT　SEGREGATION](2_threats_through_use.md#INPUT-SEGREGATION)
+- **AI エンジニアリングセキュリティコントロール**(3) を適用します。
+    - 開発の一環としてのデータ/モデルエンジニアリングコントロール(3a)
+      > [FEDERATED LEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASION ROBUST MODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISON ROBUST MODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAIN ADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAIN DATA DISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIAL ROBUST DISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODEL ENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORE TRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALL MODEL](2_threats_through_use.md#SMALL-MODEL), [DATA QUALITY CONTROL](3_development_time_threats.md#DATAQUALITYCONTROL)), [MODEL ALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT)
+    - 攻撃をフィルタして検出するための実行時のモデル I/O 処理(3b)
+      > [ANOMALOUS INPUT HANDLING](2_threats_through_use.md#ANOMALOUS-INPUT-HANDLING), [EVASION INPUT HANDLING](2_threats_through_use.md#EVASION-INPUT-HANDLING), [UNWANTED INPUT SERIES HANDLING](2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING), [PROMPT INJECTION I/O HANDLING](2_threats_through_use.md#PROMPT-INJECTION-IO-HANDLING), [DOS INPUT VALIDATION](2_threats_through_use.md#DOS-INPUT-VALIDATION), [INPUT DISTORTION](2_threats_through_use.md#INPUT-DISTORTION), [ENSITIVE OUTPUT HANDLING](2_threats_through_use.md#SENSITIVEOUTPUTHANDLING), [OBSCURE CONFIDENCE](2_threats_through_use.md#OBSCURE-CONFIDENCE)
+- モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**モデルの動作を制限**(5) します。
+   > [OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEAST MODEL PRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [MODEL ALIGNMENT](1_general_controls.md#MODEL-ALIGNMENT), [AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING)
 
-すべての脅威とコントロールについては AI Exchange の以降のセクションでより詳細に説明します。
+すべての脅威とコントロールについては AI Exchange の対応する脅威セクションでより詳細に説明します。
 
 ### Threat model with controls - ready-made model
 >Category: discussion  
@@ -479,7 +480,7 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 <tr><td rowspan="2">開発時 - エンジニアリング環境</td><td><a href="3_development_time_threats.md#312-development-time-model-poisoning">開発環境のモデルポイズニング</a></td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="3_development_time_threats.md#DEVSECURITY">開発環境のセキュリティ</a>, <a href="3_development_time_threats.md#SEGREGATEDATA">データセグリゲーション</a>, <a href="3_development_time_threats.md#FEDERATEDLEARNING">連合学習</a>, <a href="3_development_time_threats.md#SUPPLYCHAINMANAGE">サプライチェーンマネジメント</a> 追補:<br><br><a href="3_development_time_threats.md#MODELENSEMBLE">モデルアンサンブル</a></td></tr>
 <tr>                                         <td><a href="3_development_time_threats.md#311-data-poisoning">トレーニングデータやファインチューニングデータのデータポイズニング</a></td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>, <a href="3_development_time_threats.md#DEVSECURITY">開発環境のセキュリティ</a>, <a href="3_development_time_threats.md#SEGREGATEDATA">データセグリゲーション</a>, <a href="3_development_time_threats.md#FEDERATEDLEARNING">連合学習</a>, <a href="3_development_time_threats.md#SUPPLYCHAINMANAGE">サプライチェーンマネジメント</a> 追補:<br><br><a href="3_development_time_threats.md#MODELENSEMBLE">モデルアンサンブル</a> 追補:<br><br><a href="3_development_time_threats.md#MORETRAINDATA">トレーニングデータの増強</a>, <a href="3_development_time_threats.md#DATAQUALITYCONTROL">データ品質コントロール</a>, <a href="3_development_time_threats.md#TRAINDATADISTORTION">トレーニングデータの歪曲</a>, <a href="3_development_time_threats.md#POISONROBUSTMODEL">ポイズンロバストモデル</a>, <a href="2_threats_through_use.md#TRAIN-ADVERSARIAL">敵対的トレーニング</a></td></tr>
 <tr><td>開発時 - サプライチェーン</td><td><a href="3_development_time_threats.md#313-supply-chain-model-poisoning">サプライチェーンのモデルポイズニング</a></td><td><a href="1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour">望ましくない動作の制限</a>,<br>サプライヤ: <a href="3_development_time_threats.md#DEVSECURITY">開発環境のセキュリティ</a>, <a href="3_development_time_threats.md#SEGREGATEDATA">データセグリゲーション</a>, <a href="3_development_time_threats.md#FEDERATEDLEARNING">連合学習</a><br><br>プロデューサー: <a href="3_development_time_threats.md#SUPPLYCHAINMANAGE">サプライチェーンマネジメント</a> 追補:<br><br><a href="3_development_time_threats.md#MODELENSEMBLE">モデルアンサンブル</a></td></tr>
-<tr><td rowspan="3">トレーニングデータの機密性</td><td rowspan="2">ランタイム - モデル使用</td><td><a href="2_threats_through_use.md#231-sensitive-data-output-from-model">モデル出力でのデータ開示</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追補:<br><br><a href="2_threats_through_use.md#FILTER-SENSITIVE-MODEL-OUTPUT">機密性の高いモデル出力のフィルタ</a></td></tr>
+<tr><td rowspan="3">トレーニングデータの機密性</td><td rowspan="2">ランタイム - モデル使用</td><td><a href="2_threats_through_use.md#231-sensitive-data-output-from-model">モデル出力でのデータ開示</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追補:<br><br><a href="2_threats_through_use.md#SENSITIVEOUTPUTHANDLING">機密性の高い出力処理</a></td></tr>
 <tr><td><a href="2_threats_through_use.md#232-model-inversion-and-membership-inference">モデル反転とメンバーシップ推論</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追加:<br><br><a href="2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING">望ましくない入力シリーズ処理</a>, <a href="2_threats_through_use.md#OBSCURE-CONFIDENCE">曖昧な信頼性</a>, <a href="2_threats_through_use.md#SMALL-MODEL">スモールモデル</a></td></tr>
 <tr><td>開発時 - エンジニアリング環境</td><td><a href="3_development_time_threats.md#321-development-time-data-leak">トレーニングデータの漏洩</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="3_development_time_threats.md#DEVSECURITY">開発環境のセキュリティ</a>, <a href="3_development_time_threats.md#SEGREGATEDATA">データセグリゲーション</a>, <a href="3_development_time_threats.md#FEDERATEDLEARNING">連合学習</a></td></tr>
 <tr><td rowspan="3">モデルの機密性</td><td>ランタイム - モデル使用</td><td><a href="2_threats_through_use.md#24-model-theft-through-use">使用によるモデル盗用</a> (入出力ハーベスティング)</td><td><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追加:<br><br><a href="2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING">望ましくない入力シリーズ処理</a></td></tr>
@@ -726,7 +727,7 @@ AI の原則を分析し、それぞれがセキュリティとどのように�
 
 はい、生成 AI は現在の AI 変革をリードしており、AI セキュリティの中で最も急速に変化しているサブフィールドです。とはいえ、クレジットスコアリング、不正検出、医療診断、製品推奨、画像認識、予知保全、プロセス制御など、多くの重要なユースケースには他のタイプのアルゴリズム (_予測 AI_ と呼びましょう) が引き続き適用されることを認識することが重要です。このドキュメントでは関連するコンテンツには「生成 AI」のマークを付けています。
 
-重要な注意: セキュリティ脅威の観点からは、生成 AI は他の形式の AI (_予測 AI_) とそれほど違いはありません。生成 AI の脅威とコントロールは一般的な AI と大部分が重複しており、非常によく似ています。とはいえ、一部のリスクは (はるかに) 高くなります。低いものもあります。生成 AI 固有のリスクはごくわずかです。生成 AI と予測 AI ではコントロールカテゴリが大きく異なるものがあり、主にデータサイエンスコントロール (トレーニングセットへのノイズ追加など) です。多くの場合、生成 AI ソリューションはモデルをそのまま使用し、組織によるトレーニングを一切行わず、セキュリティ責任の一部を組織からサプライヤに移します。それでも、既製のモデルを使用する場合は、依然としてそうした脅威に注意する必要があります。
+重要な注意: セキュリティ脅威の観点からは、生成 AI は他の形式の AI (_予測 AI_) とそれほど違いはありません。生成 AI の脅威とコントロールは一般的な AI と大部分が重複しており、非常によく似ています。とはいえ、一部のリスクは (はるかに) 高くなります。低いものもあります。生成 AI 固有のリスクはごくわずかです。生成 AI と予測 AI ではコントロールカテゴリが大きく異なるものがあり、主にデータサイエンスコントロール (トレーニングセットへのノイズ追加など) です。多くの場合、生成 AI ソリューションはモデルをそのまま使用し、組織によるトレーニングを一切行わず、セキュリティ責任の一部を組織からサプライヤに移します。それでも、 [既製のモデル](ai_security_overview.md#threat-model-with-controls---ready-made-model) を使用する場合は、依然としてそうした脅威に注意する必要があります。
 
 LLM による主な新しい脅威は何ですか？
 - まず第一に、LLM は脆弱性のあるコードを作成するために使用されたり、攻撃者がマルウェアを作成するために使用されたり、ハルシネーションによって害を及ぼす可能性があるため、セキュリティに新たな脅威をもたらします。しかし、これらの懸念事項は AI Exchange の範囲外であり、AI システム自体へのセキュリティ脅威に焦点を当てています。
@@ -743,14 +744,14 @@ LLM による主な新しい脅威は何ですか？
 |No.| 生成 AI セキュリティの特徴 | OWASP for LLM TOP 10 |
 |-| ----------|-------------------|
 |1| 生成 AI モデルはプロンプト内の自然言語によって制御されるため、[プロンプトインジェクション](2_threats_through_use.md#22-prompt-injection) のリスクが生じます。直接プロンプトインジェクションはモデルを騙して望ましくない動作 (不快な言動など) をさせようとするもので、間接プロンプトインジェクションは第三者がこの目的 (決定を操作するなど) のためにプロンプトにコンテンツを注入するものです。 |  ([OWASP for LLM 01:Prompt injection](https://genai.owasp.org/llmrisk/llm01/))  | 
-|2| 生成 AI モデルは一般的に非常に大規模なデータセットでトレーニングされているため、[機密データ](2_threats_through_use.md#221-sensitive-data-output-from-model) や [ライセンスされているデータ](ai_security_overview.md#how-about-copyright) を出力する可能性が高くなりますが、モデルにはアクセス権限の制御が組み込まれていません。すべてのデータはモデルユーザーがアクセスできるでしょう。システムプロンプトや出力フィルタリングに関していくつかのメカニズムが実装されているかもしれませんが、それらは一般的に完全ではありません。 | ([OWASP for LLM 02: Sensitive Information Disclosure](https://genai.owasp.org/llmrisk/llm02/)) |
+|2| 生成 AI モデルは一般的に非常に大規模なデータセットでトレーニングされているため、[機密データ](2_threats_through_use.md#221-sensitive-data-output-from-model) や [ライセンスされているデータ](ai_security_overview.md#how-about-copyright) を出力する可能性が高くなりますが、モデルにはアクセス権限の制御が組み込まれていません。すべてのデータはモデルユーザーがアクセスできるでしょう。システムプロンプト、モデルアラインメント、出力フィルタリングに関していくつかのメカニズムが実装されているかもしれませんが、それらは一般的に完全ではありません。 | ([OWASP for LLM 02: Sensitive Information Disclosure](https://genai.owasp.org/llmrisk/llm02/)) |
 |3| [データとモデルのポイズニング](3_development_time_threats.md#31-broad-model-poisoning-development-time) は AI 全般の問題ですが、生成 AI ではトレーニングデータがインターネットなどの制御が困難なさまざまな情報源から供給される可能性があるため、リスクは一般的に高くなります。たとえば、攻撃者はドメインを乗っ取り、操作された情報を配置する可能性があります。 | ([OWASP for LLM 04: Data and Model Poisoning](https://genai.owasp.org/llmrisk/llm04/)) |
 |4| 生成 AI モデルは不正確で幻覚を起こす可能性があります。これは AI 全般のリスク要因であり、さらに大規模言語モデル (生成 AI) は非常に機密性が高く知識を持っているという印象を与えることで事態を悪化させる可能性があります。要するに、これはモデルが間違っていたり、モデルが操作されていたりするという可能性を過小評価するリスクに関するものです。つまり、それぞれすべてのセキュリティコントロールに関連しています。最も強く結びつくのは [望ましくないモデル動作の影響を制限するためのコントロール](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)、特に [最小モデル権限](/1_general_controls.md#LEASTMODELPRIVILEGE) です。 | ([OWASP for LLM 06: Excessive agency](https://genai.owasp.org/llmrisk/llm06/)) および ([OWASP for LLM 09: Misinformation](https://genai.owasp.org/llmrisk/llm09/)) |
-|5| [入力データの漏洩](4_runtime_application_security_threats.md#47-leak-sensitive-input-data): 生成 AI モデルはほとんどがクラウドに存在し、多くの場合は外部パーティによって管理されているため、トレーニングデータの漏洩やプロンプトの漏洩のリスクが高まる可能性があります。この問題は生成 AI に限定されるものではありませんが、生成 AI には特に 2 つのリスクがあります。1) モデルの使用にはプロンプトを介したユーザーとのやり取り、ユーザーデータの追加、対応するプライバシーやセンシティビティの問題が含まれます。2) 生成 AI モデルの入力 (プロンプト) には機密データ (企業秘密など) を持つ豊富なコンテキスト情報を含む可能性があります。後者の問題はたとえば、コンサルタント会社でこれまでに書かれたすべてのレポートのデータなど、*コンテキスト内学習 (In-Context Learning)* や *検索拡張生成 (Retrieval Augmented Generation, RAG)* で発生します。まず第一に、この情報はプロンプトとともにクラウドに移動し、第二に、システムは情報に対する本来のアクセス権を考慮しない可能性があります。 | LLM Top 10 でのカバーなし |
+|5| [入力データの漏洩](4_runtime_application_security_threats.md#47-leak-sensitive-input-data): 生成 AI モデルはほとんどがクラウドに存在し、多くの場合は外部パーティによって管理されているため、プロンプトの漏洩のリスクが高まります。この問題は生成 AI に限定されるものではありませんが、生成 AI には特に 2 つのリスクがあります。1) モデルの使用にはプロンプトを介したユーザーとのやり取り、ユーザーデータの追加、対応するプライバシーやセンシティビティの問題が含まれます。2) 生成 AI モデルの入力 (プロンプト) には機密データ (企業秘密など) を持つ豊富なコンテキスト情報を含む可能性があります。後者の問題はたとえば、コンサルタント会社でこれまでに書かれたすべてのレポートのデータなど、*コンテキスト内学習 (In-Context Learning)* や *検索拡張生成 (Retrieval Augmented Generation, RAG)* で発生します。まず第一に、この情報はプロンプトとともにクラウドに移動し、第二に、システムは情報に対する本来のアクセス権を考慮しない可能性があります。 | LLM Top 10 でのカバーなし |
 |6| 事前トレーニング済みモデルは操作されている可能性があります。事前トレーニングの概念は生成 AI に限ったことではありませんが、このアプローチは生成 AI ではごく一般的であり、 [サプライチェーンのモデルポイズニング](3_development_time_threats.md#313-supply-chain-model-poisoning) のリスクを高めます。 | ([OWASP for LLM 03 - Supply chain vulnerabilities](https://genai.owasp.org/llmrisk/llm03/)) |
 |7| [モデル反転とメンバーシップ推論](2_threats_through_use.md##222-model-inversion-and-membership-inference) は生成 AI にとって低リスクまたはゼロリスクです。 | LLM Top 10 でのカバーなし、異なるアプローチを使用する LLM06 を除く、上記を参照 |
 |8| 生成 AI の出力にはクロスサイトスクリプティングなどの [インジェクション攻撃](4_runtime_application_security_threats.md#44-insecure-output-handling) を実行する要素を含むかもしれません。 | ([OWASP for LLM 05: Improper Output Handling](https://genai.owasp.org/llmrisk/llm05/)) |
-|9| [サービス拒否](2_threats_through_use.md#24-failure-or-malfunction-of-ai-specific-elements-through-use) はどの AI モデルでも問題になる可能性がありますが、生成 AI モデルは一般的に実行コストが高いため、過負荷になると不要なコストが発生する可能性があります。 | ([OWASP for LLM 10: Unbounded consumption](https://genai.owasp.org/llmrisk/llm10/)) |
+|9| [リソース枯渇](2_threats_through_use.md#24-failure-or-malfunction-of-ai-specific-elements-through-use) はどの IT システムでも問題になる可能性がありますが、生成 AI モデルは一般的に実行コストが高いため、過負荷になると不要なコストが発生する可能性があります。 | ([OWASP for LLM 10: Unbounded consumption](https://genai.owasp.org/llmrisk/llm10/)) |
 
 生成 AI 参考情報:
 
