@@ -87,17 +87,17 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~4.9K stars (as of 2024) |
-|  | - **GitHub フォーク:** ~1.2K forks |
-|  | - **Issues の数:** ~131 open issues, 761 closed issues |
-|  | - **傾向:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
-| **コミュニティサポート** | - **Active Issues:** Responsive team, typically addressing issues within a week. |
-|  | - **Documentation:** Detailed and regularly updated, with comprehensive guides and API documentation on IBM's website. |
-|  | - **Discussion Forums:** Primarily discussed in academic settings, with some presence on Stack Overflow and GitHub. |
-|  | - **Contributors:** Over 100 contributors, including IBM researchers and external collaborators. |
-| **拡張性** | - **Framework Support:** Scales across TensorFlow, Keras, and PyTorch with out-of-the-box support. |
-|  | - **Large-Scale Deployment:** Proven to handle large, enterprise-level deployments in industries like healthcare, finance, and defense. |
-| **統合** | - **Compatibility:** Works with TensorFlow, PyTorch, Keras, MXNet, and Scikit-learn. |
+| **人気** | - **GitHub スター:** およそ 4.9K スター (2024 年現在) |
+|  | - **GitHub フォーク:** およそ 1.2K フォーク |
+|  | - **Issues の数:** およそ 131 オープン状態, 761 クローズ済み状態 |
+|  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長。 |
+| **コミュニティサポート** | - **Issues 活動:** 反応が早いチーム、通常は一週間以内に issues に対処している。 |
+|  | - **ドキュメント:** IBM のウェブサイトには包括的なガイドと API ドキュメントがあり、詳細で定期的に更新されている。 |
+|  | - **ディスカッションフォーラム:** 主に学術的な場で議論されており、Stack Overflow や GitHub でも行われている。 |
+|  | - **貢献者:** 100 名以上。IBM 研究者や外部協力者を含む。 |
+| **拡張性** | - **フレームワークサポート:** out-of-the-box サポートで、TensorFlow, Keras, PyTorch にわたって拡張している。 |
+|  | - **大規模デプロイメント:** 医療、金融、防衛などの業界における大規模なエンタープライズレベルのデプロイメントに対応することが実装されている。 |
+| **統合** | - **互換性:** TensorFlow, PyTorch, Keras, MXNet, Scikit-learn で機能する。 |
 
 **ツールの評価**
 
@@ -112,60 +112,60 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image | ✅ |
-| Audio | ✅ |
-| Video | ✅ |
-| Tabular data | ✅ |
+| テキスト | ✅ |
+| 静止画 | ✅ |
+| 音声 | ✅ |
+| 動画 | ✅ |
+| 表形式データ | ✅ |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision | ✅ |
-| Speech Recognition | Audio | ✅ |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン | ✅ |
+| 音声認識 | 音声 | ✅ |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI | ✅ |
-| Keras | DL, GenAI | ✅ |
-| PyTorch | DL, GenAI | ✅ |
-| MxNet | DL | ✅ |
-| Scikit-learn | ML | ✅ |
-| XGBoost | ML | ✅ |
-| LightGBM | ML | ✅ |
-| CatBoost | ML | ✅ |
-| GPy | ML | ✅ |
+| Tensorflow | 深層学習, 生成 AI | ✅ |
+| Keras | 深層学習, 生成 AI | ✅ |
+| PyTorch | 深層学習, 生成 AI | ✅ |
+| MxNet | 深層学習 | ✅ |
+| Scikit-learn | 機械学習 | ✅ |
+| XGBoost | 機械学習 | ✅ |
+| LightGBM | 機械学習 | ✅ |
+| CatBoost | 機械学習 | ✅ |
+| GPy | 機械学習 | ✅ |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning | ✅ |
-| Runtime model poisoning |  |
-| Model theft by use | ✅ |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference | ✅ |
-| Denial of model service |  |
-| Direct prompt injection |  |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング | ✅ |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 | ✅ |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 | ✅ |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション |  |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
-- Development-time Model poisoning: Simulates attacks during development to evaluate vulnerabilities[*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
-- Evasion:Tests model performance against adversarial inputs  [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- Model theft through use: Evaluates risks of model exploitation during usage  [*https://owaspai.org/goto/modeltheftuse*](https://owaspai.org/goto/modeltheftuse/)
-- Model inference: *Assesses exposure to membership and inversion attacks*
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 使用時モデル窃取: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/goto/modeltheftuse*](https://owaspai.org/goto/modeltheftuse/)
+- モデル推論: *メンバーシップ攻撃と反転攻撃への露出を評価する*
 *[https://owaspai.org/goto/modelinversionandmembership/](https://owaspai.org/goto/modelinversionandmembership/)*
 
 ### **ツール名: Armory**
@@ -181,17 +181,17 @@ Notes:
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:**  ~176 stars (as of 2024) |
-|  | - **GitHub フォーク:**  ~67 forks |
-|  | - **Issues の数:** ~ 59 open issues, 733 closed, 26 contributors |
+| **人気** | - **GitHub スター:**  およそ 176 スター (2024 年現在) |
+|  | - **GitHub フォーク:**  およそ 67 フォーク |
+|  | - **Issues の数:** およそ  59 オープン状態, 733 closed, 26 contributors |
 |  | - **傾向:** Growing, particularly within defense and cybersecurity sectors. |
-| **コミュニティサポート** | - **Active Issues:**  Fast response to issues (typically resolved within days to a week). |
-|  | - **Documentation:** Comprehensive, but more security-focused, with advanced tutorials on adversarial attacks and defenses. |
-|  | - **Discussion Forums:** Active GitHub discussions, some presence on security-specific forums (e.g., in relation to DARPA projects). |
-|  | - **Contributors:** Over 40 contributors, mostly security experts and researchers. |
-| **拡張性** | - **Framework Support:** Supports TensorFlow and Keras natively, with some integration options for PyTorch. |
-|  | - **Large-Scale Deployment:** Mostly used in security-related deployments; scalability for non-security tasks is less documented. |
-| **統合** | - **Compatibility:** Works well with TensorFlow and Keras; IBM ART integration for enhanced robustness |
+| **コミュニティサポート** | - **Issues 活動:**  Fast response to issues (typically resolved within days to a week). |
+|  | - **ドキュメント:** Comprehensive, but more security-focused, with advanced tutorials on adversarial attacks and defenses. |
+|  | - **ディスカッションフォーラム:** Active GitHub discussions, some presence on security-specific forums (e.g., in relation to DARPA projects). |
+|  | - **貢献者:** Over 40 contributors, mostly security experts and researchers. |
+| **拡張性** | - **フレームワークサポート:** Supports TensorFlow and Keras natively, with some integration options for PyTorch. |
+|  | - **大規模デプロイメント:** Mostly used in security-related deployments; scalability for non-security tasks is less documented. |
+| **統合** | - **互換性:** Works well with TensorFlow and Keras; IBM ART integration for enhanced robustness |
 |  | - **API Availability**: Limited compared to IBM ART, but sufficient for adversarial ML use cases. |
 
 **ツールの評価**
@@ -207,58 +207,58 @@ Notes:
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image | ✅ |
-| Audio | ✅ |
-| Video | ✅ |
-| Tabular data | ✅ |
+| テキスト | ✅ |
+| 静止画 | ✅ |
+| 音声 | ✅ |
+| 動画 | ✅ |
+| 表形式データ | ✅ |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision | ✅ |
-| Speech Recognition | Audio | ✅ |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン | ✅ |
+| 音声認識 | 音声 | ✅ |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI | ✅ |
-| Keras | DL, GenAI |  |
-| PyTorch | DL, GenAI | ✅ |
-| MxNet | DL |  |
-| Scikit-learn | ML |  |
-| XGBoost | ML |  |
-| LightGBM | ML |  |
-| CatBoost | ML |  |
-| GPy | ML |  |
+| Tensorflow | 深層学習, 生成 AI | ✅ |
+| Keras | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI | ✅ |
+| MxNet | 深層学習 |  |
+| Scikit-learn | 機械学習 |  |
+| XGBoost | 機械学習 |  |
+| LightGBM | 機械学習 |  |
+| CatBoost | 機械学習 |  |
+| GPy | 機械学習 |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning | ✅ |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection | ✅ |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング | ✅ |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション | ✅ |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
-- Development-time Model poisoning: Simulates attacks during development to evaluate vulnerabilities[*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
-- Evasion:Tests model performance against adversarial inputs  [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 - Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.
 *https://owaspai.org/goto/promptinjection/*
 
@@ -275,17 +275,17 @@ Notes:
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:**  ~2,800 stars (as of 2024) |
-|  | - **GitHub フォーク:** ~428 forks |
-|  | - **Issues の数:** ~21 open issues, 350 closed issues |
+| **人気** | - **GitHub スター:**  およそ 2,800 スター (2024 年現在) |
+|  | - **GitHub フォーク:** およそ 428 フォーク |
+|  | - **Issues の数:** およそ 21 オープン状態, 350 クローズ済み状態 |
 |  | - **傾向:** Steady, with consistent updates from the academic community. |
-| **コミュニティサポート** | - **Active Issues:** Typically resolved within a few weeks. |
-|  | - **Documentation:** Moderate documentation with basic tutorials; more research-focused. |
-|  | - **Discussion Forums:** Primarily discussed in academic settings, with limited industry forum activity. |
-|  | - **Contributors:** Over 30 contributors, largely from academia. |
-| **拡張性** | - **Framework Support:** Framework Support: Compatible with TensorFlow, PyTorch, and JAX |
-|  | - **Large-Scale Deployment:**  Limited scalability for large-scale industry deployments, more focused on research and experimentation. |
-| **統合** | - **Compatibility:**  Strong integration with TensorFlow, PyTorch, and JAX. |
+| **コミュニティサポート** | - **Issues 活動:** Typically resolved within a few weeks. |
+|  | - **ドキュメント:** Moderate documentation with basic tutorials; more research-focused. |
+|  | - **ディスカッションフォーラム:** Primarily discussed in academic settings, with limited industry forum activity. |
+|  | - **貢献者:** Over 30 contributors, largely from academia. |
+| **拡張性** | - **フレームワークサポート:** Framework Support: Compatible with TensorFlow, PyTorch, and JAX |
+|  | - **大規模デプロイメント:**  Limited scalability for large-scale industry deployments, more focused on research and experimentation. |
+| **統合** | - **互換性:**  Strong integration with TensorFlow, PyTorch, and JAX. |
 
 **Total Rating**
 
@@ -300,55 +300,55 @@ Notes:
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image | ✅ |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 | ✅ |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision | ✅ |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン | ✅ |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI | ✅ |
-| Keras | DL, GenAI | ✅ |
-| PyTorch | DL, GenAI | ✅ |
-| MxNet | DL |  |
-| Scikit-learn | ML |  |
-| XGBoost | ML |  |
-| LightGBM | ML |  |
-| CatBoost | ML |  |
-| GPy | ML |  |
+| Tensorflow | 深層学習, 生成 AI | ✅ |
+| Keras | 深層学習, 生成 AI | ✅ |
+| PyTorch | 深層学習, 生成 AI | ✅ |
+| MxNet | 深層学習 |  |
+| Scikit-learn | 機械学習 |  |
+| XGBoost | 機械学習 |  |
+| LightGBM | 機械学習 |  |
+| CatBoost | 機械学習 |  |
+| GPy | 機械学習 |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection |  |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション |  |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
 Evasion:Tests model performance against adversarial inputs
 
@@ -368,16 +368,16 @@ Evasion:Tests model performance against adversarial inputs
 | 要素 | 詳細 |
 | --- | --- |
 | **人気** | - **GitHub スター:** 209 (as of 2024) |
-|  | - **GitHub フォーク:** ~70 |
-|  | - **Issues の数:** ~15 open issues |
+|  | - **GitHub フォーク:** およそ 70 |
+|  | - **Issues の数:** およそ 15 オープン状態 |
 |  | - **傾向:** Stable with a focus on deep learning security |
-| **コミュニティサポート** | - **Active Issues:** Currently has ongoing issues and updates, suggesting active maintenance. |
-|  | - **Documentation:** Available through GitHub, covering setup, use, and contributions. |
-|  | - **Discussion Forums:**  GitHub Discussions section and community channels support developer interactions. |
-|  | - **Contributors:**  A small but dedicated contributor base. |
-| **拡張性** | - **Framework Support:**  Primarily supports PyTorch and additional libraries like TorchVision. |
-|  | - **Large-Scale Deployment:** Suitable for research and testing environments but may need adjustments for production-grade scaling |
-| **統合** | - **Compatibility:** Compatible with machine learning libraries in Python. |
+| **コミュニティサポート** | - **Issues 活動:** Currently has ongoing issues and updates, suggesting active maintenance. |
+|  | - **ドキュメント:** Available through GitHub, covering setup, use, and contributions. |
+|  | - **ディスカッションフォーラム:**  GitHub Discussions section and community channels support developer interactions. |
+|  | - **貢献者:**  A small but dedicated contributor base. |
+| **拡張性** | - **フレームワークサポート:**  Primarily supports PyTorch and additional libraries like TorchVision. |
+|  | - **大規模デプロイメント:** Suitable for research and testing environments but may need adjustments for production-grade scaling |
+| **統合** | - **互換性:** Compatible with machine learning libraries in Python. |
 
 **ツールの評価**
 
@@ -392,55 +392,55 @@ Evasion:Tests model performance against adversarial inputs
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image | ✅ |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 | ✅ |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision |  |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン |  |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI | ✅ |
-| Keras | DL, GenAI |  |
-| PyTorch | DL, GenAI | ✅ |
-| MxNet | DL |  |
-| Scikit-learn | ML |  |
-| XGBoost | ML |  |
-| LightGBM | ML |  |
-| CatBoost | ML |  |
-| GPy | ML |  |
+| Tensorflow | 深層学習, 生成 AI | ✅ |
+| Keras | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI | ✅ |
+| MxNet | 深層学習 |  |
+| Scikit-learn | 機械学習 |  |
+| XGBoost | 機械学習 |  |
+| LightGBM | 機械学習 |  |
+| CatBoost | 機械学習 |  |
+| GPy | 機械学習 |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection |  |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション |  |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
 Evasion:Tests model performance against adversarial inputs
 
@@ -459,17 +459,17 @@ Evasion:Tests model performance against adversarial inputs
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~3.7K (as of 2024) |
-|  | - **GitHub フォーク:** ~455 |
-|  | - **Issues の数:** ~130 open issues |
+| **人気** | - **GitHub スター:** およそ 3.7K (as of 2024) |
+|  | - **GitHub フォーク:** およそ 455 |
+|  | - **Issues の数:** およそ 130 オープン状態 |
 |  | - **傾向:** Popular with ongoing updates and regular contributions |
-| **コミュニティサポート** | - **Active Issues:**  Issues are actively managed with frequent bug fixes and improvements. |
-|  | - **Documentation:** Detailed documentation is available, covering everything from attack configuration to custom dataset integration |
-|  | - **Discussion Forums:** GitHub Discussions are active, with support for technical queries and community interaction. |
-|  | - **Contributors:** Over 20 contributors, reflecting diverse input and enhancements. |
-| **拡張性** | - **Framework Support:** Supports NLP models in PyTorch and integrates well with Hugging Face’s Transformers and Datasets libraries, making it compatible with a broad range of NLP tasks. |
-|  | - **Large-Scale Deployment:** Primarily designed for research and experimentation; deployment at scale would likely require customization. |
-| **統合** | - **Compatibility:** Model-agnostic, allowing use with various NLP model architectures as long as they meet the interface requirements. |
+| **コミュニティサポート** | - **Issues 活動:**  Issues are actively managed with frequent bug fixes and improvements. |
+|  | - **ドキュメント:** Detailed documentation is available, covering everything from attack configuration to custom dataset integration |
+|  | - **ディスカッションフォーラム:** GitHub Discussions are active, with support for technical queries and community interaction. |
+|  | - **貢献者:** Over 20 contributors, reflecting diverse input and enhancements. |
+| **拡張性** | - **フレームワークサポート:** Supports NLP models in PyTorch and integrates well with Hugging Face’s Transformers and Datasets libraries, making it compatible with a broad range of NLP tasks. |
+|  | - **大規模デプロイメント:** Primarily designed for research and experimentation; deployment at scale would likely require customization. |
+| **統合** | - **互換性:** Model-agnostic, allowing use with various NLP model architectures as long as they meet the interface requirements. |
 
 **ツールの評価**
 
@@ -484,57 +484,57 @@ Evasion:Tests model performance against adversarial inputs
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image |  |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 |  |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision |  |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン |  |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI | ✅ |
-| Keras | DL, GenAI |  |
-| PyTorch | DL, GenAI | ✅ |
-| MxNet | DL |  |
-| Scikit-learn | ML |  |
-| XGBoost | ML |  |
-| LightGBM | ML |  |
-| CatBoost | ML |  |
-| GPy | ML |  |
+| Tensorflow | 深層学習, 生成 AI | ✅ |
+| Keras | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI | ✅ |
+| MxNet | 深層学習 |  |
+| Scikit-learn | 機械学習 |  |
+| XGBoost | 機械学習 |  |
+| LightGBM | 機械学習 |  |
+| CatBoost | 機械学習 |  |
+| GPy | 機械学習 |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning | ✅ |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection |  |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング | ✅ |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション |  |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
-- Development-time Model poisoning: Simulates attacks during development to evaluate vulnerabilities[*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
 - Evasion:Tests model performance against adversarial inputs[*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
 ## 生成 AI レッドチーミングのためのオープンソースツール
@@ -557,17 +557,17 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~2k (as of Dec-2024) |
-|  | - **GitHub フォーク:** ~384forks |
-|  | - **Issues の数:** ~63 open issues, 79 closed issues |
-|  | - **傾向:** Steady growth, with consistent updates and industry adoption for adversarial robustness. |
-| **コミュニティサポート** | - **Active Issues:** Issues are being addressed within a week. |
-|  | - **Documentation:** Detailed and regularly updated, with comprehensive guides and API documentation. |
-|  | - **Discussion Forums:** Active GitHub issues |
-|  | - **Contributors:** Over 125 contributors. |
-| **拡張性** | - **Framework Support:** Scales across TensorFlow, PyTorch and supports models on local like ONNX |
-|  | - **Large-Scale Deployment:** Can be extended to Azure pipeline. |
-| **統合** | - **Compatibility:** Compatible with majority of LLMs |
+| **人気** | - **GitHub スター:** およそ 2k (2024 年 12 月現在) |
+|  | - **GitHub フォーク:** およそ 384 フォーク |
+|  | - **Issues の数:** およそ 63 オープン状態, 79 クローズ済み状態 |
+|  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長 |
+| **コミュニティサポート** | - **Issues 活動:** Issues are being addressed within a week. |
+|  | - **ドキュメント:** Detailed and regularly updated, with comprehensive guides and API documentation. |
+|  | - **ディスカッションフォーラム:** Active GitHub issues |
+|  | - **貢献者:** Over 125 contributors. |
+| **拡張性** | - **フレームワークサポート:** Scales across TensorFlow, PyTorch and supports models on local like ONNX |
+|  | - **大規模デプロイメント:** Can be extended to Azure pipeline. |
+| **統合** | - **互換性:** Compatible with majority of LLMs |
 
 **ツールの評価**
 
@@ -582,26 +582,26 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image |  |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 |  |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision | ✅ |
-| Speech Recognition | Audio | ✅ |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン | ✅ |
+| 音声認識 | 音声 | ✅ |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI | ✅ |
-| PyTorch | DL, GenAI | ✅ |
+| Tensorflow | 深層学習, 生成 AI | ✅ |
+| PyTorch | 深層学習, 生成 AI | ✅ |
 | Azure OpenAI | GenAI | ✅ |
 | Huggingface | ML, GenAI | ✅ |
 | Azure managed endpoints | Machine Learning Deployment | ✅ |
@@ -610,29 +610,29 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 | OpenAI API | GenAI | ✅ |
 | GGUF (Llama.cpp) | GenAI, Lightweight Inference | ✅ |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion Tests model performance against adversarial inputs | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |   |
-| Direct prompt injection |  ✅ |
-| Data disclosure |   |
-| Model input leak |   |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |   |
+| 直接プロンプトインジェクション |  ✅ |
+| データ開示 |   |
+| モデル入力漏洩 |   |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
-- Evasion:Tests model performance against adversarial inputs  [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 - Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.*https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Garak
@@ -650,17 +650,17 @@ https://github.com/NVIDIA/garak |
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~3,5K stars (as of Dec 2024) |
-|  | - **GitHub フォーク:** ~306forks |
-|  | - **Issues の数:** ~303 open issues, 299 closed issues |
+| **人気** | - **GitHub スター:** およそ 3,5K stars (as of Dec 2024) |
+|  | - **GitHub フォーク:** およそ 306 フォーク |
+|  | - **Issues の数:** およそ 303 オープン状態, 299 クローズ済み状態 |
 |  | - **傾向:** Growing, particularly with in attack generation, and LLM vulnerability scanning. |
-| **コミュニティサポート** | - **Active Issues:** Actively responds to the issues and tries to close it within a week |
-|  | - **Documentation:** Detailed documentation with guidance and example experiments. |
-|  | - **Discussion Forums:**  Active GitHub discussions, as well as discord. |
-|  | - **Contributors:** Over 27 contributors. |
-| **拡張性** | - **Framework Support:** Supports various LLMs from hugging face, openai api, litellm.   |
-|  | - **Large-Scale Deployment:** Mostly used in attack LLM, detect LLM failures and assessing LLM security. Can be integrated with NeMo Guardrails |
-| **統合** | - **Compatibility:**  All LLMs, Nvidia models |
+| **コミュニティサポート** | - **Issues 活動:** Actively responds to the issues and tries to close it within a week |
+|  | - **ドキュメント:** Detailed documentation with guidance and example experiments. |
+|  | - **ディスカッションフォーラム:**  Active GitHub discussions, as well as discord. |
+|  | - **貢献者:** Over 27 contributors. |
+| **拡張性** | - **フレームワークサポート:** Supports various LLMs from hugging face, openai api, litellm.   |
+|  | - **大規模デプロイメント:** Mostly used in attack LLM, detect LLM failures and assessing LLM security. Can be integrated with NeMo Guardrails |
+| **統合** | - **互換性:**  All LLMs, Nvidia models |
 
 **ツールの評価**
 
@@ -675,26 +675,26 @@ https://github.com/NVIDIA/garak |
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image |  |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 |  |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision | ✅ |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン | ✅ |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI |  |
-| PyTorch | DL, GenAI | ✅ |
+| Tensorflow | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI | ✅ |
 | Azure OpenAI | GenAI |  |
 | Huggingface | ML, GenAI | ✅ |
 | Azure managed endpoints | Machine Learning Deployment |  |
@@ -704,26 +704,26 @@ https://github.com/NVIDIA/garak |
 | GGUF (Llama.cpp) | GenAI, Lightweight Inference | ✅ |
 | OctoAI | GenAI | ✅ |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection | ✅ |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
-- Evasion:Tests model performance against adversarial inputs  [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション | ✅ |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 - Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.
 *https://owaspai.org/goto/promptinjection/*
 
@@ -740,17 +740,17 @@ https://github.com/NVIDIA/garak |
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~427 stars (as of Dec 2024) |
-|  | - **GitHub フォーク:** ~56 forks |
-|  | - **Issues の数:**  ~10 open issues, 6 closed issues |
+| **人気** | - **GitHub スター:** およそ 427 stars (as of Dec 2024) |
+|  | - **GitHub フォーク:** およそ 56 フォーク |
+|  | - **Issues の数:**  およそ 10 オープン状態, 6 クローズ済み状態 |
 |  | - **傾向:** Not updating since Aug |
-| **コミュニティサポート** | - **Active Issues:** Not updated nor solved any bugs since July. |
-|  | - **Documentation:** Moderate documentation with few examples |
-|  | - **Discussion Forums:**  GitHub issue forums |
-|  | - **Contributors:** Over 10 contributors. |
-| **拡張性** | - **Framework Support:** Python and docker image. |
-|  | - **Large-Scale Deployment:** It only assesses the security of your GenAI application's system prompt against various dynamic LLM-based attacks, so it can be integrated with current env. |
-| **統合** | - **Compatibility:**  Any device. |
+| **コミュニティサポート** | - **Issues 活動:** Not updated nor solved any bugs since July. |
+|  | - **ドキュメント:** Moderate documentation with few examples |
+|  | - **ディスカッションフォーラム:**  GitHub issue forums |
+|  | - **貢献者:** Over 10 contributors. |
+| **拡張性** | - **フレームワークサポート:** Python and docker image. |
+|  | - **大規模デプロイメント:** It only assesses the security of your GenAI application's system prompt against various dynamic LLM-based attacks, so it can be integrated with current env. |
+| **統合** | - **互換性:**  Any device. |
 
 **ツールの評価**
 
@@ -765,28 +765,28 @@ https://github.com/NVIDIA/garak |
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image |  |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 |  |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision |  |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン |  |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
 *(LLM Model agnostic in the API mode of use)*
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI |  |
-| PyTorch | DL, GenAI |  |
+| Tensorflow | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI |  |
 | Azure OpenAI | GenAI |  |
 | Huggingface | ML, GenAI |  |
 | Azure managed endpoints | Machine Learning Deployment |  |
@@ -796,29 +796,29 @@ https://github.com/NVIDIA/garak |
 | GGUF (Llama.cpp) | GenAI, Lightweight Inference |  |
 | OctoAI | GenAI |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection | ✅ |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション | ✅ |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
-- Evasion:Tests model performance against adversarial inputs  [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 - Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards. *https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Guardrail
@@ -834,17 +834,17 @@ Notes:
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~4,3K (as 2024) |
-|  | - **GitHub フォーク:** ~326 |
-|  | - **Issues の数:**  ~296 Closed, 40 Open.  |
+| **人気** | - **GitHub スター:** およそ 4,3K (as 2024) |
+|  | - **GitHub フォーク:** およそ 326 |
+|  | - **Issues の数:**  およそ 296 Closed, 40 Open.  |
 |  | - **傾向:** Steady growth with consistent and timely updates. |
-| **コミュニティサポート** | - **Active Issues:** Issues are mostly solved within weeks. |
-|  | - **Documentation:** Detailed documentation with examples and user guide |
-|  | - **Discussion Forums:**  Primarily github issues and also, support is available on discord Server and twitter. |
-|  | - **Contributors:** Over 60 contributors |
-| **拡張性** | - **Framework Support:** Supports Pytorch. Language: Python and Javascript. Working to add more support |
-|  | - **Large-Scale Deployment:** Can be extended to Azure, langchain. |
-| **統合** | - **Compatibility:**  Compatible with various open source LLMs like OpenAI, Gemini, Anthropic. |
+| **コミュニティサポート** | - **Issues 活動:** Issues are mostly solved within weeks. |
+|  | - **ドキュメント:** Detailed documentation with examples and user guide |
+|  | - **ディスカッションフォーラム:**  Primarily github issues and also, support is available on discord Server and twitter. |
+|  | - **貢献者:** Over 60 contributors |
+| **拡張性** | - **フレームワークサポート:** Supports Pytorch. Language: Python and Javascript. Working to add more support |
+|  | - **大規模デプロイメント:** Can be extended to Azure, langchain. |
+| **統合** | - **互換性:**  Compatible with various open source LLMs like OpenAI, Gemini, Anthropic. |
 
 **ツールの評価**
 
@@ -859,26 +859,26 @@ Notes:
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image |  |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 |  |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision |  |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン |  |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI |  |
-| PyTorch | DL, GenAI | ✅ |
+| Tensorflow | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI | ✅ |
 | Azure OpenAI | GenAI | ✅ |
 | Huggingface | ML, GenAI | ✅ |
 | Azure managed endpoints | Machine Learning Deployment |  |
@@ -888,29 +888,29 @@ Notes:
 | GGUF (Llama.cpp) | GenAI, Lightweight Inference |  |
 | OctoAI | GenAI |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |  |
-| Direct prompt injection | ✅ |
-| Data disclosure |  |
-| Model input leak |  |
-| Indirect prompt injection |  |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |  |
+| 直接プロンプトインジェクション | ✅ |
+| データ開示 |  |
+| モデル入力漏洩 |  |
+| 間接プロンプトインジェクション |  |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
-- Evasion:Tests model performance against adversarial inputs  [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 - Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.   *https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Promptfoo
@@ -931,17 +931,17 @@ Notes:
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** ~4.3K stars (as of 2024) |
-|  | - **GitHub フォーク:**  ~320 forks |
-|  | - **Issues の数:** ~523 closed, 108 open |
+| **人気** | - **GitHub スター:** およそ 4.3K スター (2024 年現在) |
+|  | - **GitHub フォーク:**  およそ 320 フォーク |
+|  | - **Issues の数:** およそ 523 closed, 108 open |
 |  | - **傾向:** Consistent update |
-| **コミュニティサポート** | - **Active Issues:** Issues are  addressed within acouple of days. |
-|  | - **Documentation:** Detailed documentation with user guide and examples. |
-|  | - **Discussion Forums:** Active Github issue and also support available on Discord |
-|  | - **Contributors:** Over 113 contributors. |
-| **拡張性** | - **Framework Support:**  Language: JavaScript |
-|  | - **Large-Scale Deployment:** Enterprise version available, that supports cloud deployment. |
-| **統合** | - **Compatibility:** Compatible with majority of the LLMs |
+| **コミュニティサポート** | - **Issues 活動:** Issues are  addressed within acouple of days. |
+|  | - **ドキュメント:** Detailed documentation with user guide and examples. |
+|  | - **ディスカッションフォーラム:** Active Github issue and also support available on Discord |
+|  | - **貢献者:** Over 113 contributors. |
+| **拡張性** | - **フレームワークサポート:**  Language: JavaScript |
+|  | - **大規模デプロイメント:** Enterprise version available, that supports cloud deployment. |
+| **統合** | - **互換性:** Compatible with majority of the LLMs |
 
 **ツールの評価**
 
@@ -956,26 +956,26 @@ Notes:
 
 | データモダリティ | サポートあり |
 | --- | --- |
-| Text | ✅ |
-| Image |  |
-| Audio |  |
-| Video |  |
-| Tabular data |  |
+| テキスト | ✅ |
+| 静止画 |  |
+| 音声 |  |
+| 動画 |  |
+| 表形式データ |  |
 
-**Machine Learning Tasks**
+**機械学習タスク**
 
-| Task Type | Data Modality | Supported |
+| タスクタイプ | データモダリティ | サポートあり |
 | --- | --- | --- |
-| Classification | All (See Data modality section) | ✅ |
-| Object Detection | Computer Vision |  |
-| Speech Recognition | Audio |  |
+| 分類 | すべて (データモダリティセクションを参照) | ✅ |
+| 物体検出 | コンピュータビジョン |  |
+| 音声認識 | 音声 |  |
 
-**Framework Applicability**
+**フレームワークの適用性**
 
-| Framework / Tool | Category | Supported |
+| フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
-| Tensorflow | DL, GenAI |  |
-| PyTorch | DL, GenAI |  |
+| Tensorflow | 深層学習, 生成 AI |  |
+| PyTorch | 深層学習, 生成 AI |  |
 | Azure OpenAI | GenAI | ✅ |
 | Huggingface | ML, GenAI | ✅ |
 | Azure managed endpoints | Machine Learning Deployment |  |
@@ -985,27 +985,27 @@ Notes:
 | GGUF (Llama.cpp) | GenAI, Lightweight Inference | ✅ |
 | OctoAI | GenAI |  |
 
-**OWASP AI Exchange Threat Coverage**
+**OWASP AI Exchange 脅威カバレッジ**
 
-| Topic | Coverage |
+| トピック | カバレッジ |
 | --- | --- |
-| Development time model poisoning |  |
-| Runtime model poisoning |  |
-| Model theft by use |  |
-| Training data poisoning |  |
-| Training data leak |  |
-| Runtime model theft |  |
-| Evasion (Tests model performance against adversarial inputs) | ✅ |
-| Model inversion / Membership inference |  |
-| Denial of model service |   |
-| Direct prompt injection |   |
-| Data disclosure |   |
-| Model input leak |   |
-| Indirect prompt injection | ✅ |
-| Development time model theft |  |
-| Output contains injection |  |
+| 開発時モデルポイズニング |  |
+| 実行時モデルポイズニング |  |
+| 使用時モデル窃取 |  |
+| トレーニングデータポイズニング |  |
+| トレーニングデータ漏洩 |  |
+| 実行時モデル窃取 |  |
+| 回避 (敵対的入力に対するモデルのパフォーマンスをテストする) | ✅ |
+| モデル反転 / メンバーシップ推論 |  |
+| モデルサービス拒否 |   |
+| 直接プロンプトインジェクション |   |
+| データ開示 |   |
+| モデル入力漏洩 |   |
+| 間接プロンプトインジェクション | ✅ |
+| 開発時モデル窃取 |  |
+| インジェクションを含む出力 |  |
 
-Notes:
+注:
 
 - Model theft through use:Evaluates risks of model exploitation during usage  [*https://owaspai.org/goto/modeltheftuse/*](https://owaspai.org/goto/modeltheftuse/)
 - Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.
