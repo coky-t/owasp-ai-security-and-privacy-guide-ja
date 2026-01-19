@@ -90,7 +90,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 | **人気** | - **GitHub スター:** およそ 4.9K スター (2024 年現在) |
 |  | - **GitHub フォーク:** およそ 1.2K フォーク |
 |  | - **Issues の数:** およそ 131 オープン状態, 761 クローズ済み状態 |
-|  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長。 |
+|  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長している。 |
 | **コミュニティサポート** | - **Issues 活動:** 反応が早いチーム、通常は一週間以内に issues に対処している。 |
 |  | - **ドキュメント:** IBM のウェブサイトには包括的なガイドと API ドキュメントがあり、詳細で定期的に更新されている。 |
 |  | - **ディスカッションフォーラム:** 主に学術的な場で議論されており、Stack Overflow や GitHub でも行われている。 |
@@ -183,16 +183,16 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 | --- | --- |
 | **人気** | - **GitHub スター:**  およそ 176 スター (2024 年現在) |
 |  | - **GitHub フォーク:**  およそ 67 フォーク |
-|  | - **Issues の数:** およそ  59 オープン状態, 733 closed, 26 contributors |
-|  | - **傾向:** Growing, particularly within defense and cybersecurity sectors. |
-| **コミュニティサポート** | - **Issues 活動:**  Fast response to issues (typically resolved within days to a week). |
-|  | - **ドキュメント:** Comprehensive, but more security-focused, with advanced tutorials on adversarial attacks and defenses. |
-|  | - **ディスカッションフォーラム:** Active GitHub discussions, some presence on security-specific forums (e.g., in relation to DARPA projects). |
-|  | - **貢献者:** Over 40 contributors, mostly security experts and researchers. |
-| **拡張性** | - **フレームワークサポート:** Supports TensorFlow and Keras natively, with some integration options for PyTorch. |
-|  | - **大規模デプロイメント:** Mostly used in security-related deployments; scalability for non-security tasks is less documented. |
-| **統合** | - **互換性:** Works well with TensorFlow and Keras; IBM ART integration for enhanced robustness |
-|  | - **API Availability**: Limited compared to IBM ART, but sufficient for adversarial ML use cases. |
+|  | - **Issues の数:** およそ  59 オープン状態, 733 クローズ済み, 貢献者 26 名 |
+|  | - **傾向:** 特に防衛とサイバーセキュリティの分野で成長している。 |
+| **コミュニティサポート** | - **Issues 活動:**  issues へ迅速に対応している (通常は数日から一週間以内に解決される)。 |
+|  | - **ドキュメント:** 包括的だが、セキュリティに重点を置いており、敵対的な攻撃と防御に関する高度なチュートリアルを備えている。 |
+|  | - **ディスカッションフォーラム:** GitHub で活発にディスカッションしている。セキュリティ固有のフォーラム (DARPA プロジェクト関連など) への参加もある。 |
+|  | - **貢献者:** 40 名以上。ほとんどがセキュリティ専門家と研究者。 |
+| **拡張性** | - **フレームワークサポート:** TensorFlow と Keras をネイティブにサポートし、PyTorch の統合オプションもいくつか備えている。 |
+|  | - **大規模デプロイメント:** 主にセキュリティ関連のデプロイメントで使用される。セキュリティ以外のスケーラビリティについてはあまり文書化されていない。 |
+| **統合** | - **互換性:** TensorFlow と Keras と相性が良い。堅牢性を高めるために IBM ART と統合する。 |
+|  | - **API の可用性**: IBM ART と比較すると制限があるが、敵対的機械学習のユースケースには十分である。 |
 
 **ツールの評価**
 
@@ -259,7 +259,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 - 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
 *https://owaspai.org/goto/promptinjection/*
 
 ### **ツール名: Foolbox**
@@ -633,7 +633,7 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 注:
 
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.*https://owaspai.org/goto/promptinjection/*
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Garak
 
@@ -724,7 +724,7 @@ https://github.com/NVIDIA/garak |
 | 開発時モデル窃取 |  |
 | インジェクションを含む出力 |  |
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
 *https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Prompt Fuzzer
@@ -819,7 +819,7 @@ https://github.com/NVIDIA/garak |
 注:
 
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards. *https://owaspai.org/goto/promptinjection/*
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Guardrail
 
@@ -911,7 +911,7 @@ https://github.com/NVIDIA/garak |
 注:
 
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.   *https://owaspai.org/goto/promptinjection/*
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/goto/promptinjection/*
 
 ### ツール名: Promptfoo
 
@@ -1008,7 +1008,7 @@ https://github.com/NVIDIA/garak |
 注:
 
 - Model theft through use:Evaluates risks of model exploitation during usage  [*https://owaspai.org/goto/modeltheftuse/*](https://owaspai.org/goto/modeltheftuse/)
-- Prompt Injection: Evaluates the robustness of generative AI models by exploiting weaknesses in prompt design, leading to undesired outputs or bypassing model safeguards.
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
 *[https://owaspai.org/goto/promptinjection/](https://owaspai.org/goto/promptinjection/)*
 
 ## ツール評価
