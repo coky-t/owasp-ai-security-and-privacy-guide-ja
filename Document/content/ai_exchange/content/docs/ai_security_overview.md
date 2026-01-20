@@ -577,7 +577,7 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
     - [unwanted disclosure in model output](/goto/disclosureuse/)
     - [model inversion](/goto/modelinversionandmembership/) 
     - [training data leaking from your engineering environment](/goto/devdataleak/).
-    - [membership inference]((/goto/modelinversionandmembership/)) - but only when the fact that something or someone was part of the training data constitutes sensitive information. For example, when the training set consists of criminals and their history to predict criminal careers. Membership of that set gives away the person is a convicted or alleged criminal.
+    - [membership inference](/goto/modelinversionandmembership/) - but only when the fact that something or someone was part of the training data constitutes sensitive information. For example, when the training set consists of criminals and their history to predict criminal careers. Membership of that set gives away the person is a convicted or alleged criminal.
     
   Question: do you use RAG?
   - Yes: apply the above to your augmentation data, as if it was part of the training set: as the repository data feeds into the model and can therefore be part of the output as well.
