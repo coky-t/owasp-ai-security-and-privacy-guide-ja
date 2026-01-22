@@ -266,7 +266,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 | **ツール名: Foolbox** |  |
 | --- | --- |
-| 開発元/ソース | Authors/Developers of Foolbox |
+| 開発元/ソース | Foolbox の著者/開発者 |
 | GitHub 参照 | [https://github.com/bethgelab/foolbox](https://github.com/bethgelab/foolbox) |
 | 言語 | Python |
 | ライセンス | MIT ライセンスの下でのオープンソース |
@@ -278,16 +278,16 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 | **人気** | - **GitHub スター:**  およそ 2,800 スター (2024 年現在) |
 |  | - **GitHub フォーク:** およそ 428 フォーク |
 |  | - **Issues の数:** およそ 21 オープン状態, 350 クローズ済み状態 |
-|  | - **傾向:** Steady, with consistent updates from the academic community. |
-| **コミュニティサポート** | - **Issues 活動:** Typically resolved within a few weeks. |
-|  | - **ドキュメント:** Moderate documentation with basic tutorials; more research-focused. |
-|  | - **ディスカッションフォーラム:** Primarily discussed in academic settings, with limited industry forum activity. |
-|  | - **貢献者:** Over 30 contributors, largely from academia. |
-| **拡張性** | - **フレームワークサポート:** Framework Support: Compatible with TensorFlow, PyTorch, and JAX |
-|  | - **大規模デプロイメント:**  Limited scalability for large-scale industry deployments, more focused on research and experimentation. |
-| **統合** | - **互換性:**  Strong integration with TensorFlow, PyTorch, and JAX. |
+|  | - **傾向:** 学術コミュニティからの一貫した最新情報により安定している。 |
+| **コミュニティサポート** | - **Issues 活動:** 通常は一週間以内に解決している。 |
+|  | - **ドキュメント:** 基本的なチュートリアルを含む中程度のドキュメント。研究に重点を置いている。 |
+|  | - **ディスカッションフォーラム:** 主に学術的な場で議論されており、業界フォーラムの活動は限られている。 |
+|  | - **貢献者:** 30 名以上。主に学会から。 |
+| **拡張性** | - **フレームワークサポート:** TensorFlow, PyTorch, JAX と互換あり。 |
+|  | - **大規模デプロイメント:** 大規模な業界デプロイメントにはスケーラビリティが限られており、研究と実験に重点を置いている。 |
+| **統合** | - **互換性:** TensorFlow, PyTorch, JAX との強力な統合。 |
 
-**Total Rating**
+**ツールの評価**
 
 | **基準** | **高** | **中** | **低** |
 | --- | --- | --- | --- |
@@ -350,7 +350,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 注:
 
-Evasion:Tests model performance against adversarial inputs
+回避: 敵対的入力に対するモデルのパフォーマンスをテストする
 
 [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
