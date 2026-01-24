@@ -354,14 +354,14 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
-**ツール名: DeepSec**
+### **ツール名: DeepSec**
 
 | **ツール名: DeepSec** |  |
 | --- | --- |
-| 開発元/ソース | Developed by a team of academic researchers in collaboration with the National University of Singapore. |
+| 開発元/ソース | シンガポール国立大学と共同で学術研究者チームによって開発されている。 |
 | GitHub 参照 | [https://github.com/ryderling/DEEPSEC](https://github.com/ryderling/DEEPSEC) |
 | 言語 | Python |
-| ライセンス | Open-source under the Apache License 2.0. |
+| ライセンス | Apache License 2.0 の下でのオープンソース |
 | 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
 | API の可用性 | Yes ✅ |
 
@@ -370,14 +370,14 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 | **人気** | - **GitHub スター:** 209 (as of 2024) |
 |  | - **GitHub フォーク:** およそ 70 |
 |  | - **Issues の数:** およそ 15 オープン状態 |
-|  | - **傾向:** Stable with a focus on deep learning security |
-| **コミュニティサポート** | - **Issues 活動:** Currently has ongoing issues and updates, suggesting active maintenance. |
-|  | - **ドキュメント:** Available through GitHub, covering setup, use, and contributions. |
-|  | - **ディスカッションフォーラム:**  GitHub Discussions section and community channels support developer interactions. |
-|  | - **貢献者:**  A small but dedicated contributor base. |
-| **拡張性** | - **フレームワークサポート:**  Primarily supports PyTorch and additional libraries like TorchVision. |
-|  | - **大規模デプロイメント:** Suitable for research and testing environments but may need adjustments for production-grade scaling |
-| **統合** | - **互換性:** Compatible with machine learning libraries in Python. |
+|  | - **傾向:** ディープラーニングのセキュリティを重視して安定している |
+| **コミュニティサポート** | - **Issues 活動:** 現在、問題と更新が進行中であり、アクティブなメンテナンスを示唆している。 |
+|  | - **ドキュメント:** セットアップ、使用、貢献についてカバーしており、GitHub を通じて利用可能である。 |
+|  | - **ディスカッションフォーラム:** GitHub Discussions セクションとコミュニティチャネルは開発者のやり取りをサポートしている。 |
+|  | - **貢献者:** 小規模だが熱心な貢献者ベース。 |
+| **拡張性** | - **フレームワークサポート:** 主に PyTorch と、TorchVision などの追加ライブラリをサポートしている。 |
+|  | - **大規模デプロイメント:** 研究やテスト環境には適しているが、本番環境グレードのスケーリングには調整が必要となり得る。 |
+| **統合** | - **互換性:** Python の機械学習ライブラリと互換している。 |
 
 **ツールの評価**
 
@@ -442,7 +442,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 注:
 
-Evasion:Tests model performance against adversarial inputs
+回避: 敵対的入力に対するモデルのパフォーマンスをテストする
 
 [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
