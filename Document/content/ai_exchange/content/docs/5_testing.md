@@ -370,7 +370,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 | **人気** | - **GitHub スター:** 209 (as of 2024) |
 |  | - **GitHub フォーク:** およそ 70 |
 |  | - **Issues の数:** およそ 15 オープン状態 |
-|  | - **傾向:** ディープラーニングのセキュリティを重視して安定している |
+|  | - **傾向:** ディープラーニングのセキュリティを重視して安定している。 |
 | **コミュニティサポート** | - **Issues 活動:** 現在、問題と更新が進行中であり、アクティブなメンテナンスを示唆している。 |
 |  | - **ドキュメント:** セットアップ、使用、貢献についてカバーしており、GitHub を通じて利用可能である。 |
 |  | - **ディスカッションフォーラム:** GitHub Discussions セクションとコミュニティチャネルは開発者のやり取りをサポートしている。 |
@@ -450,7 +450,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 | **ツール名: TextAttack** |  |
 | --- | --- |
-| 開発元/ソース | Developed by researchers at the University of Maryland and Google Research. |
+| 開発元/ソース | メリーランド大学と Google Research の研究者によって開発されている。 |
 | GitHub 参照 | [https://github.com/QData/TextAttack](https://github.com/QData/TextAttack) |
 | 言語 | Python |
 | ライセンス | MIT ライセンスの下でのオープンソース |
@@ -462,14 +462,14 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 | **人気** | - **GitHub スター:** およそ 3.7K (as of 2024) |
 |  | - **GitHub フォーク:** およそ 455 |
 |  | - **Issues の数:** およそ 130 オープン状態 |
-|  | - **傾向:** Popular with ongoing updates and regular contributions |
-| **コミュニティサポート** | - **Issues 活動:**  Issues are actively managed with frequent bug fixes and improvements. |
-|  | - **ドキュメント:** Detailed documentation is available, covering everything from attack configuration to custom dataset integration |
-|  | - **ディスカッションフォーラム:** GitHub Discussions are active, with support for technical queries and community interaction. |
-|  | - **貢献者:** Over 20 contributors, reflecting diverse input and enhancements. |
-| **拡張性** | - **フレームワークサポート:** Supports NLP models in PyTorch and integrates well with Hugging Face’s Transformers and Datasets libraries, making it compatible with a broad range of NLP tasks. |
-|  | - **大規模デプロイメント:** Primarily designed for research and experimentation; deployment at scale would likely require customization. |
-| **統合** | - **互換性:** Model-agnostic, allowing use with various NLP model architectures as long as they meet the interface requirements. |
+|  | - **傾向:** 継続的なアップデートと定期的な貢献で人気がある。 |
+| **コミュニティサポート** | - **Issues 活動:** Issues は頻繁なバグ修正と改善で積極的に管理されている。 |
+|  | - **ドキュメント:** 攻撃構成からカスタムデータセットの統合まですべてを網羅した詳細なドキュメントが用意されている。 |
+|  | - **ディスカッションフォーラム:** GitHub Discussions は、技術的な質問やコミュニティの交流のサポートで、活発である。 |
+|  | - **貢献者:** 20 名以上。多様な意見と強化を反映している。 |
+| **拡張性** | - **フレームワークサポート:** PyTorch の NLP モデルをサポートし、Hugging Face の Transformers と Datasets ライブラリとうまく統合し、幅広い NLP タスクと互換がある。 |
+|  | - **大規模デプロイメント:** 主に研究と実験用に設計されており、大規模なデプロイメントにはカスタマイズを必要とする可能性がある。 |
+| **統合** | - **互換性:** モデルに依存せず、インタフェース要件を満たす限り、さまざまな NLP モデルアーキテクチャで使用できる。 |
 
 **ツールの評価**
 
@@ -535,7 +535,7 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 注:
 
 - 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
-- Evasion:Tests model performance against adversarial inputs[*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
 ## 生成 AI レッドチーミングのためのオープンソースツール
 
