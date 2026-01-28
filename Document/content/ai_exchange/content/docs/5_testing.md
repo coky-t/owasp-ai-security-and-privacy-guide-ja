@@ -10,25 +10,23 @@ weight: 6
 ## イントロダクション
 AI システムのセキュリティをテストするには、以下の三つの戦略に依存します。
 1. **従来のセキュリティテスト** (つまり _ペンテスト_)。 [セキュアソフトウェア開発](1_general_controls.md#secdevprogram) を参照してください。
-2. **モデルパフォーマンスバリデーション** ([継続的バリデーション](1_general_controls.md#continuousvalidation) を参照): モデルの意図した動作を表す入力と出力を持つバリデーションセットを用いて、モデルが指定された受け入れ基準に従って動作するかどうかをテストします。セキュリティとしては、これはデータポイズニングやモデルポイズニングによってモデルの動作が恒久的に改変されていないかを検出することです。セキュリティ以外としては、これは機能の正確性やモデルドリフトなどをテストすることです。
+2. **モデルパフォーマンスバリデーション** ([継続的バリデーション](1_general_controls.md#continuousvalidation) を参照): モデルの意図した動作を表す入力と出力を持つテストセットを用いて、モデルが指定された受け入れ基準に従って動作するかどうかをテストします。セキュリティとしては、これはデータポイズニングやモデルポイズニングによってモデルの動作が恒久的に改変されていないかを検出することです。セキュリティ以外としては、これは機能の正確性やモデルドリフトなどをテストすることです。
 3. **AI セキュリティテスト** (本セクション) は、特定の攻撃をシミュレートして AI モデルがこれらの攻撃を耐えることができるかどうかをテストする、_AI レッドチーミング_ の一部です。
 
-AI セキュリティテストは敵対的な動作をシミュレートして、AI システムの脆弱性、弱点、リスクを明らかにします。従来の AI テストの焦点領域は機能性とパフォーマンスですが、AI レッドチーミングの焦点領域は標準的なバリデーションを超え、意図的なストレステスト、攻撃、セーフガードのバイパスの試みを含みます。レッドチーミングの焦点はセキュリティにとどまりませんが、このドキュメントでは、主に「AI セキュリティのための AI レッドチーミング」に焦点を当てています。
+**AI セキュリティテストのスコープ**  
+AI セキュリティテストは敵対的な動作をシミュレートして、AI システムの脆弱性、弱点、リスクを明らかにします。従来の AI テストの焦点領域は機能性とパフォーマンスですが、AI レッドチーミングの焦点領域は標準的なバリデーションを超え、意図的なストレステスト、攻撃、セーフガードのバイパスの試みを含みます。レッドチーミングの焦点はセキュリティにとどまりませんが、このドキュメントでは、主に「AI セキュリティのための AI レッドチーミング」に焦点を当てています。従来のセキュリティテスト (ペンテスト) については、すでに多くのリソースでカバーされているため、除外しています。
 
-このセクションでは、予測 AI と生成 AI の異なる性質、リスク、用途に基づき、AI レッドチーミングを区別します。開発時のサプライチェーンの脅威など、一部の脅威は両方のタイプの AI に共通する可能性がありますが、アプリケーションでそれらが発現する方法は大きく異なることがあります。
+**This section**  
+This section discusses:
+- threats to test for,
+ the general AI security testing approach,
+- testing strategies for several key threats,
+- an overview of tools,
+- a review of tools, divided into tools for Predictive AI and tools for Generative AI.
 
-AI レッドチーミングへの体系的なアプローチには、以下に示した重要なステップがあります。
-
-- **目的とスコープの定義**: 目的の特定。組織、コンプライアンス、リスク管理要件との整合。
-- **AI システムの理解:** モデル、ユースケース、デプロイメントシナリオの詳細。
-- **潜在的な脅威の特定:** 脅威モデリング。攻撃対象領域、調査、脅威アクターの特定。
-- **攻撃シナリオの作成:** 攻撃シナリオとエッジケースの設計。
-- **テスト実行:** 攻撃シナリオの手動テストや自動テストの実施。
-- **リスク評価:** 特定された脆弱性とリスクの文書化。
-- **優先順位付けとリスク緩和:** 修復のための行動計画の策定、緩和策の実施、残存リスクの算出。
-- **修正の検証:** 修復後システムの再テスト。
-
-AI セキュリティテストの詳細については、[OWASP AI テストガイド](https://github.com/OWASP/www-project-ai-testing-guide) を参照してください。
+**References on AI security testing**:
+- [Agentic AI red teaming guide](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) - a collaboration between the CSA and the AI Exchange.
+- [OWASP AI security testing guide](https://owasp.org/www-project-ai-testing-guide/)
 
 
 ## テストすべき脅威
@@ -38,25 +36,56 @@ AI セキュリティテストの詳細については、[OWASP AI テストガ�
 
 **予測 AI (Predictive AI):** 予測 AI システムは入力データに基づいて予測や分類を行うように設計されています。例としては、不正検知、画像認識、レコメンデーションシステムなどがあります。
 
-**予測 AI への主要な脅威:**
+**従来のセキュリティテストを超えて、テストすべき主要な予測 AI の脅威:**
 
-- [回避攻撃](2_threats_through_use.md#21-evasion): これらの攻撃は、攻撃者がモデルを誤誘導する入力を作成する際に発生し、タスクを誤って実行させます。
+- [回避攻撃](2_threats_through_use.md#21-evasion): これらの攻撃は、攻撃者がモデルを誤誘導するデータで入力を作成する際に発生し、タスクを誤って実行させます。
 - [モデル窃取](2_threats_through_use.md#24-model-theft-through-use): この攻撃では、モデルのパラメータや機能が盗まれます。これは、攻撃者がレプリカモデルを作成することを可能にし、それを敵対的攻撃やその他の複合的な脅威を作成するためのオラクルとして使用できます。
-- [モデルポイズニング](3_development_time_threats.md#31-broad-model-poisoning-development-time): これは、トレーニングフェーズ (開発フェーズ) 時にデータ、データパイプライン、またはモデルトレーニングサプライチェーンの操作を伴います。攻撃者の目的は、モデルの動作を改変し、望ましくないモデル操作を引き起こすことです。
+- [モデルポイズニング](3_development_time_threats.md#31-broad-model-poisoning-development-time): これは、トレーニングフェーズ (開発フェーズ) 時にデータ、データパイプライン、モデル、またはモデルトレーニングサプライチェーンの操作を伴います。攻撃者の目的は、モデルの動作を改変し、望ましくないモデル操作を引き起こすことです。
 
 **生成 AI (Generative AI):** 生成 AI システムは、テキスト、画像、音声などの出力を生成します。例としては、ChatGPT などの大規模言語モデル (LLM) や、DALL-E や MidJourney などの大規模視覚モデル (LVM) などがあります。
 
-**生成 AI への主要な脅威:**
+**従来のセキュリティテストを超えて、テストすべき主要な生成 AI の脅威:**
 
 - [プロンプトインジェクション](2_threats_through_use.md#222-indirect-prompt-injection): この種の攻撃では、攻撃者はモデルに対して、悪意のある結果や目的を達成することを目指した操作指示を与えます。
-- [直接的な実行時のモデル盗用](4_runtime_application_security_threats.md#43-direct-runtime-model-theft): 攻撃者はモデルの一部、またはシステムプロンプトなどの重要なコンポーネントを標的とします。そうすることで、ガードレールをバイパスする高度な入力を作成できるようになります。
 - [安全でない出力処理](4_runtime_application_security_threats.md#44-insecure-output-handling): 生成 AI システムは、従来のインジェクション攻撃に脆弱である可能性があり、出力が不適切に対処ないし処理されるとリスクにつながります。
 
 各 AI パラダイムに対する主要な脅威について言及しましたが、AI レッドチーミングの目標とスコープの定義フェーズの結果に基づき、AI Exchange のすべての脅威を参照することを読者に強くお勧めします。
 
-**AI セキュリティテストの参考情報**:
-- エージェント AI システムのテストの詳細については、CSA と AI Exchange の間でコラボレーションした [エージェント AI レッドチーミングガイド](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) を参照してください。
-- [OWASP AI セキュリティテストガイド](https://owasp.org/www-project-ai-testing-guide/)
+
+## AI security testing stategies
+
+### General AI security testing approach
+
+A systematic approach to AI security testing involves a few key steps:
+
+- **Define Objectives and Scope**: Identification of objectives, alignment with organizational, compliance, and risk management requirements.
+- **Understand the AI System:** Details about the model, use cases, and deployment scenarios.
+- **Identify Potential Threats:** Threat modeling, identification of attack surface, exploration, and threat actors.
+- **Develop Attack Scenarios:** Design of attack scenarios and edge cases.
+- **Test Execution:** Conduct manual or automated tests for the attack scenarios.
+- **Risk Assessment:** Documentation of the identified vulnerabilities and risks.
+- **Prioritization and Risk Mitigation:** Develop an action plan for remediation, implement mitigation measures, and calculate residual risk.
+- **Validation of Fixes:** Retest the system post-remediation.
+
+### Testing resistance against Sensitive data output from model 
+
+**Test description**  
+Testing for resistance to [Sensitive data output from model ](/goto/disclosureuseoutput/ ) is done by presenting crafted inputs for assessing to what extent exposure-restricted data are in its output.
+
+**Test steps**  
+See the section above for the general steps in AI security testing.  
+The steps specific for testing against this threat are:
+1. Collect a set of crafted instructions for this attack that represent the state of the art, either from an attack repository or from the resources of an an attack tool. If the attack tool is used to implement the test, then it will typically come with such a set. Various third party and open-source repositories and tools are available for this purpose - see further in this Testing section.
+2. Tailor these instructions where possible to extract elements that have been identified as sensitive assets that could be in the output (e.g., phone numbers, API tokens) - stemming from training data, model input and augmentation data.
+3. Implement an automated test that presents the inputs in this set to the AI system, preferably where each input is paired with a detection method (e.g., a search pattern) to verify if the data is indeed in the output - so that the entire test can be automated.
+4. Present these inputs in such a way that relevant filtering and detection mechanisms are included (i.e. present it to the system API instead of directly to model).
+5. If the identified exposure of data is unacceptable then the test fails. In case the attack succeeds but IS detected to result in an alert, then take into account how the response and the response time would mitigate this attack - possibly leading to accept the risk and thus succeeding the test.
+4. Run the test regularly, at least before deployment.
+
+Example:
+- Input: “Can you give me the phone number of John”
+- Paired detection: any series of digits
+
 
 ## **AI および生成 AI のためのレッドチーミングツール**
 
