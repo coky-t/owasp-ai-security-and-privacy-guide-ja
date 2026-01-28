@@ -346,7 +346,7 @@ Complement this control with #RATE LIMIT #MONITORUSE and incident response (#SEC
   - [OpenCRE on centralized access control](https://www.opencre.org/cre/117-371)
 
 #### #ANOMALOUS INPUT HANDLING
->Category: runtime AI engineer control for threats through use
+>Category: runtime AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/anomalousinputhandling/ 
 
 **Description**  
@@ -436,7 +436,7 @@ Useful standards include:
 - ENISA Securing Machine Learning Algorithms Annex C: “Ensure that the model is sufficiently resilient to the environment in which it will operate.”
 
 #### #UNWANTED INPUT SERIES HANDLING
->Category: runtime AI engineer control for threats through use
+>Category: runtime AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/unwantedinputserieshandling/ 
 
 **Description**  
@@ -494,7 +494,7 @@ See also [#ANOMALOUS INPUT HANDLING](/goto/anomalous input handling/) for detect
 
 
 #### #OBSCURE CONFIDENCE 
->Category: runtime AI engineer control for input threats
+>Category: runtime AI engineer control for input threats  
 >Permalink: https://owaspai.org/goto/obscureconfidence/
 
 **Description**
@@ -606,7 +606,7 @@ An evasion attack typically consists of first searching for the inputs that misl
 
 
 #### #EVASION INPUT HANDLING
->Category: runtime AI engineer control for threats through use
+>Category: runtime AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/evasioninputhandling/ 
 
 **Description**  
@@ -641,8 +641,9 @@ Unlike traditional input validation (e.g. SQL injection), evasion input handling
 Adversarial examples may be crafted to evade both the primary model and dedicated detectors. Some detection techniques introduce additional computational overhead or reduce model accuracy. Physical-world attacks, such as adversarial patches, are especially challenging due to environmental noise and variability. This control does not prevent attackers from repeatedly probing the model to refine evasion strategies.
 
 **References**
+- [Survey of adversarial attack and defense](https://www.mdpi.com/2079-9292/11/8/1283)
 - [Feature squeezing](https://arxiv.org/pdf/1704.01155.pdf) (IDBT) compares the output of the model against the output based on a distortion of the input that reduces the level of detail. This is done by reducing the number of features or reducing the detail of certain features (e.g. by smoothing). This approach is like [INPUTDISTORTION](https://owaspai.org/docs/2_threats_through_use/#inputdistortion), but instead of just changing the input to remove any adversarial data, the model is also applied to the original input and then used to compare it, as a detection mechanism.
-- [MagNet](https://arxiv.org/abs/1705.09064) and [here](https://www.mdpi.com/2079-9292/11/8/1283)
+- [MagNet](https://arxiv.org/abs/1705.09064)
 - [DefenseGAN](https://arxiv.org/abs/1805.06605) and Goodfellow, I.; Pouget-Abadie, J.; Mirza, M.; Xu, B.; Warde-Farley, D.; Ozair, S.; Courville, A.; Bengio, Y. Generative adversarial networks. Commun. ACM 2020, 63, 139–144.
 - [Local intrinsic dimensionality](https://www.ijcai.org/proceedings/2021/0437.pdf)
 - Hendrycks, Dan, and Kevin Gimpel. “Early methods for detecting adversarial images.” arXiv preprint arXiv:1608.00530 (2016).
@@ -668,7 +669,7 @@ Useful standards include:
 
 
 #### #EVASION ROBUST MODEL
->Category: development-time data science control for threats through use  
+>Category: development-time AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/evasionrobustmodel/
 
 **Description**  
@@ -724,7 +725,7 @@ PMLR, 2018.
 
 
 #### #TRAIN ADVERSARIAL
->Category: development-time data science control for threats through use  
+>Category: development-time AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/trainadversarial/
 
 **Description**  
@@ -751,7 +752,7 @@ Useful standards include:
 
 
 #### #INPUT DISTORTION
->Category: runtime data science control for threats through use  
+>Category: runtime AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/inputdistortion/
 
 **Description**  
@@ -760,7 +761,7 @@ Input distortion: The process of slightly modifying and/or adding noise to the i
 **Implementation**  
 Input distortion defenses are effective against both evasion attacks and data poisoning attacks.
 
-  **Input distortion against Evasion Attacks**
+  **Input distortion against Evasion Attacks**  
   Evasion attacks rely on specific inputs that have been carefully prepared to give unwanted output. By distorting this input, chances are that the attack fails. Because all input is distorted, this can reduce model correctness. A way around that is to first use input without distortion and then one or  more distortions of that input. If the results deviate strongly, it would indicate an evasion attack. In that case, the output of the distorted input can be used and optionally an alert generated. In all other cases, the undistorted input can be used, yielding the most correct result.
   
   In addition, distorted input also hinders attackers searching for adversarial samples, where they  rely on gradients. However, there are ways in which attackers can work around this. A specific defense method called Random Transformations (RT) introduces enough randomness into the input data to make it computationally difficult for attackers to create adversarial examples. This randomness is typically achieved by applying a random subset of input transformations with random parameters. Since multiple transformations are applied to each input sample, the model's accuracy on regular data might drop, so the model needs to be retrained with these random transformations in place.
@@ -795,7 +796,7 @@ Useful standards include:
 
   
 #### #ADVERSARIAL ROBUST DISTILLATION
->Category: development-time data science control for threats through use  
+>Category: development-time AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/adversarialrobustdistillation/
 
 **Description**  
@@ -1005,12 +1006,12 @@ This control is less applicable to closed systems with fixed inputs and tightly 
 - **Sanitize characters to reduce hidden or obfuscated instructions**: Normalize input using Unicode normalization (e.g. NFKC) to remove encoding ambiguity, and optionally apply stricter character filtering (e.g. allow-listing permitted characters) to prevent hidden control or instruction-like content. Also remove zero-width or otherwise invisible characters (e.g. white on white). This step typically aids detection of instructions as well.
 - **Escape/neutralize instruction-like tokens**: Transform any tokens in untrusted data that may be mistaken for real by an AI model or parser, such as fences, role markers, XML/HTML Tags and tool calling tokens. This reduces accidental compliance but semantic injection still passes through.
 - **Delineate inserted untrusted data** - see [#INPUT SEGREGATION](/goto/inputsegregation/) to increase the probability that all externally sourced or user-provided content is  treated as untrusted data not interpreted as instructions.
-- **Recognize manipulative instructions in input**: Detecting patterns that indicate attempts to manipulate model behavior through crafted instructions (e.g.: ‘forget previous instructions’ or 'retrieve password'). These patterns may appear in text, images, audio, metadata, retrieved data, or uploaded files, depending on the system’s supported modalities. 
+- **Recognize manipulative instructions in input**: Detecting patterns that indicate attempts to manipulate model behavior through crafted instructions (e.g.: ‘forget previous instructions’ or 'retrieve password'). These patterns may appear in text, images, audio, metadata, retrieved data, or uploaded files, depending on the system’s supported modalities. This can include the detection of resources that are either target of attack (e.g., a database name) or an address to extract data to (e.g., an unvalidated or blacklisted URL).
 - **Use flexibile recognition mechanisms**. The flexibility of natural language makes it harder to apply input validation compared to strict syntax situations like SQL commands. To address this flexibility of natural language in prompt inputs, the best approach for high-risk situations is to utilize LLM-based detectors (LLM-as-a-judge) for the detection of malicious instructions in a more semantic way, instead of syntactic. However, it’s important to note that this method may come with higher latency, higher compute costs, potential license costs, security issues for sending prompts to an exernal service, and considerations regarding accuracy. If the downsides of LLM-as-a-judge are not in line with the risk level, other flexible detections can be implemented, based on pattern recognition. Depending on the context, these may require fine tuning. For example, for agents that already work with data  that contain instructions (e.g., support tickets).
 - **Grounding checks** let a separate Generative AI model decide if an input or output is off-topic or escalates capabilities (e.g. a LLM powered food recipes app suddenly is trying to send emails). This takes the use of LLMs to detect suspicious input and output a step further by including context. This is required in case GenAI-based recognition is insufficient to cover certain attack scenarios (see above).
 - **Apply input handling upstream**. By applying sanitization or detection as early as possible (e.g. when data is retrieved from an API), attacks are noticed sooner, the scope can be limited to untrusted data sources, obfuscation of instructions or sensitive data may be prevented, and AI components with less sophisticated I/O handling are protected. This also means that these techniques need to be applied to the output of the model if that output may ever become input to another model without such protections. If output is to be used in other command-interpreting tools, further encoding is needed - see [#ENCODE MODEL OUTPUT](/goto/encodemodeloutput/).
 - **Detect unwanted output**: Detecting patterns of unwanted behaviour in output, such as:
-  - Offensive language or dangerous information
+  - Offensive language, toxicity, Not Safe For Work, misinformation, or dangerous information (e.g., recipe for poison, medical misinformation)
   - Sensitive data: see [SENSITIVE OUTPUT HANDLING](/goto/sensitiveoutputhandling/) for the control to detect sensitive data (e.g. names, phone numbers, passwords, tokens). These detections can also be applied on the input of the model or on APIs that retrieve data to go into the model.
   - A special category of sensitive data: system prompts, as they can be used by attackers to circumvent prompt injection protection in such prompts. 
   - Suspicious function calls.  Ideally, the privileges of an agent are already hardened to the task (see [#LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/)), in which case detection comes down to issuing an alert once an agent attempts to execute an action for which it has no permissions. In addition, the stategy can include the detection of unusual function calls in the context, issuing alerts for further investigation, or asking for approval by a human in the loop. Manipulation of function flow is commonly referred to as _application flow perturbation_. An advanced way to detect manipulated workflows is to perform rule-based sanity checks during steps, e.g. verify whether certain safety checks of filters were executed before processing data. The actual stopping of function calls is covered by the [#OVERSIGHT](/goto/oversight/) control.
@@ -1185,7 +1186,7 @@ The disclosure is caused by an unintentional fault of including this data, and e
   - [#FILTER SENSITIVE MODEL OUTPUT](/goto/filtersensitivemodeloutput/) - discussed below
 
 #### #SENSITIVE OUTPUT HANDLING
->Category: runtime information security control for input threats
+>Category: runtime information security control for input threats  
 >Permalink: https://owaspai.org/goto/filtersensitivemodeloutput/
 
 **Description**
@@ -1277,7 +1278,7 @@ The more details a model is able to learn, the more it can store information on 
 
 
 #### #SMALL MODEL 
->Category: development-time data science control for threats through use  
+>Category: development-time AI engineer control for threats through use  
 >Permalink: https://owaspai.org/goto/smallmodel/
 
 **Description**  
