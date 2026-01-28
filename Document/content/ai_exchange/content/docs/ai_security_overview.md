@@ -239,15 +239,16 @@ The main structure is made of the following pages:
 >Category: discussion  
 >Permalink: https://owaspai.org/goto/essentials/
 
-This section discusses the essentials of AI security. It serves as THE starting point to understand the bigger picture of the topic?  
+This section discusses the essentials of AI security. It serves as THE starting point to understand the bigger picture.  
 What makes AI special when it comes to security? Well, it deals with a new set of threats and therefore requires new controls. Let's go through them.
 
-**New threats (overview [here](/goto/threatsoverview/)):**
+**New threats** (overview [here](/goto/threatsoverview/)):
   - **[Model input threats](/goto/threatsuse/)**:
     - [Evasion](/goto/evasion/): Misleading a model by crafting data to force wrong decisions
     - [Prompt injection](/goto/promptinjection/): Misleading a model by crafting instructions to manipulate behaviour
-    - [Extracting from the model](/goto/disclosureuse/): training data, augmentation data, or input
-    - [Extracting of the model](/goto/modeltheftuse/) by querying the model
+    - [Extracting data from the model](/goto/disclosureuse/): training data, augmentation data, or input
+    - [Extracting of the model itself](/goto/modeltheftuse/) by querying the model
+    - [Resource exhaustion](/goto/airesourceexhaustion/) through use
   - **New suppliers** introduce threats of corrupted external [data](/goto/datapoison/), [models](/goto/supplymodelpoison/), and [model hosting](/goto/readymademodel/)
   - **New AI assets** with conventional threats, notably:
     - Training data / augmentation data - can leak and [poisoning](/goto/datapoison/) this data manipulates model behaviour
@@ -255,7 +256,11 @@ What makes AI special when it comes to security? Well, it deals with a new set o
     - Input - can [leak](/goto/leakinput/)
     - Output - can contain [injection attacks](/goto/insecureoutput/)
     
-**New controls (overview [here](/goto/controlsoverview/)):**
+**New controls** (overview [here](/goto/controlsoverview/)):
+
+- Extend existing [Governance](/goto/aiprogram/), [Risk](/goto/riskanalysis/) and [Compliance](/goto/checkcompliance/) - in order to secure AI, you need overview, analysis, policy, training, and responsibilities
+- Extend existing **conventional security controls** to protect the AI-specific assets
+- Extend [Supply chain management](/goto/supplychainmanage/) to incorporate obtaining data, models, and hosting
 - Specific **AI engineer controls**, to work against poisoning and model input attacks - next to conventional controls. This category is divided into **Data/model engineering** during development and **Model I/O handling** for runtime filtering, stopping or alerting to suspicious input or output. It is typically the territory of AI experts e.g. data scientists with elements from mathematics, statistics, linguistics and machine learning.
 - **[Monitoring](/goto/monitoruse/)** of model performance and inference - extending model I/O handing and overlooking general usage of the AI system
 - **Impact limitation controls** (because of zero model trust: assume a model can be misled, make mistakes, or leak data):
@@ -265,7 +270,7 @@ What makes AI special when it comes to security? Well, it deals with a new set o
 
 (*) Note: Attackers that have a similar model (or a copy) can typically craft misleading input efficiently and without being noticed
 
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials5.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials5.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials6.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials6.png)
 
 Many experts and organizations contributed to this overview of essentials - including close collaboration with SANS Institute, ensuring alignment with SANS’ Critical AI security guidelines. SANS and the AI Exchange have an ongoing collaboration to share expertise and support broad education.
 
