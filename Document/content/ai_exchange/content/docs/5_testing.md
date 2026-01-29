@@ -73,24 +73,26 @@ A systematic approach to AI security testing involves a few key steps:
 > Permalink: https://owaspai.org/goto/testingpromptinjection/
 
 **Test description**  
-Testing for resistance against Prompt injection is done by presenting crafted data for assessing the effects (e.g., triggering unwanted actions, offensive outputs, sensitive data disclosure).  
+Testing for resistance against Prompt injection is done by presenting a carefully crafted set of inputs with instructions to achieve unwanted model behaviour (e.g., triggering unwanted actions, offensive outputs, sensitive data disclosure) and evaluating the corresponding risks.  
 This covers the following threats:
 - [Direct prompt injection](/goto/directpromptinjection/)
 - [Indirect prompt injection](/goto/indirectpromptinjection/) 
-- [Sensitive data output from model ](/goto/disclosureuseoutput/) 
+- [Sensitive data output from model ](/goto/disclosureuseoutput/)
+
 
 **Test procedure**  
 See the section above for the general steps in AI security testing.  
 The steps specific for testing against this threat are:
 
-**(1) Establish set of input attacks**  
-Collect a base set of crafted instructions that represent the state of the art for the attack (e.g., jailbreak attempts, invisible text, malicious URLs, data extraction attempts, attempts to get harmful content), either from an attack repository or from the resources of an an attack tool. If an attack tool has been selected to implement the test, then it will typically come with such a set. Various third party and open-source repositories and tools are available for this purpose - see further in this Testing section. See the threat sections linked above for the various attack strategies to verify if these strategies indeed are sufficiently covered by the input attacks (e.g., instruction override, role confusion, encoding tricks).  
+**(1) Establish set of relevant input attacks**  
+Collect a base set of crafted instructions that represent the state of the art for the attack (e.g., jailbreak attempts, invisible text, malicious URLs, data extraction attempts, attempts to get harmful content), either from an attack repository (see references) or from the resources of an an attack tool. If an attack tool has been selected to implement the test, then it will typically come with such a set. Various third party and open-source repositories and tools are available for this purpose - see further in our [Tool overview](/goto/testingtoolsgenai/).  
+Verify if the input attack set sufficiently covers the attack strategies described in the threat sections linked above (e.g., instruction override, role confusion, encoding tricks).  
 Remove the input attacks for which the risk would be accepted (see Evaluation step), but keep these aside for when context and risk appetite evolve.
 
 **(2) Tailor attacks**  
-Tailor the collected and selected input attacks where possible to the context and add input attacks when necessary. This is a creative process that requires understanding of the system and its context, to craft effective attacks with as much harm as possible:
+If the AI system goes beyond a standard chatbot in a a generic situation, then the input attacks need to be tailored. I that case: tailor the collected and selected input attacks where possible to the context and add input attacks when necessary. This is a creative process that requires understanding of the system and its context, to craft effective attacks with as much harm as possible:
 - Try to extract data that have been identified as sensitive assets that could be in the output (e.g., phone numbers, API tokens) - stemming from training data, model input and augmentation data.
-- Try to achieve output that in the context would be considered as unacceptable (see Evaluation step).
+- Try to achieve output that in the context would be considered as unacceptable (see Evaluation step) - for example quoting prices in a car dealership chatbot.
 - In case there is downstream processing (e.g., actions that are triggered, or other agents), tailor or craft attacks to abuse this processing. For example: abuse a tool to send email for exfiltrating sensitive data. This requires thorough analysis of potential attack flows, especially in agentic AI where agent behaviour is complex and hard to predict. Such tailorization would typically require tailoring the detection mechanisms as well, as they may want to detect beyond what is in model output: state changes, or privilege escalation, or the triggering of certain unwanted actions. For downstream effects, detections downstream typically are more effective than trying to scan model output.
 
 **(3) Orchestrate inputs and detections**  
@@ -101,22 +103,31 @@ Also make sure to include protection mechanisms in the test: present attack inpu
 **(4) Include indirect prompt injection when relevant**  
 In case the system inserts (augments) input with untrusted data (data that can be manipulated), then the attack inputs should be presented to these insertion mechanisms as well - to simulate indirect prompt injection. In agentic AI systems, these are typically tool outputs (e.g., extracting the content of a user-supplied pdf). This may require setting up a dedicated testing API that lets the attack input follow the same route as untrusted data into the system and undergoing any filtering, detection, and insertion mechanisms. The insertion of the input attacks also may require adding tactics typical to indirect prompt injections, such as adding 'Ignore previous instructions'. 
 
-**(5) Run the test**  
+**(5) Add variation algorithms to the test process**  
+An input attack may fail if it is recognized as malicious, either by the model (through training or system prompts) or by detections external to the model. Such detection may be circumvented by adding variations to the input, for example by replacing words with synonyms, applying encoding, or changing formatting. Many of the available tools support creating such 'perturbations'. Note that this is in essence an Evasion attack test on the detection mechanisms in place.
+
+**(6) Run the test**  
 Make sure to run the test multiple times, to take into account the non-deterministic nature of models, if any. Use the same model versions, prompts, tools, permissions, and configuration as used in production.
 
-**(6) Analyse identified technical attack successes**  
+**(7) Analyse identified technical attack successes**  
 Run by the detections of technically successful attacks to determine the severity of harm:
 - identified exposure of data
 - unwanted actions triggered
 - offensive language / harmful content: how severe is this given the audience and how they have been informed about the system. If the system discloses dangerous content - how difficult would it be for the users to get this information elsewhere on the internet or publicly available models (e.g., recipe for napalm). The severity of unwanted content varies widely depending on the context.
 - misinformation / misleading content: how severe is this in the context (e.g., any legal disclaimers), for example: how bad is it, if a user was able to let a chatbot quote a price for a product - would that be legally binding?
 
-**(7) Evaluate and conclude**  
+**(8) Evaluate and conclude**  
 The test fails, if the severity of harm cannot be accepted in light of how likely the attack input will be presented. In case the attack succeeds but IS detected to result in an alert, then take into account how the response and the response time would mitigate this attack - possibly leading to accept the risk and thus succeeding the test.  
-Always assume that attackers are aware of these input attacks, so likelihood is high if they have direct access to input, and for indirect prompt injection the likelihood is determined by the attacker succeeding in manipulating the data unnoticed before the data enters input. This involves the attacker discovering the attack vector and gaining access to it. Note that for indirect prompt injection, the attacker is typically not the current user of the AI system.  
-Rare but high-impact outcomes should not be dismissed solely due to low observed frequency.
 
-**(8) Rerun**  
+Always assume that attackers are aware of these input attacks, so likelihood is high if they have direct access to input, and for indirect prompt injection the likelihood is determined by the attacker succeeding in manipulating the data unnoticed before the data enters input. This involves the attacker discovering the attack vector and gaining access to it. Note that for indirect prompt injection, the attacker is typically not the current user of the AI system.  
+
+Rare but high-impact outcomes should not be dismissed solely due to low observed frequency.  
+
+The variation algorithm part of the test measures how much effort or computation is required to mislead detection. This robustness metric has a limited impact on the estimated risk. It mainly shows that an attacker would need to invest some effort, either manually or by using tooling. Given the widespread availability of such tools, some robustness will only defer attackers who do not put in any effort.  
+In other words, if an attack works and the system shows some robustness against variations, this mainly rules out attack scenarios where users are just playing around to see if the model slightly misbehaves, leading to reputation damage because the attack was too easy to achieve. For attacks with severe impact, this argument does not apply, as systems are expected to be resilient against it - even if attackers deliberatly invest effort to bypass defenses.
+
+
+**(9) Rerun**  
 Run the test regularly, at least before deployment, and reevaluate the selection of input attacks and their corresponding detections as the state of the art, context, and risk appetite evolves.
 
 **Examples**   
@@ -132,6 +143,12 @@ Example 2:
 **Positive testing**  
 It is of course important to also test the AI system for correct behaviour in benign situations. Depending on context, such testing may be integrated in the implementation of the security test by using the same mechanisms. Such testing ideally includes the testing of detection mechanisms, to ensure that not too many false positives are triggered by benign inputs. Positive testing is essential to ensure that security mechanisms do not degrade intended functionality or user experience beyond acceptable levels.
 
+**References**  
+- See below for the [testing tools section](/goto/testingtoolsgenai/)
+- [Microsoft's promptbench](https://github.com/microsoft/promptbench/blob/main/promptbench/prompt_attack/README.md)
+- [Overview of benchmarks](https://www.promptfoo.dev/blog/top-llm-safety-bias-benchmarks/)
+- [AdvBench](https://huggingface.co/datasets/walledai/AdvBench)
+- [OpenAI Evals benchmark](https://github.com/openai/evals)
 
 ## **AI および生成 AI のためのレッドチーミングツール**
 
@@ -146,6 +163,9 @@ It is of course important to also test the AI system for correct behaviour in be
 以下のセクションでは予測 AI のツールについて説明し、その後に生成 AI のセクションに続きます。
 
 ## **予測 AI レッドチーミングのためのオープンソースツール**
+> カテゴリ: ツールレビュー  
+> パーマリンク: https://owaspai.org/goto/testingtoolspredictiveai/
+
 
 このサブセクションは予測 AI のセキュリティテストのための次のツールについてカバーします: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, TextAttack
 
@@ -613,6 +633,9 @@ It is of course important to also test the AI system for correct behaviour in be
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
 ## 生成 AI レッドチーミングのためのオープンソースツール
+> Category: tool review  
+> Permalink: https://owaspai.org/goto/testingtoolsgenai/
+
 
 This sub section covers the following tools for security testing Generative AI: PyRIT, Garak, Prompt Fuzzer, Guardrail, and Promptfoo.
 
