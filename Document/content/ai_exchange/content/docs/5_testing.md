@@ -637,9 +637,9 @@ It is of course important to also test the AI system for correct behaviour in be
 > Permalink: https://owaspai.org/goto/testingtoolsgenai/
 
 
-This sub section covers the following tools for security testing Generative AI: PyRIT, Garak, Prompt Fuzzer, Guardrail, and Promptfoo.
+このサブセクションは生成 AI のセキュリティテストのための次のツールをカバーします: PyRIT, Garak, Prompt Fuzzer, Guardrail, Promptfoo
 
-A list of GenAI test tools can also be found at the [OWASP GenAI security project solutions page](https://genai.owasp.org/ai-security-solutions-landscape/) (click the category 'Test & Evaluate'. This project also published a [GenAI Red Teaming guide](https://genai.owasp.org/resource/genai-red-teaming-guide/).
+生成 AI テストツールのリストは [OWASP GenAI セキュリティプロジェクトソリューションページ](https://genai.owasp.org/ai-security-solutions-landscape/) ('Test & Evaluate' カテゴリをクリック)。このプロジェクトでは [GenAI Red Teaming Guide](https://genai.owasp.org/resource/genai-red-teaming-guide/) も公開しています。
 
 
 ### ツール名: PyRIT
@@ -651,7 +651,7 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 | 言語 | Python |
 | ライセンス | MIT ライセンスの下でのオープンソース |
 | 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
-| API の可用性 | Yes ✅ , library based |
+| API の可用性 | Yes ✅ , ライブラリベース |
 
 | 要素 | 詳細 |
 | --- | --- |
@@ -659,13 +659,13 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 |  | - **GitHub フォーク:** およそ 384 フォーク |
 |  | - **Issues の数:** およそ 63 オープン状態, 79 クローズ済み状態 |
 |  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長 |
-| **コミュニティサポート** | - **Issues 活動:** Issues are being addressed within a week. |
-|  | - **ドキュメント:** Detailed and regularly updated, with comprehensive guides and API documentation. |
-|  | - **ディスカッションフォーラム:** Active GitHub issues |
-|  | - **貢献者:** Over 125 contributors. |
-| **拡張性** | - **フレームワークサポート:** Scales across TensorFlow, PyTorch and supports models on local like ONNX |
-|  | - **大規模デプロイメント:** Can be extended to Azure pipeline. |
-| **統合** | - **互換性:** Compatible with majority of LLMs |
+| **コミュニティサポート** | - **Issues 活動:** Issues は一種間以内に対処されている。 |
+|  | - **ドキュメント:** 包括的なガイドと API ドキュメントを備えており、詳細かつ定期的に更新している。 |
+|  | - **ディスカッションフォーラム:** GitHub issues で行われてる。 |
+|  | - **貢献者:** 125 名以上。 |
+| **拡張性** | - **フレームワークサポート:** TensorFlow, PyTorch に拡張可能で、ONNX などのローカルのモデルをサポートしている。 |
+|  | - **大規模デプロイメント:** Azure パイプラインに拡張できる。 |
+| **統合** | - **互換性:** 主要な LLM と互換性あり。 |
 
 **ツールの評価**
 
@@ -700,13 +700,13 @@ A list of GenAI test tools can also be found at the [OWASP GenAI security projec
 | --- | --- | --- |
 | Tensorflow | 深層学習, 生成 AI | ✅ |
 | PyTorch | 深層学習, 生成 AI | ✅ |
-| Azure OpenAI | GenAI | ✅ |
-| Huggingface | ML, GenAI | ✅ |
-| Azure managed endpoints | Machine Learning Deployment | ✅ |
-| Cohere | GenAI | ✅ |
-| Replicate Text Models	 | GenAI | ✅ |
-| OpenAI API | GenAI | ✅ |
-| GGUF (Llama.cpp) | GenAI, Lightweight Inference | ✅ |
+| Azure OpenAI | 生成 AI | ✅ |
+| Huggingface | 機械学習, 生成 AI | ✅ |
+| Azure managed endpoints | 機械学習デプロイメント | ✅ |
+| Cohere | 生成 AI | ✅ |
+| Replicate Text Models | 生成 AI | ✅ |
+| OpenAI API | 生成 AI | ✅ |
+| GGUF (Llama.cpp) | 生成 AI, 軽量推論 | ✅ |
 
 **OWASP AI Exchange 脅威カバレッジ**
 
@@ -793,14 +793,14 @@ https://github.com/NVIDIA/garak |
 | --- | --- | --- |
 | Tensorflow | 深層学習, 生成 AI |  |
 | PyTorch | 深層学習, 生成 AI | ✅ |
-| Azure OpenAI | GenAI |  |
-| Huggingface | ML, GenAI | ✅ |
-| Azure managed endpoints | Machine Learning Deployment |  |
-| Cohere | GenAI | ✅ |
-| Replicate Text Models	 | GenAI | ✅ |
-| OpenAI API | GenAI | ✅ |
-| GGUF (Llama.cpp) | GenAI, Lightweight Inference | ✅ |
-| OctoAI | GenAI | ✅ |
+| Azure OpenAI | 生成 AI |  |
+| Huggingface | 機械学習, 生成 AI | ✅ |
+| Azure managed endpoints | 機械学習デプロイメント |  |
+| Cohere | 生成 AI | ✅ |
+| Replicate Text Models | 生成 AI | ✅ |
+| OpenAI API | 生成 AI | ✅ |
+| GGUF (Llama.cpp) | 生成 AI, 軽量推論 | ✅ |
+| OctoAI | 生成 AI | ✅ |
 
 **OWASP AI Exchange 脅威カバレッジ**
 
@@ -885,14 +885,14 @@ https://github.com/NVIDIA/garak |
 | --- | --- | --- |
 | Tensorflow | 深層学習, 生成 AI |  |
 | PyTorch | 深層学習, 生成 AI |  |
-| Azure OpenAI | GenAI |  |
-| Huggingface | ML, GenAI |  |
-| Azure managed endpoints | Machine Learning Deployment |  |
-| Cohere | GenAI |  |
-| Replicate Text Models | GenAI |  |
-| OpenAI API | GenAI | ✅ |
-| GGUF (Llama.cpp) | GenAI, Lightweight Inference |  |
-| OctoAI | GenAI |  |
+| Azure OpenAI | 生成 AI |  |
+| Huggingface | 機械学習, 生成 AI |  |
+| Azure managed endpoints | 機械学習デプロイメント |  |
+| Cohere | 生成 AI |  |
+| Replicate Text Models | 生成 AI |  |
+| OpenAI API | 生成 AI | ✅ |
+| GGUF (Llama.cpp) | 生成 AI, 軽量推論 |  |
+| OctoAI | 生成 AI |  |
 
 **OWASP AI Exchange 脅威カバレッジ**
 
@@ -977,14 +977,14 @@ https://github.com/NVIDIA/garak |
 | --- | --- | --- |
 | Tensorflow | 深層学習, 生成 AI |  |
 | PyTorch | 深層学習, 生成 AI | ✅ |
-| Azure OpenAI | GenAI | ✅ |
-| Huggingface | ML, GenAI | ✅ |
-| Azure managed endpoints | Machine Learning Deployment |  |
-| Cohere | GenAI | ✅ |
-| Replicate Text Models | GenAI |  |
-| OpenAI API | GenAI | ✅ |
-| GGUF (Llama.cpp) | GenAI, Lightweight Inference |  |
-| OctoAI | GenAI |  |
+| Azure OpenAI | 生成 AI | ✅ |
+| Huggingface | 機械学習, 生成 AI | ✅ |
+| Azure managed endpoints | 機械学習デプロイメント |  |
+| Cohere | 生成 AI | ✅ |
+| Replicate Text Models | 生成 AI |  |
+| OpenAI API | 生成 AI | ✅ |
+| GGUF (Llama.cpp) | 生成 AI, 軽量推論 |  |
+| OctoAI | 生成 AI |  |
 
 **OWASP AI Exchange 脅威カバレッジ**
 
@@ -1074,14 +1074,14 @@ https://github.com/NVIDIA/garak |
 | --- | --- | --- |
 | Tensorflow | 深層学習, 生成 AI |  |
 | PyTorch | 深層学習, 生成 AI |  |
-| Azure OpenAI | GenAI | ✅ |
-| Huggingface | ML, GenAI | ✅ |
-| Azure managed endpoints | Machine Learning Deployment |  |
-| Cohere | GenAI | ✅ |
-| Replicate Text Models | GenAI | ✅ |
-| OpenAI API | GenAI | ✅ |
-| GGUF (Llama.cpp) | GenAI, Lightweight Inference | ✅ |
-| OctoAI | GenAI |  |
+| Azure OpenAI | 生成 AI | ✅ |
+| Huggingface | 機械学習, 生成 AI | ✅ |
+| Azure managed endpoints | 機械学習デプロイメント |  |
+| Cohere | 生成 AI | ✅ |
+| Replicate Text Models | 生成 AI | ✅ |
+| OpenAI API | 生成 AI | ✅ |
+| GGUF (Llama.cpp) | 生成 AI, 軽量推論 | ✅ |
+| OctoAI | 生成 AI |  |
 
 **OWASP AI Exchange 脅威カバレッジ**
 
