@@ -182,7 +182,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** およそ 4.9K スター (2024 年現在) |
+| **人気** | - **GitHub スター:** およそ 4.9K スター (2024 年時点) |
 |  | - **GitHub フォーク:** およそ 1.2K フォーク |
 |  | - **Issues の数:** およそ 131 オープン状態, 761 クローズ済み状態 |
 |  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長している。 |
@@ -276,7 +276,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:**  およそ 176 スター (2024 年現在) |
+| **人気** | - **GitHub スター:**  およそ 176 スター (2024 年時点) |
 |  | - **GitHub フォーク:**  およそ 67 フォーク |
 |  | - **Issues の数:** およそ  59 オープン状態, 733 クローズ済み, 貢献者 26 名 |
 |  | - **傾向:** 特に防衛とサイバーセキュリティの分野で成長している。 |
@@ -370,7 +370,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:**  およそ 2,800 スター (2024 年現在) |
+| **人気** | - **GitHub スター:**  およそ 2,800 スター (2024 年時点) |
 |  | - **GitHub フォーク:** およそ 428 フォーク |
 |  | - **Issues の数:** およそ 21 オープン状態, 350 クローズ済み状態 |
 |  | - **傾向:** 学術コミュニティからの一貫した最新情報により安定している。 |
@@ -655,7 +655,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** およそ 2k (2024 年 12 月現在) |
+| **人気** | - **GitHub スター:** およそ 2k (2024 年 12 月時点) |
 |  | - **GitHub フォーク:** およそ 384 フォーク |
 |  | - **Issues の数:** およそ 63 オープン状態, 79 クローズ済み状態 |
 |  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長 |
@@ -738,8 +738,8 @@ It is of course important to also test the AI system for correct behaviour in be
 | **ツール名: Garak** |  |
 | --- | --- |
 | 開発元/ソース | NVIDIA |
-| GitHub 参照 | https://docs.garak.ai/garak  moved to https://github.com/NVIDIA/garak
-Literature: https://arxiv.org/abs/2406.11036
+| GitHub 参照 | https://docs.garak.ai/garak  https://github.com/NVIDIA/garak に移動
+文献: https://arxiv.org/abs/2406.11036
 https://github.com/NVIDIA/garak |
 | 言語 | Python |
 | ライセンス | Apache 2.0 License |
@@ -748,17 +748,17 @@ https://github.com/NVIDIA/garak |
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** およそ 3,5K stars (as of Dec 2024) |
+| **人気** | - **GitHub スター:** およそ 3,5K スター (2024 年 12 月時点) |
 |  | - **GitHub フォーク:** およそ 306 フォーク |
 |  | - **Issues の数:** およそ 303 オープン状態, 299 クローズ済み状態 |
-|  | - **傾向:** Growing, particularly with in attack generation, and LLM vulnerability scanning. |
-| **コミュニティサポート** | - **Issues 活動:** Actively responds to the issues and tries to close it within a week |
-|  | - **ドキュメント:** Detailed documentation with guidance and example experiments. |
-|  | - **ディスカッションフォーラム:**  Active GitHub discussions, as well as discord. |
-|  | - **貢献者:** Over 27 contributors. |
-| **拡張性** | - **フレームワークサポート:** Supports various LLMs from hugging face, openai api, litellm.   |
-|  | - **大規模デプロイメント:** Mostly used in attack LLM, detect LLM failures and assessing LLM security. Can be integrated with NeMo Guardrails |
-| **統合** | - **互換性:**  All LLMs, Nvidia models |
+|  | - **傾向:** 特に攻撃生成と LLM 脆弱性スキャンで成長している。 |
+| **コミュニティサポート** | - **Issues 活動:** issues に積極的に対応し、一週間以内にクローズするように努めている。 |
+|  | - **ドキュメント:** ガイダンスと実験例を含む詳細なドキュメント。 |
+|  | - **ディスカッションフォーラム:** GitHub discussions と discord で行われている。 |
+|  | - **貢献者:** 27 名以上。 |
+| **拡張性** | - **フレームワークサポート:** hugging face, openai api, litellm などのさまざまな LLM をサポートしている。 |
+|  | - **大規模デプロイメント:** 主に LLM 攻撃、LLM 障害の検出、LLM セキュリティの評価に使用される。NeMo Guardrails と統合できる。 |
+| **統合** | - **互換性:** すべての LLM、NVIDIA モデル |
 
 **ツールの評価**
 
@@ -1029,7 +1029,7 @@ https://github.com/NVIDIA/garak |
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** およそ 4.3K スター (2024 年現在) |
+| **人気** | - **GitHub スター:** およそ 4.3K スター (2024 年時点) |
 |  | - **GitHub フォーク:**  およそ 320 フォーク |
 |  | - **Issues の数:** およそ 523 closed, 108 open |
 |  | - **傾向:** Consistent update |
