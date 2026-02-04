@@ -3,7 +3,7 @@
 layout: col-sidebar
 title: OWASP AI Exchange
 tags: AIsecpri AI security privacy requirements guide machinelearning algorithms
-level: 2
+level: 4
 type: documentation
 pitch: 安全でプライバシーを保護する AI システムの設計、作成、テスト、調達に関するガイダンス
 
