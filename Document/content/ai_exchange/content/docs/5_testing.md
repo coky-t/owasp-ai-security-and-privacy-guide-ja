@@ -633,8 +633,8 @@ It is of course important to also test the AI system for correct behaviour in be
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
 
 ## 生成 AI レッドチーミングのためのオープンソースツール
-> Category: tool review  
-> Permalink: https://owaspai.org/goto/testingtoolsgenai/
+> カテゴリ: ツールレビュー  
+> パーマリンク: https://owaspai.org/goto/testingtoolsgenai/
 
 
 このサブセクションは生成 AI のセキュリティテストのための次のツールをカバーします: PyRIT, Garak, Prompt Fuzzer, Guardrail, Promptfoo
@@ -838,17 +838,17 @@ https://github.com/NVIDIA/garak |
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** およそ 427 stars (as of Dec 2024) |
+| **人気** | - **GitHub スター:** およそ 427 スター (2024 年 12 月時点) |
 |  | - **GitHub フォーク:** およそ 56 フォーク |
 |  | - **Issues の数:**  およそ 10 オープン状態, 6 クローズ済み状態 |
-|  | - **傾向:** Not updating since Aug |
-| **コミュニティサポート** | - **Issues 活動:** Not updated nor solved any bugs since July. |
-|  | - **ドキュメント:** Moderate documentation with few examples |
-|  | - **ディスカッションフォーラム:**  GitHub issue forums |
-|  | - **貢献者:** Over 10 contributors. |
-| **拡張性** | - **フレームワークサポート:** Python and docker image. |
-|  | - **大規模デプロイメント:** It only assesses the security of your GenAI application's system prompt against various dynamic LLM-based attacks, so it can be integrated with current env. |
-| **統合** | - **互換性:**  Any device. |
+|  | - **傾向:** 8 月以降更新していない |
+| **コミュニティサポート** | - **Issues 活動:** 7 月以降、更新もバグの解決も行われていない。 |
+|  | - **ドキュメント:** 中程度のドキュメントと少数の例 |
+|  | - **ディスカッションフォーラム:**  GitHub issue フォーラム |
+|  | - **貢献者:** 10 名以上。 |
+| **拡張性** | - **フレームワークサポート:** Python と Docker イメージ。 |
+|  | - **大規模デプロイメント:** これは、さまざまな動的 LLM ベースの攻撃に対する生成 AI アプリケーションのシステムプロンプトのセキュリティを評価するだけなので、現在の環境と統合できる。 |
+| **統合** | - **互換性:** 任意のデバイス。 |
 
 **ツールの評価**
 
@@ -879,7 +879,7 @@ https://github.com/NVIDIA/garak |
 
 **フレームワークの適用性**
 
-*(LLM Model agnostic in the API mode of use)*
+*(API 使用モードで LLM モデルに依存しない)*
 
 | フレームワーク / ツール | カテゴリ | サポートあり |
 | --- | --- | --- |
