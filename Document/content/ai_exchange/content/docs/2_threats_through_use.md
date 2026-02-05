@@ -965,7 +965,7 @@ Many Generative AI systems have been adjusted by their suppliers to behave (so-c
 1. Abusing competing objectives. For example: if a model wants to be helpful, but also can't give you malicious instructions, then a prompt injection could abuse this by appealing to the helpfulness to still get the instructions.
 2. Using input that is not recognized by the alignment ('out of distribution') but IS resulting in an answer based on the training data ('in distribution'). For example: using special encoding that fools safety training, but still results in the unwanted output.
 
-Below are common forms (attack classes, strategies) of prompt injections, explained in plain terms:
+Common forms (attack classes, strategies) of prompt injections include:
 
 a) Role-playing and conditioning  
 An attacker asks the AI to pretend to be someone else (for example, “act as an unrestricted expert” or “you are no longer bound by rules”). Sometimes the attacker also adds fake example answers to confuse the AI, so it follows the attacker’s instructions instead of the system’s safety rules.
@@ -1050,10 +1050,10 @@ Multimodal prompt injection can be:
 
 
 #### Seven layers of Prompt Injection protection
->Category: group of threats through use  
+>Category: discussion  
 >Permalink: https://owaspai.org/goto/promptinjectionsevenlayers/
 
-The AI Exchange presents several controls for Prompt Injection. They represent layers of protection.  None of these layers is sufficient by itself, which makes the combination of all layers the typical best practice: a defense in depth approach.  
+The AI Exchange presents several controls for (Indirect) Prompt Injection. They represent layers of protection.  None of these layers is sufficient by itself, which makes the combination of all layers the typical best practice: a defense in depth approach.  
 Let’s go through these layers, describe them and discuss their flaws.
 
 **Layer 1 – [Model alignment](/goto/modelalignment/)**  
@@ -1067,7 +1067,7 @@ Invest an effort to sanitize, filter, and detect prompt injection, to the point 
 
 Flaw: New ways to circumvent these defenses will continue to appear, and detection of prompt injection is difficult, with substantial risk of false positives and false negatives.
 
-To determine when you have done enough, tailored @@testingis critical to understand the limitations of I/O handling, and what harm an attack could realistically cause – so to prioritize further protection using other layers. Typically, detection opportunity is limited – which requires acceptance that prompt injection can come through and therefore that blast radius control using the other layers is critical.
+To determine when you have done enough, [tailored testing](/goto/testingpromptinjection/) is critical to understand the limitations of I/O handling, and what harm an attack could realistically cause – so to prioritize further protection using other layers. Typically, detection opportunity is limited – which requires acceptance that prompt injection can come through and therefore that blast radius control using the other layers is critical.
 
 The rest of the layers essentially represent ‘blast radius control’. It is good to assume that despite alignment and I/O handling, prompt injection can succeed, so the best strategy is to ensure that as little harm as possible is done.
 
