@@ -158,28 +158,32 @@ When comparing the AI Exchange with the GenAI Security Project, the Exchange:
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/goto/organize/
 
-人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。
+Organizations: start here!  
+人工知能 (AI) はとてつもない好機を与える一方で、セキュリティ脅威などの新たなリスクももたらします。そのため、潜在的な脅威とそれに対するコントロールを明確に理解した上で、AI アプリケーションに取り組むことが不可欠です。AI は信頼できる場合にのみ繁栄できます。
 
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/guard.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/guard.png)
 
 The five steps - G.U.A.R.D - to organize AI security as an organization are: 
 
 1. **Govern**  
-  Implement [AI governance](/goto/aiprogram/) including arranging [compliance](/goto/checkcompliance/). Agree on responsibilities, know what is going on, implement policy, [education](/goto/seceducate/), etc. 
+  Start implementing general AI Governance so the organization can manage AI: know where it is applied, what people's responsibilities are, establish policies, do impact assessment, arrange [compliance](/goto/checkcompliance/), organize [education](/goto/seceducate/), etcetera. See [#AI Program](/goto/aiprogram/) for guidance, including a quickstart. This is a general AI management process - not just security.
 2. **Understand**  
-   Make sure engineers and security officers know the relevant [AI security threats](/goto/threatsoverview/) and the corresponding [process controls and technical controls](/goto/periodictable/) that need to be applied by you or your suppliers.
+   - Based on the inventory of your applications of AI and AI ideas, understand which threats apply, using the decision tree in the [risk analysis section](/goto/riskanalysis/).
+   - Then make sure engineers and security professionals understand those relevant threats and their contols, using the guidance of the relevant [threat sections](/goto/threatsoverview/) and the corresponding [process controls and technical controls](/goto/periodictable/).
+   - Use the courses and resources in the [references section](/goto/references/) to support the understanding.
+   - Distinguish between controls that your organization has to implement, and those that are the responsbility of your supplier. Make the latter category part of your [supply chain management])(/goto/supplychainmanage/).
 3. **Adapt**  
     -  [セキュリティプラクティスを採用](1_general_controls.md#secprogram) して、このドキュメントの AI セキュリティ資産、脅威、コントロールを含めます。
     - Adapt your threat modelling to include the [AI security threat model](/goto/riskanalysis/) approach and do cross-team threat modelling, involving all engineers.
     - Adapt your testing to include [AI-specific security testing](/goto/testing/).
-    - Adapt your supply chain management to include [data and model management](/goto/supplychainmanage/) and to make sure that your suppliers are taking care of security.
+    - Adapt your supply chain management to include [data, model, and hosting management](/goto/supplychainmanage/) and to make sure that your suppliers are taking care of the identified threats.
     - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Adapt your [software development practices](/goto/devprogram/) and [secure development program](/goto/secdevprogram/) to involve AI engineering activities. 
 4. **Reduce**  
-  Reduce potential impact by [minimizing or obfuscating sensitive data](/goto/datalimit/) and [limiting the impact of unwanted behaviour](/goto/limitunwanted/) (e.g., managing privileges, guardrails, human oversight etc. Basically: apply Murphy's law.
+  Reduce potential impact by [minimizing or obfuscating sensitive data](/goto/datalimit/) and [limiting the impact of unwanted behaviour](/goto/limitunwanted/) (e.g., managing privileges, guardrails, human oversight etc. Basically: apply Murphy's law. 
 5. **Demonstrate**  
-    Show evidence of responsible AI security through transparency, documentation, and communication. Prove to management, regulators, and clients that your AI systems are under control and that the applied safeguards work as intended.
+    Establish evidence of responsible AI security through transparency, testing, documentation, and communication. Prove to management, regulators, and clients that your AI systems are under control and that the applied safeguards work as intended.
 
-And finally: think before you build an AI system. Securing AI is typically harder than securing non-AI systems, first because it's relatively new, but also because there is a level of uncertainty in all data-driven technology. For example the case of LLMs, we are dealing with the fluidity of natural language. LLMs essentially offer an unstable, undocumented interface with an unclear set of policies. That means that security measures applied to AI often cannot offer security properties to a standard you might be used to with other software. Consider whether AI is the appropriate technology choice for the problem you are trying to solve. Removing an unnecessary AI component eliminates all AI-related risks. 
+And finally: think before you build an AI solution. AI can have fantastic benefits, but it always needs to be balanced with risks. Securing AI is typically harder than securing non-AI systems, first because it's relatively new, but also because there is a level of uncertainty in all data-driven technology. For example in the case of LLMs, we are dealing with the fluidity of natural language. LLMs essentially offer an unstable, undocumented interface with an unclear set of policies. That means that security measures applied to AI often cannot offer security properties to a standard you might be used to with other software. Consider whether AI is the appropriate technology choice for the problem you are trying to solve. Removing an unnecessary AI component eliminates all AI-related risks.  
 
 
 ---
