@@ -130,7 +130,7 @@ Detection mechanisms benefit from being paired with predefined response actions 
 Response actions may vary depending on the certainty of detection, the threat type, and the potential impact, and can include:
 
   **- Immediate containment**
-    - stopping the current inference or workflow when confidence of malicious activity is high,
+    - stopping the current inference or workflow or system (i.e. _kill switch_) when confidence of malicious activity is high,
     - sanitizing input or output (for example trimming prompts, removing sensitive content, or normalizing input) and continuing execution,
     - switching to a more conservative operating mode, such as reduced functionality, additional filtering, or temporary human oversight.
       
@@ -141,7 +141,7 @@ Response actions may vary depending on the certainty of detection, the threat ty
     - throttling, rate-limiting, or suspending suspicious accounts or sessions,
     - restricting or disabling tools and functions that could cause harm,
     - Add noise to the output to disturb possible attacks
-    - rolling back models or data to a known-good state when compromise is suspected.
+    - rolling back models or data to a known-good state when compromise is suspected and/or when the current state has been disrupted.
       
   **- Broader response actions**
     - informing users when AI system may be unreliable or compromised,
@@ -1062,7 +1062,7 @@ Tell models to behave and to be robust against manipulation through pre-training
 Flaw: Models remain easy to mislead out of the box and after providing them with instructions, so additional controls are required.
 
 
-**Layer 2 – [Prompt injection I/O handling](goto/promptinjectioniohandling/) (aka ‘defense’)**  
+**Layer 2 – [Prompt injection I/O handling](/goto/promptinjectioniohandling/) (aka ‘defense’)**  
 Invest an effort to sanitize, filter, and detect prompt injection, to the point where the other layers become more effective.
 
 Flaw: New ways to circumvent these defenses will continue to appear, and detection of prompt injection is difficult, with substantial risk of false positives and false negatives.
@@ -1084,13 +1084,13 @@ Implement logic to check for suspicious activity in context. Such detections can
 Flaw: Reactive oversight helps but acts only after behavior emerges. Preventive privilege controls are far more effective - see layers below.
 
 
-**Layer 5 – User-based [least privilege](/goto/modelleastprivilege/)**  
+**Layer 5 – User-based [least privilege](/goto/leastmodelprivilege/)**  
 Give agentic AI the rights of the individual being served, assigned in advance. An email summarizer should only be able to access the user’s emails.
 
 Flaw: While sensible, users are often permitted far more than an agent actually needs, unnecessarily increasing the blast radius.
 
 
-**Layer 6 – Intent-based [least privilege](/goto/modelleastprivilege/)**  
+**Layer 6 – Intent-based [least privilege](/goto/leastmodelprivilege/)**  
 Give agentic AI the rights required for its specific task, assigned in advance, in addition to user-based rights.
 
 Example: An email summarizer should only be able to read emails. If it needs to send a summary as well, that is where human oversight can be introduced—allowing the user to review the summary and the list of recipients.
@@ -1098,7 +1098,7 @@ Example: An email summarizer should only be able to read emails. If it needs to 
 Flaw: The intent of an agent or flow is not always known in advance, creating the risk of assigning too many privileges to anticipate the use case with the most needs. Furthermore, agentic flows often involve multiple agents, and not all of them require the full set of privileges needed to achieve the higher-level goal.
 
 
-**Layer 7 – Just-in-time [authorization](/goto/modelleastprivilege/)**  
+**Layer 7 – Just-in-time [authorization](/goto/leastmodelprivilege/)**  
 Give each agent only the rights required at that moment, based on the context (subtask and the circumstances).  
 Context is determined by the task an agent is assigned to (e.g., review merge request), or by the data that enters the flow. The latter could involve a mechanism that hardens privileges the moment untrusted data enters the flow.
 
