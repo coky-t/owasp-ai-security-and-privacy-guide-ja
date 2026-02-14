@@ -10,7 +10,7 @@ weight: 2
 > カテゴリ: コントロールのグループ  
 > パーマリンク: https://owaspai.org/goto/governancecontrols/
 
-#### #AIPROGRAM
+#### #AI PROGRAM
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/aiprogram/
 
@@ -70,7 +70,7 @@ The very minimum first thing you can do for AI governance, focused on security:
 3. データに基づいて動作を組織化するため、データは機会 (複雑な現実世界の問題解決、適応性など) とリスク (望ましくないバイアス、不完全性、エラー、操作など) の源となります。
 4. 組織や人々にとって馴染みのないものであり、実装ミス、過小な信頼、過大な信頼、人間の傾向の誤った帰属などのリスクがあります。
 5. 理解できないものであり、信頼性に問題が生じます。
-6. セキュリティ脅威を形作る新しい技術的資産 (データ/モデルサプライチェーン、トレーニングデータ、モデルパラメータ、AI ドキュメント) です。
+6. セキュリティ脅威を形作る新しい技術的資産 (データ/モデルサプライチェーン、トレーニングデータ、モデルパラメータ、拡張データ、AI ドキュメント) です。
 7. 聴くことも話すこともできます: ユーザーインタフェースではなく自然言語を通じてやり取りします。
 8. 聞くことも見ることもできます: 音声認識能力と視覚認識能力を持ちます。
 
@@ -84,10 +84,10 @@ The very minimum first thing you can do for AI governance, focused on security:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
  - [US Federal Reserve SR 11-07: Guidance on Model Risk Management](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm): 銀行組織および監督当局のための監督指針。
 
-ISO 42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。ISO 5338 (下記 #[DEVPROGRAM](1_general_controls.md#DEVPROGRAM) 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。ISO 27001 が情報セキュリティのマネジメントシステムであるのと同様に、ISO 42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。ISO 42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
+ISO 42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。ISO 5338 (下記 #[DEV PROGRAM](1_general_controls.md#DEVPROGRAM) 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。ISO 27001 が情報セキュリティのマネジメントシステムであるのと同様に、ISO 42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。ISO 42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
 
-#### #SECPROGRAM
+#### #SEC PROGRAM
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/secprogram/
 
@@ -100,6 +100,7 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
 **実施**  
 AI 固有の資産とそれらに対する脅威を必ず含めます。脅威はこのリソースでカバーされており、資産は以下のとおりです。
 - トレーニングデータ
+- バリデーションデータ
 - テストデータ
 - モデル - 多くの場合 _モデルパラメータ_ (モデルの学習時に変化する値) と呼ばれます
 - ハイパーパラメータ
@@ -109,6 +110,7 @@ AI 固有の資産とそれらに対する脅威を必ず含めます。脅威�
 - 意図したモデル動作
 - 外部ソースから取得したトレーニングおよびテスト用のデータ
 - 外部ソースからトレーニングおよび使用するモデル
+- モデル入力に挿入される拡張データ
 
 これらの資産とそれらに対する脅威を組み込むことにより、セキュリティプログラムがこれらのリスクを軽減します。たとえば、意識向上トレーニングでエンジニアにドキュメントをその辺に置きっぱなしにしないよう告げます。あるいは、エンジニアが扱うとレーニンデータは機密性が高いため、エンジニアのマシンにマルウェア検出機能をインストールします。
 
@@ -169,7 +171,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
     - [GenAI security project LLM and GenAI Security Center of Excellence guide](https://genai.owasp.org/resource/llm-and-generative-ai-security-center-of-excellence-guide/)
 
 
-#### #SECDEVPROGRAM
+#### #SEC DEV PROGRAM
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/secdevprogram/
 
@@ -202,7 +204,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
   - Evaluate code for the percentage of code for automated testing. Industry average is 43% (SIG benchmark report 2023). An often cited recommendation is 80%. Research shows that automated testing in AI engineering is often neglected (SIG benchmark report 2023), as the performance of the AI model is mistakenly regarded as the ground truth of correctness.
 
 - Model performance testing is essential
-  - Run AI-specific dynamic performance tests before deployment (see [#CONTINUOUSVALIDATION](/goto/continuousvalidation/)):
+  - Run AI-specific dynamic performance tests before deployment (see [#CONTINUOUS VALIDATION](/goto/continuousvalidation/)):
   - Run security tests (e.g. data poisoning payloads, prompt injection payloads, adversarial robustness testing). See the [testing section](/goto/testing/).
   - Run continual automated validation of the model, including discrimination bias measurement and the detection of staleness: the input space changing over time, causing the training set to get out of date
 - Model deployment is a new aspect to AI and it may offer  specific protection measures such as obfuscation, encryption, integrity checks or a Trusted Execution Environment.
@@ -222,7 +224,7 @@ Depending on risk analysis, certain threats may require specific practices in th
 - [OpenCRE の安全なソフトウェア開発プロセス](https://www.opencre.org/cre/616-305) を参照してください。NIST SSDF や OWASP SAMM への注目すべきリンクがあります。ギャップ: このコントロールを完全にカバーしており、上記の特殊性を伴います。
 
 
-#### #DEVPROGRAM
+#### #DEV PROGRAM
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/devprogram/
 
@@ -260,7 +262,7 @@ Depending on risk analysis, certain threats may require specific practices in th
   - [ISO/IEC 27002](https://www.iso.org/standard/75652.html) コントロール 5.37 操作手順の文書化。ギャップ: このコントロールを最小限にカバーします - これはコントロールのごく一部のみをカバーします。
   - [OpenCRE の機能の文書化](https://www.opencre.org/cre/162-655) ギャップ: このコントロールを最小限にカバーします
 
-#### #CHECKCOMPLIANCE
+#### #CHECK COMPLIANCE
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/checkcompliance/
 
@@ -303,7 +305,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
   - ISO/IEC 27090 (AI セキュリティ) と 27091 (AI プライバシー) は本稿執筆時点 (2025 年 10 月) で開発中であり、2026 年に発行される見込みです。AI Exchange は 27090 のコンテンツに多大な貢献をしています。
   - prEN 18282 は AI セキュリティに関する欧州規格です。CEN/CENELEC によって策定され、AI Exchange が重要な部分を貢献しています。Exchange の創設者 Rob van der Veer  は、AI Exchange と CEN/CENELEC/ISO 間の公式なパートナーシップにおける連絡担当者であり、18282 の共同編集者でもあります。この規格は本稿執筆時点 (2025 年 10 月) で約二年間開発が進められており、2026 年初頭に公開調査が開始され、2026 年に発行される予定です。
 
-#### #SECEDUCATE
+#### #SEC EDUCATE
 > カテゴリ: ガバナンスコントロール  
 > パーマリンク: https://owaspai.org/goto/seceducate/
 
@@ -322,7 +324,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 機密性と完全性に対するセキュリティ脅威の影響は、データの攻撃対象領域を制限することで軽減できます。つまり、データの量と種類および保存期間を可能な限り減らします。このセクションではこの制限を適用するためのいくつかのコントロールについて説明します。
 
-#### #DATAMINIMIZE
+#### #DATA MINIMIZE
 > カテゴリ: 開発時および実行時のコントロール  
 > パーマリンク: https://owaspai.org/goto/secdevprogram/
 
@@ -353,7 +355,7 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 有用な標準:
   - ISO/IEC 標準ではまだカバーされていません。
 
-#### #ALLOWEDDATA
+#### #ALLOWED DATA
 > カテゴリ: 開発時および実行時のコントロール  
 > パーマリンク: https://owaspai.org/goto/alloweddata/
 
@@ -368,7 +370,7 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 
   - ISO/IEC 23894 (AI リスクマネジメント) は A.8 プライバシーでこれをカバーしています。ギャップ: このコントロールを完全にカバーし、アイデアに関する簡単なセクションがあります。
 
-#### #SHORTRETAIN
+#### #SHORT RETAIN
 > カテゴリ: 開発時および実行時のコントロール    
 > パーマリンク: https://owaspai.org/goto/shortretain/
 
@@ -386,7 +388,7 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 
   - ISO/IEC 標準ではまだカバーされていません。
 
-#### #OBFUSCATETRAININGDATA
+#### #OBFUSCATE TRAINING DATA
 > Category: development-time AI engineer control    
 > Permalink: https://owaspai.org/goto/obfuscatetrainingdata/
 
@@ -463,7 +465,7 @@ Reduce the information available to attackers, which can assist them in selectin
 **Implementation**  
 Minimizing and protecting technical details can be achieved by incorporating such details as an asset into information security management. This will ensure proper asset management, data classification, awareness education, policy, and inclusion in risk analysis.
 
-Note: this control needs to be weighed against the [AITRANSPARENCY](1_general_controls.md#AITRANSPARENCY) control that nay require to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
+Note: this control needs to be weighed against the [AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY) control that nay require to be more open about technical aspects of the model. The key is to minimize information that can help attackers while being transparent.
 
 For example:
 
@@ -559,7 +561,7 @@ Useful standards include:
   - ISO/IEC 42001 B.9.3 defines controls for human oversight and decisions regarding autonomy. Gap: covers this control partly (human oversight only, not business logic)
   - Not covered further in ISO/IEC standards.
 
-#### #LEASTMODELPRIVILEGE
+#### #LEAST MODEL PRIVILEGE
 > Category: runtime information security control    
 > Permalink: https://owaspai.org/goto/leastmodelprivilege/
 
@@ -652,7 +654,7 @@ Disadvantages of Model alignment:
 Therefore, alignment should be seen as a probabilistic, model-internal control that must be combined with deterministic, external mechanisms for high-risk or regulated use cases.
 
 
-#### #AITRANSPARENCY
+#### #AI TRANSPARENCY
 > Category: governance and runtime control    
 > Permalink: https://owaspai.org/goto/aitransparency/
 
@@ -676,7 +678,7 @@ Example: Informing users that when they choose an agent to perform a task, that 
   - Not covered further in ISO/IEC standards.
   - [OWASP top 10 for LLM 09 on over-reliance](https://llmtop10.com/llm09/)
 
-#### #CONTINUOUSVALIDATION
+#### #CONTINUOUS VALIDATION
 > Category: development-time and runtime AI engineer control  
 > Permalink: https://owaspai.org/goto/continuousvalidation/
 
@@ -749,7 +751,7 @@ Useful standards include:
 **Description**  
 Explainability: Explaining how individual model decisions are made, a field referred to as Explainable AI (XAI), can aid in gaining user trust in the model. In some cases, this can also prevent overreliance, for example, when the user observes the simplicity of the 'reasoning' or even errors in that process. See [this Stanford article on explainability and overreliance](https://hai.stanford.edu/news/ai-overreliance-problem-are-explanations-solution). Explanations of how a model works can also aid security assessors to evaluate AI security risks of a model.
 
-#### #UNWANTEDBIASTESTING 
+#### #UNWANTED BIAS TESTING 
 > Category: development-time and runtime AI engineer control  
 > Permalink: https://owaspai.org/goto/unwantedbiastesting/
 
