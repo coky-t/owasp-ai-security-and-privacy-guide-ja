@@ -27,7 +27,7 @@ weight: 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.1 Governance controls](https://owaspai.org/goto/governancecontrols/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2 Data limitation](https://owaspai.org/goto/datalimit/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3 Limit unwanted behaviour](https://owaspai.org/goto/limitunwanted/)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [2. Threats through use (input attacks) and controls](/docs/2_threats_through_use/)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [2. Input threats and controls](/docs/2_threats_through_use/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Prompt injection protection](https://owaspai.org/goto/promptinjectionsevenlayers/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [3. Development-time threats and controls](/docs/3_development_time_threats/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [4. Runtime application security threats and controls](/docs/4_runtime_application_security_threats/)  
@@ -182,7 +182,7 @@ The five steps - G.U.A.R.D - to organize AI security as an organization are:
 4. **Reduce**  
   Reduce potential impact by [minimizing or obfuscating sensitive data](/goto/datalimit/) and [limiting the impact of unwanted behaviour](/goto/limitunwanted/) (e.g., managing privileges, guardrails, human oversight etc. Basically: apply Murphy's law. 
 5. **Demonstrate**  
-    Establish evidence of responsible AI security through transparency, testing, documentation, and communication. Prove to management, regulators, and clients that your AI systems are under control and that the applied safeguards work as intended.
+    Establish evidence of responsible AI security through transparency, [testing](/goto/testing/), documentation, and communication. Prove to management, regulators, and clients that your AI systems are under control and that the applied safeguards work as intended.
 
 And finally: think before you build an AI solution. AI can have fantastic benefits, but it always needs to be balanced with risks. Securing AI is typically harder than securing non-AI systems, first because it's relatively new, but also because there is a level of uncertainty in all data-driven technology. For example in the case of LLMs, we are dealing with the fluidity of natural language. LLMs essentially offer an unstable, undocumented interface with an unclear set of policies. That means that security measures applied to AI often cannot offer security properties to a standard you might be used to with other software. Consider whether AI is the appropriate technology choice for the problem you are trying to solve. Removing an unnecessary AI component eliminates all AI-related risks.  
 
@@ -225,7 +225,7 @@ You can see the high-level structure on the [main page](https://owaspai.org). On
 The main structure is made of the following pages:  
   (0) [AI security overview - this page](/docs/ai_security_overview), contains an overview of AI security and discussions of various topics.
   (1) [General controls, such as AI governance](/goto/generalcontrols/)
-  (2) [Threats through use (input attacks), such as evasion attacks](/goto/threatsuse/
+  (2) [Input threats, such as evasion attacks](/goto/threatsuse/
   (3) [Development-time threats, such as data poisoning](/goto/developmenttime/)
   (4) [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
   (5) [AI security testing](/goto/testing/)
@@ -294,7 +294,7 @@ AI security = threats to AI-specific assets (AI Exchange) +threats to other asse
 ### 脅威モデル
 私たちは三つのタイプの脅威を区別します:
 1. 開発時 (データの取得および準備時、モデルの学習/取得時) の脅威 - 例: データポイズニング
-2. モデル使用時 (推論時、入力の提供と出力の取得時) の脅威 - 例: プロンプトインジェクションや回避
+2. 入力の脅威: 攻撃者によるモデル使用時 (推論時、入力の提供と出力の取得時) - 例: プロンプトインジェクションや回避
 3. 実行時 (運用時、推論時ではない) のシステムへのその他の脅威 - 例: モデル入力の窃取
 
 AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) に沿って、6 つのタイプの影響を概説します:
@@ -308,7 +308,7 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
 
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats2.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats2.png)
 
 Note that some threats represent attacks consisting of several steps, and therefore present multiple threats in one, for example:
 —	An adversary performs a data poisoning attack by hacking into the training database and placing poisoned samples, and then after the data has been used for training, presents specific inputs to make use of the corrupted behaviour.
@@ -373,7 +373,7 @@ Clickable version, based on the [Periodic table](/goto/periodictable/):
 <tr><td rowspan="3">Training data Confidentiality</td><td rowspan="2">Runtime - Model use</td><td><a href="/goto/disclosureuseoutput/">Sensitive data output from model</a></td></tr>
 <tr><td><a href="/goto/modelinversionandmembership/">Model inversion / Membership inference</a></td></tr>
 <tr><td>Development - Engineering environment</td><td><a href="/goto/devdataleak/">Developmen-time data leak</a></td></tr>
-<tr><td rowspan="3">Model confidentiality</td><td>Runtime - Model use</td><td><a href="/goto/modeltheftuse/">Model theft through use</a> (input-output harvesting)</td></tr>
+<tr><td rowspan="3">Model confidentiality</td><td>Runtime - Model use</td><td><a href="/goto/modelexfiltration/">Model exfiltration</a> (input-output harvesting)</td></tr>
 <tr><td>Runtime - Break into deployed model</td><td><a href="/goto/runtimemodeltheft/">Direct model theft runtime</a></td></tr>
 <tr><td>Development - Engineering environment</td><td><a href="/goto/devmodelleak/">Model theft development-time</a></td></tr>
 <tr><td>Model behaviour Availability</td><td>Model use</td><td><a href="/goto/airesourceexhaustion/">AI resource exhaustion</a></td></tr>
@@ -398,29 +398,31 @@ In the AI Exchange we focus on AI-specific threats and their corresponding contr
 
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2.png)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
 - **AI ガバナンス**(1): AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
    >([AI PROGRAM](1_general_controls.md#AIPROGRAM), [SEC PROGRAM](1_general_controls.md#SECPROGRAM), [DEV PROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEV PROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECK COMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SEC EDUCATE](1_general_controls.md#SECEDUCATE))
-- データとモデルのガバナンスにより **サプライチェーン管理を拡張します**(2):
+- データ、モデル、モデルホスティングのガバナンスにより **サプライチェーン管理を拡張します**(2):
    > [SUPPLY CHAIN MANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
-- **データを最小限に抑えます/難読化します**(4): 保存時および転送時のデータ量を制限します。また、データの保存時間を開発時、実行時に制限します。
-   > ([DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), [SHORT RETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA))
-- AI システムは IT システムであるため、リスクに基づいて従来の **技術的な IT セキュリティコントロール**(2) を適用します。
+- AI システムは IT システムであるため、リスクに基づいて従来の **IT セキュリティコントロール**(2) を適用します。
     - 標準的な **従来のセキュリティコントロール** (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
         > [DEV SECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), [DISCRETE](1_general_controls.md#DISCRETE)
-      - 実行時: モデルの保存、モデルの使用、プラグイン、モデルの入出力
-        > [RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES)
+      - 実行時: モデルの保存、モデルの使用、拡張データ、モデルの入出力
+        > [RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES), [AUGMENTATION DATA CONFIDENTIALITY](4_runtime_application_security_threats.md#AUGMENTATION-DATA-CONFIDENTIALITY), [AUGMENTATION DATA INTEGRITY](4_runtime_application_security_threats.md#AUGMENTATION-DATA-INTEGRITY)
     - 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
       > [MONITOR USE](2_threats_through_use.md#MONITOR-USE), [MODEL ACCESS CONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATE LIMIT](2_threats_through_use.md#RATE-LIMIT)
     - **新規** の IT セキュリティコントロールを採用します。
       > [CONF COMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODEL OBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [INPUT　SEGREGATION](2_threats_through_use.md#INPUT-SEGREGATION)
-- **AI エンジニアリングセキュリティコントロール**(3) を適用します。
-    - 開発の一環としてのデータ/モデルエンジニアリングコントロール(3a)
-      > [FEDERATED LEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASION ROBUST MODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISON ROBUST MODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAIN ADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAIN DATA DISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIAL ROBUST DISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODEL ENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORE TRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALL MODEL](2_threats_through_use.md#SMALL-MODEL), [DATA QUALITY CONTROL](3_development_time_threats.md#DATAQUALITYCONTROL)), [MODEL ALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT)
-    - 攻撃をフィルタして検出するための実行時のモデル I/O 処理(3b)
+- 専門的な **AI エンジニアリングセキュリティコントロール**(3) を適用します。
+    - 開発の一環として振る舞いを制御するための生成 AI モデルエンジニアリングコントロール(3a):
+      > [MODEL ALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT)
+    - 開発の一環としてのデータ/モデルエンジニアリングコントロール(3b)
+      > [FEDERATED LEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASION ROBUST MODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISON ROBUST MODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAIN ADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAIN DATA DISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIAL ROBUST DISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODEL ENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORE TRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALL MODEL](2_threats_through_use.md#SMALL-MODEL), [DATA QUALITY CONTROL](3_development_time_threats.md#DATAQUALITYCONTROL))
+    - 攻撃をフィルタして検出するための実行時のモデル I/O 処理(3c)
       > [ANOMALOUS INPUT HANDLING](2_threats_through_use.md#ANOMALOUS-INPUT-HANDLING), [EVASION INPUT HANDLING](2_threats_through_use.md#EVASION-INPUT-HANDLING), [UNWANTED INPUT SERIES HANDLING](2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING), [PROMPT INJECTION I/O HANDLING](2_threats_through_use.md#PROMPT-INJECTION-IO-HANDLING), [DOS INPUT VALIDATION](2_threats_through_use.md#DOS-INPUT-VALIDATION), [INPUT DISTORTION](2_threats_through_use.md#INPUT-DISTORTION), [ENSITIVE OUTPUT HANDLING](2_threats_through_use.md#SENSITIVEOUTPUTHANDLING), [OBSCURE CONFIDENCE](2_threats_through_use.md#OBSCURE-CONFIDENCE)
+- **データを最小限に抑えます/難読化します**(4): 保存時および転送時の機密データ量を制限します。また、データの保存時間を開発時、実行時に制限します。
+   > ([DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), [SHORT RETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA))
 - モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**モデルの動作を制限**(5) します。
    > [OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEAST MODEL PRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [MODEL ALIGNMENT](1_general_controls.md#MODEL-ALIGNMENT), [AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING)
 
@@ -441,9 +443,9 @@ The following deployment options apply for ready-made models:
 
 **Self-hosted**
 
-The diagram below shows threats and controls in a self-hosting situation.
+The diagram below shows threats and controls of a ready-made model in a self-hosting situation.
 
-[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-selfhosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-selfhosted.png)
+[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-selfhosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-selfhosted.png)
 
 
 **External-hosted**
@@ -474,9 +476,9 @@ your data leaves your environment in readable form.
 When weighing this risk, compare it fairly: the vendor may still protect that environment better than you can protect your own.
 
 
-The diagram below shows threats and controls in an externally hosted situation.
+The diagram below shows threats and controls of a ready-made model in an externally hosted situation.
 
-[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png)
+[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-hosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-hosted.png)
 
 A typical challenge for organizations is to control the use of ready-made-models for general purpose Generative AI (e.g., ChatGPT), since employees typically can access many of them, even for free. Some of these models may not satisfy the organization's requirements for security and privacy. Still, employees can be very tempted to use them with the lack of a better alterative, sometimes referred to as _shadow AI_. The best solution for this problem is to provide a good alternative in the form of an AI model that has been deployed and configured in a secure and privacy-preserving way, of sufficient quality, and complying with the organization's values and policies. In addition, the risks of shadow AI need to be made very clear to users.
 
@@ -500,7 +502,7 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 <tr><td rowspan="3">トレーニングデータの機密性</td><td rowspan="2">ランタイム - モデル使用</td><td><a href="2_threats_through_use.md#231-sensitive-data-output-from-model">モデル出力でのデータ開示</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追補:<br><br><a href="2_threats_through_use.md#SENSITIVEOUTPUTHANDLING">機密性の高い出力処理</a></td></tr>
 <tr><td><a href="2_threats_through_use.md#232-model-inversion-and-membership-inference">モデル反転とメンバーシップ推論</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追加:<br><br><a href="2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING">望ましくない入力シリーズ処理</a>, <a href="2_threats_through_use.md#OBSCURE-CONFIDENCE">曖昧な信頼性</a>, <a href="2_threats_through_use.md#SMALL-MODEL">スモールモデル</a></td></tr>
 <tr><td>開発時 - エンジニアリング環境</td><td><a href="3_development_time_threats.md#321-development-time-data-leak">トレーニングデータの漏洩</a></td><td><a href="1_general_controls.md#12-general-controls-for-sensitive-data-limitation">機密データ制限</a> (データの最小化, 短期保持, トレーニングデータの難読化) 追補:<br><br><a href="3_development_time_threats.md#DEVSECURITY">開発環境のセキュリティ</a>, <a href="3_development_time_threats.md#SEGREGATEDATA">データセグリゲーション</a>, <a href="3_development_time_threats.md#FEDERATEDLEARNING">連合学習</a></td></tr>
-<tr><td rowspan="3">モデルの機密性</td><td>ランタイム - モデル使用</td><td><a href="2_threats_through_use.md#24-model-theft-through-use">使用によるモデル盗用</a> (入出力ハーベスティング)</td><td><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追加:<br><br><a href="2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING">望ましくない入力シリーズ処理</a></td></tr>
+<tr><td rowspan="3">モデルの機密性</td><td>ランタイム - モデル使用</td><td><a href="2_threats_through_use.md#24-model-exfiltration">モデル抽出</a> (入出力ハーベスティング)</td><td><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追加:<br><br><a href="2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING">望ましくない入力シリーズ処理</a></td></tr>
 <tr><td>ランタイム - デプロイされるモデルへの侵入</td><td><a href="4_runtime_application_security_threats.md#43-direct-runtime-model-theft">直接的な実行時のモデル盗用</a></td><td><a href="4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY">ランタイムモデルの機密性</a>, <a href="4_runtime_application_security_threats.md#MODELOBFUSCATION">モデルの難読化</a></td></tr>
 <tr><td>開発時 - エンジニアリング環境</td><td><a href="3_development_time_threats.md#322-model-theft-through-development-time-model-parameter-leak">開発時のモデル盗用</a></td><td><a href="3_development_time_threats.md#DEVSECURITY">開発環境のセキュリティ</a>, <a href="3_development_time_threats.md#SEGREGATEDATA">データセグリゲーション</a>, <a href="3_development_time_threats.md#FEDERATEDLEARNING">連合学習</a></td></tr>
 <tr><td>モデル動作の可用性</td><td>モデル使用</td><td><a href="2_threats_through_use.md#25-ai-resource-exhaustion">AI リソース枯渇</a> (モデルリソースの枯渇)</td><td><a href="2_threats_through_use.md#MONITOR-USE">監視</a>, <a href="2_threats_through_use.md#RATE-LIMIT">レート制限</a>, <a href="2_threats_through_use.md#MODEL-ACCESS-CONTROL">モデルアクセス制御</a> 追補:<br><br><a href="2_threats_through_use.md#DOS-INPUT-VALIDATION">サービス拒否の入力バリデーション</a>, <a href="2_threats_through_use.md#LIMIT-RESOURCES">リソースの制限</a></td></tr>
@@ -606,10 +608,10 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
 
   Question: Do you train/finetune the model yourself?
   - If yes, is the model regarded as  intellectual property? Then you need to protect against:
-    - [Model theft through use](/goto/modeltheftuse/)
-    - [Model theft development-time](/goto/devmodelleak/)
+    - [Model exfiltration](/goto/modelexfiltration/)
+    - [Direct model theft development-time](/goto/devmodelleak/)
     - [Source code/configuration leak](/goto/devcodeleak/)
-    - [Runtime model theft](/goto/runtimemodeltheft/)
+    - [Direct runtime model theft](/goto/runtimemodeltheft/)
       
  **Identify risks of leaking input data**
  
@@ -702,7 +704,7 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 このドキュメントは機械学習に焦点を当てています。とはいえ、ここではヒューリスティックシステムにも適用される、このドキュメントの機械学習の脅威を簡単に要約します。
 
 - モデル回避はヒューリスティックモデルでも可能です。攻撃者は定義されたルールの抜け穴や弱点を見つけようとする可能性があります。
-- 使用によるモデル盗用 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます。
+- モデル抽出 - ヒューリスティックモデルからの入出力の組み合わせに基づいて機械学習モデルを訓練できます。
 - 使用による過度の依存 - ヒューリスティックシステムも過度に依存することがあります。適用された知識は誤りの可能性があります。
 - データポイズニングとモデルポイズニングはどちらも、知識を強化するために使用されるデータの改竄や、開発時や実行時にルールを操作することによって発生する可能性があります。
 - 分析やテストに使用されるデータの漏洩が依然として問題になる可能性があります。
