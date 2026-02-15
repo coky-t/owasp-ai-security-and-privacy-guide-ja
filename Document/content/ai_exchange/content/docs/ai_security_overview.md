@@ -223,13 +223,13 @@ The AI exchange covers both heuristic artificial intelligence (e.g., expert syst
 You can see the high-level structure on the [main page](https://owaspai.org). On larger screens you can see the structure of pages on the left sidebar and the structure within the current page on the right. On smaller screens you can view these structures through the menu. There is also a section with the most importent topics in a [Table of contents](/goto/toc/).
 
 The main structure is made of the following pages:  
-  (0) [AI security overview - this page](/docs/ai_security_overview), contains an overview of AI security and discussions of various topics.
+  (0) [AI security overview - this page](/goto/toc/), contains an overview of AI security and discussions of various topics.
   (1) [General controls, such as AI governance](/goto/generalcontrols/)
-  (2) [Input threats, such as evasion attacks](/goto/threatsuse/
+  (2) [Input threats, such as evasion attacks](/goto/inputthreats/)
   (3) [Development-time threats, such as data poisoning](/goto/developmenttime/)
   (4) [Runtime security threats, such as insecure output](/goto/runtimeappsec/)
   (5) [AI security testing](/goto/testing/)
-  (6) [AI privacy](/goto/aiprivacy)
+  (6) [AI privacy](/goto/aiprivacy/)
   (7) [References](/goto/references/)
 
 このページ (AI セキュリティ概要) では以下について取り上げます。
@@ -270,7 +270,7 @@ What makes AI special when it comes to security? Well, it deals with a new set o
 - **[Monitoring](/goto/monitoruse/)** of model performance and inference - extending model I/O handing and overlooking general usage of the AI system
 - **Impact limitation controls** (because of zero model trust: assume a model can be misled, make mistakes, or leak data):
   - [Minimize or obfuscate sensitive data](/goto/datalimit/)
-  - [Limit model behaviour](/goto/limitunwanted/) (e.g., [oversight](/goto/oversight/), [least model privilege](/goto/leastmodelprivilege/), and [model alignment](/goto/modelalignment))
+  - [Limit model behaviour](/goto/limitunwanted/) (e.g., [oversight](/goto/oversight/), [least model privilege](/goto/leastmodelprivilege/), and [model alignment](/goto/modelalignment/))
 
 
 (*) Note: Attackers that have a similar model (or a copy) can typically craft misleading input efficiently and without being noticed
@@ -334,7 +334,7 @@ What does this mean for security?
 - Existing assumptions about things like trust boundaries and other established security measures might need to be revisited because agentic AI changes interconnectivity and data flows between system components.
 - Agents deployed with their own sets of permissions open up privilege escalation vectors because they are susceptible to becoming a confused deputy
 - The attack surface is wide, and the potential impact should not be underestimated.
-- Because of that, the known controls become even more important — such as security of inter-model communication (e.g., MCP), [traceability](/goto/monitoruse/), protecting memory integrity, [prompt injection defenses](/goto/promptinjectionm/), [rule-based / human oversight](/goto/oversight/), and [least model privilege](/goto/leastmodelprivilege/). See the [controls overview section](/goto/controlsoverview/).
+- Because of that, the known controls become even more important — such as security of inter-model communication (e.g., MCP), [traceability](/goto/monitoruse/), protecting memory integrity, [prompt injection defenses](/goto/promptinjection/), [rule-based / human oversight](/goto/oversight/), and [least model privilege](/goto/leastmodelprivilege/). See the [controls overview section](/goto/controlsoverview/).
 
 For leaking sensitive data in agentic AI, you need three things, also called the _lethal trifecta_:
 1. Data: Control of the attacker of data that find its way into an LLM at some point in the session of a user that has the desired access, to perform [indirect prompt injection](/goto/indirectpromptinjection/) 
@@ -670,7 +670,7 @@ A central tool in this process is the Risk Register, which serves as a comprehen
 ### 5. Arrange responsibility
 For each selected threat, determine who is responsible for addressing it. By default, the organization that builds and deploys the AI system is responsible, but building and deploying may be done by different organizations, and some parts of the building and deployment may be deferred to other organizations, e.g. hosting the model, or providing a cloud environment for the application to run. Some aspects are shared responsibilities.
 
-If some components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider by using a tool like the responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure. See [Threat model of using a model as-is](#threat-model-with-controls---genai-as-is).
+If some components of your AI system are hosted, then you share responsibility regarding all controls for the relevant threats with the hosting provider. This needs to be arranged with the provider by using a tool like the responsibility matrix. Components can be the model, model extensions, your application, or your infrastructure. See [Threat model of a ready-made model](/goto/readymademodel/).
 
 If an external party is not open about how certain risks are mitigated, consider requesting this information and when this remains unclear you are faced with either 1) accept the risk, 2) or provide your own mitigations, or 3) avoid the risk, by not engaging with the third party.
 
@@ -825,7 +825,7 @@ Note that the UK Government drove an initiative through their DSIT department to
 - 責任をもって AI をリリースします:
   #[DEVELOPMENT PROGRAM](1_general_controls.md#DEVPROGRAM) の一部
 - ユーザーが正しいことを簡単にできるようにします (DSIT principle 4, called Enable human responsibility for AI systems):
-  #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部, and also involving #[EXPLAINABILITY](/goto/explainability/), documenting prohibited use cases, and #[HUMAN OVERSIGHT](/goto/humanoversight))
+  #[SECURITY PROGRAM](1_general_controls.md#SECPROGRAM) の一部, and also involving #[EXPLAINABILITY](/goto/explainability/), documenting prohibited use cases, and #[HUMAN OVERSIGHT](/goto/oversight/))
 
 4. 安全な運用と保守
 
