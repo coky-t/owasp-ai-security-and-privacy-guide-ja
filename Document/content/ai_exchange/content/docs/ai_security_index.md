@@ -64,12 +64,12 @@ weight: 9
 [モデル反転 / メンバーシップ推論 (Model inversion / Membership inference)](2_threats_through_use.md#232-model-inversion-and-membership-inference)  
 [インジェクションを含むモデル出力 (Model output contains injection)](4_runtime_application_security_threats.md#44-insecure-output-handling)  
 [開発環境でのモデルポイズニング (Model poisoning in development-environment)](3_development_time_threats.md#312-development-environment-model-poisoning)  
-[実行時のモデルポイズニング (Model poisoning in runtime)](4_runtime_application_security_threats.md#42-runtime-model-poisoning-manipulating-the-model-itself-or-its-inputoutput-logic)  
+[実行時のモデルポイズニング (Model poisoning at runtime)](4_runtime_application_security_threats.md#42-direct-runtime-model-poisoning)  
 [訓練データ/ファインチューンデータのデータポイズニングを通じてのモデルポイズニング (Model poisoning through data poisoning of train/finetune data)](3_development_time_threats.md#311-data-poisoning)  
-[実行時の直接モデル窃取 (Model theft directly in runtime)](4_runtime_application_security_threats.md#43-direct-runtime-model-theft)  
+[実行時のモデルの直接的な漏洩 (Model direct leak in runtime)](4_runtime_application_security_threats.md#43-direct-runtime-model-theft)  
 [サプライチェーンのデータポイズニング (Model poisoning in supply chain)](3_development_time_threats.md#313-supply-chain-model-poisoning)  
-[開発時のモデル窃取 (Model theft in development-time)](3_development_time_threats.md#322-model-theft-through-development-time-model-parameter-leak)  
-[使用によるモデル窃取 (Model theft through use)](2_threats_through_use.md#24-model-theft-through-use)  
+[開発時のモデルの直接的な漏洩 (Model direct leak development-time)](3_development_time_threats.md#322-direct-development-time-model-leak)  
+[モデル抽出 (Model exfiltration)](2_threats_through_use.md##24-model-exfiltration)  
 [監視 (Monitoring)](2_threats_through_use.md#monitor-use)  
 
 ### N
