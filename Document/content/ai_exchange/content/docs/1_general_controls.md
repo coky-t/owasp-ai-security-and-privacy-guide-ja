@@ -5,14 +5,14 @@ heroText: "これらはすべての組織が導入すべきコントロールで
 weight: 2
 ---
 > カテゴリ: コントロールのグループ  
-> パーマリンク: https://owaspai.org/goto/generalcontrols/
+> パーマリンク: https://owaspai.org/go/generalcontrols/
 ## 1.1 一般的なガバナンスコントロール
 > カテゴリ: コントロールのグループ  
-> パーマリンク: https://owaspai.org/goto/governancecontrols/
+> パーマリンク: https://owaspai.org/go/governancecontrols/
 
 #### #AI PROGRAM
 > カテゴリ: ガバナンスコントロール  
-> パーマリンク: https://owaspai.org/goto/aiprogram/
+> パーマリンク: https://owaspai.org/go/aiprogram/
 
 **Description**  
 AI program: Install and execute a program to govern AI.  
@@ -23,16 +23,16 @@ The objective of an AI Program is to take responsibility for AI as an organizati
 
 **Implementation**  
 This governance challenge may seem daunting because of all the new things to take care of, but there are numerous existing controls in organizations already that can be extended to include AI (e.g. policies, risk analysis, impact analysis, inventory of used services etc.).  
-See [How to organize AI security](/goto/organize/) for the 5 GUARD steps and to see how governance fits into the whole.  
+See [How to organize AI security](/go/organize/) for the 5 GUARD steps and to see how governance fits into the whole.  
 An AI Program includes:
 - Keeping an inventory of AI initiatives
 - Perform impact analysis on initiatives
 - Organize AI innovation
 - Include AI risks in risk management
 - Assign responsibilities, e.g. model accountability, data accountability, and risk governance
-- AI literacy (e.g. [training](/goto/seceducate/)
-- Organize [compliance](/goto/checkcompliance/)
-- Incorporate AI assets in the [security program](/goto/secprogram/)
+- AI literacy (e.g. [training](/go/seceducate/)
+- Organize [compliance](/go/checkcompliance/)
+- Incorporate AI assets in the [security program](/go/secprogram/)
 
 AI イニシアチブで影響分析を行う際には、少なくとも以下の点を考慮してください。
 - AI プログラムは、セキュリティリスクなどの AI にとってのリスクだけでなく、公平性や安全性などに対する脅威などの AI によるリスクもあることに注意してください。
@@ -60,8 +60,8 @@ A typical first iteration for AI governance in organizations consists of the fol
 **Bare minimum start**
 The very minimum first thing you can do for AI governance, focused on security:
 1. Make an inventory of current AI use and AI ideas.
-2. Perform [risk analysis](/goto/riskanalysis/) on them to identify threats, controls and who's responsible for them.
-3. Continue with step 2 of the GUARD program, presented in the [How to organize](/goto/organize/) section.
+2. Perform [risk analysis](/go/riskanalysis/) on them to identify threats, controls and who's responsible for them.
+3. Continue with step 2 of the GUARD program, presented in the [How to organize](/go/organize/) section.
 
 **特殊性**  
 一般的なリスクマネジメントでは、以下のような AI の特殊性を念頭に置くと役立つかもしれません。
@@ -89,7 +89,7 @@ ISO 42001 はリスクマネジメントシステムを拡張するもので、�
 
 #### #SEC PROGRAM
 > カテゴリ: ガバナンスコントロール  
-> パーマリンク: https://owaspai.org/goto/secprogram/
+> パーマリンク: https://owaspai.org/go/secprogram/
 
 **説明**  
 セキュリティプログラム: 組織にセキュリティプログラム (_情報セキュリティマネジメントシステム_ ともよばれます) があり、AI ライフサイクル全体と AI 固有の側面を含むことを確認します。
@@ -173,7 +173,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 #### #SEC DEV PROGRAM
 > カテゴリ: ガバナンスコントロール  
-> パーマリンク: https://owaspai.org/goto/secdevprogram/
+> パーマリンク: https://owaspai.org/go/secdevprogram/
 
 **説明**  
 セキュア開発プログラム: ソフトウェア開発に関するプロセスを整備し、AI システムにセキュリティが組み込まれていることを確認します。
@@ -186,14 +186,14 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 **特殊性**  
 ソフトウェア開発における AI の特殊性、およびその対処方法:
-- AI involves new types of engineering: data engineering and model engineering (e.g. model training), together with new types of engineers: e.g. data scientists, data engineers, AI engineers. Make sure this new engineering becomes an integral part of the general [Development program](/goto/devprogram/) with its best practices (e.g. versioning, portfolio management, retirement). For example: Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
+- AI involves new types of engineering: data engineering and model engineering (e.g. model training), together with new types of engineers: e.g. data scientists, data engineers, AI engineers. Make sure this new engineering becomes an integral part of the general [Development program](/go/devprogram/) with its best practices (e.g. versioning, portfolio management, retirement). For example: Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
 
 - 新しい資産、脅威、コントロール (このドキュメントでカバーしている) を考慮する必要があり、要件、ポリシー、コーディングガイドライン、トレーニング、ツール、テストプラクティスなどに影響します。通常、これは [SECPROGRAM](1_general_controls.md#SECPROGRAM) で説明しているように、組織の情報セキュリティ管理システムにこれらの要素を追加し、従来の資産、脅威、コントロールに合わせて調整しているのと同様に、安全なソフトウェア開発をそれに合わせて調整します ([SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) 参照)。This involves both conventional security threats and AI-specific threats, applying both conventional security controls and AI-specific ones. Typically, technical teams depend on the AI engineers when it comes to the AI-specific controls as they mostly require deep AI expertise. For example: if training data is confidential and collected in a distributed way, then a federated learning approach may be considered.
 
-- Apart from software components, the supply chain for AI can also include data and models which may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/goto/supplychainmanage/).
+- Apart from software components, the supply chain for AI can also include data and models which may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/go/supplychainmanage/).
 - In AI, software components can also run in the development, for example tools to prepare training data or train a model. Because of this, the AI development environment is vulnerable to traditional software security risks, such as open source package vulnerabilities, CWEs, exposed secrets, and sensitive data leaks. Without robust controls in place, these risks go undetected by standard application security testing tools, potentially exposing the entire lifecycle to breaches.
 
-- The AI development environment typically involves sensitive data, in contrast to conventional engineering where the use of such data by engineers is normally avoided. Therefore, apply [development security](/goto/devsecurity/) on the development environment. In addition to the conventional assets of code, configuration and secrets, the AI-specific development assets are:
+- The AI development environment typically involves sensitive data, in contrast to conventional engineering where the use of such data by engineers is normally avoided. Therefore, apply [development security](/go/devsecurity/) on the development environment. In addition to the conventional assets of code, configuration and secrets, the AI-specific development assets are:
   - Potentially sensitive data needed to train, test and validate models
   - Model parameters, which often represent intellectual property and can also be used to prepare input attacks when obtained.
 
@@ -204,8 +204,8 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
   - Evaluate code for the percentage of code for automated testing. Industry average is 43% (SIG benchmark report 2023). An often cited recommendation is 80%. Research shows that automated testing in AI engineering is often neglected (SIG benchmark report 2023), as the performance of the AI model is mistakenly regarded as the ground truth of correctness.
 
 - Model performance testing is essential
-  - Run AI-specific dynamic performance tests before deployment (see [#CONTINUOUS VALIDATION](/goto/continuousvalidation/)):
-  - Run security tests (e.g. data poisoning payloads, prompt injection payloads, adversarial robustness testing). See the [testing section](/goto/testing/).
+  - Run AI-specific dynamic performance tests before deployment (see [#CONTINUOUS VALIDATION](/go/continuousvalidation/)):
+  - Run security tests (e.g. data poisoning payloads, prompt injection payloads, adversarial robustness testing). See the [testing section](/go/testing/).
   - Run continual automated validation of the model, including discrimination bias measurement and the detection of staleness: the input space changing over time, causing the training set to get out of date
 - Model deployment is a new aspect to AI and it may offer  specific protection measures such as obfuscation, encryption, integrity checks or a Trusted Execution Environment.
 
@@ -226,7 +226,7 @@ Depending on risk analysis, certain threats may require specific practices in th
 
 #### #DEV PROGRAM
 > カテゴリ: ガバナンスコントロール  
-> パーマリンク: https://owaspai.org/goto/devprogram/
+> パーマリンク: https://owaspai.org/go/devprogram/
 
 **説明**  
 開発プログラム: AI の開発ライフサイクルプログラムを持つこと。一般的な (セキュリティ指向だけではない) ソフトウェアエンジニアリングのベストプラクティスを AI 開発に適用します。
@@ -264,7 +264,7 @@ Depending on risk analysis, certain threats may require specific practices in th
 
 #### #CHECK COMPLIANCE
 > カテゴリ: ガバナンスコントロール  
-> パーマリンク: https://owaspai.org/goto/checkcompliance/
+> パーマリンク: https://owaspai.org/go/checkcompliance/
 
 **説明**  
 コンプライアンスのチェック: コンプライアンスマネジメント (セキュリティの側面を含む) において、AI 関連の法規制が考慮されていることを確認します。個人データが関連する場合や個人に関する意思決定に AI が適用される場合は、プライバシーの法規制も適用範囲となります。詳細については [プライバシーセクション](6_privacy.md) を参照してください。
@@ -307,7 +307,7 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 #### #SEC EDUCATE
 > カテゴリ: ガバナンスコントロール  
-> パーマリンク: https://owaspai.org/goto/seceducate/
+> パーマリンク: https://owaspai.org/go/seceducate/
 
 **説明**  
 データサイエンティストと開発チームに対して、モデルへの攻撃を含む AI 脅威の意識に関するセキュリティ教育を実施します。データサイエンティストを含むすべてのエンジニアがセキュリティの考え方を身につけることが不可欠です。
@@ -320,13 +320,13 @@ AI/セキュリティに関する一般的な法的考慮事項:
 
 ## 1.2 機密データ制限の一般的なコントロール
 > カテゴリ: コントロールのグループ  
-> パーマリンク: https://owaspai.org/goto/datalimit/
+> パーマリンク: https://owaspai.org/go/datalimit/
 
 機密性と完全性に対するセキュリティ脅威の影響は、データの攻撃対象領域を制限することで軽減できます。つまり、データの量と種類および保存期間を可能な限り減らします。このセクションではこの制限を適用するためのいくつかのコントロールについて説明します。
 
 #### #DATA MINIMIZE
 > カテゴリ: 開発時および実行時のコントロール  
-> パーマリンク: https://owaspai.org/goto/secdevprogram/
+> パーマリンク: https://owaspai.org/go/secdevprogram/
 
 **説明**  
 データの最小化: 潜在的なデータ漏洩や操作を防ぐために、アプリケーションにとって不必要なデータフィールドや (トレーニングセットなどからの) レコードを削除します。そもそも存在しないものを漏洩できないためです。
@@ -357,7 +357,7 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 
 #### #ALLOWED DATA
 > カテゴリ: 開発時および実行時のコントロール  
-> パーマリンク: https://owaspai.org/goto/alloweddata/
+> パーマリンク: https://owaspai.org/go/alloweddata/
 
 **説明**  
 許可されたデータを確認します。つまり、意図した目的では禁止されているデータを (トレーニングデータなどから) 削除することを意味します。これは同意が得られておらず、データに別の目的で収集された個人情報を含む場合に特に重要です。
@@ -372,7 +372,7 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 
 #### #SHORT RETAIN
 > カテゴリ: 開発時および実行時のコントロール    
-> パーマリンク: https://owaspai.org/goto/shortretain/
+> パーマリンク: https://owaspai.org/go/shortretain/
 
 **説明**  
 短期保持: 必要がなくなったり、法的に (プライバシー法などにより) 要求された場合、データを削除または匿名化します。
@@ -390,7 +390,7 @@ AI models often tolerate reduced feature sets and incomplete data better than tr
 
 #### #OBFUSCATE TRAINING DATA
 > Category: development-time AI engineer control    
-> Permalink: https://owaspai.org/goto/obfuscatetrainingdata/
+> Permalink: https://owaspai.org/go/obfuscatetrainingdata/
 
 **Description**  
 Obfuscate training data: attain a degree of obfuscation of sensitive data where possible.
@@ -440,7 +440,7 @@ Obfuscation reduces the risk of re-identification or inference, but does not eli
 The risk of re-identification can be assessed by experts using statistical properties such as K-anonymity, L-diversity, and T-closeness.  
 Anonymity is not an absolute concept, but a statistical one. Even if someone's identity can be guessed from data with some certainty, it can be harmful. The concept of _differential privacy_ helps to analyse the level of anonymity. It is a framework for formalizing privacy in statistical and data analysis, ensuring that the privacy of individual data entries in a database is protected. The key idea is to make it possible to learn about the population as a whole while providing strong guarantees that the presence or absence of any single individual in the dataset does not significantly affect the outcome of any analysis. This is often achieved by adding a controlled amount of random noise to the results of queries on the database. This noise is carefully calibrated to mask the contribution of individual data points, which means that the output of a data analysis (or query) should be essentially the same, whether any individual's data is included in the dataset or not. In other words by observing the output, one should not be able to infer whether any specific individual's data was used in the computation.
 
-Distorting training data can make it effectively uncrecognizable, which of course needs to be weighed against the negative effect on model performance that this typically creates. See also [TRAINDATADISTORTION](/goto/traindatadistortion/) which is about distortion against data poisoning and [EVASIONROBUSTMODEL](/goto/evasionrobustmodel/) for distortion against evasion attacks. Together with this control OBFUSCATETRAININGDATA, these are all approaches that distort training data, but for different purposes.
+Distorting training data can make it effectively uncrecognizable, which of course needs to be weighed against the negative effect on model performance that this typically creates. See also [TRAINDATADISTORTION](/go/traindatadistortion/) which is about distortion against data poisoning and [EVASIONROBUSTMODEL](/go/evasionrobustmodel/) for distortion against evasion attacks. Together with this control OBFUSCATETRAININGDATA, these are all approaches that distort training data, but for different purposes.
 
 **References**  
 - [SF-PATE: Scalable, Fair, and Private Aggregation of Teacher Ensembles](https://arxiv.org/abs/2204.05157)
@@ -454,7 +454,7 @@ Useful standards include:
 
 #### #DISCRETE
 > Category: development-time and runtime control    
-> Permalink: https://owaspai.org/goto/discrete/
+> Permalink: https://owaspai.org/go/discrete/
 
 **Description**  
 Minimize access to technical details that could help attackers.
@@ -483,7 +483,7 @@ Useful standards include:
 
 ## <a name="13-controls-to-limit-the-effects-of-unwanted-behaviour">1.3. 望ましくない動作の影響を制限するためのコントロール</a>
 > Category: group of controls  
-> Permalink: https://owaspai.org/goto/limitunwanted/
+> Permalink: https://owaspai.org/go/limitunwanted/
 
 Unwanted model behaviour is the intended result of many AI attacks (e.g. data poisoning, evasion, prompt injection). There are many ways to prevent and to detect these attacks, but this section is about how the effects of unwanted model behaviour can be controlled, in order to reduce the impact of an attack - by constraining actions, introducing oversight and enabling timely containment and recovery. This is sometimes referred to as _blast radius control_.
 
@@ -508,7 +508,7 @@ Example: LLMs (GenAI), just like most AI models, induce their results based on t
 
 #### #OVERSIGHT
 > Category: runtime control    
-> Permalink: https://owaspai.org/goto/oversight/
+> Permalink: https://owaspai.org/go/oversight/
 
 **Description**  
 Oversight of model behaviour by humans or automated mechanisms (e.g.,using rules), where human oversight provides not only more intelligent validation through common sense and domain knowledge, but also clear accountability for devisions and outcomes.
@@ -522,17 +522,17 @@ It is the nature of AI models that they can be wrong. In addition, they can be m
 **Implementation**  
 - Implement **detection rules** to recognize (potential) unwanted output, such as:
     - Offensive language, toxicity, Not Safe For Work, misinformation, or dangerous information (e.g., recipe for poison, medical misinformation)
-    - Sensitive data: see [SENSITIVE OUTPUT HANDLING](/goto/sensitiveoutputhandling/) for the control to detect sensitive data (e.g. names, phone numbers, passwords, tokens). These detections can also be applied on the input of the model or on APIs that retrieve data to go into the model.
+    - Sensitive data: see [SENSITIVE OUTPUT HANDLING](/go/sensitiveoutputhandling/) for the control to detect sensitive data (e.g. names, phone numbers, passwords, tokens). These detections can also be applied on the input of the model or on APIs that retrieve data to go into the model.
     - A special category of sensitive data: system prompts, as they can be used by attackers to circumvent prompt injection protection in such prompts. 
-    - Suspicious function calls.  Ideally, the privileges of an AI model are already hardened to the task (see [#LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/)), in which case detection comes down to issuing an alert once a model attempts to execute an action for which it has no permissions. In addition, the stategy can include the detection of unusual function calls in the context, issuing alerts for further investigation, or asking for approval by a human in the loop. Manipulation of function flow is commonly referred to as _application flow perturbation_. An advanced way to detect manipulated workflows is to perform rule-based sanity checks during steps, e.g. verify whether certain safety checks of filters were executed before processing data. 
+    - Suspicious function calls.  Ideally, the privileges of an AI model are already hardened to the task (see [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/)), in which case detection comes down to issuing an alert once a model attempts to execute an action for which it has no permissions. In addition, the stategy can include the detection of unusual function calls in the context, issuing alerts for further investigation, or asking for approval by a human in the loop. Manipulation of function flow is commonly referred to as _application flow perturbation_. An advanced way to detect manipulated workflows is to perform rule-based sanity checks during steps, e.g. verify whether certain safety checks of filters were executed before processing data. 
 - Apply **Grounding checks** if recognizing unwanted output based on context is too difficult to catch in rules, and the detection of malicious input is insufficent. The idea of grounding checks is to let a separate Generative AI model decide if an input or output is off-topic or escalates capabilities (e.g. a LLM powered food recipes app suddenly is trying to send emails). This takes the use of LLMs to detect suspicious input and output a step further by including context. This is required in case GenAI-based recognition is insufficient to cover certain attack scenarios (see above).
-- Implement appropriate general detection and response mechanisms as presented in [#MONITOR USE](/goto/monitoruse/) where part of the response can be to involve a human-in-the-loop.
+- Implement appropriate general detection and response mechanisms as presented in [#MONITOR USE](/go/monitoruse/) where part of the response can be to involve a human-in-the-loop.
 - Include as part of response options **rollback mechanisms** to enable oversight to go back to a certain state after system malfunction or manipulation has been observed and the state of the system cannot be trusted, or has been disrupted.
 - For checks that require accountability and/or more expertise and common sense, present the behaviour for a **human** to approve. This can be the result of a logic rule that in specific circumstances escalates to a human-in-the-loop.
 - Ensure that the **human oversight is appropriate**: the human is qualified, instructed, motivated, and not suffering from so-called _approval fatigue_: the result of having to approve many actions that are mostly in order.
 
 
-A separate form of oversight is [MODEL ALIGNMENT](/goto/modelalignment/) which intends to constrain model behaviour through training, fine tuning, and system prompts. This is treated as a separate control because the effectiveness is limited and therefore no guarantee.
+A separate form of oversight is [MODEL ALIGNMENT](/go/modelalignment/) which intends to constrain model behaviour through training, fine tuning, and system prompts. This is treated as a separate control because the effectiveness is limited and therefore no guarantee.
 
 Examples:
   - Logic preventing the trunk of a car from opening while the car is moving, even if the driver seems to request it
@@ -563,7 +563,7 @@ Useful standards include:
 
 #### #LEAST MODEL PRIVILEGE
 > Category: runtime information security control    
-> Permalink: https://owaspai.org/goto/leastmodelprivilege/
+> Permalink: https://owaspai.org/go/leastmodelprivilege/
 
 **Description**  
 Least model privilege: Minimize what a model can do (trigger actions or access data), to prevent harm in case the model is manipulated, or makes a mistake by itself. 
@@ -593,13 +593,13 @@ One of the most powerful things to let AI agents do is to execute code. That is 
 **Strategies for task-based minimization**  
 As mentioned above, it is essential to minimize actions that the model can potentially trigger, and what they can be triggered on. This needs to be minimized based on who or what is served (see above) and on the task. Strategies for task-based minimization include:
 - **Harden based on general intent**: Since agents and agentic systems typically don't have a single fixed task: at least minimize permissions based on the reasonably foreseeable use cases. 
-- **Harden based on prompt intent**: The orginal prompt to an agent contains intent. Mechanisms (typically LLM based) can interpret that and set permissions. This is where least privilege mechanisms start to overlap with what is presented under [#OVERSIGHT](/goto/oversight/), including grounding checks. The difference is that the least privilege mechanism uses preventative permissions and the oversight mechanism is reactive. The effect is the same, and the advantage of permissions can be that they may serve as permissions for any subagents, which allows for inheritance of the context in the agentic flow.
+- **Harden based on prompt intent**: The orginal prompt to an agent contains intent. Mechanisms (typically LLM based) can interpret that and set permissions. This is where least privilege mechanisms start to overlap with what is presented under [#OVERSIGHT](/go/oversight/), including grounding checks. The difference is that the least privilege mechanism uses preventative permissions and the oversight mechanism is reactive. The effect is the same, and the advantage of permissions can be that they may serve as permissions for any subagents, which allows for inheritance of the context in the agentic flow.
 - **Harden based on role assignment**: As soon as an agent or agentic flow is assigned to a specific task (e.g., an LLM assigned to review new code in the form of a merge request), the permissions can be minimized to the role to perform that task.
 - **Harden based on risk elevation**: Logic can be implemented to harden permissions the moment that certain input enters an agentic flow - from un untrusted agent, from an untrusted source (e.g., a public comment database), or the other way around: sensitive data entering the flow. From that moment, the logic can for example disable all actions that allow sending out sensitive data. This needs to be balanced of course with  whether the intent is still possible, and whether the inclusion of those risk elevating elements is reason to downgrade agentic capability.
 - **Downgrading subagents**: Have inter-agent calls include reduced permission sets, where possible.For example: an email handling agent calling another agent to summarize an email message. Such a hand-down mechanism is best performed outside the LLM because of reliability issues of the model. For example, _LangChain_ supports this mechanism using tools and subagents. However, fine-grained runtime permission handoff (like delegated scoped credentials) is not native.
 - **Hardening as incident response**: Based on the level of suspicion, automated or manual response mechanisms may harden an agentic flow, to reduce blast radius of a potentially corrupted state, without fully stopping it - so to limit interference of the response.
 - **Ephemeral permissions**: if an assigned task is expected to be done in a certain amount of time, then certain permissions can be set as temporary, to prevent manipulated agents making use of these permissions to cause harm. This can be seen as _temporal blast radius control_.
-- **Informing and nudging users to harden agents**: End users and administrators can have an important role in hardening permissions of agentic AI based on the task. Their general incentive is to NOT harden agents because 1) it takes time to analyse what is necessary, and 2) if the user is wrong, agentic tasks may fail. Therefore, it is important to create awareness with users about the risks and information on which permissions to set for which functions and which not to set for which risks. This is a form of [#AI TRANSPARENCY](/goto/aitransparency/). Strategies include: providing user training and user documentation on this subject, showing guidance in the user interface, with suggestions, and giving warnings in case riskful permissions are set.
+- **Informing and nudging users to harden agents**: End users and administrators can have an important role in hardening permissions of agentic AI based on the task. Their general incentive is to NOT harden agents because 1) it takes time to analyse what is necessary, and 2) if the user is wrong, agentic tasks may fail. Therefore, it is important to create awareness with users about the risks and information on which permissions to set for which functions and which not to set for which risks. This is a form of [#AI TRANSPARENCY](/go/aitransparency/). Strategies include: providing user training and user documentation on this subject, showing guidance in the user interface, with suggestions, and giving warnings in case riskful permissions are set.
 
 
 
@@ -612,15 +612,15 @@ As mentioned above, it is essential to minimize actions that the model can poten
 
 #### #MODEL ALIGNMENT
 > Category: development-time and runtime AI engineer control  
-> Permalink: https://owaspai.org/goto/modelalignment/
+> Permalink: https://owaspai.org/go/modelalignment/
 
 **Description and objective**  
 In the context of Generative AI (e.g., LLMs), alignment refers to the process of ensuring that the model's behavior and outputs are consistent with human values, intentions, and ethical standards.  
 
 Controls external to the model to manage model behaviour are: 
-- [OVERSIGHT](/goto/oversight/): conventional mechanisms responding to the actual outcome of the model
-- [LEAST MODEL PRIVILEGE](/goto/leastmodelprivilege/): conventional mechanisms that put boundaries on what the model can affect
-- [PROMPT INJECTION I/O handling](/goto/promptinjectioniohandling/): detection mechanisms on input and output to prevent unwanted behaviour
+- [OVERSIGHT](/go/oversight/): conventional mechanisms responding to the actual outcome of the model
+- [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/): conventional mechanisms that put boundaries on what the model can affect
+- [PROMPT INJECTION I/O handling](/go/promptinjectioniohandling/): detection mechanisms on input and output to prevent unwanted behaviour
 
 The intent of Model alignment is achieve similar goals by baking it into the model itself, through training and instruction.
 
@@ -640,7 +640,7 @@ Achieving the goal of model alignment involves multiple layers:
     - System prompts / instruction prompts
     - Guardrails built into the AI system and external tools that oversee or control responses (like content filters or output constraints) - see the external controls mentioned above
 
-See [the appendix on culture-sensitive alignment](/goto/culturesensitivealignment/).
+See [the appendix on culture-sensitive alignment](/go/culturesensitivealignment/).
 
 **Limitations**  
 Advantage of Model alignment over the external mechanisms:
@@ -656,7 +656,7 @@ Therefore, alignment should be seen as a probabilistic, model-internal control t
 
 #### #AI TRANSPARENCY
 > Category: governance and runtime control    
-> Permalink: https://owaspai.org/goto/aitransparency/
+> Permalink: https://owaspai.org/go/aitransparency/
 
 **Description**  
 AI transparency: Informing users on the AI system's properties to enable them to adjust how they rely on it, what data they are willing to send to it, and what additional mitigations to apply. These AI system properties can include:
@@ -680,7 +680,7 @@ Example: Informing users that when they choose an agent to perform a task, that 
 
 #### #CONTINUOUS VALIDATION
 > Category: development-time and runtime AI engineer control  
-> Permalink: https://owaspai.org/goto/continuousvalidation/
+> Permalink: https://owaspai.org/go/continuousvalidation/
 
 **Description**  
 Continuous validation: by frequently testing the behaviour of the model against an appropriate test set, it is possible to detect sudden changes caused by a permanent attack (e.g. data poisoning, model poisoning), and also some robustness issues against for example evasion attacks.
@@ -746,14 +746,14 @@ Useful standards include:
 
 #### #EXPLAINABILITY 
 > Category: runtime AI engineer control  
-> Permalink: https://owaspai.org/goto/explainability/
+> Permalink: https://owaspai.org/go/explainability/
 
 **Description**  
 Explainability: Explaining how individual model decisions are made, a field referred to as Explainable AI (XAI), can aid in gaining user trust in the model. In some cases, this can also prevent overreliance, for example, when the user observes the simplicity of the 'reasoning' or even errors in that process. See [this Stanford article on explainability and overreliance](https://hai.stanford.edu/news/ai-overreliance-problem-are-explanations-solution). Explanations of how a model works can also aid security assessors to evaluate AI security risks of a model.
 
 #### #UNWANTED BIAS TESTING 
 > Category: development-time and runtime AI engineer control  
-> Permalink: https://owaspai.org/goto/unwantedbiastesting/
+> Permalink: https://owaspai.org/go/unwantedbiastesting/
 
 **Description**  
 Unwanted bias testing: By doing test runs of the model to measure unwanted bias, unwanted behaviour caused by an attack can be detected. The details of bias detection fall outside the scope of this document as it is not a security concern - other than that, an attack on model behaviour can cause bias.
