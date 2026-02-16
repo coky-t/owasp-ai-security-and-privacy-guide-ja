@@ -4,7 +4,7 @@ heroTitle: "索引"
 heroText: "クリック可能なトピック。"
 weight: 9
 ---
-> パーマリンク: https://owaspai.org/goto/index/
+> パーマリンク: https://owaspai.org/go/index/
 
 以下のアルファベット順のクリック可能なトピックを探します。脅威とそのコントロールの概要については [AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) をご覧ください。
 
