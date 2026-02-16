@@ -658,7 +658,7 @@ It is of course important to also test the AI system for correct behaviour in be
 | **人気** | - **GitHub スター:** およそ 2k (2024 年 12 月時点) |
 |  | - **GitHub フォーク:** およそ 384 フォーク |
 |  | - **Issues の数:** およそ 63 オープン状態, 79 クローズ済み状態 |
-|  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長 |
+|  | - **傾向:** 継続的なアップデートと業界の採用で敵対的堅牢性に対して着実に成長している。 |
 | **コミュニティサポート** | - **Issues 活動:** Issues は一種間以内に対処されている。 |
 |  | - **ドキュメント:** 包括的なガイドと API ドキュメントを備えており、詳細かつ定期的に更新している。 |
 |  | - **ディスカッションフォーラム:** GitHub issues で行われてる。 |
@@ -841,7 +841,7 @@ https://github.com/NVIDIA/garak |
 | **人気** | - **GitHub スター:** およそ 427 スター (2024 年 12 月時点) |
 |  | - **GitHub フォーク:** およそ 56 フォーク |
 |  | - **Issues の数:**  およそ 10 オープン状態, 6 クローズ済み状態 |
-|  | - **傾向:** 8 月以降更新していない |
+|  | - **傾向:** 8 月以降更新していない。 |
 | **コミュニティサポート** | - **Issues 活動:** 7 月以降、更新もバグの解決も行われていない。 |
 |  | - **ドキュメント:** 中程度のドキュメントと少数の例 |
 |  | - **ディスカッションフォーラム:**  GitHub issue フォーラム |
@@ -924,7 +924,7 @@ https://github.com/NVIDIA/garak |
 | **ツール名: Guardrail** |  |
 | --- | --- |
 | 開発元/ソース | Guardrails AI |
-| GitHub 参照 | [GitHub - guardrails-ai/guardrails: Adding guardrails to large language models.](https://github.com/guardrails-ai/guardrails) | [Guardrails Hub | Guardrails AI](https://hub.guardrailsai.com/) |
+| GitHub 参照 | [GitHub - guardrails-ai/guardrails: 大規模言語モデルにガードレールを追加します。](https://github.com/guardrails-ai/guardrails) | [Guardrails Hub | Guardrails AI](https://hub.guardrailsai.com/) |
 | 言語 | Python |
 | ライセンス | Apache 2.0 License |
 | 緩和策の提供 | 防止: Yes ✅ 検出: Yes ✅ |
@@ -934,15 +934,15 @@ https://github.com/NVIDIA/garak |
 | --- | --- |
 | **人気** | - **GitHub スター:** およそ 4,3K (as 2024) |
 |  | - **GitHub フォーク:** およそ 326 |
-|  | - **Issues の数:**  およそ 296 Closed, 40 Open.  |
-|  | - **傾向:** Steady growth with consistent and timely updates. |
-| **コミュニティサポート** | - **Issues 活動:** Issues are mostly solved within weeks. |
-|  | - **ドキュメント:** Detailed documentation with examples and user guide |
-|  | - **ディスカッションフォーラム:**  Primarily github issues and also, support is available on discord Server and twitter. |
-|  | - **貢献者:** Over 60 contributors |
-| **拡張性** | - **フレームワークサポート:** Supports Pytorch. Language: Python and Javascript. Working to add more support |
-|  | - **大規模デプロイメント:** Can be extended to Azure, langchain. |
-| **統合** | - **互換性:**  Compatible with various open source LLMs like OpenAI, Gemini, Anthropic. |
+|  | - **Issues の数:**  およそ 296 クローズ済み, 40 オープン。 |
+|  | - **傾向:** 一貫してタイムリーなアップデートで着実に成長している。 |
+| **コミュニティサポート** | - **Issues 活動:** Issues はほとんど数週間以内に解決されている。 |
+|  | - **ドキュメント:** 例とユーザーガイドを備えた詳細なドキュメント |
+|  | - **ディスカッションフォーラム:** 主に GitHub Issues だが、discord サーバーおよび twitter でもサポートが利用可能である。 |
+|  | - **貢献者:** 60 名以上 |
+| **拡張性** | - **フレームワークサポート:** Pytorch をサポートしている。言語: Python および Javascript。サポートの追加に向けて作業中。 |
+|  | - **大規模デプロイメント:** Azure, langchain に拡張できる。 |
+| **統合** | - **互換性:** OpenAI, Gemini, Anthropic などのさまざまなオープンソース LLM と互換性がある。 |
 
 **ツールの評価**
 
