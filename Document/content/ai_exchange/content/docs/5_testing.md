@@ -5,7 +5,7 @@ heroText: "AI セキュリティテストは敵対的行動をシミュレート
 weight: 6
 ---
 > カテゴリ: ディスカッション  
-> パーマリンク: https://owaspai.org/goto/testing/
+> パーマリンク: https://owaspai.org/go/testing/
 
 ## イントロダクション
 AI システムのセキュリティをテストするには、以下の三つの戦略に依存します。
@@ -47,8 +47,8 @@ This section discusses:
 **従来のセキュリティテストを超えて、テストすべき主要な生成 AI の脅威:**
 
 - [プロンプトインジェクション](2_threats_through_use.md#222-indirect-prompt-injection): この種の攻撃では、攻撃者はモデルに対して、悪意のある結果や目的を達成することを目指した操作指示を与えます。
-- [Sensitive data output from model ](/goto/disclosureuseoutput/): A form of prompt injection, aiming to let the model disclose sensitive data
-- [安全でない出力処理](4_runtime_application_security_threats.md#44-insecure-output-handling): 生成 AI システムは、従来のインジェクション攻撃に脆弱である可能性があり、出力が不適切に対処ないし処理されるとリスクにつながります。
+- [Sensitive data output from model ](/go/disclosureinoutput/): A form of prompt injection, aiming to let the model disclose sensitive data
+- [安全でない出力処理](4_runtime_application_security_threats.md#44-output-contains-conventional-injection): 生成 AI システムは、従来のインジェクション攻撃に脆弱である可能性があり、出力が不適切に対処ないし処理されるとリスクにつながります。
 
 各 AI パラダイムに対する主要な脅威について言及しましたが、AI レッドチーミングの目標とスコープの定義フェーズの結果に基づき、AI Exchange のすべての脅威を参照することを読者に強くお勧めします。
 
@@ -70,14 +70,14 @@ A systematic approach to AI security testing involves a few key steps:
 
 ### Testing against Prompt injection
 > Category: AI security test  
-> Permalink: https://owaspai.org/goto/testingpromptinjection/
+> Permalink: https://owaspai.org/go/testingpromptinjection/
 
 **Test description**  
 Testing for resistance against Prompt injection is done by presenting a carefully crafted set of inputs with instructions to achieve unwanted model behaviour (e.g., triggering unwanted actions, offensive outputs, sensitive data disclosure) and evaluating the corresponding risks.  
 This covers the following threats:
-- [Direct prompt injection](/goto/directpromptinjection/)
-- [Indirect prompt injection](/goto/indirectpromptinjection/) 
-- [Sensitive data output from model ](/goto/disclosureuseoutput/)
+- [Direct prompt injection](/go/directpromptinjection/)
+- [Indirect prompt injection](/go/indirectpromptinjection/) 
+- [Sensitive data output from model ](/go/disclosureuseoutput/)
 
 
 **Test procedure**  
@@ -85,7 +85,7 @@ See the section above for the general steps in AI security testing.
 The steps specific for testing against this threat are:
 
 **(1) Establish set of relevant input attacks**  
-Collect a base set of crafted instructions that represent the state of the art for the attack (e.g., jailbreak attempts, invisible text, malicious URLs, data extraction attempts, attempts to get harmful content), either from an attack repository (see references) or from the resources of an an attack tool. If an attack tool has been selected to implement the test, then it will typically come with such a set. Various third party and open-source repositories and tools are available for this purpose - see further in our [Tool overview](/goto/testingtoolsgenai/).  
+Collect a base set of crafted instructions that represent the state of the art for the attack (e.g., jailbreak attempts, invisible text, malicious URLs, data extraction attempts, attempts to get harmful content), either from an attack repository (see references) or from the resources of an an attack tool. If an attack tool has been selected to implement the test, then it will typically come with such a set. Various third party and open-source repositories and tools are available for this purpose - see further in our [Tool overview](/go/testingtoolsgenai/).  
 Verify if the input attack set sufficiently covers the attack strategies described in the threat sections linked above (e.g., instruction override, role confusion, encoding tricks).  
 Remove the input attacks for which the risk would be accepted (see Evaluation step), but keep these aside for when context and risk appetite evolve.
 
@@ -144,7 +144,7 @@ Example 2:
 It is of course important to also test the AI system for correct behaviour in benign situations. Depending on context, such testing may be integrated in the implementation of the security test by using the same mechanisms. Such testing ideally includes the testing of detection mechanisms, to ensure that not too many false positives are triggered by benign inputs. Positive testing is essential to ensure that security mechanisms do not degrade intended functionality or user experience beyond acceptable levels.
 
 **References**  
-- See below for the [testing tools section](/goto/testingtoolsgenai/)
+- See below for the [testing tools section](/go/testingtoolsgenai/)
 - [Microsoft's promptbench](https://github.com/microsoft/promptbench/blob/main/promptbench/prompt_attack/README.md)
 - [Overview of benchmarks](https://www.promptfoo.dev/blog/top-llm-safety-bias-benchmarks/)
 - [AdvBench](https://huggingface.co/datasets/walledai/AdvBench)
@@ -164,7 +164,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 ## **予測 AI レッドチーミングのためのオープンソースツール**
 > カテゴリ: ツールレビュー  
-> パーマリンク: https://owaspai.org/goto/testingtoolspredictiveai/
+> パーマリンク: https://owaspai.org/go/testingtoolspredictiveai/
 
 
 このサブセクションは予測 AI のセキュリティテストのための次のツールについてカバーします: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, TextAttack
@@ -257,11 +257,11 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/goto/modeltheftuse*](https://owaspai.org/goto/modeltheftuse/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison/*](https://owaspai.org/go/modelpoison/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/go/modeltheftuse*](https://owaspai.org/go/modeltheftuse/)
 - モデル推論: *メンバーシップ攻撃と反転攻撃への露出を評価する*
-*[https://owaspai.org/goto/modelinversionandmembership/](https://owaspai.org/goto/modelinversionandmembership/)*
+*[https://owaspai.org/go/modelinversionandmembership/](https://owaspai.org/go/modelinversionandmembership/)*
 
 ### **ツール名: Armory**
 
@@ -352,10 +352,10 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison/*](https://owaspai.org/go/modelpoison/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
-*https://owaspai.org/goto/promptinjection/*
+*https://owaspai.org/go/promptinjection/*
 
 ### **ツール名: Foolbox**
 
@@ -447,7 +447,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 回避: 敵対的入力に対するモデルのパフォーマンスをテストする
 
-[*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+[*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
 
 ### **ツール名: DeepSec**
 
@@ -539,7 +539,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 回避: 敵対的入力に対するモデルのパフォーマンスをテストする
 
-[*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+[*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
 
 ### ツール名: TextAttack
 
@@ -629,12 +629,12 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/goto/modelpoison/*](https://owaspai.org/goto/modelpoison/)
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison/*](https://owaspai.org/go/modelpoison/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
 
 ## 生成 AI レッドチーミングのためのオープンソースツール
 > カテゴリ: ツールレビュー  
-> パーマリンク: https://owaspai.org/goto/testingtoolsgenai/
+> パーマリンク: https://owaspai.org/go/testingtoolsgenai/
 
 
 このサブセクションは生成 AI のセキュリティテストのための次のツールをカバーします: PyRIT, Garak, Prompt Fuzzer, Guardrail, Promptfoo
@@ -730,8 +730,8 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/goto/promptinjection/*
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection/*
 
 ### ツール名: Garak
 
@@ -821,9 +821,9 @@ https://github.com/NVIDIA/garak |
 | 間接プロンプトインジェクション |  |
 | 開発時モデル窃取 |  |
 | インジェクションを含む出力 |  |
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
-*https://owaspai.org/goto/promptinjection/*
+*https://owaspai.org/go/promptinjection/*
 
 ### ツール名: Prompt Fuzzer
 
@@ -916,8 +916,8 @@ https://github.com/NVIDIA/garak |
 
 注:
 
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/goto/promptinjection/*
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection/*
 
 ### ツール名: Guardrail
 
@@ -1008,8 +1008,8 @@ https://github.com/NVIDIA/garak |
 
 注:
 
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/goto/evasion/*](https://owaspai.org/goto/evasion/)
-- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/goto/promptinjection/*
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection/*
 
 ### ツール名: Promptfoo
 
@@ -1105,9 +1105,9 @@ https://github.com/NVIDIA/garak |
 
 注:
 
-- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/goto/modeltheftuse/*](https://owaspai.org/goto/modeltheftuse/)
+- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/go/modeltheftuse/*](https://owaspai.org/go/modeltheftuse/)
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
-*[https://owaspai.org/goto/promptinjection/](https://owaspai.org/goto/promptinjection/)*
+*[https://owaspai.org/go/promptinjection/](https://owaspai.org/go/promptinjection/)*
 
 ## ツール評価
 This section rates the discussed tools by Popularity, Community Support, Scalability and Integration.
