@@ -5,7 +5,7 @@ heroText: "個人データの保護とは別に、AI システムはプライバ
 weight: 7
 ---
 > カテゴリ: ディスカッション  
-> パーマリンク: https://owaspai.org/goto/aiprivacy/
+> パーマリンク: https://owaspai.org/go/aiprivacy/
 
 ## はじめに
 
