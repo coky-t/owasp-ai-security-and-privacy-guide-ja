@@ -16,7 +16,8 @@ weight: 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Essentials](/go/essentials/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Threats](/go/threatsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Threat matrix](/go/aisecuritymatrix/)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI perspective](/go/agenticaithreats/)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI perspective](/go/agenticaithreats/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Navigator](/go/navigator/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Controls](/go/controlsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Periodic table of threats and controls](/go/periodictable/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Risk analysis](/go/riskanalysis/)  
@@ -204,6 +205,7 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 - **Learn / look up**:  
   - For the short story with the main insights in what is special about AI security: see the [AI Exchange essentials](/go/essentials/).
   - Ask AI an AI security/privacy question based on the content of the Exchange: [here](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) (requires Google account).
+  - If you prefer one document: download a [snapshot of the Exchange in pdf](/OWASP-AI-Exchange.pdf).
   - To see a general overview and discussion of all **threats** from different angles, check the [AI threat model](/go/threatsoverview/) or the [AI security matrix](/go/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
   - To find out what to do against a specific threat, check the [controls overview](/go/controlsoverview/) or the [periodic table](/go/periodictable/) to find the right **controls**.
   - To understand what controls to apply in different deployment models: have a look at the [section on ready-made models](/go/readymademodel/).
@@ -305,7 +307,7 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
 
 この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats2.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats2.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png?v=2)
 
 Note that some threats represent attacks consisting of several steps, and therefore present multiple threats in one, for example:
 —	An adversary performs a data poisoning attack by hacking into the training database and placing poisoned samples, and then after the data has been used for training, presents specific inputs to make use of the corrupted behaviour.
@@ -354,7 +356,7 @@ Further links:
 >パーマリンク: https://owaspai.org/go/aisecuritymatrix/
 
 以下の AI セキュリティマトリクス (クリックで拡大) は、主要な脅威とリスクを、タイプと影響の順に示しています。
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png?v=2)
 
 Clickable version, based on the [Periodic table](/go/periodictable/):
 <table><thead>
@@ -395,7 +397,7 @@ In the AI Exchange we focus on AI-specific threats and their corresponding contr
 
 ### 脅威モデルとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2.png)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
 - **AI ガバナンス**(1): AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
    >([AI PROGRAM](1_general_controls.md#AIPROGRAM), [SEC PROGRAM](1_general_controls.md#SECPROGRAM), [DEV PROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEV PROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECK COMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SEC EDUCATE](1_general_controls.md#SECEDUCATE))
@@ -442,7 +444,7 @@ The following deployment options apply for ready-made models:
 
 The diagram below shows threats and controls of a ready-made model in a self-hosting situation.
 
-[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-selfhosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-selfhosted.png)
+[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-selfhosted.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-selfhosted.png?v=2)
 
 
 **External-hosted**
@@ -475,7 +477,7 @@ When weighing this risk, compare it fairly: the vendor may still protect that en
 
 The diagram below shows threats and controls of a ready-made model in an externally hosted situation.
 
-[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-hosted.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols2-readymodel-hosted.png)
+[![AI Security Threats and controls - GenAI as-is](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols-readymodel-hosted.png?v=2)
 
 A typical challenge for organizations is to control the use of ready-made-models for general purpose Generative AI (e.g., ChatGPT), since employees typically can access many of them, even for free. Some of these models may not satisfy the organization's requirements for security and privacy. Still, employees can be very tempted to use them with the lack of a better alterative, sometimes referred to as _shadow AI_. The best solution for this problem is to provide a good alternative in the form of an AI model that has been deployed and configured in a secure and privacy-preserving way, of sufficient quality, and complying with the organization's values and policies. In addition, the risks of shadow AI need to be made very clear to users.
 
@@ -519,7 +521,7 @@ OWASP AI Exchange によって作成された以下の表は、AI に対する�
 <!-- {{< callout type="info" >}} -->
   画像をクリックすると、クリック可能なリンクを含む PDF を取得できます。
 <!-- {{< /callout >}} -->
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/owaspaioverviewv2.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspaioverviewpdfv3.pdf)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/owaspainavigator-thumb.png)](https://github.com/OWASP/www-project-ai-security-and-privacy-guide/raw/main/assets/images/owaspainavigator.pdf)
 
 ---
 
