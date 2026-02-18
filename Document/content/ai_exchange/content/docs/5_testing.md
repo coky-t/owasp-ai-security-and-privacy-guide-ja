@@ -937,7 +937,7 @@ https://github.com/NVIDIA/garak |
 |  | - **Issues の数:**  およそ 296 クローズ済み, 40 オープン。 |
 |  | - **傾向:** 一貫してタイムリーなアップデートで着実に成長している。 |
 | **コミュニティサポート** | - **Issues 活動:** Issues はほとんど数週間以内に解決されている。 |
-|  | - **ドキュメント:** 例とユーザーガイドを備えた詳細なドキュメント |
+|  | - **ドキュメント:** 例とユーザーガイドを備えた詳細なドキュメント。 |
 |  | - **ディスカッションフォーラム:** 主に GitHub Issues だが、discord サーバーおよび twitter でもサポートが利用可能である。 |
 |  | - **貢献者:** 60 名以上 |
 | **拡張性** | - **フレームワークサポート:** Pytorch をサポートしている。言語: Python および Javascript。サポートの追加に向けて作業中。 |
@@ -1015,15 +1015,15 @@ https://github.com/NVIDIA/garak |
 
 | **ツール名: Promptfoo** |  |
 | --- | --- |
-| 開発元/ソース | Promptfoo community |
+| 開発元/ソース | Promptfoo コミュニティ |
 | GitHub 参照 | [https://github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [Types of LLM vulnerabilities | promptfoo](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/) |
 | 言語 | Python, NodeJS |
 | ライセンス | MIT ライセンスの下でのオープンソース |
-|  | This project is licensed under multiple licenses:
+|  | このプロジェクトは複数のライセンスの下でライセンスされている。
 
-1. The main codebase is licensed under the MIT License (see below)
-2. The `/src/redteam/` directory is proprietary and licensed under the Promptfoo Enterprise License
-3. Some third-party components have their own licenses as indicated by LICENSE files in their respective directories |
+1. メインのコードベースは MIT License (下記参照) の下でライセンスされている
+2. `/src/redteam/` ディレクトリはプロプライエタリであり、Promptfoo Enterprise License の下でライセンスされている
+3. 一部のサードパーティコンポーネントは、それぞれのディレクトリの LICENSE ファイルで示されているように、それ自体のライセンスを有している |
 | 緩和策の提供 | 防止: Yes ✅ 検出: Yes ✅ |
 | API の可用性 | Yes ✅  |
 
@@ -1031,15 +1031,15 @@ https://github.com/NVIDIA/garak |
 | --- | --- |
 | **人気** | - **GitHub スター:** およそ 4.3K スター (2024 年時点) |
 |  | - **GitHub フォーク:**  およそ 320 フォーク |
-|  | - **Issues の数:** およそ 523 closed, 108 open |
-|  | - **傾向:** Consistent update |
-| **コミュニティサポート** | - **Issues 活動:** Issues are  addressed within acouple of days. |
-|  | - **ドキュメント:** Detailed documentation with user guide and examples. |
-|  | - **ディスカッションフォーラム:** Active Github issue and also support available on Discord |
-|  | - **貢献者:** Over 113 contributors. |
-| **拡張性** | - **フレームワークサポート:**  Language: JavaScript |
-|  | - **大規模デプロイメント:** Enterprise version available, that supports cloud deployment. |
-| **統合** | - **互換性:** Compatible with majority of the LLMs |
+|  | - **Issues の数:** およそ 523 クローズ済み, 108 オープン |
+|  | - **傾向:** 一貫して更新している。 |
+| **コミュニティサポート** | - **Issues 活動:** Issues は数日以内に対処されている。 |
+|  | - **ドキュメント:** ユーザーガイドと例を備えた詳細なドキュメント。 |
+|  | - **ディスカッションフォーラム:** GitHub Issue がアクティブで、Discord でのサポートも利用可能である。 |
+|  | - **貢献者:** 113 名以上。 |
+| **拡張性** | - **フレームワークサポート:** 言語: JavaScript |
+|  | - **大規模デプロイメント:** クラウドデプロイメントをサポートするエンタープライズバージョンが利用可能である。 |
+| **統合** | - **互換性:** ほとんどの LLM と互換性がある。 |
 
 **ツールの評価**
 
