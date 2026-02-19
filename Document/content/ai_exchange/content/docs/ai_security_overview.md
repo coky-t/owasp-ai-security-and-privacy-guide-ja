@@ -16,7 +16,7 @@ weight: 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Essentials](/go/essentials/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Threats](/go/threatsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Threat matrix](/go/aisecuritymatrix/)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI perspective](/go/agenticaithreats/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI perspective](/go/agenticaithreats/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Navigator](/go/navigator/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Controls](/go/controlsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Periodic table of threats and controls](/go/periodictable/)  
@@ -168,7 +168,7 @@ The five steps - G.U.A.R.D - to organize AI security as an organization are:
   Start implementing general AI Governance so the organization can manage AI: know where it is applied, what people's responsibilities are, establish policies, do impact assessment, arrange [compliance](/go/checkcompliance/), organize [education](/go/seceducate/), etcetera. See [#AI Program](/go/aiprogram/) for guidance, including a quickstart. This is a general AI management process - not just security.
 2. **Understand**  
    - Based on the inventory of your applications of AI and AI ideas, understand which threats apply, using the decision tree in the [risk analysis section](/go/riskanalysis/).
-   - Then make sure engineers and security professionals understand those relevant threats and their contols, using the guidance of the relevant [threat sections](/go/threatsoverview/) and the corresponding [process controls and technical controls](/go/periodictable/).
+   - Then make sure engineers and security professionals understand those relevant threats and their controls, using the guidance of the relevant [threat sections](/go/threatsoverview/) and the corresponding [process controls and technical controls](/go/periodictable/). Note that most of these controls are familiar conventional security countermeasures, unless you are traininging your own model.
    - Use the courses and resources in the [references section](/go/references/) to support the understanding.
    - Distinguish between controls that your organization has to implement, and those that are the responsbility of your supplier. Make the latter category part of your [supply chain management])(/go/supplychainmanage/).
 3. **Adapt**  
@@ -287,7 +287,7 @@ The upcoming sections provide overviews of AI security threats and controls.
 >パーマリンク: https://owaspai.org/go/threatsoverview/
 
 ### Scope of Threats
-In the AI Exchange we focus on AI-specific threats, meaning threats to AI assets (see [#SEC PROGRAM](/go/secprogram/), such as model parameters. Threats to other assets are already covered in many other resources - for example the protection of a user database. AI systems are IT systems so they suffer from various security threats. Therefore, when securing AI systems, the AI Exchange needs to be seen as an extension of your existing security program: 
+In the AI Exchange we focus on AI-specific threats, meaning threats to AI assets (see [#SEC PROGRAM](/go/secprogram/)), such as training data. Threats to other assets are already covered in many other resources - for example the protection of a user database. AI systems are IT systems so they suffer from various security threats. Therefore, when securing AI systems, the AI Exchange needs to be seen as an extension of your existing security program: 
 AI security = threats to AI-specific assets (AI Exchange) +threats to other assets (other resources)
 
 ### 脅威モデル
@@ -299,14 +299,14 @@ AI security = threats to AI-specific assets (AI Exchange) +threats to other asse
 AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) に沿って、6 つのタイプの影響を概説します:
 1. 開示: トレーニングデータやテストデータの機密性を損なう
 2. 開示: モデル知的財産 (_モデルパラメータ_ やそれにつながるプロセスとデータ) の機密性を損なう
-3. 開示: 入力データの機密性を損なう
+3. 開示: 入力データや拡張データの機密性を損なう
 4. 欺瞞: モデル動作の完全性を損なう (モデルが望ましくない動作をするように操作され、結果としてユーザーを欺く)
 5. 妨害: モデルの可用性を損なう (モデルが機能しないか、望ましくない動作をする - ユーザーを欺くためではなく、通常の運用を妨害するため)
 6. 開示/妨害: AI 固有ではない資産の機密性、完全性、可用性
 
 このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
 
-この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。コントロールの概要のセクションには、この図にコントロールのグループを追加したものがあります。
+この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。[コントロールの概要のセクション](ai_security_overview.md#controls-overview) には、この図にコントロールのグループを追加したものがあります。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png?v=2)
 
 Note that some threats represent attacks consisting of several steps, and therefore present multiple threats in one, for example:
