@@ -175,6 +175,7 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
   See 'learn/lookup' below to familiarize yourself with the threats and controls or look in the [references section](/go/references/) for a large table with training material.
 - **Secure a system**:  
    If you want your **AI system to be secure**, start with [risk analysis](/go/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
+   Alternatively, you can let our [AGENT](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) ask YOU questions about your system and threat model for you. Use this prompt: "Can you look at the risk analysis section and ask me in a few iterations the relevant questions from that section about my AI system, to determine what threats apply to my system, according to the AI Exchange, and give me the permalinks of those threats as hyperlinks to click on?"
 - **Learn / look up**:  
   - For the short story with the main insights in what is special about AI security: see the [AI Exchange essentials](/go/essentials/).
   - If you prefer one document: download a [snapshot of the Exchange in pdf](/OWASP-AI-Exchange.pdf).
@@ -585,13 +586,14 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   Why not train/finetune a model yourself? There are many third party and open source models that may be able to perform the required task, perhaps after some fine tuning. Organizations often choose external GenAI models because they are typically general purpose, and training is difficult and expensive (often millions of dollars). Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this can be lower cost (if it is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
 
 
-  Question: Do you use RAG (Retrieval Augmented Generation) ?
-  Yes: Then your retrieval repository plays a role in determining the model behaviour. This means:
-  - You need to protect against [leaking](/go/augmentationdataleak/) or [manipulation](/go/augmentationdatamanipulation/) of your augmentation data (e.g., vector database), which includes preventing that it contains externally obtained poisoned data.
+  Question: Does your system insert (augment) data to the input of your model, like for example in RAG (Retrieval Augmented Generation), or by  ?
+  Yes:
+  - Then the inserted data plays a role in determining the model behaviour. This means you need to ask: Is this augmentation data untrusted (i.e. it may have been crafted by adversaries)? If Yes: it needs to be protected against [manipulation](/go/augmentationdatamanipulation/).
+  - Is this augmentation data stored in a datanbase where it is collected from various sources (e.g., a vector database)? If Yes: you need to protect against [leaking](/go/augmentationdataleak/)
 
   Question: Who runs the model?
-  - The supplier: select a trustworthy supplier through [supply chain management](/go/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/go/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation.
-  - You: You need to protect against [runtime model poisoning](/go/runtimemodelpoison/) where attackers change the model that you have deployed.
+  - The supplier runs the model: select a trustworthy supplier through [supply chain management](/go/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/go/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation.
+  - You run the model: You need to protect against [runtime model poisoning](/go/runtimemodelpoison/) where attackers change the model that you have deployed.
 
   Question: Is the model (predictive AI or Generative AI) used in a classification task (e.g., spam or fraud detection)?
   - Yes: Protect against an [evasion attack](/go/evasion/) in which a user tries to fool the model into a wrong decision using data (not instructions). Here, the level of risk is an important aspect to evaluate - see below. The risk of an evasion attack may be acceptable.
