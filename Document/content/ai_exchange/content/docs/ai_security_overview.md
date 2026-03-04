@@ -176,18 +176,22 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 - **Secure a system**:  
    If you want your **AI system to be secure**, start with [risk analysis](/go/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
    Alternatively, you can let our [AGENT](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) ask YOU questions about your system and threat model for you. Use this prompt: "Can you look at the risk analysis section and ask me in a few iterations the relevant questions from that section about my AI system, to determine what threats apply to my system, according to the AI Exchange, and give me the permalinks of those threats as hyperlinks to click on?"
-- **Learn / look up**:  
-  - For the short story with the main insights in what is special about AI security: see the [AI Exchange essentials](/go/essentials/).
+- **Learn AI security**:  
+  - Step 1: First study the brief [AI security essentials](/go/essentials/) for the **big picture**.
+  - Step 2: **Select** the threats that are relevant to your practice, by looking at [risk analysis](/go/riskanalysis/) - or let AI interview you to find out (see above), or skip this step if you want to learn the complete threat picture.
+  - Step 3: If you're involved in **Agentic AI**, see the brief discussion of how [agentic threats](/go/agenticaithreats/) are covered.
+  - Step 4: If you run a **ready-made model**, have a look at the [threat model on ready-made models](/go/readymademodel/).
+  - Step 5: See your **threats** in their context ** in the [AI threat model](/go/threatsoverview/) and the [AI security matrix](/go/aisecuritymatrix).
+  - Step 6: Click on your relevant threats in that overview to to get more information and how to protect against it.
+  - Step 7: To find out what to do against a specific threat, check the **Controls** section of that threat, or the [periodic table](/go/periodictable/) which lists the controls for every threat.
+  - Step 8: To learn about the bigger picture how controls play a role, and interact: see the [controls overview](/go/controlsoverview/) 
+  - Step 9: If **privacy** is in scope for you: see [the privacy section](/go/aiprivacy/).
+  - Step 10: If you're involved in **testing**: see [the testing section](/go/testing/).
+  - To learn more about education programs, see [#SEC EDUCATE](/go/seceducate/)
   - If you prefer one document: download a [snapshot of the Exchange in pdf](/OWASP-AI-Exchange.pdf).
-  - To see a general overview and discussion of all **threats** from different angles, check the [AI threat model](/go/threatsoverview/) or the [AI security matrix](/go/aisecuritymatrix). In case you know the threat you need to protect against, find it in the overview of your choice and click to get more information and how to protect against it.
-  - To find out what to do against a specific threat, check the [controls overview](/go/controlsoverview/) or the [periodic table](/go/periodictable/) to find the right **controls**.
-  - To understand what controls to apply in different deployment models: have a look at the [section on ready-made models](/go/readymademodel/).
-  - To learn about **privacy** of AI systems, check [the privacy section](/go/aiprivacy/).
-  - Agentic AI aspects are covered throughout all content, plus a specific section [here](/go/agenticaithreats/).
+- **Lookup**:
   - To look up a specific topic, use the search function or the [index](/go/index/).
   - Looking for more information, or training material: see the [references](/go/references/).
-- **Test**:  
-  If you want to **test** the security of AI systems with tools, go to [the testing page](/go/testing/).
 
 The AI exchange covers both heuristic artificial intelligence (e.g., expert systems) and machine learning. This means that when we talk about an AI system, it can for example be a Large Language Model, a linear regression function, a rule-based system, or a lookup table based on statistics. Throughout this document, it is made clear which threats and controls play a role and when.
 
@@ -261,12 +265,12 @@ What makes AI special when it comes to security? Well, it deals with a new set o
   1. **[Model input threats](/go/inputthreats/)**:  
       - [Evasion](/go/evasion/): Misleading a model by crafting data to force wrong decisions
       - [Prompt injection](/go/promptinjection/): Misleading a model by crafting instructions to manipulate behaviour
-      - [Extracting data from the model](/go/disclosureinoutput/): training data, augmentation data, or input
+      - [Extracting data from the model](/go/disclosureinoutput/): training data, augmentation data (including system prompts), or input
       - [Extracting of the model itself](/go/modelexfiltration/) by querying the model
       - [Resource exhaustion](/go/airesourceexhaustion/) through use
   2. **New suppliers** introduce threats of corrupted external [data](/go/datapoison/), [models](/go/supplymodelpoison/), and [model hosting](/go/readymademodel/)
   3. **New AI assets** with conventional threats, notably:  
-      - Training data / augmentation data - can leak and [poisoning](/go/datapoison/) this data manipulates model behaviour
+      - Training data / augmentation data (e.g. system prompts) - can leak and [poisoning](/go/datapoison/) this data manipulates model behaviour
       - Model - can suffer from [leaking during development](/go/devmodelleak/) or [leaking during runtime](/go/runtimemodelleak/) and when it comes to ingegrity: from [poisoning during development](/go/devmodelpoison/) or [poisoning during runtime](/go/runtimemodelpoison/)
       - Input - can [leak](/go/inputdataleak/)
       - Output - can contain [injection attacks](/go/outputcontainsconventionalinjection/)
@@ -317,7 +321,7 @@ AI では、3 つのタイプの攻撃者の目的 (開示、欺瞞、妨害) �
 
 このような影響をもたらす脅威はさまざまな攻撃対象領域を使用します。たとえば、トレーニングデータの機密性は開発中にデータベースにハッキングすることで侵害される可能性がありますが、特定の個人のデータを入力して、モデル出力の詳細を見るだけで、その個人がトレーニングデータにあるかどうかを知ることができる _メンバーシップ推論攻撃_ によって漏洩する可能性もあります。
 
-この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。[コントロールの概要のセクション](ai_security_overview.md#controls-overview) には、この図にコントロールのグループを追加したものがあります。
+この図では脅威を矢印で示しています。各脅威には特定の影響があり、Impact legend を参照する文字で示されています。[コントロールの概要のセクション](ai_security_overview.md#controls-overview) には、この図にコントロールのグループを追加したものがあります。この図の資産の一覧については、[セキュリティプログラムのサブセクション](1_general_controls.md#sec-program) を参照してください。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threats.png?v=2)
 
 Note that some threats represent attacks consisting of several steps, and therefore present multiple threats in one, for example:
@@ -418,7 +422,7 @@ In the AI Exchange we focus on AI-specific threats and their corresponding contr
     - 標準的な **従来のセキュリティコントロール** (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
       - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
         > [DEV SECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), [DISCRETE](1_general_controls.md#DISCRETE)
-      - 実行時: モデルの保存、モデルの使用、拡張データ、モデルの入出力
+      - 実行時: モデルの保存、モデルの使用、拡張データ (システムプロンプトを含む)、モデルの入出力
         > [RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES), [AUGMENTATION DATA CONFIDENTIALITY](4_runtime_application_security_threats.md#AUGMENTATION-DATA-CONFIDENTIALITY), [AUGMENTATION DATA INTEGRITY](4_runtime_application_security_threats.md#AUGMENTATION-DATA-INTEGRITY)
     - 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
       > [MONITOR USE](2_threats_through_use.md#MONITOR-USE), [MODEL ACCESS CONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATE LIMIT](2_threats_through_use.md#RATE-LIMIT)
@@ -586,10 +590,10 @@ AI システムの一般的なリスクマネジメントは、通常、AI ガ�
   Why not train/finetune a model yourself? There are many third party and open source models that may be able to perform the required task, perhaps after some fine tuning. Organizations often choose external GenAI models because they are typically general purpose, and training is difficult and expensive (often millions of dollars). Finetuning of generative AI is also not often performed by organizations given the cost of compute and the complexity involved. Some GenAI models can be obtained and run on your own infrastructure. The reasons for this can be lower cost (if it is an open source model), and the fact that sensitive input information does not have to be sent externally. A reason to use an externally hosted GenAI model can be the quality of the model.
 
 
-  Question: Does your system insert (augment) data to the input of your model, like for example in RAG (Retrieval Augmented Generation), or by  ?
+  Question: Does your system insert (augment) data to the input of your model, like for example in RAG (Retrieval Augmented Generation), or by having _system prompts_ (standard instructions to the model that are automatically added to the input) ?
   Yes:
-  - Then the inserted data plays a role in determining the model behaviour. This means you need to ask: Is this augmentation data untrusted (i.e. it may have been crafted by adversaries)? If Yes: it needs to be protected against [manipulation](/go/augmentationdatamanipulation/).
-  - Is this augmentation data stored in a datanbase where it is collected from various sources (e.g., a vector database)? If Yes: you need to protect against [leaking](/go/augmentationdataleak/)
+  - Then the inserted data plays a role in determining the model behaviour. If Yes: it needs to be protected against [manipulation](/go/augmentationdatamanipulation/) and if it is retrieved data that is untrusted (possibly manipulated), then [limiting unwanted model behaviour](/go/limitunwanted/) is a critical countermeasure.
+  - Is this augmentation data stored in a database for the purpose of the AI system (e.g., a vector database)? If Yes: you need to protect against [leaking](/go/augmentationdataleak/). Note that this also counts for system prompts, if they are sensitive.
 
   Question: Who runs the model?
   - The supplier runs the model: select a trustworthy supplier through [supply chain management](/go/supplychainmanage/), to make sure the deployed model cannot be manipulated ([runtime model poisoning](/go/runtimemodelpoison/)) - just the way you would expect any supplier to protect their running application from manipulation.
