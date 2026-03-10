@@ -364,6 +364,7 @@ Further links:
 - For a more general discussion of Agentic AI, see [this article from Chip Huyen](https://huyenchip.com/2025/01/07/agents.html).
 - The [testing section](/go/testing/) discusses more about agentic AI red teaming and links to the collaboration between CSA and the Exchange: the Agentic AI red teaming guide.
 - [OWASP Agentic AI security top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) plus [Rock's blog on it](https://www.rockcybermusings.com/p/owasp-top-10-agentic-applications-security-guide)
+- [Microsoft Pulse report on Agentic security](https://www.microsoft.com/en-us/security/security-insider/emerging-trends/cyber-pulse-ai-security-report)
 
 
 ### <a name="ai-security-matrix">AI セキュリティマトリクス</a>
@@ -371,7 +372,7 @@ Further links:
 >パーマリンク: https://owaspai.org/go/aisecuritymatrix/
 
 以下の AI セキュリティマトリクス (クリックで拡大) は、主要な脅威とリスクを、タイプと影響の順に示しています。
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatix.png?v=2)
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatrix.png?v=3)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/OwaspAIsecuritymatrix.png?v=3)
 
 Clickable version, based on the [Periodic table](/go/periodictable/):
 <table><thead>
