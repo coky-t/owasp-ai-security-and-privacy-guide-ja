@@ -1121,12 +1121,12 @@ https://github.com/NVIDIA/garak |
 | 拡張性 | 実証済みのエンタープライズグレード、マルチフレームワーク | 中程度の拡張性、限定的なフレームワーク | 研究中心、小規模 |
 | 統合 | 幅広い互換性 | 限定的な互換性、狭いユースケース | 最小限の統合または統合なし、研究ツールのみ |
 
-Disclaimer on the use of the Assessment:
+評価の使用に関する免責事項:
 
-- ***Scope of Assessment: This review exclusively focuses on open-source RedTeaming tools. Proprietary or commercial solutions were not included in this evaluation.***
-- ***Independent Review: The evaluation is independent and based solely on publicly available information from sources such as GitHub repositories, official documentation, and related community discussions.***
-- ***Tool Version and Relevance: The information and recommendations provided in this assessment are accurate as of September 2024. Any future updates, enhancements, or changes to these tools should be verified directly via the provided links or respective sources to ensure continued relevance.***
+- ***評価範囲: 本レビューはオープンソースのレッドチーミングツールのみに注目しています。プロプライエタリや商用ソリューションはこの評価に含まれていません。***
+- ***独立レビュー: 本評価は独立したものであり、GitHub リポジトリ、公式ドキュメント、関連コミュニティディスカッションなどのソースから公開されている情報のみに基づいています。***
+- ***ツールバージョンと関連性: 本評価で提供される情報および推奨事項は 2024 年 9 月時点のものです。これらのツールに対する今後のアップデート、強化、変更については、継続的な関連性を確保するために、提供されているリンクまたはそれぞれのソースから直接検証する必要があります。***
 
-***Tool Fit and Usage:***
+***ツールの適合性と使用:***
 
-*The recommendations in this report should be considered based on your organization's specific use case, scale, and security posture. Some tools may offer advanced features that may not be necessary for smaller projects or environments, while others may be better suited to specific frameworks or security goals.*
+*本レポートの推奨事項はあなたの組織の具体的なユースケース、規模、セキュリティ態勢に基づいて検討する必要があります。一部のツールは小規模なプロジェクトや環境には必要のない高度な機能を備えている可能性があり、他方では特定のフレームワークやセキュリティ目標に適したものもあります。*
