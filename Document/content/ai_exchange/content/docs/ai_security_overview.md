@@ -122,28 +122,22 @@ NOTE: Producing and continuously updating a comprehensive and coherent quality r
 >カテゴリ: ディスカッション  
 >パーマリンク: https://owaspai.org/go/aiatowasp/
 
-<img 
-  src="https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/overview1.png" 
-  alt="AI Overview" 
-  width="950"
-  height="200"
-  class="mx-auto"
-/>
-
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/aixpositioning.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/refs/heads/main/content/ai_exchange/static/images/aixpositioning.png)
 
 In short:
 - The **OWASP AI Exchange** is a comprehensive core framework of the AI security fundamentals: threats, controls and related best practices for all AI, actively aligned with international standards and feeding into them. It covers all types of AI, and next to security it discusses privacy as well.
 - The **OWASP GenAI Security Project** is a growing collection of documents on the security of Generative AI, covering a wide range of topics including the LLM top 10.
 
 Here's more information on AI at OWASP: 
-- If you want to **ensure security or privacy of your AI or data-centric system** (GenAI or not), or want to know where AI security standardisation is going, you can use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
-- If you want to get a **quick overview** of key security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
-- For **any specific topic** around Generative AI security, check the [GenAI security project](https://genai.owasp.org/) or the [AI Exchange references](/go/references/).
+- If you want to **understand how to ensure security or privacy of your AI or data-centric system** (GenAI or not), or want to align with AI security standards, you can use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
+- If you want to achieve **quick awareness** of the top security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
 
-Some more details on the projects: 
+
+Some more details on projects: 
 - [The OWASP AI Exchange(this work)](/go/about/) is the go-to single resource for AI security & privacy - over 300 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as a key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships.
 - The [OWASP GenAI Security Project](https://genai.owasp.org/) is an umbrella project of various initiatives that publish documents on Generative AI security, including the LLM AI Security & Governance Checklist and the LLM top 10 - featuring the most severe security risks of Large Language Models.
 - [OpenCRE.org](https://opencre.org) has been established under the OWASP Integration standards project(from the _Project wayfinder_) and holds a catalog of common requirements across various security standards inside and outside of OWASP. OpenCRE will link AI security controls soon.
+- Further AI projects at OWASP can be found [here](https://owasp.org/search/?searchString=AI)
 
 What makes the Exchange special is FOUNDATION:
 - F – Fundamentals: comprehensive threat & control model
@@ -156,6 +150,8 @@ What makes the Exchange special is FOUNDATION:
 - I – Iteratively updated (continuous instead of yearly)
 - O – Open (any expert can contribute)
 - N – Networked - bridge between standards, researchers, and practitioners
+
+The AI Exchange has strong and diverse collaboration with industry and institutes, for example a formal ongoing collaboration with SANS Institute to share expertise and support broad education.
 
 
 ## このドキュメントの使い方
@@ -258,8 +254,7 @@ And finally: think before you build an AI solution. AI can have fantastic benefi
 >Category: discussion  
 >Permalink: https://owaspai.org/go/essentials/
 
-This section discusses the essentials of AI security. It serves as THE starting point to understand the bigger picture.  
-What makes AI special when it comes to security? Well, it deals with a new set of threats and therefore requires new controls. Let's go through them.
+This section serves as THE starting point to understand the foundations of AI security, and was established in close collaboration with industry and institutes, including complete alignment with the [SANS Critical AI security guidelines](https://assets.contentstack.io/v3/assets/bltabe50a4554f8e97f/blte964a6eef293d57e/whitepaper-critical-ai-security-guidelines).
 
 **New threats** (overview [here](/go/threatsoverview/)):
   1. **[Model input threats](/go/inputthreats/)**:  
@@ -291,7 +286,7 @@ What makes AI special when it comes to security? Well, it deals with a new set o
 
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials6.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials6.png)
 
-Many experts and organizations contributed to this overview of essentials - including close collaboration with SANS Institute, ensuring alignment with SANS’ Critical AI security guidelines. SANS and the AI Exchange have an ongoing collaboration to share expertise and support broad education.
+Many experts and organizations contributed to this overview of essentials - including close collaboration with SANS Institute, ensuring alignment with SANS’ [Critical AI security guidelines](https://assets.contentstack.io/v3/assets/bltabe50a4554f8e97f/blte964a6eef293d57e/whitepaper-critical-ai-security-guidelines). SANS and the AI Exchange have a formal ongoing collaboration to share expertise and support broad education.
 
 The upcoming sections provide overviews of AI security threats and controls.
 
