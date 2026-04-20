@@ -23,7 +23,8 @@ weight: 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Navigator](/go/navigator/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Controls](/go/controlsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Periodic table of threats and controls](/go/periodictable/)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Risk analysis](/go/riskanalysis/)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Risk analysis](/go/riskanalysis/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Threat modeling](/go/threatmodel/) 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [How about ...](/docs/ai_security_overview/#how-about-)  
 
 * [Deep dive into threats and controls:](/go/navigator/)  
@@ -211,7 +212,7 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
    Alternatively, you can let our [AGENT](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) ask YOU questions about your system and threat model for you. Use this prompt: "Can you look at the risk analysis section and ask me in a few iterations the relevant questions from that section about my AI system, to determine what threats apply to my system, according to the AI Exchange, and give me the permalinks of those threats as hyperlinks to click on?"
 - **Learn AI security**:  
   - Step 1: First study the brief [AI security essentials](/go/essentials/) for the **big picture**.
-  - Step 2: **Select** the threats that are relevant to your practice, by looking at [risk analysis](/go/riskanalysis/) - or let AI interview you to find out (see above), or skip this step if you want to learn the complete threat picture.
+  - Step 2: **Select** the threats that are relevant to your practice, by looking at [threat modeling](/go/threatmodel/) - or let AI interview you to find out (see above), or skip this step if you want to learn the complete threat picture.
   - Step 3: If you're involved in **Agentic AI**, see the brief discussion of how [agentic threats](/go/agenticaithreats/) are covered.
   - Step 4: If you run a **ready-made model**, have a look at the [threat model on ready-made models](/go/readymademodel/).
   - Step 5: See your **threats** in their context ** in the [AI threat model](/go/threatsoverview/) and the [AI security matrix](/go/aisecuritymatrix).
@@ -273,7 +274,7 @@ The five steps - G.U.A.R.D - to organize AI security as an organization are:
    - Distinguish between controls that your organization has to implement, and those that are the responsbility of your supplier. Make the latter category part of your [supply chain management](/go/supplychainmanage/).
 3. **Adapt**  
     -  [セキュリティプラクティスを採用](1_general_controls.md#secprogram) して、このドキュメントの AI セキュリティ資産、脅威、コントロールを含めます。
-    - Adapt your threat modelling to include the [AI security threat model](/go/riskanalysis/) approach and do cross-team threat modelling, involving all engineers.
+    - Adapt your threat modelling to include the [AI security threat modeling](/go/threatmodel/) approach and do cross-team threat modelling, involving all engineers.
     - Adapt your testing to include [AI-specific security testing](/go/testing/).
     - Adapt your supply chain management to include [data, model, and hosting management](/go/supplychainmanage/) and to make sure that your suppliers are taking care of the identified threats.
     - AI システムを開発する場合 (独自のモデルをトレーニングしない場合でも): Adapt your [software development practices](/go/devprogram/) and [secure development program](/go/secdevprogram/) to involve AI engineering activities. 
@@ -337,7 +338,7 @@ The upcoming sections provide overviews of AI security threats and controls.
 In the AI Exchange we focus on AI-specific threats, meaning threats to AI assets (see [#SEC PROGRAM](/go/secprogram/)), such as training data. Threats to other assets are already covered in many other resources - for example the protection of a user database. AI systems are IT systems so they suffer from various security threats. Therefore, when securing AI systems, the AI Exchange needs to be seen as an extension of your existing security program: 
 AI security = threats to AI-specific assets (AI Exchange) +threats to other assets (other resources)
 
-### 脅威モデル
+### 脅威ダイアグラム
 私たちは三つのタイプの脅威を区別します:
 1. 開発時 (データの取得および準備時、モデルの学習/取得時) の脅威 - 例: データポイズニング
 2. 入力の脅威: 攻撃者によるモデル使用時 (推論時、入力の提供と出力の取得時) - 例: プロンプトインジェクションや回避
@@ -443,7 +444,7 @@ The AI exchange lists a number of controls to mitigate risks of attack. Be aware
 **Scope of controls**
 In the AI Exchange we focus on AI-specific threats and their corresponding controls. Some of the controls are AI-specific (e.g., adding noise to the training set) and others are not (e.g., encrypting the training database). We refer to the latter as 'conventional controls'. The Exchange focuses on the details of the AI-specific controls because the details of conventional controls are specified elsewhere - see for example [OpenCRE](https://opencre.org). We do provide AI-specific aspects of those controls, for example that protection of model parameters can be implemented using a Trusted Execution Environment.
 
-### 脅威モデルとコントロール - 全般
+### 脅威ダイアグラムとコントロール - 全般
 下図は AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)
 コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
@@ -475,7 +476,7 @@ In the AI Exchange we focus on AI-specific threats and their corresponding contr
 
 すべての脅威とコントロールについては AI Exchange の対応する脅威セクションでより詳細に説明します。
 
-### Threat model with controls - ready-made model
+### Threat diagram with controls - ready-made model
 >Category: discussion  
 >Permalink: https://owaspai.org/go/readymademodel/
 
@@ -608,12 +609,25 @@ NOTE: In this document, we focus on AI-specific risks only - meaning risks to th
 This subsection takes you through each type of risk impact, and poses questions that will help to determine which threats apply. In addition, it provides guidance to translate that to risks.
 
 In essence, this is a 'Threat modeling' process: the bridge between a list of threats and a set of concrete, prioritized risks.  
-The threats represent a catalogue of “things that could go wrong” and threat modeling answers three key questions:
-1. Which threats apply to this system?
+The threats represent a catalogue of “attacks that could happen” and threat modeling answers three key questions:
+1. Which threats theoretically apply to this system?
 2. How could they realistically happen?
-3. What would the impact be here?
+3. What would the impact be?
 
 The step after that is detailed in the following subsection 2: to look in more detail at likelihood and impact.
+
+The image below represents the AI Exchange threat modelling one-pager. It summarizes the step-by-step decision tree approach from this section. How to use:
+1. Walk by each threat 
+2. Base on the column ‘When’, detemine when that threat applies in theory
+3. If the threat applies in theory, use the column ‘Impact’ to help decide whether the risk needs to be treated or not, depending on the level of harm for the use case.
+
+The result: you start big, but you end up with a relativey small list of risks to focus on. 
+
+For example: You don’t have to protect against model inversion attacks that try to steal your training data, if that data isn’t sensitive. It sounds obvious, but I’ve seen many cases of protections in place for threats that effectively don’t matter.
+
+Another example: If your agentic system uses an LLM, then it is in theory susceptible to indirect prompt injection: malicious instructions in untrusted data that  manipulate agent behaviour. But if your only concern is that sensitive company data leaks, and there is no way for the system to send data to an attacker (e.g., email), then this threat remains theoretical. The risk does not have to be treated.
+
+[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatmodelonepager.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatmodelonepage.png)
 
 **望ましくないモデルの動作のリスクと影響を特定する**
 
