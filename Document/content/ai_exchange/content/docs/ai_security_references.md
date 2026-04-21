@@ -6,11 +6,11 @@ weight: 8
 ---
 ## OWASP AI Exchange の参考情報
 <!-- OPENCRE_SECTION_CRE_START slug=references -->
-- [OpenCRE: Automated AI oversight](https://staging.opencre.org/cre/205-522)  
+- [OpenCRE: Automated AI oversight](https://opencre.org/cre/205-522)  
     参照:  
     - [MITRE ATLAS: sec. AML.M0020: Generative AI Guardrails](https://atlas.mitre.org/mitigations/AML.M0020)
     - [NIST AI 100-2: sec. 3.4.5: An LLM moderator](https://csrc.nist.gov/pubs/ai/100/2/e2023/final)
-- [OpenCRE: Human AI oversight](https://staging.opencre.org/cre/202-604)  
+- [OpenCRE: Human AI oversight](https://opencre.org/cre/202-604)  
     参照:  
     - [MITRE ATLAS: sec. AML.M0030: Restrict AI Agent Tool Invocation on Untrusted Data](https://atlas.mitre.org/mitigations/AML.M0030)
     - [MITRE ATLAS: sec. AML.M0029: Human In-the-Loop for AI Agent Actions](https://atlas.mitre.org/mitigations/AML.M0029)
