@@ -130,9 +130,13 @@ Impact: Textual model output may contain conventional injection attacks such as 
 
 This is like the standard output encoding issue, but the particularity is that the output of AI may include attacks such as XSS.
 
+A special form of this threat is when it is used to exfiltrate data, for example when a model is manipulated to output javascript code that is executed and sends sensitive data to a third party. 
+
+A special sub form of exfiltrating to third parties through output is when sensitive data is packed into URLs in the output - for users to click on, or images to retrieve. According to classic definitions this is not injection, but the spirit of the mechanism is and therefore it is in scope of this threat: data gets 'executed' by a web request (http): either by an image being rendered in a browser, or a user clicking on a link.
+
 **References**  
 <!-- OPENCRE_SECTION_CRE_START slug=outputcontainsconventionalinjection -->
-- [OpenCRE: Model output contains conventional injection](https://staging.opencre.org/cre/780-757)
+- [OpenCRE: Model output contains conventional injection](https://opencre.org/cre/780-757)
     referring to:
     - [OWASP Top10 for LLM: sec. LLM05:2025: Improper Output Handling](https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/)
     - [MITRE ATLAS: sec. AML.T0051: LLM Prompt Injection](https://atlas.mitre.org/techniques/AML.T0051)
@@ -193,7 +197,7 @@ Alternative ways for augmentation data to leak are:
 
 **References**
 <!-- OPENCRE_SECTION_CRE_START slug=augmentationdataleak -->
-- [OpenCRE: Augmentation data leak](https://staging.opencre.org/cre/173-554)
+- [OpenCRE: Augmentation data leak](https://opencre.org/cre/173-554)
     referring to:
     - [MITRE ATLAS: sec. AML.T0036: Data from Information Repositories](https://atlas.mitre.org/techniques/AML.T0036)
     - [NIST AI 100-2: sec. 3.2.2: Poisoning Attacks](https://csrc.nist.gov/pubs/ai/100/2/e2023/final)
@@ -227,7 +231,7 @@ Augmentation data (context information added to a prompt) can be stored in for e
 
 **References**
 <!-- OPENCRE_SECTION_CRE_START slug=augmentationdatamanipulation -->
-- [OpenCRE: Augmentation data manipulation](https://staging.opencre.org/cre/217-163)
+- [OpenCRE: Augmentation data manipulation](https://opencre.org/cre/217-163)
     referring to:
     - [MITRE ATLAS: sec. AML.T0070: RAG Poisoning](https://atlas.mitre.org/techniques/AML.T0070)
     - [NIST AI 100-2: sec. 3.4.2: Integrity Violations](https://csrc.nist.gov/pubs/ai/100/2/e2023/final)
