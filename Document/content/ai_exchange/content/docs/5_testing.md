@@ -124,7 +124,7 @@ Always assume that attackers are aware of these input attacks, so likelihood is 
 Rare but high-impact outcomes should not be dismissed solely due to low observed frequency.  
 
 The variation algorithm part of the test measures how much effort or computation is required to mislead detection. This robustness metric has a limited impact on the estimated risk. It mainly shows that an attacker would need to invest some effort, either manually or by using tooling. Given the widespread availability of such tools, some robustness will only defer attackers who do not put in any effort.  
-In other words, if an attack works and the system shows some robustness against variations, this mainly rules out attack scenarios where users are just playing around to see if the model slightly misbehaves, leading to reputation damage because the attack was too easy to achieve. For attacks with severe impact, this argument does not apply, as systems are expected to be resilient against it - even if attackers deliberatly invest effort to bypass defenses.
+In other words, if an attack works and the system shows some robustness against variations, this mainly rules out attack scenarios where users are just playing around to see if the model slightly misbehaves, leading to reputation damage because the attack was too easy to achieve. For attacks with severe impact, this argument does not apply, as systems are expected to be resilient against it - even if attackers deliberately invest effort to bypass defenses.
 
 
 **(9) 再実行する**  
