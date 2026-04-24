@@ -221,6 +221,7 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
   - Step 8: To learn about the bigger picture how controls play a role, and interact: see the [controls overview](/go/controlsoverview/) 
   - Step 9: If **privacy** is in scope for you: see [the privacy section](/go/aiprivacy/).
   - Step 10: If you're involved in **testing**: see [the testing section](/go/testing/).
+  - Step 11: A great way to better understand AI threats is to act as an attacker, for which we recommend [PwnzzAI!](https://github.com/maryammouzarani2024/PwnzzAI): a hacking lab project with the Exchange as founding partner. A great exercise!
   - To learn more about education programs, see [#SEC EDUCATE](/go/seceducate/)
   - If you prefer one document: download a [snapshot of the Exchange in pdf](/OWASP-AI-Exchange.pdf).
 - **Lookup**:
@@ -271,7 +272,7 @@ The five steps - G.U.A.R.D - to organize AI security as an organization are:
    - Based on the inventory of your applications of AI and AI ideas, understand which threats apply, using the decision tree in the [risk analysis section](/go/riskanalysis/).
    - Then make sure engineers and security professionals understand those relevant threats and their controls, using the guidance of the relevant [threat sections](/go/threatsoverview/) and the corresponding [process controls and technical controls](/go/periodictable/). Note that most of these controls are familiar conventional security countermeasures, unless you are training your own model.
    - Use the courses and resources in the [references section](/go/references/) to support the understanding.
-   - Distinguish between controls that your organization has to implement, and those that are the responsbility of your supplier. Make the latter category part of your [supply chain management](/go/supplychainmanage/).
+   - Distinguish between controls that your organization has to implement, and those that are the responsibility of your supplier. Make the latter category part of your [supply chain management](/go/supplychainmanage/).
 3. **Adapt**  
     -  [セキュリティプラクティスを採用](1_general_controls.md#secprogram) して、このドキュメントの AI セキュリティ資産、脅威、コントロールを含めます。
     - Adapt your threat modelling to include the [AI security threat modeling](/go/threatmodel/) approach and do cross-team threat modelling, involving all engineers.
