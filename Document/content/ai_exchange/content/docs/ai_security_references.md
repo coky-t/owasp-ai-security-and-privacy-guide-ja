@@ -22,6 +22,20 @@ weight: 8
 AI Exchange についてのウェビナーやポッドキャストは [Media ページ](https://owaspai.org/media/) を参照してください。
 特定のトピックに関する参考情報は AI Exchange のコンテンツ全体を通じて見つけることができます。したがってこの参考情報セクションにはより広範な出版物を含んでいます。
 
+## 📚 学術論文・学会論文
+
+> [OWASP AI Exchange](https://owaspai.org/) チームのメンバーが執筆または共著した出版物です。
+
+---
+
+| # | 署名 | 著者 | 会場 / 出版社 | 年 | DOI / リンク |
+|---|------|------|---------------|----|--------------|
+| 1 | *Ransomware Attacks on AI Systems: a Cross-Domain Threat and Control Analysis* | *Behnaz Karimi, Yuvaraj Govindarajulu* | IEEE | *2026* | [10.1109/ISDFS69419.2026.11459071](https://ieeexplore.ieee.org/document/11459071) |
+| 2 | *Lifecycle-Integrated Security for AI-Cloud Convergence in Cyber-Physical Infrastructure* | *S M Zia Ur Rashid et. al* | IEEE | *2026* | [10.1109/ISDFS69419.2026.11458983](https://ieeexplore.ieee.org/abstract/document/11458983) |
+| 3 | *Securing Agentic AI: Threats, Risks and Mitigation* | *S M Zia Ur Rashid et. al* | Springer | *2026* | [10.1007/978-981-95-3701-3_44](https://link.springer.com/chapter/10.1007/978-981-95-3701-3_44) |
+
+---
+
 ## AI セキュリティ脅威の概要:
 ---
 - [OWASP GenAI security project](https://genai.owasp.org/)
@@ -66,7 +80,7 @@ AI Exchange についてのウェビナーやポッドキャストは [Media ペ
 - [MIT AI Risk Repository](https://airisk.mit.edu/)
 - [Failure Modes in Machine Learning by Microsoft](https://learn.microsoft.com/en-us/security/engineering/failure-modes-in-machine-learning)
 
-## 学習とトレーニング:
+## 教育 (学習とトレーニング):
 ---
 | カテゴリ                  | タイトル                                     | 説明                                                                                              | 提供元         | コンテンツタイプ | レベル      | 費用                             | リンク                                                                                       |
 |---------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------|----------------|------------------|-------------|----------------------------------|----------------------------------------------------------------------------------------------|
