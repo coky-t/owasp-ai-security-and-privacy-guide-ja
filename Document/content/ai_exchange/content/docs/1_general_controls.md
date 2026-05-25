@@ -140,6 +140,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 
 監視とインシデント対応はセキュリティプログラムの標準的な要素であり、AI は関連する AI セキュリティ資産、脅威、コントロールを理解することでそれに含めることができます。脅威の説明には監視の一部となる検出メカニズムを含みます。
 
+Note that new regulation can be more outcome-based (e.g. the EU AI Act), instead of control-focused (like ISO/IEC 27001) which makes it important to extend the Information Security Management System with assurance processes for showing that risks have been sufficiently mitigated.
 
 **参考情報**  
 有用な標準:
