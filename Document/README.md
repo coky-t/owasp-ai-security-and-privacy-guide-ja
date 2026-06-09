@@ -32,6 +32,10 @@ npm run serve         # Serve at http://localhost:3000
 
 **システムにインストールされている Hugo を使用する際に** `/var/lib/snapd/void` **で** `permission denied` を得る場合、これは Snap サンドボックスです。`sudo snap install hugo --classic` を実行するか、上記のコマンドを使用します。それらは `npx hugo-extended` を使用するため、システム Hugo は必要ありません。
 
+### 分析
+
+本サイトは、プライバシーに配慮したページビュー統計 (閲覧されたページであり、閲覧者ではありません) のために [GoatCounter](https://www.goatcounter.com/) を使用しています。トラッキングスニペットは `content/ai_exchange/layouts/partials/analytics.html` にあり、`layouts/_default/baseof.html` から含まれています。ダッシュボードへのアクセスと週次メールレポートは GoatCounter アカウント (`aix.goatcounter.com`) で管理されています。
+
 ## 貢献
 
 OWASP プロジェクトはオープンソースの取り組みであり、私たちはあらゆる形態の貢献とフィードバックを熱烈に歓迎します。
