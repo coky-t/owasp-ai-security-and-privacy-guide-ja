@@ -208,9 +208,9 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
   See [How to organize AI security](https://owaspai.org/go/organize/)..
 - **Start AI security as individual**:  
   See 'Learn AI security' below to familiarize yourself with the threats and controls or look in the [references section](/go/references/) for a large table with training material.
-- **Secure a system**:  
-   If you want your **AI system to be secure**, start with [risk analysis](/go/riskanalysis/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
-   Alternatively, you can let our [AGENT](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) ask YOU questions about your system and threat model for you. Use this prompt: "Can you look at the risk analysis section and ask me in a few iterations the relevant questions from that section about my AI system, to determine what threats apply to my system, according to the AI Exchange, and give me the permalinks of those threats as hyperlinks to click on?"
+- **Threat model your system, to learn how to secure it**:  
+   If you want your **AI system to be secure**, start with [threat modeling](/go/threatmodel/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
+   Alternatively, you can let our [AUTO THREAT MODEL AGENT](https://notebooklm.google.com/notebook/e77101a5-b3a6-4c13-a348-7980c6d4adfe/preview) ask YOU questions about your system and threat model for you. Just go to the agent (requires a google account) and start by briefly describing your system. Your data will remain in your own google workspace.
 - **Learn AI security**:  
   - Step 1: First study the brief [AI security essentials](/go/essentials/) for the **big picture**.
   - Step 2: **Select** the threats that are relevant to your practice, by looking at [threat modeling](/go/threatmodel/) - or let AI interview you to find out (see above), or skip this step if you want to learn the complete threat picture.
@@ -627,6 +627,8 @@ The threats represent a catalogue of “attacks that could happen” and threat 
 3. What would the impact be?
 
 The step after that is detailed in the following subsection 2: to look in more detail at likelihood and impact.
+
+There's an AI available that uses all this material to take you through the threat model process: [AUTO THREAT MODEL AGENT](https://notebooklm.google.com/notebook/e77101a5-b3a6-4c13-a348-7980c6d4adfe/preview). Just go to the agent (requires a google account) and start by briefly describing your system. It will then interview you. Your data will remain in your own google workspace.
 
 The image below represents the AI Exchange threat modelling one-pager. It summarizes the step-by-step decision tree approach from this section. How to use:
 1. Walk by each threat 
