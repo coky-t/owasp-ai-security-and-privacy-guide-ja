@@ -297,6 +297,7 @@ And finally: think before you build an AI solution. AI can have fantastic benefi
 
 This section serves as THE starting point to understand the foundations of AI security, and was established in close collaboration with industry and institutes, including complete alignment with the [SANS Critical AI security guidelines](https://assets.contentstack.io/v3/assets/bltabe50a4554f8e97f/blte964a6eef293d57e/whitepaper-critical-ai-security-guidelines) and formal standards ISO/IEC 27090 (AI security) and prEN18282 (Cybersecurity for the AI Act).
 
+---
 
 **New threats** (full overview [here](/go/threatsoverview/)):
   1. **[Model input threats](/go/inputthreats/)**:  
@@ -314,28 +315,40 @@ This section serves as THE starting point to understand the foundations of AI se
 
 Note: Attackers that obtain the model (or a similar one) can perform or prepare input attacks efficiently and without being noticed.
 
+---
     
 **New controls** (overview [here](/go/controlsoverview/)):
 
-The controls for AI security can be divided into four main categories and 8 sub categories, linking to over 50 individual controls discussed in depth at the Exchange.
+The controls for AI security can be divided into four essential categories and 8 essential sub categories, linking to over 50 individual controls discussed in depth at the Exchange.
 
-Manage:
-- Extend existing [Governance](/go/aiprogram/), [Risk](/go/riskanalysis/) and [Compliance](/go/checkcompliance/) - in order to secure AI, you need overview, analysis, policy, training, and responsibilities
+**Manage**:
+- Extend existing **Governance, Risk, and Compliance** - in order to secure AI, you need overview, analysis, policy, training, responsibilities, and control:
+  > [AI PROGRAM](/go/aiprogram/ ), [DEV PROGRAM](/go/devprogram/), [CHECK COMPLIANCE](/go/checkcompliance/), [SEC EDUCATE](/go/seceducate/)
+- Extend **Supply chain management** to incorporate suppliers providing data, models, and hosting
+  > [Supply chain management](/go/supplychainmanage/)
 - Extend existing **conventional security controls** to protect the AI-specific assets
-- Extend [Supply chain management](/go/supplychainmanage/) to incorporate suppliers providing data, models, and hosting
+  - Managing security:
+    > [SEC PROGRAM](/go/secprogram/), [SECDEV PROGRAM](/go/secdevprogram/)
+  - Development-time (model, data, and documentation):
+    > [DEV SECURITY](/go/devsecurity/), [SEGREGATE DATA](/go/segregatedata/), [DISCRETE](/go/discrete/)
+  - Runtime: (model storage, model use, augmentation data (including system prompts), and model input/output):  
+    > [MODEL ACCESS CONTROL](/go/modelaccesscontrol/), [RUNTIME MODEL INTEGRITY](/go/runtimemodelintegrity/), [RUNTIME MODEL IO INTEGRITY](/go/runtimemodeliointegrity/), [RUNTIME MODEL CONFIDENTIALITY](/go/runtimemodelconfidentiality/), [MODEL INPUT CONFIDENTIALITY](/go/modelinputconfidentiality/), [ENCODE MODEL OUTPUT](/go/encodemodeloutput/), [LIMIT RESOURCES](/go/limitresources/), [AUGMENTATION DATA CONFIDENTIALITY](/go/augmentationdataconfidentiality/), [AUGMENTATION DATA INTEGRITY](/go/augmentationdataintegrity/), [CONF COMPUTE](/go/confcompute/), [MODEL OBFUSCATION](/go/modelobfuscation/)   
 
-Have resilient models:
-- Apply **Data/model engineering** during model development to increase resilience against model input attacks. This is the area of data and model engineers. Input attacks include triggering poisoned models - which of course can also be mitigated by preventing the model being poisoned using conventional controls. 
+**Have resilient models**:
+- Apply **data/model engineering controls** during model development for resilience against input attacks. This is the work of data and model engineers. Input attacks include triggering poisoned models - which of course can also be mitigated by preventing the model being poisoned using conventional controls:
+  > [MODEL ALIGNMENT](/go/modelalignment/), [FEDERATED LEARNING](/go/federatedlearning/), [CONTINUOUS VALIDATION](/go/continuousvalidation/), [UNWANTED BIAS TESTING](/go/unwantedbiastesting/), [EVASION ROBUST MODEL](/go/evasionrobustmodel/), [POISON ROBUST MODEL](/go/poisonrobustmodel/), [TRAIN ADVERSARIAL](/go/trainadversarial/), [TRAIN DATA DISTORTION](/go/traindatadistortion/), [ADVERSARIAL ROBUST DISTILLATION](/go/adversarialrobustdistillation/), [MODEL ENSEMBLE](/go/modelensemble/), [MORE TRAINDATA](/go/moretraindata/), [SMALL MODEL](/go/smallmodel/), [DATA QUALITY CONTROL](/go/dataqualitycontrol/)
 
-Watch:
-- Apply **Model I/O handling** for runtime filtering, stopping or alerting to suspicious input or output. It is typically the territory of data and model engineers e.g. data scientists, involving elements from mathematics, statistics, linguistics and machine learning.
-- **[Monitoring](/go/monitoruse/)** of model performance and inference - extending model I/O handing and overlooking general usage of the AI system
+**Watch:**
+- Apply **Model I/O handling** for runtime filtering, stopping or alerting to suspicious input or output. It is typically the territory of data and model engineers e.g. data scientists, involving elements from mathematics, statistics, linguistics and machine learning:
+  > [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling/), [EVASION INPUT HANDLING](/go/evasioninputhandling/), [UNWANTED INPUT SERIES HANDLING](/go/unwantedinputserieshandling/), [PROMPT INJECTION I/O HANDLING](/go/promptinjectioniohandling/), [DOS INPUT VALIDATION](/go/dosinputvalidation/), [INPUT DISTORTION](/go/inputdistortion/), [SENSITIVE OUTPUT HANDLING](/go/sensitiveoutputhandling/), [OBSCURE CONFIDENCE](/go/obscureconfidence/), [RATE LIMIT](/go/ratelimit/)
+ - **Monitoring** of model inference - extending <odel I/O handing, Oversight (see below) and overlooking general usage of the AI system:
+   > [MONITOR USE](/go/monitoruse/)
 
-Limit:  
-(because of zero model trust: assume a model can be misled, make mistakes, or leak data)
-  - [Minimize or obfuscate sensitive data](/go/datalimit/)
-  - [Limit model behaviour](/go/limitunwanted/) (e.g., [oversight](/go/oversight/), [least model privilege](/go/leastmodelprivilege/), and [model alignment](/go/modelalignment/))
-
+**Limit:**   
+- **Minimize or obfuscate sensitive data** because a model can accidentally leak daa or be misled to:
+  > ([DATA MINIMIZE](/go/dataminimize/), [ALLOWED DATA](/go/alloweddata/), [SHORT RETAIN](/go/shortretain/), [OBFUSCATE TRAINING DATA](/go/obfuscatetrainingdata/))
+- **Limit model behaviour**  because a model can accidentally make a mistake or be misled to:
+  > [OVERSIGHT](/go/oversight/), [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/), [AI TRANSPARENCY](/go/aitransparency/), [EXPLAINABILITY](/go/explainability/), [CONTINUOUS VALIDATION](/go/continuousvalidation/), [UNWANTED BIAS TESTING](/go/unwantedbiastesting/)
 
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials6.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/essentials6.png)
 
@@ -466,32 +479,38 @@ In the AI Exchange we focus on AI-specific threats and their corresponding contr
 ### 脅威マップとコントロール - 全般
 以下のマップは AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)
-コントロールのグループは AI セキュリティをどのように対処するかをまとめたものです (コントロールは大文字です)。
-- **AI ガバナンス**(1): AI リスクに対処するだけでなく、ライフサイクル全体に AI の考慮事項を組み込むことで、情報セキュリティとソフトウェアライフサイクルのプロセスに AI を包括的に統合します。
-   >([AI PROGRAM](1_general_controls.md#AIPROGRAM), [SEC PROGRAM](1_general_controls.md#SECPROGRAM), [DEV PROGRAM](1_general_controls.md#DEVPROGRAM), [SECDEV PROGRAM](1_general_controls.md#SECDEVPROGRAM), [CHECK COMPLIANCE](1_general_controls.md#CHECKCOMPLIANCE), [SEC EDUCATE](1_general_controls.md#SECEDUCATE))
-- データ、モデル、モデルホスティングのガバナンスにより **サプライチェーン管理を拡張します**(2):
-   > [SUPPLY CHAIN MANAGE](3_development_time_threats.md#SUPPLYCHAINMANAGE)
-- AI システムは IT システムであるため、リスクに基づいて従来の **IT セキュリティコントロール**(2) を適用します。
-    - 標準的な **従来のセキュリティコントロール** (15408, ASVS, OpenCRE, ISO 27001 Annex A, NIST SP800-53 など) を完全な AI システムに適用し、新たな AI 固有の資産を忘れないようにします。
-      - 開発時: モデルとデータの保存、モデルとデータのサプライチェーン、データサイエンスの文書化
-        > [DEV SECURITY](3_development_time_threats.md#DEVSECURITY), [SEGREGATE DATA](3_development_time_threats.md#SEGREGATEDATA), [DISCRETE](1_general_controls.md#DISCRETE)
-      - 実行時: モデルの保存、モデルの使用、拡張データ (システムプロンプトを含む)、モデルの入出力
-        > [RUNTIME MODEL INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELINTEGRITY), [RUNTIME MODEL IO INTEGRITY](4_runtime_application_security_threats.md#RUNTIMEMODELIOINTEGRITY), [RUNTIME MODEL CONFIDENTIALITY](4_runtime_application_security_threats.md#RUNTIMEMODELCONFIDENTIALITY), [MODEL INPUT CONFIDENTIALITY](4_runtime_application_security_threats.md#MODELINPUTCONFIDENTIALITY), [ENCODE MODEL OUTPUT](4_runtime_application_security_threats.md#ENCODEMODELOUTPUT), [LIMIT RESOURCES](2_threats_through_use.md#LIMIT-RESOURCES), [AUGMENTATION DATA CONFIDENTIALITY](4_runtime_application_security_threats.md#AUGMENTATION-DATA-CONFIDENTIALITY), [AUGMENTATION DATA INTEGRITY](4_runtime_application_security_threats.md#AUGMENTATION-DATA-INTEGRITY)
-    - 従来の IT セキュリティコントロールを **適応** して、AI により適したものにします (どの使用パターンを監視するかなど)。
-      > [MONITOR USE](2_threats_through_use.md#MONITOR-USE), [MODEL ACCESS CONTROL](2_threats_through_use.md#MODEL-ACCESS-CONTROL), [RATE LIMIT](2_threats_through_use.md#RATE-LIMIT)
-    - **新規** の IT セキュリティコントロールを採用します。
-      > [CONF COMPUTE](3_development_time_threats.md#CONFCOMPUTE), [MODEL OBFUSCATION](4_runtime_application_security_threats.md#MODELOBFUSCATION), [INPUT　SEGREGATION](2_threats_through_use.md#INPUT-SEGREGATION)
-- 専門的な **AI エンジニアリングセキュリティコントロール**(3) を適用します。
-    - 開発の一環として振る舞いを制御するための生成 AI モデルエンジニアリングコントロール(3a):
-      > [MODEL ALIGNMENT](2_threats_through_use.md#MODEL-ALIGNMENT)
-    - モデル開発の一環としてのデータ/モデルエンジニアリングコントロール(3b)
-      > [FEDERATED LEARNING](3_development_time_threats.md#FEDERATEDLEARNING), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING), [EVASION ROBUST MODEL](2_threats_through_use.md#EVASION-ROBUST-MODEL), [POISON ROBUST MODEL](3_development_time_threats.md#POISONROBUSTMODEL), [TRAIN ADVERSARIAL](2_threats_through_use.md#TRAIN-ADVERSARIAL), [TRAIN DATA DISTORTION](3_development_time_threats.md#TRAINDATADISTORTION), [ADVERSARIAL ROBUST DISTILLATION](2_threats_through_use.md#ADVERSARIAL-ROBUST-DISTILLATION), [MODEL ENSEMBLE](3_development_time_threats.md#MODELENSEMBLE), [MORE TRAINDATA](3_development_time_threats.md#MORETRAINDATA), [SMALL MODEL](2_threats_through_use.md#SMALL-MODEL), [DATA QUALITY CONTROL](3_development_time_threats.md#DATAQUALITYCONTROL))
-    - 攻撃をフィルタして検出するための実行時のモデル I/O 処理(3c)
-      > [ANOMALOUS INPUT HANDLING](2_threats_through_use.md#ANOMALOUS-INPUT-HANDLING), [EVASION INPUT HANDLING](2_threats_through_use.md#EVASION-INPUT-HANDLING), [UNWANTED INPUT SERIES HANDLING](2_threats_through_use.md#UNWANTED-INPUT-SERIES-HANDLING), [PROMPT INJECTION I/O HANDLING](2_threats_through_use.md#PROMPT-INJECTION-IO-HANDLING), [DOS INPUT VALIDATION](2_threats_through_use.md#DOS-INPUT-VALIDATION), [INPUT DISTORTION](2_threats_through_use.md#INPUT-DISTORTION), [ENSITIVE OUTPUT HANDLING](2_threats_through_use.md#SENSITIVEOUTPUTHANDLING), [OBSCURE CONFIDENCE](2_threats_through_use.md#OBSCURE-CONFIDENCE)
-- **データを最小限に抑えます/難読化します**(4): 保存時および転送時の機密データ量を制限します。また、データの保存時間を開発時、実行時に制限します。
-   > ([DATA MINIMIZE](1_general_controls.md#DATAMINIMIZE), [ALLOWED DATA](1_general_controls.md#ALLOWEDDATA), [SHORT RETAIN](1_general_controls.md#SHORTRETAIN), [OBFUSCATE TRAINING DATA](1_general_controls.md#OBFUSCATETRAININGDATA))
-- モデルが意図せず、または操作によって望ましくない方法で動作する可能性があるため、**モデルの動作を制限**(5) します。
-   > [OVERSIGHT](1_general_controls.md#OVERSIGHT), [LEAST MODEL PRIVILEGE](1_general_controls.md#LEASTMODELPRIVILEGE), [MODEL ALIGNMENT](1_general_controls.md#MODEL-ALIGNMENT), [AI TRANSPARENCY](1_general_controls.md#AITRANSPARENCY), [EXPLAINABILITY](1_general_controls.md#EXPLAINABILITY), [CONTINUOUS VALIDATION](1_general_controls.md#CONTINUOUSVALIDATION), [UNWANTED BIAS TESTING](1_general_controls.md#UNWANTEDBIASTESTING)
+
+The controls for AI security can be divided into four essential categories and 8 essential sub categories, linking to over 50 individual controls discussed in depth at the Exchange (copied from the [Essentials section](go/essentials/):
+
+**Manage**:
+- Extend existing **Governance, Risk, and Compliance** - in order to secure AI, you need overview, analysis, policy, training, responsibilities, and control:
+  > [AI PROGRAM](/go/aiprogram/ ), [DEV PROGRAM](/go/devprogram/), [CHECK COMPLIANCE](/go/checkcompliance/), [SEC EDUCATE](/go/seceducate/)
+- Extend **Supply chain management** to incorporate suppliers providing data, models, and hosting
+  > [Supply chain management](/go/supplychainmanage/)
+- Extend existing **conventional security controls** to protect the AI-specific assets
+  - Managing security:
+    > [SEC PROGRAM](/go/secprogram/), [SECDEV PROGRAM](/go/secdevprogram/)
+  - Development-time (model, data, and documentation):
+    > [DEV SECURITY](/go/devsecurity/), [SEGREGATE DATA](/go/segregatedata/), [DISCRETE](/go/discrete/)
+  - Runtime: (model storage, model use, augmentation data (including system prompts), and model input/output):  
+    > [MODEL ACCESS CONTROL](/go/modelaccesscontrol/), [RUNTIME MODEL INTEGRITY](/go/runtimemodelintegrity/), [RUNTIME MODEL IO INTEGRITY](/go/runtimemodeliointegrity/), [RUNTIME MODEL CONFIDENTIALITY](/go/runtimemodelconfidentiality/), [MODEL INPUT CONFIDENTIALITY](/go/modelinputconfidentiality/), [ENCODE MODEL OUTPUT](/go/encodemodeloutput/), [LIMIT RESOURCES](/go/limitresources/), [AUGMENTATION DATA CONFIDENTIALITY](/go/augmentationdataconfidentiality/), [AUGMENTATION DATA INTEGRITY](/go/augmentationdataintegrity/), [CONF COMPUTE](/go/confcompute/), [MODEL OBFUSCATION](/go/modelobfuscation/)   
+
+**Have resilient models**:
+- Apply **data/model engineering controls** during model development for resilience against input attacks. This is the work of data and model engineers. Input attacks include triggering poisoned models - which of course can also be mitigated by preventing the model being poisoned using conventional controls:
+  > [MODEL ALIGNMENT](/go/modelalignment/), [FEDERATED LEARNING](/go/federatedlearning/), [CONTINUOUS VALIDATION](/go/continuousvalidation/), [UNWANTED BIAS TESTING](/go/unwantedbiastesting/), [EVASION ROBUST MODEL](/go/evasionrobustmodel/), [POISON ROBUST MODEL](/go/poisonrobustmodel/), [TRAIN ADVERSARIAL](/go/trainadversarial/), [TRAIN DATA DISTORTION](/go/traindatadistortion/), [ADVERSARIAL ROBUST DISTILLATION](/go/adversarialrobustdistillation/), [MODEL ENSEMBLE](/go/modelensemble/), [MORE TRAINDATA](/go/moretraindata/), [SMALL MODEL](/go/smallmodel/), [DATA QUALITY CONTROL](/go/dataqualitycontrol/)
+
+**Watch:**
+- Apply **Model I/O handling** for runtime filtering, stopping or alerting to suspicious input or output. It is typically the territory of data and model engineers e.g. data scientists, involving elements from mathematics, statistics, linguistics and machine learning:
+  > [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling/), [EVASION INPUT HANDLING](/go/evasioninputhandling/), [UNWANTED INPUT SERIES HANDLING](/go/unwantedinputserieshandling/), [PROMPT INJECTION I/O HANDLING](/go/promptinjectioniohandling/), [DOS INPUT VALIDATION](/go/dosinputvalidation/), [INPUT DISTORTION](/go/inputdistortion/), [SENSITIVE OUTPUT HANDLING](/go/sensitiveoutputhandling/), [OBSCURE CONFIDENCE](/go/obscureconfidence/), [RATE LIMIT](/go/ratelimit/)
+ - **Monitoring** of model inference - extending <odel I/O handing, Oversight (see below) and overlooking general usage of the AI system:
+   > [MONITOR USE](/go/monitoruse/)
+
+**Limit:**   
+- **Minimize or obfuscate sensitive data** because a model can accidentally leak daa or be misled to:
+  > ([DATA MINIMIZE](/go/dataminimize/), [ALLOWED DATA](/go/alloweddata/), [SHORT RETAIN](/go/shortretain/), [OBFUSCATE TRAINING DATA](/go/obfuscatetrainingdata/))
+- **Limit model behaviour**  because a model can accidentally make a mistake or be misled to:
+  > [OVERSIGHT](/go/oversight/), [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/), [AI TRANSPARENCY](/go/aitransparency/), [EXPLAINABILITY](/go/explainability/), [CONTINUOUS VALIDATION](/go/continuousvalidation/), [UNWANTED BIAS TESTING](/go/unwantedbiastesting/)
+
 
 すべての脅威とコントロールについては AI Exchange の対応する脅威セクションでより詳細に説明します。
 
