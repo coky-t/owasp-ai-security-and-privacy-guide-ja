@@ -4,20 +4,20 @@ heroTitle: "実行時の従来のセキュリティ脅威"
 heroText: "入力攻撃とは別の、運用中の AI システムへの攻撃と保護コントロール"
 weight: 5
 ---
-> Category: group of runtime threats  
-> Permalink: https://owaspai.org/go/runtimeconventionalsec/
+> カテゴリ: 実行時脅威のグループ  
+> パーマリンク: https://owaspai.org/go/runtimeconventionalsec/
 
-An AI system is an IT system, so at runtime it can be vulnerable to any security attack - for example to break into the application's user database. These 'conventional' attacks to generic assets, and their countermeasures are covered in many other resources. This section focuses only on what is AI-specific.  
+AI システムは IT システムであるため、実行時にはあらゆるセキュリティ攻撃に脆弱となる可能性があります。たとえば、アプリケーションのユーザーデータベースへの侵入があります。これらの一般的な資産への「従来型」攻撃とその対抗策は他の多くのリソースでカバーされます。このセクションでは AI 特有のものについてのみ焦点を当てています。
 
-[Section 2](/go/threatsuse/) covers runtime attacks that are AI-specific: attacks performed through inference - by using the system and providing model input. [Section 3](/go/developmenttime/) covers attacks during development-time: mostly conventional attacks (e.g. breaking into a training database) with sometimes AI-specific consequences (e.g., changing model behaviour) plus AI-specific supply chain attacks.  
+[セクション 2](2_threats_through_use.md) は AI 特有の実行時攻撃をカバーします。推論時に実行される攻撃であり、システムを使用したり、モデル入力を提供します。[セクション 3](3_development_time_threats.md) は開発時の攻撃をカバーします。主に従来型の攻撃 (トレーニングデータベースへの侵入など) ですが AI 特有の結果 (モデル挙動の変化など) や AI 特有のサプライチェーン攻撃があります。
 
-So, this page covers conventional security attacks that have AI-specific consequences. For example: changing model behaviour by hacking into a runtime database of augmentation data (data that is added to the model input). The details of how these attacks are performed are covered in many other resources. This section focuses on the AI-specific consequences and the categories of controls required. In-depth coverage of controls against conventional attacks are covered in many other resources. This section focuses on AI-specific aspects of these controls, such as the option of using a Trusted Execution Environment for models.  
+そのため、このページでは、AI 特有の結果を持つ従来型のセキュリティ攻撃をカバーします。たとえば、拡張データ (モデル入力に追加されるデータ) のランタイムデータベースに不正侵入することでモデル挙動を変更するものです。これらの攻撃の詳細な実行方法は他の多くのリソースでカバーされています。このセクションでは AI 特有の結果と、必要とされるコントロールのカテゴリに焦点を当てています。従来の攻撃に対するコントロールの詳細については他の多くのリソースでカバーされています。このセクションでは、モデルに対して Trusted Execution Environment を使用するというオプションなど、これらのコントロールの AI 特有の側面に焦点を当てています。
 
-The subsections cover non-AI-specific threats, model poisoning, model leak, insecure output handling, leaking input data, and attacks on augmentation data.
+サブセクションでは、AI 特有ではない脅威、モデルポイズニング、モデル漏洩、安全でない出力処理、入力データの漏洩、拡張データへの攻撃をカバーします。
 
 ## 4.1. 一般的なセキュリティ脅威
-> Category: group of runtime threats  
-> Permalink: https://owaspai.org/go/genericsecthreats/
+> カテゴリ: 実行時脅威のグループ  
+> パーマリンク: https://owaspai.org/go/genericsecthreats/
 
 **Description**  
 Impact: Conventional security threats can impact confidentiality, integrity and availability of all assets.
@@ -44,7 +44,7 @@ Note: some controls in this document are conventional security controls that are
 
 ## 4.2. 直接的な実行時モデルポイズニング
 > Category: runtime conventional security threat  
-> Permalink: https://owaspai.org/go/runtimemodelpoison/
+> パーマリンク: https://owaspai.org/go/runtimemodelpoison/
 
 **Description**  
 Impact: see Broad model poisoning.
@@ -58,14 +58,14 @@ This threat involves manipulating the behavior of the model by altering the para
 
 #### #RUNTIME MODEL INTEGRITY
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/runtimemodelintegrity/
+> パーマリンク: https://owaspai.org/go/runtimemodelintegrity/
 
 **Description**  
 Run-time model integrity: apply traditional conventional security controls to protect the storage of model parameters (e.g., access control, checksums, encryption) A Trusted Execution Environment can help to protect model integrity.
 
 #### #RUNTIME MODEL IO INTEGRITY
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/runtimemodeliointegrity/
+> パーマリンク: https://owaspai.org/go/runtimemodeliointegrity/
 
 **Description**  
 Run-time model Input/Output integrity: apply conventional security controls to protect the runtime manipulation of the model's input/output logic (e.g., protect against a man-in-the-middle attack)
@@ -74,7 +74,7 @@ Run-time model Input/Output integrity: apply conventional security controls to p
 
 ## 4.3. 直接的な実行時モデル漏洩
 > Category: runtime conventional security threat  
-> Permalink: https://owaspai.org/go/runtimemodelleak/
+> パーマリンク: https://owaspai.org/go/runtimemodelleak/
 
 **Description**  
 Impact:  Confidentiality breach of the model (i.e., model parameters), which can be:
@@ -98,7 +98,7 @@ This threat applies if the model represents intellectual property (i.e., a trade
   
 #### #RUNTIME MODEL CONFIDENTIALITY
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/runtimemodelconfidentiality/
+> パーマリンク: https://owaspai.org/go/runtimemodelconfidentiality/
 
 **Description**  
 Run-time model confidentiality: see [SECDEVPROGRAM](/go/secdevprogram/) to attain conventional security, with the focus on protecting the storage of model parameters (e.g., access control, encryption).  
@@ -114,7 +114,7 @@ or acoustic leakage that might be exploited for side-channel attacks. See [Elect
 
 #### #MODEL OBFUSCATION
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/modelobfuscation/
+> パーマリンク: https://owaspai.org/go/modelobfuscation/
 
 **Description**  
 Model obfuscation: techniques to store the model in a complex and confusing way with minimal technical information, to make it more difficult for attackers to extract and understand a model after having gained access to its runtime storage. See this [article on ModelObfuscator](https://dl.acm.org/doi/abs/10.1145/3597926.3598113)
@@ -123,7 +123,7 @@ Model obfuscation: techniques to store the model in a complex and confusing way 
 
 ## 4.4. 従来のインジェクションを含む出力
 > Category: runtime conventional security threat  
-> Permalink: https://owaspai.org/go/outputcontainsconventionalinjection/
+> パーマリンク: https://owaspai.org/go/outputcontainsconventionalinjection/
 
 **Description**  
 Impact: Textual model output may contain conventional injection attacks such as XSS-Cross site scripting, which can create a vulnerability when processed (e.g., shown on a website, execute a command).
@@ -149,7 +149,7 @@ See [OWASP for LLM 05](https://genai.owasp.org/llmrisk/llm05/).
 
 #### #ENCODE MODEL OUTPUT
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/encodemodeloutput/
+> パーマリンク: https://owaspai.org/go/encodemodeloutput/
 
 **Description**  
 Encode model output: apply output encoding on model output if it's text. See [OpenCRE on Output encoding and injection prevention](https://www.opencre.org/cre/161-451)
@@ -158,7 +158,7 @@ Encode model output: apply output encoding on model output if it's text. See [Op
 
 ## 4.5. 入力データ漏洩
 > Category: runtime conventional security threat  
-> Permalink: https://owaspai.org/go/inputdataleak/
+> パーマリンク: https://owaspai.org/go/inputdataleak/
 
 **Description**  
 Impact: Confidentiality breach of sensitive input data through a conventional attack on the data at rest or in transit.
@@ -180,7 +180,7 @@ See [Risk analysis](https://owaspai.org/docs/ai_security_overview/#how-to-select
 
 #### #MODEL INPUT CONFIDENTIALITY
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/modelinputconfidentiality/
+> パーマリンク: https://owaspai.org/go/modelinputconfidentiality/
 
 **Description**  
 Model input confidentiality: see [SECDEVPROGRAM](/go/secdevprogram/) to attain conventional security, with the focus on protecting the transport and storage of model input (e.g., access control, encryption, minimize retention)
@@ -189,7 +189,7 @@ Model input confidentiality: see [SECDEVPROGRAM](/go/secdevprogram/) to attain c
 
 ## 4.6. 直接的な拡張データ漏洩
 > Category: runtime conventional security threat  
-> Permalink: https://owaspai.org/go/augmentationdataleak/
+> パーマリンク: https://owaspai.org/go/augmentationdataleak/
 
 **Description**  
 Impact: Confidentiality breach of sensitive augmentation data through a conventional attack on the data at rest or in transit.
@@ -217,7 +217,7 @@ Alternative ways for augmentation data to leak are:
 
 #### #AUGMENTATION DATA CONFIDENTIALITY
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/augmentationdataconfidentiality/
+> パーマリンク: https://owaspai.org/go/augmentationdataconfidentiality/
 
 **Description**  
 See the [security program](/go/secprogram/) and [application security](/go/secdevprogram/), [development environment security](/go/devsecurity/), and [data segregation](/go/segregatedata/) to protect the confidentiality of transporting and storing augmentation data (e.g., access control, encryption, minimize retention).
@@ -228,7 +228,7 @@ See the [security program](/go/secprogram/) and [application security](/go/secde
 
 ## 4.7. 拡張データ操作
 > Category: runtime conventional security threat  
-> Permalink: https://owaspai.org/go/augmentationdatamanipulation/
+> パーマリンク: https://owaspai.org/go/augmentationdatamanipulation/
 
 **Description**  
 
@@ -251,7 +251,7 @@ Augmentation data (context information added to a prompt) can be stored in for e
 
 #### #AUGMENTATION DATA INTEGRITY
 > Category: runtime information security control against conventional security threats  
-> Permalink: https://owaspai.org/go/augmentationdataintegrity/
+> パーマリンク: https://owaspai.org/go/augmentationdataintegrity/
 
 **Description**  
 See the [security program](/go/secprogram/) and [application security](/go/secdevprogram/), [development environment security](/go/devsecurity/), and [data segregation](/go/segregatedata/) to protect the integrity of transporting and storing augmentation data (e.g., access control, encryption, minimize retention).
