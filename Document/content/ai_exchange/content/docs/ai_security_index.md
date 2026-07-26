@@ -11,6 +11,7 @@ weight: 9
 ### A
 [敵対的攻撃 (Adversarial attacks)](2_threats_through_use.md#21-evasion)  
 [エージェント AI (Agentic AI)](ai_security_overview.md#threats-to-agentic-ai)  
+[AI エンジニアリング (AI engineering)](ai_security_overview.md#ai-engineering-primer-for-security-professionals)  
 [アライメント (Alignment)](2_threats_through_use.md#model-alignment)  
 
 ### B
