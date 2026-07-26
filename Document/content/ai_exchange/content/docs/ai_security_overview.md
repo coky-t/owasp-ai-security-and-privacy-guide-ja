@@ -133,11 +133,12 @@ In short:
 Here's more information on AI at OWASP: 
 - If you want to **understand how to ensure security or privacy of your AI or data-centric system** (GenAI or not), or want to align with AI security standards, you can use the [AI Exchange](https://owaspai.org), and from there you will be referred to relevant further material (including GenAI security project material) where necessary. 
 - If you want to achieve **quick awareness** of the top security concerns for Large Language Models, check out the [LLM top 10 of the GenAI project](https://genai.owasp.org/llm-top-10/). Please know that it is not complete, intentionally - for example it does not include the security of prompts.
-
+- If you want to **assess or audit the security of your AI application** against technical security requirements, use the [OWASP AISVS](https://owasp.org/www-project-artificial-intelligence-security-verification-standard-aisvs-docs/).
 
 Some more details on projects: 
 - [The OWASP AI Exchange(this work)](/go/about/) is the go-to single resource for AI security & privacy - over 300 pages of practical advice and references on protecting AI, and data-centric systems from threats - where AI consists of Analytical AI, Discriminative AI, Generative AI and heuristic systems. This content serves as a key bookmark for practitioners, and is contributed actively and substantially to international standards such as ISO/IEC and the AI Act through official standard partnerships.
 - The [OWASP GenAI Security Project](https://genai.owasp.org/) is an umbrella project of various initiatives that publish documents on Generative AI security, including the LLM AI Security & Governance Checklist and the LLM top 10 - featuring the most severe security risks of Large Language Models.
+- The [OWASP AISVS](https://owasp.org/www-project-artificial-intelligence-security-verification-standard-aisvs-docs/) (Artificial Intelligence Security Verification Standard) focuses on providing developers, architects, and security professionals with a structured checklist to verify the security of AI-driven applications. It provides three verification levels aligned with ASVS, and covers the full AI lifecycle from training data integrity to deployment monitoring.
 - [OpenCRE.org](https://opencre.org) has been established under the OWASP Integration standards project(from the _Project wayfinder_) and holds a catalog of common requirements across various security standards inside and outside of OWASP. OpenCRE links all AI security controls and threats across standards and guidelines, and the Exchange features a mechanism to insert the correct references for all sections to owaspai.org. This effectively makes the Exchange a hub for the AI security standards landscape. More details in [this LinkedIn post](https://www.linkedin.com/posts/robvanderveer_announcing-the-rosetta-stone-of-ai-security-share-7454426279262564352-SLzR).
 - Further AI projects at OWASP can be found [here](https://owasp.org/search/?searchString=AI)
 
@@ -208,6 +209,8 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
   See [How to organize AI security](https://owaspai.org/go/organize/)..
 - **Start AI security as individual**:  
   See 'Learn AI security' below to familiarize yourself with the threats and controls or look in the [references section](/go/references/) for a large table with training material.
+- **Understand how AI systems are engineered before securing them**:
+  See the [AI engineering primer for security professionals](/go/aiengineeringprimer/) below. It explains common delivery models, engineering activities, artifacts, and the security decisions attached to them.
 - **Threat model your system, to learn how to secure it**:  
    If you want your **AI system to be secure**, start with [threat modeling](/go/threatmodel/) to guide you through a number of questions, resulting in the threats that apply. And when you click on those threats you'll find the controls (countermeasures) to check for, or to implement.
    Alternatively, you can let our [THREAT ADVISOR](/go/threatadvisor/) ask YOU questions about your system and threat model for you. Just go to the advisor (requires a Google account) and start by briefly describing your system. Your data will remain in your own Google workspace.
@@ -228,6 +231,41 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 - **Lookup**:
   - To look up a specific topic, use the search function or the [index](/go/index/).
   - Looking for more information, or training material: see the [references](/go/references/).
+
+#### AI engineering primer for security professionals
+>Category: discussion<br>
+>Permalink: https://owaspai.org/go/aiengineeringprimer/
+
+Security reviews become difficult when "the AI" is treated as one component. An AI-enabled product is usually a software system built around data, one or more models, prompts, retrieval sources, tools, and conventional infrastructure. The way these parts are sourced and operated determines which risks an organization owns, which controls it can implement, and which assurances it must obtain from suppliers.
+
+**Three common delivery models**
+
+1. **Use a hosted model or AI service.** The supplier operates the model and its serving infrastructure. The customer still owns the security of its application, prompts, retrieved data, identities, tool permissions, output handling, and monitoring.
+2. **Run an externally sourced model.** The organization also owns model selection, artifact integrity, deployment hardening, isolation, patching, and capacity management. The origin and maintenance of the model remain supply-chain concerns.
+3. **Train or adapt a model.** The organization additionally owns the training or fine-tuning data, pipeline, evaluation process, resulting model artifacts, and release decisions. Fine-tuning a hosted model falls between the first and third models because responsibilities are shared.
+
+Real systems often combine all three. A product can use a hosted general-purpose model, a self-hosted classifier, and a fine-tuned embedding model in the same request path. Record responsibilities per component rather than assigning one label to the whole product. See [ready-made models](/go/readymademodel/) and [data, model, and hosting supply-chain management](/go/supplychainmanage/) for the corresponding controls.
+
+**The engineering lifecycle and its security entry points**
+
+| Engineering activity | Typical artifacts | Security question | Start in the Exchange |
+| --- | --- | --- | --- |
+| Frame the task and acceptance criteria | Use cases, data-flow diagrams, quality targets, unacceptable outcomes | Should AI be used here, what can go wrong, and who can be harmed? | [Essentials](/go/essentials/), [threat modeling](/go/threatmodel/), [privacy](/go/aiprivacy/) |
+| Source or build models and data | Service contracts, model cards, datasets, licenses, model artifacts | Can the source be trusted, and what evidence or control remains with the supplier? | [Supply-chain management](/go/supplychainmanage/), [ready-made models](/go/readymademodel/) |
+| Adapt behaviour | System prompts, prompt templates, retrieval indexes, fine-tuning data and configuration | Which untrusted data or instructions can change model behaviour? | [Prompt injection](/go/promptinjection/), [development practices](/go/devprogram/) |
+| Integrate the model into a product | Application code, APIs, agents, tools, identities, secrets, output parsers | What can the model read, disclose, modify, or trigger, and with whose privileges? | [Agentic AI threats](/go/agenticaithreats/), [secure development](/go/secdevprogram/) |
+| Evaluate and release | Evaluation sets, test results, red-team findings, model and prompt versions | Does the system meet both its functional and security requirements on representative and adversarial inputs? | [AI security testing](/go/testing/) |
+| Operate and change the system | Telemetry, incidents, user feedback, version history, rollback procedures | Can failures, abuse, and behavioural drift be detected, investigated, and contained? | [Monitoring](/go/monitoruse/), [AI security testing](/go/testing/) |
+
+Several properties distinguish AI engineering from ordinary deterministic software development:
+
+- **The model is not the system.** Security conclusions about a model do not automatically apply to the application, retrieval layer, tools, or deployment around it.
+- **Evaluation characterizes behaviour; it does not prove correctness.** Test results depend on the chosen data, threat model, model version, configuration, and operating context. Record all of them with the result.
+- **Data can be both content and instruction.** User input, retrieved documents, tool output, and stored memory may influence model behaviour even when engineers intended them to be data only.
+- **Small changes can alter security behaviour.** A model, prompt, retrieval source, tool, policy, or threshold update can invalidate earlier evidence. Version these parts together and retest after change.
+- **Supplier boundaries do not remove accountability.** If a control cannot be implemented directly, turn it into a supplier requirement and verify the evidence provided.
+
+A practical first pass is to draw the flow of data, instructions, and actions through the system; list the model, data, prompt, retrieval, tool, and infrastructure artifacts at each step; and assign an owner or supplier to each artifact. Use that inventory to [threat model the system](/go/threatmodel/), select controls, and decide what evidence is required before release.
 
 The AI exchange covers both heuristic artificial intelligence (e.g., expert systems) and machine learning. This means that when we talk about an AI system, it can for example be a Large Language Model, a linear regression function, a rule-based system, or a lookup table based on statistics. Throughout this document, it is made clear which threats and controls play a role and when.
 
@@ -476,10 +514,24 @@ The AI exchange lists a number of controls to mitigate risks of attack. Be aware
 **Scope of controls**
 In the AI Exchange we focus on AI-specific threats and their corresponding controls. Some of the controls are AI-specific (e.g., adding noise to the training set) and others are not (e.g., encrypting the training database). We refer to the latter as 'conventional controls'. The Exchange focuses on the details of the AI-specific controls because the details of conventional controls are specified elsewhere - see for example [OpenCRE](https://opencre.org). We do provide AI-specific aspects of those controls, for example that protection of model parameters can be implemented using a Trusted Execution Environment.
 
+### From general risks to controls
+The table below gives practitioners a compact way to move from a general AI risk area to the relevant AI Exchange control groups. It complements the detailed [Periodic table of AI security](/go/periodictable/), which maps individual threat categories to specific controls.
+
+| Risk area | Typical concern | Primary control groups to review |
+| --- | --- | --- |
+| AI governance and accountability | Unknown AI use, unclear ownership, unmanaged risk decisions, or incomplete compliance coverage | [AI PROGRAM](/go/aiprogram/), [SEC PROGRAM](/go/secprogram/), [CHECK COMPLIANCE](/go/checkcompliance/), [SEC EDUCATE](/go/seceducate/) |
+| AI development lifecycle | AI engineering work is separated from secure development, software quality, model traceability, or risk management | [DEV PROGRAM](/go/devprogram/), [SECDEV PROGRAM](/go/secdevprogram/), [CONTINUOUS VALIDATION](/go/continuousvalidation/), [UNWANTED BIAS TESTING](/go/unwantedbiastesting/), [DISCRETE](/go/discrete/), [DEV SECURITY](/go/devsecurity/), [SEGREGATE DATA](/go/segregatedata/) |
+| Data and model supply chain | Untrusted data, third-party models, external hosting, or inherited vulnerabilities enter the AI system | [SUPPLY CHAIN MANAGE](/go/supplychainmanage/), [DATA QUALITY CONTROL](/go/dataqualitycontrol/)|
+| Sensitive data exposure | Training data, prompts, outputs, embeddings, logs, or augmentation data may reveal confidential or personal data | [DATA MINIMIZE](/go/dataminimize/), [ALLOWED DATA](/go/alloweddata/), [SHORT RETAIN](/go/shortretain/), [OBFUSCATE TRAINING DATA](/go/obfuscatetrainingdata/), [SENSITIVE OUTPUT HANDLING](/go/sensitiveoutputhandling/), [SMALL MODEL](/go/smallmodel/), [MODEL INPUT CONFIDENTIALITY](/go/modelinputconfidentiality/), [AUGMENTATION DATA CONFIDENTIALITY](/go/augmentationdataconfidentiality/) |
+| Manipulated model behavior | Adversarial inputs, prompt injection, poisoned data, or compromised models can change intended behavior | [OVERSIGHT](/go/oversight/), [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/), [MODEL ALIGNMENT](/go/modelalignment/), [PROMPT INJECTION I/O HANDLING](/go/promptinjectioniohandling/), [INPUT SEGREGATION](/go/inputsegregation/), [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling/), [EVASION INPUT HANDLING](/go/evasioninputhandling/), [EVASION ROBUST MODEL](/go/evasionrobustmodel/), [TRAIN ADVERSARIAL](/go/trainadversarial/), [ADVERSARIAL ROBUST DISTILLATION](/go/adversarialrobustdestillation/), [POISON ROBUST MODEL](/go/poisonrobustmodel/) |
+| Runtime resilience and abuse | Attackers can perform input attacks | [MONITOR USE](/go/monitoruse/), [RATE LIMIT](/go/ratelimit/), [MODEL ACCESSS CONTROL](/go/modelaccesscontrol/), [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling/), [DOS INPUT VALIDATION](/go/dosinputvalidation/), [LIMIT RESOURCES](/go/limitresources/), [UNWANTED INPUT SERIES HANDLING](/go/unwantedinputserieshandling/), and see Manipulated model behaviour for controls against those input attacks |
+| Ready-made or externally hosted models | The organization depends on a provider, external model hosting, or user-facing "shadow AI" alternatives | [SUPPLY CHAIN MANAGE](/go/supplychainmanage/),  [DATA MINIMIZE](/go/dataminimize/), [ALLOWED DATA](/go/alloweddata/) |
+
 ### 脅威マップとコントロール - 全般
 以下のマップは AI Exchange のコントロールをグループに分け、これらのグループを対応する脅威とともに適切なライフサイクルに配置したものです。
 [![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/content/ai_exchange/static/images/threatscontrols.png?v=2)
 
+### Essential categories of controls
 The controls for AI security can be divided into four essential categories and 8 essential sub categories, linking to over 50 individual controls discussed in depth at the Exchange (copied from the [Essentials section](go/essentials/):
 
 **Manage**:
