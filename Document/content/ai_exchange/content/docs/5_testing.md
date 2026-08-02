@@ -151,9 +151,9 @@ AI システムが一般的な状況において標準的なチャットボッ�
 - [OpenAI Evals benchmark](https://github.com/openai/evals)
 
 
-### Testing against Evasion
-> Category: AI security test  
-> Permalink: https://owaspai.org/go/testingevasion/
+### 回避に対するテスト <a name="testing-against-evasion"></a>
+> カテゴリ: AI セキュリティテスト  
+> パーマリンク: https://owaspai.org/go/testingevasion/
 
 #### Test description
 Resistance to [evasion attacks](/go/evasion/), is tested by looking for feasible inputs that lead to unintended outputs with unacceptable impact severity. The test checks three aspects:
