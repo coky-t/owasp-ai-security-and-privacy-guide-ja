@@ -19,7 +19,7 @@ weight: 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Essentials](/go/essentials/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Threats](/go/threatsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Threat matrix](/go/aisecuritymatrix/)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI perspective](/go/agenticaithreats/)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI overview](/go/agenticaioverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Navigator](/go/navigator/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Controls](/go/controlsoverview/)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Periodic table of threats and controls](/go/periodictable/)  
@@ -218,7 +218,7 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
   - Step 1: If you like a 101 on AI engineering, walk throught the [AI engineering primer for security professionals](/go/aiengineeringprimer/)
   - Step 2: First study the brief [AI security essentials](/go/essentials/) for the **big picture**.
   - Step 3: **Select** the threats that are relevant to your practice, by looking at [threat modeling](/go/threatmodel/) - or let AI interview you to find out (see above), or skip this step if you want to learn the complete threat picture.
-  - Step 4: If you're involved in **Agentic AI**, see the brief discussion of how [agentic threats](/go/agenticaithreats/) are covered.
+  - Step 4: If you're AI models can **trigger actions**, see the brief [Agentic AI overview](/go/agenticoverview/) to see how that aspect is covered in the Exchange.
   - Step 5: If you run a **ready-made model**, have a look at the [threat model on ready-made models](/go/readymademodel/).
   - Step 6: See your **threats** in their context ** in the [AI threat model](/go/threatsoverview/) and the [AI security matrix](/go/aisecuritymatrix).
   - Step 7: Click on your relevant threats in that overview to get more information and how to protect against it.
@@ -278,7 +278,7 @@ Real systems often combine all three. A product can use a hosted general-purpose
 | Frame the task and acceptance criteria | Use cases, data-flow diagrams, quality targets, unacceptable outcomes | Should AI be used here, what can go wrong, and who can be harmed? | [Essentials](/go/essentials/), [threat modeling](/go/threatmodel/), [privacy](/go/aiprivacy/) |
 | Source or build models and data | Service contracts, model cards, datasets, licenses, model artifacts | Can the source be trusted, and what evidence or control remains with the supplier? | [Supply-chain management](/go/supplychainmanage/), [ready-made models](/go/readymademodel/) |
 | Adapt behaviour | System prompts, prompt templates, retrieval indexes, fine-tuning data and configuration | Which untrusted data or instructions can change model behaviour? | [Prompt injection](/go/promptinjection/), [development practices](/go/devprogram/) |
-| Integrate the model into a product | Application code, APIs, agents, tools, identities, secrets, output parsers | What can the model read, disclose, modify, or trigger, and with whose privileges? | [Agentic AI threats](/go/agenticaithreats/), [secure development](/go/secdevprogram/) |
+| Integrate the model into a product | Application code, APIs, agents, tools, identities, secrets, output parsers | What can the model read, disclose, modify, or trigger, and with whose privileges? | [Agentic AI overview](/go/agenticaioverview/), [secure development](/go/secdevprogram/) |
 | Evaluate and release | Evaluation sets, test results, red-team findings, model and prompt versions | Does the system meet both its functional and security requirements on representative and adversarial inputs? | [Continuous validation](/go/continuousvalidation), [AI security testing](/go/testing/) |
 | Operate and change the system | Telemetry, incidents, user feedback, version history, rollback procedures | Can failures, abuse, and behavioural drift be detected, investigated, and contained? | [Monitoring](/go/monitoruse/), [AI security testing](/go/testing/) |
 
@@ -432,30 +432,50 @@ Note that some threats represent attacks consisting of several steps, and theref
 —	An adversary breaks into a development environment to steal a model so it can be used to experiment on to craft manipulated inputs to achieve a certain goal, and then present that input to the deployed system.
 
 
-### Threats to agentic AI
+### Agentic AI overview
 >Category: discussion  
->Permalink: https://owaspai.org/go/agenticaithreats/
+>Permalink: https://owaspai.org/go/agenticaioverview/
 
-In Agentic AI, AI systems can take action instead of just present output, and sometimes act autonomously or communicate with other agents. Important note: these are still software systems and AI systems, so everything in the AI Exchange applies, but there are a few attention points. 
+Agentic AI systems are AI systems where models can trigger actions instead of just present output, and sometimes act autonomously or communicate model to model. An example of Agentic AI is a set of voice assistants that can control your heating, send emails, and even invite more assistants into the conversation. That’s powerful—but you’d probably want it to check with you first before sending a thousand emails.  
 
-An example of Agentic AI is a set of voice assistants that can control your heating, send emails, and even invite more assistants into the conversation. That’s powerful—but you’d probably want it to check with you first before sending a thousand emails.  
+The AI Exchange covers all AI systems, so including agentic systems, throughout its content. For the full threat and control picture, see the [threats overview](/go/threatsoverview/), [AI security matrix](/go/aisecuritymatrix/), and [periodic table of threats and controls](/go/periodictable/).  
+This section highlights agentic attention points only — not a separate threat landscape. 
 
-There are four typical properties of agentic AI:
-1. Action: Agents don’t just chat — they invoke functions such as sending an email. That makes [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/) a key control.
+**Agentic security architecture principles**
+
+Agentic systems move AI from consulted component to **operational actor** — planning, calling tools, coordinating with other agents, and adapting with limited oversight. These are security design constraints, not a separate control catalogue:
+
+- **Enforce at infrastructure, not in prompts.** Access control, policy, and containment belong in surrounding systems ([#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/), [#MODEL ACCESS CONTROL](/go/modelaccesscontrol/), [#AGENT SANDBOXING](/go/agentsandboxing/)), not in model instructions alone.
+- **Design for compositional behaviour.** An agent with access to many tools and multi-step chaining produces a vast space of possible workflows — you cannot fully pre-specify purpose, boundaries, and side effects at design time. Threat modelling and governance specification remain necessary, but **runtime** guardrails ([#MONITOR USE](/go/monitoruse/), [#OVERSIGHT](/go/oversight/), [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege)) are required because emergent execution paths cannot all be enumerated upfront. Where regulation assumes pre-deployment describability of every workflow, compositional agentic systems need explicit program handling — see [#CHECK COMPLIANCE](/go/checkcompliance/) AI regulatory mapping.
+- **Assume cascade across layers.** Data, reasoning, tools, APIs, and peer agents form one compositional attack surface; a weakness at any layer can propagate to others.
+- **Bound blast radius by default.** Deny-by-default tool access, non-transferable sessions, and **no transitive trust** between agents limit harm when [prompt injection](/go/promptinjection/) or misalignment occurs.
+
+
+**There are four typical properties of agentic AI:**  
+1. Action: Agents don’t just chat — they invoke functions such as sending an email. That makes [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/) a key control — including the [agentic authorisation framework](/go/leastmodelprivilege/) (deny-by-default, infrastructure policy enforcement, task-bound tokens, agent identity).
 2. Autonomous: Agents can trigger each other, enabling autonomous responses (e.g., a script receives an email, triggering a GenAI follow-up). That makes [OVERSIGHT](/go/oversight/) important, and it makes working memory an attack vector because that's where the state and the plan of an autonomous agent lives.
 3. Complex: Agentic behaviour is emergent.
-4. Multi-system: You often work with a mix of systems and interfaces. Because of that, developers tend to assign responsibilities regarding access control to the AI using instructions, opening up the door for manipulation through [prompt injection](/go/promptinjection/).
+4. Multi-system: You often work with a mix of systems and interfaces. Because of that, developers tend to assign responsibilities regarding access control to the AI using instructions, opening up the door for manipulation through [prompt injection](/go/promptinjection/). Agent-to-service and inter-agent calls need machine-to-machine [#MODEL ACCESS CONTROL](/go/modelaccesscontrol/) (scoped tokens, session binding, mutual auth) alongside [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/).
 
-What does this mean for security?
+**What does this mean for security?**
 - Hallucinations and prompt injections can change commands — or even escalate privileges. Key controls are defense in depth and blast radius control ([impact limitation](/go/limitunwanted/)). Don’t assign the responsibility of access control to GenAI models/agents. Build that into your architecture.
 - Existing assumptions about things like trust boundaries and other established security measures might need to be revisited because agentic AI changes interconnectivity and data flows between system components.
 - Agents deployed with their own sets of permissions open up privilege escalation vectors because they are susceptible to becoming a confused deputy
+- **Tool and function calling:** When agents invoke tools, side effects matter more than text output. Apply [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/) (validation, per-tool scoping, backend authorization), [#PROMPT INJECTION I/O HANDLING](/go/promptinjectioniohandling/) (tool output sanitisation), [#MONITOR USE](/go/monitoruse/) (chain monitoring), and [#OVERSIGHT](/go/oversight/) (simulate-before-execute / approval). Prompt-driven tool abuse is usually a [prompt injection](/go/promptinjection/) consequence; privilege and oversight limit impact.
+- **Autonomous decisions:** When agents decide and act with limited oversight, risk shifts from bad answers to unsafe actions (goal drift, reward hacking, runaway escalation). Treat this as [impact limitation](/go/limitunwanted/) and [#OVERSIGHT](/go/oversight/), not a separate threat category. Environment steering to influence routing or access usually routes through [prompt injection](/go/promptinjection/) or poisoning attack paths.
+- **Memory and context:** Agents accumulate state in working memory, vector stores, and cross-session stores — three surfaces ([in-context](/go/indirectpromptinjection/), [persistent poisoning](/go/augmentationdatamanipulation/), cross-session persistence). Apply [#AUGMENTATION DATA INTEGRITY](/go/augmentationdataintegrity/) and cross-link to [data poisoning](/go/datapoison/) where memory acts as a de facto training-like data source. In-context attacks overlap [prompt injection](/go/promptinjection/); persistent writes are a future read attack on other agents.
+- **Jailbreak vs escape:** [Jailbreak](/go/directpromptinjection/) bypasses safety constraints within the agent's boundary; [agent escape](/go/agentescape/) exceeds that boundary (unauthorised tools or scope). Multi-turn jailbreak needs session-level [#OVERSIGHT](/go/oversight/); escape needs infrastructure [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/).
+- **Deceptive reasoning:** Agents can produce plans that appear well-reasoned but rest on manipulated intermediate steps. Compare stated reasoning to actual tool calls ([#OVERSIGHT](/go/oversight/), [#MONITOR USE](/go/monitoruse/)); corrupted reasoning often follows [prompt injection](/go/promptinjection/) or [memory manipulation](/go/augmentationdatamanipulation/) rather than a separate attack class.
+- **Delegation and impersonation:** Signed delegation chains and scope non-expansion belong in [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/); forged agent identity or message envelopes map to [agent message structure manipulation](/go/agentmessagestructuremanipulation/).
+- **Multi-agent systems:** Layer on single-agent controls — **no transitive trust**; enforce inter-agent security at the message bus/orchestrator, not in agent prompts. Threat: [agent message structure manipulation](/go/agentmessagestructuremanipulation/). Orchestrator is a high-value target; monitor collective behaviour, not only per-agent actions ([#MONITOR USE](/go/monitoruse/), [#OVERSIGHT](/go/oversight/)).
+- **Goal hijacking:** Treat as [impact](/go/limitunwanted/) — redirected objectives, not a separate threat permalink; attack vectors remain [prompt injection](/go/promptinjection/) and related paths.
+- **Data access:** Purpose-bound, ephemeral agent context and classification enforcement live under [data limitation](/go/datalimit/) ([#DATA MINIMIZE](/go/dataminimize/), [#SHORT RETAIN](/go/shortretain/)).
 - The attack surface is wide, and the potential impact should not be underestimated.
 - Because of that, the [known controls](/go/controlsoverview/) become even more important, divided into:
-  - Prevention: for example: security of inter-model communication (e.g., MCP), [protecting of memory integrity](/go/augmentationdataintegrity/), and [prompt injection defenses](/go/promptinjection/)
+  - Prevention: for example: security of inter-model communication (e.g., MCP), [agent sandboxing](/go/agentsandboxing/), [protecting of memory integrity](/go/augmentationdataintegrity/), [prompt injection defenses](/go/promptinjection/), and [agent message structure manipulation](/go/agentmessagestructuremanipulation/)
   - Blast radius control: [rule-based / human oversight](/go/oversight/) and [least model privilege](/go/leastmodelprivilege/)
   - Observability: [monitoring](/go/monitoruse/)
-  
+- **Validation gap:** Tools and methods to evaluate agentic security architecture and deployments are still evolving; without reliable validation, design and implementation weaknesses are harder to find before production. See [testing](/go/testing/) and [continuous validation](/go/continuousvalidation/).
 
 For leaking sensitive data in agentic AI, you need three things, also called the _lethal trifecta_:
 1. Data: Control of the attacker of data that find its way into an LLM at some point in the session of a user that has the desired access, to perform [indirect prompt injection](/go/indirectpromptinjection/) 
@@ -464,7 +484,7 @@ For leaking sensitive data in agentic AI, you need three things, also called the
 
 See [Simon Willison’s excellent work](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for more details, and for examples in agentic AI software development [here](https://www.darkreading.com/application-security/github-copilot-camoleak-ai-attack-exfils-data) and [here](https://ainativedev.io/news/malicious-github-issue-ai-agent-leak).
 
-[Prompt injection](/go/promptinjection/) and mostly the [indirect](/go/indirectpromptinjection/) form is the key threat in most agentic AI systems. See the [seven layers section](/go/promptinjectionsevenlayers/) on how these controls form layers of protection. After model alignment and filtering and detection, it should be assumed that prompt injection can still happen and therefore it is critical that _blast radius control_ is performed.
+[Prompt injection](/go/promptinjection/) and mostly the [indirect](/go/indirectpromptinjection/) form is the key threat in most agentic AI systems. The [prompt injection section](/go/promptinjection/) covers agentic taxonomy (stored injection, multi-agent propagation) and structural mitigations (Agentic Rule of Two, tool-boundary firewalls). See the [seven layers section](/go/promptinjectionsevenlayers/) on how these controls form layers of protection. After model alignment and filtering and detection, it should be assumed that prompt injection can still happen and therefore it is critical that _blast radius control_ is performed.
 
 Further links:
 - For more details on the agentic AI threats, see the [Agentic AI threats and mitigations, from the GenAI security project](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/).
