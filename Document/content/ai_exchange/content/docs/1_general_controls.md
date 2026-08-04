@@ -19,7 +19,7 @@ AI program: Install and execute a program to govern AI.
 One could argue that this control is out of scope for cybersecurity, but it initiates action to get in control of AI security.
 
 **Objective**  
-The objective of an AI Program is to take responsibility for AI as an organization and make sure that all AI initiatives are known and under control, including their security.
+The objective of an AI Program is to take responsibility for AI as an organization and make sure that all AI initiatives are known and under control, including their security. AI deployments need ethical and operational boundaries (oversight tiers, prohibited autonomous actions, data-handling rules) documented in governance and reflected in technical policy.
 
 **Implementation**  
 This governance challenge may seem daunting because of all the new things to take care of, but there are numerous existing controls in organizations already that can be extended to include AI (e.g. policies, risk analysis, impact analysis, inventory of used services etc.).  
@@ -138,7 +138,7 @@ AI には特定の資産 (トレーニングデータなど) があるため、*
 - 特定のライブラリへの外部アクセスが許可されています
 - GitHub からモデルをそのままインポートしています
 
-監視とインシデント対応はセキュリティプログラムの標準的な要素であり、AI は関連する AI セキュリティ資産、脅威、コントロールを理解することでそれに含めることができます。脅威の説明には監視の一部となる検出メカニズムを含みます。
+監視とインシデント対応はセキュリティプログラムの標準的な要素であり、AI は関連する AI セキュリティ資産、脅威、コントロールを理解することでそれに含めることができます。脅威の説明には監視の一部となる検出メカニズムを含みます。See [#MONITOR USE](/go/monitoruse/) for more details.  Serious incidents may also trigger parallel regulatory obligations (for example EU AI Act Art 73 reporting and NIS2 notification timelines for in-scope entities) — coordinate technical response with [#CHECK COMPLIANCE](/go/checkcompliance/), not inside monitoring controls.
 
 Note that new regulation can be more outcome-based (e.g. the EU AI Act), instead of control-focused (like ISO/IEC 27001) which makes it important to extend the Information Security Management System with assurance processes for showing that risks have been sufficiently mitigated.
 
@@ -186,13 +186,15 @@ Note that new regulation can be more outcome-based (e.g. the EU AI Act), instead
 ソフトウェア開発時にリスクを軽減するために適切な注意を払うことでセキュリティリスクを低減します。
 
 **実施**  
-このための最善の方法は既存の安全なソフトウェア開発プラクティスの上に AI チームと AI の特殊性を取り入れることです。つまり、データサイエンス開発アクティビティが安全なソフトウェア開発プラクティスの一部になるべきです。これらのプラクティスの例: セキュア開発トレーニング、コードレビュー、セキュリティ要件、セキュアコーディングガイドライン、脅威モデリング (AI 固有の脅威を含む)、静的解析ツール、動的解析ツール、ペネトレーションテスト。AI のための独立したセキュア開発フレームワークは必要ありません。
+The best way to do this is to build on your existing secure software development practices and include AI assets, AI threats, and their controls. This also means that AI engineering activities should become part of your secure software development practices, which may not be the case yet. This should lead to applying secure coding to data preparation, orchestration, tool integration, and policy enforcement code.
+これらのプラクティスの例: セキュア開発トレーニング、コードレビュー、セキュリティ要件、セキュアコーディングガイドライン、脅威モデリング (AI 固有の脅威を含む)、静的解析ツール、動的解析ツール、ペネトレーションテスト。AI のための独立したセキュア開発フレームワークは必要ありません。
+See [how to organize AI security](/go/organize/) for the necessary steps involving GUARD: Govern, Understand, Adapt, and Demonstrate.
 
 **特殊性**  
 ソフトウェア開発における AI の特殊性、およびその対処方法:
-- AI involves new types of engineering: data engineering and model engineering (e.g. model training), together with new types of engineers: e.g. data scientists, data engineers, AI engineers. Make sure this new engineering becomes an integral part of the general [Development program](/go/devprogram/) with its best practices (e.g. versioning, portfolio management, retirement). For example: Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
+- AI involves new types of engineering, together with new types of engineers: e.g. data scientists, data engineers, AI engineers. Make sure this new engineering becomes an integral part of the general [Development program](/go/devprogram/) with its best practices (e.g. versioning, portfolio management, retirement). For example: Version management/traceability of the combination of code, configuration, training data and models, for troubleshooting and rollback
 
-- 新しい資産、脅威、コントロール (このドキュメントでカバーしている) を考慮する必要があり、要件、ポリシー、コーディングガイドライン、トレーニング、ツール、テストプラクティスなどに影響します。通常、これは [SECPROGRAM](1_general_controls.md#SECPROGRAM) で説明しているように、組織の情報セキュリティ管理システムにこれらの要素を追加し、従来の資産、脅威、コントロールに合わせて調整しているのと同様に、安全なソフトウェア開発をそれに合わせて調整します ([SECDEVPROGRAM](1_general_controls.md#SECDEVPROGRAM) 参照)。This involves both conventional security threats and AI-specific threats, applying both conventional security controls and AI-specific ones. Typically, technical teams depend on the AI engineers when it comes to the AI-specific controls as they mostly require deep AI expertise. For example: if training data is confidential and collected in a distributed way, then a federated learning approach may be considered.
+- 新しい資産、脅威、コントロール (このドキュメントでカバーしている) を考慮する必要があり、要件、ポリシー、コーディングガイドライン、トレーニング、ツール、テストプラクティスなどに影響します。通常、これは [SECPROGRAM](1_general_controls.md#SECPROGRAM) で説明しているように、組織の情報セキュリティ管理システムにこれらの要素を追加し、従来の資産、脅威、コントロールに合わせて調整しているのと同様に、安全なソフトウェア開発をそれに合わせて調整します。This involves both conventional security threats and AI-specific threats, applying both conventional security controls and AI-specific ones. Typically, technical teams depend on the AI engineers when it comes to the AI-specific controls as they mostly require deep AI expertise. For example: if training data is confidential and collected in a distributed way, then a federated learning approach may be considered. AI-specific risks can be determined through [AI threat modeling](/go/threatmodel/).
 
 - Apart from software components, the supply chain for AI can also include data and models which may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/go/supplychainmanage/).
 - In AI, software components can also run in the development, for example tools to prepare training data or train a model. Because of this, the AI development environment is vulnerable to traditional software security risks, such as open source package vulnerabilities, CWEs, exposed secrets, and sensitive data leaks. Without robust controls in place, these risks go undetected by standard application security testing tools, potentially exposing the entire lifecycle to breaches.
@@ -212,6 +214,7 @@ Note that new regulation can be more outcome-based (e.g. the EU AI Act), instead
   - Run security tests (e.g. data poisoning payloads, prompt injection payloads, adversarial robustness testing). See the [testing section](/go/testing/).
   - Run continual automated validation of the model, including discrimination bias measurement and the detection of staleness: the input space changing over time, causing the training set to get out of date
 - Model deployment is a new aspect to AI and it may offer  specific protection measures such as obfuscation, encryption, integrity checks or a Trusted Execution Environment.
+
 
 **Risk-Reduction guidance**  
 Depending on risk analysis, certain threats may require specific practices in the development lifecycle. These threats and controls are covered elsewhere in this document.
@@ -297,6 +300,22 @@ AI/セキュリティに関する一般的な法的考慮事項:
 - 透明性: AI システムのデプロイメント、使用、規制要件への積極的なコンプライアンスにおける透明性を確保します。「Trust by Design」
 - 説明責任: AI システムは、アクション、出力、データセットの使用について説明責任を負うべきです。[AIPROGRAM](1_general_controls.md#AIPROGRAM) を参照。
 
+**AI regulatory mapping**
+
+The Exchange documents **security controls and threats**. Deeper classification, provider-conversion, and prohibited-practice analysis belongs in the organisation's **compliance program** — not reproduced here. Use this map to connect regulatory obligations to the right home:
+
+| Topic (Doc §) | Typical obligation | Exchange security hook (if any) | Compliance program owner |
+|---------------|-------------------|--------------------------------|---------------------------|
+| Intended purpose / Annex III classification (12.7.1, 12.1.5) | EU AI Act Art 6 — system classification before deploy | Impact analysis as part of [#AI PROGRAM](/go/aiprogram/) | Compliance + legal |
+| Prohibited practices (12.1.9 overlay) | EU AI Act Art 5 | Impact analysis as part of [#AI PROGRAM](/go/aiprogram/) | Compliance / legal |
+| Provider conversion / substantial modification (12.7.3, 12.9) | EU AI Act Art 3(23), Art 25 | — | Compliance / legal |
+| Pre-deployment describability / compositional workflows (12.1.1) | NIST AI RMF, MGF, ForHumanity scope spec | [#AI PROGRAM](/go/aiprogram/) + [#SEC DEV PROGRAM](/go/secdevprogram/) | Compliance + architecture governance |
+| Logging & audit trail (12.8.1) | EU AI Act Art 12 | [#MONITOR USE](/go/monitoruse/) | Compliance + ISMS |
+| Serious incident / NIS2 timelines (12.9) | Art 73, NIS2 24h/72h/1-month | IR as part of [#SEC PROGRAM](/go/secprogram/) + [#MONITOR USE](/go/monitoruse/) | Compliance + legal |
+| Human oversight at scale (12.13.1) | EU AI Act Art 14, MGF tiers | [#OVERSIGHT](/go/oversight/) operational tiers | Compliance + operations |
+| Transparency & automated decisions (12.13.3) | Art 13, Art 50, GDPR Art 22 | [#AI TRANSPARENCY](/go/aitransparency/), [#OVERSIGHT](/go/oversight/) operational disclosure | Compliance + privacy ([Privacy section](/go/aiprivacy/)) |
+| Data quality (12.1.7 overlay) | EU AI Act Art 10 | [#DATA QUALITY CONTROL](/go/dataqualitycontrol/) | Compliance + data governance |
+
 **参考情報**  
 <!-- OPENCRE_SECTION_CRE_START slug=checkcompliance -->
 - [OpenCRE: AI compliance management](https://opencre.org/cre/646-285)
@@ -342,6 +361,7 @@ Education on AI security is a key prerequisite for AI engineers, development tea
 > パーマリンク: https://owaspai.org/go/datalimit/
 
 機密性と完全性に対するセキュリティ脅威の影響は、データの攻撃対象領域を制限することで軽減できます。つまり、データの量と種類および保存期間を可能な限り減らします。このセクションではこの制限を適用するためのいくつかのコントロールについて説明します。
+
 
 #### #DATA MINIMIZE
 > カテゴリ: 開発時および実行時のコントロール  
@@ -559,30 +579,58 @@ Example: LLMs (GenAI), just like most AI models, induce their results based on t
 > Permalink: https://owaspai.org/go/oversight/
 
 **Description**  
-Oversight of model behaviour by humans or automated mechanisms (e.g.,using rules), where human oversight provides not only more intelligent validation through common sense and domain knowledge, but also clear accountability for divisions and outcomes.
+Oversight of internal and external AI system behaviour by humans and/or automated mechanisms (e.g.,using rules).
 
 **Objective**  
-Detect unwanted model behavior and respond to it. Responses include correcting, halting execution, deferring to an (other) human-in-the-loop, or issuing an alert to be investigated.
+Detect unwanted AI behaviour and respond to it. Responses include correcting, halting execution, deferring to an (other) human-in-the-loop, or issuing an alert to be investigated.
 
 **Applicability**  
 It is the nature of AI models that they can be wrong. In addition, they can be manipulated (e.g., prompt injection, data poisoning, evasion), so it is critical to apply a layer of protection that oversees the output of the model. It is the final checkpoint.
 
+**Relation with other controls**  
+- [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/) restricts model actions through permissions and therefore is preventative, while #OVERSIGHT is about detection: it is reactive or gate-based — both may apply to the same action tier.
+- [#MODEL ALIGNMENT](/go/modelalignment/) is a form of oversight where the model is taught and instructed regarding its wanted and unwanted behaviour. This is done through training, fine-tuning, and system prompts. It is as a separate control because it's implementation is different and the effectiveness relies on the model's ability to be conditioned - which has its own limitations.
+- [#MONITOR USE])(/go/monitoruse/) is the overarching control of monitoring, including elements such as logging, continuous validation of model performance, incident response, input detections, and the control for this clause: #OVERSIGHT.
+
 **Implementation**  
-- Implement **detection rules** to recognize (potential) unwanted output, such as:
+Oversight spans **automated** mechanisms (rules, monitors, policy gates) and **human** mechanisms (informed review and approval). Automated oversight scales; human oversight provides accountability, handles ambiguous high-impact decisions, and can bring in more context knowledge. These mechanisms go hand in hand: automated detections can identify situations that require human intervention.  
+
+**Implementation of Automated oversight**  
+Automated oversight is about implementing **detection mechanisms** to recognize (potential) unwanted output and actions, such as:
     - Offensive language, toxicity, Not Safe For Work, misinformation, or dangerous information (e.g., recipe for poison, medical misinformation)
     - Sensitive data: see [SENSITIVE OUTPUT HANDLING](/go/sensitiveoutputhandling/) for the control to detect sensitive data (e.g. names, phone numbers, passwords, tokens). These detections can also be applied on the input of the model or on APIs that retrieve data to go into the model.
     - A special category of sensitive data: system prompts, as they can be used by attackers to circumvent prompt injection protection in such prompts. 
-    - Suspicious function calls.  Ideally, the privileges of an AI model are already hardened to the task (see [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/)), in which case detection comes down to issuing an alert once a model attempts to execute an action for which it has no permissions. In addition, the strategy can include the detection of unusual function calls in the context, issuing alerts for further investigation, or asking for approval by a human in the loop. Manipulation of function flow is commonly referred to as _application flow perturbation_. An advanced way to detect manipulated workflows is to perform rule-based sanity checks during steps, e.g. verify whether certain safety checks of filters were executed before processing data. 
+    - Suspicious actions or sequences of actions detected in the AI system, either by looking at function calls in model output, function calls before they are executed, or after they are executed.
+
+Strategies for action detection:
+- **Detect privilege escalation:** Ideally, the privileges of an AI agent are already hardened to the task (see [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/)), in which case detection comes down to issuing an alert once a model attempts to execute an action for which it has no permissions.
+- In addition, the strategy can include the detection of unusual function calls in the context, issuing alerts for further investigation, or asking for approval by a human in the loop. Manipulation of function flow is commonly referred to as _application flow perturbation_. An advanced way to detect manipulated workflows is to perform rule-based sanity checks during steps, e.g. verify whether certain safety checks of filters were executed before processing data.
+- **Agentic tool chains**: Require human approval (or automated policy gates) before irreversible or high-impact tool sequences — for example bulk writes, payments, privilege changes, or multi-step chains that compose read and write across boundaries. Detect abnormal tool-selection patterns (a powerful tool chosen where a read-only tool suffices) and escalated arguments; these often follow [prompt injection](/go/promptinjection/). Guard against _approval fatigue_ on repetitive tool approvals by tiering risk and batching low-impact calls.
+- **Simulate-before-execute (semantic tool validation):** For high-impact tools, validate _what_ the call will do — not only _who_ may call. Use **Proposed State Change** (dry-run where available) before irreversible operations; an independent **adversarial judge** (different model family) comparing user intent to proposed parameters; **deterministic guardrails** on parsed impact with **cumulative session** limits (not per-call only); mandatory human approval for configured high blast-radius operations even when automated checks pass. Optional read-only tool restriction after risky web access or judge failure until task end or human clearance.
+- **Autonomous decision oversight**: Monitor for silent degradation of human-in-the-loop steps under latency or throughput pressure (for example auto-approving "low-risk" changes that later include high-impact actions). Detect inputs timed or shaped toward paths with weakest review (off-hours, bulk operations, trusted channels). Flag agents with configuration or policy-management access that relax rate limits, disable checks, or widen scopes without explicit human approval — even when framed as performance or reliability tuning.
+- **Multi-turn jailbreak drift:** Track agent behaviour across turns within a session — progressive constraint relaxation (partial compliance building to full compliance) is not visible to per-request safety checks. Flag sessions exhibiting crescendo-style drift for human review or automatic suspension; see [direct prompt injection](/go/directpromptinjection/).
+- **Deceptive reasoning and chain-of-thought manipulation:** Monitor stated plans and chain-of-thought outputs for consistency with task objectives and policy constraints — flag justifications for policy exceptions, self-granted permission escalation, or rationalisation of normally refused actions. Compare stated intent against actual tool calls and side effects; divergence is a high-confidence indicator of corrupted reasoning or [prompt injection](/go/promptinjection/) / [memory manipulation](/go/augmentationdatamanipulation/). For high-impact decisions, apply independent reasoning validation with a separate constrained model (preferably a different model family). Restrict agent introspection on its own guardrails, policy boundaries, or monitoring mechanisms where feasible.
+- **Impersonation and delegation anomalies:** Flag inter-agent traffic from identities not in the verified registry, behavioural baseline deviations, or delegation chains exceeding configured depth — see [#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege/) delegation controls and [agent message structure manipulation](/go/agentmessagestructuremanipulation/).
+- **Secure orchestration:** Treat the orchestrator as the highest-leverage target — validate and segregate all inputs (sub-agent responses, tool outputs, external content) as untrusted; limit orchestrator permissions to coordination only (no direct high-impact tool credentials); tamper-evident workflow log external to orchestrator memory; human approval before irreversible or cross-system workflows; block direct orchestrator egress — route external access through segmented sub-agents ([agent sandboxing](/go/agentsandboxing/)); reconcile agent actions against workflow log for phantom steps.
 - Apply **Grounding checks** if recognizing unwanted output based on context is too difficult to catch in rules, and the detection of malicious input is insufficient. The idea of grounding checks is to let a separate Generative AI model decide if an input or output is off-topic or escalates capabilities (e.g. a LLM powered food recipes app suddenly is trying to send emails). This takes the use of LLMs to detect suspicious input and output a step further by including context. This is required in case GenAI-based recognition is insufficient to cover certain attack scenarios (see above).
 - Implement appropriate general detection and response mechanisms as presented in [#MONITOR USE](/go/monitoruse/) where part of the response can be to involve a human-in-the-loop.
 - Include as part of response options **rollback mechanisms** to enable oversight to go back to a certain state after system malfunction or manipulation has been observed and the state of the system cannot be trusted, or has been disrupted.
+
+**Implementation of Human oversight (human-in-the-loop)**  
+Classify agent actions by **risk tier** before deployment and assign oversight requirements: fully autonomous execution; soft confirmation (user notified with option to cancel); hard confirmation (user must actively approve with context); or mandatory human initiation (agent cannot start without human trigger). Implement checkpoints as **infrastructure-layer gates**, not LLM instructions — the agent must be technically incapable of proceeding without a verified human approval signal.
+
+- Design review interfaces for informed decisions: the action requested, stated rationale, relevant prior actions in the session, estimated impact, and reversibility classification. Do not allow agent-generated urgency framing in the review interface without sanitisation.
+- Monitor reviewer behaviour for **approval fatigue** and social-engineering indicators: enforce session-level approval rate limits; flag sessions where approval rates significantly exceed historical baseline.
+- Provide operators a verified **kill switch** that halts agent execution immediately regardless of task state, with tamper-evident logging — available at all times and not controllable by the agent.
+- **High-risk approval workflows:** define high-risk categories (irreversibility, data classification, external parties, financial thresholds). Generate a unique **approval token** per request, cryptographically binding approver identity, specific action parameters, and expiry — reject execution if parameters deviate or the token expired. Require explicit confirmation of key parameters in plain language; log approver understanding alongside the approval signal. Apply a mandatory minimum delay before execution for the highest-risk actions. Maintain a tamper-evident audit trail (request, parameters presented, approver identity and auth method, decision, outcome). For critical actions, require **segregation of duties** — multiple approvers from different roles, defined by policy not by the agent.
+- **User-facing disclosure (operational):** disclose agent identity at interaction start; present authorised action scope from a **static capability manifest**, not agent-composed consent text (agents must not frame their own consent requests). Obtain granular, task-specific consent for high-impact actions; provide a user-accessible action log and genuine opt-out mid-task. Regulatory disclosure obligations (EU AI Act, GDPR automated decision-making, etc.) sit with [#CHECK COMPLIANCE](/go/checkcompliance/) and [#AI TRANSPARENCY](/go/aitransparency/).
+- Test human oversight under adversarial conditions — urgency-driven bypass, approval-fatigue sequences, and multi-step normalisation before critical actions — as part of the [testing programme](/go/testing/).
 - For checks that require accountability and/or more expertise and common sense, present the behaviour for a **human** to approve. This can be the result of a logic rule that in specific circumstances escalates to a human-in-the-loop.
 - Ensure that the **human oversight is appropriate**: the human is qualified, instructed, motivated, and not suffering from so-called _approval fatigue_: the result of having to approve many actions that are mostly in order.
 
 
-A separate form of oversight is [MODEL ALIGNMENT](/go/modelalignment/) which intends to constrain model behaviour through training, fine-tuning, and system prompts. This is treated as a separate control because the effectiveness is limited and therefore no guarantee.
 
-Examples:
+**Examples**:
   - Logic preventing the trunk of a car from opening while the car is moving, even if the driver seems to request it
   - Logic signaling an alert when a software programming tool is making a series of updates to multiple projects in one go, after which the alert is processes by a human who can then decide to further investigate and/or to take action, which can include shutting down the complete system to prevent further harm
   - Requesting user confirmation before sending a large number of emails as instructed by a model
@@ -632,6 +680,44 @@ Least model privilege: Minimize what a model can do (trigger actions or access d
 - **Honor limitations of the served**: Execute actions of AI systems with the rights and privileges of the user or service being served. This ensures that no actions are invoked and no data is retrieved outside authorizations. Note that the served is always just the initiator of an action - for example if the initiator wants the AI system to provide information to others. In that case, the authorization of those others should also be taken into account.
 - **Task-based minimization**: Take the served-limitation a step further by reducing actions that the model can potentially trigger, and what they can be triggered on, to the minimum necessary for the reasonably foreseeable use cases. See below for the flexibility balance here. The purpose of this is _blast radius control_: to limit the attack surface in case the AI model is compromised, or in case the AI model makes a mistake. This requires mechanisms that may not be offered by the Identity and Access Management in place, such as: ephemeral tokens, dynamic permissions, and narrow permission control at scale, combined with trust establishment and potential revocation across different domains. See 'Strategies for task-based minimization' below.
 - **Avoid implementing authorization in Generative AI instructions**, as these are vulnerable to hallucinations and manipulation (e.g., prompt injection). This is especially applicable in Agentic AI. This includes the prevention of Generative AI outputting commands that include references to the user context as it would open up the opportunity to escalate privileges by manipulating that output.
+- **Tool and function calling (agentic)**: When models invoke tools or functions, enforce permissions at the **backend**, not in prompts alone. Use per-tool and per-operation allowlists, narrowly typed schemas with deny-by-default parsing, and separate credentials for read vs write (or other high-impact operations). Re-bind each call to the initiating user or session scope to prevent _confused deputy_ behaviour — the backend must not trust the agent gateway without verifying delegated identity, tenant, and audience. Prefer just-in-time, ephemeral tokens scoped to the current task. See also [#OVERSIGHT](/go/oversight/) for approval of high-impact tool chains. Prompt-driven escalation of tool choice or arguments is typically a [prompt injection](/go/promptinjection/) consequence; least privilege limits the blast radius if it succeeds.
+
+**Tool call validation and access control:** Complements the tool-calling controls above:
+
+- **Validation at the boundary:** Enforce strict JSON Schema per tool; reject non-conforming calls before execution. Sanitise string parameters — treat all LLM-generated values as untrusted (SQL/shell metacharacters, path traversal, injection markers); see [#DOS INPUT VALIDATION](/go/dosinputvalidation/). Verify a **per-call capability token** authorising that specific tool — session authentication alone is insufficient. Log every attempt including rejects. Prevent deceptively similar rogue tools in the registry from confusing tool selection.
+- **Access control:** Per-agent capability allowlists bound to identity; per-operation scope and argument-level restrictions where possible. **Dynamically narrow** tool permissions when processing untrusted external content. Control execution-account roles at runtime, not only tool names. Apply **access-review and revocation cadence** for agent credentials and execution accounts — aligned with privileged human account reviews, not only at onboarding. External MCP or third-party tools may sit outside your access-control framework — treat as explicit trust-boundary gaps.
+
+**Limitations:** Schema validation does not catch semantically valid but contextually unauthorised calls. Does not prevent misuse of explicitly authorised tools or correct parameters with unintended business outcomes.
+**Agentic authorisation framework**  
+Autonomous agents plan multi-step operations, compose tool calls dynamically, act across trust boundaries, and persist across sessions. Authorisation must hold without continuous human direction — and must not live in prompts the agent can reason around.
+
+- **Deny-by-default:** Agents hold no permissions unless explicitly granted. Scope grants to a specific task, time window, and resource set; expire when the task completes, times out, or is cancelled.
+- **Infrastructure-layer enforcement:** Evaluate authorisation at API gateways, service meshes, or tool execution proxies — not in the agent's reasoning or system prompt. Use a dedicated policy decision point; the agent receives permit/deny outcomes, not policy logic. See also [agent escape](/go/agentescape/).
+- **Context chain binding:** Bind each grant to the human principal, verified agent identity, tool and operation, and target resource classification. Require **re-authorisation** when scope expands, read elevates to write, trust domains are crossed, or work is delegated downstream.
+- **Authorisation models:** Evaluate RBAC, ABAC, ReBAC, and capability-based approaches for your workflows. For dynamic task decomposition, prefer **task-bound capability tokens** (narrowable across delegation; subset-only when Agent A delegates to Agent B). Layer ABAC over capabilities for contextual decisions (time, data classification, input trust, task stage). Maintain policies in version-controlled, machine-readable languages (for example Cedar or Rego/OPA) chosen for auditability — not familiarity alone.
+- **Dynamic permission scoping:** Issue task-scoped permissions at initiation; **narrow automatically** when processing untrusted external content (exclude write, sensitive read, and outbound tools). Treat permission escalation as an explicit logged event — human approval or policy-engine criteria — never self-escalation via reasoning. Log effective permission state at each action for incident analysis.
+- **Context-aware access control:** Feed infrastructure-collected signals into the policy engine — input provenance/trust class, session tool-call patterns, behavioural baseline deviation, time since last human checkpoint, target data classification. Use graduated tiers: autonomous in low-risk context; additional validation or [#OVERSIGHT](/go/oversight/) approval in elevated-risk context. Do not let the agent assess its own risk posture.
+- **Agent identity verification:** Assign each agent instance a unique cryptographically verifiable identity; mutual authentication for inter-agent calls; short-lived credentials with rotation; registry of active agents (status, capabilities, human owner). Include verified identity in audit logs and delegation tokens. Identity proves _who_ acted, not that behaviour was intended — pair with oversight and [prompt injection](/go/promptinjection/) blast-radius controls.
+
+**Policy enforcement for agents**  
+Policies in system prompts are not enforceable controls. Apply organisational rules as **policy-as-code** outside the agent — an interceptor in the data path that synchronously validates actions before they reach tools or services.
+
+- **PEP/PDP separation:** Policy decision points (evaluation) and enforcement points (block/permit in the data path) stay outside the agent execution context. The agent receives outcomes, not policy source or logic.
+- **Policy-based access control (PBAC):** Central policy engine (for example OPA/Rego or Cedar) as the single evaluation point for tool calls, data access, inter-agent messages, and outbound communication — no gaps in scope. Evaluate identity, action, resource classification, task context, input trust, time, and **cumulative session activity** per decision. Version-control policies with peer review, automated tests, and staged rollout. **Synchronous gate:** no action proceeds until permit/deny returns.
+- **Runtime policy validation:** Re-evaluate at **every** tool invocation and material context change (untrusted input ingested, scope expansion, classification change, downstream agent joins). Maintain a **session action ledger** for cumulative limits — block salami-sliced sequences of individually permitted steps that aggregate to a violation. **Fail closed** if the policy engine is unreachable. Instrument for evasion patterns (fragmented sub-actions, rapid sequencing to outpace evaluation).
+- **Policy conflict resolution:** Document precedence (for example regulatory > organisational > task-specific). When unresolved, default to **deny**. Detect conflicting policies in the authoring pipeline before deploy; log every runtime conflict resolution for tuning.
+- **Policy denials as signals:** Log and alert on denial patterns — a high denial rate from one agent indicates compromise or misconfiguration; feed into [#MONITOR USE](/go/monitoruse/) and [#OVERSIGHT](/go/oversight/).
+
+**Delegation and impersonation controls**  
+Agent chains delegate tasks and act on behalf of users or peers. Protect delegation integrity and detect false identity claims — pair with [agent message structure manipulation](/go/agentmessagestructuremanipulation/) when the attack targets protocol fields or envelopes.
+
+- **Signed delegation tokens:** Cryptographically bind delegator, delegatee, permitted scope, task context, and bounded expiry. Link tokens to parent delegations where feasible to prevent **chain splicing**. Re-issue on material context change; do not carry tokens across task boundaries.
+- **Delegation chain validation:** Enforce maximum chain depth; validate the **full chain** via the policy engine (not per-link self-validation by agents). Reject actions outside bound scope even when the token is cryptographically valid. See cumulative session ledger under policy enforcement.
+- **Scope non-expansion:** Downstream agents receive a **subset** of upstream grants only — no delegation may widen permissions. Track cumulative privileges per session; block aggregate levels above session inception authorisation.
+- **Just-in-time credentials:** Issue minimum task-scoped credentials at delegation time; monitor mid-session scope requests and tools outside registered capability sets.
+- **Impersonation detection:** Require mTLS or signed message envelopes for inter-agent traffic; message-level identity attestations from the credential store. Maintain an allowlist registry of verified agent identities. Flag behavioural baseline deviations via [#OVERSIGHT](/go/oversight/). Treat natural-language identity claims in prompts or tool parameters ("I am the admin agent") as [prompt injection](/go/promptinjection/) or message-fabric attacks.
+
+**Limitations:** Authorisation and policy enforcement define what is permitted, not what is wise. Agents can harm within scope; [prompt injection](/go/promptinjection/) before delegation is established or misuse of legitimately delegated authority remain risks. LLM-generated delegation instructions may produce structurally valid but contextually unauthorised tokens. Novel action sequences make complete pre-specification hard — combine short token lifetime, revocation, and delegation attenuation with explicit revocation-latency tolerance. Per-action evaluation adds latency; policy engine outage requires an explicit fail-closed vs fail-open choice.
 
 Example case: an AI model is connected to an email facility to summarize incoming emails to an end user:
 - Honor limitations of the actor: make sure the AI only can access the emails the end user can access.
