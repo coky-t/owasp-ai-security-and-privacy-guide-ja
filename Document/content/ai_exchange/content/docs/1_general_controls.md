@@ -69,10 +69,11 @@ The very minimum first thing you can do for AI governance, focused on security:
 2. 1 に関連: モデルは陳腐化する可能性があります。
 3. データに基づいて動作を組織化するため、データは機会 (複雑な現実世界の問題解決、適応性など) とリスク (望ましくないバイアス、不完全性、エラー、操作など) の源となります。
 4. 組織や人々にとって馴染みのないものであり、実装ミス、過小な信頼、過大な信頼、人間の傾向の誤った帰属などのリスクがあります。
-5. 理解できないものであり、信頼性に問題が生じます。
+5. 理解できない処理であり、信頼性に問題が生じます。
 6. セキュリティ脅威を形作る新しい技術的資産 (データ/モデルサプライチェーン、トレーニングデータ、モデルパラメータ、拡張データ、AI ドキュメント) です。
 7. 聴くことも話すこともできます: ユーザーインタフェースではなく自然言語を通じてやり取りします。
 8. 聞くことも見ることもできます: 音声認識能力と視覚認識能力を持ちます。
+9. When models can act autonomously, making behaviour dynamic and permissions and oversight challenging
 
 **参考情報**  
 <!-- OPENCRE_SECTION_CRE_START slug=aiprogram -->
@@ -110,11 +111,12 @@ AI 固有の資産とそれらに対する脅威を必ず含めます。脅威�
 - ハイパーパラメータ
 - 実験を含むモデルとその開発プロセスの文書化
 - モデル入力
+- モデル入力に自動的に挿入される拡張データ (ドキュメント、システムプロンプトなど)
 - モデル出力。トレーニングデータやモデルが信頼できない場合は、信頼できないものとみなす必要があります
 - 意図したモデル動作
 - 外部ソースから取得したトレーニングおよびテスト用のデータ
 - 外部ソースからトレーニングおよび使用するモデル
-- モデル入力に自動的に挿入される拡張データ (ドキュメント、システムプロンプトなど)
+
 
 これらの資産とそれらに対する脅威を組み込むことにより、セキュリティプログラムがこれらのリスクを軽減します。たとえば、意識向上トレーニングでエンジニアにドキュメントをその辺に置きっぱなしにしないよう告げます。あるいは、エンジニアが扱うとレーニンデータは機密性が高いため、エンジニアのマシンにマルウェア検出機能をインストールします。
 
@@ -197,7 +199,7 @@ See [how to organize AI security](/go/organize/) for the necessary steps involvi
 
 - 新しい資産、脅威、コントロール (このドキュメントでカバーしている) を考慮する必要があり、要件、ポリシー、コーディングガイドライン、トレーニング、ツール、テストプラクティスなどに影響します。通常、これは [SECPROGRAM](1_general_controls.md#SECPROGRAM) で説明しているように、組織の情報セキュリティ管理システムにこれらの要素を追加し、従来の資産、脅威、コントロールに合わせて調整しているのと同様に、安全なソフトウェア開発をそれに合わせて調整します。This involves both conventional security threats and AI-specific threats, applying both conventional security controls and AI-specific ones. Typically, technical teams depend on the AI engineers when it comes to the AI-specific controls as they mostly require deep AI expertise. For example: if training data is confidential and collected in a distributed way, then a federated learning approach may be considered. AI-specific risks can be determined through [AI threat modeling](/go/threatmodel/).
 
-- Apart from software components, the supply chain for AI can also include data and models which may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/go/supplychainmanage/).
+- Apart from software components, the supply chain for AI can also include data, models, and model hosting. Data and models may have been poisoned, which is why data provenance and model management are central in [AI supply chain management](/go/supplychainmanage/). In addition, the supply chain encompasses capabilities that agents interact with dynamically, such as skills and services (e.g. through MCP).
 - In AI, software components can also run in the development, for example tools to prepare training data or train a model. Because of this, the AI development environment is vulnerable to traditional software security risks, such as open source package vulnerabilities, CWEs, exposed secrets, and sensitive data leaks. Without robust controls in place, these risks go undetected by standard application security testing tools, potentially exposing the entire lifecycle to breaches.
 
 - The AI development environment typically involves sensitive data, in contrast to conventional engineering where the use of such data by engineers is normally avoided. Therefore, apply [development security](/go/devsecurity/) on the development environment. In addition to the conventional assets of code, configuration and secrets, the AI-specific development assets are:
