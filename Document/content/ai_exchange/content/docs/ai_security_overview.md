@@ -541,7 +541,7 @@ Clickable version, based on the [Periodic table](/go/periodictable/):
 >パーマリンク: https://owaspai.org/go/controlsoverview/
 
 **Select and implement controls with care**  
-The AI exchange lists a number of controls to mitigate risks of attack. Be aware that many of the controls are expensive to implement and are subject to trade-offs with other AI properties that can affect accuracy and normal operations of the model. Particularly, controls that involve changes to the learning process and data distributions can have un-intended downstream side effects, and must be considered and introduced with care.
+The AI exchange lists a number of controls to mitigate risks of attack. Be aware that many of the controls are expensive to implement and are subject to trade-offs with other AI properties that can affect correctness and normal operations of the model. Particularly, controls that involve changes to the learning process and data distributions can have un-intended downstream side effects, and must be considered and introduced with care.
 
 **Scope of controls**
 In the AI Exchange we focus on AI-specific threats and their corresponding controls. Some of the controls are AI-specific (e.g., adding noise to the training set) and others are not (e.g., encrypting the training database). We refer to the latter as 'conventional controls'. The Exchange focuses on the details of the AI-specific controls because the details of conventional controls are specified elsewhere - see for example [OpenCRE](https://opencre.org). We do provide AI-specific aspects of those controls, for example that protection of model parameters can be implemented using a Trusted Execution Environment.
@@ -765,7 +765,7 @@ Another example: If your agentic system uses an LLM, then it is in theory suscep
 
 **望ましくないモデルの動作のリスクと影響を特定する**
 
-  モデルの動作に関しては、このドキュメントのスコープがセキュリティであるため、攻撃者による操作に焦点を当てています。その他の望ましくない動作の原因には一般的な不正確さ (ハルシネーションなど) や特定のグループに関する望ましくない偏見 (差別) があります。
+  モデルの動作に関しては、このドキュメントのスコープがセキュリティであるため、攻撃者による操作に焦点を当てています。その他の望ましくない動作の原因には標準的な不正確さ (ハルシネーションなど) や特定のグループに関する望ましくない偏見 (差別) があります。
 
    > QUESTION: Is the model GenAI (e.g., a Large Language Model) and not classic machine learning or a heuristic model? If Yes:
   - Consider the threat of [direct prompt injection](/go/directpromptinjection/) in case a) an attacker can provide input to the model (e.g., a prompt), and b) the model could theoretically create output that results in harm - for example: offensive output, information leading to harm, or triggering harmful functions (Agentic AI).
@@ -932,30 +932,75 @@ AI を理解するのに役立つ方法は、AI が機械学習 (現在主流の
 > カテゴリ: ディスカッション  
 > パーマリンク: https://owaspai.org/go/responsibleai/
 
-AI には、リスクを軽減しながら良い結果をもたらすという点で、さまざまな側面があります。これは、責任ある AI や信頼できる AI と呼ばれることが多く、前者は倫理、社会、ガバナンスを重視し、後者はより技術的、運用的側面を重視します。
+'Responsible AI' and 'trustworthy AI' aim for positive outcomes while mitigating risks, where the former emphasises ethics, society, and governance, while the latter is more about technical and operational aspects. They include security.
 
-主な責務がセキュリティであるなら、まず AI セキュリティに焦点を当てることが最善です。AI セキュリティをしっかりと理解したら、他の AI の側面にも知識を広げることです。たとえ、その領域に責任を負っている同僚をサポートし、警戒を怠らないようにするためであってもです。結局のところ、セキュリティ専門家は潜在的な障害点を見つけることが得意なことが多くあります。さらに、いくつかの側面は侵害された AI の結果である可能性があり、したがって _安全性 (safety)_ などを理解しておくと役立ちます。
+If your primary responsibility is security, it's best to start by focusing on just that. Once you have a solid grasp of the security part, you can expand your knowledge to other AI aspects, such as bias, performance and use of AI. Your typical talent to think of things that can go wrong can support colleagues who are responsible for those other areas. Furthermore, some aspects can be a consequence of compromised AI and are therefore helpful to understand, such as issues with _bias_ and _safety_.
 
-AI の原則を分析し、それぞれがセキュリティとどのように関連しているかを見てみましょう。
-- **正確性 (Accuracy)** はその「ビジネス機能」を実行するのに十分に正しいかどうかを指します。不正確であると、(物理的な) 安全性の問題 (運転中に車のトランクが開いてしまうなど) やその他の有害な間違った判断 (ローンの不当な拒否など) などの危害につながる可能性があります。セキュリティとの関連は、ある種の攻撃が望ましくないモデル動作を引き起こすことであり、これは定義上、正確性の問題です。とはいえ、セキュリティの範囲ではそのような攻撃のリスクを軽減することに限定されており、正確なモデルの作成 (トレーニングセットの代表データの選択など) の問題全体を解決するものではありません。
-- **安全性 (Safety)** は危害から保護されている、あるいは危害を引き起こす可能性が低い状態を指します。したがって、AI システムの安全性は危害 (一般的に物理的な危害を意味しますが、それに限定されません) のリスクがある場合の正確性のレベルのことであり、さらに (正確性とは別に) それらのリスクを軽減するために設けられたものです。これには正確性を保護するためのセキュリティに加えて、モデルのビジネス機能にとって重要な多くの安全性の対策を含みます。これらはセキュリティ上の理由だけでなく、他の理由 (不適切なトレーニングデータなど) でモデルが安全でない決定を下す可能性があるため、安全性とセキュリティの間で共通する懸念事項であることに注意する必要があります。
-  -  安全でない動作を制限するための [監視](1_general_controls.md#OVERSIGHT)、およびそれに関連して、モデルへの最小権限の割り当て
-  -  正確性を保護するための [継続的バリデーション](1_general_controls.md#CONTINUOUSVALIDATION)
-  -  [透明性](1_general_controls.md#AITRANSPARENCY): 下記参照
-  -  [説明可能性](1_general_controls.md#EXPLAINABILITY): 下記参照
-- **透明性 (Transparency)**: アプローチに関する情報を共有すること、ユーザーおよび依存するシステムに正確性のリスクを警告すること、さらに、多くの場合、ユーザーは使用されているモデルについての詳細とそれがどのように作成されたかを知る権利を持っています。そのため、セキュリティ、プライバシー、安全性の間で共通する懸念事項になります。
-- **説明可能性 (Explainability)**: 情報を共有すること、特定の結果がどのようにしてもたらされたかをより詳しく説明することで、ユーザーが正確性を検証するのに役立つこと。正確性を検証することとは別に、ユーザーが透明性を取得でき、異なる結果を得るには何を変更する必要があるかを理解することができます。そのため、セキュリティ、プライバシー、安全性、ビジネス機能の間で共通する懸念事項になります。特別なケースには、プライバシーとは別に説明可能性を法律で要求されている場合であり、この懸念を共有する側面のリストに「コンプライアンス」を追加します。
-- **堅牢性 (Robustness)** は、入力に予期したバリエーションや予期しないバリエーションがあっても正確性を維持する能力です。セキュリティの範囲ではそのようなバリエーションが悪意のある場合 (_敵対的堅牢性_) に関するものであり、通常のバリエーション (_一般的堅牢性_) に対して必要な対策とは異なる対策が必要になることがよくあります。正確性の場合と同様に、セキュリティ自体は通常のバリエーションに対する堅牢なモデルの作成には関与しません。例外は一般的堅牢性、敵対的堅牢性が関連する場合であり、これは安全性とセキュリティの間で共通する懸念事項になります。どちらに当てはまるかは具体的なケースによって異なります。
-- **差別からの自由 (Free of discrimination)** 保護された属性に望ましくないバイアスがない、つまり、モデルが特定のグループ (性別、民族など) を「不当に扱う」ような体系的な不正確さがないこと。差別は法的および倫理的な理由から望ましくありません。セキュリティとの関係は、望ましくないバイアスを検出することで、攻撃によって引き起こされる望ましくないモデル動作を特定するのに役立つことです。たとえば、データポイズニング攻撃はトレーニングセットに悪意のあるデータサンプルを挿入します。最初は気付かれませんが、モデル内の原因不明のバイアスが検出されることによって発見されます。「公平性 (fairness)」という用語は差別問題を指すために使用されることもありますが、プライバシーにおける公平性は、と名声、倫理的使用、プライバシー権など、個人に対する公平な扱いを指す幅広い用語であることがほとんどです。
-- **共感性 (Empathy)**。AI アプリケーションを評価する際に、セキュリティが達成できる具体的な限界を認識することが、セキュリティとの関連性につながります。個人や組織が適切に保護できない場合、共感性とはアイデアを再考することを意味します。つまり、そのアイデアを完全に拒否するか、潜在的な危害を軽減するための追加の予防措置を講じることになります。
-- **説明責任 (Accountability)**。説明責任とセキュリティの関係は、セキュリティ対策はその対策に至ったプロセスを含めて実証可能であるべきということです。さらに、セキュリティインシデントを検出し、再構築し、対応して、説明責任を果たすためには、他の IT システムと同様に、セキュリティ特性としてのトレーサビリティが重要です。
-- **AI セキュリティ**。AI のセキュリティの側面は AI Exchange の中心的なトピックです。簡単に言うと、以下のように分けられます。
-  - [入力攻撃](2_threats_through_use.md)、モデルに入力を提供することで実行されます
-  - [モデルポイズニング](3_development_time_threats.md#31-broad-model-poisoning-development-time)、モデルの動作を改変することを目的としています
-  - [開発時](3_development_time_threats.md#32-sensitive-data-leak-development-time) または実行時 (下記参照) に、トレーニングデータ、モデル入力、出力、またはモデル自体などの AI 資産を盗みます
-  - さらに [実行時の従来のセキュリティ攻撃](4_runtime_application_security_threats.md##41-non-ai-specific-application-security-threats)
+General concepts:
+- **Harm** is negative impact on stakeholder's interests — people (safety, rights, wellbeing), the operating organization (continuity, finance, security, liability, reputation), or society and ecosystems. Controlling _harm_ is central to responsible and trustworthy AI.
+- **Safety**  refers to the condition of being protected from / unlikely to cause harm. Harm is sometimes used to refer to physical harm, but it may also include health and fundamental rights issues. Safety of an AI system is about the level of correctness when there is a risk of harm plus the things that are in place to mitigate those risks (apart from correctness), which includes security, plus a number of safety measures that are important for the business function of the model. These need to be taken care of and not just for security reasons because the model can make unsafe decisions for other reasons (e.g., bad training data), so they are a shared concern between safety and security:
+  -  [oversight](/go/oversight/) to restrict unsafe behaviour, and connected to that: assigning least privileges to the AI,
+  -  [continuous validation](/go/continuousvalidation/) to safeguard correctness,
+  -  [transparency](/go/aitransparency/): see below,
+  -  [explainability](/go/continuousvalidation/): see below.
+- **Accountability**. The relation of accountability with AI is that measures should be demonstrable, including the processes that have led to those measures. In addition, operational traceability is important, just like in any IT system, in order to detect, reconstruct and respond to  incidents and provide accountability.
 
-[![](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/aiwayfinder.png)](https://raw.githubusercontent.com/OWASP/www-project-ai-security-and-privacy-guide/main/assets/images/aiwayfinder.png)
+
+Responsible/trustworthy AI can be broken down into four responsibilities: responsible use, standard performance, standard impartiality, and security. 
+
+#### Responsible use
+Responsible use is about controlling harm caused by _functionality_ of the AI system in combination with its intended use. The goal is to have the AI system act in a lawful and ethical way. For example: applying AI to select candidates for a job vacancy with proper bias tests and meaningful review. The main control to manage responsbile use is [AI Governance](/go/aiprogram/) which includes for example doing an impact assessment for AI ideas.
+
+Concepts regarding responsible use:
+- **Privacy** consists of personal data protection and in many legal frameworks, such as the GDPR, it also includes protection of further fundamental rights. These rights can include transparency, consent, purpose-binding of collected data, data subject rights (erasure/rectification/request/contest), and a lawful basis for data collection. See the [Privacy section](/go/privacy/) for in-depth discussion.
+- **Fairness**: There are different definitions of fairness. One definition is that fairness is the same as equal treatment. Other definitions give it a broader meaning of 'justified treatment', such as the EDPS’ guideline, which defines fairness as the prevention of “unjustifiably detrimental, unlawfully discriminatory, unexpected or misleading” processing of personal data. Following that definition, fairness includes all elements mentioned as fundamental rights under privacy.
+- **Transparency**: sharing information about the applied approach, to warn users and depending systems of correctness risks, plus in many cases users have the right to know details about AI being used and how it has been created. Therefore it is a shared concern between security, privacy and safety.
+- **Explainability**: sharing information to help users validate correctness by explaining in more detail how a specific result was calculated. Apart from validating correctness this can also support users to get transparency and to understand what needs to change to get a different outcome. Therefore it is a shared concern between security, privacy, safety and business function. A special case is when explainability is required by law, which adds 'compliance' to the list of aspects that share this concern. Explainability can support responsible use, but is rarely included in regulatory frameworks.
+
+Responsible use diagram:  
+[![](/images/wayfinder-use.png)](/images/wayfinder-use.png)
+
+
+#### Standard correctness in terms of performance
+AI is in essence always guessing and therefore can always be incorrect. This can lead to harm, including (physical) safety problems (e.g., an autonomous vehicle stopping for a green light) or other wrong decisions that are harmful (e.g., wrongfully declining a loan). Two types of correctness can be distinghuished: performance and impartiality. This clause discusses the former.  
+ 
+ Concepts regarding performance:
+- **Correctness** is about an AI model being sufficiently correct to perform its 'business function'. 
+- **Standard correctness** is the correctness of AI when not under attack. It falls outside of the security scope and is the area of data and model engineering.
+- **Robustness** is about the ability of maintaining correctness under expected or unexpected variations in input. The security scope is about when those variations are malicious (_adversarial robustness_) which often requires different countermeasures than those required against normal variations (_generalization robustness_). Just like with correctbess, security is not involved per se in creating a robust model for normal variations. 
+- **Generalization robustness**: An AI model is not a lookup database, so when it is presented with input it has never seen before, it is trying to generalize. The success of that is expressed in generalization robustness: how good is the model with unknown data.
+
+ Countermeasures against any incorrectness include continuous validation, unwanted bias testing, and ways to respond to incorrect oytoyt such as monitoring, least privilege and oversight. Incorrect output of Generative AI is often referred to as hallunication. 
+
+ Standard correctness diagram:  
+ [![](/images/wayfinder-correctness.png)](/images/wayfinder-correctness.png)
+
+
+ #### Standard correctness in terms of impartiality
+Next to performance, another form of correctness is impartiality: the model not discriminating between protected groups (e.g. ethnicity or gender). 
+
+Concepts regarding impartiality:
+- **Bias**: any systematic incorrectness, which does not have to be discriminating over protected groups per se. It can be a bias of an financial index value predictor being generally 10 points off.
+- **Fairness**: See previous 'responsible use' sub clause.
+- **Impartial**: without unwanted bias regarding protected attributes, meaning: no systematic incorrectness where the model 'mistreats' certain groups (e.g. gender, ethnicity). Such discrimination is undesired for legal and ethical reasons.
+
+
+ ### Security
+AI security - protecting against AI attacks is the main subject of the AI Exchange. For a high-level overview, see the [AI security essentials](/go/essentials/). It can be divided into two goals: 
+- **Security protecting correctness**: deal with attacks manipulating model behaviour (e.g., data/model poisoning, prompt injection, evasion), leading to incorrectness and potential harm.
+- **Security protecting confidentiality**: deal with attacks that attempt to leak sensitive data (e.g., training data extraction, input leak).
+
+Security protecting correctness diagram:  
+[![](/images/wayfinder-security-correct.png)](/images/wayfinder-security-correct.png)
+
+Security protecting confidentiality diagram:  
+[![](/images/wayfinder-security-confidential.png)](/images/wayfinder-security-confidential.png)
+
+
+### The complete responsible/trustworthy AI picture
+The image below shows all aspects of responsible/trustworthy AI in one visual. It also includes another security aspect outside the scope of the AI Exchange: the use of the AI system to perform attacks - either as intended or unintended use. This is a security concern when it comes to responsible use, but it is not about protecting the AI system against attacks.  
+[![](/images/wayfinder.png)](/images/wayfinder.png)
+
 
 ### 生成 AI (LLM など) についてはどうですか？
 > カテゴリ: ディスカッション  
