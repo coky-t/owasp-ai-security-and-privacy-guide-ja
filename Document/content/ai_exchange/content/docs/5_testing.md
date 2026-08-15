@@ -70,9 +70,9 @@ AI セキュリティテストへの体系的なアプローチはいくつか�
 - **優先順位付けとリスク緩和:** 改善のための行動計画を策定し、緩和策を実施し、残存リスクを算出します。
 - **修正のバリデーション:** 改善後にシステムを再テストします。
 
-### Agentic AI security testing
+### 自律型 AI のセキュリティテスト
 
-Agentic testing extends the general approach above — same lifecycle steps, but the attack surface spans tools, orchestration, inter-agent channels, and session-persistent state, not only model I/O.
+自律型のテストは前述の一般的なアプローチを拡張してものです。ライフサイクルのステップは同様ですが、攻撃対象領域は単なるモデルの I/O だけでなく、ツール、オーケストレーション、エージェント間チャネル、セッション保持状態にまで及びます。
 
 **Methodologies (coverage-driven testing)**
 
