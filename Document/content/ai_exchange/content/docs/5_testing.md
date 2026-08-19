@@ -74,15 +74,15 @@ AI セキュリティテストへの体系的なアプローチはいくつか�
 
 自律型のテストは前述の一般的なアプローチを拡張してものです。ライフサイクルのステップは同様ですが、攻撃対象領域は単なるモデルの I/O だけでなく、ツール、オーケストレーション、エージェント間チャネル、セッション保持状態にまで及びます。
 
-**Methodologies (coverage-driven testing)**
+**方法論 (カバレッジ主導のテスト)**
 
-- Threat-model the agentic system before testing: enumerate agents, orchestrators, tools, data sources, trust boundaries, and every external input surface (user input, retrieved documents, tool outputs, inter-agent messages).
-- Confirm designed controls work under **normal** conditions before adversarial load — untested baselines cannot be distinguished from controls that fail under attack.
-- Test [prompt injection](/go/promptinjection/) on each external surface; run **single-turn and multi-turn** sequences separately — single-turn resistance does not predict session-level degradation (_crescendo_ patterns).
-- Test tool-call validation **independently of the LLM** by sending crafted invocations directly to the access-control or API gateway layer. Controls that exist only in a system prompt are not enforced against injection.
-- Exercise failure modes: context-window saturation, tool errors, partial task completion, and unexpected orchestrator routing.
-- Define minimum coverage criteria up front — which layers (reasoning, tool execution, infrastructure, inter-agent communication) were tested, to what depth, and with what corpus size. **Report untested threat categories explicitly**; coverage gaps are findings.
-- Combine AI red teaming with **conventional application security testing** — for example an MCP server may be reachable for SSRF, SQL injection, or XSS; an integrated view is more effective than either alone.
+- テスト前に自律型システムを脅威モデルする: エージェント、オーケストレーター、ツール、データソース、信頼境界、すべての外部入力サーフェイス (ユーザー入力、取得されたドキュメント、ツール出力、エージェント間メッセージ) を列挙します。
+- 敵対的負荷の前に、設計されたコントロールが **正常** な状況下で機能することを確認する: 未テストのベースラインは、攻撃の下で失敗するコントロールと区別できなくなります。
+- 各外部サーフェイスで [プロンプトインジェクション](2_threats_through_use.md#22-prompt-injection) をテストする: **シングルターンとマルチターン** のシーケンスを個別に実行します。シングルターン耐性はセッションレベルの劣化 (_クレッシェンド_ パターン) を予測しません。
+- ツール呼び出しバリデーションを **LLM とは独立して** テストする: 細工した呼び出しをアクセス制御層や API ゲートウェイ層に直接送信します。システムプロンプトにのみ存在するコントロールはインジェクションに対しては適用されません。
+- 障害モードを動かす: コンテキストウィンドウの飽和、ツールエラー、部分的なタスク完了、予期せぬオーケストレータルーティング。
+- 最小カバレッジ基準を事前に定義する: どの層 (推論、ツール実行、インフラストラクチャ、エージェント間通信) が、どの深さまで、どのコーパスサイズでテストしたかを定めます。**未テストの脅威カテゴリを明示的に報告します**。カバレッジギャップは発見事項です。
+- AI レッドチーミングを **従来のアプリケーションセキュリティテスト** と組み合わせる: たとえば、MCP サーバーは SSRF、SQL インジェクション、XSS に到達可能となる可能性があり、単独よりも統合的な視点がより効果的です。
 
 **Red teaming exercises**
 
