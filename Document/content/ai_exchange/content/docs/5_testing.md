@@ -5,7 +5,7 @@ heroText: "AI セキュリティテストは敵対的行動をシミュレート
 weight: 6
 ---
 > カテゴリ: ディスカッション  
-> パーマリンク: https://owaspai.org/go/testing/
+> パーマリンク: https://owaspai.org/go/testing
 
 ## イントロダクション
 AI システムのセキュリティをテストするには、以下の三つの戦略に依存します。
@@ -91,8 +91,8 @@ Structured adversarial simulation for agentic systems is covered in the [Agentic
 
 - **Goal-level red teaming:** define an adversarial objective (exfiltration, privilege escalation, task hijacking) and pursue it across sessions and attack paths.
 - **Multi-turn / crescendo testing:** incremental reframing across many turns — safety constraints that hold on turn one may fail by turn ten or later.
-- **Cross-agent paths:** compromised or injected sub-agent influencing the orchestrator, peer-agent exfiltration, or privilege escalation through [delegation chains](/go/leastmodelprivilege/).
-- **Human oversight as a social surface:** test whether urgency framing, confusion injection, or approval fatigue can bypass [#OVERSIGHT](/go/oversight/) gates that work under normal review.
+- **Cross-agent paths:** compromised or injected sub-agent influencing the orchestrator, peer-agent exfiltration, or privilege escalation through [delegation chains](/go/leastmodelprivilege).
+- **Human oversight as a social surface:** test whether urgency framing, confusion injection, or approval fatigue can bypass [#OVERSIGHT](/go/oversight) gates that work under normal review.
 - **Supply-chain scenarios:** substituted model variants or tampered tool implementations that bypass output filtering.
 - **Protocol testing:** red-team MCP, A2A, and other inter-agent protocol implementations for implementation weaknesses, not only prompt-layer attacks.
 
@@ -104,35 +104,35 @@ Scope agentic pen tests across:
 
 1. **LLM reasoning layer** — prompt injection, goal hijacking, deceptive reasoning induction.
 2. **Tool execution layer** — validation bypass, unauthorised invocation, parameter tampering.
-3. **Infrastructure layer** — API gateway controls, credential exposure, key management, [#MONITOR USE](/go/monitoruse/) log integrity (verify the agent cannot suppress or alter logs under adversarial conditions).
-4. **Inter-agent communication layer** — message tampering, identity spoofing, trust-boundary exploitation ([agent message structure manipulation](/go/agentmessagestructuremanipulation/)).
+3. **Infrastructure layer** — API gateway controls, credential exposure, key management, [#MONITOR USE](/go/monitoruse) log integrity (verify the agent cannot suppress or alter logs under adversarial conditions).
+4. **Inter-agent communication layer** — message tampering, identity spoofing, trust-boundary exploitation ([agent message structure manipulation](/go/agentmessagestructuremanipulation)).
 
 Prioritise findings with an agentic-aware severity model: autonomous execution scope, persistence across sessions, multi-agent propagation potential, and irreversibility of impact.
 
 ### RAG system security testing <a name="rag-system-security-testing"></a>
 >Category: discussion  
->Permalink: https://owaspai.org/go/ragtesting/
+>Permalink: https://owaspai.org/go/ragtesting
 
 RAG testing extends the general approach above — same lifecycle steps, but with a second input channel (retrieval) that most single-prompt test suites don't exercise, and a corpus that has its own integrity and access-control surface independent of the model.
 
 **Methodologies (coverage-driven testing)**
 
-- Threat-model the RAG pipeline before testing: enumerate every ingestion source, the indexing/chunking/embedding process, the retriever and any re-ranker, and the authorization model that's supposed to govern which chunks a given user/session can retrieve. Map each to the [RAG systems overview](/go/ragoverview/).
+- Threat-model the RAG pipeline before testing: enumerate every ingestion source, the indexing/chunking/embedding process, the retriever and any re-ranker, and the authorization model that's supposed to govern which chunks a given user/session can retrieve. Map each to the [RAG systems overview](/go/ragoverview).
 - Test the **retrieval channel separately from the chat/query channel**: inject a test payload into a document, ingest it through the real pipeline (not by hand-crafting the prompt), and confirm it surfaces through retrieval before testing whether the model acts on it — this isolates ingestion/indexing failures from generation failures.
-- Test **retrieval-scope enforcement directly against the index/retriever**, independent of the LLM: query the vector store or search index with credentials for different users/tenants and confirm chunk-level access control matches the source system's ACLs. A retriever that returns unauthorized chunks fails this test even if the model later "declines" to use them — the data has already left the trust boundary. See also [disclosure in output](/go/disclosureinoutput/).
-- Test **indirect prompt injection via the retrieval path specifically**: place attack payloads (see the [prompt injection test procedure](/go/testingpromptinjection/)) inside documents likely to be retrieved for realistic queries, not just in a document guaranteed to rank first — low-relevance placement should also be tested, since re-rankers and hybrid search can surface unexpected chunks.
+- Test **retrieval-scope enforcement directly against the index/retriever**, independent of the LLM: query the vector store or search index with credentials for different users/tenants and confirm chunk-level access control matches the source system's ACLs. A retriever that returns unauthorized chunks fails this test even if the model later "declines" to use them — the data has already left the trust boundary. See also [disclosure in output](/go/disclosureinoutput).
+- Test **indirect prompt injection via the retrieval path specifically**: place attack payloads (see the [prompt injection test procedure](/go/testingpromptinjection)) inside documents likely to be retrieved for realistic queries, not just in a document guaranteed to rank first — low-relevance placement should also be tested, since re-rankers and hybrid search can surface unexpected chunks.
 - Test **corpus poisoning** by introducing edited or newly added documents through the same access an attacker would realistically have (a wiki edit, a shared-drive upload, a ticket comment, a crawled page) and checking whether biased or attacker-controlled content measurably shifts retrieved results and generated output.
 - Test **metadata and provenance trust**: attempt to forge source, timestamp, author, or confidence fields associated with a chunk, and check whether the system (or its prompt template) grants that content more trust than an unlabelled or low-provenance chunk.
 - Test **embedding confidentiality**: with direct read access to the vector store (simulating a compromised database credential or backup), attempt to reconstruct source text from stored embedding vectors. This is independent of model-facing tests — it targets the vector store as a data-at-rest asset, not the inference API.
 - Exercise **staleness and cache behavior**: confirm that deleting, correcting, or access-restricting a source document actually removes or restricts it from the index and from any retrieval cache, not just from the original source.
-- Test **rendering and downstream handling of retrieved content** in the output — links, Markdown, HTML, code blocks — for [output injection](/go/outputcontainsconventionalinjection/), especially where output is rendered in a browser or another automated consumer.
+- Test **rendering and downstream handling of retrieved content** in the output — links, Markdown, HTML, code blocks — for [output injection](/go/outputcontainsconventionalinjection), especially where output is rendered in a browser or another automated consumer.
 - Combine with **conventional testing** of the ingestion and retrieval infrastructure itself — the vector store API, search endpoints, and any document-parsing step (PDF/Office parsers, OCR) are ordinary application attack surface (SSRF, deserialization, path traversal, injection) independent of the model.
 - Define minimum coverage up front — which corpus sources, retrieval configurations, and authorization boundaries were tested, and at what scale. **Report untested sources or boundaries explicitly**; an untested ingestion path is a finding, not an assumption of safety.
 
 **Red teaming exercises**
 
 - **Cross-tenant/cross-permission retrieval**: as a low-privilege identity, attempt to retrieve or induce disclosure of content scoped to a higher-privilege identity or another tenant, through both direct queries and indirect injection.
-- **Corpus-to-action chaining**: where the system can trigger actions (see Agentic AI security testing above), test whether a payload planted in a retrievable document can reach a tool call — this is the RAG instance of the [lethal trifecta](/go/agenticaioverview/).
+- **Corpus-to-action chaining**: where the system can trigger actions (see Agentic AI security testing above), test whether a payload planted in a retrievable document can reach a tool call — this is the RAG instance of the [lethal trifecta](/go/agenticaioverview).
 - **Ingestion-path fuzzing**: submit malformed, oversized, or adversarially structured documents through every available ingestion route (upload, connector sync, crawl) and observe both availability impact and parser-level exploitation.
 - **Provenance spoofing at scale**: systematically vary source/author/confidence metadata across a batch of test documents to measure how much influence forged provenance has on retrieval ranking and on the model's apparent trust in the content.
 
@@ -145,7 +145,7 @@ Scope RAG pen tests across:
 1. **Ingestion layer** — source connector authentication, parser exploitation (PDF/Office/HTML), malicious file handling, ingestion-triggered SSRF.
 2. **Indexing layer** — embedding pipeline integrity, chunking manipulation, index write-access control, cache/staleness handling.
 3. **Retrieval layer** — query-time authorization enforcement, cross-tenant isolation, ranking/relevance manipulation, retrieval-scope bypass.
-4. **Augmentation/prompt-assembly layer** — how retrieved chunks are delimited, labelled, and inserted into the prompt; whether the template distinguishes trusted instructions from retrieved content (see [input segregation](/go/inputsegregation/)).
+4. **Augmentation/prompt-assembly layer** — how retrieved chunks are delimited, labelled, and inserted into the prompt; whether the template distinguishes trusted instructions from retrieved content (see [input segregation](/go/inputsegregation)).
 5. **Generation/output layer** — indirect prompt injection success, sensitive-data disclosure, output-injection into downstream renderers.
 
 Prioritise findings by: authorization impact (does this cross a trust boundary), corpus scale (does it affect one document or a shared source), and — where the RAG system feeds an agent — downstream action potential, using the agentic severity model above.
@@ -153,11 +153,11 @@ Prioritise findings by: authorization impact (does this cross a trust boundary),
 **References**
 - [OWASP Cheat Sheet: RAG Security](https://cheatsheetseries.owasp.org/cheatsheets/RAG_Security_Cheat_Sheet.html)
 - [OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)
-- See [prompt injection testing](/go/testingpromptinjection/) above for payload construction and detection pairing — reused directly for the retrieval-channel tests here.
+- See [prompt injection testing](/go/testingpromptinjection) above for payload construction and detection pairing — reused directly for the retrieval-channel tests here.
 
 ### プロンプトインジェクションに対するテスト <a name="testing-against-prompt-injection"></a>
 > カテゴリ: AI セキュリティテスト  
-> パーマリンク: https://owaspai.org/go/testingpromptinjection/
+> パーマリンク: https://owaspai.org/go/testingpromptinjection
 
 **テストの説明**  
 プロンプトインジェクションに対する耐性のテストは、意図しないモデルの動作 (意図しないアクションのトリガー、攻撃的な出力、機密データの開示など) を実現するための指示を含む、綿密に作成された一連の入力を提示し、それに対応するリスクを評価することによって行われます。
@@ -240,16 +240,16 @@ AI システムが一般的な状況において標準的なチャットボッ�
 
 ### 回避に対するテスト <a name="testing-against-evasion"></a>
 > カテゴリ: AI セキュリティテスト  
-> パーマリンク: https://owaspai.org/go/testingevasion/
+> パーマリンク: https://owaspai.org/go/testingevasion
 
 #### Test description
-Resistance to [evasion attacks](/go/evasion/), is tested by looking for feasible inputs that lead to unintended outputs with unacceptable impact severity. The test checks three aspects:
+Resistance to [evasion attacks](/go/evasion), is tested by looking for feasible inputs that lead to unintended outputs with unacceptable impact severity. The test checks three aspects:
 1. whether the model produces unintended output for certain inputs;
 2. whether the AI system can limit or stop the search for such inputs, for example through rate limiting or detection;
 3. whether surrogate models can be created and used to prepare the attack.
 
 #### Test procedure
-See the [section above](/go/testing/) for the general steps in AI security testing.  
+See the [section above](/go/testing) for the general steps in AI security testing.  
 The steps specific for testing against this threat are:
 
 **(1) Evasion input feasibility**  
@@ -313,7 +313,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 ## **予測 AI レッドチーミングのためのオープンソースツール** <a name="open-source-tools-for-predictive-ai-red-teaming"></a>
 > カテゴリ: ツールレビュー  
-> パーマリンク: https://owaspai.org/go/testingtoolspredictiveai/
+> パーマリンク: https://owaspai.org/go/testingtoolspredictiveai
 
 
 このサブセクションは予測 AI のセキュリティテストのための次のツールについてカバーします: Adversarial Robustness Toolbox (ART), Armory, Foolbox, DeepSec, TextAttack
@@ -406,11 +406,11 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison/*](https://owaspai.org/go/modelpoison/)
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
-- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/go/modeltheftuse*](https://owaspai.org/go/modeltheftuse/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison*](https://owaspai.org/go/modelpoison)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
+- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/go/modeltheftuse*](https://owaspai.org/go/modeltheftuse)
 - モデル推論: *メンバーシップ攻撃と反転攻撃への露出を評価する*
-*[https://owaspai.org/go/modelinversionandmembership/](https://owaspai.org/go/modelinversionandmembership/)*
+*[https://owaspai.org/go/modelinversionandmembership](https://owaspai.org/go/modelinversionandmembership)*
 
 ### **ツール名: Armory**
 
@@ -501,10 +501,10 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison/*](https://owaspai.org/go/modelpoison/)
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison*](https://owaspai.org/go/modelpoison)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
-*https://owaspai.org/go/promptinjection/*
+*https://owaspai.org/go/promptinjection*
 
 ### **ツール名: Foolbox**
 
@@ -596,7 +596,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 回避: 敵対的入力に対するモデルのパフォーマンスをテストする
 
-[*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+[*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
 
 ### **ツール名: DeepSec**
 
@@ -688,7 +688,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 回避: 敵対的入力に対するモデルのパフォーマンスをテストする
 
-[*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+[*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
 
 ### ツール名: TextAttack
 
@@ -778,12 +778,12 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison/*](https://owaspai.org/go/modelpoison/)
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison*](https://owaspai.org/go/modelpoison)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
 
 ## 生成 AI レッドチーミングのためのオープンソースツール <a name="open-source-tools-for-generative-ai-red-teaming"></a>
 > カテゴリ: ツールレビュー  
-> パーマリンク: https://owaspai.org/go/testingtoolsgenai/
+> パーマリンク: https://owaspai.org/go/testingtoolsgenai
 
 
 このサブセクションは生成 AI のセキュリティテストのための次のツールをカバーします: PyRIT, Garak, Prompt Fuzzer, Guardrail, Promptfoo
@@ -879,8 +879,8 @@ It is of course important to also test the AI system for correct behaviour in be
 
 注:
 
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
-- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection/*
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection*
 
 ### ツール名: Garak
 
@@ -970,9 +970,9 @@ https://github.com/NVIDIA/garak |
 | 間接プロンプトインジェクション |  |
 | 開発時モデル窃取 |  |
 | インジェクションを含む出力 |  |
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
-*https://owaspai.org/go/promptinjection/*
+*https://owaspai.org/go/promptinjection*
 
 ### ツール名: Prompt Fuzzer
 
@@ -1065,8 +1065,8 @@ https://github.com/NVIDIA/garak |
 
 注:
 
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
-- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection/*
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection*
 
 ### ツール名: Guardrail
 
@@ -1157,8 +1157,8 @@ https://github.com/NVIDIA/garak |
 
 注:
 
-- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion/*](https://owaspai.org/go/evasion/)
-- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection/*
+- 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
+- プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。 *https://owaspai.org/go/promptinjection*
 
 ### ツール名: Promptfoo
 
@@ -1254,9 +1254,9 @@ https://github.com/NVIDIA/garak |
 
 注:
 
-- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/go/modeltheftuse/*](https://owaspai.org/go/modeltheftuse/)
+- モデル抽出: 使用時のモデル悪用のリスクを評価する [*https://owaspai.org/go/modeltheftuse*](https://owaspai.org/go/modeltheftuse)
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
-*[https://owaspai.org/go/promptinjection/](https://owaspai.org/go/promptinjection/)*
+*[https://owaspai.org/go/promptinjection](https://owaspai.org/go/promptinjection)*
 
 ## ツール評価
 このセクションでは記述されているツールを人気、コミュニティサポート、拡張性、統合でレート付けします。
