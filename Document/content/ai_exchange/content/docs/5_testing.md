@@ -85,18 +85,18 @@ AI セキュリティテストへの体系的なアプローチはいくつか�
 - 最小カバレッジ基準を事前に定義する: どの層 (推論、ツール実行、インフラストラクチャ、エージェント間通信) が、どの深さまで、どのコーパスサイズでテストしたかを定めます。**未テストの脅威カテゴリを明示的に報告します**。カバレッジギャップは発見事項です。
 - AI レッドチーミングを **従来のアプリケーションセキュリティテスト** と組み合わせる: たとえば、MCP サーバーは SSRF、SQL インジェクション、XSS に到達可能となる可能性があり、単独よりも統合的な視点がより効果的です。
 
-**Red teaming exercises**
+**レッドチーミング演習**
 
-Structured adversarial simulation for agentic systems is covered in the [Agentic AI red teaming guide](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) (CSA × AI Exchange). Use that guide as the primary methodology; extend local programmes with agentic-specific paths not always captured in single-turn LLM tests:
+自律型システムに対する構造化された敵対的シミュレーションは [Agentic AI red teaming guide](https://cloudsecurityalliance.org/download/artifacts/agentic-ai-red-teaming-guide) (CSA × AI Exchange) でカバーされています。そのガイドを主要な方法論として使用し、シングルターン LLM テストで常に捕捉されるわけではない、自律型特有の経路でローカルプログラムを拡張します。
 
-- **Goal-level red teaming:** define an adversarial objective (exfiltration, privilege escalation, task hijacking) and pursue it across sessions and attack paths.
-- **Multi-turn / crescendo testing:** incremental reframing across many turns — safety constraints that hold on turn one may fail by turn ten or later.
-- **Cross-agent paths:** compromised or injected sub-agent influencing the orchestrator, peer-agent exfiltration, or privilege escalation through [delegation chains](/go/leastmodelprivilege).
-- **Human oversight as a social surface:** test whether urgency framing, confusion injection, or approval fatigue can bypass [#OVERSIGHT](/go/oversight) gates that work under normal review.
-- **Supply-chain scenarios:** substituted model variants or tampered tool implementations that bypass output filtering.
-- **Protocol testing:** red-team MCP, A2A, and other inter-agent protocol implementations for implementation weaknesses, not only prompt-layer attacks.
+- **目標レベルのレッドチーミング:** 敵対的な目標 (データ持ち出し、権限昇格、タスクのハイジャック) を定義し、複数のセッションや攻撃経路にわたって追求します。
+- **マルチターン / クレッシェンドテスト:** 複数ターンにわたる段階的なリフレーミングであり、ターン 1 で保持されていた安全制約がターン 10 以降には破綻する可能性があります。
+- **エージェント間経路:** 侵害または注入されたサブエージェントによるオーケストレータへの影響、ピアエージェントによるデータ持ち出し、[委譲チェーン](1_general_controls.md#least-model-privilege) を通じた権限昇格。
+- **社会的側面としての人間による監視:** 緊急性の枠組み、混乱の注入、承認疲れが通常のレビュー下で機能する [#OVERSIGHT](1_general_controls.md#oversight) をバイパスできるかどうかをテストします。
+- **サプライチェーンシナリオ:** 出力フィルタリングをバイパスする、モデルバリアントの置き換えやツール実装の改竄。
+- **プロトコルテスト:** プロンプト層への攻撃だけでなく、実装脆弱性について MCP、A2A、その他のエージェント間プロトコル実装をレッドチームします。
 
-Teams need both AI/ML and offensive-security expertise. Findings should include reproduction steps and observed reproduction rates — probabilistic LLM behaviour requires reporting rates, not single pass/fail.
+チームは AI/ML と攻撃的セキュリティの両方の専門知識を必要とします。調査結果には再現手順と観測された再現率を含む必要があります。LLM の挙動は確率的であり、単なる成功/失敗ではなく、発生率を報告することを求められます。
 
 **Penetration testing (four-layer model)**
 
