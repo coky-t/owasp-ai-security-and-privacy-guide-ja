@@ -291,12 +291,37 @@ Depending on risk analysis, certain threats may require specific practices in th
 - 中国: (i) インターネット情報サービス深層合成管理条例 (Regulations on the Administration of Deep Synthesis of Internet Information Services), (ii) 上海市 AI 産業発展促進条例 (Shanghai Municipal Regulations on Promoting Development of AI Industry), (iii) 深圳経済特区 AI 産業促進条例 (Shenzhen Special Economic Zone AI Industry Promotion Regulations), (iv) 生成 AI サービス暫定行政措置 (Provisional Administrative Measures for Generative AI Services)
 
 **実施**  
-AI/セキュリティに関する一般的な法的考慮事項:
+
+**Implementation - Operationalizing AI compliance**  
+
+AI compliance should be integrated into the organization's existing governance and risk management processes rather than treated as a standalone legal review.
+
+Organizations should establish a repeatable process to:
+
+1. Identify applicable legal, regulatory, contractual, and internal requirements for each AI initiative.
+2. Determine the organization's role and the applicability of individual requirements based on the AI system's intended purpose, context of use, and jurisdiction.
+3. Translate applicable requirements into risks, controls, and implementation responsibilities.
+4. Assign a responsible owner for each control.
+5. Define and retain evidence demonstrating that the control has been implemented and operates as intended.
+6. Periodically review compliance when the AI system, its intended use, applicable regulation, organizational role, or risk profile changes.
+
+A practical compliance record can provide traceability through:
+
+  Requirement → Applicability → Risk → Control → Control owner → Evidence → Review status
+
+This approach helps prevent compliance from becoming a one-time checklist exercise and supports traceability between regulatory requirements, organizational risks, and implemented controls.
+
+Where an organization operates an AI management system, these activities can be incorporated into the broader AI governance framework, for example one aligned with ISO/IEC 42001. Security-related requirements and controls should also be coordinated with the organization's information security management system, where applicable.
+
+The compliance process should remain connected to the [AI management system](/go/aiprogram), including the AI inventory, impact analysis, risk management, and assignment of responsibilities.
+
+
+**実施 - AI セキュリティに関する一般的な法的考慮事項:**  
 - プライバシー法: AI は GDPR, CCPA, HIPAA などのすべてのローカル/グローバルのプライバシー法を常に遵守しなければいけません。[プライバシーセクション](6_privacy.md) を参照。
 - データガバナンス: 統合のためにサードパーティから提供される AI コンポーネント/機能は、個人データの保護、その収集、処理、保存方法の構造/定義を含む、データガバナンスフレームワークを備えていなければいけません。
 - データ侵害: サードパーティサプライヤは、データの保存方法とそのセキュリティフレームワークについて回答しなければいけません。これはエンドユーザーの個人データや IP を含む可能性があります。
 
-セキュリティ以外のコンプライアンスの考慮事項:
+**実施 - セキュリティ以外のコンプライアンスの考慮事項:**  
 - 倫理: ディープフェイクの武器化と、システムがそれにどのように対応し、対処し、保護し、軽減するか
 - 人的管理: あらゆる AI システムは、個人に対するリスクを確認した上で、適切なレベルの人的管理と監視の下で導入すべきです。AI システムは、AI の使用が個人の尊厳と権利を尊重するコンセプトで設計され活用されるべきです。「Keep the human in the loop」コンセプト。[OVERSIGHT](1_general_controls.md#OVERSIGHT) を参照。
 - 差別: バイアルを回避および防止するために、データセットをレビューするプロセスを含めなければいけません。[UNWANTEDBIASTESTING](1_general_controls.md#UNWANTEDBIASTESTING) を参照。
