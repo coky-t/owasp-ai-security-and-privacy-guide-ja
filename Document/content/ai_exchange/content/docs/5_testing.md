@@ -796,7 +796,7 @@ It is of course important to also test the AI system for correct behaviour in be
 | **ツール名: PyRIT** |  |
 | --- | --- |
 | 開発元/ソース | Microsoft |
-| GitHub 参照 | [https://github.com/Azure/PyRIT](https://github.com/Azure/PyRIT) |
+| GitHub 参照 | [https://github.com/microsoft/PyRIT](https://github.com/microsoft/PyRIT) |
 | 言語 | Python |
 | ライセンス | MIT ライセンスの下でのオープンソース |
 | 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
