@@ -98,16 +98,16 @@ AI セキュリティテストへの体系的なアプローチはいくつか�
 
 チームは AI/ML と攻撃的セキュリティの両方の専門知識を必要とします。調査結果には再現手順と観測された再現率を含む必要があります。LLM の挙動は確率的であり、単なる成功/失敗ではなく、発生率を報告することを求められます。
 
-**Penetration testing (four-layer model)**
+**ペネトレーションテスト (四層モデル)**
 
-Scope agentic pen tests across:
+自律型ペンテストを以下にスコープします。
 
-1. **LLM reasoning layer** — prompt injection, goal hijacking, deceptive reasoning induction.
-2. **Tool execution layer** — validation bypass, unauthorised invocation, parameter tampering.
-3. **Infrastructure layer** — API gateway controls, credential exposure, key management, [#MONITOR USE](/go/monitoruse) log integrity (verify the agent cannot suppress or alter logs under adversarial conditions).
-4. **Inter-agent communication layer** — message tampering, identity spoofing, trust-boundary exploitation ([agent message structure manipulation](/go/agentmessagestructuremanipulation)).
+1. **LLM 推論層** — プロンプトインジェクション、ゴールハイジャック、欺瞞的な推論の誘発。
+2. **ツール実行層** — バリデーションのバイパス、不正な呼び出し、パラメータ改竄。
+3. **インフラストラクチャ層** — API ゲートウェイの制御、クレデンシャルの露出、鍵管理、[#MONITOR USE](2_threats_through_use.md#monitor-use) ログの完全性 (攻撃的な条件下でエージェントがログを抑制や改竄できないことを検証します)。
+4. **エージェント間通信層** — メッセージの改竄、アイデンティティのなりすまし、信頼境界の悪用 ([エージェントのメッセージ構造操作](2_threats_through_use.md#223-agent-message-structure-manipulation))。
 
-Prioritise findings with an agentic-aware severity model: autonomous execution scope, persistence across sessions, multi-agent propagation potential, and irreversibility of impact.
+エージェント志向の重大度モデル (自律的な実行スコープ、セッションをまたぐ永続性、マルチエージェントでの波及の可能性、影響の不可逆性) で検出結果を優先付けします。
 
 ### RAG system security testing <a name="rag-system-security-testing"></a>
 >Category: discussion  
