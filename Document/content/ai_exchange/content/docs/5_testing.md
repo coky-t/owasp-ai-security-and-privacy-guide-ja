@@ -8,10 +8,10 @@ weight: 6
 > パーマリンク: https://owaspai.org/go/testing
 
 ## イントロダクション
-AI システムのセキュリティをテストするには、以下の三つの戦略に依存します。
-1. **従来のセキュリティテスト** (つまり _ペンテスト_)。 [セキュアソフトウェア開発](1_general_controls.md#secdevprogram) を参照してください。
+AI システムのセキュリティをテストするには、以下の三つの戦略に依存します - [セキュア開発プログラム](1_general_controls.md#sec-dev-program) の一環です。
+1. **従来のセキュリティテスト** (つまり _ペンテスト_): trying to attack the system through conventional attack surfaces (anything but AI input attacks): databases, network, development environment etc. AI introduces a number of assets for which this is a threat, such as model input, and agent memory (augmentation data). See the [AI Security Matrix][/go/aisecuritymatrix] to see all the threats that are not input attacks, and perform [threat modeling][/go/threatmodel) to see which are relevant.
 2. **モデルパフォーマンスバリデーション** ([継続的バリデーション](1_general_controls.md#continuousvalidation) を参照): モデルの意図した動作を表す入力と出力を持つテストセットを用いて、モデルが指定された受け入れ基準に従って動作するかどうかをテストします。セキュリティとしては、これはデータポイズニングやモデルポイズニングによってモデルの動作が恒久的に改変されていないかを検出することです。セキュリティ以外としては、これは機能の正確性やモデルドリフトなどをテストすることです。
-3. **AI セキュリティテスト** (本セクション) は、特定の攻撃をシミュレートして AI モデルがこれらの攻撃を耐えることができるかどうかをテストする、_AI レッドチーミング_ の一部です。
+3. **AI セキュリティテスト** (this section), the part of _AI red teaming_ that complemens conventional security testing by trying to perform AI input attacks - see the [AI Security Matrix][/go/aisecuritymatrix]: e.g. prompt injection and model exfiltration. Typically this involves presenting an AI system with various inputs, especially when attacks require many interactions to succeed. But it may also involve finding ways for data to travel indirectly into a model, for example with indirect prompt injection. This may involve a step where a conventional attack plants manipulated information, such as in a part of system memory that is used by an agent, and thus can influence its behaviour. There are more examples of attacks that are a combination of a conventional step and an input attack, such as: stealing a model, so to prepare or execute model inversion, or evasion, disclosure in output, or prompt injection. Another example is planting a backdoor in a training database, and then later trying to get that triggered by specific input. These examples show that testing AI systems ideally involves a collaboration between pentesting and AI security testing.
 
 **AI セキュリティテストのスコープ**  
 AI セキュリティテストは敵対的な動作をシミュレートして、AI システムの脆弱性、弱点、リスクを明らかにします。従来の AI テストの焦点領域は機能性とパフォーマンスですが、AI レッドチーミングの焦点領域は標準的なバリデーションを超え、意図的なストレステスト、攻撃、セーフガードのバイパスの試みを含みます。レッドチーミングの焦点はセキュリティにとどまりませんが、このドキュメントでは、主に「AI セキュリティのための AI レッドチーミング」に焦点を当てています。従来のセキュリティテスト (ペンテスト) については、すでに多くのリソースでカバーされているため、除外しています。
