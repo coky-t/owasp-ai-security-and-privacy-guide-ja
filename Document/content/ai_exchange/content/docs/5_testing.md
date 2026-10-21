@@ -7,7 +7,7 @@ weight: 6
 > カテゴリ: ディスカッション  
 > パーマリンク: https://owaspai.org/go/testing
 
-## イントロダクション
+## 5.1 イントロダクション
 AI システムのセキュリティをテストするには、以下の三つの戦略に依存します - [セキュア開発プログラム](1_general_controls.md#sec-dev-program) の一環です。
 1. **従来のセキュリティテスト** (つまり _ペンテスト_): 従来の攻撃対象領域 (AI 入力攻撃以外のもの) として、データベース、ネットワーク、開発環境などを通じてシステムを攻撃することを試みます。AI は、あらゆるデジタル資産と同様に、従来の脅威が明らかに当てはまる、数多くのデジタル資産をもたらします。これらの資産の例としては、モデル入力、モデルパラメータ、エージェントメモリ (拡張データ) があります。入力攻撃以外のすべての脅威を閲覧するには [AI セキュリティマトリクス](ai_security_overview.md#ai-security-matrix) を参照し、どれが関係するかを閲覧するには [脅威モデリング](ai_security_overview.md#1-identifying-risks---decision-tree-to-threat-model) を実施します。
 2. **モデルパフォーマンスバリデーション** ([継続的バリデーション](1_general_controls.md#continuousvalidation) を参照): モデルの意図した動作を表す入力と出力を持つテストセットを用いて、モデルが指定された受け入れ基準に従って動作するかどうかをテストします。セキュリティとしては、これはデータポイズニングやモデルポイズニングによってモデルの動作が恒久的に改変されていないかを検出することです。セキュリティ以外としては、これは機能の正確性やモデルドリフトなどをテストすることです。
@@ -29,7 +29,7 @@ AI セキュリティテストは敵対的な動作をシミュレートして�
 - [OWASP AI セキュリティテストガイド](https://owasp.org/www-project-ai-testing-guide/)
 
 
-## テストすべき脅威
+## 5.2 テストすべき脅威
 資産、影響、攻撃対象領域に基づいた脅威とコントロールのカバレッジの包括的なリストは [AI セキュリティの周期表](ai_security_overview.md#periodic-table-of-ai-security) として利用できます。このセクションでは、AI レッドチーミングの予測型および生成型 AI システム向けのツールのリストを提供し、攻撃シナリオ、自動レッドチーミングを通じたテスト実行、そして多くの場合、リスクスコアリングを通じたリスク評価などのステップを支援します。
 
 リストされている各ツールは AI システムの脅威ランドスケープのサブセットに対応しています。以下に、考慮すべき主要な脅威をいくつか挙げます。
@@ -55,9 +55,9 @@ AI セキュリティテストは敵対的な動作をシミュレートして�
 各 AI パラダイムに対する主要な脅威について言及しましたが、AI レッドチーミングの目標とスコープの定義フェーズの結果に基づき、AI Exchange のすべての脅威を参照することを読者に強くお勧めします。
 
 
-## AI セキュリティテスト戦略
+## 5.3 AI セキュリティテスト戦略
 
-### 一般的な AI セキュリティテストアプローチ
+### 5.3.1 一般的な AI セキュリティテストアプローチ
 
 AI セキュリティテストへの体系的なアプローチはいくつかの重要なステップを要します。
 
@@ -70,7 +70,7 @@ AI セキュリティテストへの体系的なアプローチはいくつか�
 - **優先順位付けとリスク緩和:** 改善のための行動計画を策定し、緩和策を実施し、残存リスクを算出します。
 - **修正のバリデーション:** 改善後にシステムを再テストします。
 
-### エージェンティック AI のセキュリティテスト
+### 5.3.2 エージェンティック AI のセキュリティテスト
 
 エージェンティックテストは前述の一般的なアプローチを拡張してものです。ライフサイクルのステップは同様ですが、攻撃対象領域は単なるモデルの I/O だけでなく、ツール、オーケストレーション、エージェント間チャネル、セッション保持状態にまで及びます。
 
@@ -109,16 +109,16 @@ AI セキュリティテストへの体系的なアプローチはいくつか�
 
 エージェンティック志向の重大度モデル (自律的な実行スコープ、セッションをまたぐ永続性、マルチエージェントでの波及の可能性、影響の不可逆性) で検出結果を優先付けします。
 
-### RAG システムセキュリティテスト <a name="rag-system-security-testing"></a>
+### 5.3.3 RAG システムセキュリティテスト <a name="rag-system-security-testing"></a>
 > カテゴリ: ディスカッション  
 > パーマリンク: https://owaspai.org/go/ragtesting
 
 RAG テストは前述の一般的なアプローチを拡張したものです。ライフサイクルステップは同じですが、ほとんどの単一プロンプトテストスイートでは実行しない第二の入力チャネル (検索) があり、モデルとは独立したそれ自体の完全性やアクセス制御のサーフェスを持つコーパスがあります。
 
-**Methodologies (coverage-driven testing)**
+**方法論 (カバレッジ主導のテスト)**
 
-- Threat-model the RAG pipeline before testing: enumerate every ingestion source, the indexing/chunking/embedding process, the retriever and any re-ranker, and the authorization model that's supposed to govern which chunks a given user/session can retrieve. Map each to the [RAG systems overview](/go/ragoverview).
-- Test the **retrieval channel separately from the chat/query channel**: inject a test payload into a document, ingest it through the real pipeline (not by hand-crafting the prompt), and confirm it surfaces through retrieval before testing whether the model acts on it — this isolates ingestion/indexing failures from generation failures.
+- テスト前に RAG パイプラインを脅威モデルします。取り込み元、インデックス作成/チャンク分割/エンベディングのプロセス、リトリーバーおよびリランカー、そして特定のユーザー/セッションがどのチャンクを取得できるかを管理すると想定されている認可モデルをすべて列挙します。それぞれを [RAG システムの概要](ai_security_overview.md#rag-systems-overview) にマップします。
+- **検索チャネルをチャット/クエリチャネルとは切り離して** テストします。テストペイロードをドキュメントに注入し、実際のパイプラインを通じて (プロンプトを手動で細工するのではなく) 取り込みます。そして、モデルがそれに基づいて動作するかどうかをテストする前に、検索を通じてサーフェスを確認します。これは取り込み/インデックス作成の失敗と、生成の失敗を切り分けます。
 - Test **retrieval-scope enforcement directly against the index/retriever**, independent of the LLM: query the vector store or search index with credentials for different users/tenants and confirm chunk-level access control matches the source system's ACLs. A retriever that returns unauthorized chunks fails this test even if the model later "declines" to use them — the data has already left the trust boundary. See also [disclosure in output](/go/disclosureinoutput).
 - Test **indirect prompt injection via the retrieval path specifically**: place attack payloads (see the [prompt injection test procedure](/go/testingpromptinjection)) inside documents likely to be retrieved for realistic queries, not just in a document guaranteed to rank first — low-relevance placement should also be tested, since re-rankers and hybrid search can surface unexpected chunks.
 - Test **corpus poisoning** by introducing edited or newly added documents through the same access an attacker would realistically have (a wiki edit, a shared-drive upload, a ticket comment, a crawled page) and checking whether biased or attacker-controlled content measurably shifts retrieved results and generated output.
@@ -166,7 +166,7 @@ Prioritise findings by: authorization impact (does this cross a trust boundary),
 - See [prompt injection testing](/go/testingpromptinjection) above for payload construction and detection pairing — reused directly for the retrieval-channel tests here.
 - [retrieval-scope-tester](https://github.com/vishnu-77/retrieval-scope-tester) — an external reference implementation of the retrieval-scope enforcement approach above (not an OWASP project).
 
-### プロンプトインジェクションに対するテスト <a name="testing-against-prompt-injection"></a>
+### 5.3.4 プロンプトインジェクションに対するテスト <a name="testing-against-prompt-injection"></a>
 > カテゴリ: AI セキュリティテスト  
 > パーマリンク: https://owaspai.org/go/testingpromptinjection
 
@@ -249,7 +249,7 @@ AI システムが一般的な状況において標準的なチャットボッ�
 - [OpenAI Evals benchmark](https://github.com/openai/evals)
 
 
-### 回避に対するテスト <a name="testing-against-evasion"></a>
+### 5.3.5 回避に対するテスト <a name="testing-against-evasion"></a>
 > カテゴリ: AI セキュリティテスト  
 > パーマリンク: https://owaspai.org/go/testingevasion
 
@@ -309,8 +309,7 @@ NOTE Depending on the intended use, a single evasion input may be enough to caus
 It is of course important to also test the AI system for correct behaviour in benign situations. Depending on context, such testing may be integrated in the implementation of the security test by using the same mechanisms. Such testing ideally includes the testing of detection mechanisms, to ensure that not too many false positives are triggered by benign inputs. Positive testing is essential to ensure that security mechanisms do not degrade intended functionality or user experience beyond acceptable levels.
 
 
-
-## **AI および生成 AI のためのレッドチーミングツール**
+## **5.5 AI および生成 AI のためのレッドチーミングツール**
 
 以下のマインドマップは、AI レッドチーミングのオープンソースツールの概要を示しており、予測 AI レッドチーミングと生成 AI レッドチーミングに分類され、ART, Armory, TextAttack, Promptfoo などの例を挙げています。これらのツールは現時点での機能を示していますが、網羅的ではなく、重要度順にランク付けされているわけでもありません。今後、新たなツールや手法が出現し、この分野に統合される可能性が高いためです。
 
@@ -322,7 +321,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 以下のセクションでは予測 AI のツールについて説明し、その後に生成 AI のセクションに続きます。
 
-## **予測 AI レッドチーミングのためのオープンソースツール** <a name="open-source-tools-for-predictive-ai-red-teaming"></a>
+## **5.6 予測 AI レッドチーミングのためのオープンソースツール** <a name="open-source-tools-for-predictive-ai-red-teaming"></a>
 > カテゴリ: ツールレビュー  
 > パーマリンク: https://owaspai.org/go/testingtoolspredictiveai
 
@@ -792,7 +791,7 @@ It is of course important to also test the AI system for correct behaviour in be
 - 開発時モデルポイズニング: 開発時に攻撃をシミュレートして脆弱性を評価する [*https://owaspai.org/go/modelpoison*](https://owaspai.org/go/modelpoison)
 - 回避: 敵対的入力に対するモデルのパフォーマンスをテストする [*https://owaspai.org/go/evasion*](https://owaspai.org/go/evasion)
 
-## 生成 AI レッドチーミングのためのオープンソースツール <a name="open-source-tools-for-generative-ai-red-teaming"></a>
+## 5.7 生成 AI レッドチーミングのためのオープンソースツール <a name="open-source-tools-for-generative-ai-red-teaming"></a>
 > カテゴリ: ツールレビュー  
 > パーマリンク: https://owaspai.org/go/testingtoolsgenai
 
@@ -899,8 +898,7 @@ It is of course important to also test the AI system for correct behaviour in be
 | --- | --- |
 | 開発元/ソース | NVIDIA |
 | GitHub 参照 | https://docs.garak.ai/garak  https://github.com/NVIDIA/garak に移動
-文献: https://arxiv.org/abs/2406.11036
-https://github.com/NVIDIA/garak |
+| 文献 | https://arxiv.org/abs/2406.11036 <br>https://github.com/NVIDIA/garak |
 | 言語 | Python |
 | ライセンス | Apache 2.0 License |
 | 緩和策の提供 | 防止: No ❌ 検出: Yes ✅ |
@@ -1178,12 +1176,7 @@ https://github.com/NVIDIA/garak |
 | 開発元/ソース | Promptfoo コミュニティ |
 | GitHub 参照 | [https://github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [Types of LLM vulnerabilities | promptfoo](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/) |
 | 言語 | Python, NodeJS |
-| ライセンス | MIT ライセンスの下でのオープンソース |
-|  | このプロジェクトは複数のライセンスの下でライセンスされている。
-
-1. メインのコードベースは MIT License (下記参照) の下でライセンスされている
-2. `/src/redteam/` ディレクトリはプロプライエタリであり、Promptfoo Enterprise License の下でライセンスされている
-3. 一部のサードパーティコンポーネントは、それぞれのディレクトリの LICENSE ファイルで示されているように、それ自体のライセンスを有している |
+| ライセンス | MIT ライセンスの下でのオープンソース。<br><br>このプロジェクトは複数のライセンスの下でライセンスされている。<br>1. メインのコードベースは MIT License (下記参照) の下でライセンスされている<br>2. `/src/redteam/` ディレクトリはプロプライエタリであり、Promptfoo Enterprise License の下でライセンスされている<br>3. 一部のサードパーティコンポーネントは、それぞれのディレクトリの LICENSE ファイルで示されているように、それ自体のライセンスを有している |
 | 緩和策の提供 | 防止: Yes ✅ 検出: Yes ✅ |
 | API の可用性 | Yes ✅  |
 
@@ -1269,7 +1262,7 @@ https://github.com/NVIDIA/garak |
 - プロンプトインジェクション: プロンプト設計の弱点を悪用して、望ましくない出力につながったり、モデルセーフガードをバイパスする、生成 AI モデルの堅牢性を評価する。
 *[https://owaspai.org/go/promptinjection](https://owaspai.org/go/promptinjection)*
 
-## ツール評価
+## 5.8 ツール評価
 このセクションでは記述されているツールを人気、コミュニティサポート、拡張性、統合でレート付けします。
 
 [![](https://owaspai.org/images/testtoolrating.png)](https://owaspai.org/images/testtoolrating.png)
