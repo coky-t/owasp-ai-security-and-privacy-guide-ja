@@ -358,8 +358,9 @@ The Exchange documents **security controls and threats**. Deeper classification,
 
   - [OpenCRE のコンプライアンス](https://www.opencre.org/cre/510-324)
   - ISO 27002 コントロール 5.36 ポリシー、ルール、標準の遵守。ギャップ: このコントロールを完全にカバーしますが、AI 規制を考慮する必要がある特殊性を伴います。
-  - ISO/IEC 27090 (AI セキュリティ) と 27091 (AI プライバシー) は本稿執筆時点 (2025 年 10 月) で開発中であり、2026 年に発行される見込みです。AI Exchange は 27090 のコンテンツに多大な貢献をしています。
-  - prEN 18282 は AI セキュリティに関する欧州規格です。CEN/CENELEC によって策定され、AI Exchange が重要な部分を貢献しています。Exchange の創設者 Rob van der Veer  は、AI Exchange と CEN/CENELEC/ISO 間の公式なパートナーシップにおける連絡担当者であり、18282 の共同編集者でもあります。この規格は本稿執筆時点 (2025 年 10 月) で約二年間開発が進められており、2026 年初頭に公開調査が開始され、2026 年に発行される予定です。
+  - [ISO/IEC 27090](https://www.iso.org/standard/27090) (AI security) is a guidance standard and has been published in October 2026. The AI Exchange has contributed substantial content to the 27090, and Exchange founder Rob van der Veer was part of the working group.
+  - ISO/IEC 27090 (AI privacy) and 27091 (AI privacy) is in development at the moment of writing (Oct 2026), and likely come out in 2027. 
+  - prEN 18282 is the draft harmonized cybersecurity standard for the EU AI Act - brought forward by CEN/CENELEC JTC21/WG5 and with a substantial part contributed by the AI Exchange. Exchange founder Rob van der Veer is liaison officer for the official partnership between the AI Exchange and CEN/CENELEC/ISO, as well as co-editor for 18282. At the moment of writing (Oct 2026), the standard is ready to go for final internal review, and is expected to be published in the beginning of 2027. After publishing, it depends on publication in the Official Journal if the standard can be used for presumption of conformity for high risk AI systems.
 
 #### #SEC EDUCATE
 > カテゴリ: ガバナンスコントロール  
