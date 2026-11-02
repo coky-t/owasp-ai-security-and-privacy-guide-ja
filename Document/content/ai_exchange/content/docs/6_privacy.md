@@ -153,7 +153,7 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 ## 始める前に: AI でできることに関するプライバシー制限
 GDPR は AI の適用を明示的に制限するものではありませんが、前述のように、特に合法性と、収集、処理、保存の目的の制限に関して、できることを制限する可能性があるセーフガードを提供します。法的根拠の詳細については、[第 6 条](https://gdpr.eu/article-6-how-to-process-personal-data-legally/) を参照してください。
 
-[米国連邦取引委員会](https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check) は AI について慎重にコミュニケーションする上で、過剰な約束をしないことなど、優れた (グローバルな) ガイダンスを提供しています。
+[米国連邦取引委員会](https://web.archive.org/web/20250317230141/https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check) は AI について慎重にコミュニケーションする上で、過剰な約束をしないことなど、優れた (グローバルな) ガイダンスを提供しています。
 
 [EU の AI 法](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52021PC0206&from=EN) では大規模な監視、予測的な取り締まり、仕事における人員の選択などのリスクの高い目的に対する制限など、明示的な適用制限を課しています。さらに、特定ドメイン (医療ドメインなど) に対してデータの使用を制限する規制があり、一部の AI アプローチには制限を課しています。
 
