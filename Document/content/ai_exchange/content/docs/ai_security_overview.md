@@ -209,6 +209,8 @@ The AI Exchange is a single coherent resource on the security and privacy of AI 
 **Ways to start, depending on your need:**
 - **Ask any question on AI Security**
   Ask an AI security/privacy question based on the content of the Exchange: [AI Exchange AGENT](https://notebooklm.google.com/notebook/75840a00-78f8-454d-ad4d-9ac27ae4cf48) (uses Google service so requires Google account).
+- **Search the AI Exchange**:  
+  Use [search](/search/) to find a topic across all pages. To share a search, link to it directly, for example [owaspai.org/search?q=prompt injection](/search/?q=prompt%20injection).
 - **Learn what the AI Exchange is**:  
   See [About](https://owaspai.org/go/about)
 - **Start AI security as organization**:  
@@ -1091,7 +1093,7 @@ Security protecting confidentiality diagram:
 [![](/images/wayfinder-security-confidential.png)](/images/wayfinder-security-confidential.png)
 
 
-### The complete responsible/trustworthy AI picture
+#### The complete responsible/trustworthy AI picture
 The image below shows all aspects of responsible/trustworthy AI in one visual. It also includes another security aspect outside the scope of the AI Exchange: the use of the AI system to perform attacks - either as intended or unintended use. This is a security concern when it comes to responsible use, but it is not about protecting the AI system against attacks.  
 
 [![](/images/wayfinder.png)](/images/wayfinder.png)
