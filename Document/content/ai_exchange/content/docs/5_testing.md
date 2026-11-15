@@ -254,7 +254,7 @@ AI システムが一般的な状況において標準的なチャットボッ�
 > パーマリンク: https://owaspai.org/go/testingevasion
 
 #### Test description
-Resistance to [evasion attacks](/go/evasion), is tested by looking for feasible inputs that lead to unintended outputs with unacceptable impact severity. The test checks three aspects:
+Resistance to [evasion attacks](/go/evasion) is tested by looking for feasible inputs that lead to unintended outputs with unacceptable impact severity. The test checks three aspects:
 1. whether the model produces unintended output for certain inputs;
 2. whether the AI system can limit or stop the search for such inputs, for example through rate limiting or detection;
 3. whether surrogate models can be created and used to prepare the attack.
@@ -275,9 +275,9 @@ b) whether attackers could reasonably create the evasion inputs, considering how
 
 EXAMPLE: If the AI system receives images directly from a low-resolution camera, an attacker has limited ability to make precise, small modifications to the input.
 
-**(2) Perform searches for succesful evasion**  
+**(2) Perform searches for successful evasion**  
 Search for effective evasion inputs, meaning inputs that satisfy the feasibility criteria and would have unacceptable impact severity:
--  When relevant, perform a **perfect-knowledge attack** using the target model's parameters. Use state-of-the-art tools to search for evasion inputs, starting from known inputs that produce correct outputs. Keep changes within the perturbation limit derived from the feasibility criteria. Perform both diffuse and localized searches, where localized changes are feasible. For localized changes, the allowed perturbation may typically be higher or absent. A perfect-knowledge attack is relevant when attacker has complete access to model parameters (typically, when the attacker is able to leverage the parameters for gradient calculations). Otherwise, this attack type may be skipped. The search needs to include both in-distribution and out-of-distribution inputs, such as known samples from all classes and samples that do not belong to any class in a classification task.
+-  When relevant, perform a **perfect-knowledge attack** using the target model's parameters. Use state-of-the-art tools to search for evasion inputs, starting from known inputs that produce correct outputs. Keep changes within the perturbation limit derived from the feasibility criteria. Perform both diffuse and localized searches, where localized changes are feasible. For localized changes, the allowed perturbation may typically be higher or absent. A perfect-knowledge attack is relevant when the attacker has complete access to model parameters (typically, when the attacker is able to leverage the parameters for gradient calculations). Otherwise, this attack type may be skipped. The search needs to include both in-distribution and out-of-distribution inputs, such as known samples from all classes and samples that do not belong to any class in a classification task.
 - When needed, perform a **zero-knowledge attack** by following the previous procedure but allowing the tooling to use only the model output, not the model parameters, while iteratively adapting the inputs. This step is not required if the previous step already found a feasible evasion input with unacceptable results.
 - When possible and needed, perform a **transfer attack** using surrogate models. Follow the procedure of the first step but search against the surrogate model. This is possible if the attacker can find or create a model with the same or a similar task. The surrogate may be a commercial or open-source model, or a new model trained on task data that the attacker can obtain or create, depending on the attacker profile. This step is not required if earlier steps already found a feasible evasion input with unacceptable results.
 - When possible and needed, perform a **heuristic attack** on the model. This applies when domain knowledge and understanding of the intended use suggest that certain changes may produce the desired effect. For example, testers may check whether an image of a red balloon on a sidewalk is classified as a stop sign. This step is not required if earlier steps already found a feasible evasion input with unacceptable results.
@@ -292,7 +292,7 @@ EXAMPLE: Heuristic changes can include replacing words with synonyms or typos, c
 
 EXAMPLE: A possible test scenario is: the tester does not perform a perfect-knowledge search on the target model because it is very unlikely that the attacker can steal the non-public model. The tester then tries a zero-knowledge search on the target model and does not succeed. Some adversarial samples are found, but most are not feasible inputs; where they are feasible, the misclassification is harmless. The tester then tries transfer attacks with a surrogate model. No existing model is available for the similar task of estimating a horse's age from an image, but a database of horse images with ages is available. Risk analysis shows that the relevant attacker profile includes an experienced machine learning expert with several days available, so the tester trains a surrogate model on that database. The tester uses Projected Gradient Descent on the surrogate and finds several evasion inputs. Some of these inputs also cause wrong outputs in the target model. One would cause unacceptable harm. The conclusion is that the AI system fails the evasion-resistance test because an attacker could train a model copy and use it to prepare harmful evasion inputs.
 
-**(3) Separate feasiblity tests**  
+**(3) Separate feasibility tests**  
 Where feasibility is uncertain, perform separate feasibility tests to determine whether the criteria are met. Such tests may check whether existing detection mechanisms would block a particular evasion input, or whether an attacker could create the input in a real-world situation.
 
 Tools for state-of-the-art testing are usually available for the relevant problem space, see our [test tools section](go/testingtoolspredictiveai/).
@@ -1090,7 +1090,7 @@ It is of course important to also test the AI system for correct behaviour in be
 
 | 要素 | 詳細 |
 | --- | --- |
-| **人気** | - **GitHub スター:** およそ 4,3K (as 2024) |
+| **人気** | - **GitHub スター:** およそ 4,3K (2024 年時点) |
 |  | - **GitHub フォーク:** およそ 326 |
 |  | - **Issues の数:**  およそ 296 クローズ済み, 40 オープン。 |
 |  | - **傾向:** 一貫してタイムリーなアップデートで着実に成長している。 |
