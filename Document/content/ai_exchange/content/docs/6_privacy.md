@@ -112,7 +112,7 @@ GDPR の [第 22 条](https://ec.europa.eu/newsroom/article29/items/612053) は�
 * 適切なモデルの文書化: モデルの種類、意図、提案された機能、機能の重要性、潜在的な危害とバイアス
 * データセットの透明性: ソース、法的根拠、データの種類、クリーニングの有無、年齢。データカードはこれらの目標のいくつかを達成するための業界で一般的なアプローチです。Google Research の [論文](https://arxiv.org/abs/2204.01075) と Meta の [研究](https://ai.facebook.com/research/publications/system-level-transparency-of-machine-learning) を参照してください。
 * トレーサビリティ: ある個人についてどのモデルがいつその決定を下したか？
-* 説明可能性: ブラックボックスモデルをより説明しやすくする方法がいくつかあります。これらには LIME、SHAP、反事実的説明 (counterfactual explanations)、ディープテイラー分解 (Deep Taylor Decomposition) などがあります。[機械学習の解釈可能性に関するこの概要](https://github.com/jphall663/awesome-machine-learning-interpretability) と [説明可能な AI の長所と短所に関するこの記事](https://www.softwareimprovementgroup.com/resources/unraveling-the-incomprehensible-the-pros-and-cons-of-explainable-ai/) も参照してください。
+* 説明可能性: ブラックボックスモデルをより説明しやすくする方法がいくつかあります。これらには LIME、SHAP、反事実的説明 (counterfactual explanations)、ディープテイラー分解 (Deep Taylor Decomposition) などがあります。[機械学習の解釈可能性に関するこの概要](https://github.com/jphall663/awesome-machine-learning-interpretability) と [説明可能な AI の長所と短所に関するこの記事](https://web.archive.org/web/20230329203740/https://www.softwareimprovementgroup.com/resources/unraveling-the-incomprehensible-the-pros-and-cons-of-explainable-ai/) も参照してください。
 
 ## 5. プライバシー権 (Privacy Rights)
 プライバシー標準では「個人参加 (individual participation)」とも呼ばれるこの原則により、個人が自分の個人データに関連する要求を組織に提示できます。最も参照される権利は以下のとおりです。
