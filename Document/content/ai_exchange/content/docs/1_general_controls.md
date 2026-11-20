@@ -87,7 +87,7 @@ The very minimum first thing you can do for AI governance, focused on security:
 
 有用な標準:
  - ISO/IEC 42001 AI マネジメントシステム。ギャップ: このコントロールを完全にカバーします。
- - [US Federal Reserve SR 11-07: Guidance on Model Risk Management](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm): 銀行組織および監督当局のための監督指針。
+ - [US Federal Reserve SR 11-07: Guidance on Model Risk Management](https://web.archive.org/web/20260414150921/https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm): 銀行組織および監督当局のための監督指針。
 
 ISO 42001 はリスクマネジメントシステムを拡張するもので、ガバナンスに焦点を当てています。ISO 5338 (下記 #[DEV PROGRAM](1_general_controls.md#DEVPROGRAM) 参照) はソフトウェアライフサイクルプラクティスを拡張するもので、エンジニアリングとその周辺のすべてに焦点を当てています。ISO 27001 が情報セキュリティのマネジメントシステムであるのと同様に、ISO 42001 は組織内の責任ある AI のガバナンスのためのマネジメントシステムとみなすことができます。ISO 42001 はライフサイクルプロセスには踏み込みません。たとえば、モデルのトレーニング方法、データリネージの実行方法、継続的検証、AI モデルのバージョン管理、プロジェクト計画の課題、エンジニアリングで機密データがいつどのように使用されるかについては触れていません。
 
