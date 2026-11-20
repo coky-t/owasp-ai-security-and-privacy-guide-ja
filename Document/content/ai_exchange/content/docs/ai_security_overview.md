@@ -20,7 +20,7 @@ weight: 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Threats](/go/threatsoverview)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Threat matrix](/go/aisecuritymatrix)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Agentic AI overview](/go/agenticaioverview)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: RAG systems](/go/ragsystemsoverview)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: RAG systems](/go/ragoverview)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Navigator](/go/navigator)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Controls](/go/controlsoverview)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Highlight: Periodic table of threats and controls](/go/periodictable)  
@@ -448,14 +448,14 @@ Agentic AI systems are AI systems where the inference of a model can specify act
 
 There are many dimensions to Agentic AI, so it's best not to treat it in one specific way. Instead, the key is to look at an AI system's properties underneath: Can the AI models trigger actions? What harm can they cause? Are external services used? Is untrusted data coming in? Is memory used to keep context and plans? Can actions send out data? 
 
-In essence: **'Agentic’ can be seen as a spectrum**, where capability, autonomy, and impact increase. There are ‘mildly’ agentic systems at the one end, such as a door-opening AI camera, and ‘very’ agentic systems at the other end: with agents planning without human intervention, running in a loop, performing actions:
-- Mildly Agentic AI: performs actions
-- Fairly Agentic AI: also plans
-- Quite Agentic AI: also runs in loops
-- Very Agentic AI: all of the above without any human intervention
+**Don't let an 'Agentic AI' definition create a blind spot.** Almost all AI systems can trigger actions, and whether the workflow is fixed or flexible, or whether there is a loop, is not what determines the risk. A strict definition of 'agentic AI' as the trigger for security measures will leave out systems that have the properties that matter (untrusted data coming in, the ability to cause harm, the ability to send data out) but happen to fall outside the definition. Scope your security work by those properties, not by the label. In essence: **'Agentic’ can be seen as a spectrum**, where capability, autonomy, and impact increase. There are ‘mildly’ agentic systems at the one end, such as a door-opening AI camera, and ‘very’ agentic systems at the other end: with agents planning without human intervention, running in a loop, performing actions.
 
 The AI Exchange covers all AI systems, so also agentic AI systems, throughout its content. For the full threat and control picture, see the [threats overview](/go/threatsoverview), [AI security matrix](/go/aisecuritymatrix), and [periodic table of threats and controls](/go/periodictable).  
 This section highlights agentic attention points only — not a separate threat landscape. 
+
+**How to approach agentic AI security**
+- **Extend what you have, don't build a separate framework.** Agentic AI security is part of building secure AI systems, which again is an extension of building secure software systems. The AI Exchange already recommends to add AI to your existing information security management, risk inventory, asset inventory, and software development process instead of setting up a parallel 'AI security' track. That is less work and it builds on things that are already in place and proven.
+- **Assess the system, not the agent.** An agent cannot be judged secure or insecure in isolation, just like a model cannot. The risk depends on the use case, the intended use, the data and tools the agent can reach, and the other mechanisms and agents around it. The question to ask is not 'is this agent secure?' but 'is this system, which involves agents, secure for this use?'
 
 **There are four typical properties of agentic AI:**  
 1. **Action**: Agents don’t just chat — they invoke functions such as sending an email. That makes [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege) a key control — including the [agentic authorisation framework](/go/leastmodelprivilege) (deny-by-default, infrastructure policy enforcement, task-bound tokens, agent identity).
@@ -481,7 +481,7 @@ This section highlights agentic attention points only — not a separate threat 
   - Prevention: for example: security of inter-model communication (e.g., MCP), [agent sandboxing](/go/agentsandboxing), [protecting memory integrity](/go/augmentationdataintegrity), [prompt injection defenses](/go/promptinjection), and [agent message structure manipulation](/go/agentmessagestructuremanipulation)
   - Blast radius control: [rule-based / human oversight](/go/oversight) and [least model privilege](/go/leastmodelprivilege)
   - Observability: [monitoring](/go/monitoruse)
-- **Validation gap:** Tools and methods to evaluate agentic security architecture and deployments are still evolving; without reliable validation, design and implementation weaknesses are harder to find before production. See [testing](/go/testing) and [continuous validation](/go/continuousvalidation).
+- **Validation gap:** Tools and methods to evaluate agentic security architecture and deployments are still evolving; without reliable validation, design and implementation weaknesses are harder to find before production. AI red teaming, the simulation of specific AI attacks to see if the system is resilient to them, is where the state of the art is least mature, and it is easily practised as security theater. Yet it is the main way to provide evidence, for example to auditors, that the selected controls actually work. See [testing](/go/testing) and [continuous validation](/go/continuousvalidation).
 
 For leaking sensitive data in agentic AI, you need three things, also called the _lethal trifecta_:
 1. Data: Attacker control of data that finds its way into an LLM at some point in the session of a user that has the desired access, to perform [indirect prompt injection](/go/indirectpromptinjection) 
@@ -491,6 +491,34 @@ For leaking sensitive data in agentic AI, you need three things, also called the
 See [Simon Willison’s excellent work](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for more details, and for examples in agentic AI software development [here](https://www.darkreading.com/application-security/github-copilot-camoleak-ai-attack-exfils-data) and [here](https://ainativedev.io/news/malicious-github-issue-ai-agent-leak).
 
 [Prompt injection](/go/promptinjection) and mostly the [indirect](/go/indirectpromptinjection) form is the key threat in most agentic AI systems. The [prompt injection section](/go/promptinjection) covers agentic taxonomy (stored injection, multi-agent propagation) and structural mitigations (Agentic Rule of Two, tool-boundary firewalls). See the [seven layers section](/go/promptinjectionsevenlayers) on how these controls form layers of protection. After model alignment and filtering and detection, it should be assumed that prompt injection can still happen and therefore it is critical that _blast radius control_ is performed.
+
+**Common pitfalls**
+
+Two mistakes are seen most often in practice:
+1. **Access control in instructions.** Telling the model what it may not disclose or do (e.g., 'don't give personal data to anyone outside human resources') is unreliable and relatively easy to manipulate. It is done everywhere because it is so easy to do. Access control needs a deterministic mechanism in the architecture, outside the model.
+2. **Skipping hardening because it is tedious.** Restricting an agent beforehand to what its task needs (an email-summary agent only reads email, and only yours) takes effort, and it gets in the way the moment the agent needs to do one thing extra. So teams give broad permissions instead. The solution is to make the tedious work less tedious: make it quick to set, widen, and narrow privileges, so that least privilege stays workable as the use of the agent evolves.
+
+**Overestimated controls**
+
+No layer is sufficient on its own, and three of them tend to create a false sense of security that leads to neglecting the others:
+- **Model alignment.** The model does not have the context of your application, so it cannot know what counts as harm in your use case. It will refuse some things, but don't rely on it.
+- **Detection of malicious instructions in untrusted data.** Human text is full of instructions, and attackers make theirs look benign. Telling the two apart is hard, and so is deciding what to do when an instruction is found.
+- **Human oversight.** 'Human in the loop' is often thrown in as a wildcard. It only works if a human decision is feasible within the available time frame, and if the humans are alert, motivated, knowledgeable, and not worn down by a continuous stream of approvals. Without that, a powerful control quickly becomes security theater. See [#OVERSIGHT](/go/oversight).
+
+**Where to invest first**
+
+When not every layer can be implemented equally well, prioritise blast radius control: everything that limits the impact of what the model does, using as much understanding as possible of what is harmful, malicious, and benign.
+- **Beforehand, in the privileges**: externally enforced access control and practical hardening, as described under the pitfalls above ([#LEAST MODEL PRIVILEGE](/go/leastmodelprivilege)).
+- **During, in the oversight**: detection of unwanted behaviour built into the application itself, so that the process can be stopped. Logging actions and reviewing them afterwards is not enough: many of the threats are about exfiltration, and by the time someone responds to the log the data is gone ([#OVERSIGHT](/go/oversight), [#MONITOR USE](/go/monitoruse)).
+- **Development and security operations together.** Some unwanted behaviour needs to be acted on immediately in the application, some can be responded to later. That requires development teams and security operations to design the detection scheme together. Where they work in silos, blast radius control ends up being after the fact. Respond later where you can, and act immediately when you should.
+
+**Staying secure after deployment**
+
+An agent that passed its security tests will still encounter new tools, unexpected inputs, and changing conditions. Security is therefore not a one-time approval:
+- **Test repeatedly.** Do red teaming continually, and automate it as much as possible ([continuous validation](/go/continuousvalidation)).
+- **Make privileges principle-based.** Define what a model can and cannot do in terms of what an action means, not in terms of specific tools, so that new tools can be mapped onto existing privileges.
+- **Make behaviour detection principle-based.** Instead of flagging 'the agent does X and then queries the customer database', flag 'the agent does X and then requests customer data'. The rule then keeps working when tools change.
+- **Apply just-in-time authorisation.** Decide at the moment of the action, with logic based on what the agent is currently doing and what the tool it wants to use does, whether to allow it. This is the last of the [seven layers](/go/promptinjectionsevenlayers).
 
 **Agentic security architecture principles**
 
@@ -527,7 +555,7 @@ A typical RAG pipeline has five stages, each with a distinct trust boundary:
 
 RAG is not a separate threat landscape — the same asset/impact model applies (see the [threats overview](/go/threatsoverview) and [AI security matrix](/go/aisecuritymatrix)). This section highlights where RAG concentrates existing threats, and where it introduces attack surface that a plain chatbot or single-document-in-context system doesn't have.
 
-Below is a diagram explaining RAG, with [OpenCRE](opencre.org/chatbot) as an example: 
+Below is a diagram explaining RAG, with [OpenCRE](https://opencre.org/chatbot) as an example: 
 1. You ask a question on security.
 2. The system finds relevant information in the security standards in OpenCRE
 3. That relevant information is added to your question to form a prompt to an LLM that answers your question using primarily the information plus what it has learned by reading the internet.
@@ -638,7 +666,7 @@ The table below gives practitioners a compact way to move from a general AI risk
 | AI development lifecycle | AI engineering work is separated from secure development, software quality, model traceability, or risk management | [DEV PROGRAM](/go/devprogram), [SECDEV PROGRAM](/go/secdevprogram), [CONTINUOUS VALIDATION](/go/continuousvalidation), [UNWANTED BIAS TESTING](/go/unwantedbiastesting), [DISCRETE](/go/discrete), [DEV SECURITY](/go/devsecurity), [SEGREGATE DATA](/go/segregatedata) |
 | Data and model supply chain | Untrusted data, third-party models, external hosting, or inherited vulnerabilities enter the AI system | [SUPPLY CHAIN MANAGE](/go/supplychainmanage), [DATA QUALITY CONTROL](/go/dataqualitycontrol)|
 | Sensitive data exposure | Training data, prompts, outputs, embeddings, logs, or augmentation data may reveal confidential or personal data | [DATA MINIMIZE](/go/dataminimize), [ALLOWED DATA](/go/alloweddata), [SHORT RETAIN](/go/shortretain), [OBFUSCATE TRAINING DATA](/go/obfuscatetrainingdata), [SENSITIVE OUTPUT HANDLING](/go/sensitiveoutputhandling), [SMALL MODEL](/go/smallmodel), [MODEL INPUT CONFIDENTIALITY](/go/modelinputconfidentiality), [AUGMENTATION DATA CONFIDENTIALITY](/go/augmentationdataconfidentiality) |
-| Manipulated model behavior | Adversarial inputs, prompt injection, poisoned data, or compromised models can change intended behavior | [OVERSIGHT](/go/oversight), [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege), [MODEL ALIGNMENT](/go/modelalignment), [PROMPT INJECTION I/O HANDLING](/go/promptinjectioniohandling), [INPUT SEGREGATION](/go/inputsegregation), [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling), [EVASION INPUT HANDLING](/go/evasioninputhandling), [EVASION ROBUST MODEL](/go/evasionrobustmodel), [TRAIN ADVERSARIAL](/go/trainadversarial), [ADVERSARIAL ROBUST DISTILLATION](/go/adversarialrobustdestillation), [POISON ROBUST MODEL](/go/poisonrobustmodel) |
+| Manipulated model behavior | Adversarial inputs, prompt injection, poisoned data, or compromised models can change intended behavior | [OVERSIGHT](/go/oversight), [LEAST MODEL PRIVILEGE](/go/leastmodelprivilege), [MODEL ALIGNMENT](/go/modelalignment), [PROMPT INJECTION I/O HANDLING](/go/promptinjectioniohandling), [INPUT SEGREGATION](/go/inputsegregation), [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling), [EVASION INPUT HANDLING](/go/evasioninputhandling), [EVASION ROBUST MODEL](/go/evasionrobustmodel), [TRAIN ADVERSARIAL](/go/trainadversarial), [ADVERSARIAL ROBUST DISTILLATION](/go/adversarialrobustdistillation), [POISON ROBUST MODEL](/go/poisonrobustmodel) |
 | Runtime resilience and abuse | Attackers can perform input attacks | [MONITOR USE](/go/monitoruse), [RATE LIMIT](/go/ratelimit), [MODEL ACCESS CONTROL](/go/modelaccesscontrol), [ANOMALOUS INPUT HANDLING](/go/anomalousinputhandling), [DOS INPUT VALIDATION](/go/dosinputvalidation), [LIMIT RESOURCES](/go/limitresources), [UNWANTED INPUT SERIES HANDLING](/go/unwantedinputserieshandling), and see Manipulated model behaviour for controls against those input attacks |
 | Ready-made or externally hosted models | The organization depends on a provider, external model hosting, or user-facing "shadow AI" alternatives | [SUPPLY CHAIN MANAGE](/go/supplychainmanage),  [DATA MINIMIZE](/go/dataminimize), [ALLOWED DATA](/go/alloweddata) |
 
@@ -885,7 +913,7 @@ Another example: If your agentic system uses an LLM, then it is in theory suscep
   
   - Consider the threat of [augmentation data manipulation](/go/augmentationdatamanipulation) as this data plays a role in determining the model behaviour.
   - Is this augmentation data stored in a database for the purpose of the AI system (e.g., a vector database)? If Yes: you need to protect against [direct augmentation data leak](/go/augmentationdataleak). Note that this also counts for system prompts, if they are sensitive.
-  - Consult [RAG systems overview](/go/ragsystemsoverview) for further considerations.
+  - Consult [RAG systems overview](/go/ragoverview) for further considerations.
 
   > QUESTION: Who runs the model?
   - The supplier runs the model: select a trustworthy supplier through [supply chain management](/go/supplychainmanage), to make sure the deployed model cannot be manipulated through ([runtime model poisoning](/go/runtimemodelpoison)) - just the way you would expect any supplier to protect their running application from manipulation.
@@ -1128,14 +1156,14 @@ LLM による主な新しい脅威は何ですか？
 |4| 生成 AI モデルは不正確で幻覚を起こす可能性があります。これは AI 全般のリスク要因であり、さらに大規模言語モデル (生成 AI) は非常に機密性が高く知識を持っているという印象を与えることで事態を悪化させる可能性があります。要するに、これはモデルが間違っていたり、モデルが操作されていたりするという可能性を過小評価するリスクに関するものです。つまり、それぞれすべてのセキュリティコントロールに関連しています。最も強く結びつくのは [望ましくないモデル動作の影響を制限するためのコントロール](1_general_controls.md#13-controls-to-limit-the-effects-of-unwanted-behaviour)、特に [最小モデル権限](/1_general_controls.md#LEASTMODELPRIVILEGE) です。 | ([OWASP for LLM 03: Excessive Agency](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)) および ([OWASP for LLM 07: Misinformation](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)) |
 |5| [入力データ漏洩](4_runtime_application_security_threats.md#45-input-data-leak): 生成 AI モデルはほとんどがクラウドに存在し、多くの場合は外部パーティによって管理されているため、プロンプトの漏洩のリスクが高まります。この問題は生成 AI に限定されるものではありませんが、生成 AI には特に 2 つのリスクがあります。1) モデルの使用にはプロンプトを介したユーザーとのやり取り、ユーザーデータの追加、対応するプライバシーやセンシティビティの問題が含まれます。2) 生成 AI モデルの入力 (プロンプト) には機密データ (企業秘密など) を持つ豊富なコンテキスト情報を含む可能性があります。後者の問題はたとえば、コンサルタント会社でこれまでに書かれたすべてのレポートのデータなど、*コンテキスト内学習 (In-Context Learning)* や *検索拡張生成 (Retrieval Augmented Generation, RAG)* で発生します。まず第一に、この情報はプロンプトとともにクラウドに移動し、第二に、システムは情報に対する本来のアクセス権を考慮しない可能性があります。 | LLM Top 10 でのカバーなし |
 |6| 事前トレーニング済みモデルは操作されている可能性があります。事前トレーニングの概念は生成 AI に限ったことではありませんが、このアプローチは生成 AI ではごく一般的であり、 [サプライチェーンのモデルポイズニング](3_development_time_threats.md#313-supply-chain-model-poisoning) のリスクを高めます。 | ([OWASP for LLM 04: Supply Chain](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)) |
-|7| [モデル反転とメンバーシップ推論](2_threats_through_use.md##222-model-inversion-and-membership-inference) は生成 AI にとって低リスクまたはゼロリスクです。 | LLM Top 10 の特定のエントリとしてはカバーなし、最も近いものは [OWASP for LLM 02: Sensitive Information Disclosure](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) (推論に基づく露出)、上記を参照 |
+|7| [モデル反転とメンバーシップ推論](2_threats_through_use.md#232-model-inversion-and-membership-inference) は生成 AI にとって低リスクまたはゼロリスクです。 | LLM Top 10 の特定のエントリとしてはカバーなし、最も近いものは [OWASP for LLM 02: Sensitive Information Disclosure](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) (推論に基づく露出)、上記を参照 |
 |8| 生成 AI の出力にはクロスサイトスクリプティングなどの [インジェクション攻撃](4_runtime_application_security_threats.md#44-insecure-output-handling) を実行する要素を含むかもしれません。 | ([OWASP for LLM 10: Improper Output Handling](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)) |
 |9| [リソース枯渇](2_threats_through_use.md#24-failure-or-malfunction-of-ai-specific-elements-through-use) はどの IT システムでも問題になる可能性がありますが、生成 AI モデルは一般的に実行コストが高いため、過負荷になると不要なコストが発生する可能性があります。 | ([OWASP for LLM 06: Unbounded Consumption](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)) |
 
 生成 AI 参考情報:
 
 - [OWASP LLM Top 10 (2026)](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)
-- [Demystifying the LLM top 10](https://blog.kloudzone.co.in/demystifying-the-owasp-top-10-for-large-language-model-applications/)
+- [Demystifying the LLM top 10](https://web.archive.org/web/20240228152356/http://blog.kloudzone.co.in/demystifying-the-owasp-top-10-for-large-language-model-applications/)
 - [Impacts and risks of GenAI](https://arxiv.org/pdf/2306.13033.pdf)
 - [LLMsecurity.net](https://llmsecurity.net/)
 
@@ -1272,7 +1300,7 @@ More information is available here: [: GitHub Copilot copyright case narrowed
 but not neutered • The Register](https://www.theregister.com/2024/01/12/github_copilot_copyright_case_narrowed/)
 
 ####  Copyright damages indemnification
-Note that AI vendors have started to take responsibility for copyright issues of their models, under certain circumstances. Microsoft offers users the so-called [Copilot Copyright Commitment](https://www.microsoft.com/en-us/licensing/news/microsoft-copilot-copyright-commitment), which indemnifies users from legal damages regarding copyright of code that Copilot has produced - provided [a number of things](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/customer-copyright-commitment) including that the client has used content filters and other safety systems in Copilot and uses specific services. Google Cloud offers its [Generative AI indemnification](https://cloud.google.com/blog/products/ai-machine-learning/protecting-customers-with-generative-ai-indemnification).  
+Note that AI vendors have started to take responsibility for copyright issues of their models, under certain circumstances. Microsoft offers users the so-called [Copilot Copyright Commitment](https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/), which indemnifies users from legal damages regarding copyright of code that Copilot has produced - provided [a number of things](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/customer-copyright-commitment) including that the client has used content filters and other safety systems in Copilot and uses specific services. Google Cloud offers its [Generative AI indemnification](https://cloud.google.com/blog/products/ai-machine-learning/protecting-customers-with-generative-ai-indemnification).  
 Read more at [The Verge on Microsoft indemnification](https://www.theverge.com/2023/9/7/23863349/microsoft-ai-assume-responsibility-copyright-lawsuit) and [Direction Microsoft on the requirements of the indemnification](https://www.directionsonmicrosoft.com/blog/why-microsofts-copilot-copyright-commitment-may-not-mean-much-for-customers-yet/).
 
 #### Do generative AI models really copy existing work?
