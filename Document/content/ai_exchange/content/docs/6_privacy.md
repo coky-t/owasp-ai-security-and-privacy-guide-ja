@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: 6. AI プライバシー
 heroTitle: "AI プライバシー"
 heroText: "個人データの保護とは別に、AI システムはプライバシーに関わる際にいくつかの責任があります。"
