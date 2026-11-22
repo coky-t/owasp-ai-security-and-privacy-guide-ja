@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: 2. 入力の脅威
 heroTitle: "入力の脅威"
 heroText: "AI への入力を巧みに作成することによる攻撃とその対策"
