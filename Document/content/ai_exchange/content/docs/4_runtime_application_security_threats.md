@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: 4. 実行時の従来のセキュリティ脅威
 heroTitle: "実行時の従来のセキュリティ脅威"
 heroText: "入力攻撃とは別の、運用中の AI システムへの攻撃と保護コントロール"
