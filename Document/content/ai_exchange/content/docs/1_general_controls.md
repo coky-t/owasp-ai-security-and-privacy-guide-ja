@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: 1. 一般的なコントロール
 heroTitle: "一般的なコントロール"
 heroText: "これらはすべての組織が導入すべきコントロールです。"
