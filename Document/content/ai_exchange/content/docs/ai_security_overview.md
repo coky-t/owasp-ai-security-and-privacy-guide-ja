@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: 0. AI セキュリティ概要
 heroTitle: "AI セキュリティ概要"
 heroText: "このページは、導入、脅威とコントロールの概要、段階的なリスク分析、分野横断的な懸念事項について説明します。次のページでは脅威とコントロールについてさらに深堀していきます。"
