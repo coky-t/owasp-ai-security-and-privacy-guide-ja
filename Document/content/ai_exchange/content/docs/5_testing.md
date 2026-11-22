@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: 5. AI セキュリティテスト
 heroTitle: "AI セキュリティテスト"
 heroText: "AI セキュリティテストは敵対的行動をシミュレートして、AI システムの脆弱性、弱点、リスクを明らかにします。"
@@ -119,7 +120,7 @@ RAG テストは前述の一般的なアプローチを拡張したものです�
 
 - テスト前に RAG パイプラインを脅威モデルします。取り込み元、インデックス作成/チャンク分割/エンベディングのプロセス、リトリーバーおよびリランカー、そして特定のユーザー/セッションがどのチャンクを取得できるかを管理すると想定されている認可モデルをすべて列挙します。それぞれを [RAG システムの概要](ai_security_overview.md#rag-systems-overview) にマップします。
 - **検索チャネルをチャット/クエリチャネルとは切り離して** テストします。テストペイロードをドキュメントに注入し、実際のパイプラインを通じて (プロンプトを手動で細工するのではなく) 取り込みます。そして、モデルがそれに基づいて動作するかどうかをテストする前に、検索を通じてサーフェスを確認します。これは取り込み/インデックス作成の失敗と、生成の失敗を切り分けます。
-- Test **retrieval-scope enforcement directly against the index/retriever**, independent of the LLM: query the vector store or search index with credentials for different users/tenants and confirm chunk-level access control matches the source system's ACLs. A retriever that returns unauthorized chunks fails this test even if the model later "declines" to use them — the data has already left the trust boundary. See also [disclosure in output](/go/disclosureinoutput).
+- LLM に依存せずに、**インデックスやリトリーバーに対して直接、検索スコープの強制** をテストします。異なるユーザーやテナントのクレデンシャルでベクトルストアや検索インデックスをクエリし、チャンクレベルのアクセス制御がソースシステムの ACL と一致していることを確認します。たとえモデル後段がそれらの使用を「拒否」したとしても、認可されていないチャンクを返すリトリーバーはこのテストに不合格となります。[出力での開示](2_threats_through_use.md#231-disclosure-of-sensitive-data-in-model-output) も参照してください。
   - **Example**: Give Group A exclusive read access to a document in the source system and ingest it through the normal pipeline. Run the same query as a Group A member and as a user outside the group. First verify that the member retrieves at least one chunk from the document, so a poor query or an ingestion failure cannot mask an authorization failure. Then inspect the second user's retrieval results before prompt assembly. Fail the test if they contain any chunk from the restricted document.
 - Test **indirect prompt injection via the retrieval path specifically**: place attack payloads (see the [prompt injection test procedure](/go/testingpromptinjection)) inside documents likely to be retrieved for realistic queries, not just in a document guaranteed to rank first — low-relevance placement should also be tested, since re-rankers and hybrid search can surface unexpected chunks.
 - Test **corpus poisoning** by introducing edited or newly added documents through the same access an attacker would realistically have (a wiki edit, a shared-drive upload, a ticket comment, a crawled page) and checking whether biased or attacker-controlled content measurably shifts retrieved results and generated output.
