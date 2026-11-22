@@ -1,4 +1,5 @@
 ---
+# FOR EDITING CONTENT: MAKE SURE YOU APPLY THE CONTENT CONTRIBUTION GUIDELINES: owaspai.org/go/ccg
 title: AI セキュリティリファレンス
 heroTitle: "AI セキュリティリファレンス"
 heroText: "特定のトピックに関する参考情報は AI Exchange コンテンツ全体を通じて見つけることができます。このセクションは概要を含んでいます。"
